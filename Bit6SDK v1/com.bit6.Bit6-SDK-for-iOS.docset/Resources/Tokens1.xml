@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
+			<Abstract type="html">Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object</Abstract>
+			<DeclaredIn>Bit6SDK.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/init:</TokenIdentifier>
+			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
+			<DeclaredIn>Bit6SDK.h</DeclaredIn>
+			
+			<Declaration>+ (void)init:(NSString *)apiKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>apiKey</Name>
+					<Abstract type="html">unique key for the current developer.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/init:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

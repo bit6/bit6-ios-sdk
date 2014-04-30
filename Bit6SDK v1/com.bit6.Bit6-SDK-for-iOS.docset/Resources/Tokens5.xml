@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6Conversation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6Conversation</TokenIdentifier>
+			<Abstract type="html">Bit6Conversation represents a conversation (or a chat) - a set of messages between two participants.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/initWithAddress:</TokenIdentifier>
+			<Abstract type="html">Initialize a Bit6Conversation object.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithAddress:(Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">Bit6Address object for the conversation.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the Bit6Conversation object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAddress:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setMessages:</TokenIdentifier>
+			<Abstract type="html">The Bit6Message objects in the conversation as a NSArray.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
+			
+			
+			<Anchor>//api/name/messages</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/messages</TokenIdentifier>
+			<Abstract type="html">The Bit6Message objects in the conversation as a NSArray.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
+			
+			
+			<Anchor>//api/name/messages</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/messages</TokenIdentifier>
+			<Abstract type="html">The Bit6Message objects in the conversation as a NSArray.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
+			
+			
+			<Anchor>//api/name/messages</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setAddress:</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object associated with this conversation.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/address</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object associated with this conversation.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/address</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object associated with this conversation.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/conversations</TokenIdentifier>
+			<Abstract type="html">Convenience method to obtain the existing conversations.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)conversations</Declaration>
+			
+			<ReturnValue><Abstract type="html">the existing Bit6Conversation objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/conversations</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/addConversation:</TokenIdentifier>
+			<Abstract type="html">Adds a conversation to the system.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>+ (void)addConversation:(Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">a Bit6Conversation object to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addConversation:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/deleteConversation:</TokenIdentifier>
+			<Abstract type="html">Delete a conversation from the system. All the messages inside the conversation are deleted too.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>+ (void)deleteConversation:(Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">Bit6Conversation object to be deleted</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteConversation:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

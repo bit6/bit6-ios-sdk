@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6ThumbnailImageView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6ThumbnailImageView</TokenIdentifier>
+			<Abstract type="html">Special subclass of UIImageView to work with the message attachment thumbnails</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setMessage:</TokenIdentifier>
+			<Abstract type="html">Message with an attachment to be displayed</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/message</TokenIdentifier>
+			<Abstract type="html">Message with an attachment to be displayed</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/message</TokenIdentifier>
+			<Abstract type="html">Message with an attachment to be displayed</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setThumbnailImageViewDelegate:</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
