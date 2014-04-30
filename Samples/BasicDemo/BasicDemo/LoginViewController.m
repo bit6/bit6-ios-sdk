@@ -35,7 +35,7 @@
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }
         else {
-            [[[UIAlertView alloc] initWithTitle:@"Login Failed" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"Login Failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }];
 }
@@ -47,7 +47,7 @@
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }
         else {
-            [[[UIAlertView alloc] initWithTitle:@"SignUp Failed" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"SignUp Failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }];
 }
