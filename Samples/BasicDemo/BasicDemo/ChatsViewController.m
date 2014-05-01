@@ -108,19 +108,21 @@
 {
     UITextField *textfield = [alertView textFieldAtIndex:0];
     NSString *msg = textfield.text;
-    if ([msg length]>0) {
-        Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
-        message.content = msg;
-        message.destination = self.conversation.address;
-        message.channel = Bit6MessageChannel_PUSH;
-        [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-            if (!error) {
-                NSLog(@"Message Sent");
-            }
-            else {
-                NSLog(@"Message Failed with Error: %@",error.localizedDescription);
-            }
-        }];
+    if (buttonIndex!=alertView.cancelButtonIndex) {
+        if ([msg length]>0) {
+            Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
+            message.content = msg;
+            message.destination = self.conversation.address;
+            message.channel = Bit6MessageChannel_PUSH;
+            [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+                if (!error) {
+                    NSLog(@"Message Sent");
+                }
+                else {
+                    NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+                }
+            }];
+        }
     }
 }
 
