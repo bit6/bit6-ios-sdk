@@ -29,6 +29,11 @@
     [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6MessagesUpdatedNotification object:self.conversation];
+}
+
 - (void) setConversation:(Bit6Conversation *)conversation
 {
     _conversation = conversation;

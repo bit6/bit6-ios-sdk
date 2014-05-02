@@ -27,6 +27,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6ConversationsUpdatedNotification object:nil];
+}
+
 - (void)viewDidLoad
 {
     self.navigationItem.hidesBackButton = YES;
