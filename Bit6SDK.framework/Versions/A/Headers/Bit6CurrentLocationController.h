@@ -15,13 +15,13 @@
 @interface Bit6CurrentLocationController : NSObject
 
 /*! Returns the default Bit6CurrentLocationController object.
- * @return the default Bit6CurrentLocationController object.
+ @return the default Bit6CurrentLocationController object.
  */
 + (Bit6CurrentLocationController *) sharedInstance;
 
 /*! Starts listening to the user's location.
- * @param msg a <Bit6OutgoingMessage> object where the user's location will be included.
- * @param delegate delegate to be notified when the location has been obtained. For information about the methods you can implement for your delegate object, see <Bit6CurrentLocationControllerDelegate> Protocol Reference.
+ @param msg a <Bit6OutgoingMessage> object where the user's location will be included.
+ @param delegate delegate to be notified when the location has been obtained. For information about the methods you can implement for your delegate object, see <Bit6CurrentLocationControllerDelegate> Protocol Reference.
  */
 - (void) startListeningToLocationForMessage:(Bit6OutgoingMessage*)msg delegate:(id<Bit6CurrentLocationControllerDelegate>)delegate;
 
@@ -35,8 +35,8 @@
 @protocol Bit6CurrentLocationControllerDelegate <NSObject>
 
 /*! Called when the user's location has been obtained.
- * @param b6clc The controller object obtaining the user's location.
- * @param message same message object set in <[Bit6CurrentLocationController startListeningToLocationForMessage:delegate:]> with the user's location set.
+ @param b6clc The controller object obtaining the user's location.
+ @param message same message object set in <[Bit6CurrentLocationController startListeningToLocationForMessage:delegate:]> with the user's location set.
  */
 - (void) doneGettingCurrentLocationController:(Bit6CurrentLocationController*)b6clc message:(Bit6OutgoingMessage*)message;
 

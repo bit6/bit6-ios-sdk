@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D833A01118FDAB00007D8409 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D833A00F18FDAB00007D8409 /* Bit6Resources.bundle */; };
+		D84C770019142820001A0DB6 /* AttachmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84C76FF19142820001A0DB6 /* AttachmentsTableViewController.m */; };
 		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
 		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
 		D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A518DBFC540070378D /* UIKit.framework */; };
@@ -18,12 +19,14 @@
 		D880E4BA18DBFC540070378D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D880E4B918DBFC540070378D /* Images.xcassets */; };
 		D8A1A19C18E9EEEB00E1CC98 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */; };
 		D8A1A19F18E9F19300E1CC98 /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */; };
-		D8ECF41718EBAE68002E4D03 /* ChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF41618EBAE68002E4D03 /* ChatsViewController.m */; };
+		D8ECF41718EBAE68002E4D03 /* ChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */; };
 		D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D833A00F18FDAB00007D8409 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
+		D84C76FE19142820001A0DB6 /* AttachmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentsTableViewController.h; sourceTree = "<group>"; };
+		D84C76FF19142820001A0DB6 /* AttachmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentsTableViewController.m; sourceTree = "<group>"; };
 		D880E49E18DBFC540070378D /* BasicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D880E4A118DBFC540070378D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -40,8 +43,8 @@
 		D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D8A1A19D18E9F19300E1CC98 /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationsViewController.h; sourceTree = "<group>"; };
 		D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationsViewController.m; sourceTree = "<group>"; };
-		D8ECF41518EBAE68002E4D03 /* ChatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatsViewController.h; sourceTree = "<group>"; };
-		D8ECF41618EBAE68002E4D03 /* ChatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatsViewController.m; sourceTree = "<group>"; };
+		D8ECF41518EBAE68002E4D03 /* ChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatsTableViewController.h; sourceTree = "<group>"; };
+		D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatsTableViewController.m; sourceTree = "<group>"; };
 		D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../Bit6SDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,8 +100,10 @@
 				D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */,
 				D8A1A19D18E9F19300E1CC98 /* ConversationsViewController.h */,
 				D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */,
-				D8ECF41518EBAE68002E4D03 /* ChatsViewController.h */,
-				D8ECF41618EBAE68002E4D03 /* ChatsViewController.m */,
+				D8ECF41518EBAE68002E4D03 /* ChatsTableViewController.h */,
+				D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */,
+				D84C76FE19142820001A0DB6 /* AttachmentsTableViewController.h */,
+				D84C76FF19142820001A0DB6 /* AttachmentsTableViewController.m */,
 				D880E4B318DBFC540070378D /* Main.storyboard */,
 				D880E4B918DBFC540070378D /* Images.xcassets */,
 				D880E4A818DBFC540070378D /* Supporting Files */,
@@ -126,6 +131,7 @@
 			buildConfigurationList = D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "BasicDemo" */;
 			buildPhases = (
 				D880E49C18DBFC540070378D /* Resources */,
+				D84019311911F380000A5A5C /* Run Script - Build Version */,
 				D880E49A18DBFC540070378D /* Sources */,
 				D880E49B18DBFC540070378D /* Frameworks */,
 			);
@@ -179,16 +185,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D84019311911F380000A5A5C /* Run Script - Build Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Build Version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\n\n#hexadecimal\n#    buildNumber=$((0x$buildNumber))\n#    buildNumber=$(($buildNumber + 1))\n#    buildNumber=$(printf \"%04X\" $buildNumber)\n\n#fecha\nbuildNumber=`/bin/date +%Y%m%d`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D880E49A18DBFC540070378D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84C770019142820001A0DB6 /* AttachmentsTableViewController.m in Sources */,
 				D880E4B218DBFC540070378D /* AppDelegate.m in Sources */,
 				D8A1A19F18E9F19300E1CC98 /* ConversationsViewController.m in Sources */,
 				D880E4AE18DBFC540070378D /* main.m in Sources */,
 				D8A1A19C18E9EEEB00E1CC98 /* LoginViewController.m in Sources */,
-				D8ECF41718EBAE68002E4D03 /* ChatsViewController.m in Sources */,
+				D8ECF41718EBAE68002E4D03 /* ChatsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

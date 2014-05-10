@@ -20,11 +20,14 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
 @interface Bit6Address : NSObject
 
 /*! Initializes a Bit6Address object
- * @param kind Destination kind.
- * @param value Destination value.
- * @return a Bit6Address object.
- * @warning The only address kind currently allowed is Bit6AddressKind_USERNAME.
+ @param kind Destination kind.
+ @param value Destination value.
+ @return a Bit6Address object.
+ @warning The only address kind currently allowed is Bit6AddressKind_USERNAME.
  */
 - (instancetype)initWithKind:(Bit6AddressKind)kind value:(NSString*)value;
+
+/*! A display name for this <Bit6UserIdentity> object. */
+@property (nonatomic, readonly) NSString *displayName;
 
 @end

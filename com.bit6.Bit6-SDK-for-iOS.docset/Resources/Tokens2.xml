@@ -32,6 +32,42 @@
             <NodeRef refid="2"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setDisplayName:</TokenIdentifier>
+			<Abstract type="html">A display name for this &lt;Bit6UserIdentity&gt; object.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
+			
+			
+			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/displayName</TokenIdentifier>
+			<Abstract type="html">A display name for this &lt;Bit6UserIdentity&gt; object.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
+			
+			
+			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/displayName</TokenIdentifier>
+			<Abstract type="html">A display name for this &lt;Bit6UserIdentity&gt; object.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
+			
+			
+			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

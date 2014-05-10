@@ -13,12 +13,12 @@
 @interface Bit6AudioPlayerController : NSObject
 
 /*! Gets the default Bit6AudioPlayerController object.
- * @return Default Bit6AudioPlayerController object.
+ @return Default Bit6AudioPlayerController object.
  */
 + (Bit6AudioPlayerController *) sharedInstance;
 
 /*! Starts playing the audio file attached to a message.
- * @param msg A <Bit6Message> object with the audio attachment to play.
+ @param msg A <Bit6Message> object with the audio attachment to play.
  */
 - (void) startPlayingAudioFileInMessage:(Bit6Message*)msg;
 

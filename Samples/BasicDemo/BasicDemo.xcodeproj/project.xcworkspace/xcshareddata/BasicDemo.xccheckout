@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6EB3EB1F-152F-4A55-A072-E1E67AE10911</string>
+	<string>FAADC4C1-82FB-41E6-BB61-180AF31BAB48</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BasicDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FD893200-E23E-42B4-B764-3B53397DF73A</key>
-		<string>https://github.com/bit6/bit6-ios-sdk-source</string>
+		<key>4E80E8BF-6D95-46B2-8FFA-3B7D9E06FEB5</key>
+		<string>https://github.com/bit6/bit6-ios-sdk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>InstallerGenerator/Bit6SDK/Samples/BasicDemo/BasicDemo.xcodeproj/project.xcworkspace</string>
+	<string>Samples/BasicDemo/BasicDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FD893200-E23E-42B4-B764-3B53397DF73A</key>
-		<string>../../../../../..</string>
+		<key>4E80E8BF-6D95-46B2-8FFA-3B7D9E06FEB5</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/bit6/bit6-ios-sdk-source</string>
+	<string>https://github.com/bit6/bit6-ios-sdk</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FD893200-E23E-42B4-B764-3B53397DF73A</string>
+	<string>4E80E8BF-6D95-46B2-8FFA-3B7D9E06FEB5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FD893200-E23E-42B4-B764-3B53397DF73A</string>
+			<string>4E80E8BF-6D95-46B2-8FFA-3B7D9E06FEB5</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Bit6_SDK</string>
+			<string>Bit6_final</string>
 		</dict>
 	</array>
 </dict>

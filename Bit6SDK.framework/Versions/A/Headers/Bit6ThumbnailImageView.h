@@ -18,7 +18,7 @@
 @property (nonatomic, copy) Bit6Message *message;
 
 /*! The Bit6ThumbnailImageView delegate 
- * @see Bit6ThumbnailImageViewDelegate
+ @see Bit6ThumbnailImageViewDelegate
  */
 @property (nonatomic, weak) id<Bit6ThumbnailImageViewDelegate>thumbnailImageViewDelegate;
 
@@ -29,7 +29,7 @@
 @protocol Bit6ThumbnailImageViewDelegate <NSObject>
 
 /*! Tell the delegate that the imageView has been tapped by the user.
- * @param thumbnailImageView The <Bit6ThumbnailImageView> object tapped by the user.
+ @param thumbnailImageView The <Bit6ThumbnailImageView> object tapped by the user.
  */
 - (void) touchedThumbnailImageView:(Bit6ThumbnailImageView*)thumbnailImageView;
 

@@ -8,10 +8,10 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()
-
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passTextField;
+@interface LoginViewController () <UIAlertViewDelegate>
+{
+    BOOL _doingLogin;
+}
 
 @end
 
@@ -22,15 +22,43 @@
     if ([Bit6Session isConnected]) {
         [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
     }
-    else {
-        [self.usernameTextField becomeFirstResponder];
-    }
     [super viewWillAppear:animated];
 }
 
 - (IBAction)touchedLoginBarButton:(id)sender {
-    Bit6Address *userIdentity = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:self.usernameTextField.text];
-    [Bit6Session loginWithUserIdentity:userIdentity password:self.passTextField.text completionHandler:^(NSDictionary *response, NSError *error) {
+    _doingLogin = YES;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Enter your username and password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [alert show];
+}
+
+- (IBAction)touchedSignUpButton:(id)sender {
+    _doingLogin = NO;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Enter an username and a password for the new account" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [alert show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex!=alertView.cancelButtonIndex) {
+        NSString *username = [alertView textFieldAtIndex:0].text;
+        NSString *password = [alertView textFieldAtIndex:1].text;
+        if (_doingLogin) {
+            [self loginWithUsername:username password:password];
+        }
+        else {
+            [self signUpWithUsername:username password:password];
+        }
+    }
+}
+
+- (void) loginWithUsername:(NSString*)username password:(NSString*)password
+{
+    Bit6Address *userIdentity = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:username];
+    [Bit6Session loginWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }
@@ -40,9 +68,10 @@
     }];
 }
 
-- (IBAction)touchedSignUpButton:(id)sender {
-    Bit6Address *userIdentity = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:self.usernameTextField.text];
-    [Bit6Session signUpWithUserIdentity:userIdentity password:self.passTextField.text completionHandler:^(NSDictionary *response, NSError *error) {
+- (void) signUpWithUsername:(NSString*)username password:(NSString*)password
+{
+    Bit6Address *userIdentity = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:username];
+    [Bit6Session signUpWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }

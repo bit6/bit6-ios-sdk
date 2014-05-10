@@ -15,16 +15,25 @@
 @interface Bit6AudioRecorderController : NSObject
 
 /*! Gets default Bit6AudioRecorderController object.
- * @return Default Bit6AudioRecorderController object.
+ @return Default Bit6AudioRecorderController object.
  */
 + (Bit6AudioRecorderController *) sharedInstance;
 
-/*! Starts recording an audio file.
- * @param msg a <Bit6OutgoingMessage> object where the audio file will be included.
- * @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
- * @param delegate the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <Bit6AudioRecorderControllerDelegate> Protocol Reference.
+/*! Tries to start to record an audio file showing an <UIAlertView> object as the UI control to cancel or finish the recording.
+ @note Deprecated: Please use -[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:] instead
+ @param msg a <Bit6OutgoingMessage> object where the audio file will be included.
+ @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
+ @param delegate the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <Bit6AudioRecorderControllerDelegate> Protocol Reference.
  */
-- (void) startRecordingAudioForMessage:(Bit6OutgoingMessage*)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id <Bit6AudioRecorderControllerDelegate>)delegate;
+- (void) startRecordingAudioForMessage:(Bit6OutgoingMessage*)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id <Bit6AudioRecorderControllerDelegate>)delegate __attribute__((deprecated("Please use -[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:] instead")));
+
+/*! Tries to start to record an audio file showing an <UIAlertView> object as the UI control to cancel or finish the recording.
+ @param msg a <Bit6OutgoingMessage> object where the audio file will be included.
+ @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
+ @param delegate the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <Bit6AudioRecorderControllerDelegate> Protocol Reference.
+ @param noMicBlock block to call if the user disabled access to the microphone
+ */
+- (void) startRecordingAudioForMessage:(Bit6OutgoingMessage*)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id <Bit6AudioRecorderControllerDelegate>)delegate noMicBlock:(void (^)())noMicBlock;
 
 @end
 
@@ -33,14 +42,14 @@
 @protocol Bit6AudioRecorderControllerDelegate <NSObject>
 
 /*! Called when a user has completed the recording prccess.
- * @param b6rc The controller object recording the audio file.
- * @param message Message object set in <[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:]> with the audio file set.
+ @param b6rc The controller object recording the audio file.
+ @param message Message object set in <[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:]> with the audio file set.
  */
 - (void) doneRecorderController:(Bit6AudioRecorderController*)b6rc message:(Bit6OutgoingMessage*)message;
 
 @optional
 /*! Called when a user has cancelled the recording process.
- * @param b6rc The controller object recording the audio file.
+ @param b6rc The controller object recording the audio file.
  */
 - (void) cancelRecorderController:(Bit6AudioRecorderController*)b6rc;
 

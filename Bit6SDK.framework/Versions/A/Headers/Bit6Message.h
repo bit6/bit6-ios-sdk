@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Bit6Constants.h"
 #import "Bit6Address.h"
 
 /*! Channels available for sending a <Bit6Message>. */
@@ -52,6 +51,8 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
     Bit6MessageFileType_ImagePNG,
     /*! The message has an JPEG image attachment. */
     Bit6MessageFileType_ImageJPG,
+    /*! The message has an MP4 video attachment. */
+    Bit6MessageFileType_VideoMP4,
 };
 
 @class Bit6MessageData;
@@ -71,10 +72,11 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
 /*! Message type as a value of the <Bit6MessageType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageType type;
 
-/*! Gets the attachment type of this message as a value of the <Bit6MessageFileType> enumeration.
- * @return the attachment type.
- */
-- (Bit6MessageFileType) attachFileType;
+/*! Gets the other person address as a <Bit6Address> object. */
+@property (nonatomic, readonly, copy) Bit6Address *other;
+
+/*! Gets the attachment type of this message as a value of the <Bit6MessageFileType> enumeration. */
+@property (nonatomic, readonly) Bit6MessageFileType attachFileType;
 
 /*! Convenience method to open the location included in a Bit6Message object in the Apple Maps app.
  @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */

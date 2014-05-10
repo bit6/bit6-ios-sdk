@@ -7,7 +7,7 @@
 //
 
 #import "ConversationsViewController.h"
-#import "ChatsViewController.h"
+#import "ChatsTableViewController.h"
 
 @interface ConversationsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -34,8 +34,7 @@
 
 - (void)viewDidLoad
 {
-    self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",[Bit6Session userIdentity].description];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",[Bit6Session userIdentity].displayName];
     [super viewDidLoad];
 }
 
@@ -47,7 +46,7 @@
 - (NSArray*)conversations
 {
     if (!_conversations) {
-        _conversations = [Bit6Conversation conversations];
+        _conversations = [Bit6 conversations];
     }
     return _conversations;
 }
@@ -61,7 +60,7 @@
 }
 
 - (IBAction)touchedAddButton:(id)sender {
-    UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the destination" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the destination username" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     obj.alertViewStyle = UIAlertViewStylePlainTextInput;
     [obj show];
 }
@@ -73,8 +72,8 @@
         NSString *destination = textfield.text;
         if ([destination length]>0) {
             Bit6Address *address = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:destination];
-            Bit6Conversation *conversation = [[Bit6Conversation alloc] initWithAddress:address];
-            [Bit6Conversation addConversation:conversation];
+            Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
+            [Bit6 addConversation:conversation];
         }
     }
 }
@@ -100,7 +99,8 @@
     UILabel *detailTextLabel = (UILabel*) [cell viewWithTag:2];
     Bit6ThumbnailImageView *imageView = (Bit6ThumbnailImageView*) [cell viewWithTag:3];
     
-    textLabel.text = conversation.address.description;
+    NSNumber *badge = conversation.badge;
+    textLabel.text = [NSString stringWithFormat:@"%@%@",conversation.displayName,[badge intValue]!=0?[NSString stringWithFormat:@" (%@)",badge]:@""];
     Bit6Message *lastMessage = [conversation.messages lastObject];
     
     detailTextLabel.text = lastMessage.content;
@@ -111,7 +111,7 @@
 {
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         Bit6Conversation *conversation = self.conversations[indexPath.row];
-        [Bit6Conversation deleteConversation:conversation];
+        [Bit6 deleteConversation:conversation];
     }
 }
 
@@ -120,11 +120,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showChats"]) {
-        ChatsViewController *cvc = segue.destinationViewController;
+        ChatsTableViewController *ctvc = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         Bit6Conversation *conversation = self.conversations[indexPath.row];
-        cvc.conversation = conversation;
-        cvc.title = conversation.address.description;
+        ctvc.conversation = conversation;
+        ctvc.title = conversation.displayName;
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }

@@ -5,7 +5,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
 			<Abstract type="html">Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object</Abstract>
-			<DeclaredIn>Bit6SDK.h</DeclaredIn>
+			<DeclaredIn>Bit6.h</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>
@@ -15,7 +15,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/init:</TokenIdentifier>
 			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
-			<DeclaredIn>Bit6SDK.h</DeclaredIn>
+			<DeclaredIn>Bit6.h</DeclaredIn>
 			
 			<Declaration>+ (void)init:(NSString *)apiKey</Declaration>
 			<Parameters>
@@ -26,6 +26,155 @@
 			</Parameters>
 			
 			<Anchor>//api/name/init:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/conversations</TokenIdentifier>
+			<Abstract type="html">Get all the existing conversations.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)conversations</Declaration>
+			
+			<ReturnValue><Abstract type="html">the existing Bit6Conversation objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/conversations</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/addConversation:</TokenIdentifier>
+			<Abstract type="html">Adds a conversation to the system.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)addConversation:(Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">a Bit6Conversation object to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addConversation:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteConversation:</TokenIdentifier>
+			<Abstract type="html">Delete a conversation from the system. All the messages inside the conversation are deleted too.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)deleteConversation:(Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">Bit6Conversation object to be deleted</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteConversation:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/totalBadge</TokenIdentifier>
+			<Abstract type="html">Gets the number of unread messages for all existing conversations.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSNumber *)totalBadge</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of unread messages for all existing conversations.</Abstract></ReturnValue>
+			<Anchor>//api/name/totalBadge</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesWithOffset:length:asc:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects in the system as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesInConversation:offset:length:asc:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSArray *)messagesWithOffset:(NSInteger)offset length:(NSInteger)length asc:(BOOL)asc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">initial index to look for messages</Abstract>
+				</Parameter><Parameter>
+					<Name>length</Name>
+					<Abstract type="html">number of messages to get</Abstract>
+				</Parameter><Parameter>
+					<Name>asc</Name>
+					<Abstract type="html">order in which the messages will be returned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesWithOffset:length:asc:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesInConversation:offset:length:asc:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects in the conversation as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)messagesInConversation:(Bit6Conversation *)conversation offset:(NSInteger)offset length:(NSInteger)length asc:(BOOL)asc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">the Bit6Conversation object to get the messages from</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">initial index to look for messages</Abstract>
+				</Parameter><Parameter>
+					<Name>length</Name>
+					<Abstract type="html">number of messages to get</Abstract>
+				</Parameter><Parameter>
+					<Name>asc</Name>
+					<Abstract type="html">order in which the messages will be returned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesInConversation:offset:length:asc:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesWithAttachmentInMessages:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects with attachment as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)messagesWithAttachmentInMessages:(NSArray *)messages</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>messages</Name>
+					<Abstract type="html">array of Bit6Message objects where to do the search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects with attachment as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesWithAttachmentInMessages:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesWithAttachmentInConversation:asc:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects with attachment as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)messagesWithAttachmentInConversation:(Bit6Conversation *)conversation asc:(BOOL)asc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">conversation where to do the search</Abstract>
+				</Parameter><Parameter>
+					<Name>asc</Name>
+					<Abstract type="html">order in which the messages will be returned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects with attachment as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesWithAttachmentInConversation:asc:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
