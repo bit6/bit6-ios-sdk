@@ -47,6 +47,8 @@
 	
 	<option value="//api/name/deleteConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteConversation:</option>
 	
+	<option value="//api/name/googleMapsAppAvailable">&nbsp;&nbsp;&nbsp;&nbsp;+ googleMapsAppAvailable</option>
+	
 	<option value="//api/name/init:">&nbsp;&nbsp;&nbsp;&nbsp;+ init:</option>
 	
 	<option value="//api/name/messagesInConversation:offset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesInConversation:offset:length:asc:</option>
@@ -58,6 +60,8 @@
 	<option value="//api/name/messagesWithOffset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesWithOffset:length:asc:</option>
 	
 	<option value="//api/name/totalBadge">&nbsp;&nbsp;&nbsp;&nbsp;+ totalBadge</option>
+	
+	<option value="//api/name/wazeAppAvailable">&nbsp;&nbsp;&nbsp;&nbsp;+ wazeAppAvailable</option>
 	
 	
 	
@@ -93,6 +97,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteConversation:">deleteConversation:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/googleMapsAppAvailable">googleMapsAppAvailable</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init:">init:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesInConversation:offset:length:asc:">messagesInConversation:offset:length:asc:</a></span></li>
@@ -104,6 +110,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesWithOffset:length:asc:">messagesWithOffset:length:asc:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalBadge">totalBadge</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wazeAppAvailable">wazeAppAvailable</a></span></li>
 	
 </ul></li>
 
@@ -211,6 +219,18 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/messagesWithAttachmentInConversation:asc:">+&nbsp;messagesWithAttachmentInConversation:asc:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/googleMapsAppAvailable">+&nbsp;googleMapsAppAvailable</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wazeAppAvailable">+&nbsp;wazeAppAvailable</a></code>
 	</span>
 	
 	
@@ -363,6 +383,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/googleMapsAppAvailable" title="googleMapsAppAvailable"></a>
+	<h3 class="subsubtitle method-title">googleMapsAppAvailable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if Google Maps app is available in the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)googleMapsAppAvailable</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/init:" title="init:"></a>
 	<h3 class="subsubtitle method-title">init:</h3>
 	
@@ -468,8 +524,8 @@
 [Bit6 messagesInConversation:myConversation offset:1 length:2 asc:NO]; // returns [3,2]
 [Bit6 messagesInConversation:myConversation offset:-2 length:2 asc:NO]; // returns [5,4]
 [Bit6 messagesInConversation:myConversation offset:-2 length:2 asc:YES]; // returns [4,5]
-[Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:YES]; // returns [1,2,3,4,5]
-[Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:NO]; // returns [5,4,3,2,1]
+[Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:YES]; // returns all the messages [1,2,3,4,5]
+[Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:NO]; // returns all the messages [5,4,3,2,1]
 [Bit6 messagesInConversation:myConversation offset:-3 length:3 asc:NO]; // returns [5,4,3]
 [Bit6 messagesInConversation:myConversation offset:-6 length:3 asc:NO]; // returns [2,1]
 </code></pre>
@@ -712,6 +768,42 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/wazeAppAvailable" title="wazeAppAvailable"></a>
+	<h3 class="subsubtitle method-title">wazeAppAvailable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if Waze app is available in the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)wazeAppAvailable</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -729,7 +821,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-06)</span><br />
+						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
