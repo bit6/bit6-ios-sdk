@@ -157,6 +157,114 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setVideoURL:</TokenIdentifier>
+			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSURL *videoURL</Declaration>
+			
+			
+			<Anchor>//api/name/videoURL</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/videoURL</TokenIdentifier>
+			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSURL *videoURL</Declaration>
+			
+			
+			<Anchor>//api/name/videoURL</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/videoURL</TokenIdentifier>
+			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSURL *videoURL</Declaration>
+			
+			
+			<Anchor>//api/name/videoURL</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setVideoCropStart:</TokenIdentifier>
+			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropStart</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/videoCropStart</TokenIdentifier>
+			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropStart</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/videoCropStart</TokenIdentifier>
+			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropStart</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setVideoCropEnd:</TokenIdentifier>
+			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropEnd</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/videoCropEnd</TokenIdentifier>
+			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropEnd</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/videoCropEnd</TokenIdentifier>
+			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropEnd</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/sendWithCompletionHandler:</TokenIdentifier>
 			<Abstract type="html">Sends the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>

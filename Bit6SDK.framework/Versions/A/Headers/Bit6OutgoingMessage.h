@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "Bit6Message.h"
 #import "Bit6Address.h"
 #import "Bit6Constants.h"
@@ -45,6 +44,17 @@
 
 /*! Image to send as an attachment. */
 @property (nonatomic, strong) UIImage *image;
+
+/*! URL path to the video to be sent as an attachment.
+ @note It supports the following URL paths: file:// and assets-library://
+ */
+@property (nonatomic, strong) NSURL *videoURL;
+
+/*! Specifies the beginning of the time range, in seconds, to be sent from the video. */
+@property (nonatomic, strong) NSNumber *videoCropStart;
+
+/*! Specifies the end of the time range, in seconds, to be sent from the video. */
+@property (nonatomic, strong) NSNumber *videoCropEnd;
 
 /*! Sends the message.
  @param completion block to be called when the operation is completed.

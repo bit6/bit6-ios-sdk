@@ -178,6 +178,30 @@
             <NodeRef refid="1"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/googleMapsAppAvailable</TokenIdentifier>
+			<Abstract type="html">Used to know if Google Maps app is available in the device.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)googleMapsAppAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/googleMapsAppAvailable</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/wazeAppAvailable</TokenIdentifier>
+			<Abstract type="html">Used to know if Waze app is available in the device.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)wazeAppAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/wazeAppAvailable</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

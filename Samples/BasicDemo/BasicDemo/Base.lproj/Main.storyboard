@@ -256,24 +256,12 @@
                         </prototypes>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Image" id="0hI-za-zRM">
+                        <barButtonItem systemItem="add" id="0hI-za-zRM">
                             <connections>
-                                <action selector="touchedSendImageButton:" destination="Pa2-en-cne" id="n7G-5Q-SMy"/>
+                                <action selector="touchedAttachButton:" destination="Pa2-en-cne" id="675-3r-ZXU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="ZNc-Ft-GHw"/>
-                        <barButtonItem title="Location" id="80Q-Pq-Gvp">
-                            <connections>
-                                <action selector="touchedSendLocationButton:" destination="Pa2-en-cne" id="gX8-vi-FlJ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="AFJ-IB-3rn"/>
-                        <barButtonItem title="Audio" id="jyq-E5-blr">
-                            <connections>
-                                <action selector="touchedSendAudioButton:" destination="Pa2-en-cne" id="eSN-Ng-6Hq"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="AwV-wP-yac"/>
+                        <barButtonItem width="236" style="plain" systemItem="fixedSpace" id="ZNc-Ft-GHw"/>
                         <barButtonItem systemItem="compose" id="Jec-WZ-Saw">
                             <connections>
                                 <action selector="touchedComposeButton:" destination="Pa2-en-cne" id="tgW-GF-WdY"/>

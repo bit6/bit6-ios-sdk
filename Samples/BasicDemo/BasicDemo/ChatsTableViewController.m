@@ -9,6 +9,7 @@
 #import "ChatsTableViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "AttachmentsTableViewController.h"
+#import "UIBActionSheet.h"
 
 @interface ChatsTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6ThumbnailImageViewDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate>
 {
@@ -30,8 +31,8 @@
 {
     [self.navigationController setToolbarHidden:NO animated:YES];
     if (!scroll) {
-        [self.tableView reloadData];
         scroll = YES;
+        [self.tableView reloadData];
         [self.tableView setContentOffset:CGPointMake(0, CGFLOAT_MAX) animated:NO];
     }
     [super viewWillAppear:animated];
@@ -56,6 +57,23 @@
         _messages = self.conversation.messages;
     }
     return _messages;
+}
+
+- (IBAction)touchedAttachButton:(UIBarButtonItem*)sender
+{
+    UIBActionSheet *as = [[UIBActionSheet alloc] initWithTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Take Video", @"Select Image", @"Select Video", @"Record Audio", @"Current Location", nil];
+    [as showFromBarButtonItem:sender animated:YES dismissHandler:^(NSInteger selectedIndex, BOOL didCancel, BOOL didDestruct) {
+        if (!didCancel) {
+            switch (selectedIndex) {
+                case 0: [self takePhoto]; break;
+                case 1: [self takeVideo]; break;
+                case 2: [self selectImage]; break;
+                case 3: [self selectVideo]; break;
+                case 4: [self sendAudio]; break;
+                case 5: [self sendLocation]; break;
+            }
+        }
+    }];
 }
 
 #pragma mark - TableView
@@ -152,24 +170,68 @@
     }
 }
 
-#pragma mark - Send Images
+#pragma mark - Send Images/Videos
 
-- (IBAction)touchedSendImageButton:(id)sender {
-    
-    UIImagePickerController *imgController = [[UIImagePickerController alloc] init];
-    imgController.delegate=self;
-    imgController.allowsEditing = NO;
-    imgController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
-    imgController.mediaTypes = @[(NSString *) kUTTypeImage];
-    [self.navigationController presentViewController:imgController animated:YES completion:nil];
+- (void)takePhoto
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate=self;
+    imagePicker.allowsEditing = NO;
+    imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)takeVideo
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate=self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.videoMaximumDuration = 60.0f;
+    imagePicker.videoQuality = UIImagePickerControllerQualityTypeMedium;
+    imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    imagePicker.mediaTypes = @[(NSString *) kUTTypeMovie];
+    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)selectImage
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate=self;
+    imagePicker.allowsEditing = NO;
+    imagePicker.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)selectVideo
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate=self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.videoMaximumDuration = 60.0f;
+    imagePicker.videoQuality = UIImagePickerControllerQualityTypeMedium;
+    imagePicker.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.mediaTypes = @[(NSString *) kUTTypeMovie];
+    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
-    
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
-    message.image = chosenImage;
+    
+    NSString *mediaType = info[UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:(NSString *) kUTTypeImage]) {
+        UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+        message.image = chosenImage;
+    }
+    else {
+        NSURL *chosenVideo = info[UIImagePickerControllerMediaURL];
+        message.videoURL = chosenVideo;
+        message.videoCropStart = [info objectForKey:@"_UIImagePickerControllerVideoEditingStart"];
+        message.videoCropEnd = [info objectForKey:@"_UIImagePickerControllerVideoEditingEnd"];
+    }
+    
     message.destination = self.conversation.address;
     message.channel = Bit6MessageChannel_PUSH;
     [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
@@ -180,14 +242,13 @@
             NSLog(@"Message Failed with Error: %@",error.localizedDescription);
         }
     }];
-    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Send Locations
 
-- (IBAction)touchedSendLocationButton:(id)sender {
-    
+- (void)sendLocation
+{
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
     message.destination = self.conversation.address;
     message.channel = Bit6MessageChannel_PUSH;
@@ -208,7 +269,8 @@
 
 #pragma mark - Send Audio
 
-- (IBAction)touchedSendAudioButton:(id)sender {
+- (void)sendAudio
+{
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
     message.destination = self.conversation.address;
     message.channel = Bit6MessageChannel_PUSH;
@@ -274,6 +336,9 @@
     else if (msg.type == Bit6MessageType_Attachments) {
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
             [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg];
+        }
+        else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
+            [msg playVideoOnViewController:self.navigationController];
         }
     }
 }

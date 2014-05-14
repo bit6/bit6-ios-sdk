@@ -18,4 +18,4 @@
 #import "Bit6CurrentLocationController.h"
 #import "Bit6.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"1.1.0"
+#define BIT6_IOS_SDK_VERSION_STRING @"1.1.1"

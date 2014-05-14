@@ -79,6 +79,9 @@ static int imagesForCell = 4;
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
             [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg];
         }
+        else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
+            [msg playVideoOnViewController:self.navigationController];
+        }
     }
 }
 

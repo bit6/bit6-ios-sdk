@@ -19,6 +19,7 @@
 		D880E4BA18DBFC540070378D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D880E4B918DBFC540070378D /* Images.xcassets */; };
 		D8A1A19C18E9EEEB00E1CC98 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */; };
 		D8A1A19F18E9F19300E1CC98 /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */; };
+		D8EBF1F1191D5EA20066271E /* UIBActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBF1F0191D5EA20066271E /* UIBActionSheet.m */; };
 		D8ECF41718EBAE68002E4D03 /* ChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */; };
 		D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,8 @@
 		D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D8A1A19D18E9F19300E1CC98 /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationsViewController.h; sourceTree = "<group>"; };
 		D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationsViewController.m; sourceTree = "<group>"; };
+		D8EBF1EF191D5EA20066271E /* UIBActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBActionSheet.h; sourceTree = "<group>"; };
+		D8EBF1F0191D5EA20066271E /* UIBActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBActionSheet.m; sourceTree = "<group>"; };
 		D8ECF41518EBAE68002E4D03 /* ChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatsTableViewController.h; sourceTree = "<group>"; };
 		D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatsTableViewController.m; sourceTree = "<group>"; };
 		D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../Bit6SDK.framework; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 		D880E4A718DBFC540070378D /* BasicDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D8EBF1EF191D5EA20066271E /* UIBActionSheet.h */,
+				D8EBF1F0191D5EA20066271E /* UIBActionSheet.m */,
 				D880E4B018DBFC540070378D /* AppDelegate.h */,
 				D880E4B118DBFC540070378D /* AppDelegate.m */,
 				D8A1A19A18E9EEEB00E1CC98 /* LoginViewController.h */,
@@ -208,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84C770019142820001A0DB6 /* AttachmentsTableViewController.m in Sources */,
+				D8EBF1F1191D5EA20066271E /* UIBActionSheet.m in Sources */,
 				D880E4B218DBFC540070378D /* AppDelegate.m in Sources */,
 				D8A1A19F18E9F19300E1CC98 /* ConversationsViewController.m in Sources */,
 				D880E4AE18DBFC540070378D /* main.m in Sources */,

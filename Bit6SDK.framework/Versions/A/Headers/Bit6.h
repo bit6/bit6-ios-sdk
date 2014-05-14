@@ -54,8 +54,8 @@
     [Bit6 messagesInConversation:myConversation offset:1 length:2 asc:NO]; // returns [3,2]
     [Bit6 messagesInConversation:myConversation offset:-2 length:2 asc:NO]; // returns [5,4]
     [Bit6 messagesInConversation:myConversation offset:-2 length:2 asc:YES]; // returns [4,5]
-    [Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:YES]; // returns [1,2,3,4,5]
-    [Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:NO]; // returns [5,4,3,2,1]
+    [Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:YES]; // returns all the messages [1,2,3,4,5]
+    [Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:NO]; // returns all the messages [5,4,3,2,1]
     [Bit6 messagesInConversation:myConversation offset:-3 length:3 asc:NO]; // returns [5,4,3]
     [Bit6 messagesInConversation:myConversation offset:-6 length:3 asc:NO]; // returns [2,1]
  
@@ -79,5 +79,11 @@
  @return <Bit6Message> objects with attachment as a NSArray.
  */
 + (NSArray*) messagesWithAttachmentInConversation:(Bit6Conversation*)conversation asc:(BOOL)asc;
+
+/*! Used to know if Google Maps app is available in the device. */
++ (BOOL) googleMapsAppAvailable;
+
+/*! Used to know if Waze app is available in the device. */
++ (BOOL) wazeAppAvailable;
 
 @end

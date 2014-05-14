@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Bit6Address.h"
+#import <UIKit/UIKit.h>
 
 /*! Channels available for sending a <Bit6Message>. */
 typedef NS_ENUM(NSInteger, Bit6MessageChannel) {
@@ -78,9 +79,23 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
 /*! Gets the attachment type of this message as a value of the <Bit6MessageFileType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageFileType attachFileType;
 
+/*! Plays the attached video included in a Bit6Message object using the MPMoviePlayerViewController class.
+ @discussion A Bit6Message object has a video included if <type> == Bit6MessageType_Attachments and <attachFileType> == Bit6MessageFileType_VideoMP4.
+ @param vc viewcontroller from which to present the MPMoviePlayerViewController control to play the video
+ */
+- (void) playVideoOnViewController:(UIViewController*)vc;
+
 /*! Convenience method to open the location included in a Bit6Message object in the Apple Maps app.
  @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
 - (void) openLocationOnMaps;
+
+/*! Convenience method to open the location included in a Bit6Message object in the Google Maps app (if available).
+ @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
+- (void) openLocationOnGoogleMaps;
+
+/*! Convenience method to open the location included in a Bit6Message object in the Waze app (if available) to get directions.
+ @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
+- (void) getDirectionsOnWaze;
 
 @end
 
