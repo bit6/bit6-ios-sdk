@@ -1,87 +1,18 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Bit6 : " />
+<nav id='sidebar'>
+	{% include nav.html %}
+</nav>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Bit6 iOS SDK</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/bit6/bit6-ios-sdk">View on GitHub</a>
-
-          <h1 id="project_title">Bit6 iOS SDK</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/bit6/bit6-ios-sdk/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/bit6/bit6-ios-sdk/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h3>
-
-<p>Bit6 is a real-time, cloud-based communications-as-a-service platform that allows mobile and web application developers to quickly and easily add voice/video calling, texting, and multimedia messaging capabilities as a feature to their apps.</p>
-
-<p>In addition Bit6 provides a suite of essential services including Identity Management, Social Map, and Virtual Wallet to help integrate the communication capabilities into a complete end-user experience.</p>
-
-<h3>
-<a name="resources" class="anchor" href="#resources"><span class="octicon octicon-link"></span></a>Resources</h3>
-
-<li><a href="https://github.com/bit6/bit6-ios-sdk/wiki">Getting Started Guide</li></a>
-<li><a href="https://github.com/bit6/bit6-ios-sdk">SDK and Sample App</a> (see more info below)</li>
-<li><a href="api/index.html">API Reference</a></li><br>
-
-<p>To use the SDK and sample app:
-<li>Get your unique <a href="http://bit6.com/contact/">API key</a></li>
-<li>Upload your APNS (push) certificate (instructions will be provided together with the API key)</li></p>
-
-<h3>
-<a name="whats-new" class="anchor" href="#whats-new"><span class="octicon octicon-link"></span></a>What's new?</h3>
-
-<strong>April 30, 2014 - Pilot release is out!</strong>
-<p>In this first beta release, Bit6 gives you access to text and multimedia messaging, including picture, voice and location sharing.</p>
-
-<pre><code>Bit6Message *message = ...
-  if (message.type != Bit6MessageType_Text) {
-    // Can show preview
-}</code></pre>
-
-<h3>
-<a name="issues" class="anchor" href="#issues"><span class="octicon octicon-link"></span></a>Issues</h3>
-
-<p>Report and browse through known issues <a href="https://github.com/bit6/bit6-ios-sdk/issues">here</a>.</p>
-
-<h3>
-<a name="support-and-contact" class="anchor" href="#support-and-contact"><span class="octicon octicon-link"></span></a>Support and Contact</h3>
-
-<p>For developer support contact <a href="mailto:dev@bit6.com">dev@bit6.com</a></p>
-<p>Other inquiries: <a href="mailto:contact@bit6.com">contact@bit6.com</a></p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <!-- p class="copyright"><a href="https://github.com/bit6">Bit6</a> on GitHub</p -->
-        <p><a href="http://bit6.com">bit6.com</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+<section id='content'>
+{% for post in site.posts %}
+  <article class='{{ post.type }}'>
+    <a name='{{ post.url }}' href='#{{ post.url }}'><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.path }}</code> {% endif %}{{ post.title }}</h2></a>
+    <section class='body'>
+      {{ post.content }}
+    </section>
+  </article>
+{% endfor %}
+</section>
