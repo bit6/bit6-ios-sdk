@@ -1,6 +1,6 @@
 ---
 category: basic messaging
-title: 'Text messages'
+title: 'Text Messages'
 layout: nil
 ---
 

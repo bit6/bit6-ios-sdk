@@ -48,20 +48,39 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
 {
     Bit6Message *msg = thumbnailImageView.message;
     if (msg.type == Bit6MessageType_Location) {
-        [msg openLocationOnMaps];
+        // Open in Apple Maps
+        [Bit6 openLocationOnMapsFromMessage:msg];
+        /*
+        // Open in Google Maps app, if available
+        if ([[UIApplication sharedApplication] 
+                                  canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
+            NSString *urlStr = [NSString stringWithFormat:@"comgooglemaps://?center=%@,
+                      %@&zoom=14", msg.data.lat.description, msg.data.lng.description];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+        }
+        */
+        /*
+        // Open in Waze app, if availble
+        if ([[UIApplication sharedApplication] 
+                                  canOpenURL:[NSURL URLWithString:@"waze://"]]) {
+            NSString *urlStr = [NSString stringWithFormat:@"waze://?ll=%@,%@&navigate=yes", 
+                                msg.data.lat.description, msg.data.lng.description];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+        }
+        */
     }
     else if (msg.type == Bit6MessageType_Attachments) {
-    	//we play an audio file
+        // Play an audio file
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
             [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg];
         }
-        //we play a video file
+        // Play a video file
         else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
-            [msg playVideoOnViewController:self.navigationController];
+            [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
         }
         else {
-        //handle other cases like Bit6MessageFileType_ImagePNG and 
-        //Bit6MessageFileType_ImageJPG
+        // Handle other cases like Bit6MessageFileType_ImagePNG and 
+        // Bit6MessageFileType_ImageJPG
         }
     }
 }
