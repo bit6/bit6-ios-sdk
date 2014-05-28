@@ -21,6 +21,7 @@
 						<NodeRef refid="8"/>
 						<NodeRef refid="9"/>
 						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
 						
 					</Subnodes>
 				</Node>
@@ -31,9 +32,9 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="11"/>
 						<NodeRef refid="12"/>
 						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
 						
 					</Subnodes>
 				</Node>
@@ -43,11 +44,11 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="14"/>
 						<NodeRef refid="15"/>
 						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
 						
 					</Subnodes>
 				</Node>
@@ -289,6 +290,33 @@
             
         </Node>
 		<Node id="8" type="file" documentType="reference">
+            <Name>Bit6MessageData</Name>
+            <Path>Classes/Bit6MessageData.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/Bit6MessageData.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/Bit6MessageData.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/Bit6MessageData.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="9" type="file" documentType="reference">
             <Name>Bit6OutgoingMessage</Name>
             <Path>Classes/Bit6OutgoingMessage.html</Path>
             
@@ -321,7 +349,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="9" type="file" documentType="reference">
+		<Node id="10" type="file" documentType="reference">
             <Name>Bit6Session</Name>
             <Path>Classes/Bit6Session.html</Path>
             
@@ -348,7 +376,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>Bit6ThumbnailImageView</Name>
             <Path>Classes/Bit6ThumbnailImageView.html</Path>
             
@@ -377,7 +405,7 @@
         </Node>
 		
 		
-        <Node id="11" type="file" documentType="reference">
+        <Node id="12" type="file" documentType="reference">
             <Name>Bit6AudioRecorderControllerDelegate</Name>
             <Path>Protocols/Bit6AudioRecorderControllerDelegate.html</Path>
             
@@ -404,7 +432,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>Bit6CurrentLocationControllerDelegate</Name>
             <Path>Protocols/Bit6CurrentLocationControllerDelegate.html</Path>
             
@@ -431,7 +459,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>Bit6ThumbnailImageViewDelegate</Name>
             <Path>Protocols/Bit6ThumbnailImageViewDelegate.html</Path>
             
@@ -459,27 +487,27 @@
             
         </Node>
 		
-        <Node id="14" type="file" documentType="reference">
+        <Node id="15" type="file" documentType="reference">
             <Name>Bit6AddressKind</Name>
             <Path>Constants/Bit6AddressKind.html</Path>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>Bit6MessageChannel</Name>
             <Path>Constants/Bit6MessageChannel.html</Path>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>Bit6MessageFileType</Name>
             <Path>Constants/Bit6MessageFileType.html</Path>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>Bit6MessageStatus</Name>
             <Path>Constants/Bit6MessageStatus.html</Path>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>Bit6MessageType</Name>
             <Path>Constants/Bit6MessageType.html</Path>
             

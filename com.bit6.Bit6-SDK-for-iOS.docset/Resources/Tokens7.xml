@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6Message</TokenIdentifier>
-			<Abstract type="html">A Bit6Message object representing a message sent or received by the user.</Abstract>
+			<Abstract type="html">A Bit6Message object represents a message sent or received by the user.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
@@ -17,7 +17,7 @@
 			<Abstract type="html">The text content of the message.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *content</Declaration>
+			<Declaration>@property (nonatomic, readonly, copy) NSString *content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">The text content of the message.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *content</Declaration>
+			<Declaration>@property (nonatomic, readonly, copy) NSString *content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">The text content of the message.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *content</Declaration>
+			<Declaration>@property (nonatomic, readonly, copy) NSString *content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -189,6 +189,42 @@
 			
 			
 			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setData:</TokenIdentifier>
+			<Abstract type="html">Gets the information about the message attachments.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) Bit6MessageData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/data</TokenIdentifier>
+			<Abstract type="html">Gets the information about the message attachments.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) Bit6MessageData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/data</TokenIdentifier>
+			<Abstract type="html">Gets the information about the message attachments.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) Bit6MessageData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

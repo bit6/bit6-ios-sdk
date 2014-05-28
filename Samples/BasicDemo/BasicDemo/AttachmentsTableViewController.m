@@ -73,14 +73,29 @@ static int imagesForCell = 4;
 {
     Bit6Message *msg = thumbnailImageView.message;
     if (msg.type == Bit6MessageType_Location) {
-        [msg openLocationOnMaps];
+        //Open on AppleMaps
+        [Bit6 openLocationOnMapsFromMessage:msg];
+        /*
+        //Open on GoogleMaps app, if available
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
+            NSString *urlStr = [NSString stringWithFormat:@"comgooglemaps://?center=%@,%@&zoom=14", msg.data.lat.description, msg.data.lng.description];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+        }
+        */
+        /*
+        //Open in Waze app, if availble
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"waze://"]]) {
+            NSString *urlStr = [NSString stringWithFormat:@"waze://?ll=%@,%@&navigate=yes", msg.data.lat.description, msg.data.lng.description];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+        }
+        */
     }
     else if (msg.type == Bit6MessageType_Attachments) {
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
             [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg];
         }
         else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
-            [msg playVideoOnViewController:self.navigationController];
+            [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
         }
     }
 }

@@ -20,7 +20,7 @@
 + (Bit6AudioRecorderController *) sharedInstance;
 
 /*! Tries to start to record an audio file showing an <UIAlertView> object as the UI control to cancel or finish the recording.
- @note Deprecated: Please use -[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:] instead
+ @note Deprecated: Please use <-[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:]> instead
  @param msg a <Bit6OutgoingMessage> object where the audio file will be included.
  @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
  @param delegate the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <Bit6AudioRecorderControllerDelegate> Protocol Reference.

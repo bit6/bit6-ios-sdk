@@ -58,11 +58,11 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
 
 @class Bit6MessageData;
 
-/*! A Bit6Message object representing a message sent or received by the user. */
+/*! A Bit6Message object represents a message sent or received by the user. */
 @interface Bit6Message : NSObject
 
 /*! The text content of the message. */
-@property (nonatomic, copy, readonly) NSString *content;
+@property (nonatomic, readonly, copy) NSString *content;
 
 /*! YES if this is an incoming message. */
 @property (nonatomic, readonly) BOOL incoming;
@@ -76,27 +76,41 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
 /*! Gets the other person address as a <Bit6Address> object. */
 @property (nonatomic, readonly, copy) Bit6Address *other;
 
+/*! Gets the information about the message attachments. */
+@property (nonatomic, readonly, strong) Bit6MessageData *data;
+
 /*! Gets the attachment type of this message as a value of the <Bit6MessageFileType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageFileType attachFileType;
 
 /*! Plays the attached video included in a Bit6Message object using the MPMoviePlayerViewController class.
+ @note Deprecated: Please use <+[Bit6 playVideoFromMessage:viewController:]> instead
  @discussion A Bit6Message object has a video included if <type> == Bit6MessageType_Attachments and <attachFileType> == Bit6MessageFileType_VideoMP4.
  @param vc viewcontroller from which to present the MPMoviePlayerViewController control to play the video
  */
-- (void) playVideoOnViewController:(UIViewController*)vc;
+- (void) playVideoOnViewController:(UIViewController*)vc __attribute__((deprecated("Please use +[Bit6 playVideoFromMessage:viewController:] instead")));
 
 /*! Convenience method to open the location included in a Bit6Message object in the Apple Maps app.
+ @note Deprecated: Please use <+[Bit6 openLocationOnMapsFromMessage:]> instead
  @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
-- (void) openLocationOnMaps;
+- (void) openLocationOnMaps __attribute__((deprecated("Please use +[Bit6 openLocationOnMapsFromMessage:] instead")));
 
 /*! Convenience method to open the location included in a Bit6Message object in the Google Maps app (if available).
  @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
-- (void) openLocationOnGoogleMaps;
+- (void) openLocationOnGoogleMaps __attribute__((deprecated));
 
 /*! Convenience method to open the location included in a Bit6Message object in the Waze app (if available) to get directions.
  @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
-- (void) getDirectionsOnWaze;
+- (void) getDirectionsOnWaze __attribute__((deprecated));
 
 @end
 
+/*! A Bit6MessageData object represents the data attached attached to a <Bit6Message> object. */
+@interface Bit6MessageData : NSObject
 
+/*! Latitude of the location included in the message. */
+@property (nonatomic, copy) NSNumber *lat;
+
+/*! Longitude of the location included in the message. */
+@property (nonatomic, copy) NSNumber *lng;
+
+@end

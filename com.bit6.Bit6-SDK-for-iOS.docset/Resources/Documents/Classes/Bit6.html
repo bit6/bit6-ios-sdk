@@ -59,7 +59,15 @@
 	
 	<option value="//api/name/messagesWithOffset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesWithOffset:length:asc:</option>
 	
+	<option value="//api/name/openLocationOnMapsFromMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ openLocationOnMapsFromMessage:</option>
+	
+	<option value="//api/name/playVideoFromMessage:viewController:">&nbsp;&nbsp;&nbsp;&nbsp;+ playVideoFromMessage:viewController:</option>
+	
+	<option value="//api/name/startCallToAddress:hasVideo:">&nbsp;&nbsp;&nbsp;&nbsp;+ startCallToAddress:hasVideo:</option>
+	
 	<option value="//api/name/totalBadge">&nbsp;&nbsp;&nbsp;&nbsp;+ totalBadge</option>
+	
+	<option value="//api/name/typingBeginToAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ typingBeginToAddress:</option>
 	
 	<option value="//api/name/wazeAppAvailable">&nbsp;&nbsp;&nbsp;&nbsp;+ wazeAppAvailable</option>
 	
@@ -109,7 +117,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesWithOffset:length:asc:">messagesWithOffset:length:asc:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openLocationOnMapsFromMessage:">openLocationOnMapsFromMessage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/playVideoFromMessage:viewController:">playVideoFromMessage:viewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCallToAddress:hasVideo:">startCallToAddress:hasVideo:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalBadge">totalBadge</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/typingBeginToAddress:">typingBeginToAddress:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wazeAppAvailable">wazeAppAvailable</a></span></li>
 	
@@ -231,6 +247,30 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/wazeAppAvailable">+&nbsp;wazeAppAvailable</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/typingBeginToAddress:">+&nbsp;typingBeginToAddress:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startCallToAddress:hasVideo:">+&nbsp;startCallToAddress:hasVideo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/playVideoFromMessage:viewController:">+&nbsp;playVideoFromMessage:viewController:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openLocationOnMapsFromMessage:">+&nbsp;openLocationOnMapsFromMessage:</a></code>
 	</span>
 	
 	
@@ -723,6 +763,154 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/openLocationOnMapsFromMessage:" title="openLocationOnMapsFromMessage:"></a>
+	<h3 class="subsubtitle method-title">openLocationOnMapsFromMessage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method to open the location included in a <a href="../Classes/Bit6Message.html">Bit6Message</a> object in the Apple Maps app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)openLocationOnMapsFromMessage:(Bit6Message *)<em>msg</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>A <a href="../Classes/Bit6Message.html">Bit6Message</a> object with a location attached. A message has a location attached if Bit6Message.type == Bit6MessageType_Location.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/playVideoFromMessage:viewController:" title="playVideoFromMessage:viewController:"></a>
+	<h3 class="subsubtitle method-title">playVideoFromMessage:viewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Plays the attached video included in a <a href="../Classes/Bit6Message.html">Bit6Message</a> object using the MPMoviePlayerViewController class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)playVideoFromMessage:(Bit6Message *)<em>msg</em> viewController:(UIViewController *)<em>vc</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>A <a href="../Classes/Bit6Message.html">Bit6Message</a> object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageType_Attachments and Bit6Message.attachFileType == Bit6MessageFileType_VideoMP4.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>vc</em></dt>
+			<dd><p>viewcontroller from which to present the MPMoviePlayerViewController control to play the video</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startCallToAddress:hasVideo:" title="startCallToAddress:hasVideo:"></a>
+	<h3 class="subsubtitle method-title">startCallToAddress:hasVideo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to start a VoIP call</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)startCallToAddress:(Bit6Address *)<em>address</em> hasVideo:(BOOL)<em>hasVideo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>address of the user to call</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hasVideo</em></dt>
+			<dd><p>indicate if the call will include a video stream</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/totalBadge" title="totalBadge"></a>
 	<h3 class="subsubtitle method-title">totalBadge</h3>
 	
@@ -753,6 +941,52 @@
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This is done by adding the values of <a href="../Classes/Bit6Conversation.html#//api/name/badge">[Bit6Conversation badge]</a> for all existing conversations</p>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/typingBeginToAddress:" title="typingBeginToAddress:"></a>
+	<h3 class="subsubtitle method-title">typingBeginToAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to notify when the user starts typing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)typingBeginToAddress:(Bit6Address *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>address where the notification will be sent</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -821,7 +1055,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-13)</span><br />
+						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

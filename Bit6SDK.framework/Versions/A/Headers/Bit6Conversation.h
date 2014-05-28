@@ -20,7 +20,7 @@
 @interface Bit6Conversation : NSObject
 
 /*! Initialize a Bit6Conversation object.
- @note Deprecated: Please use +[Bit6Conversation conversationWithAddress:] instead
+ @note Deprecated: Please use <+[Bit6Conversation conversationWithAddress:]> instead
  @param address <Bit6Address> object for the conversation.
  @return the Bit6Conversation object.
  */
@@ -40,19 +40,19 @@
 
 /*! Convenience method to obtain the existing conversations.
  @return the existing Bit6Conversation objects as a NSArray.
- @note Deprecated: Please use +[Bit6 conversations] instead
+ @note Deprecated: Please use <+[Bit6 conversations]> instead
  */
 + (NSArray*) conversations __attribute__((deprecated("Please use +[Bit6 conversations] instead")));
 
 /*! Adds a conversation to the system.
  @param conversation a Bit6Conversation object to be added.
- @note Deprecated: Please use +[Bit6 addConversation:] instead
+ @note Deprecated: Please use <+[Bit6 addConversation:]> instead
  */
 + (void) addConversation:(Bit6Conversation*)conversation __attribute__((deprecated("Please use +[Bit6 addConversation:] instead")));
 
 /*! Delete a conversation from the system. All the messages inside the conversation are deleted too.
  @param conversation Bit6Conversation object to be deleted
- @note Deprecated: Please use +[Bit6 deleteConversation:] instead
+ @note Deprecated: Please use <+[Bit6 deleteConversation:]> instead
  */
 + (void) deleteConversation:(Bit6Conversation*)conversation __attribute__((deprecated("Please use +[Bit6 deleteConversation:] instead")));
 

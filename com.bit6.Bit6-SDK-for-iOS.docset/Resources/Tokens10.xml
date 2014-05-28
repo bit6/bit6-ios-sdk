@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6ThumbnailImageView.html">
+	<File path="Classes/Bit6Session.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6ThumbnailImageView</TokenIdentifier>
-			<Abstract type="html">Special subclass of UIImageView to work with the message attachment thumbnails</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6Session</TokenIdentifier>
+			<Abstract type="html">A Bit6Session object contains the session information about the current connection to the Bit6 platform. It allows the user to sign up for a new account with the app, login into an existing account or logout.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,89 +13,89 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setMessage:</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Session/isConnected</TokenIdentifier>
+			<Abstract type="html">Checks if the user is authenticated with the Bit6 platform and the session has been established.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>+ (BOOL)isConnected</Declaration>
 			
-			
-			<Anchor>//api/name/message</Anchor>
+			<ReturnValue><Abstract type="html">YES if there is a session available.</Abstract></ReturnValue>
+			<Anchor>//api/name/isConnected</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Session/signUpWithUserIdentity:password:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Creates an account with an Bit6Address object and initiates the session.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>+ (void)signUpWithUserIdentity:(Bit6Address *)userIdentity password:(NSString *)pass completionHandler:(Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userIdentity</Name>
+					<Abstract type="html">A Bit6Address object that represents the local user.</Abstract>
+				</Parameter><Parameter>
+					<Name>pass</Name>
+					<Abstract type="html">User&apos;s password</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the account was created.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/signUpWithUserIdentity:password:completionHandler:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Session/loginWithUserIdentity:password:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Signs into an existing account</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>+ (void)loginWithUserIdentity:(Bit6Address *)userIdentity password:(NSString *)pass completionHandler:(Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userIdentity</Name>
+					<Abstract type="html">Bit6Address object that represents the local user</Abstract>
+				</Parameter><Parameter>
+					<Name>pass</Name>
+					<Abstract type="html">User&apos;s password</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the session was initiated.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/loginWithUserIdentity:password:completionHandler:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setThumbnailImageViewDelegate:</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Session/logoutWithCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Ends the current session.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			<Declaration>+ (void)logoutWithCompletionHandler:(Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block to be executed after the operation has been completed.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+			<Anchor>//api/name/logoutWithCompletionHandler:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6Session/userIdentity</TokenIdentifier>
+			<Abstract type="html">Current user identity as a Bit6Address object.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			<Declaration>+ (Bit6Address *)userIdentity</Declaration>
 			
-			
-			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+			<ReturnValue><Abstract type="html">A Bit6Address object to identity the current user.</Abstract></ReturnValue>
+			<Anchor>//api/name/userIdentity</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

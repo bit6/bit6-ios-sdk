@@ -202,6 +202,80 @@
             <NodeRef refid="1"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/typingBeginToAddress:</TokenIdentifier>
+			<Abstract type="html">Used to notify when the user starts typing.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)typingBeginToAddress:(Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">address where the notification will be sent</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/typingBeginToAddress:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToAddress:hasVideo:</TokenIdentifier>
+			<Abstract type="html">Used to start a VoIP call</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)startCallToAddress:(Bit6Address *)address hasVideo:(BOOL)hasVideo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">address of the user to call</Abstract>
+				</Parameter><Parameter>
+					<Name>hasVideo</Name>
+					<Abstract type="html">indicate if the call will include a video stream</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startCallToAddress:hasVideo:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/playVideoFromMessage:viewController:</TokenIdentifier>
+			<Abstract type="html">Plays the attached video included in a Bit6Message object using the MPMoviePlayerViewController class.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)playVideoFromMessage:(Bit6Message *)msg viewController:(UIViewController *)vc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">A Bit6Message object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageTypeAttachments and Bit6Message.attachFileType == Bit6MessageFileTypeVideoMP4.</Abstract>
+				</Parameter><Parameter>
+					<Name>vc</Name>
+					<Abstract type="html">viewcontroller from which to present the MPMoviePlayerViewController control to play the video</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playVideoFromMessage:viewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/openLocationOnMapsFromMessage:</TokenIdentifier>
+			<Abstract type="html">Convenience method to open the location included in a Bit6Message object in the Apple Maps app.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)openLocationOnMapsFromMessage:(Bit6Message *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">A Bit6Message object with a location attached. A message has a location attached if Bit6Message.type == Bit6MessageType_Location.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/openLocationOnMapsFromMessage:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

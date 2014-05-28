@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageStatus.html">
+	<File path="Constants/Bit6MessageFileType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageStatus</TokenIdentifier>
-			<Abstract type="html">Delivery status for a Bit6Message.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageFileType</TokenIdentifier>
+			<Abstract type="html">Attachment type for a Bit6Message</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sending</TokenIdentifier>
-            <Abstract type="html">The message is being sent.</Abstract>
-            <Declaration>Bit6MessageStatus_Sending</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_None</TokenIdentifier>
+            <Abstract type="html">The message has no attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_None</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sent</TokenIdentifier>
-            <Abstract type="html">The message has been sent.</Abstract>
-            <Declaration>Bit6MessageStatus_Sent</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_AudioMP4</TokenIdentifier>
+            <Abstract type="html">The message has an MP4 audio attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_AudioMP4</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Failed</TokenIdentifier>
-            <Abstract type="html">The message sending has failed.</Abstract>
-            <Declaration>Bit6MessageStatus_Failed</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_ImagePNG</TokenIdentifier>
+            <Abstract type="html">The message has an PNG image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_ImagePNG</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Delivered</TokenIdentifier>
-            <Abstract type="html">The message has been delivered.</Abstract>
-            <Declaration>Bit6MessageStatus_Delivered</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_ImageJPG</TokenIdentifier>
+            <Abstract type="html">The message has an JPEG image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_ImageJPG</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Read</TokenIdentifier>
-            <Abstract type="html">The message has been read.</Abstract>
-            <Declaration>Bit6MessageStatus_Read</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_VideoMP4</TokenIdentifier>
+            <Abstract type="html">The message has an MP4 video attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_VideoMP4</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             

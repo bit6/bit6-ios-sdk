@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Bit6Conversation.h"
+#import "Bit6Message.h"
 
 /*! Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object */
 @interface Bit6 : NSObject
@@ -81,9 +82,30 @@
 + (NSArray*) messagesWithAttachmentInConversation:(Bit6Conversation*)conversation asc:(BOOL)asc;
 
 /*! Used to know if Google Maps app is available in the device. */
-+ (BOOL) googleMapsAppAvailable;
++ (BOOL) googleMapsAppAvailable __attribute__((deprecated));
 
 /*! Used to know if Waze app is available in the device. */
-+ (BOOL) wazeAppAvailable;
++ (BOOL) wazeAppAvailable __attribute__((deprecated));
+
+/*! Used to notify when the user starts typing. 
+ @param address address where the notification will be sent
+ */
++ (void) typingBeginToAddress:(Bit6Address*)address;
+
+/*! Used to start a VoIP call
+ @param address address of the user to call
+ @param hasVideo indicate if the call will include a video stream
+ */
++ (void) startCallToAddress:(Bit6Address*)address hasVideo:(BOOL)hasVideo;
+
+/*! Plays the attached video included in a <Bit6Message> object using the MPMoviePlayerViewController class.
+ @param msg A <Bit6Message> object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageType_Attachments and Bit6Message.attachFileType == Bit6MessageFileType_VideoMP4.
+ @param vc viewcontroller from which to present the MPMoviePlayerViewController control to play the video
+ */
++ (void) playVideoFromMessage:(Bit6Message*)msg viewController:(UIViewController*)vc;
+
+/*! Convenience method to open the location included in a <Bit6Message> object in the Apple Maps app.
+ @param msg A <Bit6Message> object with a location attached. A message has a location attached if Bit6Message.type == Bit6MessageType_Location. */
++ (void) openLocationOnMapsFromMessage:(Bit6Message*)msg;
 
 @end

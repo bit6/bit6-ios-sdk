@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
+	<File path="Protocols/Bit6AudioRecorderControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6AudioRecorderControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6AudioRecorderControllerDelegate protocol defines the methods a delegate of a Bit6AudioRecorderController object should implement. The methods of this protocol notify the delegate when the recording was either completed or canceled by the user.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,22 +13,39 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/doneGettingCurrentLocationController:message:</TokenIdentifier>
-			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/doneRecorderController:message:</TokenIdentifier>
+			<Abstract type="html">Called when a user has completed the recording prccess.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)doneGettingCurrentLocationController:(Bit6CurrentLocationController *)b6clc message:(Bit6OutgoingMessage *)message</Declaration>
+			<Declaration>- (void)doneRecorderController:(Bit6AudioRecorderController *)b6rc message:(Bit6OutgoingMessage *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>b6clc</Name>
-					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
 					<Name>message</Name>
-					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+					<Abstract type="html">Message object set in [Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:] with the audio file set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/doneGettingCurrentLocationController:message:</Anchor>
+			<Anchor>//api/name/doneRecorderController:message:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/cancelRecorderController:</TokenIdentifier>
+			<Abstract type="html">Called when a user has cancelled the recording process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelRecorderController:(Bit6AudioRecorderController *)b6rc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cancelRecorderController:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

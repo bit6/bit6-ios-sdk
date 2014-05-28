@@ -11,12 +11,14 @@
 #import "AttachmentsTableViewController.h"
 #import "UIBActionSheet.h"
 
-@interface ChatsTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6ThumbnailImageViewDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate>
+@interface ChatsTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6ThumbnailImageViewDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate, UITextFieldDelegate>
 {
     BOOL scroll;
 }
 
 @property (strong, nonatomic) NSArray *messages;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *typingBarButtonItem;
+
 
 @end
 
@@ -42,6 +44,8 @@
 {
     self.conversation.ignoreBadge = NO;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6MessagesUpdatedNotification object:self.conversation];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6TypingDidBeginRtNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6TypingDidEndRtNotification object:nil];
 }
 
 - (void) setConversation:(Bit6Conversation *)conversation
@@ -49,6 +53,8 @@
     _conversation = conversation;
     _conversation.ignoreBadge = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messagesUpdatedNotification:) name:Bit6MessagesUpdatedNotification object:conversation];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(typingDidBeginRtNotification:) name:Bit6TypingDidBeginRtNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(typingDidEndRtNotification:) name:Bit6TypingDidEndRtNotification object:nil];
 }
 
 - (NSArray*)messages
@@ -61,7 +67,7 @@
 
 - (IBAction)touchedAttachButton:(UIBarButtonItem*)sender
 {
-    UIBActionSheet *as = [[UIBActionSheet alloc] initWithTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Take Video", @"Select Image", @"Select Video", @"Record Audio", @"Current Location", nil];
+    UIBActionSheet *as = [[UIBActionSheet alloc] initWithTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Take Video", @"Select Image", @"Select Video", @"Record Audio", @"Current Location", @"Start Audio Call", @"Start Video Call", nil];
     [as showFromBarButtonItem:sender animated:YES dismissHandler:^(NSInteger selectedIndex, BOOL didCancel, BOOL didDestruct) {
         if (!didCancel) {
             switch (selectedIndex) {
@@ -71,6 +77,8 @@
                 case 3: [self selectVideo]; break;
                 case 4: [self sendAudio]; break;
                 case 5: [self sendLocation]; break;
+                case 6: [self startAudioCall]; break;
+                case 7: [self startVideoCall]; break;
             }
         }
     }];
@@ -123,7 +131,13 @@
         detailTextLabel.text = nil;
     }
     else {
-        detailTextLabel.text = status==Bit6MessageStatus_Sent?@"Sent":(status==Bit6MessageStatus_Sending?@"Sending":@"Failed");
+        switch (status) {
+            case Bit6MessageStatus_Sending : detailTextLabel.text = @"Sending"; break;
+            case Bit6MessageStatus_Sent : detailTextLabel.text = @"Sent"; break;
+            case Bit6MessageStatus_Failed : detailTextLabel.text = @"Failed"; break;
+            case Bit6MessageStatus_Delivered : detailTextLabel.text = @"Delivered"; break;
+            case Bit6MessageStatus_Read : detailTextLabel.text = @"Read"; break;
+        }
     }
     
     imageView.message = message;
@@ -145,6 +159,7 @@
     
     UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the message" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send",nil];
     obj.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [obj textFieldAtIndex:0].delegate = self;
     [obj show];
 }
 
@@ -291,6 +306,18 @@
     }];
 }
 
+#pragma mark - Calls
+
+- (void) startAudioCall
+{
+    [Bit6 startCallToAddress:self.conversation.address hasVideo:NO];
+}
+
+- (void) startVideoCall
+{
+    [Bit6 startCallToAddress:self.conversation.address hasVideo:YES];
+}
+
 #pragma mark - Notifications
 
 - (void) messagesUpdatedNotification:(NSNotification*)notification
@@ -298,6 +325,22 @@
     self.messages = nil;
     [self.tableView reloadData];
     [self scrollToBottomAnimated:YES];
+}
+
+- (void) typingDidBeginRtNotification:(NSNotification*)notification
+{
+    Bit6Address *address = notification.object;
+    if ([address isEqual:self.conversation.address]) {
+        self.typingBarButtonItem.title = @"Typing...";
+    }
+}
+
+- (void) typingDidEndRtNotification:(NSNotification*)notification
+{
+    Bit6Address *address = notification.object;
+    if ([address isEqual:self.conversation.address]) {
+        self.typingBarButtonItem.title = @"";
+    }
 }
 
 #pragma mark -
@@ -325,20 +368,43 @@
     }
 }
 
+#pragma mark -
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [Bit6 typingBeginToAddress:self.conversation.address];
+    return YES;
+}
+
 #pragma mark - Bit6ThumbnailImageViewDelegate
 
 - (void) touchedThumbnailImageView:(Bit6ThumbnailImageView*)thumbnailImageView
 {
     Bit6Message *msg = thumbnailImageView.message;
     if (msg.type == Bit6MessageType_Location) {
-        [msg openLocationOnMaps];
+        //Open on AppleMaps
+        [Bit6 openLocationOnMapsFromMessage:msg];
+        /*
+        //Open on GoogleMaps app, if available
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
+            NSString *urlStr = [NSString stringWithFormat:@"comgooglemaps://?center=%@,%@&zoom=14", msg.data.lat.description, msg.data.lng.description];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+        }
+        */
+        /*
+        //Open in Waze app, if availble
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"waze://"]]) {
+            NSString *urlStr = [NSString stringWithFormat:@"waze://?ll=%@,%@&navigate=yes", msg.data.lat.description, msg.data.lng.description];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+        }
+        */
     }
     else if (msg.type == Bit6MessageType_Attachments) {
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
             [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg];
         }
         else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
-            [msg playVideoOnViewController:self.navigationController];
+            [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
         }
     }
 }

@@ -14,3 +14,8 @@ extern NSString* const Bit6DidFailToRegisterForRemoteNotifications;
 
 extern NSString* const Bit6MessagesUpdatedNotification;
 extern NSString* const Bit6ConversationsUpdatedNotification;
+
+extern NSString* const Bit6TypingDidBeginRtNotification;
+extern NSString* const Bit6TypingDidEndRtNotification;
+extern NSString* const Bit6TypingAddressKey;
+

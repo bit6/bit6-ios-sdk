@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D833A01118FDAB00007D8409 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D833A00F18FDAB00007D8409 /* Bit6Resources.bundle */; };
+		D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D83971F41923BDC4003565E4 /* libicucore.dylib */; };
 		D84C770019142820001A0DB6 /* AttachmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84C76FF19142820001A0DB6 /* AttachmentsTableViewController.m */; };
 		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
 		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
@@ -15,17 +15,19 @@
 		D880E4AC18DBFC540070378D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D880E4AA18DBFC540070378D /* InfoPlist.strings */; };
 		D880E4AE18DBFC540070378D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D880E4AD18DBFC540070378D /* main.m */; };
 		D880E4B218DBFC540070378D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D880E4B118DBFC540070378D /* AppDelegate.m */; };
-		D880E4B518DBFC540070378D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D880E4B318DBFC540070378D /* Main.storyboard */; };
 		D880E4BA18DBFC540070378D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D880E4B918DBFC540070378D /* Images.xcassets */; };
+		D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D886702C1926D5B400799E00 /* Bit6Resources.bundle */; };
 		D8A1A19C18E9EEEB00E1CC98 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */; };
 		D8A1A19F18E9F19300E1CC98 /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */; };
+		D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AA8343192A8FEC0065BDA6 /* libz.dylib */; };
 		D8EBF1F1191D5EA20066271E /* UIBActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBF1F0191D5EA20066271E /* UIBActionSheet.m */; };
 		D8ECF41718EBAE68002E4D03 /* ChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */; };
+		D8F0C0CF192ED54200BC2331 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F0C0CE192ED54200BC2331 /* Main.storyboard */; };
 		D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D833A00F18FDAB00007D8409 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
+		D83971F41923BDC4003565E4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D84C76FE19142820001A0DB6 /* AttachmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentsTableViewController.h; sourceTree = "<group>"; };
 		D84C76FF19142820001A0DB6 /* AttachmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentsTableViewController.m; sourceTree = "<group>"; };
 		D880E49E18DBFC540070378D /* BasicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,17 +40,19 @@
 		D880E4AF18DBFC540070378D /* BasicDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicDemo-Prefix.pch"; sourceTree = "<group>"; };
 		D880E4B018DBFC540070378D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D880E4B118DBFC540070378D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D880E4B418DBFC540070378D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D880E4B918DBFC540070378D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D880E4B918DBFC540070378D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BasicDemo/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		D886702C1926D5B400799E00 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
 		D8A1A19A18E9EEEB00E1CC98 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D8A1A19B18E9EEEB00E1CC98 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D8A1A19D18E9F19300E1CC98 /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationsViewController.h; sourceTree = "<group>"; };
 		D8A1A19E18E9F19300E1CC98 /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationsViewController.m; sourceTree = "<group>"; };
+		D8AA8343192A8FEC0065BDA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D8EBF1EF191D5EA20066271E /* UIBActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBActionSheet.h; sourceTree = "<group>"; };
 		D8EBF1F0191D5EA20066271E /* UIBActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBActionSheet.m; sourceTree = "<group>"; };
 		D8ECF41518EBAE68002E4D03 /* ChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatsTableViewController.h; sourceTree = "<group>"; };
 		D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatsTableViewController.m; sourceTree = "<group>"; };
-		D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../Bit6SDK.framework; sourceTree = "<group>"; };
+		D8F0C0CE192ED54200BC2331 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../Bit6SDK.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */,
+				D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */,
 				D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */,
 				D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */,
 				D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */,
@@ -86,6 +92,8 @@
 		D880E4A018DBFC540070378D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8AA8343192A8FEC0065BDA6 /* libz.dylib */,
+				D83971F41923BDC4003565E4 /* libicucore.dylib */,
 				D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */,
 				D880E4A118DBFC540070378D /* Foundation.framework */,
 				D880E4A318DBFC540070378D /* CoreGraphics.framework */,
@@ -109,7 +117,7 @@
 				D8ECF41618EBAE68002E4D03 /* ChatsTableViewController.m */,
 				D84C76FE19142820001A0DB6 /* AttachmentsTableViewController.h */,
 				D84C76FF19142820001A0DB6 /* AttachmentsTableViewController.m */,
-				D880E4B318DBFC540070378D /* Main.storyboard */,
+				D8F0C0CE192ED54200BC2331 /* Main.storyboard */,
 				D880E4B918DBFC540070378D /* Images.xcassets */,
 				D880E4A818DBFC540070378D /* Supporting Files */,
 			);
@@ -119,7 +127,7 @@
 		D880E4A818DBFC540070378D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D833A00F18FDAB00007D8409 /* Bit6Resources.bundle */,
+				D886702C1926D5B400799E00 /* Bit6Resources.bundle */,
 				D880E4A918DBFC540070378D /* BasicDemo-Info.plist */,
 				D880E4AA18DBFC540070378D /* InfoPlist.strings */,
 				D880E4AD18DBFC540070378D /* main.m */,
@@ -181,10 +189,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D833A01118FDAB00007D8409 /* Bit6Resources.bundle in Resources */,
+				D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */,
 				D880E4BA18DBFC540070378D /* Images.xcassets in Resources */,
 				D880E4AC18DBFC540070378D /* InfoPlist.strings in Resources */,
-				D880E4B518DBFC540070378D /* Main.storyboard in Resources */,
+				D8F0C0CF192ED54200BC2331 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,14 +239,6 @@
 				D880E4AB18DBFC540070378D /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D880E4B318DBFC540070378D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D880E4B418DBFC540070378D /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -317,6 +317,7 @@
 		D880E4D118DBFC540070378D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -324,7 +325,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/carlosthurberb/Documents/Works/Voxofon/BIT6/Bit6_SDK/InstallerGenerator/Bit6SDK,
+					../../,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicDemo/BasicDemo-Prefix.pch";
@@ -340,6 +341,7 @@
 		D880E4D218DBFC540070378D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -347,7 +349,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/carlosthurberb/Documents/Works/Voxofon/BIT6/Bit6_SDK/InstallerGenerator/Bit6SDK,
+					../../,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicDemo/BasicDemo-Prefix.pch";
