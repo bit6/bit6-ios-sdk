@@ -16,7 +16,6 @@ The sample app is made as simple as possible to demonstrate the use of the Bit6 
 To see the sample app in action, sign up two users. You will be able to send text, photo, voice memos and location between the two users. For the ultimate experience you need to upload the APNS certificate.
 
 #### Additional Resources
-* [Explore Bit6](http://bit6.github.io/bit6-ios-sdk/)
-* [Getting Started](https://github.com/bit6/bit6-ios-sdk/wiki)
+* [Getting Started](http://bit6.github.io/bit6-ios-sdk/)
 * [API Reference](http://bit6.github.io/bit6-ios-sdk/api/)
 * [Bit6.com](http://bit6.com)
