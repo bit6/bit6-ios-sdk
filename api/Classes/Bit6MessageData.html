@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6MessageType Constants Reference</title>
+		<title>Bit6MessageData Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6MessageType Constants Reference</h1>
+				<h1 class="hideInXcode">Bit6MessageData Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,6 +25,25 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/lat">&nbsp;&nbsp;&nbsp;&nbsp;lat</option>
+	
+	<option value="//api/name/lng">&nbsp;&nbsp;&nbsp;&nbsp;lng</option>
+	
+	
 	
 	
 	
@@ -37,6 +56,28 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lat">lat</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lng">lng</a></span></li>
+	
+</ul></li>
+
+
 
 
 
@@ -45,7 +86,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6MessageType Constants Reference" name="top"></a>
+				<a title="Bit6MessageData Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,13 +95,16 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6MessageType Constants Reference</h1>
+						<h1 class="title title-header">Bit6MessageData Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">Bit6Message.h</td>
 </tr>
@@ -69,105 +113,129 @@
                     
                     
 					
-					
-					
-					
-                    
-                    
-                    <h3 class="subsubtitle method-title">Bit6MessageType</h3>
-                    
-					
 					<div class="section section-overview">
-                        <p>Message type for a <a href="../Classes/Bit6Message.html">Bit6Message</a>.</p>
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A Bit6MessageData object represents the data attached attached to a <a href="../Classes/Bit6Message.html">Bit6Message</a> object.</p>
 					</div>
 					
 					
-                    <div class="section">
-                        <!-- display enum values -->
-                        
-                        <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, Bit6MessageType ) {<br/>
-                            
-                            &nbsp;&nbsp; <a href="">Bit6MessageType_Text</a> = 1,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">Bit6MessageType_Attachments</a> = 5,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">Bit6MessageType_Location</a> = 6,<br/>
-                            
-                            };</code>
-                    
-                    </div>
-                    
-                    <div class="section section-methods">
-                        <h4 class="method-subtitle">Constants</h4>
-                        <dl class="termdef">
-                            
-                            <dt><a name="" title="Bit6MessageType_Text"></a><code>Bit6MessageType_Text</code></dt>
-<dd>
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
 
-
-<p>The message has only text.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
-	</p>
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lat">&nbsp;&nbsp;lat</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
-</dd>
-                            
-                            <dt><a name="" title="Bit6MessageType_Attachments"></a><code>Bit6MessageType_Attachments</code></dt>
-<dd>
-
-
-<p>The message has an attachment.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
-	</p>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lng">&nbsp;&nbsp;lng</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
-</dd>
-                            
-                            <dt><a name="" title="Bit6MessageType_Location"></a><code>Bit6MessageType_Location</code></dt>
-<dd>
-
-
-<p>The message has a location.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
-	</p>
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/lat" title="lat"></a>
+	<h3 class="subsubtitle method-title">lat</h3>
 	
-</dd>
-                            
-                        </dl>
-                    </div>
-                    
-                    
-                    
-                    
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Latitude of the location included in the message.</p>
+	</div>		
+	
+    
 
-                    
-                    
-                    
-                    <div class="method-subsection declared-in-section">
-                        <h4 class="method-subtitle">Declared In</h4>
-                        <code class="declared-in-ref">Bit6Message.h</code><br />
-                    </div>				
-                    
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *lat</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Message.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lng" title="lng"></a>
+	<h3 class="subsubtitle method-title">lng</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Longitude of the location included in the message.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *lng</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Message.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					
                     
                     
 				</div>
