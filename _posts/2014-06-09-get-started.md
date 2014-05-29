@@ -3,15 +3,23 @@ title: 'Getting Started'
 
 layout: nil
 ---
-
 ###Add Bit6 SDK to your iOS Xcode project
 
-1. [Download](https://github.com/bit6/bit6-ios-sdk/) the SDK and install the package. By default the SDK and the sample apps are installed in `~/Documents/Bit6SDK`
+1. [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
 
-2. Add the files Bit6_SDK.framework and Bit6Resources.bundle to your project.
+2. Add <b>`libicucore.dylib`</b> and <b>`libz.dylib`</b> to your project.
 
-3. In your project settings add -ObjC to the “Other Linker Flags”
-<img style="width:100%" src="images/other_linker_flags.png"/>
+3. Add <b>`Bit6SDK.framework`</b> to "Linked Frameworks and Libraries".
+<img style="max-width:100%" src="images/frameworks.png"/>
+
+4. Add <b>`Bit6Resources.bundle`</b> to "Supporting Files".
+<img style="max-width:100%" src="images/resources.png"/>
+
+5. In your project settings set the Architectures value to <b>`$(ARCHS_STANDARD_32_BIT)`</b>
+<img style="max-width:100%" src="images/architectures.png"/>
+
+6. In your project settings add <b>`-ObjC`</b> to the “Other Linker Flags”
+<img style="max-width:100%" src="images/other_linker_flags.png"/>
 
 ###Get a Bit6 API Key
 You will need an API key in order to initialize and use Bit6 SDK. Send an email to dev@bit6.com to receive an application key.

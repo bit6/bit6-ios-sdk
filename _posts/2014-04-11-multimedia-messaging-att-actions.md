@@ -21,7 +21,7 @@ __Step 2.__ To show the preview, use a `Bit6ThumbnailImageView` object. To add `
 
 ---
 
-<img style="width:100%" src="images/thumb-img-view.png"/>
+<img style="max-width:100%" src="images/thumb_img_view.png"/>
 
 ---
 
