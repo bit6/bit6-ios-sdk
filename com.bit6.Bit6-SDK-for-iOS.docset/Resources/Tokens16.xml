@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageChannel.html">
+	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageChannel</TokenIdentifier>
-			<Abstract type="html">Channels available for sending a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_SMS</TokenIdentifier>
-            <Abstract type="html">The message is an SMS.</Abstract>
-            <Declaration>Bit6MessageChannel_SMS</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/doneGettingCurrentLocationController:message:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)doneGettingCurrentLocationController:(Bit6CurrentLocationController *)b6clc message:(Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/doneGettingCurrentLocationController:message:</Anchor>
             <NodeRef refid="16"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_PUSH</TokenIdentifier>
-            <Abstract type="html">The message is an app-to-app message.</Abstract>
-            <Declaration>Bit6MessageChannel_PUSH</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="16"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

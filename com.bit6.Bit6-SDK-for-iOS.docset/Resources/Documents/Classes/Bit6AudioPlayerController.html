@@ -48,7 +48,13 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/isPlayingAudioFile">&nbsp;&nbsp;&nbsp;&nbsp;- isPlayingAudioFile</option>
+	
 	<option value="//api/name/startPlayingAudioFileInMessage:">&nbsp;&nbsp;&nbsp;&nbsp;- startPlayingAudioFileInMessage:</option>
+	
+	<option value="//api/name/startPlayingAudioFileInMessage:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- startPlayingAudioFileInMessage:errorHandler:</option>
+	
+	<option value="//api/name/stopPlayingAudioFile">&nbsp;&nbsp;&nbsp;&nbsp;- stopPlayingAudioFile</option>
 	
 	
 	
@@ -84,7 +90,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPlayingAudioFile">isPlayingAudioFile</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPlayingAudioFileInMessage:">startPlayingAudioFileInMessage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPlayingAudioFileInMessage:errorHandler:">startPlayingAudioFileInMessage:errorHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopPlayingAudioFile">stopPlayingAudioFile</a></span></li>
 	
 </ul></li>
 
@@ -148,6 +160,24 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/startPlayingAudioFileInMessage:">&ndash;&nbsp;startPlayingAudioFileInMessage:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startPlayingAudioFileInMessage:errorHandler:">&ndash;&nbsp;startPlayingAudioFileInMessage:errorHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isPlayingAudioFile">&ndash;&nbsp;isPlayingAudioFile</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopPlayingAudioFile">&ndash;&nbsp;stopPlayingAudioFile</a></code>
 	</span>
 	
 	
@@ -216,6 +246,47 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/isPlayingAudioFile" title="isPlayingAudioFile"></a>
+	<h3 class="subsubtitle method-title">isPlayingAudioFile</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if there&rsquo;s an audio file is playing</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isPlayingAudioFile</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES is an audio file is playing</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6AudioPlayerController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/startPlayingAudioFileInMessage:" title="startPlayingAudioFileInMessage:"></a>
 	<h3 class="subsubtitle method-title">startPlayingAudioFileInMessage:</h3>
 	
@@ -240,6 +311,98 @@
 		</dl>
 		
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6AudioPlayerController startPlayingAudioFileInMessage:errorHandler:] instead</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6AudioPlayerController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startPlayingAudioFileInMessage:errorHandler:" title="startPlayingAudioFileInMessage:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">startPlayingAudioFileInMessage:errorHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts playing the audio file attached to a message.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startPlayingAudioFileInMessage:(Bit6Message *)<em>msg</em> errorHandler:(void ( ^ ) ( NSError *error ))<em>errorHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>A <a href="../Classes/Bit6Message.html">Bit6Message</a> object with the audio attachment to play.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>block to call if an error occurs</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6AudioPlayerController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopPlayingAudioFile" title="stopPlayingAudioFile"></a>
+	<h3 class="subsubtitle method-title">stopPlayingAudioFile</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stop the audio file playing at the time</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopPlayingAudioFile</code></div>
+
+    
 	
 	
 	
@@ -276,7 +439,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-27)</span><br />
+						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-06-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

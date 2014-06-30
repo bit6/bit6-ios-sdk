@@ -19,7 +19,23 @@
 
 /*! Starts playing the audio file attached to a message.
  @param msg A <Bit6Message> object with the audio attachment to play.
+ @note Deprecated: Please use -[Bit6AudioPlayerController startPlayingAudioFileInMessage:errorHandler:] instead
  */
-- (void) startPlayingAudioFileInMessage:(Bit6Message*)msg;
+- (void) startPlayingAudioFileInMessage:(Bit6Message*)msg __attribute__((deprecated("Please use -[Bit6AudioPlayerController startPlayingAudioFileInMessage:errorHandler:] instead")));
+
+/*! Starts playing the audio file attached to a message.
+ @param msg A <Bit6Message> object with the audio attachment to play.
+ @param errorHandler block to call if an error occurs
+ */
+- (void) startPlayingAudioFileInMessage:(Bit6Message*)msg errorHandler:(void (^)(NSError *error))errorHandler;
+
+/*! Used to know if there's an audio file is playing
+ @return YES is an audio file is playing
+ */
+- (BOOL) isPlayingAudioFile;
+
+/*! Stop the audio file playing at the time
+ */
+- (void) stopPlayingAudioFile;
 
 @end

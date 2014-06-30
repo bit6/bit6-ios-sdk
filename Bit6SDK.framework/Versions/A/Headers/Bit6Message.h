@@ -56,6 +56,28 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
     Bit6MessageFileType_VideoMP4,
 };
 
+/*! Message attachment category for a <Bit6Message>. */
+typedef NS_ENUM(NSInteger, Bit6MessageAttachmentCategory) {
+    /*! The thumbnail image for the message. */
+    Bit6MessageAttachmentCategory_THUMBNAIL = 1,
+    /*! The full size attachment for the message. */
+    Bit6MessageAttachmentCategory_FULL_SIZE
+};
+
+/*! Message attachment status for a <Bit6Message>. */
+typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
+    /*! The message doesn't have the specified attachment */
+    Bit6MessageAttachmentStatus_INVALID = -2,
+    /*! The attachment doesn't exists */
+    Bit6MessageAttachmentStatus_FAILED,
+    /*! The attachment is not in cache */
+    Bit6MessageAttachmentStatus_NOT_FOUND,
+    /*! The attachment is being downloaded */
+    Bit6MessageAttachmentStatus_DOWNLOADING,
+    /*! The attachment is in cache */
+    Bit6MessageAttachmentStatus_FOUND
+};
+
 @class Bit6MessageData;
 
 /*! A Bit6Message object represents a message sent or received by the user. */
@@ -82,25 +104,11 @@ typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
 /*! Gets the attachment type of this message as a value of the <Bit6MessageFileType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageFileType attachFileType;
 
-/*! Plays the attached video included in a Bit6Message object using the MPMoviePlayerViewController class.
- @note Deprecated: Please use <+[Bit6 playVideoFromMessage:viewController:]> instead
- @discussion A Bit6Message object has a video included if <type> == Bit6MessageType_Attachments and <attachFileType> == Bit6MessageFileType_VideoMP4.
- @param vc viewcontroller from which to present the MPMoviePlayerViewController control to play the video
+/*! Returns the status for the message's attachments
+ @param attachmentCategory attachment to query as a value of the <Bit6MessageAttachmentCategory> enumeration
+ @return the attachment's status as a value of the <Bit6MessageAttachmentStatus> enumeration
  */
-- (void) playVideoOnViewController:(UIViewController*)vc __attribute__((deprecated("Please use +[Bit6 playVideoFromMessage:viewController:] instead")));
-
-/*! Convenience method to open the location included in a Bit6Message object in the Apple Maps app.
- @note Deprecated: Please use <+[Bit6 openLocationOnMapsFromMessage:]> instead
- @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
-- (void) openLocationOnMaps __attribute__((deprecated("Please use +[Bit6 openLocationOnMapsFromMessage:] instead")));
-
-/*! Convenience method to open the location included in a Bit6Message object in the Google Maps app (if available).
- @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
-- (void) openLocationOnGoogleMaps __attribute__((deprecated));
-
-/*! Convenience method to open the location included in a Bit6Message object in the Waze app (if available) to get directions.
- @discussion A Bit6Message object has a location included if <type> == Bit6MessageType_Location. */
-- (void) getDirectionsOnWaze __attribute__((deprecated));
+- (Bit6MessageAttachmentStatus) attachmentStatusForAttachmentCategory:(Bit6MessageAttachmentCategory)attachmentCategory;
 
 @end
 

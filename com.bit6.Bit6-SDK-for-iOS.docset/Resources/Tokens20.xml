@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/Bit6Error.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6Error</TokenIdentifier>
+			<Abstract type="html">Bit6 error constants</Abstract>
+			<DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_NotConnectedToInternet</TokenIdentifier>
+            <Abstract type="html">Internet connection not found</Abstract>
+            <Declaration>Bit6Error_NotConnectedToInternet</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_MicNotAllowed</TokenIdentifier>
+            <Abstract type="html">Restricted access to the Microphone</Abstract>
+            <Declaration>Bit6Error_MicNotAllowed</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_CameraNotAllowed</TokenIdentifier>
+            <Abstract type="html">Restricted access to the Camera</Abstract>
+            <Declaration>Bit6Error_CameraNotAllowed</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_SessionNotInitiated</TokenIdentifier>
+            <Abstract type="html">Session hasn&apos;t being initiated</Abstract>
+            <Declaration>Bit6Error_SessionNotInitiated</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_SaveToCacheFailed</TokenIdentifier>
+            <Abstract type="html">Attachment wasn&apos;t saved to cache</Abstract>
+            <Declaration>Bit6Error_SaveToCacheFailed</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FileDoesNotExists</TokenIdentifier>
+            <Abstract type="html">Attachment doesn&apos;t exist in cache</Abstract>
+            <Declaration>Bit6Error_FileDoesNotExists</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FileDoesNotExistsWillDownload</TokenIdentifier>
+            <Abstract type="html">Attachment doesn&apos;t exist in cache, but it is being downloaded</Abstract>
+            <Declaration>Bit6Error_FileDoesNotExistsWillDownload</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FileDoesNotExistsOnServer</TokenIdentifier>
+            <Abstract type="html">Attachment doesn&apos;t exist in the server, probably because an error during the upload process</Abstract>
+            <Declaration>Bit6Error_FileDoesNotExistsOnServer</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_HTTPServerError</TokenIdentifier>
+            <Abstract type="html">An HTTP status = 5xx occur when interacting with the server</Abstract>
+            <Declaration>Bit6Error_HTTPServerError</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_HTTPClientError</TokenIdentifier>
+            <Abstract type="html">An HTTP status = 4xx occur when interacting with the server</Abstract>
+            <Declaration>Bit6Error_HTTPClientError</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_RecipientNotFound</TokenIdentifier>
+            <Abstract type="html">The recipient was not found</Abstract>
+            <Declaration>Bit6Error_RecipientNotFound</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="20"/>
+        </Token>
+        
+	</File>
+</Tokens>

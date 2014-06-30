@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6Conversation.html">
+	<File path="Classes/Bit6AudioRecorderController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6Conversation</TokenIdentifier>
-			<Abstract type="html">Bit6Conversation represents a conversation (or a chat) - a set of messages between two participants.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioRecorderController</TokenIdentifier>
+			<Abstract type="html">Bit6AudioRecorderController is used to record an audio file and attach it to a message.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -13,277 +13,66 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/initWithAddress:</TokenIdentifier>
-			<Abstract type="html">Initialize a Bit6Conversation object.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6AudioRecorderController/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Gets default Bit6AudioRecorderController object.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithAddress:(Bit6Address *)address</Declaration>
+			<Declaration>+ (Bit6AudioRecorderController *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Default Bit6AudioRecorderController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</TokenIdentifier>
+			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate noMicBlock:(void ( ^ ) ( ))noMicBlock</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>address</Name>
-					<Abstract type="html">Bit6Address object for the conversation.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">the Bit6Conversation object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAddress:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/conversationWithAddress:</TokenIdentifier>
-			<Abstract type="html">Returns a Bit6Conversation object based on the Bit6Address indicated. If the conversation didn&apos;t exists a new one will be created.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>+ (Bit6Conversation *)conversationWithAddress:(Bit6Address *)address</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>address</Name>
-					<Abstract type="html">Bit6Address object for the conversation.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">a Bit6Conversation object for the Bit6Address indicated.</Abstract></ReturnValue>
-			<Anchor>//api/name/conversationWithAddress:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setMessages:</TokenIdentifier>
-			<Abstract type="html">The Bit6Message objects in the conversation as a NSArray.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
-			
-			
-			<Anchor>//api/name/messages</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/messages</TokenIdentifier>
-			<Abstract type="html">The Bit6Message objects in the conversation as a NSArray.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
-			
-			
-			<Anchor>//api/name/messages</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/messages</TokenIdentifier>
-			<Abstract type="html">The Bit6Message objects in the conversation as a NSArray.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
-			
-			
-			<Anchor>//api/name/messages</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setAddress:</TokenIdentifier>
-			<Abstract type="html">The Bit6Address object associated with this conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/address</TokenIdentifier>
-			<Abstract type="html">The Bit6Address object associated with this conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/address</TokenIdentifier>
-			<Abstract type="html">The Bit6Address object associated with this conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/conversations</TokenIdentifier>
-			<Abstract type="html">Convenience method to obtain the existing conversations.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>+ (NSArray *)conversations</Declaration>
-			
-			<ReturnValue><Abstract type="html">the existing Bit6Conversation objects as a NSArray.</Abstract></ReturnValue>
-			<Anchor>//api/name/conversations</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/addConversation:</TokenIdentifier>
-			<Abstract type="html">Adds a conversation to the system.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>+ (void)addConversation:(Bit6Conversation *)conversation</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>conversation</Name>
-					<Abstract type="html">a Bit6Conversation object to be added.</Abstract>
+					<Name>msg</Name>
+					<Abstract type="html">a Bit6OutgoingMessage object where the audio file will be included.</Abstract>
+				</Parameter><Parameter>
+					<Name>maxDuration</Name>
+					<Abstract type="html">maximum allowed duration (in seconds) of the audio file to be recorded.</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see Bit6AudioRecorderControllerDelegate Protocol Reference.</Abstract>
+				</Parameter><Parameter>
+					<Name>noMicBlock</Name>
+					<Abstract type="html">block to call if the user disabled access to the microphone</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/addConversation:</Anchor>
+			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/deleteConversation:</TokenIdentifier>
-			<Abstract type="html">Delete a conversation from the system. All the messages inside the conversation are deleted too.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</TokenIdentifier>
+			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>+ (void)deleteConversation:(Bit6Conversation *)conversation</Declaration>
+			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>conversation</Name>
-					<Abstract type="html">Bit6Conversation object to be deleted</Abstract>
+					<Name>msg</Name>
+					<Abstract type="html">a Bit6OutgoingMessage object where the audio file will be included.</Abstract>
+				</Parameter><Parameter>
+					<Name>maxDuration</Name>
+					<Abstract type="html">maximum allowed duration (in seconds) of the audio file to be recorded.</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see Bit6AudioRecorderControllerDelegate Protocol Reference.</Abstract>
+				</Parameter><Parameter>
+					<Name>errorHandler</Name>
+					<Abstract type="html">block to call if an error occurs</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/deleteConversation:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setDisplayName:</TokenIdentifier>
-			<Abstract type="html">A display name for the destination in this &lt;Bit6Conversation&gt; object.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
-			
-			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for the destination in this &lt;Bit6Conversation&gt; object.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
-			
-			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for the destination in this &lt;Bit6Conversation&gt; object.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
-			
-			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setBadge:</TokenIdentifier>
-			<Abstract type="html">Gets the number of unread messages for this conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/ignoreBadge</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) NSNumber *badge</Declaration>
-			
-			
-			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/badge</TokenIdentifier>
-			<Abstract type="html">Gets the number of unread messages for this conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/ignoreBadge</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) NSNumber *badge</Declaration>
-			
-			
-			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/badge</TokenIdentifier>
-			<Abstract type="html">Gets the number of unread messages for this conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/ignoreBadge</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) NSNumber *badge</Declaration>
-			
-			
-			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setIgnoreBadge:</TokenIdentifier>
-			<Abstract type="html">If set to YES then [Bit6Conversation badge] value will be set to 0 and the conversation won&apos;t consider new messages in this conversation to increment the value of [Bit6Conversation badge].</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL ignoreBadge</Declaration>
-			
-			
-			<Anchor>//api/name/ignoreBadge</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/ignoreBadge</TokenIdentifier>
-			<Abstract type="html">If set to YES then [Bit6Conversation badge] value will be set to 0 and the conversation won&apos;t consider new messages in this conversation to increment the value of [Bit6Conversation badge].</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL ignoreBadge</Declaration>
-			
-			
-			<Anchor>//api/name/ignoreBadge</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/ignoreBadge</TokenIdentifier>
-			<Abstract type="html">If set to YES then [Bit6Conversation badge] value will be set to 0 and the conversation won&apos;t consider new messages in this conversation to increment the value of [Bit6Conversation badge].</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL ignoreBadge</Declaration>
-			
-			
-			<Anchor>//api/name/ignoreBadge</Anchor>
+			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

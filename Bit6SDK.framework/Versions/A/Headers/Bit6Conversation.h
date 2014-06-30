@@ -19,13 +19,6 @@
  */
 @interface Bit6Conversation : NSObject
 
-/*! Initialize a Bit6Conversation object.
- @note Deprecated: Please use <+[Bit6Conversation conversationWithAddress:]> instead
- @param address <Bit6Address> object for the conversation.
- @return the Bit6Conversation object.
- */
-- (instancetype)initWithAddress:(Bit6Address*)address __attribute__((deprecated("Please use +[Bit6Conversation conversationWithAddress:] instead")));
-
 /*! Returns a Bit6Conversation object based on the <Bit6Address> indicated. If the conversation didn't exists a new one will be created.
  @param address <Bit6Address> object for the conversation.
  @return a Bit6Conversation object for the <Bit6Address> indicated.
@@ -37,24 +30,6 @@
 
 /*! The <Bit6Address> object associated with this conversation. */
 @property (nonatomic, readonly) Bit6Address *address;
-
-/*! Convenience method to obtain the existing conversations.
- @return the existing Bit6Conversation objects as a NSArray.
- @note Deprecated: Please use <+[Bit6 conversations]> instead
- */
-+ (NSArray*) conversations __attribute__((deprecated("Please use +[Bit6 conversations] instead")));
-
-/*! Adds a conversation to the system.
- @param conversation a Bit6Conversation object to be added.
- @note Deprecated: Please use <+[Bit6 addConversation:]> instead
- */
-+ (void) addConversation:(Bit6Conversation*)conversation __attribute__((deprecated("Please use +[Bit6 addConversation:] instead")));
-
-/*! Delete a conversation from the system. All the messages inside the conversation are deleted too.
- @param conversation Bit6Conversation object to be deleted
- @note Deprecated: Please use <+[Bit6 deleteConversation:]> instead
- */
-+ (void) deleteConversation:(Bit6Conversation*)conversation __attribute__((deprecated("Please use +[Bit6 deleteConversation:] instead")));
 
 /*! A display name for the destination in this <Bit6Conversation> object. */
 @property (nonatomic, readonly) NSString *displayName;

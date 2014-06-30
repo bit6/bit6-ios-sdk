@@ -1,67 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageStatus.html">
+	<File path="Protocols/Bit6ThumbnailImageViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageStatus</TokenIdentifier>
-			<Abstract type="html">Delivery status for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageViewDelegate protocol defines methods that your delegate object must implement to interact with a Bit6ThumbnailImageView object. The methods of this protocol notify your delegate when the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sending</TokenIdentifier>
-            <Abstract type="html">The message is being sent.</Abstract>
-            <Declaration>Bit6MessageStatus_Sending</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6ThumbnailImageViewDelegate/touchedThumbnailImageView:</TokenIdentifier>
+			<Abstract type="html">Tell the delegate that the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)touchedThumbnailImageView:(Bit6ThumbnailImageView *)thumbnailImageView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thumbnailImageView</Name>
+					<Abstract type="html">The Bit6ThumbnailImageView object tapped by the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/touchedThumbnailImageView:</Anchor>
             <NodeRef refid="18"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sent</TokenIdentifier>
-            <Abstract type="html">The message has been sent.</Abstract>
-            <Declaration>Bit6MessageStatus_Sent</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="18"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Failed</TokenIdentifier>
-            <Abstract type="html">The message sending has failed.</Abstract>
-            <Declaration>Bit6MessageStatus_Failed</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="18"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Delivered</TokenIdentifier>
-            <Abstract type="html">The message has been delivered.</Abstract>
-            <Declaration>Bit6MessageStatus_Delivered</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="18"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Read</TokenIdentifier>
-            <Abstract type="html">The message has been read.</Abstract>
-            <Declaration>Bit6MessageStatus_Read</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="18"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>
