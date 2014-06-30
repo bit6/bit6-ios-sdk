@@ -1,0 +1,175 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta id="description" name="description" content="Describes the API changes between Bit6-iOS 0.2.0 and Bit6-iOS 0.3.0">
+<meta id="Copyright" name="Copyright" content="Copyright © 2014 Bit6. All Rights Reserved.">
+<title>Bit6-iOS 0.2.0 to Bit6-iOS 0.3.0 API Differences</title>
+<link rel="stylesheet" type="text/css" href="css/screen.css">
+<link rel="stylesheet" type="text/css" href="css/apidiff.css" id="custom">
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+
+</head>
+
+<body id="StaticPage">
+
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">Bit6-SDK-for-iOS </a></h1>
+				<a id="developerHome" href="index.html">Bit6</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">Bit6-iOS 0.3.0 API Diffs</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+
+            <article id="contents" class="">
+
+<div class="diffReport">
+<h1>Bit6-iOS 0.2.0 to Bit6-iOS 0.3.0 API Differences</h1>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6.h">Bit6.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6/init:pushNotificationMode:launchingWithOptions:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/init:pushNotificationMode:launchingWithOptions:">+[Bit6 init:pushNotificationMode:launchingWithOptions:]</a> </div>
+</div>
+<div class="deprecated">
+<div class="symbolName" title="Bit6/init:"><span class="diffStatus">Deprecated</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/init:">+[Bit6 init:]</a> </div>
+</div>
+<div class="removed">
+<div class="symbolName" title="Bit6/googleMapsAppAvailable"><span class="diffStatus">Removed</span> +[Bit6 googleMapsAppAvailable] </div>
+<div class="symbolName" title="Bit6/wazeAppAvailable"><span class="diffStatus">Removed</span> +[Bit6 wazeAppAvailable] </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6Conversation.h">Bit6Conversation.h</div>
+<div class="removed">
+<div class="symbolName" title="Bit6Conversation/initWithAddress:"><span class="diffStatus">Removed</span> -[Bit6Conversation initWithAddress:] </div>
+<div class="symbolName" title="Bit6Conversation/conversations"><span class="diffStatus">Removed</span> +[Bit6Conversation conversations] </div>
+<div class="symbolName" title="Bit6Conversation/addConversation:"><span class="diffStatus">Removed</span> +[Bit6Conversation addConversation:] </div>
+<div class="symbolName" title="Bit6Conversation/deleteConversation:"><span class="diffStatus">Removed</span> +[Bit6Conversation deleteConversation:] </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6Message.h">Bit6Message.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6Message/attachmentStatusForAttachmentCategory:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6Message.html#//api/name/attachmentStatusForAttachmentCategory:">-[Bit6Message attachmentStatusForAttachmentCategory:]</a> </div>
+
+<div class="symbolName" title="Bit6MessageAttachmentCategory/Bit6MessageAttachmentCategory_THUMBNAIL"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentCategory.html">Bit6MessageAttachmentCategory.Bit6MessageAttachmentCategory_THUMBNAIL</a> </div>
+<div class="symbolName" title="Bit6MessageAttachmentCategory/Bit6MessageAttachmentCategory_FULL_SIZE"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentCategory.html">Bit6MessageAttachmentCategory.Bit6MessageAttachmentCategory_FULL_SIZE</a> </div>
+
+<div class="symbolName" title="Bit6MessageAttachmentStatus/Bit6MessageAttachmentStatus_INVALID"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentStatus.html">Bit6MessageAttachmentStatus.Bit6MessageAttachmentStatus_INVALID</a> </div>
+<div class="symbolName" title="Bit6MessageAttachmentStatus/Bit6MessageAttachmentStatus_FAILED"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentStatus.html">Bit6MessageAttachmentStatus.Bit6MessageAttachmentStatus_FAILED</a> </div>
+<div class="symbolName" title="Bit6MessageAttachmentStatus/Bit6MessageAttachmentStatus_NOT_FOUND"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentStatus.html">Bit6MessageAttachmentStatus.Bit6MessageAttachmentStatus_NOT_FOUND</a> </div>
+<div class="symbolName" title="Bit6MessageAttachmentStatus/Bit6MessageAttachmentStatus_DOWNLOADING"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentStatus.html">Bit6MessageAttachmentStatus.Bit6MessageAttachmentStatus_DOWNLOADING</a> </div>
+<div class="symbolName" title="Bit6MessageAttachmentStatus/Bit6MessageAttachmentStatus_FOUND"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Constants/Bit6MessageAttachmentStatus.html">Bit6MessageAttachmentStatus.Bit6MessageAttachmentStatus_FOUND</a> </div>
+
+</div>
+<div class="removed">
+<div class="symbolName" title="Bit6Message/playVideoOnViewController:"><span class="diffStatus">Removed</span> -[Bit6Message playVideoOnViewController:] </div>
+<div class="symbolName" title="Bit6Message/openLocationOnMaps"><span class="diffStatus">Removed</span> -[Bit6Message openLocationOnMaps] </div>
+<div class="symbolName" title="Bit6Message/openLocationOnGoogleMaps"><span class="diffStatus">Removed</span> -[Bit6Message openLocationOnGoogleMaps] </div>
+<div class="symbolName" title="Bit6Message/getDirectionsOnWaze"><span class="diffStatus">Removed</span> -[Bit6Message getDirectionsOnWaze] </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6AudioRecorderController.h">Bit6AudioRecorderController.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6AudioRecorderController.html#//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:">-[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:errorHandler:]</a> </div>
+</div>
+<div class="deprecated">
+<div class="symbolName" title="Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:"><span class="diffStatus">Deprecated</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6AudioRecorderController.html#//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:">-[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:]</a> </div>
+</div>
+<div class="removed">
+<div class="symbolName" title="Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:"><span class="diffStatus">Removed</span> -[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:] </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6AudioPlayerController.h">Bit6AudioPlayerController.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6AudioPlayerController/startPlayingAudioFileInMessage:errorHandler:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6AudioPlayerController.html#//api/name/startPlayingAudioFileInMessage:errorHandler:">-[Bit6AudioPlayerController startPlayingAudioFileInMessage:errorHandler:]</a> </div>
+<div class="symbolName" title="Bit6AudioPlayerController/isPlayingAudioFile"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6AudioPlayerController.html#//api/name/isPlayingAudioFile">-[Bit6AudioPlayerController isPlayingAudioFile]</a> </div>
+<div class="symbolName" title="Bit6AudioPlayerController/stopPlayingAudioFile"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6AudioPlayerController.html#//api/name/stopPlayingAudioFile">-[Bit6AudioPlayerController stopPlayingAudioFile]</a> </div>
+
+</div>
+<div class="deprecated">
+<div class="symbolName" title="Bit6AudioPlayerController/startPlayingAudioFileInMessage:"><span class="diffStatus">Deprecated</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6AudioPlayerController.html#//api/name/startPlayingAudioFileInMessage:">-[Bit6AudioPlayerController startPlayingAudioFileInMessage:]</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6InCallController.h"><span class="added">Bit6InCallController.h</span></div>
+<div class="added">
+<div class="symbolName" title="Bit6InCallController"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html">Bit6InCallController</a> </div>
+<div class="symbolName" title="Bit6InCallController/sharedInstance"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/sharedInstance">+[Bit6InCallController sharedInstance]</a> </div>
+<div class="symbolName" title="Bit6InCallController/delegate"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/delegate">Bit6InCallController.delegate</a> </div>
+<div class="symbolName" title="Bit6InCallController/currentCallViewController"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/currentCallViewController">Bit6InCallController.currentCallViewController</a> </div>
+<div class="symbolName" title="Bit6InCallController/startCallToAddress:hasVideo:completion:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/startCallToAddress:hasVideo:completion:">-[Bit6InCallController startCallToAddress:hasVideo:completion:]</a> </div>
+<div class="symbolName" title="Bit6InCallController/switchCamera"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/switchCamera">-[Bit6InCallController switchCamera]</a> </div>
+<div class="symbolName" title="Bit6InCallController/hangup"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/hangup">-[Bit6InCallController hangup]</a> </div>
+<div class="symbolName" title="Bit6InCallController/muteAudio"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/muteAudio">-[Bit6InCallController muteAudio]</a> </div>
+<div class="symbolName" title="Bit6InCallController/muteVideo"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/muteVideo">-[Bit6InCallController muteVideo]</a> </div>
+<div class="symbolName" title="Bit6InCallController/isAudioMuted"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/isAudioMuted">-[Bit6InCallController isAudioMuted]</a> </div>
+<div class="symbolName" title="Bit6InCallController/isVideoMuted"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/isVideoMuted">-[Bit6InCallController isVideoMuted]</a> </div>
+<div class="symbolName" title="Bit6InCallController/isConnected"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/isConnected">-[Bit6InCallController isConnected]</a> </div>
+<div class="symbolName" title="Bit6InCallController/displayName"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/displayName">-[Bit6InCallController displayName]</a> </div>
+<div class="symbolName" title="Bit6InCallController/isVideoCall"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/isVideoCall">-[Bit6InCallController isVideoCall]</a> </div><br />
+<div class="symbolName" title="Bit6InCallControllerDelegate"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6InCallControllerDelegate.html">Bit6InCallControllerDelegate</a> </div>
+<div class="symbolName" title="Bit6InCallControllerDelegate/controlsOverlayViewForInCallController:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6InCallControllerDelegate.html#//api/name/controlsOverlayViewForInCallController:">-[Bit6InCallControllerDelegate controlsOverlayViewForInCallController:]</a> </div>
+<div class="symbolName" title="Bit6InCallControllerDelegate/refreshControlsOverlayView:inCallController:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6InCallControllerDelegate.html#//api/name/refreshControlsOverlayView:inCallController:">-[Bit6InCallControllerDelegate refreshControlsOverlayView:inCallController:]</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6ImageView.h"><span class="added">Bit6ImageView.h</span></div>
+<div class="added">
+<div class="symbolName" title="Bit6ImageView"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6ImageView.html">Bit6ImageView</a> </div>
+<div class="symbolName" title="Bit6ImageView/message"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6ImageView.html#//api/name/message">Bit6ImageView.message</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6ApplicationManager.h"><span class="added">Bit6ApplicationManager.h</span></div>
+<div class="added">
+<div class="symbolName" title="Bit6ApplicationManager"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6ApplicationManager.html">Bit6ApplicationManager</a> </div>
+<div class="symbolName" title="Bit6ApplicationManager/application:didReceiveRemoteNotification:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6ApplicationManager.html#//api/name/application:didReceiveRemoteNotification:">-[Bit6ApplicationManager application:didReceiveRemoteNotification:]</a> </div>
+<div class="symbolName" title="Bit6ApplicationManager/application:didRegisterForRemoteNotificationsWithDeviceToken:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6ApplicationManager.html#//api/name/application:didRegisterForRemoteNotificationsWithDeviceToken:">-[Bit6ApplicationManager application:didRegisterForRemoteNotificationsWithDeviceToken:]</a> </div>
+<div class="symbolName" title="Bit6ApplicationManager/application:didFailToRegisterForRemoteNotificationsWithError:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6ApplicationManager.html#//api/name/application:didFailToRegisterForRemoteNotificationsWithError:">-[Bit6ApplicationManager application:didFailToRegisterForRemoteNotificationsWithError:]</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6Constants.h">Bit6Constants.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6Error_MicNotAllowed"><span class="diffStatus">Added</span> Bit6Error_MicNotAllowed</div>
+<div class="symbolName" title="Bit6Error_CameraNotAllowed"><span class="diffStatus">Added</span> Bit6Error_CameraNotAllowed</div>
+<div class="symbolName" title="Bit6Error_SessionNotInitiated"><span class="diffStatus">Added</span> Bit6Error_SessionNotInitiated</div>
+<div class="symbolName" title="Bit6Error_SaveToCacheFailed"><span class="diffStatus">Added</span> Bit6Error_SaveToCacheFailed</div>
+<div class="symbolName" title="Bit6Error_FileDoesNotExists"><span class="diffStatus">Added</span> Bit6Error_FileDoesNotExists</div>
+<div class="symbolName" title="Bit6Error_FileDoesNotExistsWillDownload"><span class="diffStatus">Added</span> Bit6Error_FileDoesNotExistsWillDownload</div>
+<div class="symbolName" title="Bit6Error_FileDoesNotExistsOnServer"><span class="diffStatus">Added</span> Bit6Error_FileDoesNotExistsOnServer</div>
+<div class="symbolName" title="Bit6Error_HTTPServerError"><span class="diffStatus">Added</span> Bit6Error_HTTPServerError</div>
+<div class="symbolName" title="Bit6Error_HTTPClientError"><span class="diffStatus">Added</span> Bit6Error_HTTPClientError</div>
+<div class="symbolName" title="Bit6Error_NotConnectedToInternet"><span class="diffStatus">Added</span> Bit6Error_NotConnectedToInternet</div>
+<div class="symbolName" title="Bit6Error_RecipientNotFound"><span class="diffStatus">Added</span> Bit6Error_RecipientNotFound</div>
+<div class="symbolName" title="Bit6PushNotificationMode_DEVELOPMENT"><span class="diffStatus">Added</span> Bit6PushNotificationMode_DEVELOPMENT</div>
+<div class="symbolName" title="Bit6PushNotificationMode_PRODUCTION"><span class="diffStatus">Added</span> Bit6PushNotificationMode_PRODUCTION</div>
+</div>
+</div>
+
+
+</div>
+<div id="globalfooter" class="hideInXcode hideOnPrint">
+	<div class="gf-sosumi">
+	    <p>Copyright © 2014 Bit6. All rights reserved.</p>
+	</div>
+</div>
+
+</article>
+
+</body></html>
+

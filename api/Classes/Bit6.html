@@ -47,9 +47,9 @@
 	
 	<option value="//api/name/deleteConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteConversation:</option>
 	
-	<option value="//api/name/googleMapsAppAvailable">&nbsp;&nbsp;&nbsp;&nbsp;+ googleMapsAppAvailable</option>
-	
 	<option value="//api/name/init:">&nbsp;&nbsp;&nbsp;&nbsp;+ init:</option>
+	
+	<option value="//api/name/init:pushNotificationMode:launchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ init:pushNotificationMode:launchingWithOptions:</option>
 	
 	<option value="//api/name/messagesInConversation:offset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesInConversation:offset:length:asc:</option>
 	
@@ -69,8 +69,6 @@
 	
 	<option value="//api/name/typingBeginToAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ typingBeginToAddress:</option>
 	
-	<option value="//api/name/wazeAppAvailable">&nbsp;&nbsp;&nbsp;&nbsp;+ wazeAppAvailable</option>
-	
 	
 	
 	
@@ -89,6 +87,14 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Initialization">￼Initialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Conversations">￼Working with Conversations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Getting Messages">￼Getting Messages</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Actions">￼Actions</a></span></li>
+	
 </ul></li>
 
 
@@ -105,9 +111,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteConversation:">deleteConversation:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/googleMapsAppAvailable">googleMapsAppAvailable</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init:">init:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init:pushNotificationMode:launchingWithOptions:">init:pushNotificationMode:launchingWithOptions:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesInConversation:offset:length:asc:">messagesInConversation:offset:length:asc:</a></span></li>
 	
@@ -126,8 +132,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalBadge">totalBadge</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/typingBeginToAddress:">typingBeginToAddress:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wazeAppAvailable">wazeAppAvailable</a></span></li>
 	
 </ul></li>
 
@@ -180,8 +184,8 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="￼Initialization" name="task_￼Initialization"></a>
+						<h3 class="subsubtitle task-title">￼Initialization</h3>
 
 						<ul class="task-list">
 							<li>
@@ -191,6 +195,20 @@
 	
 	
 </li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init:pushNotificationMode:launchingWithOptions:">+&nbsp;init:pushNotificationMode:launchingWithOptions:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Working with Conversations" name="task_￼Working with Conversations"></a>
+						<h3 class="subsubtitle task-title">￼Working with Conversations</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/conversations">+&nbsp;conversations</a></code>
 	</span>
@@ -214,7 +232,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="￼Getting Messages" name="task_￼Getting Messages"></a>
+						<h3 class="subsubtitle task-title">￼Getting Messages</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/messagesWithOffset:length:asc:">+&nbsp;messagesWithOffset:length:asc:</a></code>
 	</span>
@@ -238,25 +264,15 @@
 	</span>
 	
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/googleMapsAppAvailable">+&nbsp;googleMapsAppAvailable</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/wazeAppAvailable">+&nbsp;wazeAppAvailable</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/typingBeginToAddress:">+&nbsp;typingBeginToAddress:</a></code>
-	</span>
-	
-	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="￼Actions" name="task_￼Actions"></a>
+						<h3 class="subsubtitle task-title">￼Actions</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/startCallToAddress:hasVideo:">+&nbsp;startCallToAddress:hasVideo:</a></code>
 	</span>
@@ -271,6 +287,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/openLocationOnMapsFromMessage:">+&nbsp;openLocationOnMapsFromMessage:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/typingBeginToAddress:">+&nbsp;typingBeginToAddress:</a></code>
 	</span>
 	
 	
@@ -423,42 +445,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/googleMapsAppAvailable" title="googleMapsAppAvailable"></a>
-	<h3 class="subsubtitle method-title">googleMapsAppAvailable</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Used to know if Google Maps app is available in the device.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)googleMapsAppAvailable</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/init:" title="init:"></a>
 	<h3 class="subsubtitle method-title">init:</h3>
 	
@@ -480,6 +466,67 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>apiKey</em></dt>
 			<dd><p>unique key for the current developer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6 init:pushNotificationMode:] instead</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init:pushNotificationMode:launchingWithOptions:" title="init:pushNotificationMode:launchingWithOptions:"></a>
+	<h3 class="subsubtitle method-title">init:pushNotificationMode:launchingWithOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Bit6 startup method. It should be the first call to Bit6 api made.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)init:(NSString *)<em>apiKey</em> pushNotificationMode:(Bit6PushNotificationMode)<em>pushNotificationMode</em> launchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiKey</em></dt>
+			<dd><p>unique key for the current developer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pushNotificationMode</em></dt>
+			<dd><p>One of the values in <a href="../Constants/Bit6PushNotificationMode.html">Bit6PushNotificationMode</a> enumeration.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>launchOptions</em></dt>
+			<dd><p>used to send the launchOptions from [UIApplicationDelegate application:didFinishLaunchingWithOptions:] to Bit6</p></dd>
 		</dl>
 		
 	</div>
@@ -1002,42 +1049,6 @@
 	
 </div>
 						
-						<div class="section-method">
-	<a name="//api/name/wazeAppAvailable" title="wazeAppAvailable"></a>
-	<h3 class="subsubtitle method-title">wazeAppAvailable</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Used to know if Waze app is available in the device.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)wazeAppAvailable</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6.h</code><br />
-	</div>				
-	
-	
-</div>
-						
 					</div>
 					
 					
@@ -1055,7 +1066,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-24)</span><br />
+						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-06-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
