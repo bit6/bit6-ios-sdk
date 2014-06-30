@@ -19,10 +19,10 @@ __Step 2.__ Start the audio recording:
 
 ```objc
 [[Bit6AudioRecorderController sharedInstance] startRecordingAudioForMessage:message 
-                                    maxDuration:15 delegate:self noMicBlock:^{
-    [[[UIAlertView alloc] initWithTitle:@"No Access to Microphone" message:nil 
-                               delegate:nil cancelButtonTitle:@"OK" 
-                                            otherButtonTitles:nil] show];
+                                                    maxDuration:60 delegate:self 
+                                                   errorHandler:^(NSError *error) {
+    [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil 
+                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }];
 ```
 
@@ -52,5 +52,10 @@ __Step 3.__ Implement the `Bit6AudioRecorderControllerDelegate` and send the mes
 
 ```objc
 Bit6Message *message = ...
-[[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:message];
+[[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:message 
+                                                            errorHandler:^(NSError *error) {
+    [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil 
+                                            delegate:nil cancelButtonTitle:@"OK" 
+                                                         otherButtonTitles:nil] show];
+}];
 ```

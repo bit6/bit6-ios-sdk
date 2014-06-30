@@ -29,61 +29,29 @@ In your Application Delegate:
 
 __Step 1.__ Import Bit6: <b>`#import <Bit6_SDK/Bit6SDK.h>`</b>
 
-__Step 2.__ Launch Bit6 with your API Key
+
+__Step 2.__ Make sure your AppDelegate extends Bit6ApplicationManager
+
+```objc
+@interface AppDelegate : Bit6ApplicationManager <UIApplicationDelegate>
+...
+@end
+```
+
+__Step 3.__ Launch Bit6 with your API Key
 
 ```objc
 - (BOOL)application:(UIApplication *)application 
-                  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     {
         // start of your application:didFinishLaunchingWithOptions: method
-        [Bit6 init:@"your_api_key"];
+        // ...
+        
+        [Bit6 init:@"your_api_key" 
+              pushNotificationMode:Bit6PushNotificationMode_DEVELOPMENT 
+              launchingWithOptions:launchOptions];
     
         // The rest of your application:didFinishLaunchingWithOptions: method
         // ...
-    }
-```
-
-__Step 3.__ Register for Remote Notifications  
-
-```objc
-- (BOOL)application:(UIApplication *)application 
-                  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-    {
-        // start of your application:didFinishLaunchingWithOptions: method
-        NSDictionary *remoteNotificationPayload = 
-            [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-        if (remoteNotificationPayload) {
-            [[NSNotificationCenter defaultCenter] 
-              postNotificationName:Bit6RemoteNotificationReceived object:nil 
-                          userInfo:remoteNotificationPayload];
-        }
-
-        // The rest of your application:didFinishLaunchingWithOptions: method
-        // ...
-    }
-
-    - (void)application:(UIApplication *)application 
-                         didReceiveRemoteNotification:(NSDictionary *)userInfo 
-    {
-        [[NSNotificationCenter defaultCenter] 
-                               postNotificationName:Bit6RemoteNotificationReceived 
-                                             object:nil userInfo:userInfo];
-    }
-
-    - (void) application:(UIApplication*)application 
-                didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-    {
-        [[NSNotificationCenter defaultCenter] 
-                               postNotificationName:Bit6DidRegisterForRemoteNotifications 
-                                             object:nil 
-                                           userInfo:@{@"deviceToken":deviceToken}];
-    }
-
-    - (void) application:(UIApplication*)application 
-                          didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-    {
-        [[NSNotificationCenter defaultCenter] 
-             postNotificationName:Bit6DidFailToRegisterForRemoteNotifications 
-                           object:nil userInfo:@{@"error":error}];
     }
 ```
