@@ -48,7 +48,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/startRecordingAudioForMessage:maxDuration:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- startRecordingAudioForMessage:maxDuration:delegate:</option>
+	<option value="//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</option>
 	
 	<option value="//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</option>
 	
@@ -86,7 +86,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:">startRecordingAudioForMessage:maxDuration:delegate:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:">startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:">startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</a></span></li>
 	
@@ -151,13 +151,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:">&ndash;&nbsp;startRecordingAudioForMessage:maxDuration:delegate:</a></code>
+		<code><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:">&ndash;&nbsp;startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:">&ndash;&nbsp;startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</a></code>
+		<code><a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:">&ndash;&nbsp;startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</a></code>
 	</span>
 	
 	
@@ -226,8 +226,8 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/startRecordingAudioForMessage:maxDuration:delegate:" title="startRecordingAudioForMessage:maxDuration:delegate:"></a>
-	<h3 class="subsubtitle method-title">startRecordingAudioForMessage:maxDuration:delegate:</h3>
+	<a name="//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:" title="startRecordingAudioForMessage:maxDuration:delegate:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</h3>
 	
 	
 	
@@ -237,7 +237,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)<em>msg</em> maxDuration:(NSTimeInterval)<em>maxDuration</em> delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)<em>msg</em> maxDuration:(NSTimeInterval)<em>maxDuration</em> delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)<em>delegate</em> errorHandler:(void ( ^ ) ( NSError *error ))<em>errorHandler</em></code></div>
 
     
 	
@@ -259,6 +259,11 @@
 			<dd><p>the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <a href="../Protocols/Bit6AudioRecorderControllerDelegate.html">Bit6AudioRecorderControllerDelegate</a> Protocol Reference.</p></dd>
 		</dl>
 		
+		<dl class="argument-def parameter-def">
+			<dt><em>errorHandler</em></dt>
+			<dd><p>block to call if an error occurs</p></dd>
+		</dl>
+		
 	</div>
 	
 	
@@ -266,11 +271,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use <a href="#//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:">[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:]</a> instead</p></div>
-	</div>
 	
 	
 	
@@ -333,6 +333,11 @@
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:errorHandler:] instead</p></div>
+	</div>
+	
 	
 	
 	
@@ -362,7 +367,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-05-24)</span><br />
+						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-06-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
