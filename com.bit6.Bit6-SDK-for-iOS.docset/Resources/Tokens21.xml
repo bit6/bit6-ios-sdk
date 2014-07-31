@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/Bit6MessageAttachmentCategory.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentCategory</TokenIdentifier>
+			<Abstract type="html">Message attachment category for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_THUMBNAIL</TokenIdentifier>
+            <Abstract type="html">The thumbnail image for the message.</Abstract>
+            <Declaration>Bit6MessageAttachmentCategory_THUMBNAIL</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_FULL_SIZE</TokenIdentifier>
+            <Abstract type="html">The full size attachment for the message.</Abstract>
+            <Declaration>Bit6MessageAttachmentCategory_FULL_SIZE</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="21"/>
+        </Token>
+        
+	</File>
+</Tokens>

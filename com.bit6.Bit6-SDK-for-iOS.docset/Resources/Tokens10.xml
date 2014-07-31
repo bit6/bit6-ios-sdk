@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6Message.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6Message</TokenIdentifier>
+			<Abstract type="html">A Bit6Message object represents a message sent or received by the user.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setContent:</TokenIdentifier>
+			<Abstract type="html">The text content of the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/content</TokenIdentifier>
+			<Abstract type="html">The text content of the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/content</TokenIdentifier>
+			<Abstract type="html">The text content of the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setIncoming:</TokenIdentifier>
+			<Abstract type="html">YES if this is an incoming message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incoming</Declaration>
+			
+			
+			<Anchor>//api/name/incoming</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/incoming</TokenIdentifier>
+			<Abstract type="html">YES if this is an incoming message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incoming</Declaration>
+			
+			
+			<Anchor>//api/name/incoming</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/incoming</TokenIdentifier>
+			<Abstract type="html">YES if this is an incoming message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incoming</Declaration>
+			
+			
+			<Anchor>//api/name/incoming</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setStatus:</TokenIdentifier>
+			<Abstract type="html">Message status as a value of the Bit6MessageStatus enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/status</TokenIdentifier>
+			<Abstract type="html">Message status as a value of the Bit6MessageStatus enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/status</TokenIdentifier>
+			<Abstract type="html">Message status as a value of the Bit6MessageStatus enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setType:</TokenIdentifier>
+			<Abstract type="html">Message type as a value of the Bit6MessageType enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/type</TokenIdentifier>
+			<Abstract type="html">Message type as a value of the Bit6MessageType enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/type</TokenIdentifier>
+			<Abstract type="html">Message type as a value of the Bit6MessageType enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setOther:</TokenIdentifier>
+			<Abstract type="html">Gets the other person address as a Bit6Address object.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) Bit6Address *other</Declaration>
+			
+			
+			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/other</TokenIdentifier>
+			<Abstract type="html">Gets the other person address as a Bit6Address object.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) Bit6Address *other</Declaration>
+			
+			
+			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/other</TokenIdentifier>
+			<Abstract type="html">Gets the other person address as a Bit6Address object.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) Bit6Address *other</Declaration>
+			
+			
+			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setData:</TokenIdentifier>
+			<Abstract type="html">Gets the information about the message attachments.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) Bit6MessageData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/data</TokenIdentifier>
+			<Abstract type="html">Gets the information about the message attachments.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) Bit6MessageData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/data</TokenIdentifier>
+			<Abstract type="html">Gets the information about the message attachments.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, strong) Bit6MessageData *data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setAttachFileType:</TokenIdentifier>
+			<Abstract type="html">Gets the attachment type of this message as a value of the Bit6MessageFileType enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageFileType attachFileType</Declaration>
+			
+			
+			<Anchor>//api/name/attachFileType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/attachFileType</TokenIdentifier>
+			<Abstract type="html">Gets the attachment type of this message as a value of the Bit6MessageFileType enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageFileType attachFileType</Declaration>
+			
+			
+			<Anchor>//api/name/attachFileType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/attachFileType</TokenIdentifier>
+			<Abstract type="html">Gets the attachment type of this message as a value of the Bit6MessageFileType enumeration.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageFileType attachFileType</Declaration>
+			
+			
+			<Anchor>//api/name/attachFileType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/attachmentStatusForAttachmentCategory:</TokenIdentifier>
+			<Abstract type="html">Returns the status for the message&apos;s attachments</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>- (Bit6MessageAttachmentStatus)attachmentStatusForAttachmentCategory:(Bit6MessageAttachmentCategory)attachmentCategory</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attachmentCategory</Name>
+					<Abstract type="html">attachment to query as a value of the Bit6MessageAttachmentCategory enumeration</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the attachment&apos;s status as a value of the Bit6MessageAttachmentStatus enumeration</Abstract></ReturnValue>
+			<Anchor>//api/name/attachmentStatusForAttachmentCategory:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/attachmentPathForAttachmentCategory:</TokenIdentifier>
+			<Abstract type="html">Returns the path for the message&apos;s attachments</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)attachmentPathForAttachmentCategory:(Bit6MessageAttachmentCategory)attachmentCategory</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attachmentCategory</Name>
+					<Abstract type="html">attachment to query as a value of the Bit6MessageAttachmentCategory enumeration</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the attachment&apos;s path</Abstract></ReturnValue>
+			<Anchor>//api/name/attachmentPathForAttachmentCategory:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

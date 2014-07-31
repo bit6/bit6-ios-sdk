@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/Bit6MessageChannel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageChannel</TokenIdentifier>
+			<Abstract type="html">Channels available for sending a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_SMS</TokenIdentifier>
+            <Abstract type="html">The message is an SMS.</Abstract>
+            <Declaration>Bit6MessageChannel_SMS</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_PUSH</TokenIdentifier>
+            <Abstract type="html">The message is an app-to-app message.</Abstract>
+            <Declaration>Bit6MessageChannel_PUSH</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+	</File>
+</Tokens>
