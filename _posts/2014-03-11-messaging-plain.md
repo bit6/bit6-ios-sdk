@@ -81,6 +81,13 @@ NSArray *messages = conversation.messages;
 } 
 ```
 
+###Delete a Message
+
+```objc
+Bit6Message *messageToDelete = ...
+[Bit6 deleteMessage:messageToDelete];
+```
+
 ### Multimedia Messaging
 
 Click [here](#/messaging-multimedia) for the multimedia messaging docs.

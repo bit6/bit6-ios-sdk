@@ -27,8 +27,7 @@ __Step 3.__ Implement the `Bit6CurrentLocationControllerDelegate` and send the m
 ```
 
 ```objc
-- (void) doneGettingCurrentLocationController:(Bit6CurrentLocationController*)b6clc 
-                                      message:(Bit6OutgoingMessage*)message
+- (void) currentLocationController:(Bit6CurrentLocationController*)b6clc didGetLocationForMessage:(Bit6OutgoingMessage*)message
 {
     [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
@@ -38,5 +37,10 @@ __Step 3.__ Implement the `Bit6CurrentLocationControllerDelegate` and send the m
             NSLog(@"Message Failed with Error: %@",error.localizedDescription);
         }
     }];
+}
+
+- (void) currentLocationController:(Bit6CurrentLocationController*)b6clc didFailWithError:(NSError*)error message:(Bit6OutgoingMessage*)message
+{
+    //show an error message
 }
 ```

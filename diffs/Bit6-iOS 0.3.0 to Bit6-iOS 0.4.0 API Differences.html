@@ -1,0 +1,96 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta id="description" name="description" content="Describes the API changes between Bit6-iOS 0.3.0 and Bit6-iOS 0.4.0">
+<meta id="Copyright" name="Copyright" content="Copyright © 2014 Bit6. All Rights Reserved.">
+<title>Bit6-iOS 0.3.0 to Bit6-iOS 0.4.0 API Differences</title>
+<link rel="stylesheet" type="text/css" href="css/screen.css">
+<link rel="stylesheet" type="text/css" href="css/apidiff.css" id="custom">
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+
+</head>
+
+<body id="StaticPage">
+
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">Bit6-SDK-for-iOS </a></h1>
+				<a id="developerHome" href="index.html">Bit6</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">Bit6-iOS 0.4.0 API Diffs</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+
+            <article id="contents" class="">
+
+<div class="diffReport">
+<h1>Bit6-iOS 0.3.0 to Bit6-iOS 0.4.0 API Differences</h1>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6.h">Bit6.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6/startWithApiKey:pushNotificationMode:launchingWithOptions:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/startWithApiKey:pushNotificationMode:launchingWithOptions:">+[Bit6 startWithApiKey:pushNotificationMode:launchingWithOptions:]</a> </div>
+<div class="symbolName" title="Bit6/setShouldDownloadVideoBeforePlaying:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/setShouldDownloadVideoBeforePlaying:">+[Bit6 setShouldDownloadVideoBeforePlaying:]</a> </div>
+<div class="symbolName" title="Bit6/shouldDownloadVideoBeforePlaying"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/shouldDownloadVideoBeforePlaying">+[Bit6 shouldDownloadVideoBeforePlaying]</a> </div>
+<div class="symbolName" title="Bit6/deleteMessage:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/deleteMessage:">+[Bit6 deleteMessage:]</a> </div>
+</div>
+<div class="deprecated">
+<div class="symbolName" title="Bit6/init:pushNotificationMode:launchingWithOptions:"><span class="diffStatus">Deprecated</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/init:pushNotificationMode:launchingWithOptions:">+[Bit6 init:pushNotificationMode:launchingWithOptions:]</a> </div>
+</div>
+<div class="removed">
+<div class="symbolName" title="Bit6/init:"><span class="diffStatus">Removed</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6.html#//api/name/init:">+[Bit6 init:]</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6Message.h">Bit6Message.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6Message/attachmentPathForAttachmentCategory:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6Message.html#//api/name/attachmentPathForAttachmentCategory:">-[Bit6Message attachmentPathForAttachmentCategory:]</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6InCallController.h">Bit6InCallController.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6InCallController/seconds"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/seconds">Bit6InCallController.seconds</a> </div>
+<div class="symbolName" title="Bit6InCallController/switchSpeaker"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/switchSpeaker">-[Bit6InCallController switchSpeaker]</a> </div>
+<div class="symbolName" title="Bit6InCallController/isSpeakerEnabled"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/isSpeakerEnabled">-[Bit6InCallController isSpeakerEnabled]</a> </div>
+<div class="symbolName" title="Bit6InCallController/enableSpeaker"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/enableSpeaker">+[Bit6InCallController enableSpeaker]</a> </div>
+<div class="symbolName" title="Bit6InCallController/disableSpeaker"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Classes/Bit6InCallController.html#//api/name/disableSpeaker">+[Bit6InCallController disableSpeaker]</a> </div>
+<div class="symbolName" title="Bit6InCallControllerDelegate/refreshTimerInOverlayView:inCallController:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6InCallControllerDelegate.html#//api/name/refreshTimerInOverlayView:inCallController:">-[Bit6InCallControllerDelegate refreshTimerInOverlayView:inCallController:]</a> </div>
+</div>
+</div>
+
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6CurrentLocationController.h">Bit6CurrentLocationController.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6CurrentLocationControllerDelegate.html#//api/name/currentLocationController:didGetLocationForMessage:">-[Bit6CurrentLocationControllerDelegate currentLocationController:didGetLocationForMessage:]</a> </div>
+<div class="symbolName" title="Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:"><span class="diffStatus">Added</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6CurrentLocationControllerDelegate.html#//api/name/currentLocationController:didFailWithError:message:">-[Bit6CurrentLocationControllerDelegate currentLocationController:didFailWithError:message:]</a> </div>
+</div>
+<div class="removed">
+<div class="symbolName" title="Bit6CurrentLocationControllerDelegate/doneGettingCurrentLocationController:message:"><span class="diffStatus">Removed</span> <a href="http://bit6.github.io/bit6-ios-sdk/api/Protocols/Bit6CurrentLocationControllerDelegate.html#//api/name/doneGettingCurrentLocationController:message:">-[Bit6CurrentLocationControllerDelegate doneGettingCurrentLocationController:message:]</a> </div>
+</div>
+</div>
+
+<div class="headerFile">
+<div class="headerName" title="Bit6SDK.framework/Headers/Bit6Constants.h">Bit6Constants.h</div>
+<div class="added">
+<div class="symbolName" title="Bit6Error_LocationNotAllowed"><span class="diffStatus">Added</span> Bit6Error_LocationNotAllowed</div>
+</div>
+</div>
+
+
+</div>
+<div id="globalfooter" class="hideInXcode hideOnPrint">
+	<div class="gf-sosumi">
+	    <p>Copyright © 2014 Bit6. All rights reserved.</p>
+	</div>
+</div>
+
+</article>
+
+</body></html>
+

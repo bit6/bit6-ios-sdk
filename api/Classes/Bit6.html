@@ -47,7 +47,7 @@
 	
 	<option value="//api/name/deleteConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteConversation:</option>
 	
-	<option value="//api/name/init:">&nbsp;&nbsp;&nbsp;&nbsp;+ init:</option>
+	<option value="//api/name/deleteMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteMessage:</option>
 	
 	<option value="//api/name/init:pushNotificationMode:launchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ init:pushNotificationMode:launchingWithOptions:</option>
 	
@@ -63,7 +63,13 @@
 	
 	<option value="//api/name/playVideoFromMessage:viewController:">&nbsp;&nbsp;&nbsp;&nbsp;+ playVideoFromMessage:viewController:</option>
 	
+	<option value="//api/name/setShouldDownloadVideoBeforePlaying:">&nbsp;&nbsp;&nbsp;&nbsp;+ setShouldDownloadVideoBeforePlaying:</option>
+	
+	<option value="//api/name/shouldDownloadVideoBeforePlaying">&nbsp;&nbsp;&nbsp;&nbsp;+ shouldDownloadVideoBeforePlaying</option>
+	
 	<option value="//api/name/startCallToAddress:hasVideo:">&nbsp;&nbsp;&nbsp;&nbsp;+ startCallToAddress:hasVideo:</option>
+	
+	<option value="//api/name/startWithApiKey:pushNotificationMode:launchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ startWithApiKey:pushNotificationMode:launchingWithOptions:</option>
 	
 	<option value="//api/name/totalBadge">&nbsp;&nbsp;&nbsp;&nbsp;+ totalBadge</option>
 	
@@ -111,7 +117,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteConversation:">deleteConversation:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init:">init:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessage:">deleteMessage:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init:pushNotificationMode:launchingWithOptions:">init:pushNotificationMode:launchingWithOptions:</a></span></li>
 	
@@ -127,7 +133,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/playVideoFromMessage:viewController:">playVideoFromMessage:viewController:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setShouldDownloadVideoBeforePlaying:">setShouldDownloadVideoBeforePlaying:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldDownloadVideoBeforePlaying">shouldDownloadVideoBeforePlaying</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCallToAddress:hasVideo:">startCallToAddress:hasVideo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithApiKey:pushNotificationMode:launchingWithOptions:">startWithApiKey:pushNotificationMode:launchingWithOptions:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalBadge">totalBadge</a></span></li>
 	
@@ -190,13 +202,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/init:">+&nbsp;init:</a></code>
+		<code><a href="#//api/name/init:pushNotificationMode:launchingWithOptions:">+&nbsp;init:pushNotificationMode:launchingWithOptions:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/init:pushNotificationMode:launchingWithOptions:">+&nbsp;init:pushNotificationMode:launchingWithOptions:</a></code>
+		<code><a href="#//api/name/startWithApiKey:pushNotificationMode:launchingWithOptions:">+&nbsp;startWithApiKey:pushNotificationMode:launchingWithOptions:</a></code>
 	</span>
 	
 	
@@ -223,6 +235,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/deleteConversation:">+&nbsp;deleteConversation:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteMessage:">+&nbsp;deleteMessage:</a></code>
 	</span>
 	
 	
@@ -293,6 +311,18 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/typingBeginToAddress:">+&nbsp;typingBeginToAddress:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setShouldDownloadVideoBeforePlaying:">+&nbsp;setShouldDownloadVideoBeforePlaying:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldDownloadVideoBeforePlaying">+&nbsp;shouldDownloadVideoBeforePlaying</a></code>
 	</span>
 	
 	
@@ -445,18 +475,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/init:" title="init:"></a>
-	<h3 class="subsubtitle method-title">init:</h3>
+	<a name="//api/name/deleteMessage:" title="deleteMessage:"></a>
+	<h3 class="subsubtitle method-title">deleteMessage:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Bit6 startup method. It should be the first call to Bit6 api made.</p>
+		<p>Deletes a message from the system.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)init:(NSString *)<em>apiKey</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)deleteMessage:(Bit6Message *)<em>message</em></code></div>
 
     
 	
@@ -464,8 +494,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>apiKey</em></dt>
-			<dd><p>unique key for the current developer.</p></dd>
+			<dt><em>message</em></dt>
+			<dd><p><a href="../Classes/Bit6Message.html">Bit6Message</a> object to be deleted</p></dd>
 		</dl>
 		
 	</div>
@@ -475,11 +505,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6 init:pushNotificationMode:] instead</p></div>
-	</div>
 	
 	
 	
@@ -536,6 +561,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6 startWithApiKey:pushNotificationMode:launchingWithOptions:] instead</p></div>
+	</div>
 	
 	
 	
@@ -907,6 +937,93 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/setShouldDownloadVideoBeforePlaying:" title="setShouldDownloadVideoBeforePlaying:"></a>
+	<h3 class="subsubtitle method-title">setShouldDownloadVideoBeforePlaying:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Configure the video attachments playing mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setShouldDownloadVideoBeforePlaying:(BOOL)<em>shouldDownloadVideoBeforePlaying</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shouldDownloadVideoBeforePlaying</em></dt>
+			<dd><p>if true the video attachments will be downloaded to be played locally. If false, the video will be streamed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldDownloadVideoBeforePlaying" title="shouldDownloadVideoBeforePlaying"></a>
+	<h3 class="subsubtitle method-title">shouldDownloadVideoBeforePlaying</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Obtains the current configuration to play video attachments.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)shouldDownloadVideoBeforePlaying</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/startCallToAddress:hasVideo:" title="startCallToAddress:hasVideo:"></a>
 	<h3 class="subsubtitle method-title">startCallToAddress:hasVideo:</h3>
 	
@@ -933,6 +1050,62 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>hasVideo</em></dt>
 			<dd><p>indicate if the call will include a video stream</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startWithApiKey:pushNotificationMode:launchingWithOptions:" title="startWithApiKey:pushNotificationMode:launchingWithOptions:"></a>
+	<h3 class="subsubtitle method-title">startWithApiKey:pushNotificationMode:launchingWithOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Bit6 startup method. It should be the first call to Bit6 api made.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(NSString *)<em>apiKey</em> pushNotificationMode:(Bit6PushNotificationMode)<em>pushNotificationMode</em> launchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiKey</em></dt>
+			<dd><p>unique key for the current developer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pushNotificationMode</em></dt>
+			<dd><p>One of the values in <a href="../Constants/Bit6PushNotificationMode.html">Bit6PushNotificationMode</a> enumeration.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>launchOptions</em></dt>
+			<dd><p>used to send the launchOptions from [UIApplicationDelegate application:didFinishLaunchingWithOptions:] to Bit6</p></dd>
 		</dl>
 		
 	</div>
@@ -1066,7 +1239,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-06-30)</span><br />
+						<p><span class="copyright">&copy; 2014 Bit6. All rights reserved. (Last updated: 2014-07-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

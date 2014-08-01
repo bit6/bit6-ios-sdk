@@ -46,12 +46,21 @@ __Step 2.__ Configure the UIView
     [hangupButton addTarget:[Bit6InCallController sharedInstance] 
                      action:@selector(hangup) 
                      forControlEvents:UIControlEventTouchUpInside];
+    [speakerButton addTarget:[Bit6InCallController sharedInstance]
+                     action:@selector(switchSpeaker)
+                     forControlEvents:UIControlEventTouchUpInside];
     
+    //if this is an video call, hide the speaker controls
+    if ([Bit6InCallController sharedInstance].isVideoCall) {
+        speakerButton.hidden = YES;
+        speakerLabel.hidden = YES;
+    }
     //if this is an audio call, hide the camera controls
-    if (![Bit6InCallController sharedInstance].isVideoCall) {
+    else {
         cameraButton.hidden = YES;
         cameraLabel.hidden = YES;
     }
+
     return overlayView;
 }
 ```
@@ -62,11 +71,29 @@ __Step 3.__ Refresh the UIView
 //refresh the controls overlay
 - (void) refreshControlsOverlayView:(UIView*)view inCallController:(Bit6InCallController*)icc
 {
-    UILabel *statusLabel = (UILabel*) [view viewWithTag:...];
-    statusLabel.text = 
-         [Bit6InCallController sharedInstance].isConnected?@"Connected":@"Connecting...";
-    
-    UILabel *muteLabel = (UILabel*) [view viewWithTag:...];
+    UILabel *muteLabel = (UILabel*) [view viewWithTag:6];
     muteLabel.text = icc.isAudioMuted?@"Mute":@"Unmute";
+    
+    UILabel *speakerLabel = (UILabel*) [view viewWithTag:10];
+    if ([Bit6InCallController sharedInstance].isSpeakerEnabled) {
+        speakerLabel.text = @"Disable Speaker";
+    }
+    else {
+        speakerLabel.text = @"Enable Speaker";
+    }
+}
+
+//called each second to allow the refresh of a timer label
+- (void) refreshTimerInOverlayView:(UIView*)view inCallController:(Bit6InCallController*)icc
+{
+    UILabel *statusLabel = (UILabel*) [view viewWithTag:2];
+    if (![Bit6InCallController sharedInstance].isConnected) {
+        statusLabel.text = @"Connecting...";
+    }
+    else {
+        int seconds = [Bit6InCallController sharedInstance].seconds;
+        int minutes = seconds/60;
+        statusLabel.text = [NSString stringWithFormat:@"%02d:%02d",minutes,seconds-minutes*60];
+    }
 }
 ```

@@ -6,9 +6,25 @@ layout: nil
 
 Let the user view the attachment preview, play audio files, view location on the map, view the picture fullscreen etc.
 
+###Get the Path for a Message Attachment
+
+Check the attachment path for a given message. <br><br>
+Contants to be used:<br>
+`Bit6MessageAttachmentCategory_THUMBNAIL` - for thumbnails
+`Bit6MessageAttachmentCategory_FULL_SIZE` - for full size 
+
+```objc
+Bit6Message *msg = ...;
+NSString *thumbnailAttachmentPath = [msg attachmentPathForAttachmentCategory:
+									Bit6MessageAttachmentCategory_THUMBNAIL];
+NSString *fullAttachmentPath = [msg attachmentPathForAttachmentCategory:
+									Bit6MessageAttachmentCategory_FULL_SIZE];
+```
+
+
 ###Get the Status for a Message Attachment
 
-Check the attachment state for a given messages. <br><br>
+Check the attachment state for a given message. <br><br>
 Contants to be used:<br>
 `Bit6MessageAttachmentCategory_THUMBNAIL` - for thumbnails
 `Bit6MessageAttachmentCategory_FULL_SIZE` - for full size 
@@ -144,19 +160,37 @@ if (message.type == Bit6MessageType_Attachments &&
 ```
 __Step 2.__ Use a `Bit6ImageView` object to show the image.
 
-Add <b>`Bit6ImageView`</b> to nib/storyboard: add an `UIImageView` object and change its class to `Bit6ImageView`.
+Add `Bit6ImageView` to nib/storyboard: add an `UIImageView` object and change its class to `Bit6ImageView`.
 
 ---
 
-<img style="max-width:100%" src="images/bit6ImageView.png"/>
+<img style="max-width:100%" src="images/full_image_view.png"/>
 
 ---
 
 
-__Step 3.__ Set the message to be used with the <b>`Bit6ImageView`</b> object:
+__Step 3.__ Set the message to be used with the `Bit6ImageView` object:
 
 ```objc
 Bit6Message *message = ...
 Bit6ImageView *imageView = ...
 imageView.message = message;
+```
+
+###Download Video Attachments
+
+By default when interacting with a video attachment the file will be streamed. If you want to change this behaviour by forcing the video file to download you can add the following in your `AppDelegate`
+
+```objc
+- (BOOL)application:(UIApplication *)application 
+      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+        // start of your application:didFinishLaunchingWithOptions: method
+        // ...
+        
+        [Bit6 setShouldDownloadVideoBeforePlaying:YES];
+        
+        // The rest of your application:didFinishLaunchingWithOptions: method
+        // ...
+    }
 ```

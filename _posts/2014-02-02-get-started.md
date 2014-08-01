@@ -47,7 +47,7 @@ __Step 3.__ Launch Bit6 with your API Key
         // start of your application:didFinishLaunchingWithOptions: method
         // ...
         
-        [Bit6 init:@"your_api_key" 
+        [Bit6 startWithApiKey:@"your_api_key" 
               pushNotificationMode:Bit6PushNotificationMode_DEVELOPMENT 
               launchingWithOptions:launchOptions];
     
