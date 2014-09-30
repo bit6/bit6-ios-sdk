@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
             
         }))
         alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields[0] as UITextField
-            var passwordTextField = alert.textFields[1] as UITextField
+            var usernameTextField = alert.textFields?[0] as UITextField
+            var passwordTextField = alert.textFields?[1] as UITextField
             self.login(usernameTextField.text,password: passwordTextField.text)
         }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             textField.secureTextEntry = true
         })
         
-        self.navigationController.presentViewController(alert, animated: true, completion:nil)
+        self.navigationController?.presentViewController(alert, animated: true, completion:nil)
     }
     
     @IBAction func touchedSignUpButton(sender : UIButton) {
@@ -43,8 +43,8 @@ class LoginViewController: UIViewController {
             
             }))
         alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields[0] as UITextField
-            var passwordTextField = alert.textFields[1] as UITextField
+            var usernameTextField = alert.textFields?[0] as UITextField
+            var passwordTextField = alert.textFields?[1] as UITextField
             self.signUp(usernameTextField.text,password: passwordTextField.text)
             }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
@@ -54,16 +54,16 @@ class LoginViewController: UIViewController {
             textField.placeholder = "Password"
             })
         
-        self.navigationController.presentViewController(alert, animated: true, completion:nil)
+        self.navigationController?.presentViewController(alert, animated: true, completion:nil)
     }
 
     func login(username:String,password:String){
         var userIdentity = Bit6Address(kind: Bit6AddressKind.USERNAME, value: username)
         Bit6Session.loginWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
-            if (error){
+            if ((error) != nil){
                 var alert = UIAlertController(title:"Login Failed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
-                self.navigationController.presentViewController(alert, animated: true, completion:nil)
+                self.navigationController?.presentViewController(alert, animated: true, completion:nil)
             }
             else {
                 self.performSegueWithIdentifier("loginCompleted", sender: self)
@@ -74,10 +74,10 @@ class LoginViewController: UIViewController {
     func signUp(username:String,password:String){
         var userIdentity = Bit6Address(kind: Bit6AddressKind.USERNAME, value: username)
         Bit6Session.signUpWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
-            if (error){
+            if ((error) != nil){
                 var alert = UIAlertController(title:"SignUp Failed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
-                self.navigationController.presentViewController(alert, animated: true, completion:nil)
+                self.navigationController?.presentViewController(alert, animated: true, completion:nil)
             }
             else {
                 self.performSegueWithIdentifier("loginCompleted", sender: self)

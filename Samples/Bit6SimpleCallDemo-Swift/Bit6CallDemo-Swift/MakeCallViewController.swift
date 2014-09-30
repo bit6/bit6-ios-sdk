@@ -18,7 +18,7 @@ class MakeCallViewController: UIViewController {
     
     @IBAction func touchedLogoutBarButton(sender : UIButton) {
         Bit6Session.logoutWithCompletionHandler({(response,error) in
-            self.navigationController.popViewControllerAnimated(true)
+            self.navigationController?.popViewControllerAnimated(true)
             NSLog("Logout")
             }
         )
