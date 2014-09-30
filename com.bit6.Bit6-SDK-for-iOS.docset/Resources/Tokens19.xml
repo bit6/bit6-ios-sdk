@@ -1,37 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6AddressKind.html">
+	<File path="Protocols/Bit6MenuControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6AddressKind</TokenIdentifier>
-			<Abstract type="html">Bit6Address kind</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6MenuControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6MenuControllerDelegate protocol defines methods that your delegate object must implement to allow the standard UIMenuController to be shown on a UIView element related to a Bit6Message with options like &apos;forward a sent message&apos;, &apos;send again a failed message&apos; and &apos;copy text&apos;.</Abstract>
+			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_PHONE</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a phone number</Abstract>
-            <Declaration>Bit6AddressKind_PHONE</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/forwardMessage:</TokenIdentifier>
+			<Abstract type="html">If implemented, the &quot;forward&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;forward&quot; menu was pressed.</Abstract>
+			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)forwardMessage:(Bit6Message *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The Bit6Message object to be forwarded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/forwardMessage:</Anchor>
             <NodeRef refid="19"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_USERNAME</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an username</Abstract>
-            <Declaration>Bit6AddressKind_USERNAME</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/resendFailedMessage:</TokenIdentifier>
+			<Abstract type="html">If implemented, the &quot;send&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;send&quot; menu was pressed.</Abstract>
+			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)resendFailedMessage:(Bit6OutgoingMessage *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The Bit6Message object to be send again.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resendFailedMessage:</Anchor>
             <NodeRef refid="19"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

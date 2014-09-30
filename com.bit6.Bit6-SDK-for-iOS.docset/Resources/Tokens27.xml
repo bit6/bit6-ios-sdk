@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6PushNotificationMode.html">
+	<File path="Constants/Bit6MessageStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6PushNotificationMode</TokenIdentifier>
-			<Abstract type="html">Push Notification Mode</Abstract>
-			<DeclaredIn>Bit6Constants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageStatus</TokenIdentifier>
+			<Abstract type="html">Delivery status for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -14,21 +14,51 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6PushNotificationMode_DEVELOPMENT</TokenIdentifier>
-            <Abstract type="html">Development Mode for Push Notifications</Abstract>
-            <Declaration>Bit6PushNotificationMode_DEVELOPMENT</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sending</TokenIdentifier>
+            <Abstract type="html">The message is being sent.</Abstract>
+            <Declaration>Bit6MessageStatus_Sending</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="27"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6PushNotificationMode_PRODUCTION</TokenIdentifier>
-            <Abstract type="html">Production Mode for Push Notifications</Abstract>
-            <Declaration>Bit6PushNotificationMode_PRODUCTION</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sent</TokenIdentifier>
+            <Abstract type="html">The message has been sent.</Abstract>
+            <Declaration>Bit6MessageStatus_Sent</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Failed</TokenIdentifier>
+            <Abstract type="html">The message sending has failed.</Abstract>
+            <Declaration>Bit6MessageStatus_Failed</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Delivered</TokenIdentifier>
+            <Abstract type="html">The message has been delivered.</Abstract>
+            <Declaration>Bit6MessageStatus_Delivered</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Read</TokenIdentifier>
+            <Abstract type="html">The message has been read.</Abstract>
+            <Declaration>Bit6MessageStatus_Read</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="27"/>
         </Token>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageAttachmentCategory.html">
+	<File path="Constants/Bit6AddressKind.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentCategory</TokenIdentifier>
-			<Abstract type="html">Message attachment category for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6AddressKind</TokenIdentifier>
+			<Abstract type="html">Bit6Address kind</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -14,21 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_THUMBNAIL</TokenIdentifier>
-            <Abstract type="html">The thumbnail image for the message.</Abstract>
-            <Declaration>Bit6MessageAttachmentCategory_THUMBNAIL</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_PHONE</TokenIdentifier>
+            <Abstract type="html">The Bit6Address refers to a phone number</Abstract>
+            <Declaration>Bit6AddressKind_PHONE</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Address.h</DeclaredIn>
             
             <NodeRef refid="21"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_FULL_SIZE</TokenIdentifier>
-            <Abstract type="html">The full size attachment for the message.</Abstract>
-            <Declaration>Bit6MessageAttachmentCategory_FULL_SIZE</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_USERNAME</TokenIdentifier>
+            <Abstract type="html">The Bit6Address refers to an username</Abstract>
+            <Declaration>Bit6AddressKind_USERNAME</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Address.h</DeclaredIn>
             
             <NodeRef refid="21"/>
         </Token>

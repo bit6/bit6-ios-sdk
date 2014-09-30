@@ -25,32 +25,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</TokenIdentifier>
-			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
-			
-			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate noMicBlock:(void ( ^ ) ( ))noMicBlock</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">a Bit6OutgoingMessage object where the audio file will be included.</Abstract>
-				</Parameter><Parameter>
-					<Name>maxDuration</Name>
-					<Abstract type="html">maximum allowed duration (in seconds) of the audio file to be recorded.</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see Bit6AudioRecorderControllerDelegate Protocol Reference.</Abstract>
-				</Parameter><Parameter>
-					<Name>noMicBlock</Name>
-					<Abstract type="html">block to call if the user disabled access to the microphone</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:noMicBlock:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</TokenIdentifier>
 			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>

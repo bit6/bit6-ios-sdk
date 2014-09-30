@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageType.html">
+	<File path="Constants/Bit6MessageFileType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageType</TokenIdentifier>
-			<Abstract type="html">Message type for a Bit6Message.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageFileType</TokenIdentifier>
+			<Abstract type="html">Attachment type for a Bit6Message</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Text</TokenIdentifier>
-            <Abstract type="html">The message has only text.</Abstract>
-            <Declaration>Bit6MessageType_Text</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_None</TokenIdentifier>
+            <Abstract type="html">The message has no attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_None</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Attachments</TokenIdentifier>
-            <Abstract type="html">The message has an attachment.</Abstract>
-            <Declaration>Bit6MessageType_Attachments</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_AudioMP4</TokenIdentifier>
+            <Abstract type="html">The message has an MP4 audio attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_AudioMP4</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -34,9 +34,29 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Location</TokenIdentifier>
-            <Abstract type="html">The message has a location.</Abstract>
-            <Declaration>Bit6MessageType_Location</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_ImagePNG</TokenIdentifier>
+            <Abstract type="html">The message has an PNG image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_ImagePNG</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_ImageJPG</TokenIdentifier>
+            <Abstract type="html">The message has an JPEG image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_ImageJPG</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_VideoMP4</TokenIdentifier>
+            <Abstract type="html">The message has an MP4 video attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_VideoMP4</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             

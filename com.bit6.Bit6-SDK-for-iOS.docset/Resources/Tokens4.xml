@@ -25,23 +25,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileInMessage:</TokenIdentifier>
-			<Abstract type="html">Starts playing the audio file attached to a message.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>- (void)startPlayingAudioFileInMessage:(Bit6Message *)msg</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">A Bit6Message object with the audio attachment to play.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startPlayingAudioFileInMessage:</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileInMessage:errorHandler:</TokenIdentifier>
 			<Abstract type="html">Starts playing the audio file attached to a message.</Abstract>
 			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>

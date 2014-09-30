@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6AudioRecorderControllerDelegate.html">
+	<File path="Classes/Bit6ThumbnailImageView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6AudioRecorderControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6AudioRecorderControllerDelegate protocol defines the methods a delegate of a Bit6AudioRecorderController object should implement. The methods of this protocol notify the delegate when the recording was either completed or canceled by the user.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6ThumbnailImageView</TokenIdentifier>
+			<Abstract type="html">Special subclass of UIImageView to work with the message attachment thumbnails. It includes a convenient UIMenuController if the Bit6MenuControllerDelegate is implemented.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,39 +13,125 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/doneRecorderController:message:</TokenIdentifier>
-			<Abstract type="html">Called when a user has completed the recording prccess.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setMessage:</TokenIdentifier>
+			<Abstract type="html">Message with an attachment to be displayed</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
 			
-			<Declaration>- (void)doneRecorderController:(Bit6AudioRecorderController *)b6rc message:(Bit6OutgoingMessage *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>b6rc</Name>
-					<Abstract type="html">The controller object recording the audio file.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">Message object set in [Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:errorHandler:] with the audio file set.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
 			
-			<Anchor>//api/name/doneRecorderController:message:</Anchor>
+			
+			<Anchor>//api/name/message</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/cancelRecorderController:</TokenIdentifier>
-			<Abstract type="html">Called when a user has cancelled the recording process.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/message</TokenIdentifier>
+			<Abstract type="html">Message with an attachment to be displayed</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
 			
-			<Declaration>- (void)cancelRecorderController:(Bit6AudioRecorderController *)b6rc</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>b6rc</Name>
-					<Abstract type="html">The controller object recording the audio file.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
 			
-			<Anchor>//api/name/cancelRecorderController:</Anchor>
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/message</TokenIdentifier>
+			<Abstract type="html">Message with an attachment to be displayed</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setThumbnailImageViewDelegate:</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setMenuControllerDelegate:</TokenIdentifier>
+			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/menuControllerDelegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/menuControllerDelegate</TokenIdentifier>
+			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/menuControllerDelegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/menuControllerDelegate</TokenIdentifier>
+			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/menuControllerDelegate</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

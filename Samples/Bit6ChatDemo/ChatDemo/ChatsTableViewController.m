@@ -11,12 +11,14 @@
 #import "ImageAttachedViewController.h"
 #import "UIBActionSheet.h"
 
-@interface ChatsTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6ThumbnailImageViewDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate, UITextFieldDelegate>
+@interface ChatsTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6ThumbnailImageViewDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate, UITextFieldDelegate, Bit6MenuControllerDelegate>
 {
     BOOL scroll;
+    int alert_type;
 }
 
-@property (strong, nonatomic) NSArray *messages;
+@property (strong, nonatomic) Bit6Message *messageToForward;
+@property (strong, nonatomic) NSMutableArray *messages;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *typingBarButtonItem;
 
 @end
@@ -64,7 +66,7 @@
 - (NSArray*)messages
 {
     if (!_messages && self.conversation) {
-        _messages = self.conversation.messages;
+        _messages = [self.conversation.messages mutableCopy];
     }
     return _messages;
 }
@@ -109,8 +111,14 @@
         cell = [tableView dequeueReusableCellWithIdentifier:message.incoming?attachmentInCellIdentifier:attachmentOutCellIdentifier];
     }
     
+    Bit6MessageLabel *textLabel = (Bit6MessageLabel*) [cell viewWithTag:1];
+    textLabel.menuControllerDelegate = self;
+    textLabel.layer.borderColor = [UIColor grayColor].CGColor;
+    textLabel.layer.borderWidth = 0.7;
+    
     Bit6ThumbnailImageView *imageView = (Bit6ThumbnailImageView*) [cell viewWithTag:3];
     imageView.thumbnailImageViewDelegate = self;
+    imageView.menuControllerDelegate = self;
     imageView.layer.borderWidth=1;
     imageView.layer.cornerRadius=10;
     imageView.layer.borderColor=[UIColor blackColor].CGColor;
@@ -122,8 +130,8 @@
 {
     Bit6Message *message = self.messages[indexPath.row];
     
-    UILabel *textLabel = (UILabel*) [cell viewWithTag:1];
-    textLabel.text = message.content;
+    Bit6MessageLabel *textLabel = (Bit6MessageLabel*) [cell viewWithTag:1];
+    textLabel.message = message;
     
     Bit6ThumbnailImageView *imageView = (Bit6ThumbnailImageView*) [cell viewWithTag:3];
     imageView.message = message;
@@ -160,6 +168,7 @@
 - (IBAction)touchedComposeButton:(id)sender {
     
     UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the message" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send",nil];
+    alert_type = 0;
     obj.alertViewStyle = UIAlertViewStylePlainTextInput;
     [obj textFieldAtIndex:0].delegate = self;
     [obj show];
@@ -168,9 +177,31 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex!=alertView.cancelButtonIndex) {
-        UITextField *textfield = [alertView textFieldAtIndex:0];
-        NSString *msg = textfield.text;
-        [self sendTextMsg:msg];
+        if (alert_type==0) {
+            UITextField *textfield = [alertView textFieldAtIndex:0];
+            NSString *msg = textfield.text;
+            [self sendTextMsg:msg];
+        }
+        else {
+            UITextField *textfield = [alertView textFieldAtIndex:0];
+            NSString *destination = textfield.text;
+            if ([destination length]>0) {
+                Bit6Address *address = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:destination];
+                
+                Bit6OutgoingMessage *msg = [Bit6OutgoingMessage outgoingCopyOfMessage:self.messageToForward];
+                msg.destination = address;
+                msg.channel = Bit6MessageChannel_PUSH;
+                [msg sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+                    if (!error) {
+                        NSLog(@"Message Sent");
+                    }
+                    else {
+                        NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+                    }
+                }];
+            }
+            self.messageToForward = nil;
+        }
     }
 }
 
@@ -322,9 +353,53 @@
 
 - (void) messagesUpdatedNotification:(NSNotification*)notification
 {
+    /*
+    //Simpler way to refresh the messages
     self.messages = nil;
     [self.tableView reloadData];
     [self scrollToBottomAnimated:YES];
+     */
+    
+    //Complex way to refresh the messages
+    NSArray *messages = notification.userInfo[@"msgs"];
+    for (NSDictionary *info in messages) {
+        Bit6Message *msg = info[@"msg"];
+        NSString *status = info[@"status"];
+        //new messages
+        if ([status isEqualToString:Bit6MessageNotificationKey_ADDED]) {
+            NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.messages.count inSection:0];
+            [self.messages addObject:msg];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationTop];
+            [self scrollToBottomAnimated:YES];
+        }
+        //updated messages
+        else {
+            
+            //searching the index of the message
+            NSUInteger index = NSNotFound;
+            for (int x=self.messages.count-1; x>=0; x--) {
+                if ([self.messages[x] isEqual:msg]) {
+                    index = x;
+                    break;
+                }
+            }
+            
+            if (index!=NSNotFound) {
+                //message has changed
+                if ([status isEqualToString:Bit6MessageNotificationKey_UPDATED]) {
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+                    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                    [self tableView:self.tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
+                }
+                //message has been deleted
+                else if ([status isEqualToString:Bit6MessageNotificationKey_DELETED]) {
+                    [self.messages removeObjectAtIndex:index];
+                    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+                }
+            }
+        }
+    }
+    
 }
 
 - (void) typingDidBeginRtNotification:(NSNotification*)notification
@@ -353,6 +428,29 @@
         NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:row inSection:0];
         [self.tableView scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:animated];
     }
+}
+
+#pragma mark - Bit6MenuControllerDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+}
+
+- (void) forwardMessage:(Bit6Message*)msg
+{
+    self.messageToForward = msg;
+    UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the destination username" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    alert_type = 1;
+    obj.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [obj show];
+}
+
+- (void) resendFailedMessage:(Bit6OutgoingMessage*)msg
+{
+    [msg sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+        
+    }];
 }
 
 #pragma mark - Navigation

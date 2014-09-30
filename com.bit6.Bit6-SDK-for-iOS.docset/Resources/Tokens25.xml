@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageStatus.html">
+	<File path="Constants/Bit6MessageChannel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageStatus</TokenIdentifier>
-			<Abstract type="html">Delivery status for a Bit6Message.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageChannel</TokenIdentifier>
+			<Abstract type="html">Channels available for sending a Bit6Message.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sending</TokenIdentifier>
-            <Abstract type="html">The message is being sent.</Abstract>
-            <Declaration>Bit6MessageStatus_Sending</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_SMS</TokenIdentifier>
+            <Abstract type="html">The message is an SMS.</Abstract>
+            <Declaration>Bit6MessageChannel_SMS</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -24,39 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sent</TokenIdentifier>
-            <Abstract type="html">The message has been sent.</Abstract>
-            <Declaration>Bit6MessageStatus_Sent</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Failed</TokenIdentifier>
-            <Abstract type="html">The message sending has failed.</Abstract>
-            <Declaration>Bit6MessageStatus_Failed</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Delivered</TokenIdentifier>
-            <Abstract type="html">The message has been delivered.</Abstract>
-            <Declaration>Bit6MessageStatus_Delivered</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Read</TokenIdentifier>
-            <Abstract type="html">The message has been read.</Abstract>
-            <Declaration>Bit6MessageStatus_Read</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_PUSH</TokenIdentifier>
+            <Abstract type="html">The message is an app-to-app message.</Abstract>
+            <Declaration>Bit6MessageChannel_PUSH</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             

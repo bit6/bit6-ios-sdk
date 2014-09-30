@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6InCallControllerDelegate.html">
+	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6InCallControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6InCallControllerDelegate protocol defines the methods a delegate of a Bit6InCallController object should implement. The methods of this protocol allow the customization of the controls overlay for the inCall interface.</Abstract>
-			<DeclaredIn>Bit6InCallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,59 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6InCallControllerDelegate/controlsOverlayViewForInCallController:</TokenIdentifier>
-			<Abstract type="html">Define a custom controls UIView to be used on top of the inCall interface.</Abstract>
-			<DeclaredIn>Bit6InCallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>- (UIView *)controlsOverlayViewForInCallController:(Bit6InCallController *)icc</Declaration>
+			<Declaration>- (void)currentLocationController:(Bit6CurrentLocationController *)b6clc didFailWithError:(NSError *)error message:(Bit6OutgoingMessage *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>icc</Name>
-					<Abstract type="html">the default Bit6InCallController that handles the calls</Abstract>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a custom controls UIView</Abstract></ReturnValue>
-			<Anchor>//api/name/controlsOverlayViewForInCallController:</Anchor>
+			
+			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6InCallControllerDelegate/refreshControlsOverlayView:inCallController:</TokenIdentifier>
-			<Abstract type="html">This method will be called when changes to the custom controls UIView has to occur. This includes call status and mute/video status.</Abstract>
-			<DeclaredIn>Bit6InCallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>- (void)refreshControlsOverlayView:(UIView *)view inCallController:(Bit6InCallController *)icc</Declaration>
+			<Declaration>- (void)currentLocationController:(Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(Bit6OutgoingMessage *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">the same custom controls UIView defined in -[Bit6InCallControllerDelegate controlsOverlayViewForInCallController:]</Abstract>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
 				</Parameter><Parameter>
-					<Name>icc</Name>
-					<Abstract type="html">the default Bit6InCallController that handles the calls</Abstract>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/refreshControlsOverlayView:inCallController:</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6InCallControllerDelegate/refreshTimerInOverlayView:inCallController:</TokenIdentifier>
-			<Abstract type="html">This method will be called each second to allow the update of any content timer related view inside the controlsOverlay</Abstract>
-			<DeclaredIn>Bit6InCallController.h</DeclaredIn>
-			
-			<Declaration>- (void)refreshTimerInOverlayView:(UIView *)view inCallController:(Bit6InCallController *)icc</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">the same custom controls UIView defined in -[Bit6InCallControllerDelegate controlsOverlayViewForInCallController:]</Abstract>
-				</Parameter><Parameter>
-					<Name>icc</Name>
-					<Abstract type="html">the default Bit6InCallController that handles the calls</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/refreshTimerInOverlayView:inCallController:</Anchor>
+			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

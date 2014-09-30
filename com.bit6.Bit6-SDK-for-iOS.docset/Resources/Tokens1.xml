@@ -13,29 +13,6 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/init:pushNotificationMode:launchingWithOptions:</TokenIdentifier>
-			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
-			<DeclaredIn>Bit6.h</DeclaredIn>
-			
-			<Declaration>+ (void)init:(NSString *)apiKey pushNotificationMode:(Bit6PushNotificationMode)pushNotificationMode launchingWithOptions:(NSDictionary *)launchOptions</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>apiKey</Name>
-					<Abstract type="html">unique key for the current developer.</Abstract>
-				</Parameter><Parameter>
-					<Name>pushNotificationMode</Name>
-					<Abstract type="html">One of the values in Bit6PushNotificationMode enumeration.</Abstract>
-				</Parameter><Parameter>
-					<Name>launchOptions</Name>
-					<Abstract type="html">used to send the launchOptions from [UIApplicationDelegate application:didFinishLaunchingWithOptions:] to Bit6</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/init:pushNotificationMode:launchingWithOptions:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:pushNotificationMode:launchingWithOptions:</TokenIdentifier>
 			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
