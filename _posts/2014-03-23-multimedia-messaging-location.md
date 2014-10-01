@@ -4,6 +4,10 @@ title: 'Location'
 layout: nil
 ---
 
+On iOS8 is necessary to add the key NSLocationWhenInUseUsageDescription to your info.plist file. This string is used to specifies the reason for accessing the user’s location information.
+
+<img style="max-width:100%" src="images/location_ios8.png"/>
+
 __Step 1.__ Prepare the message: 
 
 ```objc
