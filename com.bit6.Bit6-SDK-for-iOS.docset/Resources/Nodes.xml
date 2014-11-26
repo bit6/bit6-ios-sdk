@@ -118,12 +118,12 @@
                 </Node>
                 
                 
-                
                 <Node type="section">
                     <Path>Classes/Bit6Address.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
                 </Node>
+                
                 
             </Subnodes>
             

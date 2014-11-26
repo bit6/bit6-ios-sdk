@@ -1,6 +1,6 @@
 //
 //  MakeCallViewController.m
-//  CallDemo
+//  Bit6CallDemo
 //
 //  Created by Carlos Thurber Boaventura on 06/13/14.
 //  Copyright (c) 2014 Bit6. All rights reserved.
@@ -11,6 +11,7 @@
 @interface MakeCallViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *destinationUsernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
 @end
 
@@ -46,17 +47,24 @@
 
 - (IBAction)touchedAudioCallButton:(id)sender {
     NSString *username = self.destinationUsernameTextField.text;
-    if ([username length] > 0) {
-        Bit6Address *address = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:username];
-        [Bit6 startCallToAddress:address hasVideo:NO];
+    Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
+    if (![Bit6 startCallToAddress:address hasVideo:NO]){
+        NSLog(@"Call Failed");
     }
 }
 
 - (IBAction)touchedVideoCallButton:(id)sender {
     NSString *username = self.destinationUsernameTextField.text;
-    if ([username length] > 0) {
-        Bit6Address *address = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:username];
-        [Bit6 startCallToAddress:address hasVideo:YES];
+    Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
+    if (![Bit6 startCallToAddress:address hasVideo:YES]){
+        NSLog(@"Call Failed");
+    }
+}
+
+- (IBAction)touchedDialButton:(id)sender {
+    NSString *phoneNumber = self.phoneNumberTextField.text;
+    if (![Bit6 startCallToPhoneNumber:phoneNumber]){
+        NSLog(@"Call Failed");
     }
 }
 

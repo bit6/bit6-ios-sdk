@@ -1,6 +1,6 @@
 //
 //  MessagingViewController.m
-//  Test
+//  Bit6ChatDemo
 //
 //  Created by Carlos Thurber Boaventura on 03/31/14.
 //  Copyright (c) 2014 Bit6. All rights reserved.
@@ -71,7 +71,7 @@
         UITextField *textfield = [alertView textFieldAtIndex:0];
         NSString *destination = textfield.text;
         if ([destination length]>0) {
-            Bit6Address *address = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:destination];
+            Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
             Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
             [Bit6 addConversation:conversation];
         }

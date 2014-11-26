@@ -1,6 +1,6 @@
 //
 //  ChatsViewController.m
-//  Test
+//  Bit6ChatDemo
 //
 //  Created by Carlos Thurber Boaventura on 04/01/14.
 //  Copyright (c) 2014 Bit6. All rights reserved.
@@ -186,7 +186,7 @@
             UITextField *textfield = [alertView textFieldAtIndex:0];
             NSString *destination = textfield.text;
             if ([destination length]>0) {
-                Bit6Address *address = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:destination];
+                Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
                 
                 Bit6OutgoingMessage *msg = [Bit6OutgoingMessage outgoingCopyOfMessage:self.messageToForward];
                 msg.destination = address;
@@ -279,10 +279,9 @@
         message.image = chosenImage;
     }
     else {
-        NSURL *chosenVideo = info[UIImagePickerControllerMediaURL];
-        message.videoURL = chosenVideo;
-        message.videoCropStart = [info objectForKey:@"_UIImagePickerControllerVideoEditingStart"];
-        message.videoCropEnd = [info objectForKey:@"_UIImagePickerControllerVideoEditingEnd"];
+        message.videoURL = (NSURL*)info[UIImagePickerControllerMediaURL];;
+        message.videoCropStart = info[@"_UIImagePickerControllerVideoEditingStart"];
+        message.videoCropEnd = info[@"_UIImagePickerControllerVideoEditingEnd"];
     }
     
     message.destination = self.conversation.address;
@@ -463,7 +462,7 @@
     }
 }
 
-#pragma mark -
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {

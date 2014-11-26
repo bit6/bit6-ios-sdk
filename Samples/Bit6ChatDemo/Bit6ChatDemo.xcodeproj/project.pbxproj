@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D80D4B9F1A21581900391E04 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B9E1A21581900391E04 /* GLKit.framework */; };
+		D80D4BA31A21582A00391E04 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4BA21A21582A00391E04 /* libsqlite3.dylib */; };
+		D8182E591A22FE7500E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8182E581A22FE7500E41160 /* libstdc++.dylib */; };
+		D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D83971F41923BDC4003565E4 /* libicucore.dylib */; };
+		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
+		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
+		D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A518DBFC540070378D /* UIKit.framework */; };
+		D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D886702C1926D5B400799E00 /* Bit6Resources.bundle */; };
+		D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AA8343192A8FEC0065BDA6 /* libz.dylib */; };
+		D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */; };
+		D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACB8194ABD2A00AFFB53 /* main.m */; };
+		D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */; };
+		D8EDACD0194ABD4D00AFFB53 /* ChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC2194ABD4D00AFFB53 /* ChatsTableViewController.m */; };
+		D8EDACD1194ABD4D00AFFB53 /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC4194ABD4D00AFFB53 /* ConversationsViewController.m */; };
+		D8EDACD2194ABD4D00AFFB53 /* ImageAttachedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC6194ABD4D00AFFB53 /* ImageAttachedViewController.m */; };
+		D8EDACD3194ABD4D00AFFB53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */; };
+		D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */; };
+		D8EDACD5194ABD4D00AFFB53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACCA194ABD4D00AFFB53 /* Main.storyboard */; };
+		D8EDACD6194ABD4D00AFFB53 /* UIBActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACCC194ABD4D00AFFB53 /* UIBActionSheet.m */; };
+		D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D80D4B9E1A21581900391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		D80D4BA01A21581E00391E04 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		D80D4BA21A21582A00391E04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D8182E581A22FE7500E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		D83971F41923BDC4003565E4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D880E49E18DBFC540070378D /* Bit6ChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bit6ChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D880E4A118DBFC540070378D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D880E4A518DBFC540070378D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D886702C1926D5B400799E00 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
+		D8AA8343192A8FEC0065BDA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D8EDACB5194ABD2A00AFFB53 /* Bit6ChatDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bit6ChatDemo-Info.plist"; path = "ChatDemo/Bit6ChatDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D8EDACB6194ABD2A00AFFB53 /* Bit6ChatDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bit6ChatDemo-Prefix.pch"; path = "ChatDemo/Bit6ChatDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ChatDemo/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		D8EDACB8194ABD2A00AFFB53 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChatDemo/main.m; sourceTree = SOURCE_ROOT; };
+		D8EDACBC194ABD4D00AFFB53 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ChatDemo/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ChatDemo/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = DemoConfig.xcconfig; path = ChatDemo/DemoConfig.xcconfig; sourceTree = SOURCE_ROOT; };
+		D8EDACC1194ABD4D00AFFB53 /* ChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatsTableViewController.h; path = ChatDemo/ChatsTableViewController.h; sourceTree = SOURCE_ROOT; };
+		D8EDACC2194ABD4D00AFFB53 /* ChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatsTableViewController.m; path = ChatDemo/ChatsTableViewController.m; sourceTree = SOURCE_ROOT; };
+		D8EDACC3194ABD4D00AFFB53 /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationsViewController.h; path = ChatDemo/ConversationsViewController.h; sourceTree = SOURCE_ROOT; };
+		D8EDACC4194ABD4D00AFFB53 /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationsViewController.m; path = ChatDemo/ConversationsViewController.m; sourceTree = SOURCE_ROOT; };
+		D8EDACC5194ABD4D00AFFB53 /* ImageAttachedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageAttachedViewController.h; path = ChatDemo/ImageAttachedViewController.h; sourceTree = SOURCE_ROOT; };
+		D8EDACC6194ABD4D00AFFB53 /* ImageAttachedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageAttachedViewController.m; path = ChatDemo/ImageAttachedViewController.m; sourceTree = SOURCE_ROOT; };
+		D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChatDemo/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		D8EDACC8194ABD4D00AFFB53 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ChatDemo/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ChatDemo/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		D8EDACCA194ABD4D00AFFB53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ChatDemo/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		D8EDACCB194ABD4D00AFFB53 /* UIBActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBActionSheet.h; path = ChatDemo/UIBActionSheet.h; sourceTree = SOURCE_ROOT; };
+		D8EDACCC194ABD4D00AFFB53 /* UIBActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIBActionSheet.m; path = ChatDemo/UIBActionSheet.m; sourceTree = SOURCE_ROOT; };
+		D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../Bit6SDK.framework; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D880E49B18DBFC540070378D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8182E591A22FE7500E41160 /* libstdc++.dylib in Frameworks */,
+				D80D4BA31A21582A00391E04 /* libsqlite3.dylib in Frameworks */,
+				D80D4B9F1A21581900391E04 /* GLKit.framework in Frameworks */,
+				D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */,
+				D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */,
+				D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */,
+				D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */,
+				D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */,
+				D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D880E49518DBFC540070378D = {
+			isa = PBXGroup;
+			children = (
+				D880E4A718DBFC540070378D /* ChatDemo */,
+				D880E4A018DBFC540070378D /* Frameworks */,
+				D880E49F18DBFC540070378D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D880E49F18DBFC540070378D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D880E49E18DBFC540070378D /* Bit6ChatDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D880E4A018DBFC540070378D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8182E581A22FE7500E41160 /* libstdc++.dylib */,
+				D80D4BA21A21582A00391E04 /* libsqlite3.dylib */,
+				D80D4BA01A21581E00391E04 /* libstdc++.6.0.9.dylib */,
+				D80D4B9E1A21581900391E04 /* GLKit.framework */,
+				D8AA8343192A8FEC0065BDA6 /* libz.dylib */,
+				D83971F41923BDC4003565E4 /* libicucore.dylib */,
+				D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */,
+				D880E4A118DBFC540070378D /* Foundation.framework */,
+				D880E4A318DBFC540070378D /* CoreGraphics.framework */,
+				D880E4A518DBFC540070378D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D880E4A718DBFC540070378D /* ChatDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D8EDACCB194ABD4D00AFFB53 /* UIBActionSheet.h */,
+				D8EDACCC194ABD4D00AFFB53 /* UIBActionSheet.m */,
+				D8EDACBC194ABD4D00AFFB53 /* AppDelegate.h */,
+				D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */,
+				D8EDACC8194ABD4D00AFFB53 /* LoginViewController.h */,
+				D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */,
+				D8EDACC3194ABD4D00AFFB53 /* ConversationsViewController.h */,
+				D8EDACC4194ABD4D00AFFB53 /* ConversationsViewController.m */,
+				D8EDACC1194ABD4D00AFFB53 /* ChatsTableViewController.h */,
+				D8EDACC2194ABD4D00AFFB53 /* ChatsTableViewController.m */,
+				D8EDACC5194ABD4D00AFFB53 /* ImageAttachedViewController.h */,
+				D8EDACC6194ABD4D00AFFB53 /* ImageAttachedViewController.m */,
+				D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */,
+				D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */,
+				D8EDACCA194ABD4D00AFFB53 /* Main.storyboard */,
+				D880E4A818DBFC540070378D /* Supporting Files */,
+			);
+			name = ChatDemo;
+			path = BasicDemo;
+			sourceTree = "<group>";
+		};
+		D880E4A818DBFC540070378D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8EDACB5194ABD2A00AFFB53 /* Bit6ChatDemo-Info.plist */,
+				D8EDACB6194ABD2A00AFFB53 /* Bit6ChatDemo-Prefix.pch */,
+				D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */,
+				D8EDACB8194ABD2A00AFFB53 /* main.m */,
+				D886702C1926D5B400799E00 /* Bit6Resources.bundle */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D880E49D18DBFC540070378D /* Bit6ChatDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "Bit6ChatDemo" */;
+			buildPhases = (
+				D880E49C18DBFC540070378D /* Resources */,
+				D84019311911F380000A5A5C /* Run Script - Build Version */,
+				D880E49A18DBFC540070378D /* Sources */,
+				D880E49B18DBFC540070378D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bit6ChatDemo;
+			productName = BasicDemo;
+			productReference = D880E49E18DBFC540070378D /* Bit6ChatDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D880E49618DBFC540070378D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Voxofon;
+			};
+			buildConfigurationList = D880E49918DBFC540070378D /* Build configuration list for PBXProject "Bit6ChatDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D880E49518DBFC540070378D;
+			productRefGroup = D880E49F18DBFC540070378D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D880E49D18DBFC540070378D /* Bit6ChatDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D880E49C18DBFC540070378D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EDACD3194ABD4D00AFFB53 /* Images.xcassets in Resources */,
+				D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */,
+				D8EDACD5194ABD4D00AFFB53 /* Main.storyboard in Resources */,
+				D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D84019311911F380000A5A5C /* Run Script - Build Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Build Version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\n\n#hexadecimal\n#    buildNumber=$((0x$buildNumber))\n#    buildNumber=$(($buildNumber + 1))\n#    buildNumber=$(printf \"%04X\" $buildNumber)\n\n#fecha\nbuildNumber=`/bin/date +%Y%m%d`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D880E49A18DBFC540070378D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EDACD1194ABD4D00AFFB53 /* ConversationsViewController.m in Sources */,
+				D8EDACD6194ABD4D00AFFB53 /* UIBActionSheet.m in Sources */,
+				D8EDACD2194ABD4D00AFFB53 /* ImageAttachedViewController.m in Sources */,
+				D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */,
+				D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */,
+				D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */,
+				D8EDACD0194ABD4D00AFFB53 /* ChatsTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D880E4CE18DBFC540070378D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D880E4CF18DBFC540070378D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D880E4D118DBFC540070378D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatDemo/Bit6ChatDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChatDemo/Bit6ChatDemo-Info.plist";
+				PRODUCT_NAME = Bit6ChatDemo;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D880E4D218DBFC540070378D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatDemo/Bit6ChatDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChatDemo/Bit6ChatDemo-Info.plist";
+				PRODUCT_NAME = Bit6ChatDemo;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D880E49918DBFC540070378D /* Build configuration list for PBXProject "Bit6ChatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D880E4CE18DBFC540070378D /* Debug */,
+				D880E4CF18DBFC540070378D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "Bit6ChatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D880E4D118DBFC540070378D /* Debug */,
+				D880E4D218DBFC540070378D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D880E49618DBFC540070378D /* Project object */;
+}

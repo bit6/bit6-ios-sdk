@@ -1,6 +1,6 @@
 //
 //  UIBActionSheet.m
-//  Bit6
+//  Bit6ChatDemo
 //
 //  Created by Carlos Thurber Boaventura on 10/10/13.
 //  Copyright (c) 2013 Bit6. All rights reserved.

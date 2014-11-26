@@ -1,6 +1,6 @@
 //
 //  LoginViewController.m
-//  Test
+//  Bit6CallDemo
 //
 //  Created by Carlos Thurber Boaventura on 03/31/14.
 //  Copyright (c) 2014 Bit6. All rights reserved.
@@ -57,7 +57,7 @@
 
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password
 {
-    Bit6Address *userIdentity = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:username];
+    Bit6Address *userIdentity = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
     [Bit6Session loginWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
@@ -70,7 +70,7 @@
 
 - (void) signUpWithUsername:(NSString*)username password:(NSString*)password
 {
-    Bit6Address *userIdentity = [[Bit6Address alloc] initWithKind:Bit6AddressKind_USERNAME value:username];
+    Bit6Address *userIdentity = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
     [Bit6Session signUpWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];

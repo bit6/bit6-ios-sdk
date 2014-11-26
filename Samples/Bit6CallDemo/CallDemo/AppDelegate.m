@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  Test
+//  Bit6CallDemo
 //
 //  Created by Carlos Thurber Boaventura on 03/20/14.
 //  Copyright (c) 2014 Bit6. All rights reserved.
@@ -46,14 +46,14 @@
     UIButton *speakerButton = (UIButton*) [overlayView viewWithTag:9];
     UILabel *speakerLabel = (UILabel*) [overlayView viewWithTag:10];
     
-    displayNameLabel.text = [Bit6InCallController sharedInstance].displayName;
+    displayNameLabel.text = icc.displayName;
     
-    [cameraButton addTarget:[Bit6InCallController sharedInstance] action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
-    [muteButton addTarget:[Bit6InCallController sharedInstance] action:@selector(muteAudio) forControlEvents:UIControlEventTouchUpInside];
-    [hangupButton addTarget:[Bit6InCallController sharedInstance] action:@selector(hangup) forControlEvents:UIControlEventTouchUpInside];
-    [speakerButton addTarget:[Bit6InCallController sharedInstance] action:@selector(switchSpeaker) forControlEvents:UIControlEventTouchUpInside];
+    [cameraButton addTarget:icc action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+    [muteButton addTarget:icc action:@selector(muteAudio) forControlEvents:UIControlEventTouchUpInside];
+    [hangupButton addTarget:icc action:@selector(hangup) forControlEvents:UIControlEventTouchUpInside];
+    [speakerButton addTarget:icc action:@selector(switchSpeaker) forControlEvents:UIControlEventTouchUpInside];
     
-    if ([Bit6InCallController sharedInstance].isVideoCall) {
+    if (icc.isVideoCall) {
         speakerButton.hidden = YES;
         speakerLabel.hidden = YES;
     }
@@ -85,20 +85,20 @@
 - (void) refreshControlsOverlayView:(UIView*)view inCallController:(Bit6InCallController*)icc
 {
     UILabel *muteLabel = (UILabel*) [view viewWithTag:6];
-    muteLabel.text = icc.isAudioMuted?@"Mute":@"Unmute";
+    muteLabel.text = icc.isAudioMuted?@"Unmute":@"Mute";
     
     UILabel *speakerLabel = (UILabel*) [view viewWithTag:10];
-    speakerLabel.text = [Bit6InCallController sharedInstance].isSpeakerEnabled?@"Disable Speaker":@"Enable Speaker";
+    speakerLabel.text = icc.isSpeakerEnabled?@"Disable Speaker":@"Enable Speaker";
 }
 
 - (void) refreshTimerInOverlayView:(UIView*)view inCallController:(Bit6InCallController*)icc
 {
     UILabel *statusLabel = (UILabel*) [view viewWithTag:2];
-    if (![Bit6InCallController sharedInstance].isConnected) {
+    if (!icc.isConnected) {
         statusLabel.text = @"Connecting...";
     }
     else {
-        int seconds = [Bit6InCallController sharedInstance].seconds;
+        int seconds = icc.seconds;
         int minutes = seconds/60;
         statusLabel.text = [NSString stringWithFormat:@"%02d:%02d",minutes,seconds-minutes*60];
     }

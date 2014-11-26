@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D80D4B661A2150DA00391E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4B651A2150DA00391E04 /* AppDelegate.swift */; };
+		D80D4B6B1A2150DA00391E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B691A2150DA00391E04 /* Main.storyboard */; };
+		D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B6C1A2150DA00391E04 /* Images.xcassets */; };
+		D80D4B861A2150F800391E04 /* DemoConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */; };
+		D80D4B8F1A21514A00391E04 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B881A21514A00391E04 /* libsqlite3.dylib */; };
+		D80D4B901A21514A00391E04 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B891A21514A00391E04 /* libicucore.dylib */; };
+		D80D4B911A21514A00391E04 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8A1A21514A00391E04 /* libz.dylib */; };
+		D80D4B921A21514A00391E04 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */; };
+		D80D4B931A21514A00391E04 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8C1A21514A00391E04 /* GLKit.framework */; };
+		D80D4B941A21514A00391E04 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */; };
+		D80D4BA91A215A8B00391E04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BA81A215A8B00391E04 /* LoginViewController.swift */; };
+		D80D4BAB1A215B1C00391E04 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */; };
+		D80D4BAD1A216AD400391E04 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */; };
+		D8182E4C1A22E83800E41160 /* ImageAttachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */; };
+		D8182E571A22FE2A00E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8182E561A22FE2A00E41160 /* libstdc++.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D80D4B601A2150DA00391E04 /* Bit6ChatDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit6ChatDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80D4B641A2150DA00391E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80D4B651A2150DA00391E04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D80D4B6A1A2150DA00391E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D80D4B6C1A2150DA00391E04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
+		D80D4B881A21514A00391E04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D80D4B891A21514A00391E04 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D80D4B8A1A21514A00391E04 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
+		D80D4B8C1A21514A00391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../../Bit6SDK.framework; sourceTree = "<group>"; };
+		D80D4B971A21526100391E04 /* Bit6ChatDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bit6ChatDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D80D4B991A21530E00391E04 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		D80D4BA81A215A8B00391E04 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachedViewController.swift; sourceTree = "<group>"; };
+		D8182E541A22FE2100E41160 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		D8182E561A22FE2A00E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D80D4B5D1A2150DA00391E04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8182E571A22FE2A00E41160 /* libstdc++.dylib in Frameworks */,
+				D80D4B8F1A21514A00391E04 /* libsqlite3.dylib in Frameworks */,
+				D80D4B911A21514A00391E04 /* libz.dylib in Frameworks */,
+				D80D4B901A21514A00391E04 /* libicucore.dylib in Frameworks */,
+				D80D4B931A21514A00391E04 /* GLKit.framework in Frameworks */,
+				D80D4B941A21514A00391E04 /* Bit6SDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D80D4B571A2150DA00391E04 = {
+			isa = PBXGroup;
+			children = (
+				D8182E561A22FE2A00E41160 /* libstdc++.dylib */,
+				D8182E541A22FE2100E41160 /* libstdc++.6.dylib */,
+				D80D4B621A2150DA00391E04 /* Bit6ChatDemo-Swift */,
+				D80D4B611A2150DA00391E04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D80D4B611A2150DA00391E04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D80D4B601A2150DA00391E04 /* Bit6ChatDemo-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D80D4B621A2150DA00391E04 /* Bit6ChatDemo-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				D80D4B971A21526100391E04 /* Bit6ChatDemo-Swift-Bridging-Header.h */,
+				D80D4B651A2150DA00391E04 /* AppDelegate.swift */,
+				D80D4BA81A215A8B00391E04 /* LoginViewController.swift */,
+				D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */,
+				D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */,
+				D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */,
+				D80D4B691A2150DA00391E04 /* Main.storyboard */,
+				D80D4B6C1A2150DA00391E04 /* Images.xcassets */,
+				D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */,
+				D80D4B631A2150DA00391E04 /* Supporting Files */,
+			);
+			path = "Bit6ChatDemo-Swift";
+			sourceTree = "<group>";
+		};
+		D80D4B631A2150DA00391E04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D80D4B991A21530E00391E04 /* libstdc++.6.0.9.dylib */,
+				D80D4B881A21514A00391E04 /* libsqlite3.dylib */,
+				D80D4B891A21514A00391E04 /* libicucore.dylib */,
+				D80D4B8A1A21514A00391E04 /* libz.dylib */,
+				D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */,
+				D80D4B8C1A21514A00391E04 /* GLKit.framework */,
+				D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */,
+				D80D4B641A2150DA00391E04 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D80D4B5F1A2150DA00391E04 /* Bit6ChatDemo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D80D4B7F1A2150DA00391E04 /* Build configuration list for PBXNativeTarget "Bit6ChatDemo-Swift" */;
+			buildPhases = (
+				D80D4B5C1A2150DA00391E04 /* Sources */,
+				D80D4B5D1A2150DA00391E04 /* Frameworks */,
+				D80D4B5E1A2150DA00391E04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bit6ChatDemo-Swift";
+			productName = "Bit6ChatDemo-Swift";
+			productReference = D80D4B601A2150DA00391E04 /* Bit6ChatDemo-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D80D4B581A2150DA00391E04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Bit6;
+				TargetAttributes = {
+					D80D4B5F1A2150DA00391E04 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = D80D4B5B1A2150DA00391E04 /* Build configuration list for PBXProject "Bit6ChatDemo-Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D80D4B571A2150DA00391E04;
+			productRefGroup = D80D4B611A2150DA00391E04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D80D4B5F1A2150DA00391E04 /* Bit6ChatDemo-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D80D4B5E1A2150DA00391E04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80D4B921A21514A00391E04 /* Bit6Resources.bundle in Resources */,
+				D80D4B861A2150F800391E04 /* DemoConfig.xcconfig in Resources */,
+				D80D4B6B1A2150DA00391E04 /* Main.storyboard in Resources */,
+				D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D80D4B5C1A2150DA00391E04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80D4BAB1A215B1C00391E04 /* ConversationsViewController.swift in Sources */,
+				D80D4BA91A215A8B00391E04 /* LoginViewController.swift in Sources */,
+				D80D4B661A2150DA00391E04 /* AppDelegate.swift in Sources */,
+				D8182E4C1A22E83800E41160 /* ImageAttachedViewController.swift in Sources */,
+				D80D4BAD1A216AD400391E04 /* ChatsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D80D4B691A2150DA00391E04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D80D4B6A1A2150DA00391E04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D80D4B7D1A2150DA00391E04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D80D4B7E1A2150DA00391E04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D80D4B801A2150DA00391E04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Bit6ChatDemo-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D80D4B811A2150DA00391E04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Bit6ChatDemo-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D80D4B5B1A2150DA00391E04 /* Build configuration list for PBXProject "Bit6ChatDemo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80D4B7D1A2150DA00391E04 /* Debug */,
+				D80D4B7E1A2150DA00391E04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D80D4B7F1A2150DA00391E04 /* Build configuration list for PBXNativeTarget "Bit6ChatDemo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80D4B801A2150DA00391E04 /* Debug */,
+				D80D4B811A2150DA00391E04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D80D4B581A2150DA00391E04 /* Project object */;
+}
