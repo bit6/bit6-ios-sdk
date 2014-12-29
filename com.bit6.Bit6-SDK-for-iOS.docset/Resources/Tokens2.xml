@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6Address</TokenIdentifier>
-			<Abstract type="html">Bit6Address is used to describe a user identity or a destination for calling and messaging.</Abstract>
+			<Abstract type="html">Bit6Address is used to describe a user identity or a destination for calling and messaging. It consists of a type (Bit6AddressKind and a value.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
             
 			
@@ -34,7 +34,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setDisplayName:</TokenIdentifier>
-			<Abstract type="html">A display name for this &lt;Bit6UserIdentity&gt; object.</Abstract>
+			<Abstract type="html">A display name for this &lt;Bit6Address&gt; object.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
@@ -46,7 +46,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for this &lt;Bit6UserIdentity&gt; object.</Abstract>
+			<Abstract type="html">A display name for this &lt;Bit6Address&gt; object.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
@@ -58,13 +58,85 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for this &lt;Bit6UserIdentity&gt; object.</Abstract>
+			<Abstract type="html">A display name for this &lt;Bit6Address&gt; object.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *displayName</Declaration>
 			
 			
 			<Anchor>//api/name/displayName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setKind:</TokenIdentifier>
+			<Abstract type="html">returns the kind of BitAddress.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *kind</Declaration>
+			
+			
+			<Anchor>//api/name/kind</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/kind</TokenIdentifier>
+			<Abstract type="html">returns the kind of BitAddress.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *kind</Declaration>
+			
+			
+			<Anchor>//api/name/kind</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/kind</TokenIdentifier>
+			<Abstract type="html">returns the kind of BitAddress.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSNumber *kind</Declaration>
+			
+			
+			<Anchor>//api/name/kind</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setValue:</TokenIdentifier>
+			<Abstract type="html">returns the value of BitAddress.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/value</TokenIdentifier>
+			<Abstract type="html">returns the value of BitAddress.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/value</TokenIdentifier>
+			<Abstract type="html">returns the value of BitAddress.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

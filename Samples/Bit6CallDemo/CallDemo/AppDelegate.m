@@ -7,100 +7,116 @@
 //
 
 #import "AppDelegate.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "MyCallViewController.h"
 
-@interface AppDelegate () <Bit6InCallControllerDelegate>
-{
-    id _overlayViewNib;
+@interface AppDelegate (){
+    Bit6CallController *_callController;
 }
+
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedIncomingCallNotification:) name:Bit6IncomingCallNotification object:nil];
+    
     #warning Remember to set your api key
     [Bit6 startWithApiKey:@"your_api_key" pushNotificationMode:Bit6PushNotificationMode_DEVELOPMENT launchingWithOptions:launchOptions];
-    
-    //set this if you want customize the controls overlay in the inCall screen
-//    [Bit6InCallController sharedInstance].delegate = self;
     
     return YES;
 }
 
-#pragma mark - Bit6InCallControllerDelegate
-
-//here we make our own control overlay with destination, call status and mute/camera/hangup buttons
-- (UIView*) controlsOverlayViewForInCallController:(Bit6InCallController*)icc
+- (void) receivedIncomingCallNotification:(NSNotification*)notification
 {
-    NSArray *topLevelNibObjects = [[self overlayViewNib] instantiateWithOwner:self options:nil];
-    UIView *overlayView = [topLevelNibObjects objectAtIndex:0];
+    Bit6CallController *callController = [Bit6 callControllerFromIncomingCallNotification:notification];
     
-    UILabel *displayNameLabel = (UILabel*) [overlayView viewWithTag:1];
-    //        UILabel *statusLabel = (UILabel*) [overlayView viewWithTag:2];
-    UIButton *cameraButton = (UIButton*) [overlayView viewWithTag:3];
-    UILabel *cameraLabel = (UILabel*) [overlayView viewWithTag:4];
-    UIButton *muteButton = (UIButton*) [overlayView viewWithTag:5];
-    //        UILabel *muteLabel = (UILabel*) [overlayView viewWithTag:6];
-    UIButton *hangupButton = (UIButton*) [overlayView viewWithTag:7];
-    //        UILabel *hangupLabel = (UILabel*) [overlayView viewWithTag:8];
-    UIButton *speakerButton = (UIButton*) [overlayView viewWithTag:9];
-    UILabel *speakerLabel = (UILabel*) [overlayView viewWithTag:10];
-    
-    displayNameLabel.text = icc.displayName;
-    
-    [cameraButton addTarget:icc action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
-    [muteButton addTarget:icc action:@selector(muteAudio) forControlEvents:UIControlEventTouchUpInside];
-    [hangupButton addTarget:icc action:@selector(hangup) forControlEvents:UIControlEventTouchUpInside];
-    [speakerButton addTarget:icc action:@selector(switchSpeaker) forControlEvents:UIControlEventTouchUpInside];
-    
-    if (icc.isVideoCall) {
-        speakerButton.hidden = YES;
-        speakerLabel.hidden = YES;
+    if ([Bit6 currentCallController]) {
+        //there's a call on the way
+        [callController declineCall];
     }
     else {
-        cameraButton.hidden = YES;
-        cameraLabel.hidden = YES;
+        _callController = callController;
+        [[Bit6AudioPlayerController sharedInstance] stopPlayingAudioFile];
+        NSString *type = _callController.hasVideo?@"Video":@"Audio";
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+            AudioServicesPlaySystemSound(1007);
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Incoming %@ Call: %@", type, _callController.other]  message:nil delegate:self cancelButtonTitle:@"Decline" otherButtonTitles:@"Answer", nil];
+            [alert show];
+        }
     }
-    
-    NSString *deviceType = [UIDevice currentDevice].model;
-    if(![deviceType isEqualToString:@"iPhone"]){
-        speakerButton.hidden = YES;
-        speakerLabel.hidden = YES;
-    }
-    
-    return overlayView;
 }
 
-- (id) overlayViewNib
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if (!_overlayViewNib) {
-        Class nibDecoderClass = NSClassFromString(@"UINib");
-        _overlayViewNib = [nibDecoderClass nibWithNibName:@"InCallOverlayView" bundle:[NSBundle mainBundle]];
-    }
+    Bit6CallController *callController = _callController;
+    _callController = nil;
     
-    return _overlayViewNib;
-}
-
-//we need to refresh our controls overlay
-- (void) refreshControlsOverlayView:(UIView*)view inCallController:(Bit6InCallController*)icc
-{
-    UILabel *muteLabel = (UILabel*) [view viewWithTag:6];
-    muteLabel.text = icc.isAudioMuted?@"Unmute":@"Mute";
-    
-    UILabel *speakerLabel = (UILabel*) [view viewWithTag:10];
-    speakerLabel.text = icc.isSpeakerEnabled?@"Disable Speaker":@"Enable Speaker";
-}
-
-- (void) refreshTimerInOverlayView:(UIView*)view inCallController:(Bit6InCallController*)icc
-{
-    UILabel *statusLabel = (UILabel*) [view viewWithTag:2];
-    if (!icc.isConnected) {
-        statusLabel.text = @"Connecting...";
+    if (buttonIndex==alertView.cancelButtonIndex) {
+        [callController declineCall];
     }
     else {
-        int seconds = icc.seconds;
-        int minutes = seconds/60;
-        statusLabel.text = [NSString stringWithFormat:@"%02d:%02d",minutes,seconds-minutes*60];
+        [self answerCall:callController];
+    }
+}
+
+- (void) answerCall:(Bit6CallController*)callController
+{
+    if (callController) {
+        //Default ViewController
+        [callController connectToViewController:nil completion:^(UIViewController *viewController, NSError *error) {
+            if (error) {
+                [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+            else {
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callStateChangedNotification:) name:Bit6CallStateChangedNotification object:callController];
+                [[[[UIApplication sharedApplication] windows][0] rootViewController] presentViewController:viewController animated:YES completion:nil];
+            }
+        }];
+        
+        //Custom ViewController
+        /*
+        MyCallViewController *vc = [[MyCallViewController alloc] initWithCallController:callController];
+        [callController connectToViewController:vc completion:^(UIViewController *viewController, NSError *error) {
+            if (error) {
+                [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+            else {
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callStateChangedNotification:) name:Bit6CallStateChangedNotification object:callController];
+                [[[[UIApplication sharedApplication] windows][0] rootViewController] presentViewController:viewController animated:YES completion:nil];
+            }
+        }];
+        */
+    }
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    Bit6CallController *callController = _callController;
+    _callController = nil;
+    
+    if (callController) {
+        [self answerCall:callController];
+    }
+}
+
+#pragma mark - Calls
+
+- (void) callStateChangedNotification:(NSNotification*)notification
+{
+    Bit6CallController *callController = notification.object;
+    
+    if (callController.callState == Bit6CallState_END || callController.callState == Bit6CallState_ERROR) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6CallStateChangedNotification object:callController];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[[[UIApplication sharedApplication] windows][0] rootViewController] dismissViewControllerAnimated:YES completion:nil];
+            if (callController.callState == Bit6CallState_ERROR) {
+                [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+        });
     }
 }
 

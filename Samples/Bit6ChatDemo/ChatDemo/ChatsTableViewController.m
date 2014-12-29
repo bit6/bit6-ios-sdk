@@ -376,7 +376,7 @@
             
             //searching the index of the message
             NSUInteger index = NSNotFound;
-            for (int x=self.messages.count-1; x>=0; x--) {
+            for (int x=(int)self.messages.count-1; x>=0; x--) {
                 if ([self.messages[x] isEqual:msg]) {
                     index = x;
                     break;

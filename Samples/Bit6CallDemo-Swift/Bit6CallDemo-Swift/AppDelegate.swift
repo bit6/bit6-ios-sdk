@@ -7,18 +7,16 @@
 //
 
 import UIKit
+import AudioToolbox
 
 @UIApplicationMain
-class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate, Bit6InCallControllerDelegate {
+class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate {
     
     var window: UIWindow?
-    var overlayViewNib: UINib {
-        get {
-            return UINib(nibName: "InCallOverlayView", bundle: NSBundle.mainBundle())
-        }
-    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedIncomingCallNotification:", name: Bit6IncomingCallNotification, object: nil)
         
         let apikey : NSString = "your_api_key";
         Bit6.startWithApiKey(apikey, pushNotificationMode: Bit6PushNotificationMode.DEVELOPMENT, launchingWithOptions: launchOptions);
@@ -29,75 +27,83 @@ class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate, Bit6InCallCont
         return true
     }
     
-    //here we make our own control overlay with destination, call status and mute/camera/hangup buttons
-    func controlsOverlayViewForInCallController(icc:Bit6InCallController) -> UIView! {
-    
-        var topLevelNibObjects : NSArray! = self.overlayViewNib.instantiateWithOwner(self, options: nil)
+    func receivedIncomingCallNotification(notification:NSNotification) -> Void {
         
-        if (topLevelNibObjects != nil) {
-            var topLevelObject = topLevelNibObjects!
-            
-            var overlayView = topLevelObject[0] as UIView
-            
-            var displayNameLabel = overlayView.viewWithTag(1) as UILabel
-//            var statusLabel = overlayView.viewWithTag(2) as UILabel
-            var cameraButton = overlayView.viewWithTag(3) as UIButton
-            var cameraLabel = overlayView.viewWithTag(4) as UILabel
-            var muteButton = overlayView.viewWithTag(5) as UIButton
-//            var muteLabel = overlayView.viewWithTag(6) as UILabel
-            var hangupButton = overlayView.viewWithTag(7) as UIButton
-//            var hangupLabel = overlayView.viewWithTag(8) as UILabel
-            var speakerButton = overlayView.viewWithTag(9) as UIButton
-            var speakerLabel = overlayView.viewWithTag(10) as UILabel
-            
-            displayNameLabel.text = icc.displayName
+        var callController = Bit6.callControllerFromIncomingCallNotification(notification)
         
-            cameraButton.addTarget(icc, action: "switchCamera", forControlEvents: UIControlEvents.TouchUpInside)
-            muteButton.addTarget(icc, action: "muteAudio", forControlEvents: UIControlEvents.TouchUpInside)
-            hangupButton.addTarget(icc, action: "hangup", forControlEvents: UIControlEvents.TouchUpInside)
-            speakerButton.addTarget(icc, action: "switchSpeaker", forControlEvents: UIControlEvents.TouchUpInside)
-            
-            if (icc.videoCall){
-                speakerButton.hidden = true;
-                speakerLabel.hidden = true;
-            }
-            else {
-                cameraButton.hidden = true;
-                cameraLabel.hidden = true;
-            }
-            
-            var deviceType : NSString = UIDevice.currentDevice().model
-            if (deviceType.isEqualToString("iPhone")){
-                speakerButton.hidden = true;
-                speakerLabel.hidden = true;
-            }
-            
-            return overlayView;
+        if (Bit6.currentCallController() != nil) {
+            //there's a call on the way
+            callController.declineCall();
         }
         else {
-            return nil;
+            Bit6AudioPlayerController.sharedInstance().stopPlayingAudioFile()
+            
+            var type = callController.hasVideo ?"Video":"Audio";
+            var message = "Incoming \(type) Call: \(callController.other)"
+            
+            if (UIApplication.sharedApplication().applicationState == UIApplicationState.Active){
+                AudioServicesPlaySystemSound(1007);
+
+                var message = "Incoming \(type) Call: \(callController.other)"
+                var alert = UIAlertController(title:message, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Decline", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+                    callController.declineCall();
+                }))
+                alert.addAction(UIAlertAction(title: "Answer", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+                    self.answerCall(callController)
+                }))
+                
+                self.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
+            }
         }
     }
     
-    //we need to refresh our controls overlay
-    func refreshControlsOverlayView(view:UIView, inCallController icc:Bit6InCallController) -> Void {
-        var muteLabel = view.viewWithTag(6) as UILabel
-        muteLabel.text = icc.audioMuted ?"Unmute":"Mute"
-     
-        var speakerLabel = view.viewWithTag(10) as UILabel
-        muteLabel.text = icc.speakerEnabled ?"Disable Speaker":"Enable Speaker"
+    func answerCall(callController:Bit6CallController!) -> Void {
+        
+        if let _callController = callController {
+            //Default ViewController
+            callController.connectToViewController(nil, completion:{(viewController : UIViewController!, error : NSError!) in
+                if (error != nil){
+                    NSLog("Call Failed");
+                }
+                else {
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "callStateChangedNotification:", name: Bit6CallStateChangedNotification, object: callController)
+                    UIApplication.sharedApplication().windows[0].rootViewController!?.presentViewController(viewController, animated: true, completion: nil)
+                }
+            })
+            
+            //Custom ViewController
+            /*
+            var vc = MyCallViewController(callController:_callController)
+            _callController.connectToViewController(vc, completion:{(viewController : UIViewController!, error : NSError!) in
+                if (error != nil){
+                    NSLog("Call Failed");
+                }
+                else {
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "callStateChangedNotification:", name: Bit6CallStateChangedNotification, object: callController)
+                    UIApplication.sharedApplication().windows[0].rootViewController!?.presentViewController(viewController, animated: true, completion: nil)
+                }
+            })
+            */
+        }
     }
     
-    func refreshTimerInOverlayView(view:UIView, inCallController icc:Bit6InCallController) -> Void {
-        var statusLabel = view.viewWithTag(2) as UILabel
-        if (!icc.connected){
-            statusLabel.text = "Connecting...";
-        }
-        else {
-            var seconds = icc.seconds
-            var minutes = seconds/60
-            statusLabel.text = String(format:"%02d:%02d",minutes,seconds-minutes*60)
+    func callStateChangedNotification(notification:NSNotification) -> Void {
+        var callController = notification.object as Bit6CallController
+        
+        if (callController.callState == Bit6CallState.END || callController.callState == Bit6CallState.ERROR) {
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6CallStateChangedNotification, object: callController)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let vc = UIApplication.sharedApplication().windows[0].rootViewController! {
+                    vc.dismissViewControllerAnimated(true, completion: nil)
+                }
+                if (callController.callState == Bit6CallState.ERROR){
+                    NSLog("An Error Occurred");
+                }
+            }
         }
     }
+    
 }
 

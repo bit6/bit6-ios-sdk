@@ -63,7 +63,19 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
             if ((usernameTextField.text as NSString).length>0){
                 var address = Bit6Address(kind: Bit6AddressKind.USERNAME, value: usernameTextField.text)
                 var conversation = Bit6Conversation(address: address)
-                Bit6.addConversation(conversation)
+                
+                
+                if (conversation != nil) {
+                    Bit6.addConversation(conversation)
+                }
+                else {
+                    var alert = UIAlertController(title:"Invalid username", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+                    }))
+                    self.navigationController?.presentViewController(alert, animated: true, completion:nil)
+                }
+                
+                
             }
         }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in

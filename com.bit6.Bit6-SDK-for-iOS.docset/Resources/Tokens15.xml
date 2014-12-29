@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6ThumbnailImageView.html">
+	<File path="Classes/Bit6PushNotificationCenter.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6ThumbnailImageView</TokenIdentifier>
-			<Abstract type="html">Special subclass of UIImageView to work with the message attachment thumbnails. It includes a convenient UIMenuController if the Bit6MenuControllerDelegate is implemented.</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6PushNotificationCenter</TokenIdentifier>
+			<Abstract type="html">Bit6PushNotificationCenter is used to handle the remote notifications.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,125 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setMessage:</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Gets the default Bit6PushNotificationCenter object.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>+ (Bit6PushNotificationCenter *)sharedInstance</Declaration>
 			
-			
-			<Anchor>//api/name/message</Anchor>
+			<ReturnValue><Abstract type="html">Default Bit6PushNotificationCenter object.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/bit6RemoteNotificationReceived:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>- (void)bit6RemoteNotificationReceived:(NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/bit6RemoteNotificationReceived:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/bit6RemoteNotificationReceived:fetchCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>- (void)bit6RemoteNotificationReceived:(NSDictionary *)userInfo fetchCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when the download operation is complete. When calling this block, pass in the fetch result value that best describes the results of your download operation. You must call this handler and should do so as soon as possible.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/message</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setThumbnailImageViewDelegate:</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/thumbnailImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageView delegate</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/thumbnailImageViewDelegate</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/setMenuControllerDelegate:</TokenIdentifier>
-			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/menuControllerDelegate</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ThumbnailImageView/menuControllerDelegate</TokenIdentifier>
-			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/menuControllerDelegate</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6ThumbnailImageView/menuControllerDelegate</TokenIdentifier>
-			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
-			
-			
-			<Anchor>//api/name/menuControllerDelegate</Anchor>
+			<Anchor>//api/name/bit6RemoteNotificationReceived:fetchCompletionHandler:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

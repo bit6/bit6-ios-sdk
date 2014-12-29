@@ -38,12 +38,10 @@
 		D80D4B8C1A21514A00391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../../Bit6SDK.framework; sourceTree = "<group>"; };
 		D80D4B971A21526100391E04 /* Bit6ChatDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bit6ChatDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		D80D4B991A21530E00391E04 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		D80D4BA81A215A8B00391E04 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachedViewController.swift; sourceTree = "<group>"; };
-		D8182E541A22FE2100E41160 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		D8182E561A22FE2A00E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -67,8 +65,6 @@
 		D80D4B571A2150DA00391E04 = {
 			isa = PBXGroup;
 			children = (
-				D8182E561A22FE2A00E41160 /* libstdc++.dylib */,
-				D8182E541A22FE2100E41160 /* libstdc++.6.dylib */,
 				D80D4B621A2150DA00391E04 /* Bit6ChatDemo-Swift */,
 				D80D4B611A2150DA00391E04 /* Products */,
 			);
@@ -102,7 +98,7 @@
 		D80D4B631A2150DA00391E04 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D80D4B991A21530E00391E04 /* libstdc++.6.0.9.dylib */,
+				D8182E561A22FE2A00E41160 /* libstdc++.dylib */,
 				D80D4B881A21514A00391E04 /* libsqlite3.dylib */,
 				D80D4B891A21514A00391E04 /* libicucore.dylib */,
 				D80D4B8A1A21514A00391E04 /* libz.dylib */,

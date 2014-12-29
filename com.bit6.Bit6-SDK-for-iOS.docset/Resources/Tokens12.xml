@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6MessageLabel.html">
+	<File path="Classes/Bit6MessageData.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6MessageLabel</TokenIdentifier>
-			<Abstract type="html">Special subclass of UILabel to work with the text content included in a message. It includes a convenient UIMenuController if the Bit6MenuControllerDelegate is implemented.</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6MessageData</TokenIdentifier>
+			<Abstract type="html">A Bit6MessageData object represents the data attached attached to a Bit6Message object.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,74 +13,74 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageLabel/setMessage:</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageData/setLat:</TokenIdentifier>
+			<Abstract type="html">Latitude of the location included in the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>@property (nonatomic, copy) NSNumber *lat</Declaration>
 			
 			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/lat</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageLabel/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageData/lat</TokenIdentifier>
+			<Abstract type="html">Latitude of the location included in the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>@property (nonatomic, copy) NSNumber *lat</Declaration>
 			
 			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/lat</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6MessageLabel/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6MessageData/lat</TokenIdentifier>
+			<Abstract type="html">Latitude of the location included in the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>@property (nonatomic, copy) NSNumber *lat</Declaration>
 			
 			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/lat</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageLabel/setMenuControllerDelegate:</TokenIdentifier>
-			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageData/setLng:</TokenIdentifier>
+			<Abstract type="html">Longitude of the location included in the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
+			<Declaration>@property (nonatomic, copy) NSNumber *lng</Declaration>
 			
 			
-			<Anchor>//api/name/menuControllerDelegate</Anchor>
+			<Anchor>//api/name/lng</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageLabel/menuControllerDelegate</TokenIdentifier>
-			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6MessageData/lng</TokenIdentifier>
+			<Abstract type="html">Longitude of the location included in the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
+			<Declaration>@property (nonatomic, copy) NSNumber *lng</Declaration>
 			
 			
-			<Anchor>//api/name/menuControllerDelegate</Anchor>
+			<Anchor>//api/name/lng</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6MessageLabel/menuControllerDelegate</TokenIdentifier>
-			<Abstract type="html">the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</Abstract>
-			<DeclaredIn>Bit6MessageLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6MessageData/lng</TokenIdentifier>
+			<Abstract type="html">Longitude of the location included in the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</Declaration>
+			<Declaration>@property (nonatomic, copy) NSNumber *lng</Declaration>
 			
 			
-			<Anchor>//api/name/menuControllerDelegate</Anchor>
+			<Anchor>//api/name/lng</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D80D4B561A20339200391E04 /* InCallOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B541A20339200391E04 /* InCallOverlayView.xib */; };
 		D8182E5B1A22FE8C00E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */; };
 		D89CDCAE1989A5F800E76C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89CDCAD1989A5F800E76C44 /* AppDelegate.swift */; };
 		D89CDCB31989A5F800E76C44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89CDCB11989A5F800E76C44 /* Main.storyboard */; };
@@ -20,11 +19,11 @@
 		D89CDCEA1989ABA800E76C44 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D89CDCE91989ABA800E76C44 /* Bit6Resources.bundle */; };
 		D8B94EA81A1E884C0046E839 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B94EA71A1E884C0046E839 /* GLKit.framework */; };
 		D8B94EAA1A1E886E0046E839 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B94EA91A1E886E0046E839 /* libsqlite3.dylib */; };
+		D8BAEB601A33BCAB003C0A79 /* MyCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8BAEB5E1A33BCAB003C0A79 /* MyCallViewController.xib */; };
+		D8BAEB621A33BCE0003C0A79 /* MyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAEB611A33BCE0003C0A79 /* MyCallViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D80D4B551A20339200391E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InCallOverlayView.xib; sourceTree = "<group>"; };
-		D80D4B9C1A2153BC00391E04 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		D89CDCA81989A5F800E76C44 /* Bit6CallDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit6CallDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89CDCAC1989A5F800E76C44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +40,8 @@
 		D89CDCE91989ABA800E76C44 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
 		D8B94EA71A1E884C0046E839 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		D8B94EA91A1E886E0046E839 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D8BAEB5F1A33BCAB003C0A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyCallViewController.xib; sourceTree = "<group>"; };
+		D8BAEB611A33BCE0003C0A79 /* MyCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCallViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +64,6 @@
 		D89CDC9F1989A5F800E76C44 = {
 			isa = PBXGroup;
 			children = (
-				D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */,
 				D89CDCAA1989A5F800E76C44 /* Bit6CallDemo-Swift */,
 				D89CDCA91989A5F800E76C44 /* Products */,
 			);
@@ -85,7 +85,8 @@
 				D89CDCAD1989A5F800E76C44 /* AppDelegate.swift */,
 				D89CDCE51989A8C100E76C44 /* LoginViewController.swift */,
 				D89CDCE71989A8F600E76C44 /* MakeCallViewController.swift */,
-				D80D4B541A20339200391E04 /* InCallOverlayView.xib */,
+				D8BAEB611A33BCE0003C0A79 /* MyCallViewController.swift */,
+				D8BAEB5E1A33BCAB003C0A79 /* MyCallViewController.xib */,
 				D89CDCB11989A5F800E76C44 /* Main.storyboard */,
 				D89CDCB41989A5F800E76C44 /* Images.xcassets */,
 				D89CDCAB1989A5F800E76C44 /* Supporting Files */,
@@ -96,7 +97,7 @@
 		D89CDCAB1989A5F800E76C44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D80D4B9C1A2153BC00391E04 /* libstdc++.6.0.9.dylib */,
+				D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */,
 				D8B94EA91A1E886E0046E839 /* libsqlite3.dylib */,
 				D89CDCE11989A87B00E76C44 /* libicucore.dylib */,
 				D89CDCDF1989A86A00E76C44 /* libz.dylib */,
@@ -167,8 +168,8 @@
 			files = (
 				D89CDCEA1989ABA800E76C44 /* Bit6Resources.bundle in Resources */,
 				D89CDCB31989A5F800E76C44 /* Main.storyboard in Resources */,
-				D80D4B561A20339200391E04 /* InCallOverlayView.xib in Resources */,
 				D89CDCB51989A5F800E76C44 /* Images.xcassets in Resources */,
+				D8BAEB601A33BCAB003C0A79 /* MyCallViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +182,7 @@
 			files = (
 				D89CDCE61989A8C100E76C44 /* LoginViewController.swift in Sources */,
 				D89CDCE81989A8F600E76C44 /* MakeCallViewController.swift in Sources */,
+				D8BAEB621A33BCE0003C0A79 /* MyCallViewController.swift in Sources */,
 				D89CDCAE1989A5F800E76C44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,20 +190,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D80D4B541A20339200391E04 /* InCallOverlayView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D80D4B551A20339200391E04 /* Base */,
-			);
-			name = InCallOverlayView.xib;
-			sourceTree = "<group>";
-		};
 		D89CDCB11989A5F800E76C44 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D89CDCB21989A5F800E76C44 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D8BAEB5E1A33BCAB003C0A79 /* MyCallViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8BAEB5F1A33BCAB003C0A79 /* Base */,
+			);
+			name = MyCallViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

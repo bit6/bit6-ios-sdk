@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : Bit6ApplicationManager <UIApplicationDelegate>
+@interface AppDelegate : Bit6ApplicationManager <UIApplicationDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

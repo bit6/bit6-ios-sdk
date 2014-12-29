@@ -73,7 +73,12 @@
         if ([destination length]>0) {
             Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
             Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
-            [Bit6 addConversation:conversation];
+            if (conversation) {
+                [Bit6 addConversation:conversation];
+            }
+            else {
+                [[[UIAlertView alloc] initWithTitle:@"Invalid username" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
         }
     }
 }

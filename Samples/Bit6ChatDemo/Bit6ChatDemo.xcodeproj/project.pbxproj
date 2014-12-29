@@ -31,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		D80D4B9E1A21581900391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		D80D4BA01A21581E00391E04 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		D80D4BA21A21582A00391E04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D8182E581A22FE7500E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		D83971F41923BDC4003565E4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -105,7 +104,6 @@
 			children = (
 				D8182E581A22FE7500E41160 /* libstdc++.dylib */,
 				D80D4BA21A21582A00391E04 /* libsqlite3.dylib */,
-				D80D4BA01A21581E00391E04 /* libstdc++.6.0.9.dylib */,
 				D80D4B9E1A21581900391E04 /* GLKit.framework */,
 				D8AA8343192A8FEC0065BDA6 /* libz.dylib */,
 				D83971F41923BDC4003565E4 /* libicucore.dylib */,

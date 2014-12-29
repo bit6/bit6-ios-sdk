@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageAttachmentStatus.html">
+	<File path="Constants/Bit6CallState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentStatus</TokenIdentifier>
-			<Abstract type="html">Message attachment status for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
+			<Abstract type="html">Call status for a Bit6CallController.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -14,51 +14,51 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_INVALID</TokenIdentifier>
-            <Abstract type="html">The message doesn&apos;t have the specified attachment</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_INVALID</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
+            <Abstract type="html">The call hasn&apos;t started.</Abstract>
+            <Declaration>Bit6CallState_NEW</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_FAILED</TokenIdentifier>
-            <Abstract type="html">The attachment doesn&apos;t exists</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_FAILED</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_NOT_FOUND</TokenIdentifier>
-            <Abstract type="html">The attachment is not in cache</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_NOT_FOUND</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_PROGRESS</TokenIdentifier>
+            <Abstract type="html">The call is starting.</Abstract>
+            <Declaration>Bit6CallState_PROGRESS</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_DOWNLOADING</TokenIdentifier>
-            <Abstract type="html">The attachment is being downloaded</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_DOWNLOADING</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_FOUND</TokenIdentifier>
-            <Abstract type="html">The attachment is in cache</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_FOUND</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ANSWER</TokenIdentifier>
+            <Abstract type="html">The call has started.</Abstract>
+            <Declaration>Bit6CallState_ANSWER</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
+            <Abstract type="html">The call ended.</Abstract>
+            <Declaration>Bit6CallState_END</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ERROR</TokenIdentifier>
+            <Abstract type="html">The call ended with an error.</Abstract>
+            <Declaration>Bit6CallState_ERROR</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>

@@ -52,14 +52,14 @@
 			<Abstract type="html">Adds a conversation to the system.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (void)addConversation:(Bit6Conversation *)conversation</Declaration>
+			<Declaration>+ (BOOL)addConversation:(Bit6Conversation *)conversation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>conversation</Name>
 					<Abstract type="html">a Bit6Conversation object to be added.</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">YES if the conversation was added</Abstract></ReturnValue>
 			<Anchor>//api/name/addConversation:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
@@ -202,11 +202,23 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToAddress:hasVideo:</TokenIdentifier>
-			<Abstract type="html">Used to start a VoIP call</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/currentCallController</TokenIdentifier>
+			<Abstract type="html">Get the Bit6CallController object of the current call</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)startCallToAddress:(Bit6Address *)address hasVideo:(BOOL)hasVideo</Declaration>
+			<Declaration>+ (Bit6CallController *)currentCallController</Declaration>
+			
+			<ReturnValue><Abstract type="html">Bit6CallController object of the current call</Abstract></ReturnValue>
+			<Anchor>//api/name/currentCallController</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToAddress:hasVideo:</TokenIdentifier>
+			<Abstract type="html">Creates a Bit6CallController to reference a VoIP call</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CallController *)startCallToAddress:(Bit6Address *)address hasVideo:(BOOL)hasVideo</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
@@ -216,24 +228,41 @@
 					<Abstract type="html">indicate if the call will include a video stream</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES if the call is starting</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">Bit6CallController object to handle the call</Abstract></ReturnValue>
 			<Anchor>//api/name/startCallToAddress:hasVideo:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToPhoneNumber:</TokenIdentifier>
-			<Abstract type="html">Used to start a PSTN call</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/callControllerFromIncomingCallNotification:</TokenIdentifier>
+			<Abstract type="html">Creates a Bit6CallController to reference a answer call</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)startCallToPhoneNumber:(NSString *)phoneNumber</Declaration>
+			<Declaration>+ (Bit6CallController *)callControllerFromIncomingCallNotification:(NSNotification *)notification</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notification</Name>
+					<Abstract type="html">&lt;Bit6IncomingCallNotification&gt; notification of incoming call</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6CallController object to handle the call</Abstract></ReturnValue>
+			<Anchor>//api/name/callControllerFromIncomingCallNotification:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToPhoneNumber:</TokenIdentifier>
+			<Abstract type="html">Creates a Bit6CallController to reference a PSTN call</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CallController *)startCallToPhoneNumber:(NSString *)phoneNumber</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>phoneNumber</Name>
-					<Abstract type="html">phoneNumber to call. It has to include the country_code and phone number. For example @&quot;+13334445555&quot;</Abstract>
+					<Abstract type="html">phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES if the call is starting</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">Bit6CallController object to handle the call</Abstract></ReturnValue>
 			<Anchor>//api/name/startCallToPhoneNumber:</Anchor>
             <NodeRef refid="1"/>
 		</Token>

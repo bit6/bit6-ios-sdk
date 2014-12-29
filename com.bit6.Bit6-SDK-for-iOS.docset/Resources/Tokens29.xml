@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6PushNotificationMode.html">
+	<File path="Constants/Bit6MessageFileType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6PushNotificationMode</TokenIdentifier>
-			<Abstract type="html">Push Notification Mode</Abstract>
-			<DeclaredIn>Bit6Constants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageFileType</TokenIdentifier>
+			<Abstract type="html">Attachment type for a Bit6Message</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
@@ -14,21 +14,51 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6PushNotificationMode_DEVELOPMENT</TokenIdentifier>
-            <Abstract type="html">Development Mode for Push Notifications</Abstract>
-            <Declaration>Bit6PushNotificationMode_DEVELOPMENT</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_None</TokenIdentifier>
+            <Abstract type="html">The message has no attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_None</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="29"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6PushNotificationMode_PRODUCTION</TokenIdentifier>
-            <Abstract type="html">Production Mode for Push Notifications</Abstract>
-            <Declaration>Bit6PushNotificationMode_PRODUCTION</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_AudioMP4</TokenIdentifier>
+            <Abstract type="html">The message has an MP4 audio attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_AudioMP4</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_ImagePNG</TokenIdentifier>
+            <Abstract type="html">The message has an PNG image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_ImagePNG</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_ImageJPG</TokenIdentifier>
+            <Abstract type="html">The message has an JPEG image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_ImageJPG</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_VideoMP4</TokenIdentifier>
+            <Abstract type="html">The message has an MP4 video attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_VideoMP4</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="29"/>
         </Token>

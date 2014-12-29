@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6MenuControllerDelegate.html">
+	<File path="Protocols/Bit6CallControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6MenuControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6MenuControllerDelegate protocol defines methods that your delegate object must implement to allow the standard UIMenuController to be shown on a UIView element related to a Bit6Message with options like &apos;forward a sent message&apos;, &apos;send again a failed message&apos; and &apos;copy text&apos;.</Abstract>
-			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CallControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CallControllerDelegate protocol defines the methods a delegate of a Bit6CallController object should implement.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,36 +13,73 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/forwardMessage:</TokenIdentifier>
-			<Abstract type="html">If implemented, the &quot;forward&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;forward&quot; menu was pressed.</Abstract>
-			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/localVideoTrackViewForCallController:</TokenIdentifier>
+			<Abstract type="html">Called to get the local video feed UIView to use in the call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)forwardMessage:(Bit6Message *)msg</Declaration>
+			<Declaration>- (UIView *)localVideoTrackViewForCallController:(Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">The Bit6Message object to be forwarded.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">Bit6CallController object of the call</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/forwardMessage:</Anchor>
+			<ReturnValue><Abstract type="html">the UIView to show the local video feed</Abstract></ReturnValue>
+			<Anchor>//api/name/localVideoTrackViewForCallController:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/resendFailedMessage:</TokenIdentifier>
-			<Abstract type="html">If implemented, the &quot;send&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;send&quot; menu was pressed.</Abstract>
-			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/remoteVideoTrackViewForCallController:</TokenIdentifier>
+			<Abstract type="html">Called to get the remote video feed UIView to use in the call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)resendFailedMessage:(Bit6OutgoingMessage *)msg</Declaration>
+			<Declaration>- (UIView *)remoteVideoTrackViewForCallController:(Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">The Bit6Message object to be send again.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">Bit6CallController object of the call</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the UIView to show the remote video feed</Abstract></ReturnValue>
+			<Anchor>//api/name/remoteVideoTrackViewForCallController:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/videoView:didChangeVideoSize:</TokenIdentifier>
+			<Abstract type="html">Called when the video feed UIView should changed its size</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)videoView:(UIView *)videoView didChangeVideoSize:(CGSize)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoView</Name>
+					<Abstract type="html">video feed UIView</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">new size of the video feed UIView</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/resendFailedMessage:</Anchor>
+			<Anchor>//api/name/videoView:didChangeVideoSize:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/refreshControlsViewForCallController:</TokenIdentifier>
+			<Abstract type="html">Called when the UI controls from a call should be updated. For example when the &quot;mute&quot; property changed this method will be called to allow updating the UI accordingly</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)refreshControlsViewForCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">Bit6CallController object of the call</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/refreshControlsViewForCallController:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
