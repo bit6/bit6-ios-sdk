@@ -1,9 +1,11 @@
 ---
 title: 'Getting Started'
-
-layout: nil
 ---
-###Add Bit6 SDK to your iOS Xcode project
+
+### Get Bit6 API Key
+You will need an API key to use the SDK. Get it [here](http://bit6.com/contact/).
+
+### Add Bit6 SDK to your iOS Xcode project
 
 1. [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
 
@@ -13,7 +15,7 @@ layout: nil
 3. Add <b>`Bit6Resources.bundle`</b> to "Supporting Files".
 <img style="max-width:100%" src="images/resources.png"/>
 
-4. In your project settings set the Architectures value to <b>`$(ARCHS_STANDARD_32_BIT)`</b>
+4. If you need to run the project in a 64bits simulator set the Architectures value to <b>`$(ARCHS_STANDARD_32_BIT)`</b>
 <img style="max-width:100%" src="images/architectures.png"/>
 
 5. In your project settings add <b>`-ObjC -stdlib=libc++`</b> to the “Other Linker Flags”
@@ -22,10 +24,11 @@ layout: nil
 6. If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
 <img style="max-width:100%" src="images/swift_bridge.png"/>
 
-###Get a Bit6 API Key
-You will need an API key in order to initialize and use Bit6 SDK. Send an email to dev@bit6.com to receive an application key.
+7. You can enable background remote notifications by checking the property in your target configuration.
+<img style="max-width:100%" src="images/background_notifications.png"/>
 
-###Setup Application Delegate
+
+### Setup Application Delegate
 In your Application Delegate:
 
 __Step 1.__ Import Bit6: <b>`#import <Bit6_SDK/Bit6SDK.h>`</b>

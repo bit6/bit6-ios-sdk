@@ -89,6 +89,43 @@ func currentLocationController(b6clc: Bit6CurrentLocationController!,
 }
 ```
 
+### Send a Custom Location
+
+__Note.__ Remember to import the CoreLocation framework.
+
+```objc
+//ObjectiveC
+Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
+message.location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
+                                             value:@"user2"];
+message.channel = Bit6MessageChannel_PUSH;
+[message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+    if (!error) {
+        NSLog(@"Message Sent");
+    }
+    else {
+        NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+    }
+}];
+```
+```swift
+//Swift
+var message = Bit6OutgoingMessage()
+message.location = CLLocation(latitude: latitude, longitude: longitude);
+message.destination = Bit6Address(kind: Bit6AddressKind.USERNAME, 
+                   				 value: "user2");
+message.channel = Bit6MessageChannel.PUSH;
+message.sendWithCompletionHandler { (response, error) -> Void in
+    if (error == nil) {
+        NSLog("Message Sent");
+    }
+    else {
+        NSLog("Message Failed with Error: %@",error.localizedDescription);
+    }
+}
+```
+
 ### Open a Location
 
 ```objc

@@ -1,25 +1,58 @@
 ---
 category: calling
-title: 'PSTN Calls'
+title: 'Phone/PSTN Calls'
 layout: nil
 ---
 
-### Make a PSTN (Phone) Call
+### Start a Phone Call
 
-For the test purposes we allow short 1 minute calls to destinations in US and Canada (numbers starting with +1). In later releases we will also add billing, which will in turn allow to connect calls of any length to any destination number.
+Bit6 interconnects with the phone networks (PSTN) and allows making outgoing phone calls.
+
+Phone numbers must be in [E164](http://en.wikipedia.org/wiki/E.164) format, prefixed with `+`. So a US (country code `1`) number `(555) 123-1234` must be presented as `+15551231234`.
+
+For the test purposes we allow short 1 minute calls to destinations in US and Canada. In later releases we will also add billing, which will in turn allow to connect calls of any length to any destination number.
 
 ```objc
 //ObjectiveC
 NSString *destination = @"+14445556666";
-if (![Bit6 startCallToPhoneNumber:destination]){
-	//call failed
+Bit6CallController *callController = [Bit6 startCallToPhoneNumber:destination];
+
+if (callController){                           
+    [callController connectToViewController:nil completion:^(UIViewController *vc, 
+    														 NSError *error) 
+	{
+        if (error) {
+            //call failed
+        }
+        else {
+        	//register to listen changes in call status
+            //add vc to the UIViewController hierarchy
+        }
+    }];
+}
+else {
+    //call failed
 }
 ```
 ```swift
 //Swift
 var destination = "+14445556666";
-if (!Bit6.startCallToPhoneNumber(destination)) {
-	//call failed
+var callController = Bit6.startCallToPhoneNumber(destination)
+
+if (callController != nil){
+    callController.connectToViewController(nil, completion:{(vc: UIViewController!, 
+                                                          error: NSError!) 
+	in
+        if (error != nil){
+            //call failed
+        }
+        else {
+	       //register to listen changes in call status
+           //add vc to the UIViewController hierarchy
+        }
+    })
+}
+else {
+    //call failed
 }
 ```
-In the current beta version we show very basic in-call UI. The future versions will allow UI customization.

@@ -1,11 +1,13 @@
 ---
-title: 'Authentication'
-layout: nil
+category: authentication
+title: 'Username'
 ---
+
+A username is case-insensitive and must consist of alphanumeric characters, e.g. `usr:john` or  `usr:test123`.
 
 ### Create user account
 
-Create a new user account with a username identity.
+Create a new user account with a username identity and a password.
 
 ```objc
 //ObjectiveC
@@ -88,43 +90,4 @@ Bit6Session.loginWithUserIdentity(i,
         NSLog("Login Completed");
     }
 });
-```
-
-
-### Logout
-
-```objc
-//ObjectiveC
-[Bit6Session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-    NSLog(@"Logout Completed");
-}];
-```
-
-```swift
-//Swift
-Bit6Session.logoutWithCompletionHandler({(response,error) in            
-    NSLog("Logout Completed")
-})
-```
-
-### Check if the user is logged in
-
-```objc
-//ObjectiveC
-if ([Bit6Session isConnected]) {
-    NSLog(@"Active Session");
-}
-else {
-    NSLog(@"Not Active Session");
-}
-```
-
-```swift
-//Swift
-if (Bit6Session.isConnected()) {
-    NSLog("Active Session");
-}
-else {
-    NSLog("Not Active Session");
-}
 ```
