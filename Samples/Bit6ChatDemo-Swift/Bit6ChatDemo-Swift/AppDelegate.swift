@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate {
 
     var window: UIWindow?
 
