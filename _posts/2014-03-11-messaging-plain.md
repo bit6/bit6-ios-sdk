@@ -160,3 +160,30 @@ Bit6Message *messageToDelete = ...
 var messageToDelete : Bit6Message = ...
 Bit6.deleteMessage(messageToDelete)
 ```
+
+###Enable Background Push Notifications for Messages
+
+You can enable background remote notifications by checking the property in your target configuration.
+
+<img style="max-width:100%" src="images/background_notifications.png"/>
+
+Then in your Bit6ApplicationManager subclass you need to implement the following:
+
+```objc
+//ObjectiveC
+- (void)application:(UIApplication *)application 
+		didReceiveRemoteNotification:(NSDictionary *)userInfo 
+        	  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    [super didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+```
+
+```swift
+func application(application: UIApplication, 
+		didReceiveRemoteNotification userInfo: [NSObject : AnyObject], 
+     fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) 
+{
+    super.didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler);
+}
+```

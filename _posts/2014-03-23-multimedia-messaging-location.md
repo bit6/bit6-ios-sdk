@@ -29,12 +29,12 @@ __Step 2.__ Start the location service:
 
 ```objc
 //ObjectiveC
-[[Bit6CurrentLocationController sharedInstance] startListeningToLocationForMessage:message
+[[Bit6 locationController] startListeningToLocationForMessage:message
 						  												delegate:self];
 ```
 ```swift
 //Swift
-Bit6CurrentLocationController.sharedInstance().startListeningToLocationForMessage(message, 
+Bit6.locationController().startListeningToLocationForMessage(message, 
 																		  delegate: self)
 ```
 

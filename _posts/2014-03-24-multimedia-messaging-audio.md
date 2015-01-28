@@ -27,21 +27,35 @@ __Step 2.__ Start the audio recording:
 
 ```objc
 //ObjectiveC
-[[Bit6AudioRecorderController sharedInstance] startRecordingAudioForMessage:message 
-                                                    maxDuration:60 delegate:self 
-                                                   errorHandler:^(NSError *error) {
+[[Bit6 audioRecorder] startRecordingAudioForMessage:message 
+                                                   maxDuration: 60 
+                                                      delegate: self 
+                                                 defaultPrompt: YES
+                                                  errorHandler:^(NSError *error) {
     //an error occurred
 }];
 ```
 ```swift
 //Swift
-Bit6AudioRecorderController.sharedInstance().startRecordingAudioForMessage(message, 
+Bit6.audioRecorder().startRecordingAudioForMessage(message, 
 										maxDuration: 60, 
-                                           delegate: self) { (error) -> Void 
+                                           delegate: self, 
+                                      defaultPrompt: true, 
+                                       errorHandler: { (error) -> Void 
                                            in
     //an error occurred
-}
+});
 ```
+
+__Note__ If `defaultPrompt` param is YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.
+
+To get the length of the current recording: `[Bit6 audioRecorder].duration`
+
+To cancel the recording: `[[Bit6 audioRecorder] cancelRecording]`
+
+To finish the recording: `[[Bit6 audioRecorder] stopRecording]`
+
+To know if there's a recording in process: `[Bit6 audioRecorder].isRecording`
 
 __Step 3.__ Implement the `Bit6AudioRecorderControllerDelegate` and send the message when the recording has been completed.
 
@@ -53,14 +67,16 @@ __Step 3.__ Implement the `Bit6AudioRecorderControllerDelegate` and send the mes
 - (void) doneRecorderController:(Bit6AudioRecorderController*)b6rc 
                         message:(Bit6OutgoingMessage*)message
 {
-    [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-        if (!error) {
-            NSLog(@"Message Sent");
-        }
-        else {
-            NSLog(@"Message Failed with Error: %@",error.localizedDescription);
-        }
-    }];
+    if (message.audioDuration > 1.0) {
+        [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+            if (!error) {
+                NSLog(@"Message Sent");
+            }
+            else {
+                NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+            }
+        }];
+	}
 }
 ```
 
@@ -70,12 +86,14 @@ class ChatsViewController : Bit6AudioRecorderControllerDelegate
 
 func doneRecorderController(b6rc: Bit6AudioRecorderController!, 
 						 message: Bit6OutgoingMessage!) {
-    message.sendWithCompletionHandler { (response, error) -> Void in
-        if (error == nil) {
-            NSLog("Message Sent");
-        }
-        else {
-            NSLog("Message Failed with Error: %@",error.localizedDescription);
+	if (message.audioDuration > 1.0) {
+        message.sendWithCompletionHandler { (response, error) -> Void in
+            if (error == nil) {
+                NSLog("Message Sent");
+            }
+            else {
+                NSLog("Message Failed with Error: %@",error.localizedDescription);
+            }
         }
     }
 }
@@ -86,8 +104,7 @@ func doneRecorderController(b6rc: Bit6AudioRecorderController!,
 ```objc
 //ObjectiveC
 Bit6Message *message = ...
-[[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:message 
-                                                            errorHandler:^(NSError *error) 
+[[Bit6 audioPlayer] startPlayingAudioFileInMessage:message errorHandler:^(NSError *error) 
 {
     //an error occurred
 }];
@@ -95,9 +112,21 @@ Bit6Message *message = ...
 ```swift
 //Swift
 var message : Bit6OutgoingMessage() = ...
-Bit6AudioPlayerController.sharedInstance().startPlayingAudioFileInMessage(messages,
+Bit6.audioPlayer().startPlayingAudioFileInMessage(messages,
 							errorHandler: { (error) -> Void 
                             in
     //an error occurred
 })
 ```
+
+To get the length of an audio file in a Bit6Message: `message.audioDuration`
+
+To get the current audio file playing length: `[Bit6 audioPlayer].duration`
+
+To get the audio file playing current time: `[Bit6 audioPlayer].currentTime`
+
+To get the last audio playing Bit6Message: `[Bit6 audioPlayer].messagePlaying`
+
+To know if there's an audio file playing at the moment: `[Bit6 audioPlayer].isPlayingAudioFile`
+
+___Note___. You can listen to the `Bit6AudioPlayingNotification` to update your UI while playing an audio file. 

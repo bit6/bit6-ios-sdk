@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6AddressKind Constants Reference</title>
+		<title>Bit6CallState Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6AddressKind Constants Reference</h1>
+				<h1 class="hideInXcode">Bit6CallState Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -45,7 +45,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6AddressKind Constants Reference" name="top"></a>
+				<a title="Bit6CallState Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6AddressKind Constants Reference</h1>
+						<h1 class="title title-header">Bit6CallState Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -62,7 +62,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">Bit6Address.h</td>
+	<td class="specification-value">Bit6CallController.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -74,11 +74,11 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">Bit6AddressKind</h3>
+                    <h3 class="subsubtitle method-title">Bit6CallState</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Bit6Address kind</p>
+                        <p>Call status for a <a href="../Classes/Bit6CallController.html">Bit6CallController</a>.</p>
 					</div>
 					
 					
@@ -86,15 +86,19 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, Bit6AddressKind ) {<br/>
+                        <code>typedef NS_ENUM(NSInteger, Bit6CallState ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6AddressKind_PHONE</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6CallState_NEW</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6AddressKind_USERNAME</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6CallState_PROGRESS</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6AddressKind_EMAIL</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6CallState_ANSWER</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6AddressKind_FACEBOOK</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6CallState_END</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6CallState_ERROR</a>,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6CallState_INTERRUPTED</a>,<br/>
                             
                             };</code>
                     
@@ -104,11 +108,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="Bit6AddressKind_PHONE"></a><code>Bit6AddressKind_PHONE</code></dt>
+                            <dt><a name="" title="Bit6CallState_NEW"></a><code>Bit6CallState_NEW</code></dt>
 <dd>
 
 
-<p>The Bit6Address refers to a phone number</p>
+<p>The call hasn&rsquo;t started.</p>
 
     
 
@@ -116,16 +120,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Address.h</code>.
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6AddressKind_USERNAME"></a><code>Bit6AddressKind_USERNAME</code></dt>
+                            <dt><a name="" title="Bit6CallState_PROGRESS"></a><code>Bit6CallState_PROGRESS</code></dt>
 <dd>
 
 
-<p>The Bit6Address refers to an username</p>
+<p>The call is starting.</p>
 
     
 
@@ -133,16 +137,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Address.h</code>.
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6AddressKind_EMAIL"></a><code>Bit6AddressKind_EMAIL</code></dt>
+                            <dt><a name="" title="Bit6CallState_ANSWER"></a><code>Bit6CallState_ANSWER</code></dt>
 <dd>
 
 
-<p>The Bit6Address refers to an email account</p>
+<p>The call has started.</p>
 
     
 
@@ -150,16 +154,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Address.h</code>.
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6AddressKind_FACEBOOK"></a><code>Bit6AddressKind_FACEBOOK</code></dt>
+                            <dt><a name="" title="Bit6CallState_END"></a><code>Bit6CallState_END</code></dt>
 <dd>
 
 
-<p>The Bit6Address refers to a Facebook account</p>
+<p>The call ended.</p>
 
     
 
@@ -167,7 +171,41 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Address.h</code>.
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6CallState_ERROR"></a><code>Bit6CallState_ERROR</code></dt>
+<dd>
+
+
+<p>The call ended with an error.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6CallState_INTERRUPTED"></a><code>Bit6CallState_INTERRUPTED</code></dt>
+<dd>
+
+
+<p>The call has been interrupted.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
 	</p>
 	
 </dd>
@@ -184,7 +222,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <code class="declared-in-ref">Bit6Address.h</code><br />
+                        <code class="declared-in-ref">Bit6CallController.h</code><br />
                     </div>				
                     
                     
@@ -199,7 +237,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-03)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

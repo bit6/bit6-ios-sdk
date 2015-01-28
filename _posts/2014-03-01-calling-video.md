@@ -119,6 +119,14 @@ To get caller name: `callController.other`
 
 To check if it is video or voice call: `callController.hasVideo`
 
+To play the defined ringtone: `[callController startRingtone]`
+
+###Continue Calls in the Background
+
+You can continue the calls in the background by enable "Audio and Airplay" and "Voice over IP" Background Modes in your target configuration.
+
+<img style="max-width:100%" src="images/background_calls.png"/>
+
 ### Listen to Status Changes During the Call
 
 ```objc
@@ -165,6 +173,6 @@ func callStateChangedNotification(notification:NSNotification) -> Void {
 
 ### Customize the In-Call Screen
 
-You can create your own UIViewController that conforms to the Bit6CallControllerDelegate protocol to customize the user experience and use it in the `[callController connectToViewController:completion]` api call.
+You can create your own UIViewController that extends from Bit6CallViewController to customize the user experience and use it in the `[callController connectToViewController:completion]` api call.
 
 See the Bit6CallDemo and Bit6CallDemo-Swift sample projects included with the sdk.

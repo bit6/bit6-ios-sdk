@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6ThumbnailImageView Class Reference</title>
+		<title>Bit6Utils Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6ThumbnailImageView Class Reference</h1>
+				<h1 class="hideInXcode">Bit6Utils Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -37,17 +37,15 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/menuControllerDelegate">&nbsp;&nbsp;&nbsp;&nbsp;menuControllerDelegate</option>
-	
-	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
-	
-	<option value="//api/name/thumbnailImageViewDelegate">&nbsp;&nbsp;&nbsp;&nbsp;thumbnailImageViewDelegate</option>
-	
-	<option value="//api/name/useLoadingImage">&nbsp;&nbsp;&nbsp;&nbsp;useLoadingImage</option>
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/clockFormatForSeconds:">&nbsp;&nbsp;&nbsp;&nbsp;+ clockFormatForSeconds:</option>
+	
+	<option value="//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToCameraWithSuccessBlock:failedBlock:</option>
+	
+	<option value="//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToMicrophoneWithSuccessBlock:failedBlock:</option>
 	
 	
 	
@@ -73,19 +71,17 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/menuControllerDelegate">menuControllerDelegate</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clockFormatForSeconds:">clockFormatForSeconds:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:">requestAccessToCameraWithSuccessBlock:failedBlock:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/thumbnailImageViewDelegate">thumbnailImageViewDelegate</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/useLoadingImage">useLoadingImage</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:">requestAccessToMicrophoneWithSuccessBlock:failedBlock:</a></span></li>
 	
 </ul></li>
-
-
 
 
 
@@ -94,7 +90,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6ThumbnailImageView Class Reference" name="top"></a>
+				<a title="Bit6Utils Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -103,7 +99,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6ThumbnailImageView Class Reference</h1>
+						<h1 class="title title-header">Bit6Utils Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -111,10 +107,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">UIImageView</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">Bit6ThumbnailImageView.h</td>
+	<td class="specification-value">Bit6Utils.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -124,7 +120,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Special subclass of UIImageView to work with the message attachment thumbnails. It includes a convenient UIMenuController if the Bit6MenuControllerDelegate is implemented.</p>
+						<p>Bit6 utility class.</p>
 					</div>
 					
 					
@@ -142,27 +138,21 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
+		<code><a href="#//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:">+&nbsp;requestAccessToCameraWithSuccessBlock:failedBlock:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/thumbnailImageViewDelegate">&nbsp;&nbsp;thumbnailImageViewDelegate</a></code>
+		<code><a href="#//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:">+&nbsp;requestAccessToMicrophoneWithSuccessBlock:failedBlock:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/menuControllerDelegate">&nbsp;&nbsp;menuControllerDelegate</a></code>
+		<code><a href="#//api/name/clockFormatForSeconds:">+&nbsp;clockFormatForSeconds:</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/useLoadingImage">&nbsp;&nbsp;useLoadingImage</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -173,142 +163,93 @@
 					
 					
 					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/menuControllerDelegate" title="menuControllerDelegate"></a>
-	<h3 class="subsubtitle method-title">menuControllerDelegate</h3>
+	<a name="//api/name/clockFormatForSeconds:" title="clockFormatForSeconds:"></a>
+	<h3 class="subsubtitle method-title">clockFormatForSeconds:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>the delegate to be notified when an option in the default UIMenuController in the Bit6MessageLabel is touched.</p>
+		<p>Convenient method to convert seconds into a clock format NSString. For example 75s will be converted to 01:15</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;Bit6MenuControllerDelegate&gt; menuControllerDelegate</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)clockFormatForSeconds:(double)<em>seconds</em></code></div>
 
     
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6ThumbnailImageView.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/message" title="message"></a>
-	<h3 class="subsubtitle method-title">message</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Message with an attachment to be displayed</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) Bit6Message *message</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6ThumbnailImageView.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/thumbnailImageViewDelegate" title="thumbnailImageViewDelegate"></a>
-	<h3 class="subsubtitle method-title">thumbnailImageViewDelegate</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The Bit6ThumbnailImageView delegate</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;Bit6ThumbnailImageViewDelegate&gt; thumbnailImageViewDelegate</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="../Protocols/Bit6ThumbnailImageViewDelegate.html">Bit6ThumbnailImageViewDelegate</a></p></code></li>
-			
-		</ul>
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>number of seconds to convert</p></dd>
+		</dl>
+		
 	</div>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>seconds in a clock format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6ThumbnailImageView.h</code><br />
+		<code class="declared-in-ref">Bit6Utils.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/useLoadingImage" title="useLoadingImage"></a>
-	<h3 class="subsubtitle method-title">useLoadingImage</h3>
+	<a name="//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:" title="requestAccessToCameraWithSuccessBlock:failedBlock:"></a>
+	<h3 class="subsubtitle method-title">requestAccessToCameraWithSuccessBlock:failedBlock:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>By default a template image from Bit6Resources.bundle is shown while the thumbnail is being downloaded. You can override this behaviour by setting this property to NO.</p>
+		<p>Request access to the Camera. On iOS7 and earlier it always succeeds.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL useLoadingImage</code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)requestAccessToCameraWithSuccessBlock:(void ( ^ ) ( ))<em>successBlock</em> failedBlock:(void ( ^ ) ( ))<em>failedBlock</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>block to be called if camera access has been granted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failedBlock</em></dt>
+			<dd><p>block to be called if camera access is not granted</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -324,15 +265,64 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6ThumbnailImageView.h</code><br />
+		<code class="declared-in-ref">Bit6Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:" title="requestAccessToMicrophoneWithSuccessBlock:failedBlock:"></a>
+	<h3 class="subsubtitle method-title">requestAccessToMicrophoneWithSuccessBlock:failedBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request access to the Microphone. On iOS6 it always succeeds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)requestAccessToMicrophoneWithSuccessBlock:(void ( ^ ) ( ))<em>successBlock</em> failedBlock:(void ( ^ ) ( ))<em>failedBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>block to be called if microphone access has been granted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failedBlock</em></dt>
+			<dd><p>block to be called if microphone access is not granted</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Utils.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
-					
-					
 					
 					
 					
@@ -349,7 +339,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-03)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

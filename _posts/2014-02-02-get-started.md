@@ -15,7 +15,7 @@ You will need an API key to use the SDK. Get it [here](http://bit6.com/contact/)
 3. Add <b>`Bit6Resources.bundle`</b> to "Supporting Files".
 <img style="max-width:100%" src="images/resources.png"/>
 
-4. If you need to run the project in a 64bits simulator set the Architectures value to <b>`$(ARCHS_STANDARD_32_BIT)`</b>
+4. Set the Architectures value to be <b>`$(ARCHS_STANDARD_32_BIT)`</b> for iPhone Simulators and <b>`$(ARCHS_STANDARD)`</b> for devices.
 <img style="max-width:100%" src="images/architectures.png"/>
 
 5. In your project settings add <b>`-ObjC -stdlib=libc++`</b> to the “Other Linker Flags”
@@ -23,10 +23,6 @@ You will need an API key to use the SDK. Get it [here](http://bit6.com/contact/)
 
 6. If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
 <img style="max-width:100%" src="images/swift_bridge.png"/>
-
-7. You can enable background remote notifications by checking the property in your target configuration.
-<img style="max-width:100%" src="images/background_notifications.png"/>
-
 
 ### Setup Application Delegate
 In your Application Delegate:

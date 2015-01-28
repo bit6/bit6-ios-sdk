@@ -1,6 +1,6 @@
 ---
 category: authentication
-title: 'Overview'
+title: 'Session'
 ---
 Each user in the system has one or more identities - user id, username, email, facebook id, google account, phone number etc. Identities are required for user authentication, managing contacts, identifying user's network. An identity is represented by a URI.
 
@@ -11,7 +11,7 @@ Bit6 supports various authentication mechanisms described in the following secti
 
 ```objc
 //ObjectiveC
-if ([Bit6Session isConnected]) {
+if ([Bit6 session].authenticated) {
     NSLog(@"Active Session");
 }
 else {
@@ -21,7 +21,7 @@ else {
 
 ```swift
 //Swift
-if (Bit6Session.isConnected()) {
+if (Bit6.session().authenticated {
     NSLog("Active Session");
 }
 else {
@@ -34,15 +34,65 @@ else {
 
 ```objc
 //ObjectiveC
-[Bit6Session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+[[Bit6 session] logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
     NSLog(@"Logout Completed");
 }];
 ```
 
 ```swift
 //Swift
-Bit6Session.logoutWithCompletionHandler({(response,error) in            
+Bit6.session().logoutWithCompletionHandler({(response,error) in            
     NSLog("Logout Completed")
 })
+```
+
+### Listening to Login and Logout Notifications
+
+```objc
+//ObjectiveC
+
+[[NSNotificationCenter defaultCenter] addObserver:self
+										 selector:@selector(loginCompletedNotification:) 
+                                             name:Bit6LoginCompletedNotification
+                                           object:nil];
+
+[[NSNotificationCenter defaultCenter] addObserver:self
+										 selector:@selector(logoutStartedNotification:) 
+                                             name:Bit6LogoutStartedNotification
+                                           object:nil];
+
+- (void) loginCompletedNotification:(NSNotification*)notification
+{
+
+}
+
+- (void) logoutStartedNotification:(NSNotification*)notification
+{
+
+}
+
+```
+```swift
+//Swift
+
+NSNotificationCenter.defaultCenter().addObserver(self, 
+										selector: "loginCompletedNotification:", 
+											name: Bit6LoginCompletedNotification, 
+										  object: nil)
+
+NSNotificationCenter.defaultCenter().addObserver(self, 
+										selector: "logoutStartedNotification:", 
+											name: Bit6LogoutStartedNotification, 
+										  object: nil)
+
+func loginCompletedNotification(notification:NSNotification)
+{
+
+}
+
+func logoutStartedNotification(notification:NSNotification)
+{
+
+}
 ```
 

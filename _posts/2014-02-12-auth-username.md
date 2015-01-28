@@ -17,7 +17,7 @@ NSString *pass = @"secret";
 Bit6Address *i = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
                                         value:name];
 
-[Bit6Session signUpWithUserIdentity:i
+[[Bit6 session] signUpWithUserIdentity:i
                            password:pass 
                   completionHandler:^(NSDictionary *response, NSError *error) {
     if (!error) {
@@ -37,7 +37,7 @@ var pass = "secret";
 var i = Bit6Address(kind: Bit6AddressKind.USERNAME, 
 				   value: name);
                    
-Bit6Session.signUpWithUserIdentity(i, 
+Bit6.session().signUpWithUserIdentity(i, 
 						  password:pass, 
                  completionHandler:{(response,error) in
     if (error != nil){
@@ -60,7 +60,7 @@ NSString *pass = @"secret";
 
 Bit6Address *i = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
                                         value:name];
-[Bit6Session loginWithUserIdentity:i 
+[[Bit6 session] loginWithUserIdentity:i 
                           password:pass 
                  completionHandler:^(NSDictionary *response, NSError *error) {
     if (!error) {
@@ -80,7 +80,7 @@ var pass = "secret";
 var i = Bit6Address(kind: Bit6AddressKind.USERNAME, 
 				   value: name);
                    
-Bit6Session.loginWithUserIdentity(i, 
+Bit6.session().loginWithUserIdentity(i, 
 						 password: pass, 
 				completionHandler:{(response,error) in
     if (error != nil){

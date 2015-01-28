@@ -156,7 +156,7 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
     else if (msg.type == Bit6MessageType_Attachments) {
         //play an audio file
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
-            [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg 
+            [[Bit6 audioPlayer] startPlayingAudioFileInMessage:msg 
                                                         errorHandler:^(NSError *error) {
                 //an error occurred
             }];
@@ -193,7 +193,7 @@ func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
         else if (msg.type == Bit6MessageType.Attachments) {
         	//play an audio file
             if (msg.attachFileType == Bit6MessageFileType.AudioMP4) {
-                Bit6AudioPlayerController.sharedInstance().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
+                Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
                         //an error occurred
                 })
             }

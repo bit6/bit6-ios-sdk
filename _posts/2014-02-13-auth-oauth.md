@@ -12,12 +12,12 @@ Create a new Bit6 account or login into an existing one. In this example we use 
 
 ```objc
 //ObjectiveC
-[Bit6Session getAuthInfoCompletionHandler:^(NSDictionary *response, NSError *error) {
+[[Bit6 session] getAuthInfoCompletionHandler:^(NSDictionary *response, NSError *error) {
     if (response[@"facebook"][@"client_id"]){
         [[FBSession activeSession] closeAndClearTokenInformation];
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
             if (state==FBSessionStateOpen) {
-                [Bit6Session oauthForProvider:Bit6SessionProvider_FACEBOOK params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
+                [[Bit6 session] oauthForProvider:Bit6SessionProvider_FACEBOOK params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
                     if (error==nil) {
                         NSLog("Login Failed With Error: %s",error.localizedDescription);
                     }
@@ -32,7 +32,7 @@ Create a new Bit6 account or login into an existing one. In this example we use 
 ```
 ```swift
 //Swift
-Bit6Session.getAuthInfoCompletionHandler({ (response, error) -> Void in
+Bit6.session().getAuthInfoCompletionHandler({ (response, error) -> Void in
     if (response["facebook"] != nil) {
 
         var facebook = response["facebook"] as NSDictionary;
@@ -41,7 +41,7 @@ Bit6Session.getAuthInfoCompletionHandler({ (response, error) -> Void in
         FBSession.activeSession().closeAndClearTokenInformation();
         FBSession.openActiveSessionWithReadPermissions(["public_profile","email","user_friends"], allowLoginUI: true, completionHandler: { (session, state, error) -> Void in
             if (state == FBSessionState.Open){
-                Bit6Session.oauthForProvider(Bit6SessionProvider.FACEBOOK, params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
+                Bit6.session().oauthForProvider(Bit6SessionProvider.FACEBOOK, params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
                     in
                         if ((error) != nil){
                             NSLog("Login Failed With Error: %s",error.localizedDescription);
