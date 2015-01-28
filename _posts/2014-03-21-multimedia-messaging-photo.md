@@ -1,7 +1,6 @@
 ---
 category: multimedia messaging
 title: 'Photo'
-layout: nil
 ---
 
 Let your users exchange photos and pictures.

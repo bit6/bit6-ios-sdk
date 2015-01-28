@@ -7,7 +7,7 @@ Each user in the system has one or more identities - user id, username, email, f
 Bit6 supports various authentication mechanisms described in the following sections. 
 
 
-### Check if the user is logged in
+### Check if the user is authenticated
 
 ```objc
 //ObjectiveC

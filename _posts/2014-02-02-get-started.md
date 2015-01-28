@@ -3,31 +3,33 @@ title: 'Getting Started'
 ---
 
 ### Get Bit6 API Key
-You will need an API key to use the SDK. Get it [here](http://bit6.com/contact/).
+Get API key [here](http://bit6.com/contact/).
 
 ### Add Bit6 SDK to your iOS Xcode project
 
-1. [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
+__Step 1.__ [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
 
-2. Add <b>`Bit6SDK.framework`</b> to "Linked Frameworks and Libraries". Also add the following libraries to your project: <b>`libicucore.dylib`</b>, <b>`libz.dylib`</b>, <b>`libstdc++.dylib`</b>, <b>`libsqlite3.dylib`</b> and <b>`GLKit.framework`</b>.
-<img style="max-width:100%" src="images/frameworks.png"/>
+__Step 2.__ Configure 'Linked Frameworks and Libraries' - add `Bit6SDK.framework` as well as the libraries: `libicucore.dylib`, `libz.dylib`, `libstdc++.dylib`, `libsqlite3.dylib` and `GLKit.framework`.
+<img src="images/frameworks.png"/>
 
-3. Add <b>`Bit6Resources.bundle`</b> to "Supporting Files".
-<img style="max-width:100%" src="images/resources.png"/>
+__Step 3.__ Add `Bit6Resources.bundle` to "Supporting Files".
+<img src="images/resources.png"/>
 
-4. Set the Architectures value to be <b>`$(ARCHS_STANDARD_32_BIT)`</b> for iPhone Simulators and <b>`$(ARCHS_STANDARD)`</b> for devices.
-<img style="max-width:100%" src="images/architectures.png"/>
+__Step 4.__ Set the Architectures value to be `$(ARCHS_STANDARD_32_BIT)` for iPhone Simulators and `$(ARCHS_STANDARD)` for devices.
+<img src="images/architectures.png"/>
 
-5. In your project settings add <b>`-ObjC -stdlib=libc++`</b> to the “Other Linker Flags”
-<img style="max-width:100%" src="images/other_linker_flags.png"/>
+__Step 5.__ In your project settings add <b>`-ObjC -stdlib=libc++`</b> to the “Other Linker Flags”
+<img src="images/other_linker_flags.png"/>
 
-6. If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
-<img style="max-width:100%" src="images/swift_bridge.png"/>
+__Step 6.__ If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
+<img src="images/swift_bridge.png"/>
+
 
 ### Setup Application Delegate
+
 In your Application Delegate:
 
-__Step 1.__ Import Bit6: <b>`#import <Bit6_SDK/Bit6SDK.h>`</b>
+__Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>`
 
 __Note.__ If you are working on a Swift project you need to add this import on the Swift-ObjectiveC Bridge Header file
 

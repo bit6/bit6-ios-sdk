@@ -1,7 +1,6 @@
 ---
 category: multimedia messaging
 title: 'Menu Controller'
-layout: nil
 ---
 
 Implement a menu popup to enable message forwarding, resending and text copying.

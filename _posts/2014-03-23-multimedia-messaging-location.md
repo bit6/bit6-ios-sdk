@@ -1,7 +1,6 @@
 ---
 category: multimedia messaging
 title: 'Location'
-layout: nil
 ---
 
 In iOS 8 you must add the key NSLocationWhenInUseUsageDescription to your info.plist file. This string is used to specify the reason for accessing the user’s location information.

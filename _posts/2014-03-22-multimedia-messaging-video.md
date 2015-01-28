@@ -1,10 +1,9 @@
 ---
 category: multimedia messaging
 title: 'Video'
-layout: nil
 ---
 
-If you are using <b>`UIImagePickerController`</b> to take/select a video you can do the following in the <b>`UIImagePickerControllerDelegate`</b> method:
+If you are using `UIImagePickerController` to take/select a video you can do the following in the `UIImagePickerControllerDelegate` method:
 
 ```objc
 //ObjectiveC

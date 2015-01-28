@@ -1,12 +1,11 @@
 ---
-category: basic messaging
-title: 'Presence'
-layout: nil
+category: messaging
+title: 'Notifications'
 ---
 
 ### Notify the Recipient that the Sender is Typing
 
-Call <b>`+[Bit6 typingBeginToAddress:]`</b>. 
+Call `+[Bit6 typingBeginToAddress:]`. 
 
 If using UITextField to type, utilize its UITextFieldDelegate to send the notification:
 
@@ -100,4 +99,50 @@ func typingDidBeginRtNotification(notification:NSNotification) {
         //user stopped typing
     }
 }
+```
+
+
+### Receiving custom notifications
+
+```objc
+//ObjectiveC
+[[NSNotificationCenter defaultCenter] addObserver:self
+      selector:@selector(receivedRTNotification:) 
+          name:Bit6CustomRtNotification
+        object:nil];
+
+- (void) receivedRTNotification:(NSNotification*)notification
+{
+    Bit6Address *from = notification.userInfo[@"from"];
+    Bit6Address *to = notification.userInfo[@"to"];
+    NSString *type = notification.userInfo[@"type"];
+}
+```
+```swift
+//Swift
+NSNotificationCenter.defaultCenter().addObserver(self, 
+      selector: "receivedRTNotification:", 
+          name: Bit6CustomRtNotification, 
+        object: nil)
+
+func receivedRTNotification(notification:NSNotification)
+{
+  var from : Bit6Address = notification.userInfo["from"]
+  var to : Bit6Address = notification.userInfo["to"]
+  var type : String = notification.userInfo["type"]
+}
+```
+
+### Sending custom notifications
+
+```objc
+//ObjectiveC
+Bit6Address *address = ... ;
+[Bit6 sendNotificationToAddress:address type:@"custom_type" data:nil];
+```
+
+```swift
+//Swift
+var address : Bit6Address = ...
+Bit6.sendNotificationToAddress(address, type:"custom_type", data:nil)
 ```

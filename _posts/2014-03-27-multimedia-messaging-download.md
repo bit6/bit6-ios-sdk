@@ -1,14 +1,13 @@
 ---
 category: multimedia messaging
 title: 'Download Attachments'
-layout: nil
 ---
 
 ### Download Attachments
 
-___Note___ The classes `Bit6ThumbnailImageView` and `Bit6ImageView` take care of all the process related to download a file attached to a Bit6Message. 
+`Bit6ThumbnailImageView` and `Bit6ImageView` classes handle attachment downloading and rendering.
 
-You can also download the files manually by using `[Bit6Message downloadAttachment:]` and listen to  `Bit6FileDownloadedNotification`.
+You can also download the files manually by using `[Bit6Message downloadAttachment:]` and listen to `Bit6FileDownloadedNotification`.
 
 ```objc
 //ObjectiveC

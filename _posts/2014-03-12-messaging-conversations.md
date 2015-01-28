@@ -1,7 +1,6 @@
 ---
-category: basic messaging
+category: messaging
 title: 'Conversations'
-layout: nil
 ---
 
 A conversation is interaction between two users, that includes all [text messages](#/messaging-plain) and [multimedia messages](#/multimedia-messaging-photo) they exchange. There is one conversation per destination address (phone number, e-mail, Facebook account etc).

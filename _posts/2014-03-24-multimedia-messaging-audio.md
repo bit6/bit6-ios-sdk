@@ -1,7 +1,6 @@
 ---
 category: multimedia messaging
 title: 'Audio'
-layout: nil
 ---
 
 ### Record and Send an Audio File
