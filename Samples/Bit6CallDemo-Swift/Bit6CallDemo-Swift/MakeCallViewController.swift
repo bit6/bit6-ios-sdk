@@ -14,11 +14,11 @@ class MakeCallViewController: UIViewController {
     @IBOutlet var phoneNumberTextField:UITextField!
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6Session.userIdentity().displayName);
+        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6.session().userIdentity.displayName);
     }
     
     @IBAction func touchedLogoutBarButton(sender: UIButton) {
-        Bit6Session.logoutWithCompletionHandler({(response,error) in
+        Bit6.session().logoutWithCompletionHandler({(response,error) in
             self.navigationController?.popViewControllerAnimated(true)
             NSLog("Logout")
             }

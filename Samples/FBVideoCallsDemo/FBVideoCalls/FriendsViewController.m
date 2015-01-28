@@ -22,13 +22,13 @@
     [self loadFacebookFriends];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(touchedLogoutBarButton:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Invite" style:UIBarButtonItemStyleBordered target:self action:@selector(touchedInviteFriendsButtonTouched:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Invite" style:UIBarButtonItemStyleBordered target:self action:@selector(inviteFriendsButtonTouched:)];
     
     [super viewDidLoad];
 }
 
 - (void)touchedLogoutBarButton:(id)sender {
-    [Bit6Session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+    [Bit6.session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
     }];
 }
 
@@ -119,12 +119,9 @@
 
 #pragma mark - Invite Friends
 
-- (void) touchedInviteFriendsButtonTouched:(UIBarButtonItem*)sender
+- (void) inviteFriendsButtonTouched:(UIBarButtonItem*)sender
 {
-    NSMutableDictionary* params =
-    [NSMutableDictionary dictionaryWithObjectsAndKeys:@"Try FBVideoCalls", @"message",
-     nil, @"to",
-     nil];
+    NSDictionary* params = @{@"filters":@"app_non_users",@"message":@"Try FBVideoCalls"};
     
     // Display the requests dialog
     [FBWebDialogs

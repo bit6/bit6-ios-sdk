@@ -20,6 +20,10 @@ class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        super.didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler);
+    }
 
 }
 

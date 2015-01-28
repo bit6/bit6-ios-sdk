@@ -328,6 +328,18 @@
             <NodeRef refid="6"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/startRingtone</TokenIdentifier>
+			<Abstract type="html">Play the ringtone defined in the incoming push notification payload.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)startRingtone</Declaration>
+			
+			
+			<Anchor>//api/name/startRingtone</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

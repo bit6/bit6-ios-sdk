@@ -14,6 +14,16 @@
 		
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_New</TokenIdentifier>
+            <Abstract type="html">The message is new.</Abstract>
+            <Declaration>Bit6MessageStatus_New</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6MessageStatus_Sending</TokenIdentifier>
             <Abstract type="html">The message is being sent.</Abstract>
             <Declaration>Bit6MessageStatus_Sending</Declaration>

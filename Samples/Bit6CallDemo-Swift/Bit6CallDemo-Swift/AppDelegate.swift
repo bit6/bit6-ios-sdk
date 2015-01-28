@@ -36,13 +36,11 @@ class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate {
             callController.declineCall();
         }
         else {
-            Bit6AudioPlayerController.sharedInstance().stopPlayingAudioFile()
-            
             var type = callController.hasVideo ?"Video":"Audio";
             var message = "Incoming \(type) Call: \(callController.other)"
             
             if (UIApplication.sharedApplication().applicationState == UIApplicationState.Active){
-                AudioServicesPlaySystemSound(1007);
+                callController.startRingtone()
 
                 var message = "Incoming \(type) Call: \(callController.other)"
                 var alert = UIAlertController(title:message, message: nil, preferredStyle: UIAlertControllerStyle.Alert)

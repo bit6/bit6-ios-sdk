@@ -23,7 +23,7 @@
 
 - (void) viewDidLoad
 {
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",[Bit6Session userIdentity].displayName];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
     self.hidesBottomBarWhenPushed = YES;
     
     self.imageView.message = self.message;

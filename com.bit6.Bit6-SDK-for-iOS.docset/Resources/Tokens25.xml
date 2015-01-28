@@ -154,6 +154,16 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_CallInProgressError</TokenIdentifier>
+            <Abstract type="html">Can&apos;t answer the call because another call is in progress</Abstract>
+            <Declaration>Bit6Error_CallInProgressError</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6Error_RecipientNotFound</TokenIdentifier>
             <Abstract type="html">The recipient was not found</Abstract>
             <Declaration>Bit6Error_RecipientNotFound</Declaration>

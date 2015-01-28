@@ -38,10 +38,9 @@
     }
     else {
         _callController = callController;
-        [[Bit6AudioPlayerController sharedInstance] stopPlayingAudioFile];
         NSString *type = _callController.hasVideo?@"Video":@"Audio";
         if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
-            AudioServicesPlaySystemSound(1007);
+            [callController startRingtone];
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Incoming %@ Call: %@", type, _callController.other]  message:nil delegate:self cancelButtonTitle:@"Decline" otherButtonTitles:@"Answer", nil];
             [alert show];

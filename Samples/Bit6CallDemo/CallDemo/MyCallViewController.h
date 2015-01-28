@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCallViewController : UIViewController <Bit6CallControllerDelegate>
+@interface MyCallViewController : Bit6CallViewController
 
 - (instancetype)initWithCallController:(Bit6CallController*)callController;
 

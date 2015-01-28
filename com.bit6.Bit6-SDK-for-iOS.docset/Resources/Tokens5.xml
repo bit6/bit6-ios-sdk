@@ -13,23 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6AudioRecorderController/sharedInstance</TokenIdentifier>
-			<Abstract type="html">Gets default Bit6AudioRecorderController object.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
-			
-			<Declaration>+ (Bit6AudioRecorderController *)sharedInstance</Declaration>
-			
-			<ReturnValue><Abstract type="html">Default Bit6AudioRecorderController object.</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedInstance</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</TokenIdentifier>
 			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
+			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>
@@ -41,12 +29,111 @@
 					<Name>delegate</Name>
 					<Abstract type="html">the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see Bit6AudioRecorderControllerDelegate Protocol Reference.</Abstract>
 				</Parameter><Parameter>
+					<Name>defaultPrompt</Name>
+					<Abstract type="html">if YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.</Abstract>
+				</Parameter><Parameter>
 					<Name>errorHandler</Name>
 					<Abstract type="html">block to call if an error occurs</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:errorHandler:</Anchor>
+			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setDuration:</TokenIdentifier>
+			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/duration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/duration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/cancelRecording</TokenIdentifier>
+			<Abstract type="html">Cancel a recording without saving the audio file.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelRecording</Declaration>
+			
+			
+			<Anchor>//api/name/cancelRecording</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/stopRecording</TokenIdentifier>
+			<Abstract type="html">Finish the recording and saves the audio file to cache.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (void)stopRecording</Declaration>
+			
+			
+			<Anchor>//api/name/stopRecording</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setIsRecording:</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			
+			
+			<Anchor>//api/name/isRecording</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/isRecording</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			
+			
+			<Anchor>//api/name/isRecording</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/isRecording</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			
+			
+			<Anchor>//api/name/isRecording</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

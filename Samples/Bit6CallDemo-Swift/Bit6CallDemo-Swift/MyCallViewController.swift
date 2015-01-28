@@ -9,13 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
-    var localVideoSize : CGSize!
-    var remoteVideoSize : CGSize!
-    
-    var callController:Bit6CallController!
-    var timer:NSTimer!
-    
+class MyCallViewController: Bit6CallViewController {
     @IBOutlet var videoView:UIView!
     var localVideoView:UIView!
     var remoteVideoView:UIView!
@@ -31,14 +25,14 @@ class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
     
     @IBOutlet var controlsView:UIView!
     
+    var statusBarOrientation:UIInterfaceOrientation!
+    
     init(callController: Bit6CallController) {
         super.init(nibName:"MyCallViewController", bundle:nil);
         
         self.callController = callController;
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "callStateChangedNotification:", name: Bit6CallStateChangedNotification, object: self.callController)
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refreshTimerLabel", userInfo: nil, repeats: true)
-        self.localVideoSize = CGSizeZero
-        self.remoteVideoSize = CGSizeZero
+        self.callController.addObserver(self, forKeyPath:"seconds", options:.New, context:nil);
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -46,6 +40,7 @@ class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
     }
     
     deinit {
+        self.callController.removeObserver(self, forKeyPath:"seconds");
         NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6ConversationsUpdatedNotification, object: nil)
         
     }
@@ -54,10 +49,7 @@ class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
         UIApplication.sharedApplication().statusBarHidden = true
         UIApplication.sharedApplication().idleTimerDisabled = true
         
-        self.setupCaptureSession()
-        
         self.usernameLabel.text = self.callController.other
-
         self.refreshTimerLabel()
         
         if (self.callController.hasVideo) {
@@ -75,6 +67,8 @@ class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
             self.speakerLabel.hidden = true
         }
         
+        self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
+        
         super.viewDidLoad()
     }
     
@@ -83,66 +77,23 @@ class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
     }
     
     func callStateChangedNotification(notification:NSNotification) -> Void {
-        if (self.callController.callState == Bit6CallState.ANSWER) {
-            self.controlsView.hidden = false
-        }
-        else if (self.callController.callState == Bit6CallState.END || callController.callState == Bit6CallState.ERROR) {
-            if (timer.valid) {
-                timer.invalidate()
-            }
-            timer = nil
-        }
+        self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
+        self.refreshTimerLabel()
     }
     
     func refreshTimerLabel(){
         if (self.callController.callState == Bit6CallState.ANSWER) {
-            var seconds = self.callController.seconds
-            var minutes = seconds/60;
-            
-            var minutesStr = NSString(format: "%02d", minutes)
-            var secondsStr = NSString(format: "%02d", (seconds-minutes*60) )
-            self.timerLabel.text = "\(minutesStr):\(secondsStr)";
+            self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(self.callController.seconds))
+        }
+        else if (self.callController.callState == Bit6CallState.END || self.callController.callState == Bit6CallState.ERROR){
+            self.timerLabel.text = "Disconnected";
+        }
+        else if (self.callController.callState == Bit6CallState.INTERRUPTED){
+            self.timerLabel.text = "Interrupted";
         }
         else {
-            self.timerLabel.text = "Connecting..."
+            self.timerLabel.text = "Connecting...";
         }
-    }
-    
-    // MARK: PREPARE VIDEO
-    
-    func setupCaptureSession() {
-        if (self.callController.hasVideo) {
-            self.remoteVideoView = Bit6CallController.createVideoTrackViewWithFrame(self.videoView.bounds, delegate:self)
-            self.remoteVideoView.transform = CGAffineTransformMakeScale(-1, 1);
-            self.videoView.addSubview(self.remoteVideoView)
-            
-            self.localVideoView = Bit6CallController.createVideoTrackViewWithFrame(self.videoView.bounds, delegate:self)
-            self.videoView.addSubview(self.localVideoView)
-            self.updateVideoViewLayout()
-        }
-        else {
-            self.videoView.hidden = true
-        }
-    }
-    
-    func updateVideoViewLayout () {
-        // Padding space for local video view with its parent.
-        var kLocalViewPadding : CGFloat = 20.0
-        
-        // TODO(tkchin): handle rotation.
-        var defaultAspectRatio = CGSizeMake(4, 3);
-        var localAspectRatio = CGSizeEqualToSize(self.localVideoSize, CGSizeZero) ? defaultAspectRatio : self.localVideoSize;
-        var remoteAspectRatio = CGSizeEqualToSize(self.remoteVideoSize, CGSizeZero) ? defaultAspectRatio : self.remoteVideoSize;
-        
-        var remoteVideoFrame = AVMakeRectWithAspectRatioInsideRect(remoteAspectRatio, self.videoView.bounds);
-        self.remoteVideoView.frame = remoteVideoFrame;
-        
-        var localVideoFrame = AVMakeRectWithAspectRatioInsideRect(localAspectRatio, self.videoView.bounds);
-        localVideoFrame.size.width = localVideoFrame.size.width / 3;
-        localVideoFrame.size.height = localVideoFrame.size.height / 3;
-        localVideoFrame.origin.x = CGRectGetMaxX(self.videoView.bounds) - localVideoFrame.size.width - kLocalViewPadding;
-        localVideoFrame.origin.y = CGRectGetMaxY(self.videoView.bounds) - localVideoFrame.size.height - kLocalViewPadding;
-        self.localVideoView.frame = localVideoFrame;
     }
     
     // MARK: Actions
@@ -163,31 +114,22 @@ class MyCallViewController: UIViewController, Bit6CallControllerDelegate {
         self.callController.switchSpeaker()
     }
     
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
+        dispatch_async(dispatch_get_main_queue()) {
+            if (object as Bit6CallController == self.callController) {
+                if (keyPath == "seconds") {
+                    self.refreshTimerLabel()
+                }
+            }
+        }
+    }
+    
     // MARK: Bit6CallControllerDelegate
     
-    func localVideoTrackViewForCallController(callController:Bit6CallController) -> UIView
-    {
-        return self.localVideoView
-    }
-    
-    func remoteVideoTrackViewForCallController(callController:Bit6CallController) -> UIView
-    {
-        return self.remoteVideoView
-    }
-    
-    func refreshControlsViewForCallController(callController:Bit6CallController)
+    override func refreshControlsViewForCallController(callController:Bit6CallController)
     {
         self.muteLabel.text = self.callController.audioMuted ?"Unmute":"Mute"
         self.speakerLabel.text = self.callController.speakerEnabled ?"Disable Speaker":"Enable Speaker"
-    }
-    
-    func videoView(videoView:UIView, didChangeVideoSize size:CGSize) {
-        if (videoView == self.localVideoView) {
-            self.localVideoSize = size
-        }
-        else if (videoView == self.remoteVideoView) {
-            self.remoteVideoSize = size
-        }
-        self.updateVideoViewLayout()
+        super.refreshControlsViewForCallController(callController)
     }
 }

@@ -15,7 +15,6 @@
                 <outlet property="speakerLabel" destination="hcr-hj-3kz" id="PuW-Ua-xhL"/>
                 <outlet property="timerLabel" destination="scl-Mg-kq3" id="6pw-A8-sBF"/>
                 <outlet property="usernameLabel" destination="ngD-E9-gyy" id="c4r-yN-YUb"/>
-                <outlet property="videoView" destination="le4-Gl-wTF" id="8oE-x3-oaM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,10 +23,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="le4-Gl-wTF" userLabel="View - video">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="MZk-uY-tVp" userLabel="View - overlay">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +42,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view hidden="YES" contentMode="scaleToFill" id="ZMv-EG-zHW" userLabel="View - controls">
-                            <rect key="frame" x="20" y="86.499999441796717" width="280" height="464.5"/>
+                            <rect key="frame" x="20" y="86.499999149712934" width="280" height="464.5"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" alpha="0.30000001192092896" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1c7-Qm-X3S" userLabel="Button - camera">

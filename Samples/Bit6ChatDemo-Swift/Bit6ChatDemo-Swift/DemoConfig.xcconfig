@@ -9,6 +9,8 @@
 SWIFT_OBJC_BRIDGING_HEADER = Bit6ChatDemo-Swift/Bit6ChatDemo-Swift-Bridging-Header.h
 OTHER_LDFLAGS = -ObjC -stdlib=libc++
 IPHONEOS_DEPLOYMENT_TARGET = 8.0
-//ARCHS=$(ARCHS_STANDARD_32_BIT)
+ARCHS=$(ARCHS_STANDARD)
+ARCHS[sdk=iphonesimulator*] =$(ARCHS_STANDARD_32_BIT)
+ARCHS[sdk=iphoneos*] = $(ARCHS_STANDARD)
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR) ../../
 CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist

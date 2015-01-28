@@ -36,7 +36,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6Session.userIdentity().displayName);
+        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6.session().userIdentity.displayName);
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,7 +46,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Action
     
     @IBAction func touchedLogoutBarButton(sender : UIBarButtonItem) {
-        Bit6Session.logoutWithCompletionHandler({(response,error) in
+        Bit6.session().logoutWithCompletionHandler({(response,error) in
             self.navigationController?.popViewControllerAnimated(true)
             NSLog("Logout")
             }

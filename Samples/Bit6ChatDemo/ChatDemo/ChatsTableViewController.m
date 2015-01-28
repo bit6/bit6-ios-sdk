@@ -27,7 +27,7 @@
 
 - (void) viewDidLoad
 {
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",[Bit6Session userIdentity].displayName];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -43,7 +43,7 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    [[Bit6AudioPlayerController sharedInstance] stopPlayingAudioFile];
+    [Bit6.audioPlayer stopPlayingAudioFile];
 }
 
 - (void)dealloc
@@ -138,6 +138,7 @@
     
     UILabel *detailTextLabel = (UILabel*) [cell viewWithTag:2];
     switch (message.status) {
+        case Bit6MessageStatus_New : detailTextLabel.text = @""; break;
         case Bit6MessageStatus_Sending : detailTextLabel.text = @"Sending"; break;
         case Bit6MessageStatus_Sent : detailTextLabel.text = @"Sent"; break;
         case Bit6MessageStatus_Failed : detailTextLabel.text = @"Failed"; break;
@@ -304,7 +305,7 @@
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
     message.destination = self.conversation.address;
     message.channel = Bit6MessageChannel_PUSH;
-    [[Bit6CurrentLocationController sharedInstance] startListeningToLocationForMessage:message delegate:self];
+    [Bit6.locationController startListeningToLocationForMessage:message delegate:self];
 }
 
 - (void) currentLocationController:(Bit6CurrentLocationController*)b6clc didFailWithError:(NSError*)error message:(Bit6OutgoingMessage*)message
@@ -331,21 +332,23 @@
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
     message.destination = self.conversation.address;
     message.channel = Bit6MessageChannel_PUSH;
-    [[Bit6AudioRecorderController sharedInstance] startRecordingAudioForMessage:message maxDuration:60 delegate:self errorHandler:^(NSError *error) {
+    [Bit6.audioRecorder startRecordingAudioForMessage:message maxDuration:60 delegate:self defaultPrompt:YES errorHandler:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
 }
 
 - (void) doneRecorderController:(Bit6AudioRecorderController*)b6rc message:(Bit6OutgoingMessage*)message
 {
-    [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-        if (!error) {
-            NSLog(@"Message Sent");
-        }
-        else {
-            NSLog(@"Message Failed with Error: %@",error.localizedDescription);
-        }
-    }];
+    if (message.audioDuration) {
+        [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+            if (!error) {
+                NSLog(@"Message Sent");
+            }
+            else {
+                NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+            }
+        }];
+    }
 }
 
 #pragma mark - Notifications
@@ -498,7 +501,7 @@
     }
     else if (msg.type == Bit6MessageType_Attachments) {
         if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
-            [[Bit6AudioPlayerController sharedInstance] startPlayingAudioFileInMessage:msg errorHandler:^(NSError *error) {
+            [Bit6.audioPlayer startPlayingAudioFileInMessage:msg errorHandler:^(NSError *error) {
                 [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }];
         }

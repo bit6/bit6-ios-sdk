@@ -31,8 +31,8 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    if ([Bit6Session isConnected]) {
-        if ([[Bit6Session userIdentity].kind intValue] == Bit6AddressKind_FACEBOOK) {
+    if (Bit6.session.authenticated) {
+        if ([Bit6.session.userIdentity.kind intValue] == Bit6AddressKind_FACEBOOK) {
             [FBSession openActiveSessionWithAllowLoginUI:YES];
         }
         [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
@@ -49,12 +49,12 @@
 {
     __weak MainViewController *__weakSelf = self;
     
-    [Bit6Session getAuthInfoCompletionHandler:^(NSDictionary *response, NSError *error) {
+    [Bit6.session getAuthInfoCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (response[@"facebook"][@"client_id"]){
             [[FBSession activeSession] closeAndClearTokenInformation];
             [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
                 if (state==FBSessionStateOpen) {
-                    [Bit6Session oauthForProvider:Bit6SessionProvider_FACEBOOK params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
+                    [Bit6.session oauthForProvider:Bit6SessionProvider_FACEBOOK params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
                         if (!error) {
                             if (__weakSelf.presentingViewController==nil) {
                                 [__weakSelf performSegueWithIdentifier:@"loginCompleted" sender:nil];

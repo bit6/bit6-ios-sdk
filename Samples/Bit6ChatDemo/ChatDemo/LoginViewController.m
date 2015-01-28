@@ -19,7 +19,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    if ([Bit6Session isConnected]) {
+    if (Bit6.session.authenticated) {
         [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
     }
     [super viewWillAppear:animated];
@@ -58,7 +58,7 @@
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password
 {
     Bit6Address *userIdentity = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
-    [Bit6Session loginWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
+    [Bit6.session loginWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }
@@ -71,7 +71,7 @@
 - (void) signUpWithUsername:(NSString*)username password:(NSString*)password
 {
     Bit6Address *userIdentity = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
-    [Bit6Session signUpWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
+    [Bit6.session signUpWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }

@@ -18,4 +18,9 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    [super didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
 @end

@@ -52,7 +52,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6Session.userIdentity().displayName);
+        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6.session().userIdentity.displayName);
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,7 +65,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     override func viewWillDisappear(animated: Bool) {
-        Bit6AudioPlayerController.sharedInstance().stopPlayingAudioFile()
+        Bit6.audioPlayer().stopPlayingAudioFile()
     }
     
     @IBAction func touchedAttachButton(sender : UIBarButtonItem) {
@@ -173,6 +173,8 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             }
             else {
                 switch (message.status){
+                case Bit6MessageStatus.New :
+                    detailTextLabel.text = ""
                 case Bit6MessageStatus.Sending :
                     detailTextLabel.text = "Sending"
                 case Bit6MessageStatus.Sent :
@@ -307,7 +309,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         var message = Bit6OutgoingMessage()
         message.destination = self.conversation.address
         message.channel = Bit6MessageChannel.PUSH
-        Bit6CurrentLocationController.sharedInstance().startListeningToLocationForMessage(message, delegate: self)
+        Bit6.locationController().startListeningToLocationForMessage(message, delegate: self)
     }
     
     func currentLocationController(b6clc: Bit6CurrentLocationController!, didFailWithError error: NSError!, message: Bit6OutgoingMessage!) {
@@ -333,20 +335,22 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         var message = Bit6OutgoingMessage()
         message.destination = self.conversation.address
         message.channel = Bit6MessageChannel.PUSH
-        Bit6AudioRecorderController.sharedInstance().startRecordingAudioForMessage(message, maxDuration: 60, delegate: self) { (error) -> Void in
+        Bit6.audioRecorder().startRecordingAudioForMessage(message, maxDuration: 60, delegate: self, defaultPrompt: true, errorHandler:{ (error) -> Void in
             var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
             self.navigationController?.presentViewController(alert, animated: true, completion:nil)
-        }
+        })
     }
     
     func doneRecorderController(b6rc: Bit6AudioRecorderController!, message: Bit6OutgoingMessage!) {
-        message.sendWithCompletionHandler { (response, error) -> Void in
-            if (error == nil) {
-                NSLog("Message Sent");
-            }
-            else {
-                NSLog("Message Failed with Error: %@",error.localizedDescription);
+        if (message.audioDuration > 1.0){
+            message.sendWithCompletionHandler { (response, error) -> Void in
+                if (error == nil) {
+                    NSLog("Message Sent");
+                }
+                else {
+                    NSLog("Message Failed with Error: %@",error.localizedDescription);
+                }
             }
         }
     }
@@ -484,7 +488,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             
         else if (msg.type == Bit6MessageType.Attachments) {
             if (msg.attachFileType == Bit6MessageFileType.AudioMP4) {
-                Bit6AudioPlayerController.sharedInstance().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
+                Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
                         var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
                         self.navigationController?.presentViewController(alert, animated: true, completion:nil)

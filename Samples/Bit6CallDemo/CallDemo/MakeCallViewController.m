@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad
 {
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",[Bit6Session userIdentity].displayName];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
     [super viewDidLoad];
 }
 
@@ -40,7 +40,7 @@
 #pragma mark - Action
 
 - (IBAction)touchedLogoutBarButton:(id)sender {
-    [Bit6Session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
+    [Bit6.session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }

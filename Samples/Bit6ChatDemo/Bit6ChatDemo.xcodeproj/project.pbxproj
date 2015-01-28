@@ -180,6 +180,15 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Voxofon;
+				TargetAttributes = {
+					D880E49D18DBFC540070378D = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D880E49918DBFC540070378D /* Build configuration list for PBXProject "Bit6ChatDemo" */;
 			compatibilityVersion = "Xcode 3.2";

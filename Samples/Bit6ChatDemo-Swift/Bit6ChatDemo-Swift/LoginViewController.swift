@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
-        if (Bit6Session.isConnected()) {
+        if (Bit6.session().authenticated) {
             performSegueWithIdentifier("loginCompleted", sender: self)
         }
     }
@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
 
     func login(username:String,password:String){
         var userIdentity = Bit6Address(kind: Bit6AddressKind.USERNAME, value: username)
-        Bit6Session.loginWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
+        Bit6.session().loginWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
             if ((error) != nil){
                 var alert = UIAlertController(title:"Login Failed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     
     func signUp(username:String,password:String){
         var userIdentity = Bit6Address(kind: Bit6AddressKind.USERNAME, value: username)
-        Bit6Session.signUpWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
+        Bit6.session().signUpWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
             if ((error) != nil){
                 var alert = UIAlertController(title:"SignUp Failed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))

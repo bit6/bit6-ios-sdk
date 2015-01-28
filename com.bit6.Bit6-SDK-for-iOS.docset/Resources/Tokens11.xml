@@ -337,6 +337,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setAudioDuration:</TokenIdentifier>
+			<Abstract type="html">Gets the length of the audio file attached to the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double audioDuration</Declaration>
+			
+			
+			<Anchor>//api/name/audioDuration</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/audioDuration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the audio file attached to the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double audioDuration</Declaration>
+			
+			
+			<Anchor>//api/name/audioDuration</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/audioDuration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the audio file attached to the message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double audioDuration</Declaration>
+			
+			
+			<Anchor>//api/name/audioDuration</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/attachmentStatusForAttachmentCategory:</TokenIdentifier>
 			<Abstract type="html">Returns the status for the message&apos;s attachments</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
@@ -367,6 +403,23 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">the attachment&apos;s path</Abstract></ReturnValue>
 			<Anchor>//api/name/attachmentPathForAttachmentCategory:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/downloadAttachment:</TokenIdentifier>
+			<Abstract type="html">Starts to download the attachment associated with this message. If the attachment is already downloading this method does nothing.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>- (void)downloadAttachment:(Bit6MessageAttachmentCategory)attachmentCategory</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attachmentCategory</Name>
+					<Abstract type="html">attachment to download.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/downloadAttachment:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

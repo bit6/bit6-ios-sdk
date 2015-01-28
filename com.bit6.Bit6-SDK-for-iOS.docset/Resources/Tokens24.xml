@@ -63,5 +63,15 @@
             <NodeRef refid="24"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_INTERRUPTED</TokenIdentifier>
+            <Abstract type="html">The call has been interrupted.</Abstract>
+            <Declaration>Bit6CallState_INTERRUPTED</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
 	</File>
 </Tokens>

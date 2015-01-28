@@ -46,7 +46,7 @@
         NSString *msg = notification.userInfo[@"aps"][@"alert"];
         _callController.other = [msg stringByReplacingOccurrencesOfString:@" is calling..." withString:@""];
         
-        [[Bit6AudioPlayerController sharedInstance] stopPlayingAudioFile];
+        [Bit6.audioPlayer stopPlayingAudioFile];
         if ([notification.userInfo[@"answered"]boolValue]) {
             [self didBecomeActive:nil];
         }

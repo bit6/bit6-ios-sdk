@@ -24,7 +24,7 @@
 					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
 					<Name>message</Name>
-					<Abstract type="html">Message object set in [Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:errorHandler:] with the audio file set.</Abstract>
+					<Abstract type="html">Message object set in [Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:] with the audio file set.</Abstract>
 				</Parameter>
 			</Parameters>
 			

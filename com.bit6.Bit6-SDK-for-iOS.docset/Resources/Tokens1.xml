@@ -36,6 +36,54 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/session</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6Session object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6Session *)session</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6Session object.</Abstract></ReturnValue>
+			<Anchor>//api/name/session</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/audioPlayer</TokenIdentifier>
+			<Abstract type="html">Gets the default Bit6AudioPlayerController object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6AudioPlayerController *)audioPlayer</Declaration>
+			
+			<ReturnValue><Abstract type="html">Default Bit6AudioPlayerController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/audioPlayer</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/audioRecorder</TokenIdentifier>
+			<Abstract type="html">Gets default Bit6AudioRecorderController object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6AudioRecorderController *)audioRecorder</Declaration>
+			
+			<ReturnValue><Abstract type="html">Default Bit6AudioRecorderController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/audioRecorder</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/locationController</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6CurrentLocationController object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CurrentLocationController *)locationController</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6CurrentLocationController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/locationController</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/conversations</TokenIdentifier>
 			<Abstract type="html">Get all the existing conversations.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
@@ -347,6 +395,29 @@
 			
 			<ReturnValue><Abstract type="html">true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</Abstract></ReturnValue>
 			<Anchor>//api/name/shouldDownloadVideoBeforePlaying</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/sendNotificationToAddress:type:data:</TokenIdentifier>
+			<Abstract type="html">Used to send a notification to another user. To receive the notification in the other end you can hear to the Bit6CustomRtNotification notifications.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)sendNotificationToAddress:(Bit6Address *)address type:(NSString *)type data:(NSDictionary *)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">The Bit6Address object to send the message</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">type of the notification to send</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">data to send in the notification</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sendNotificationToAddress:type:data:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
