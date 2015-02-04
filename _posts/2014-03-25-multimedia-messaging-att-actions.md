@@ -106,7 +106,7 @@ if (message.type != Bit6MessageType.Text) {
 ```
 __Step 2.__ To show the preview, use a `Bit6ThumbnailImageView` object. To add `Bit6ThumbnailImageView` to your nib/storyboard just add an `UIImageView` object and change its class to `Bit6ThumbnailImageView`:
 
-<img src="images/thumb_img_view.png"/>
+<img class="shot" src="images/thumb_img_view.png"/>
 
 __Step 3.__ Set the message to be used with the `Bit6ThumbnailImageView` object:
 
@@ -249,7 +249,7 @@ __Step 2.__ Use a `Bit6ImageView` object to show the image.
 
 Add `Bit6ImageView` to nib/storyboard: add an `UIImageView` object and change its class to `Bit6ImageView`.
 
-<img src="images/full_image_view.png"/>
+<img class="shot" src="images/full_image_view.png"/>
 
 __Step 3.__ Set the message to be used with the `Bit6ImageView` object:
 

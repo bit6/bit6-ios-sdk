@@ -164,7 +164,7 @@ Bit6.deleteMessage(messageToDelete)
 
 You can enable background remote notifications by checking the property in your target configuration.
 
-<img style="max-width:100%" src="images/background_notifications.png"/>
+<img class="shot" src="images/background_notifications.png"/>
 
 Then in your Bit6ApplicationManager subclass you need to implement the following:
 

@@ -124,7 +124,7 @@ To play the defined ringtone: `[callController startRingtone]`
 
 You can continue the calls in the background by enable "Audio and Airplay" and "Voice over IP" Background Modes in your target configuration.
 
-<img style="max-width:100%" src="images/background_calls.png"/>
+<img class="shot" src="images/background_calls.png"/>
 
 ### Listen to Status Changes During the Call
 
