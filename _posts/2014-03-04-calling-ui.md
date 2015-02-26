@@ -1,6 +1,6 @@
 ---
 category: calling
-title: 'Customize the In-Call Screen'
+title: 'In-Call UI'
 ---
 
 See the Bit6CallDemo and Bit6CallDemo-Swift sample projects included with the sdk.
