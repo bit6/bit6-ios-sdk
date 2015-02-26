@@ -20,8 +20,8 @@ extern NSString* const Bit6ConversationsUpdatedNotification;
 
 extern NSString* const Bit6TypingDidBeginRtNotification;
 extern NSString* const Bit6TypingDidEndRtNotification;
-extern NSString* const Bit6TypingAddressKey;
 
+extern NSString* const Bit6RTConnectionStatusChangedNotification;
 extern NSString* const Bit6CustomRtNotification;
 
 extern NSString* const Bit6MessageNotificationKey_ADDED;
@@ -29,7 +29,6 @@ extern NSString* const Bit6MessageNotificationKey_UPDATED;
 extern NSString* const Bit6MessageNotificationKey_DELETED;
 
 extern NSString* const Bit6IncomingCallNotification;
-extern NSString* const Bit6CallStateChangedNotification;
 
 extern NSString* const Bit6FileDownloadedNotification;
 
@@ -66,8 +65,13 @@ typedef NS_ENUM(NSInteger, Bit6Error) {
     Bit6Error_HTTPServerError=-6031,
     /*! An HTTP status = 4xx occur when interacting with the server */
     Bit6Error_HTTPClientError=-6032,
+    /*! Failed to Start the call. */
+    Bit6Error_FailedToStartTheCallError=-6041,
     /*! Can't answer the call because another call is in progress */
     Bit6Error_CallInProgressError=-6042,
+    
+    /*! An HTTP status = 4xx occur when interacting with the server */
+    Bit6Error_InvalidRESTAPICall=-6051,
     
     /*! The recipient was not found */
     Bit6Error_RecipientNotFound=500,
@@ -79,4 +83,14 @@ typedef NS_ENUM(NSInteger, Bit6PushNotificationMode) {
     Bit6PushNotificationMode_DEVELOPMENT = 1,
     /*! Production Mode for Push Notifications */
     Bit6PushNotificationMode_PRODUCTION
+};
+
+/*! Web Socket connection status. */
+typedef NS_ENUM(NSInteger, Bit6RTStatus) {
+    /*! Web Socket is disconnected. */
+    Bit6RTStatus_DISCONNECTED = 0,
+    /*! Web Socket is tring to connect. */
+    Bit6RTStatus_CONNECTING,
+    /*! Web Socket is connected. */
+    Bit6RTStatus_CONNECTED
 };

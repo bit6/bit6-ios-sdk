@@ -154,9 +154,29 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FailedToStartTheCallError</TokenIdentifier>
+            <Abstract type="html">Failed to Start the call.</Abstract>
+            <Declaration>Bit6Error_FailedToStartTheCallError</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6Error_CallInProgressError</TokenIdentifier>
             <Abstract type="html">Can&apos;t answer the call because another call is in progress</Abstract>
             <Declaration>Bit6Error_CallInProgressError</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_InvalidRESTAPICall</TokenIdentifier>
+            <Abstract type="html">An HTTP status = 4xx occur when interacting with the server</Abstract>
+            <Declaration>Bit6Error_InvalidRESTAPICall</Declaration>
             
             <DeclaredIn>Bit6Constants.h</DeclaredIn>
             

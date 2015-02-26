@@ -71,30 +71,17 @@
 - (void) startCallToCalController:(Bit6CallController*)callController
 {
     if (callController) {
-        //Default ViewController
-        [callController connectToViewController:nil completion:^(UIViewController *viewController, NSError *error) {
-            if (error) {
-                [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            }
-            else {
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callStateChangedNotification:) name:Bit6CallStateChangedNotification object:callController];
-                [[[[UIApplication sharedApplication] windows][0] rootViewController] presentViewController:viewController animated:YES completion:nil];
-            }
-        }];
+        //we listen to call state changes
+        [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
         
-        //Custom ViewController
-        /*
-        MyCallViewController *vc = [[MyCallViewController alloc] initWithCallController:callController];
-        [callController connectToViewController:vc completion:^(UIViewController *viewController, NSError *error) {
-            if (error) {
-                [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            }
-            else {
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callStateChangedNotification:) name:Bit6CallStateChangedNotification object:callController];
-                [[[[UIApplication sharedApplication] windows][0] rootViewController] presentViewController:viewController animated:YES completion:nil];
-            }
-        }];
-        */
+        //create the default in-call UIViewController
+        Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
+        
+        //use a custom in-call UIViewController
+        //MyCallViewController *callVC = [[MyCallViewController alloc] init];
+        
+        //start the call
+        [callController connectToViewController:callVC];
     }
     else {
         NSLog(@"Call Failed");
@@ -103,20 +90,34 @@
 
 #pragma mark - Calls
 
-- (void) callStateChangedNotification:(NSNotification*)notification
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    Bit6CallController *callController = notification.object;
-    
-    if (callController.callState == Bit6CallState_END || callController.callState == Bit6CallState_ERROR) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6CallStateChangedNotification object:callController];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[[[UIApplication sharedApplication] windows][0] rootViewController] dismissViewControllerAnimated:YES completion:nil];
-            if (callController.callState == Bit6CallState_ERROR) {
-                [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            }
-        });
+    if ([object isKindOfClass:[Bit6CallController class]]) {
+        if ([keyPath isEqualToString:@"callState"]) {
+            [self callStateChangedNotification:object];
+        }
     }
+}
+
+- (void) callStateChangedNotification:(Bit6CallController*)callController
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //the call is starting: show the viewController
+        if (callController.callState == Bit6CallState_PROGRESS) {
+            [Bit6 presentCallController:callController];
+        }
+        //the call ended: remove the observer and dismiss the viewController
+        else if (callController.callState == Bit6CallState_END) {
+            [callController removeObserver:self forKeyPath:@"callState"];
+            [Bit6 dismissCallController:callController];
+        }
+        //the call ended with an error: remove the observer and dismiss the viewController
+        else if (callController.callState == Bit6CallState_ERROR) {
+            [callController removeObserver:self forKeyPath:@"callState"];
+            [Bit6 dismissCallController:callController];
+            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    });
 }
 
 @end

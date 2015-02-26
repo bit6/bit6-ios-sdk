@@ -27,7 +27,7 @@ class MakeCallViewController: UIViewController {
     
     @IBAction func touchedAudioCallButton(sender : UIButton) {
         var username : NSString = self.destinationUsernameTextField.text;
-        var address = Bit6Address(kind: Bit6AddressKind.USERNAME, value:username)
+        var address = Bit6Address(kind: .USERNAME, value:username)
         
         var callController = Bit6.startCallToAddress(address, hasVideo:false)
         self.startCallToCalController(callController)
@@ -35,7 +35,7 @@ class MakeCallViewController: UIViewController {
     
     @IBAction func touchedVideoCallButton(sender : UIButton) {
         var username : NSString = self.destinationUsernameTextField.text;
-        var address = Bit6Address(kind: Bit6AddressKind.USERNAME, value:username)
+        var address = Bit6Address(kind: .USERNAME, value:username)
         
         var callController = Bit6.startCallToAddress(address, hasVideo:true)
         self.startCallToCalController(callController)
@@ -50,51 +50,54 @@ class MakeCallViewController: UIViewController {
     
     func startCallToCalController(callController:Bit6CallController!){
         if (callController != nil){
-            //Default ViewController
-            callController.connectToViewController(nil, completion:{(viewController : UIViewController!, error : NSError!) in
-                if (error != nil){
-                    NSLog("Call Failed");
-                }
-                else {
-                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "callStateChangedNotification:", name: Bit6CallStateChangedNotification, object: callController)
-                    UIApplication.sharedApplication().windows[0].rootViewController!?.presentViewController(viewController, animated: true, completion: nil)
-                }
-            })
+            //we listen to call state changes
+            callController.addObserver(self, forKeyPath:"callState", options: .Old, context:nil)
+            
+            //create the default in-call UIViewController
+            var callVC = Bit6CallViewController.createDefaultCallViewController()
+            
+            //use a custom in-call UIViewController
+            //var callVC = MyCallViewController()
+            
+            //start the call
+            callController.connectToViewController(callVC)
         }
         else {
-            NSLog("Call Failed");
+            NSLog("Call Failed")
         }
-        
-        //Custom ViewController
-        /*
-        var vc = MyCallViewController(callController:_callController)
-        _callController.connectToViewController(vc, completion:{(viewController : UIViewController!, error : NSError!) in
-            if (error != nil){
-                NSLog("Call Failed");
-            }
-            else {
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "callStateChangedNotification:", name: Bit6CallStateChangedNotification, object: callController)
-                UIApplication.sharedApplication().windows[0].rootViewController!?.presentViewController(viewController, animated: true, completion: nil)
-            }
-        })
-        */
     }
     
     // MARK: - CALLS
     
-    func callStateChangedNotification(notification:NSNotification) -> Void {
-        var callController = notification.object as Bit6CallController
-        
-        if (callController.callState == Bit6CallState.END || callController.callState == Bit6CallState.ERROR) {
-            NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6CallStateChangedNotification, object: callController)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                if let vc = UIApplication.sharedApplication().windows[0].rootViewController! {
-                    vc.dismissViewControllerAnimated(true, completion: nil)
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
+        dispatch_async(dispatch_get_main_queue()) {
+            if (object.isKindOfClass(Bit6CallController)) {
+                if (keyPath == "callState") {
+                    self.callStateChangedNotification(object as Bit6CallController)
                 }
-                if (callController.callState == Bit6CallState.ERROR){
-                    NSLog("An Error Occurred");
-                }
+            }
+        }
+    }
+    
+    func callStateChangedNotification(callController:Bit6CallController) {
+        dispatch_async(dispatch_get_main_queue()) {
+            //the call is starting: show the viewController
+            if (callController.callState == .PROGRESS) {
+                Bit6.presentCallController(callController)
+            }
+                //the call ended: remove the observer and dismiss the viewController
+            else if (callController.callState == .END) {
+                callController.removeObserver(self, forKeyPath:"callState")
+                Bit6.dismissCallController(callController)
+            }
+                //the call ended with an error: remove the observer and dismiss the viewController
+            else if (callController.callState == .ERROR) {
+                callController.removeObserver(self, forKeyPath:"callState")
+                Bit6.dismissCallController(callController)
+                
+                var alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+                self.view.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
             }
         }
     }

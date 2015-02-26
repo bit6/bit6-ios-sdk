@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6CallControllerDelegate.html">
+	<File path="Protocols/Bit6AudioRecorderControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6CallControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6CallControllerDelegate protocol defines the methods a delegate of a Bit6CallController object should implement.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6AudioRecorderControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6AudioRecorderControllerDelegate protocol defines the methods a delegate of a Bit6AudioRecorderController object should implement. The methods of this protocol notify the delegate when the recording was either completed or canceled by the user.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,73 +13,39 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/localVideoTrackViewForCallController:</TokenIdentifier>
-			<Abstract type="html">Called to get the local video feed UIView to use in the call</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/doneRecorderController:message:</TokenIdentifier>
+			<Abstract type="html">Called when a user has completed the recording prccess.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (UIView *)localVideoTrackViewForCallController:(Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)doneRecorderController:(Bit6AudioRecorderController *)b6rc message:(Bit6OutgoingMessage *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">Bit6CallController object of the call</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">the UIView to show the local video feed</Abstract></ReturnValue>
-			<Anchor>//api/name/localVideoTrackViewForCallController:</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/remoteVideoTrackViewForCallController:</TokenIdentifier>
-			<Abstract type="html">Called to get the remote video feed UIView to use in the call</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (UIView *)remoteVideoTrackViewForCallController:(Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">Bit6CallController object of the call</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">the UIView to show the remote video feed</Abstract></ReturnValue>
-			<Anchor>//api/name/remoteVideoTrackViewForCallController:</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/videoView:didChangeVideoSize:</TokenIdentifier>
-			<Abstract type="html">Called when the video feed UIView should changed its size</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (void)videoView:(UIView *)videoView didChangeVideoSize:(CGSize)size</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoView</Name>
-					<Abstract type="html">video feed UIView</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
-					<Name>size</Name>
-					<Abstract type="html">new size of the video feed UIView</Abstract>
+					<Name>message</Name>
+					<Abstract type="html">Message object set in [Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:] with the audio file set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/videoView:didChangeVideoSize:</Anchor>
+			<Anchor>//api/name/doneRecorderController:message:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/refreshControlsViewForCallController:</TokenIdentifier>
-			<Abstract type="html">Called when the UI controls from a call should be updated. For example when the &quot;mute&quot; property changed this method will be called to allow updating the UI accordingly</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/cancelRecorderController:</TokenIdentifier>
+			<Abstract type="html">Called when a user has cancelled the recording process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)refreshControlsViewForCallController:(Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)cancelRecorderController:(Bit6AudioRecorderController *)b6rc</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">Bit6CallController object of the call</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/refreshControlsViewForCallController:</Anchor>
+			<Anchor>//api/name/cancelRecorderController:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

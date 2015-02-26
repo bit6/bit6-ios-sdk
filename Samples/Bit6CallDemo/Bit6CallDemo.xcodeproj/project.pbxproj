@@ -15,6 +15,13 @@
 		D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D886702C1926D5B400799E00 /* Bit6Resources.bundle */; };
 		D890D4D01A202D5500D2E837 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D890D4CF1A202D5500D2E837 /* libsqlite3.dylib */; };
 		D890D4D21A202D5F00D2E837 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D890D4D11A202D5F00D2E837 /* GLKit.framework */; };
+		D8A9E92C1A8FAACC00027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E92B1A8FAACC00027A28 /* MediaPlayer.framework */; };
+		D8A9E92E1A8FAAD100027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E92D1A8FAAD100027A28 /* SystemConfiguration.framework */; };
+		D8A9E9301A8FAAD700027A28 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E92F1A8FAAD700027A28 /* AssetsLibrary.framework */; };
+		D8A9E9321A8FAADB00027A28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9311A8FAADB00027A28 /* AVFoundation.framework */; };
+		D8A9E9341A8FAAE300027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9331A8FAAE300027A28 /* AudioToolbox.framework */; };
+		D8A9E9361A8FAAEA00027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9351A8FAAEA00027A28 /* CoreMedia.framework */; };
+		D8A9E9461A8FC97100027A28 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9451A8FC97100027A28 /* CoreLocation.framework */; };
 		D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AA8343192A8FEC0065BDA6 /* libz.dylib */; };
 		D8BAEB5C1A335C2A003C0A79 /* MyCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BAEB5A1A335C2A003C0A79 /* MyCallViewController.m */; };
 		D8BAEB5D1A335C2A003C0A79 /* MyCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8BAEB5B1A335C2A003C0A79 /* MyCallViewController.xib */; };
@@ -38,6 +45,13 @@
 		D890D4CD1A202D4D00D2E837 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		D890D4CF1A202D5500D2E837 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D890D4D11A202D5F00D2E837 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		D8A9E92B1A8FAACC00027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D8A9E92D1A8FAAD100027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D8A9E92F1A8FAAD700027A28 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D8A9E9311A8FAADB00027A28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D8A9E9331A8FAAE300027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D8A9E9351A8FAAEA00027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D8A9E9451A8FC97100027A28 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D8AA8343192A8FEC0065BDA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D8BAEB591A335C2A003C0A79 /* MyCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCallViewController.h; path = CallDemo/MyCallViewController.h; sourceTree = SOURCE_ROOT; };
 		D8BAEB5A1A335C2A003C0A79 /* MyCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCallViewController.m; path = CallDemo/MyCallViewController.m; sourceTree = SOURCE_ROOT; };
@@ -63,6 +77,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A9E9461A8FC97100027A28 /* CoreLocation.framework in Frameworks */,
+				D8A9E9361A8FAAEA00027A28 /* CoreMedia.framework in Frameworks */,
+				D8A9E9341A8FAAE300027A28 /* AudioToolbox.framework in Frameworks */,
+				D8A9E9321A8FAADB00027A28 /* AVFoundation.framework in Frameworks */,
+				D8A9E9301A8FAAD700027A28 /* AssetsLibrary.framework in Frameworks */,
+				D8A9E92E1A8FAAD100027A28 /* SystemConfiguration.framework in Frameworks */,
+				D8A9E92C1A8FAACC00027A28 /* MediaPlayer.framework in Frameworks */,
 				D8182E5C1A22FEB300E41160 /* libstdc++.dylib in Frameworks */,
 				D890D4D01A202D5500D2E837 /* libsqlite3.dylib in Frameworks */,
 				D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */,
@@ -98,6 +119,13 @@
 		D880E4A018DBFC540070378D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8A9E9451A8FC97100027A28 /* CoreLocation.framework */,
+				D8A9E9351A8FAAEA00027A28 /* CoreMedia.framework */,
+				D8A9E9331A8FAAE300027A28 /* AudioToolbox.framework */,
+				D8A9E9311A8FAADB00027A28 /* AVFoundation.framework */,
+				D8A9E92F1A8FAAD700027A28 /* AssetsLibrary.framework */,
+				D8A9E92D1A8FAAD100027A28 /* SystemConfiguration.framework */,
+				D8A9E92B1A8FAACC00027A28 /* MediaPlayer.framework */,
 				D890D4CF1A202D5500D2E837 /* libsqlite3.dylib */,
 				D890D4CD1A202D4D00D2E837 /* libstdc++.dylib */,
 				D8AA8343192A8FEC0065BDA6 /* libz.dylib */,

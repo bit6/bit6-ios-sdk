@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Bit6CallViewController.h"
 
 /*! Class to be extended by the ApplicationDelegate
  
@@ -74,5 +75,27 @@
  @note Important: Remember to call super if you are going to implement your own -[UIApplicationDelegate application:didFailToRegisterForRemoteNotificationsWithError:] method
  */
 - (void) application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error;
+
+/*! Starting point of the incoming calls flow. Implement if you want to handle the entire flow.
+ @param notification incoming call notification to be used with <[Bit6 callControllerFromIncomingCallNotification:]>
+ */
+- (void) receivedIncomingCallNotification:(NSNotification*)notification;
+
+/*! Implement to customize the view controller used to handle the incoming call.
+ @return a view controller to be used during the incoming call.
+ */
+- (Bit6CallViewController*) inCallViewController;
+
+/*! Implement to customize the view show in the incoming call notification banner.
+ @discussion  You should set this tags to your UI elements:
+ <pre>
+    title UILabel: tag=15
+    message UILabel: tag=16
+    decline UIButton: tag=17
+    answer UIButton: tag=18
+ </pre>
+ @return a view to use in the incoming call notification banner.
+ */
+- (UIView*) incomingCallNotificationBannerContentView;
 
 @end

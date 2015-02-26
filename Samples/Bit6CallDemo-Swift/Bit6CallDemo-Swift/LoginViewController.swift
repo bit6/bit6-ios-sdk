@@ -17,11 +17,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func touchedLoginBarButton(sender : UIButton) {
-        var alert = UIAlertController(title:"Login", message: "Enter your username and password", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        var alert = UIAlertController(title:"Login", message: "Enter your username and password", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
             
         }))
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Done", style: .Default, handler:{(action :UIAlertAction!) in
             var usernameTextField = alert.textFields?[0] as UITextField
             var passwordTextField = alert.textFields?[1] as UITextField
             self.login(usernameTextField.text,password: passwordTextField.text)
@@ -38,11 +38,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func touchedSignUpButton(sender : UIButton) {
-        var alert = UIAlertController(title:"Login", message: "Enter an username and a password for the new account", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        var alert = UIAlertController(title:"Login", message: "Enter an username and a password for the new account", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
             
             }))
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Done", style: .Default, handler:{(action :UIAlertAction!) in
             var usernameTextField = alert.textFields?[0] as UITextField
             var passwordTextField = alert.textFields?[1] as UITextField
             self.signUp(usernameTextField.text,password: passwordTextField.text)
@@ -58,11 +58,11 @@ class LoginViewController: UIViewController {
     }
 
     func login(username:String,password:String){
-        var userIdentity = Bit6Address(kind: Bit6AddressKind.USERNAME, value: username)
+        var userIdentity = Bit6Address(kind: .USERNAME, value: username)
         Bit6.session().loginWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
             if ((error) != nil){
-                var alert = UIAlertController(title:"Login Failed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+                var alert = UIAlertController(title:"Login Failed", message: error.localizedDescription, preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.navigationController?.presentViewController(alert, animated: true, completion:nil)
             }
             else {
@@ -72,11 +72,11 @@ class LoginViewController: UIViewController {
     }
     
     func signUp(username:String,password:String){
-        var userIdentity = Bit6Address(kind: Bit6AddressKind.USERNAME, value: username)
+        var userIdentity = Bit6Address(kind: .USERNAME, value: username)
         Bit6.session().signUpWithUserIdentity(userIdentity, password: password, completionHandler:{(response,error) in
             if ((error) != nil){
-                var alert = UIAlertController(title:"SignUp Failed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+                var alert = UIAlertController(title:"SignUp Failed", message: error.localizedDescription, preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.navigationController?.presentViewController(alert, animated: true, completion:nil)
             }
             else {

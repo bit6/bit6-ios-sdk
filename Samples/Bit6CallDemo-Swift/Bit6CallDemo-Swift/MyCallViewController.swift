@@ -10,10 +10,6 @@ import UIKit
 import AVFoundation
 
 class MyCallViewController: Bit6CallViewController {
-    @IBOutlet var videoView:UIView!
-    var localVideoView:UIView!
-    var remoteVideoView:UIView!
-    
     @IBOutlet var muteLabel:UILabel!
     @IBOutlet var speakerLabel:UILabel!
     @IBOutlet var usernameLabel:UILabel!
@@ -27,30 +23,16 @@ class MyCallViewController: Bit6CallViewController {
     
     var statusBarOrientation:UIInterfaceOrientation!
     
-    init(callController: Bit6CallController) {
+    override init() {
         super.init(nibName:"MyCallViewController", bundle:nil);
-        
-        self.callController = callController;
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "callStateChangedNotification:", name: Bit6CallStateChangedNotification, object: self.callController)
-        self.callController.addObserver(self, forKeyPath:"seconds", options:.New, context:nil);
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
     }
     
-    deinit {
-        self.callController.removeObserver(self, forKeyPath:"seconds");
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6ConversationsUpdatedNotification, object: nil)
-        
-    }
-    
     override func viewDidLoad() {
-        UIApplication.sharedApplication().statusBarHidden = true
-        UIApplication.sharedApplication().idleTimerDisabled = true
-        
-        self.usernameLabel.text = self.callController.other
-        self.refreshTimerLabel()
+        self.usernameLabel.text = self.callController.otherDisplayName
         
         if (self.callController.hasVideo) {
             self.speakerButton.hidden = true
@@ -72,28 +54,42 @@ class MyCallViewController: Bit6CallViewController {
         super.viewDidLoad()
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return false
+    override func viewWillAppear(animated:Bool){
+        UIApplication.sharedApplication().statusBarHidden = true
+        super.viewWillAppear(animated)
     }
     
-    func callStateChangedNotification(notification:NSNotification) -> Void {
+    override func viewWillDisappear(animated:Bool) {
+        UIApplication.sharedApplication().statusBarHidden = false
+        super.viewWillDisappear(animated)
+    }
+    
+    // MARK: Bit6CallViewController methods
+    
+    override func refreshControlsView() {
+        self.muteLabel.text = self.callController.audioMuted ?"Unmute":"Mute"
+        self.speakerLabel.text = self.callController.speakerEnabled ?"Disable Speaker":"Enable Speaker"
+    }
+    
+    override func callStateChangedNotification() {
         self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
-        self.refreshTimerLabel()
+        self.secondsChangedNotification()
     }
     
-    func refreshTimerLabel(){
-        if (self.callController.callState == Bit6CallState.ANSWER) {
+    override func secondsChangedNotification() {
+        switch (self.callController.callState) {
+        case .NEW: fallthrough case .PROGRESS:
+            self.timerLabel.text = "Connecting..."
+        case .ANSWER:
             self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(self.callController.seconds))
+        case .DISCONNECTED:fallthrough case .END:fallthrough case .MISSED:fallthrough case .ERROR:
+            self.timerLabel.text = "Disconnected"
         }
-        else if (self.callController.callState == Bit6CallState.END || self.callController.callState == Bit6CallState.ERROR){
-            self.timerLabel.text = "Disconnected";
-        }
-        else if (self.callController.callState == Bit6CallState.INTERRUPTED){
-            self.timerLabel.text = "Interrupted";
-        }
-        else {
-            self.timerLabel.text = "Connecting...";
-        }
+    }
+    
+    override func updateLayoutForRemoteVideoView(remoteVideoView:UIView, localVideoView:UIView, remoteVideoAspectRatio:CGSize, localVideoAspectRatio:CGSize)
+    {
+        super.updateLayoutForRemoteVideoView(remoteVideoView, localVideoView:localVideoView, remoteVideoAspectRatio:remoteVideoAspectRatio, localVideoAspectRatio:localVideoAspectRatio)
     }
     
     // MARK: Actions
@@ -114,22 +110,4 @@ class MyCallViewController: Bit6CallViewController {
         self.callController.switchSpeaker()
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
-        dispatch_async(dispatch_get_main_queue()) {
-            if (object as Bit6CallController == self.callController) {
-                if (keyPath == "seconds") {
-                    self.refreshTimerLabel()
-                }
-            }
-        }
-    }
-    
-    // MARK: Bit6CallControllerDelegate
-    
-    override func refreshControlsViewForCallController(callController:Bit6CallController)
-    {
-        self.muteLabel.text = self.callController.audioMuted ?"Unmute":"Mute"
-        self.speakerLabel.text = self.callController.speakerEnabled ?"Disable Speaker":"Enable Speaker"
-        super.refreshControlsViewForCallController(callController)
-    }
 }

@@ -44,6 +44,24 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/createDefaultCallViewController">&nbsp;&nbsp;&nbsp;&nbsp;+ createDefaultCallViewController</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/callStateChangedNotification">&nbsp;&nbsp;&nbsp;&nbsp;- callStateChangedNotification</option>
+	
+	<option value="//api/name/refreshControlsView">&nbsp;&nbsp;&nbsp;&nbsp;- refreshControlsView</option>
+	
+	<option value="//api/name/secondsChangedNotification">&nbsp;&nbsp;&nbsp;&nbsp;- secondsChangedNotification</option>
+	
+	<option value="//api/name/setNeedsUpdateVideoViewLayout">&nbsp;&nbsp;&nbsp;&nbsp;- setNeedsUpdateVideoViewLayout</option>
+	
+	<option value="//api/name/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:">&nbsp;&nbsp;&nbsp;&nbsp;- updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</option>
 	
 	
 	
@@ -61,6 +79,8 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Methods to extend">￼Methods to extend</a></span></li>
+	
 </ul></li>
 
 
@@ -75,7 +95,27 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createDefaultCallViewController">createDefaultCallViewController</a></span></li>
+	
+</ul></li>
 
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callStateChangedNotification">callStateChangedNotification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshControlsView">refreshControlsView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsChangedNotification">secondsChangedNotification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNeedsUpdateVideoViewLayout">setNeedsUpdateVideoViewLayout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:">updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -101,9 +141,6 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">UIViewController</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/Bit6CallControllerDelegate.html">Bit6CallControllerDelegate</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">Bit6CallViewController.h</td>
 </tr>
@@ -115,7 +152,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Easy to extend view controller to use during a call.</p>
+						<p>UIViewController to extend to use during a call.</p>
 					</div>
 					
 					
@@ -128,14 +165,58 @@
 						
 						
 						
-						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/createDefaultCallViewController">+&nbsp;createDefaultCallViewController</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/callController">&nbsp;&nbsp;callController</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setNeedsUpdateVideoViewLayout">&ndash;&nbsp;setNeedsUpdateVideoViewLayout</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Methods to extend" name="task_￼Methods to extend"></a>
+						<h3 class="subsubtitle task-title">￼Methods to extend</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refreshControlsView">&ndash;&nbsp;refreshControlsView</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callStateChangedNotification">&ndash;&nbsp;callStateChangedNotification</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secondsChangedNotification">&ndash;&nbsp;secondsChangedNotification</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:">&ndash;&nbsp;updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -157,12 +238,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>callController reference to the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> to work with</p>
+		<p>Reference to the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> to work with.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) Bit6CallController *callController</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) Bit6CallController *callController</code></div>
 
     
 	
@@ -190,7 +271,265 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/createDefaultCallViewController" title="createDefaultCallViewController"></a>
+	<h3 class="subsubtitle method-title">createDefaultCallViewController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a default view controller to use during a call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6CallViewController *)createDefaultCallViewController</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>view controller to use during a call.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/callStateChangedNotification" title="callStateChangedNotification"></a>
+	<h3 class="subsubtitle method-title">callStateChangedNotification</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread when the status of the call changes. The default implementation does nothing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)callStateChangedNotification</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/refreshControlsView" title="refreshControlsView"></a>
+	<h3 class="subsubtitle method-title">refreshControlsView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread when the UI controls should be updated. For example when the &ldquo;mute&rdquo; property changed this method will be called to allow updating the UI accordingly. The default implementation does nothing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)refreshControlsView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secondsChangedNotification" title="secondsChangedNotification"></a>
+	<h3 class="subsubtitle method-title">secondsChangedNotification</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotification</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setNeedsUpdateVideoViewLayout" title="setNeedsUpdateVideoViewLayout"></a>
+	<h3 class="subsubtitle method-title">setNeedsUpdateVideoViewLayout</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used if you need to force a call to <a href="#//api/name/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:">updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setNeedsUpdateVideoViewLayout</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:" title="updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:"></a>
+	<h3 class="subsubtitle method-title">updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread to customize the frames for the video feeds. You can call <a href="#//api/name/setNeedsUpdateVideoViewLayout">setNeedsUpdateVideoViewLayout</a> at any time to force a refresh of the frames.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateLayoutForRemoteVideoView:(UIView *)<em>remoteVideoView</em> localVideoView:(UIView *)<em>localVideoView</em> remoteVideoAspectRatio:(CGSize)<em>remoteVideoAspectRatio</em> localVideoAspectRatio:(CGSize)<em>localVideoAspectRatio</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>remoteVideoView</em></dt>
+			<dd><p>the UIView reference to the remote video feed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>localVideoView</em></dt>
+			<dd><p>the UIView reference to the local video feed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>remoteVideoAspectRatio</em></dt>
+			<dd><p>the aspect ratio to use for the remote video feed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>localVideoAspectRatio</em></dt>
+			<dd><p>the aspect ratio to use for the local video feed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
                     
@@ -205,7 +544,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-02-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -12,7 +12,6 @@
 		D8A3AF3D1A44A7F9002205C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF3B1A44A7F9002205C2 /* Main.storyboard */; };
 		D8A3AF3F1A44A7F9002205C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF3E1A44A7F9002205C2 /* Images.xcassets */; };
 		D8A3AF421A44A7F9002205C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF401A44A7F9002205C2 /* LaunchScreen.xib */; };
-		D8A3AF4E1A44A7F9002205C2 /* FBVideoCallsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF4D1A44A7F9002205C2 /* FBVideoCallsTests.m */; };
 		D8A3AF581A44A82F002205C2 /* DemoConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF571A44A82F002205C2 /* DemoConfig.xcconfig */; };
 		D8A3AF5A1A44A89B002205C2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF591A44A89B002205C2 /* libicucore.dylib */; };
 		D8A3AF5F1A44A8AC002205C2 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF5B1A44A8AC002205C2 /* libstdc++.dylib */; };
@@ -24,17 +23,14 @@
 		D8A3AF6C1A44A992002205C2 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */; };
 		D8A3AF6E1A44C2FF002205C2 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF6D1A44C2FF002205C2 /* FacebookSDK.framework */; };
 		D8A3AF701A44C800002205C2 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF6F1A44C800002205C2 /* Bit6Resources.bundle */; };
+		D8A9E9481A8FCE1100027A28 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9471A8FCE1100027A28 /* CoreLocation.framework */; };
+		D8A9E94A1A8FCE1500027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9491A8FCE1500027A28 /* CoreMedia.framework */; };
+		D8A9E94C1A8FCE1C00027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E94B1A8FCE1C00027A28 /* AudioToolbox.framework */; };
+		D8A9E94E1A8FCEB300027A28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E94D1A8FCEB300027A28 /* AVFoundation.framework */; };
+		D8A9E9501A8FCEB700027A28 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E94F1A8FCEB700027A28 /* AssetsLibrary.framework */; };
+		D8A9E9521A8FCEC000027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9511A8FCEC000027A28 /* SystemConfiguration.framework */; };
+		D8A9E9541A8FCEDE00027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9531A8FCEDE00027A28 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D8A3AF481A44A7F9002205C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D8A3AF261A44A7F9002205C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D8A3AF2D1A44A7F9002205C2;
-			remoteInfo = FBVideoCalls;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D8A3AF2E1A44A7F9002205C2 /* FBVideoCalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBVideoCalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,9 +41,6 @@
 		D8A3AF3C1A44A7F9002205C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8A3AF3E1A44A7F9002205C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D8A3AF411A44A7F9002205C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D8A3AF471A44A7F9002205C2 /* FBVideoCallsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBVideoCallsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8A3AF4C1A44A7F9002205C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8A3AF4D1A44A7F9002205C2 /* FBVideoCallsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBVideoCallsTests.m; sourceTree = "<group>"; };
 		D8A3AF571A44A82F002205C2 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
 		D8A3AF591A44A89B002205C2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D8A3AF5B1A44A8AC002205C2 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -62,6 +55,13 @@
 		D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		D8A3AF6D1A44C2FF002205C2 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		D8A3AF6F1A44C800002205C2 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Bit6Resources.bundle; sourceTree = "<group>"; };
+		D8A9E9471A8FCE1100027A28 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D8A9E9491A8FCE1500027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D8A9E94B1A8FCE1C00027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D8A9E94D1A8FCEB300027A28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D8A9E94F1A8FCEB700027A28 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D8A9E9511A8FCEC000027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D8A9E9531A8FCEDE00027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,20 +69,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A9E9541A8FCEDE00027A28 /* MediaPlayer.framework in Frameworks */,
+				D8A9E9521A8FCEC000027A28 /* SystemConfiguration.framework in Frameworks */,
+				D8A9E9501A8FCEB700027A28 /* AssetsLibrary.framework in Frameworks */,
+				D8A9E94E1A8FCEB300027A28 /* AVFoundation.framework in Frameworks */,
+				D8A9E94C1A8FCE1C00027A28 /* AudioToolbox.framework in Frameworks */,
+				D8A9E94A1A8FCE1500027A28 /* CoreMedia.framework in Frameworks */,
+				D8A9E9481A8FCE1100027A28 /* CoreLocation.framework in Frameworks */,
+				D8A3AF611A44A8AC002205C2 /* GLKit.framework in Frameworks */,
 				D8A3AF5F1A44A8AC002205C2 /* libstdc++.dylib in Frameworks */,
 				D8A3AF621A44A8AC002205C2 /* libz.dylib in Frameworks */,
 				D8A3AF601A44A8AC002205C2 /* libsqlite3.dylib in Frameworks */,
-				D8A3AF611A44A8AC002205C2 /* GLKit.framework in Frameworks */,
-				D8A3AF651A44A8C9002205C2 /* Bit6SDK.framework in Frameworks */,
 				D8A3AF5A1A44A89B002205C2 /* libicucore.dylib in Frameworks */,
+				D8A3AF651A44A8C9002205C2 /* Bit6SDK.framework in Frameworks */,
 				D8A3AF6E1A44C2FF002205C2 /* FacebookSDK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8A3AF441A44A7F9002205C2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				D8A3AF301A44A7F9002205C2 /* FBVideoCalls */,
-				D8A3AF4A1A44A7F9002205C2 /* FBVideoCallsTests */,
 				D8A3AF631A44A8B4002205C2 /* Frameworks */,
 				D8A3AF2F1A44A7F9002205C2 /* Products */,
 			);
@@ -103,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				D8A3AF2E1A44A7F9002205C2 /* FBVideoCalls.app */,
-				D8A3AF471A44A7F9002205C2 /* FBVideoCallsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,26 +135,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D8A3AF4A1A44A7F9002205C2 /* FBVideoCallsTests */ = {
-			isa = PBXGroup;
-			children = (
-				D8A3AF4D1A44A7F9002205C2 /* FBVideoCallsTests.m */,
-				D8A3AF4B1A44A7F9002205C2 /* Supporting Files */,
-			);
-			path = FBVideoCallsTests;
-			sourceTree = "<group>";
-		};
-		D8A3AF4B1A44A7F9002205C2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D8A3AF4C1A44A7F9002205C2 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D8A3AF631A44A8B4002205C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8A9E9531A8FCEDE00027A28 /* MediaPlayer.framework */,
+				D8A9E9511A8FCEC000027A28 /* SystemConfiguration.framework */,
+				D8A9E94F1A8FCEB700027A28 /* AssetsLibrary.framework */,
+				D8A9E94D1A8FCEB300027A28 /* AVFoundation.framework */,
+				D8A9E94B1A8FCE1C00027A28 /* AudioToolbox.framework */,
+				D8A9E9491A8FCE1500027A28 /* CoreMedia.framework */,
+				D8A9E9471A8FCE1100027A28 /* CoreLocation.framework */,
 				D8A3AF6D1A44C2FF002205C2 /* FacebookSDK.framework */,
 				D8A3AF5D1A44A8AC002205C2 /* GLKit.framework */,
 				D8A3AF641A44A8C9002205C2 /* Bit6SDK.framework */,
@@ -188,24 +176,6 @@
 			productReference = D8A3AF2E1A44A7F9002205C2 /* FBVideoCalls.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D8A3AF461A44A7F9002205C2 /* FBVideoCallsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D8A3AF541A44A7F9002205C2 /* Build configuration list for PBXNativeTarget "FBVideoCallsTests" */;
-			buildPhases = (
-				D8A3AF431A44A7F9002205C2 /* Sources */,
-				D8A3AF441A44A7F9002205C2 /* Frameworks */,
-				D8A3AF451A44A7F9002205C2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D8A3AF491A44A7F9002205C2 /* PBXTargetDependency */,
-			);
-			name = FBVideoCallsTests;
-			productName = FBVideoCallsTests;
-			productReference = D8A3AF471A44A7F9002205C2 /* FBVideoCallsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,10 +193,6 @@
 							};
 						};
 					};
-					D8A3AF461A44A7F9002205C2 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = D8A3AF2D1A44A7F9002205C2;
-					};
 				};
 			};
 			buildConfigurationList = D8A3AF291A44A7F9002205C2 /* Build configuration list for PBXProject "FBVideoCalls" */;
@@ -243,7 +209,6 @@
 			projectRoot = "";
 			targets = (
 				D8A3AF2D1A44A7F9002205C2 /* FBVideoCalls */,
-				D8A3AF461A44A7F9002205C2 /* FBVideoCallsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,13 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8A3AF451A44A7F9002205C2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -282,23 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8A3AF431A44A7F9002205C2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8A3AF4E1A44A7F9002205C2 /* FBVideoCallsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D8A3AF491A44A7F9002205C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D8A3AF2D1A44A7F9002205C2 /* FBVideoCalls */;
-			targetProxy = D8A3AF481A44A7F9002205C2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D8A3AF3B1A44A7F9002205C2 /* Main.storyboard */ = {
@@ -404,11 +346,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/carlosthurberb/Documents/Works/Voxofon/BIT6/Bit6_SDK/InstallerGenerator/Bit6SDK,
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = FBVideoCalls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -422,50 +359,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/carlosthurberb/Documents/Works/Voxofon/BIT6/Bit6_SDK/InstallerGenerator/Bit6SDK,
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = FBVideoCalls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8d1c020a-1970-4770-9462-28ebbf6d7875";
-			};
-			name = Release;
-		};
-		D8A3AF551A44A7F9002205C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FBVideoCallsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBVideoCalls.app/FBVideoCalls";
-			};
-			name = Debug;
-		};
-		D8A3AF561A44A7F9002205C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = FBVideoCallsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBVideoCalls.app/FBVideoCalls";
 			};
 			name = Release;
 		};
@@ -486,15 +384,6 @@
 			buildConfigurations = (
 				D8A3AF521A44A7F9002205C2 /* Debug */,
 				D8A3AF531A44A7F9002205C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D8A3AF541A44A7F9002205C2 /* Build configuration list for PBXNativeTarget "FBVideoCallsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D8A3AF551A44A7F9002205C2 /* Debug */,
-				D8A3AF561A44A7F9002205C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

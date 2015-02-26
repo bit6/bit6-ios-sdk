@@ -17,7 +17,11 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
     /*! The Bit6Address refers to an email account */
     Bit6AddressKind_EMAIL,
     /*! The Bit6Address refers to a Facebook account */
-    Bit6AddressKind_FACEBOOK
+    Bit6AddressKind_FACEBOOK,
+    /*! The Bit6Address refers to a Google account */
+    Bit6AddressKind_GOOGLE,
+    /*! The Bit6Address refers to an anonymous session */
+    Bit6AddressKind_UID
 };
 
 /*! Bit6Address is used to describe a user identity or a destination for calling and messaging. It consists of a type (<Bit6AddressKind>) and a value. */

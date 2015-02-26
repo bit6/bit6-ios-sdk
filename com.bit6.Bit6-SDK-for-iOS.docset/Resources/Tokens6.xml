@@ -13,54 +13,19 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/connectToViewController:completion:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/connectToViewController:</TokenIdentifier>
 			<Abstract type="html">Starts a call</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)connectToViewController:(UIViewController&lt;Bit6CallControllerDelegate&gt; *)viewController completion:(void ( ^ ) ( UIViewController *viewController , NSError *error ))completion</Declaration>
+			<Declaration>- (void)connectToViewController:(Bit6CallViewController *)viewController</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>viewController</Name>
-					<Abstract type="html">a custom viewcontroller in which to start the call. Can be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">block to call after the call is ready to start</Abstract>
+					<Abstract type="html">a Bit6CallViewController object in which to start the call. Cannot be nil.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/connectToViewController:completion:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/declineCall</TokenIdentifier>
-			<Abstract type="html">Declines the call</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (void)declineCall</Declaration>
-			
-			
-			<Anchor>//api/name/declineCall</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/createVideoTrackViewWithFrame:delegate:</TokenIdentifier>
-			<Abstract type="html">Creates an UIView to display a video feed</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>+ (UIView *)createVideoTrackViewWithFrame:(CGRect)frame delegate:(id&lt;Bit6CallControllerDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>frame</Name>
-					<Abstract type="html">frame of the new UIView</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">the delegate to be notified of changes in video feed. See Bit6CallControllerDelegate Protocol Reference.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/createVideoTrackViewWithFrame:delegate:</Anchor>
+			<Anchor>//api/name/connectToViewController:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -101,11 +66,191 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setOther:</TokenIdentifier>
-			<Abstract type="html">Display name from the destination user</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setOtherDisplayName:</TokenIdentifier>
+			<Abstract type="html">Display name of other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *other</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
+			
+			
+			<Anchor>//api/name/otherDisplayName</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/otherDisplayName</TokenIdentifier>
+			<Abstract type="html">Display name of other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
+			
+			
+			<Anchor>//api/name/otherDisplayName</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/otherDisplayName</TokenIdentifier>
+			<Abstract type="html">Display name of other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
+			
+			
+			<Anchor>//api/name/otherDisplayName</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setIncomingCallAnswered:</TokenIdentifier>
+			<Abstract type="html">The incoming call was answered by using the system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCallAnswered</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAnswered</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/incomingCallAnswered</TokenIdentifier>
+			<Abstract type="html">The incoming call was answered by using the system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCallAnswered</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAnswered</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/incomingCallAnswered</TokenIdentifier>
+			<Abstract type="html">The incoming call was answered by using the system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCallAnswered</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAnswered</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setIncomingCallAlert:</TokenIdentifier>
+			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAlert</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/incomingCallAlert</TokenIdentifier>
+			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAlert</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/incomingCallAlert</TokenIdentifier>
+			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAlert</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setError:</TokenIdentifier>
+			<Abstract type="html">The latest error to occur during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/error</TokenIdentifier>
+			<Abstract type="html">The latest error to occur during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/error</TokenIdentifier>
+			<Abstract type="html">The latest error to occur during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setViewController:</TokenIdentifier>
+			<Abstract type="html">View Controller associated with this call. It will be retained until the call state is Bit6CallStateEND, Bit6CallStateMISSEDCALL or Bit6CallStateERROR.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) Bit6CallViewController *viewController</Declaration>
+			
+			
+			<Anchor>//api/name/viewController</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/viewController</TokenIdentifier>
+			<Abstract type="html">View Controller associated with this call. It will be retained until the call state is Bit6CallStateEND, Bit6CallStateMISSEDCALL or Bit6CallStateERROR.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) Bit6CallViewController *viewController</Declaration>
+			
+			
+			<Anchor>//api/name/viewController</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/viewController</TokenIdentifier>
+			<Abstract type="html">View Controller associated with this call. It will be retained until the call state is Bit6CallStateEND, Bit6CallStateMISSEDCALL or Bit6CallStateERROR.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) Bit6CallViewController *viewController</Declaration>
+			
+			
+			<Anchor>//api/name/viewController</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setOther:</TokenIdentifier>
+			<Abstract type="html">Identity of the other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
 			
 			
 			<Anchor>//api/name/other</Anchor>
@@ -114,10 +259,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/other</TokenIdentifier>
-			<Abstract type="html">Display name from the destination user</Abstract>
+			<Abstract type="html">Identity of the other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *other</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
 			
 			
 			<Anchor>//api/name/other</Anchor>
@@ -126,10 +271,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/other</TokenIdentifier>
-			<Abstract type="html">Display name from the destination user</Abstract>
+			<Abstract type="html">Identity of the other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *other</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
 			
 			
 			<Anchor>//api/name/other</Anchor>
@@ -293,18 +438,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hangup</TokenIdentifier>
-			<Abstract type="html">End the current call.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (void)hangup</Declaration>
-			
-			
-			<Anchor>//api/name/hangup</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/switchMuteAudio</TokenIdentifier>
 			<Abstract type="html">Mute and unmute the audio in the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
@@ -325,6 +458,30 @@
 			
 			
 			<Anchor>//api/name/switchSpeaker</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hangup</TokenIdentifier>
+			<Abstract type="html">End the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)hangup</Declaration>
+			
+			
+			<Anchor>//api/name/hangup</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/declineCall</TokenIdentifier>
+			<Abstract type="html">Declines the call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)declineCall</Declaration>
+			
+			
+			<Anchor>//api/name/declineCall</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

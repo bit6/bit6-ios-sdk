@@ -44,6 +44,16 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
+            <Abstract type="html">The call is disconnected for the moment.</Abstract>
+            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
             <Abstract type="html">The call ended.</Abstract>
             <Declaration>Bit6CallState_END</Declaration>
@@ -64,9 +74,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_INTERRUPTED</TokenIdentifier>
-            <Abstract type="html">The call has been interrupted.</Abstract>
-            <Declaration>Bit6CallState_INTERRUPTED</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_MISSED</TokenIdentifier>
+            <Abstract type="html">It is a missed call.</Abstract>
+            <Declaration>Bit6CallState_MISSED</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             

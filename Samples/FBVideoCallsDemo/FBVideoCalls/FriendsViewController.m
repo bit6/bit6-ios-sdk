@@ -53,42 +53,56 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *friendId = self.friendsIds[indexPath.row];
     NSString *name = self.friendsDict[friendId];
+    
     Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_FACEBOOK value:friendId];
     
     Bit6CallController *callController = [Bit6 startCallToAddress:address hasVideo:YES];
-    callController.other = name;
+    callController.otherDisplayName = name;
     
-    [callController connectToViewController:nil completion:^(UIViewController *viewController, NSError *error) {
-        if (error) {
-            [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        }
-        else {
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callStateChangedNotification:) name:Bit6CallStateChangedNotification object:callController];
-            [[[[UIApplication sharedApplication] windows][0] rootViewController] presentViewController:viewController animated:YES completion:nil];
-        }
-    }];
+    //we listen to call state changes
+    [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
+    
+    //create the default in-call UIViewController
+    Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
+    
+    //start the call
+    [callController connectToViewController:callVC];
 }
 
 #pragma mark - Calls
 
-- (void) callStateChangedNotification:(NSNotification*)notification
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    Bit6CallController *callController = notification.object;
-    
-    if (callController.callState == Bit6CallState_END || callController.callState == Bit6CallState_ERROR) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6CallStateChangedNotification object:callController];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[[[UIApplication sharedApplication] windows][0] rootViewController] dismissViewControllerAnimated:YES completion:nil];
-            if (callController.callState == Bit6CallState_ERROR) {
-                [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            }
-        });
+    if ([object isKindOfClass:[Bit6CallController class]]) {
+        if ([keyPath isEqualToString:@"callState"]) {
+            [self callStateChangedNotification:object];
+        }
     }
+}
+
+- (void) callStateChangedNotification:(Bit6CallController*)callController
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //the call is starting: show the viewController
+        if (callController.callState == Bit6CallState_PROGRESS) {
+            [Bit6 presentCallController:callController];
+        }
+        //the call ended: remove the observer and dismiss the viewController
+        else if (callController.callState == Bit6CallState_END) {
+            [callController removeObserver:self forKeyPath:@"callState"];
+            [Bit6 dismissCallController:callController];
+        }
+        //the call ended with an error: remove the observer and dismiss the viewController
+        else if (callController.callState == Bit6CallState_ERROR) {
+            [callController removeObserver:self forKeyPath:@"callState"];
+            [Bit6 dismissCallController:callController];
+            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    });
 }
 
 #pragma mark - Facebook

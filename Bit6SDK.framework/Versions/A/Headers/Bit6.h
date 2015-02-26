@@ -15,6 +15,7 @@
 #import "Bit6AudioPlayerController.h"
 #import "Bit6AudioRecorderController.h"
 #import "Bit6CurrentLocationController.h"
+#import "Bit6IncomingCallNotificationBanner.h"
 
 /*! Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object */
 @interface Bit6 : NSObject
@@ -53,6 +54,11 @@
  @return the default Bit6CurrentLocationController object.
  */
 + (Bit6CurrentLocationController*) locationController;
+
+/*! Returns the default Bit6IncomingCallNotificationBanner object.
+ @return the default Bit6IncomingCallNotificationBanner object.
+ */
++ (Bit6IncomingCallNotificationBanner*) incomingCallNotificationBanner;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Working with Conversations
@@ -135,7 +141,7 @@
 /// @name ￼Calls
 ///---------------------------------------------------------------------------------------
 
-/*! Get the <Bit6CallController> object of the current call
+/*! Get the <Bit6CallController> object of the current call.
  @return <Bit6CallController> object of the current call
  */
 + (Bit6CallController*) currentCallController;
@@ -147,17 +153,27 @@
  */
 + (Bit6CallController*) startCallToAddress:(Bit6Address*)address hasVideo:(BOOL)hasVideo;
 
+/*! Creates a <Bit6CallController> to reference a PSTN call
+ @param phoneNumber phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.
+ @return <Bit6CallController> object to handle the call
+ */
++ (Bit6CallController*) startCallToPhoneNumber:(NSString*)phoneNumber;
+
 /*! Creates a <Bit6CallController> to reference a answer call
  @param notification <Bit6IncomingCallNotification> notification of incoming call
  @return <Bit6CallController> object to handle the call
  */
 + (Bit6CallController*) callControllerFromIncomingCallNotification:(NSNotification*)notification;
 
-/*! Creates a <Bit6CallController> to reference a PSTN call
- @param phoneNumber phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.
- @return <Bit6CallController> object to handle the call
+/*! Shows the UI associated to a call controller in a new UIWindow using a "slide up from the bottom of the screen" transition.
+ @param callController call controller object to present.
  */
-+ (Bit6CallController*) startCallToPhoneNumber:(NSString*)phoneNumber;
++ (void) presentCallController:(Bit6CallController*)callController;
+
+/*! Dismiss the UI associated to a call controller using a "slide down from the top of the screen" transition. The UI must have been presented using <presentCallController:>.
+ @param callController call controller object to dismiss.
+ */
++ (void) dismissCallController:(Bit6CallController*)callController;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Actions

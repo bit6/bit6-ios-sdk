@@ -54,14 +54,14 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     @IBAction func touchedAddButton(sender : UIBarButtonItem) {
-        var alert = UIAlertController(title:"New Conversation", message: "Type the destination username", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        var alert = UIAlertController(title:"New Conversation", message: "Type the destination username", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
             
         }))
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:{(action :UIAlertAction!) in
             var usernameTextField = alert.textFields?[0] as UITextField
             if ((usernameTextField.text as NSString).length>0){
-                var address = Bit6Address(kind: Bit6AddressKind.USERNAME, value: usernameTextField.text)
+                var address = Bit6Address(kind: .USERNAME, value: usernameTextField.text)
                 var conversation = Bit6Conversation(address: address)
                 
                 
@@ -69,8 +69,8 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
                     Bit6.addConversation(conversation)
                 }
                 else {
-                    var alert = UIAlertController(title:"Invalid username", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+                    var alert = UIAlertController(title:"Invalid username", message: nil, preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:{(action :UIAlertAction!) in
                     }))
                     self.navigationController?.presentViewController(alert, animated: true, completion:nil)
                 }
@@ -121,12 +121,12 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
         if ((lastMessage) != nil){
             detailTextLabel.text = lastMessage.content
             imageView.message = lastMessage
-            imageView.hidden = !(lastMessage.type != Bit6MessageType.Text)
+            imageView.hidden = !(lastMessage.type != .Text)
         }
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!){
-        if (editingStyle==UITableViewCellEditingStyle.Delete) {
+        if (editingStyle == .Delete) {
             var conversation = self.conversations[indexPath.row] as Bit6Conversation
             Bit6.deleteConversation(conversation)
         }

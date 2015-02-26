@@ -7,7 +7,6 @@
 //
 
 #import "MyCallViewController.h"
-#import <AVFoundation/AVFoundation.h>
 
 @interface MyCallViewController ()
 
@@ -26,29 +25,17 @@
 
 @implementation MyCallViewController
 
-- (instancetype)initWithCallController:(Bit6CallController*)callController
+- (instancetype)init
 {
     self = [super initWithNibName:@"MyCallViewController" bundle:nil];
     if (self) {
-        self.callController = callController;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callStateChangedNotification:) name:Bit6CallStateChangedNotification object:self.callController];
-        [self.callController addObserver:self forKeyPath:@"seconds" options:NSKeyValueObservingOptionNew context:NULL];
+        
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [self.callController removeObserver:self forKeyPath:@"seconds"];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (void)viewDidLoad {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-    
-    self.usernameLabel.text = self.callController.other;
-    [self refreshTimerLabel];
+    self.usernameLabel.text = self.callController.otherDisplayName;
     
     if (self.callController.hasVideo) {
         self.speakerButton.hidden = YES;
@@ -70,41 +57,47 @@
     [super viewDidLoad];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return YES;
+- (void) viewWillAppear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [super viewWillAppear:animated];
 }
 
-- (void) callStateChangedNotification:(NSNotification*)notification
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [super viewWillDisappear:animated];
+}
+
+#pragma mark - Bit6CallViewController methods
+
+- (void) refreshControlsView
+{
+    self.muteLabel.text = self.callController.audioMuted?@"Unmute":@"Mute";
+    self.speakerLabel.text = self.callController.speakerEnabled?@"Disable Speaker":@"Enable Speaker";
+}
+
+- (void) callStateChangedNotification
 {
     self.controlsView.hidden = !(self.callController.callState == Bit6CallState_ANSWER);
-    [self refreshTimerLabel];
+    [self secondsChangedNotification];
 }
 
-- (void) refreshTimerLabel
+- (void) secondsChangedNotification
 {
-    if (self.callController.callState == Bit6CallState_ANSWER) {
-        self.timerLabel.text = [Bit6Utils clockFormatForSeconds:self.callController.seconds];
-    }
-    else if (self.callController.callState == Bit6CallState_END || self.callController.callState == Bit6CallState_ERROR){
-        self.timerLabel.text = @"Disconnected";
-    }
-    else if (self.callController.callState == Bit6CallState_INTERRUPTED){
-        self.timerLabel.text = @"Interrupted";
-    }
-    else {
-        self.timerLabel.text = @"Connecting...";
+    switch (self.callController.callState) {
+        case Bit6CallState_NEW: case Bit6CallState_PROGRESS:
+            self.timerLabel.text = @"Connecting..."; break;
+        case Bit6CallState_ANSWER:
+            self.timerLabel.text = [Bit6Utils clockFormatForSeconds:self.callController.seconds]; break;
+        case Bit6CallState_END: case Bit6CallState_MISSED: case Bit6CallState_ERROR: case Bit6CallState_DISCONNECTED:
+            self.timerLabel.text = @"Disconnected"; break;
     }
 }
 
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)updateLayoutForRemoteVideoView:(UIView*)remoteVideoView localVideoView:(UIView*)localVideoView remoteVideoAspectRatio:(CGSize)remoteVideoAspectRatio localVideoAspectRatio:(CGSize)localVideoAspectRatio
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (object == self.callController) {
-            if ([keyPath isEqualToString:@"seconds"]) {
-                [self refreshTimerLabel];
-            }
-        }
-    });
+    [super updateLayoutForRemoteVideoView:remoteVideoView localVideoView:localVideoView remoteVideoAspectRatio:remoteVideoAspectRatio localVideoAspectRatio:localVideoAspectRatio];
 }
 
 #pragma mark Actions
@@ -123,15 +116,6 @@
 
 - (IBAction)speaker:(id)sender {
     [self.callController switchSpeaker];
-}
-
-#pragma mark - Bit6CallControllerDelegate
-
-- (void) refreshControlsViewForCallController:(Bit6CallController*)callController
-{
-    self.muteLabel.text = self.callController.audioMuted?@"Unmute":@"Mute";
-    self.speakerLabel.text = self.callController.speakerEnabled?@"Disable Speaker":@"Enable Speaker";
-    [super refreshControlsViewForCallController:callController];
 }
 
 @end

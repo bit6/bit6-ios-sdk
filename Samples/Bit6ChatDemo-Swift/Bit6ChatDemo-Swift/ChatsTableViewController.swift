@@ -69,28 +69,28 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     @IBAction func touchedAttachButton(sender : UIBarButtonItem) {
-        var alert = UIAlertController(title:nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        var alert = UIAlertController(title:nil, message: nil, preferredStyle: .ActionSheet)
         
-        alert.addAction(UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .Default, handler:{(action :UIAlertAction!) in
             self.takePhoto();
         }))
-        alert.addAction(UIAlertAction(title: "Take Video", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Take Video", style: .Default, handler:{(action :UIAlertAction!) in
             self.takeVideo()
         }))
-        alert.addAction(UIAlertAction(title: "Select Image", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Select Image", style: .Default, handler:{(action :UIAlertAction!) in
             self.selectImage()
         }))
-        alert.addAction(UIAlertAction(title: "Select Video", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Select Video", style: .Default, handler:{(action :UIAlertAction!) in
             self.selectVideo()
         }))
-        alert.addAction(UIAlertAction(title: "Record Audio", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Record Audio", style: .Default, handler:{(action :UIAlertAction!) in
             self.sendAudio()
         }))
-        alert.addAction(UIAlertAction(title: "Current Location", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Current Location", style: .Default, handler:{(action :UIAlertAction!) in
             self.sendLocation()
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
             
         }))
         
@@ -107,7 +107,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
 
         var message = self.messages[indexPath.row] as Bit6Message;
         var cell : UITableViewCell
-        if (message.type == Bit6MessageType.Text) {
+        if (message.type == .Text) {
             if (message.incoming){
                 cell = tableView.dequeueReusableCellWithIdentifier("textInCell") as UITableViewCell
             }
@@ -119,10 +119,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             if (view != nil){
                 var textLabel = cell.viewWithTag(1) as UILabel
                 if (message.incoming){
-                    textLabel.textAlignment = NSTextAlignment.Left
+                    textLabel.textAlignment = .Left
                 }
                 else {
-                    textLabel.textAlignment = NSTextAlignment.Right
+                    textLabel.textAlignment = .Right
                 }
             }
         }
@@ -173,17 +173,17 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             }
             else {
                 switch (message.status){
-                case Bit6MessageStatus.New :
+                case .New :
                     detailTextLabel.text = ""
-                case Bit6MessageStatus.Sending :
+                case .Sending :
                     detailTextLabel.text = "Sending"
-                case Bit6MessageStatus.Sent :
+                case .Sent :
                     detailTextLabel.text = "Sent"
-                case Bit6MessageStatus.Failed :
+                case .Failed :
                     detailTextLabel.text = "Failed"
-                case Bit6MessageStatus.Delivered :
+                case .Delivered :
                     detailTextLabel.text = "Delivered"
-                case Bit6MessageStatus.Read :
+                case .Read :
                     detailTextLabel.text = "Read"
                 }
             }
@@ -199,12 +199,12 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     // MARK: - Send Text
     
     @IBAction func touchedComposeButton(sender : UIBarButtonItem) {
-        var alert = UIAlertController(title:"Type the message", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        var alert = UIAlertController(title:"Type the message", message: nil, preferredStyle: .Alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
             
         }))
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Done", style: .Default, handler:{(action :UIAlertAction!) in
             var msgTextField = alert.textFields?[0] as UITextField
             self.sendTextMsg(msgTextField.text)
         }))
@@ -222,7 +222,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             var message = Bit6OutgoingMessage()
             message.content = msg
             message.destination = self.conversation.address
-            message.channel = Bit6MessageChannel.PUSH
+            message.channel = .PUSH
             message.sendWithCompletionHandler({ (response, error) -> Void in
                 if (error == nil){
                     NSLog("Message Sent");
@@ -291,7 +291,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         }
         
         message.destination = self.conversation.address
-        message.channel = Bit6MessageChannel.PUSH
+        message.channel = .PUSH
         message.sendWithCompletionHandler { (response, error) -> Void in
             if (error == nil){
                 NSLog("Message Sent");
@@ -308,13 +308,13 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func sendLocation() -> Void {
         var message = Bit6OutgoingMessage()
         message.destination = self.conversation.address
-        message.channel = Bit6MessageChannel.PUSH
+        message.channel = .PUSH
         Bit6.locationController().startListeningToLocationForMessage(message, delegate: self)
     }
     
     func currentLocationController(b6clc: Bit6CurrentLocationController!, didFailWithError error: NSError!, message: Bit6OutgoingMessage!) {
-        var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+        var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
         self.navigationController?.presentViewController(alert, animated: true, completion:nil)
     }
     
@@ -334,10 +334,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func sendAudio() -> Void {
         var message = Bit6OutgoingMessage()
         message.destination = self.conversation.address
-        message.channel = Bit6MessageChannel.PUSH
+        message.channel = .PUSH
         Bit6.audioRecorder().startRecordingAudioForMessage(message, maxDuration: 60, delegate: self, defaultPrompt: true, errorHandler:{ (error) -> Void in
-            var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+            var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
             self.navigationController?.presentViewController(alert, animated: true, completion:nil)
         })
     }
@@ -396,17 +396,17 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     func forwardMessage(msg:Bit6Message){
-        var alert = UIAlertController(title:"Type the destination username", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        var alert = UIAlertController(title:"Type the destination username", message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
             
         }))
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{(action :UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:{(action :UIAlertAction!) in
             var usernameTextField = alert.textFields?[0] as UITextField
             if ((usernameTextField.text as NSString).length>0){
-                var address = Bit6Address(kind: Bit6AddressKind.USERNAME, value: usernameTextField.text)
+                var address = Bit6Address(kind: .USERNAME, value: usernameTextField.text)
                 var message = Bit6OutgoingMessage.outgoingCopyOfMessage(msg)
                 message.destination = address
-                message.channel = Bit6MessageChannel.PUSH
+                message.channel = .PUSH
                 message.sendWithCompletionHandler { (response, error) -> Void in
                     if (error == nil) {
                         NSLog("Message Sent");
@@ -459,9 +459,9 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
         var msg = thumbnailImageView.message
         
-        var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(Bit6MessageAttachmentCategory.FULL_SIZE)
+        var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(.FULL_SIZE)
         
-        if (msg.type == Bit6MessageType.Location){
+        if (msg.type == .Location){
             //Open in AppleMaps
             Bit6.openLocationOnMapsFromMessage(msg)
             
@@ -486,17 +486,17 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             */
         }
             
-        else if (msg.type == Bit6MessageType.Attachments) {
-            if (msg.attachFileType == Bit6MessageFileType.AudioMP4) {
+        else if (msg.type == .Attachments) {
+            if (msg.attachFileType == .AudioMP4) {
                 Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
-                        var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+                        var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                         self.navigationController?.presentViewController(alert, animated: true, completion:nil)
                 })
             }
-            else if (msg.attachFileType == Bit6MessageFileType.VideoMP4) {
+            else if (msg.attachFileType == .VideoMP4) {
                 if (Bit6.shouldDownloadVideoBeforePlaying()) {
-                    if (fullAttachStatus==Bit6MessageAttachmentStatus.FOUND) {
+                    if (fullAttachStatus == .FOUND) {
                         Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
                     }
                 }
@@ -504,7 +504,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
                     Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
                 }
             }
-            else if (msg.attachFileType == Bit6MessageFileType.ImageJPG||msg.attachFileType == Bit6MessageFileType.ImagePNG) {
+            else if (msg.attachFileType == .ImageJPG || msg.attachFileType == .ImagePNG) {
                 self.performSegueWithIdentifier("showFullImage", sender:msg)
             }
         }

@@ -53,5 +53,25 @@
             <NodeRef refid="23"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GOOGLE</TokenIdentifier>
+            <Abstract type="html">The Bit6Address refers to a Google account</Abstract>
+            <Declaration>Bit6AddressKind_GOOGLE</Declaration>
+            
+            <DeclaredIn>Bit6Address.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_UID</TokenIdentifier>
+            <Abstract type="html">The Bit6Address refers to an anonymous session</Abstract>
+            <Declaration>Bit6AddressKind_UID</Declaration>
+            
+            <DeclaredIn>Bit6Address.h</DeclaredIn>
+            
+            <NodeRef refid="23"/>
+        </Token>
+        
 	</File>
 </Tokens>

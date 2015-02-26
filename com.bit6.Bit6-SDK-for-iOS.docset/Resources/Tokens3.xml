@@ -140,6 +140,47 @@ Note that the device token is different from the uniqueIdentifier property of UI
             <NodeRef refid="3"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/receivedIncomingCallNotification:</TokenIdentifier>
+			<Abstract type="html">Starting point of the incoming calls flow. Implement if you want to handle the entire flow.</Abstract>
+			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			
+			<Declaration>- (void)receivedIncomingCallNotification:(NSNotification *)notification</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notification</Name>
+					<Abstract type="html">incoming call notification to be used with [Bit6 callControllerFromIncomingCallNotification:]</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/receivedIncomingCallNotification:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/inCallViewController</TokenIdentifier>
+			<Abstract type="html">Implement to customize the view controller used to handle the incoming call.</Abstract>
+			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			
+			<Declaration>- (Bit6CallViewController *)inCallViewController</Declaration>
+			
+			<ReturnValue><Abstract type="html">a view controller to be used during the incoming call.</Abstract></ReturnValue>
+			<Anchor>//api/name/inCallViewController</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/incomingCallNotificationBannerContentView</TokenIdentifier>
+			<Abstract type="html">Implement to customize the view show in the incoming call notification banner.</Abstract>
+			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			
+			<Declaration>- (UIView *)incomingCallNotificationBannerContentView</Declaration>
+			
+			<ReturnValue><Abstract type="html">a view to use in the incoming call notification banner.</Abstract></ReturnValue>
+			<Anchor>//api/name/incomingCallNotificationBannerContentView</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

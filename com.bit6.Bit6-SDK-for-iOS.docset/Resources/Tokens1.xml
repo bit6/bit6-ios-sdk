@@ -84,6 +84,18 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/incomingCallNotificationBanner</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6IncomingCallNotificationBanner object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6IncomingCallNotificationBanner *)incomingCallNotificationBanner</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6IncomingCallNotificationBanner object.</Abstract></ReturnValue>
+			<Anchor>//api/name/incomingCallNotificationBanner</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/conversations</TokenIdentifier>
 			<Abstract type="html">Get all the existing conversations.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
@@ -251,7 +263,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/currentCallController</TokenIdentifier>
-			<Abstract type="html">Get the Bit6CallController object of the current call</Abstract>
+			<Abstract type="html">Get the Bit6CallController object of the current call.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
 			<Declaration>+ (Bit6CallController *)currentCallController</Declaration>
@@ -282,6 +294,23 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToPhoneNumber:</TokenIdentifier>
+			<Abstract type="html">Creates a Bit6CallController to reference a PSTN call</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CallController *)startCallToPhoneNumber:(NSString *)phoneNumber</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>phoneNumber</Name>
+					<Abstract type="html">phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6CallController object to handle the call</Abstract></ReturnValue>
+			<Anchor>//api/name/startCallToPhoneNumber:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/callControllerFromIncomingCallNotification:</TokenIdentifier>
 			<Abstract type="html">Creates a Bit6CallController to reference a answer call</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
@@ -299,19 +328,36 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToPhoneNumber:</TokenIdentifier>
-			<Abstract type="html">Creates a Bit6CallController to reference a PSTN call</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/presentCallController:</TokenIdentifier>
+			<Abstract type="html">Shows the UI associated to a call controller in a new UIWindow using a &quot;slide up from the bottom of the screen&quot; transition.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (Bit6CallController *)startCallToPhoneNumber:(NSString *)phoneNumber</Declaration>
+			<Declaration>+ (void)presentCallController:(Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>phoneNumber</Name>
-					<Abstract type="html">phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">call controller object to present.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Bit6CallController object to handle the call</Abstract></ReturnValue>
-			<Anchor>//api/name/startCallToPhoneNumber:</Anchor>
+			
+			<Anchor>//api/name/presentCallController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/dismissCallController:</TokenIdentifier>
+			<Abstract type="html">Dismiss the UI associated to a call controller using a &quot;slide down from the top of the screen&quot; transition. The UI must have been presented using presentCallController:.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)dismissCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">call controller object to dismiss.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dismissCallController:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

@@ -24,6 +24,9 @@ typedef NS_ENUM(NSInteger, Bit6SessionProvider) {
 /*! Checks if the user is authenticated with the Bit6 platform and the session has been established.*/
 @property (nonatomic) BOOL authenticated;
 
+/*! Web Socket connection status. */
+@property (nonatomic, readonly) Bit6RTStatus rtConnectionStatus;
+
 /*! Used to retrieve values from the user profile when using a <Bit6SessionProvider> to initiate a session
  @param key identifier of the value to get
  @return value for the specified key
@@ -43,6 +46,11 @@ typedef NS_ENUM(NSInteger, Bit6SessionProvider) {
  @param completion Block to call after the operation has been completed. The "error" value can be use to know if the session was initiated.
  */
 - (void)loginWithUserIdentity:(Bit6Address*)userIdentity password:(NSString*)pass completionHandler:(Bit6CompletionHandler)completion;
+
+/*! Signs in using an anonymous account.
+ @param completion Block to call after the operation has been completed. The "error" value can be use to know if the session was initiated.
+ */
+- (void)anonymousWithCompletionHandler:(Bit6CompletionHandler)completion;
 
 /*! Ends the current session.
  @param completion Block to be executed after the operation has been completed.

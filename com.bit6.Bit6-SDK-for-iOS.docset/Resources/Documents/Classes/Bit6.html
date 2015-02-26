@@ -57,6 +57,10 @@
 	
 	<option value="//api/name/deleteMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteMessage:</option>
 	
+	<option value="//api/name/dismissCallController:">&nbsp;&nbsp;&nbsp;&nbsp;+ dismissCallController:</option>
+	
+	<option value="//api/name/incomingCallNotificationBanner">&nbsp;&nbsp;&nbsp;&nbsp;+ incomingCallNotificationBanner</option>
+	
 	<option value="//api/name/locationController">&nbsp;&nbsp;&nbsp;&nbsp;+ locationController</option>
 	
 	<option value="//api/name/messagesInConversation:offset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesInConversation:offset:length:asc:</option>
@@ -70,6 +74,8 @@
 	<option value="//api/name/openLocationOnMapsFromMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ openLocationOnMapsFromMessage:</option>
 	
 	<option value="//api/name/playVideoFromMessage:viewController:">&nbsp;&nbsp;&nbsp;&nbsp;+ playVideoFromMessage:viewController:</option>
+	
+	<option value="//api/name/presentCallController:">&nbsp;&nbsp;&nbsp;&nbsp;+ presentCallController:</option>
 	
 	<option value="//api/name/sendNotificationToAddress:type:data:">&nbsp;&nbsp;&nbsp;&nbsp;+ sendNotificationToAddress:type:data:</option>
 	
@@ -145,6 +151,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessage:">deleteMessage:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dismissCallController:">dismissCallController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallNotificationBanner">incomingCallNotificationBanner</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationController">locationController</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesInConversation:offset:length:asc:">messagesInConversation:offset:length:asc:</a></span></li>
@@ -158,6 +168,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openLocationOnMapsFromMessage:">openLocationOnMapsFromMessage:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/playVideoFromMessage:viewController:">playVideoFromMessage:viewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/presentCallController:">presentCallController:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendNotificationToAddress:type:data:">sendNotificationToAddress:type:data:</a></span></li>
 	
@@ -270,6 +282,12 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/incomingCallNotificationBanner">+&nbsp;incomingCallNotificationBanner</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -362,13 +380,25 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/startCallToPhoneNumber:">+&nbsp;startCallToPhoneNumber:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/callControllerFromIncomingCallNotification:">+&nbsp;callControllerFromIncomingCallNotification:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startCallToPhoneNumber:">+&nbsp;startCallToPhoneNumber:</a></code>
+		<code><a href="#//api/name/presentCallController:">+&nbsp;presentCallController:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dismissCallController:">+&nbsp;dismissCallController:</a></code>
 	</span>
 	
 	
@@ -663,7 +693,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Get the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> object of the current call</p>
+		<p>Get the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> object of the current call.</p>
 	</div>		
 	
     
@@ -770,6 +800,93 @@
 	</div>
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dismissCallController:" title="dismissCallController:"></a>
+	<h3 class="subsubtitle method-title">dismissCallController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Dismiss the UI associated to a call controller using a &ldquo;slide down from the top of the screen&rdquo; transition. The UI must have been presented using <a href="#//api/name/presentCallController:">presentCallController:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)dismissCallController:(Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p>call controller object to dismiss.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/incomingCallNotificationBanner" title="incomingCallNotificationBanner"></a>
+	<h3 class="subsubtitle method-title">incomingCallNotificationBanner</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the default Bit6IncomingCallNotificationBanner object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6IncomingCallNotificationBanner *)incomingCallNotificationBanner</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the default Bit6IncomingCallNotificationBanner object.</p>
+	</div>
 	
 	
 	
@@ -1161,6 +1278,52 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>vc</em></dt>
 			<dd><p>viewcontroller from which to present the MPMoviePlayerViewController control to play the video</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/presentCallController:" title="presentCallController:"></a>
+	<h3 class="subsubtitle method-title">presentCallController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows the UI associated to a call controller in a new UIWindow using a &ldquo;slide up from the bottom of the screen&rdquo; transition.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)presentCallController:(Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p>call controller object to present.</p></dd>
 		</dl>
 		
 	</div>
@@ -1641,7 +1804,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-02-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

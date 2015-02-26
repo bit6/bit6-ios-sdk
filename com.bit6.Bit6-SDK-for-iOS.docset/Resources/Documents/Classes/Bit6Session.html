@@ -41,6 +41,8 @@
 	
 	<option value="//api/name/authenticated">&nbsp;&nbsp;&nbsp;&nbsp;authenticated</option>
 	
+	<option value="//api/name/rtConnectionStatus">&nbsp;&nbsp;&nbsp;&nbsp;rtConnectionStatus</option>
+	
 	<option value="//api/name/userIdentity">&nbsp;&nbsp;&nbsp;&nbsp;userIdentity</option>
 	
 	
@@ -49,6 +51,8 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/anonymousWithCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- anonymousWithCompletionHandler:</option>
 	
 	<option value="//api/name/changePassword:newPassword:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- changePassword:newPassword:completionHandler:</option>
 	
@@ -90,6 +94,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticated">authenticated</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rtConnectionStatus">rtConnectionStatus</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userIdentity">userIdentity</a></span></li>
 	
 </ul></li>
@@ -99,6 +105,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/anonymousWithCompletionHandler:">anonymousWithCompletionHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changePassword:newPassword:completionHandler:">changePassword:newPassword:completionHandler:</a></span></li>
 	
@@ -175,6 +183,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/rtConnectionStatus">&nbsp;&nbsp;rtConnectionStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/valueForProfileKey:">&ndash;&nbsp;valueForProfileKey:</a></code>
 	</span>
 	
@@ -188,6 +202,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/loginWithUserIdentity:password:completionHandler:">&ndash;&nbsp;loginWithUserIdentity:password:completionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/anonymousWithCompletionHandler:">&ndash;&nbsp;anonymousWithCompletionHandler:</a></code>
 	</span>
 	
 	
@@ -271,6 +291,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/rtConnectionStatus" title="rtConnectionStatus"></a>
+	<h3 class="subsubtitle method-title">rtConnectionStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Web Socket connection status.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6RTStatus rtConnectionStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/userIdentity" title="userIdentity"></a>
 	<h3 class="subsubtitle method-title">userIdentity</h3>
 	
@@ -315,6 +371,52 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/anonymousWithCompletionHandler:" title="anonymousWithCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">anonymousWithCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Signs in using an anonymous account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)anonymousWithCompletionHandler:(Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed. The &ldquo;error&rdquo; value can be use to know if the session was initiated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/changePassword:newPassword:completionHandler:" title="changePassword:newPassword:completionHandler:"></a>
@@ -698,7 +800,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-02-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

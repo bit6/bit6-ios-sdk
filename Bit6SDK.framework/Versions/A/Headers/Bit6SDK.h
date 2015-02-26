@@ -20,8 +20,9 @@
 #import "Bit6AudioRecorderController.h"
 #import "Bit6CurrentLocationController.h"
 #import "Bit6CallController.h"
+#import "Bit6IncomingCallNotificationBanner.h"
 #import "Bit6CallViewController.h"
 #import "Bit6Utils.h"
 #import "Bit6.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.8.0"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.8.5"

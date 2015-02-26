@@ -10,6 +10,4 @@
 
 @interface MyCallViewController : Bit6CallViewController
 
-- (instancetype)initWithCallController:(Bit6CallController*)callController;
-
 @end

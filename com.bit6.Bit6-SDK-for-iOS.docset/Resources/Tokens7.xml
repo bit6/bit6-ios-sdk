@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6CallViewController</TokenIdentifier>
-			<Abstract type="html">Easy to extend view controller to use during a call.</Abstract>
+			<Abstract type="html">UIViewController to extend to use during a call.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
             
 			
@@ -13,11 +13,23 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/setCallController:</TokenIdentifier>
-			<Abstract type="html">callController reference to the Bit6CallController to work with</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallViewController/createDefaultCallViewController</TokenIdentifier>
+			<Abstract type="html">Creates a default view controller to use during a call.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6CallController *callController</Declaration>
+			<Declaration>+ (Bit6CallViewController *)createDefaultCallViewController</Declaration>
+			
+			<ReturnValue><Abstract type="html">view controller to use during a call.</Abstract></ReturnValue>
+			<Anchor>//api/name/createDefaultCallViewController</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/setCallController:</TokenIdentifier>
+			<Abstract type="html">Reference to the Bit6CallController to work with.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6CallController *callController</Declaration>
 			
 			
 			<Anchor>//api/name/callController</Anchor>
@@ -26,10 +38,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callController</TokenIdentifier>
-			<Abstract type="html">callController reference to the Bit6CallController to work with</Abstract>
+			<Abstract type="html">Reference to the Bit6CallController to work with.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6CallController *callController</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) Bit6CallController *callController</Declaration>
 			
 			
 			<Anchor>//api/name/callController</Anchor>
@@ -38,13 +50,87 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallViewController/callController</TokenIdentifier>
-			<Abstract type="html">callController reference to the Bit6CallController to work with</Abstract>
+			<Abstract type="html">Reference to the Bit6CallController to work with.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6CallController *callController</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) Bit6CallController *callController</Declaration>
 			
 			
 			<Anchor>//api/name/callController</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/setNeedsUpdateVideoViewLayout</TokenIdentifier>
+			<Abstract type="html">Used if you need to force a call to updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setNeedsUpdateVideoViewLayout</Declaration>
+			
+			
+			<Anchor>//api/name/setNeedsUpdateVideoViewLayout</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/refreshControlsView</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the UI controls should be updated. For example when the &quot;mute&quot; property changed this method will be called to allow updating the UI accordingly. The default implementation does nothing.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)refreshControlsView</Declaration>
+			
+			
+			<Anchor>//api/name/refreshControlsView</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callStateChangedNotification</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the status of the call changes. The default implementation does nothing.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)callStateChangedNotification</Declaration>
+			
+			
+			<Anchor>//api/name/callStateChangedNotification</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/secondsChangedNotification</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)secondsChangedNotification</Declaration>
+			
+			
+			<Anchor>//api/name/secondsChangedNotification</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread to customize the frames for the video feeds. You can call setNeedsUpdateVideoViewLayout at any time to force a refresh of the frames.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateLayoutForRemoteVideoView:(UIView *)remoteVideoView localVideoView:(UIView *)localVideoView remoteVideoAspectRatio:(CGSize)remoteVideoAspectRatio localVideoAspectRatio:(CGSize)localVideoAspectRatio</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>remoteVideoView</Name>
+					<Abstract type="html">the UIView reference to the remote video feed</Abstract>
+				</Parameter><Parameter>
+					<Name>localVideoView</Name>
+					<Abstract type="html">the UIView reference to the local video feed</Abstract>
+				</Parameter><Parameter>
+					<Name>remoteVideoAspectRatio</Name>
+					<Abstract type="html">the aspect ratio to use for the remote video feed</Abstract>
+				</Parameter><Parameter>
+					<Name>localVideoAspectRatio</Name>
+					<Abstract type="html">the aspect ratio to use for the local video feed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

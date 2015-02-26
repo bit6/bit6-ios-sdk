@@ -32,10 +32,20 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     if (Bit6.session.authenticated) {
-        if ([Bit6.session.userIdentity.kind intValue] == Bit6AddressKind_FACEBOOK) {
-            [FBSession openActiveSessionWithAllowLoginUI:YES];
+        if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:NO
+                                          completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                              if (session.state==FBSessionStateOpen || session.state==FBSessionStateOpenTokenExtended){
+                                                  [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
+                                              }
+                                              else if (session.state == FBSessionStateClosed || session.state == FBSessionStateClosedLoginFailed){
+                                                  [Bit6.session logoutWithCompletionHandler:nil];
+                                              }
+                                          }];
         }
-        [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
+        else {
+            [Bit6.session logoutWithCompletionHandler:nil];
+        }
     }
     
     [super viewWillAppear:animated];

@@ -58,6 +58,7 @@ __Note.__ For the test purposes we allow short 1 minute calls to destinations in
 ### FBVideoCallsDemo
 
 This demo allow you to make audio and video calls to another facebook user using the app as follows:
+
 1. Open the Bit6 sample app
 2. Tap 'Start Calling', you will be redirected to login to Facebook
 3. After you return to the app you will see all the facebook contacts available to call. The facebook contacts need to complete the steps above to be able to receive video calls.
