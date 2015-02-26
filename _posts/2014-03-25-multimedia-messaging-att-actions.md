@@ -24,9 +24,9 @@ NSString *fullAttachmentPath = [msg attachmentPathForAttachmentCategory:
 //Swift
 var msg : Bit6Message = ...
 var thumbnailAttachmentPath = msg.attachmentStatusForAttachmentCategory(
-						Bit6MessageAttachmentCategory.THUMBNAIL)
+						.THUMBNAIL)
 var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(
-						Bit6MessageAttachmentCategory.FULL_SIZE)
+						.FULL_SIZE)
 ```
 
 
@@ -64,21 +64,21 @@ Bit6Message *msg = ...;
 //Swift
 var msg : Bit6Message = ...
 	switch (msg.attachmentStatusForAttachmentCategory(
-            Bit6MessageAttachmentCategory.FULL_SIZE)) {
-        case Bit6MessageAttachmentStatus.INVALID:
+            .FULL_SIZE)) {
+        case .INVALID:
             //the message can't have an attachment, for example a text message
             break;
-        case Bit6MessageAttachmentStatus.FAILED:
+        case .FAILED:
             //the attachment can't be downloaded, for example because of an
             //error when uploading the attachment
             break;
-        case Bit6MessageAttachmentStatus.NOT_FOUND:
+        case .NOT_FOUND:
             //the file is not in cache
             break;
-        case Bit6MessageAttachmentStatus.DOWNLOADING:
+        case .DOWNLOADING:
             //the file is not in cache, but is being downloaded
             break;
-        case Bit6MessageAttachmentStatus.FOUND:
+        case .FOUND:
             //the file is in cache, ready to be used
             break;
         }
@@ -100,7 +100,7 @@ if (message.type != Bit6MessageType_Text) {
 ```swift
 //Swift
 var msg : Bit6Message = ...
-if (message.type != Bit6MessageType.Text) {
+if (message.type != .Text) {
 //can show preview
 }
 ```
@@ -178,23 +178,23 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
 func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
         var msg = thumbnailImageView.message
         
-        var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(Bit6MessageAttachmentCategory.FULL_SIZE)
+        var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(.FULL_SIZE)
         
-        if (msg.type == Bit6MessageType.Location){
+        if (msg.type == .Location){
             //Open in AppleMaps
             Bit6.openLocationOnMapsFromMessage(msg)
         }
             
-        else if (msg.type == Bit6MessageType.Attachments) {
+        else if (msg.type == .Attachments) {
         	//play an audio file
-            if (msg.attachFileType == Bit6MessageFileType.AudioMP4) {
+            if (msg.attachFileType == .AudioMP4) {
                 Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
                         //an error occurred
                 })
             }
-            else if (msg.attachFileType == Bit6MessageFileType.VideoMP4) {
+            else if (msg.attachFileType == .VideoMP4) {
                 if (Bit6.shouldDownloadVideoBeforePlaying()) {
-                    if (fullAttachStatus==Bit6MessageAttachmentStatus.FOUND) {
+                    if (fullAttachStatus == .FOUND) {
                         Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
                     }
                 }
@@ -202,7 +202,7 @@ func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
                     Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
                 }
             }
-            else if (msg.attachFileType == Bit6MessageFileType.ImageJPG||msg.attachFileType == Bit6MessageFileType.ImagePNG) {
+            else if (msg.attachFileType == .ImageJPG || msg.attachFileType == .ImagePNG) {
                 //code to navigate to another screen to show the image in full size
             }
         }
@@ -239,9 +239,9 @@ if (msg.type == Bit6MessageType_Attachments &&
 ```swift
 //Swift
 var msg : Bit6Message = ...
-if (msg.type == Bit6MessageType.Attachments && 
-                            (msg.attachFileType == Bit6MessageFileType.ImageJPG || 
-                             msg.attachFileType == Bit6MessageFileType.ImagePNG)) {
+if (msg.type == .Attachments && 
+                            (msg.attachFileType == .ImageJPG || 
+                             msg.attachFileType == .ImagePNG)) {
 //can show full image
 }
 ```

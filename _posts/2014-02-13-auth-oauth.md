@@ -5,6 +5,8 @@ title: 'OAuth'
 
 Bit6 integrates with various OAuth1 and OAuth2 providers for simplified user authentication.
 
+See the FBVideoCallsDemo sample project included with the sdk.
+
 ### Signin with an OAuth provider
 
 Create a new Bit6 account or login into an existing one. In this example we use [Facebook Login](https://developers.facebook.com/docs/facebook-login/ios/).
@@ -41,7 +43,7 @@ Bit6.session().getAuthInfoCompletionHandler({ (response, error) -> Void in
         FBSession.activeSession().closeAndClearTokenInformation();
         FBSession.openActiveSessionWithReadPermissions(["public_profile","email","user_friends"], allowLoginUI: true, completionHandler: { (session, state, error) -> Void in
             if (state == FBSessionState.Open){
-                Bit6.session().oauthForProvider(Bit6SessionProvider.FACEBOOK, params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
+                Bit6.session().oauthForProvider(.FACEBOOK, params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
                     in
                         if ((error) != nil){
                             NSLog("Login Failed With Error: %s",error.localizedDescription);
@@ -64,5 +66,5 @@ Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_FACEBOOK val
 ```
 ```swift
 //Swift
-var address = Bit6Address(kind: Bit6AddressKind.FACEBOOK, value:friendId)
+var address = Bit6Address(kind: .FACEBOOK, value:friendId)
 ```

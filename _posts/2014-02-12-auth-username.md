@@ -34,7 +34,7 @@ Bit6Address *i = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME
 var name = "john";
 var pass = "secret";
 
-var i = Bit6Address(kind: Bit6AddressKind.USERNAME, 
+var i = Bit6Address(kind: .USERNAME, 
 				   value: name);
                    
 Bit6.session().signUpWithUserIdentity(i, 
@@ -77,7 +77,7 @@ Bit6Address *i = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME
 var name = "john";
 var pass = "secret";
 
-var i = Bit6Address(kind: Bit6AddressKind.USERNAME, 
+var i = Bit6Address(kind: .USERNAME, 
 				   value: name);
                    
 Bit6.session().loginWithUserIdentity(i, 

@@ -16,18 +16,11 @@ For the test purposes we allow short 1 minute calls to destinations in US and Ca
 NSString *destination = @"+14445556666";
 Bit6CallController *callController = [Bit6 startCallToPhoneNumber:destination];
 
-if (callController){                           
-    [callController connectToViewController:nil completion:^(UIViewController *vc, 
-    														 NSError *error) 
-	{
-        if (error) {
-            //call failed
-        }
-        else {
-        	//register to listen changes in call status
-            //add vc to the UIViewController hierarchy
-        }
-    }];
+if (callController){
+	//create an in-call UIViewController
+	Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
+
+    [callController connectToViewController:callVC];
 }
 else {
     //call failed
@@ -39,17 +32,10 @@ var destination = "+14445556666";
 var callController = Bit6.startCallToPhoneNumber(destination)
 
 if (callController != nil){
-    callController.connectToViewController(nil, completion:{(vc: UIViewController!, 
-                                                          error: NSError!) 
-	in
-        if (error != nil){
-            //call failed
-        }
-        else {
-	       //register to listen changes in call status
-           //add vc to the UIViewController hierarchy
-        }
-    })
+	//create an in-call UIViewController
+    var callVC = Bit6CallViewController.createDefaultCallViewController()
+
+    callController.connectToViewController(callVC)
 }
 else {
     //call failed

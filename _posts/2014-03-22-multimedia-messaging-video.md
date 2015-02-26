@@ -62,9 +62,9 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
                info["_UIImagePickerControllerVideoEditingEnd"] as NSNumber
     }
     
-	message.destination = Bit6Address(kind:Bit6AddressKind.USERNAME, 
+	message.destination = Bit6Address(kind:.USERNAME, 
     	                             value:"user2")
-    message.channel = Bit6MessageChannel.PUSH
+    message.channel = .PUSH
     message.sendWithCompletionHandler { (response, error) -> Void in
         if (error == nil) {
             NSLog("Message Sent");

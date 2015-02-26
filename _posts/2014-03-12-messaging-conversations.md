@@ -29,7 +29,7 @@ Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:addre
 ```
 ```objc
 //Swift
-var address = Bit6Address(kind:Bit6AddressKind.USERNAME, 
+var address = Bit6Address(kind:.USERNAME, 
 						 value:"user2")
 var conversation = Bit6Conversation(address: address)
 Bit6.addConversation(conversation)

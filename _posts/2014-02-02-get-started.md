@@ -9,7 +9,7 @@ Go to [Dashboard](https://dashboard.bit6.com/) and get the API Key for your app.
 
 __Step 1.__ [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
 
-__Step 2.__ Configure 'Linked Frameworks and Libraries' - add `Bit6SDK.framework` as well as the libraries: `libicucore.dylib`, `libz.dylib`, `libstdc++.dylib`, `libsqlite3.dylib` and `GLKit.framework`.
+__Step 2.__ Configure 'Linked Frameworks and Libraries' - add `Bit6SDK.framework` as well as the libraries: `libicucore.dylib`, `libz.dylib`, `libstdc++.dylib`, `libsqlite3.dylib`, `CoreMedia`, `AudioToolbox`, `AVFoundation`, `AssetsLibrary`, `SystemConfiguration`, `MediaPlayer`, `CoreLocation` and `GLKit`.
 <img class="shot" src="images/frameworks.png"/>
 
 __Step 3.__ Add `Bit6Resources.bundle` to "Supporting Files".
@@ -18,7 +18,7 @@ __Step 3.__ Add `Bit6Resources.bundle` to "Supporting Files".
 __Step 4.__ Set the Architectures value to be `$(ARCHS_STANDARD_32_BIT)` for iPhone Simulators and `$(ARCHS_STANDARD)` for devices.
 <img class="shot" src="images/architectures.png"/>
 
-__Step 5.__ In your project settings add `-ObjC -stdlib=libc++` to the 'Other Linker Flags'
+__Step 5.__ In your project settings add `-ObjC` to the 'Other Linker Flags'
 <img class="shot" src="images/other_linker_flags.png"/>
 
 __Step 6.__ If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
@@ -77,7 +77,7 @@ func application(application: UIApplication,
         // ...
         
         Bit6.startWithApiKey("your_api_key", 
-              pushNotificationMode: Bit6PushNotificationMode.DEVELOPMENT,
+              pushNotificationMode: .DEVELOPMENT,
               launchingWithOptions: launchOptions);
         
         // The rest of your application:didFinishLaunchingWithOptions: method

@@ -17,9 +17,9 @@ message.channel = Bit6MessageChannel_PUSH;
 ```swift
 //Swift
 var message = Bit6OutgoingMessage()
-message.destination = Bit6Address(kind:Bit6AddressKind.USERNAME, 
+message.destination = Bit6Address(kind:.USERNAME, 
                                  value:"user2")
-message.channel = Bit6MessageChannel.PUSH
+message.channel = .PUSH
 ```
 
 __Step 2.__ Start the audio recording:

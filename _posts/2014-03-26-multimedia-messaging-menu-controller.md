@@ -18,10 +18,7 @@ __Step 1.__ Implement Bit6MenuControllerDelegate
 @interface ChatsTableViewController <Bit6MenuControllerDelegate>
 
 @end
-```
 
-```objc
-//ObjectiveC
 Bit6MessageLabel *textLabel = ...
 textLabel.message = message;
 textLabel.menuControllerDelegate = self;
@@ -38,10 +35,7 @@ imageView.menuControllerDelegate = self;
 class ChatsTableViewController :Bit6MenuControllerDelegate {
 
 }
-```
 
-```swift
-//Swift
 var textLabel : Bit6MessageLabel = ...
 textLabel.message = message
 textLabel.menuControllerDelegate = self
@@ -108,7 +102,7 @@ func forwardMessage(msg:Bit6Message)
     //set the destination and the channel
     var address : Bit6Address = ...
     messageToForward.destination = address
-    messageToForward.channel = Bit6MessageChannel.PUSH
+    messageToForward.channel = .PUSH
 
     //send a copy of the message to the new destination
     messageToForward.sendWithCompletionHandler { (response, error) -> Void in
