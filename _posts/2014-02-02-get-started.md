@@ -5,7 +5,7 @@ title: 'Getting Started'
 ### Get Bit6 API Key
 Go to [Dashboard](https://dashboard.bit6.com/) and get the API Key for your app.
 
-### Add Bit6 SDK to your iOS Xcode project
+### Manual Configuration
 
 __Step 1.__ [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
 
@@ -25,11 +25,26 @@ __Step 6.__ If you are working on a Swift project remember to set the Swift-Obje
 <img class="shot" src="images/swift_bridge.png"/>
 
 
+### Configuration using Cocoapods
+[![Version](https://img.shields.io/cocoapods/v/Bit6.svg?style=flat)](http://cocoadocs.org/docsets/Bit6)
+[![License](https://img.shields.io/cocoapods/l/Bit6.svg?style=flat)](http://cocoadocs.org/docsets/Bit6)
+[![Platform](https://img.shields.io/cocoapods/p/Bit6.svg?style=flat)](http://cocoadocs.org/docsets/Bit6)
+
+#### Installation
+
+Bit6 starting from version v0.8.5 is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+    pod "Bit6"
+
+__Note__ If you are working on a Swift project remember to set a Swift-ObjectiveC Bridge Header file
+<img class="shot" src="images/swift_bridge.png"/>
+
 ### Setup Application Delegate
 
 In your Application Delegate:
 
-__Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>`
+__Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>` in you `AppDelegate.h` file.
 
 __Note.__ If you are working on a Swift project you need to add this import on the Swift-ObjectiveC Bridge Header file
 
