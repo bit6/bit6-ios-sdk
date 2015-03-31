@@ -86,7 +86,7 @@ class ChatsViewController : Bit6AudioRecorderControllerDelegate
 func doneRecorderController(b6rc: Bit6AudioRecorderController!, 
 						 message: Bit6OutgoingMessage!) {
 	if (message.audioDuration > 1.0) {
-        message.sendWithCompletionHandler { (response, error) -> Void in
+        message.sendWithCompletionHandler ({ (response, error) -> Void in
             if (error == nil) {
                 NSLog("Message Sent");
             }
@@ -95,7 +95,7 @@ func doneRecorderController(b6rc: Bit6AudioRecorderController!,
             }
         }
     }
-}
+})
 ```
 
 ### Play an Audio File

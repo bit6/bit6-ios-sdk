@@ -70,7 +70,7 @@ class ChatsViewController : Bit6CurrentLocationControllerDelegate
 func currentLocationController(b6clc: Bit6CurrentLocationController!, 
 	didGetLocationForMessage message: Bit6OutgoingMessage!)
 {
-    message.sendWithCompletionHandler { (response, error) -> Void in
+    message.sendWithCompletionHandler ({ (response, error) -> Void in
         if (error == nil) {
             NSLog("Message Sent");
         }
@@ -78,7 +78,7 @@ func currentLocationController(b6clc: Bit6CurrentLocationController!,
             NSLog("Message Failed with Error: %@",error.localizedDescription);
         }
     }
-}
+})
 
 func currentLocationController(b6clc: Bit6CurrentLocationController!, 
 			  didFailWithError error: NSError!, 
@@ -115,14 +115,14 @@ message.location = CLLocation(latitude: latitude, longitude: longitude);
 message.destination = Bit6Address(kind: .USERNAME, 
                    				 value: "user2");
 message.channel = .PUSH;
-message.sendWithCompletionHandler { (response, error) -> Void in
+message.sendWithCompletionHandler ({ (response, error) -> Void in
     if (error == nil) {
         NSLog("Message Sent");
     }
     else {
         NSLog("Message Failed with Error: %@",error.localizedDescription);
     }
-}
+})
 ```
 
 ### Open a Location

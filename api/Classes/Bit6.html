@@ -53,11 +53,13 @@
 	
 	<option value="//api/name/currentCallController">&nbsp;&nbsp;&nbsp;&nbsp;+ currentCallController</option>
 	
-	<option value="//api/name/deleteConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteConversation:</option>
+	<option value="//api/name/deleteConversation:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteConversation:completion:</option>
 	
-	<option value="//api/name/deleteMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteMessage:</option>
+	<option value="//api/name/deleteMessage:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteMessage:completion:</option>
 	
 	<option value="//api/name/dismissCallController:">&nbsp;&nbsp;&nbsp;&nbsp;+ dismissCallController:</option>
+	
+	<option value="//api/name/groups">&nbsp;&nbsp;&nbsp;&nbsp;+ groups</option>
 	
 	<option value="//api/name/incomingCallNotificationBanner">&nbsp;&nbsp;&nbsp;&nbsp;+ incomingCallNotificationBanner</option>
 	
@@ -115,7 +117,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Initialization">￼Initialization</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Controllers">￼Controllers</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Properties">￼Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Groups">￼Working with Groups</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Conversations">￼Working with Conversations</a></span></li>
 	
@@ -147,11 +153,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentCallController">currentCallController</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteConversation:">deleteConversation:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteConversation:completion:">deleteConversation:completion:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessage:">deleteMessage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessage:completion:">deleteMessage:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dismissCallController:">dismissCallController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groups">groups</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallNotificationBanner">incomingCallNotificationBanner</a></span></li>
 	
@@ -254,8 +262,8 @@
 						</ul>
 						
 						
-						<a title="￼Properties" name="task_￼Properties"></a>
-						<h3 class="subsubtitle task-title">￼Properties</h3>
+						<a title="￼Controllers" name="task_￼Controllers"></a>
+						<h3 class="subsubtitle task-title">￼Controllers</h3>
 
 						<ul class="task-list">
 							<li>
@@ -292,6 +300,40 @@
 						</ul>
 						
 						
+						<a title="￼Properties" name="task_￼Properties"></a>
+						<h3 class="subsubtitle task-title">￼Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setShouldDownloadVideoBeforePlaying:">+&nbsp;setShouldDownloadVideoBeforePlaying:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldDownloadVideoBeforePlaying">+&nbsp;shouldDownloadVideoBeforePlaying</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Working with Groups" name="task_￼Working with Groups"></a>
+						<h3 class="subsubtitle task-title">￼Working with Groups</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/groups">+&nbsp;groups</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
 						<a title="￼Working with Conversations" name="task_￼Working with Conversations"></a>
 						<h3 class="subsubtitle task-title">￼Working with Conversations</h3>
 
@@ -310,13 +352,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/deleteConversation:">+&nbsp;deleteConversation:</a></code>
+		<code><a href="#//api/name/deleteConversation:completion:">+&nbsp;deleteConversation:completion:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/deleteMessage:">+&nbsp;deleteMessage:</a></code>
+		<code><a href="#//api/name/deleteMessage:completion:">+&nbsp;deleteMessage:completion:</a></code>
 	</span>
 	
 	
@@ -425,18 +467,6 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/typingBeginToAddress:">+&nbsp;typingBeginToAddress:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setShouldDownloadVideoBeforePlaying:">+&nbsp;setShouldDownloadVideoBeforePlaying:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/shouldDownloadVideoBeforePlaying">+&nbsp;shouldDownloadVideoBeforePlaying</a></code>
 	</span>
 	
 	
@@ -728,8 +758,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/deleteConversation:" title="deleteConversation:"></a>
-	<h3 class="subsubtitle method-title">deleteConversation:</h3>
+	<a name="//api/name/deleteConversation:completion:" title="deleteConversation:completion:"></a>
+	<h3 class="subsubtitle method-title">deleteConversation:completion:</h3>
 	
 	
 	
@@ -739,7 +769,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)deleteConversation:(Bit6Conversation *)<em>conversation</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)deleteConversation:(Bit6Conversation *)<em>conversation</em> completion:(Bit6CompletionHandler)<em>completion</em></code></div>
 
     
 	
@@ -749,6 +779,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>conversation</em></dt>
 			<dd><p><a href="../Classes/Bit6Conversation.html">Bit6Conversation</a> object to be deleted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
 		</dl>
 		
 	</div>
@@ -774,8 +809,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/deleteMessage:" title="deleteMessage:"></a>
-	<h3 class="subsubtitle method-title">deleteMessage:</h3>
+	<a name="//api/name/deleteMessage:completion:" title="deleteMessage:completion:"></a>
+	<h3 class="subsubtitle method-title">deleteMessage:completion:</h3>
 	
 	
 	
@@ -785,7 +820,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)deleteMessage:(Bit6Message *)<em>message</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)deleteMessage:(Bit6Message *)<em>message</em> completion:(Bit6CompletionHandler)<em>completion</em></code></div>
 
     
 	
@@ -795,6 +830,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>message</em></dt>
 			<dd><p><a href="../Classes/Bit6Message.html">Bit6Message</a> object to be deleted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
 		</dl>
 		
 	</div>
@@ -846,6 +886,47 @@
 	</div>
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/groups" title="groups"></a>
+	<h3 class="subsubtitle method-title">groups</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get all the existing groups.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)groups</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the existing <a href="../Classes/Bit6Group.html">Bit6Group</a> objects as a NSArray.</p>
+	</div>
 	
 	
 	
@@ -1804,7 +1885,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-02-16)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-03-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

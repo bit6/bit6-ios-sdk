@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6Address Class Reference</title>
+		<title>Bit6GroupMember Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6Address Class Reference</h1>
+				<h1 class="hideInXcode">Bit6GroupMember Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,25 +39,19 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/displayName">&nbsp;&nbsp;&nbsp;&nbsp;displayName</option>
+	<option value="//api/name/address">&nbsp;&nbsp;&nbsp;&nbsp;address</option>
 	
-	<option value="//api/name/kind">&nbsp;&nbsp;&nbsp;&nbsp;kind</option>
+	<option value="//api/name/group">&nbsp;&nbsp;&nbsp;&nbsp;group</option>
 	
-	<option value="//api/name/value">&nbsp;&nbsp;&nbsp;&nbsp;value</option>
+	<option value="//api/name/role">&nbsp;&nbsp;&nbsp;&nbsp;role</option>
 	
+	<option value="//api/name/seen">&nbsp;&nbsp;&nbsp;&nbsp;seen</option>
 	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/addressWithKind:value:">&nbsp;&nbsp;&nbsp;&nbsp;+ addressWithKind:value:</option>
+	<option value="//api/name/status">&nbsp;&nbsp;&nbsp;&nbsp;status</option>
 	
 	
 	
 	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/isKind:">&nbsp;&nbsp;&nbsp;&nbsp;- isKind:</option>
 	
 	
 	
@@ -83,36 +77,28 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/displayName">displayName</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/address">address</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/kind">kind</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/group">group</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/value">value</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/role">role</a></span></li>
 	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/seen">seen</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressWithKind:value:">addressWithKind:value:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/status">status</a></span></li>
 	
 </ul></li>
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isKind:">isKind:</a></span></li>
-	
-</ul></li>
+
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6Address Class Reference" name="top"></a>
+				<a title="Bit6GroupMember Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -121,7 +107,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6Address Class Reference</h1>
+						<h1 class="title title-header">Bit6GroupMember Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -132,7 +118,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">Bit6Address.h</td>
+	<td class="specification-value">Bit6Group.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -142,7 +128,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Bit6Address is used to describe a user identity or a destination for calling and messaging. It consists of a type (<a href="../Constants/Bit6AddressKind.html">Bit6AddressKind</a>) and a value.</p>
+						<p>A Bit6GroupMember object represents a member of a <a href="../Classes/Bit6Group.html">Bit6Group</a> object.</p>
 					</div>
 					
 					
@@ -160,31 +146,31 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/addressWithKind:value:">+&nbsp;addressWithKind:value:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/displayName">&nbsp;&nbsp;displayName</a></code>
+		<code><a href="#//api/name/address">&nbsp;&nbsp;address</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/kind">&nbsp;&nbsp;kind</a></code>
+		<code><a href="#//api/name/role">&nbsp;&nbsp;role</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/isKind:">&ndash;&nbsp;isKind:</a></code>
+		<code><a href="#//api/name/seen">&nbsp;&nbsp;seen</a></code>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+		<code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/group">&nbsp;&nbsp;group</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -202,18 +188,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/displayName" title="displayName"></a>
-	<h3 class="subsubtitle method-title">displayName</h3>
+	<a name="//api/name/address" title="address"></a>
+	<h3 class="subsubtitle method-title">address</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A display name for the sender.</p>
+		<p>The <a href="../Classes/Bit6Address.html">Bit6Address</a> object associated with the sender.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *displayName</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) Bit6Address *address</code></div>
 
     
 	
@@ -231,25 +217,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6Address.h</code><br />
+		<code class="declared-in-ref">Bit6Group.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/kind" title="kind"></a>
-	<h3 class="subsubtitle method-title">kind</h3>
+	<a name="//api/name/group" title="group"></a>
+	<h3 class="subsubtitle method-title">group</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>returns the kind of sender.</p>
+		<p>The conversation the sender belongs to.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSNumber *kind</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) Bit6Group *group</code></div>
 
     
 	
@@ -258,11 +244,6 @@
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> See <a href="../Constants/Bit6AddressKind.html">Bit6AddressKind</a> enumeration</p></div>
-	</div>
 	
 	
 	
@@ -272,25 +253,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6Address.h</code><br />
+		<code class="declared-in-ref">Bit6Group.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/value" title="value"></a>
-	<h3 class="subsubtitle method-title">value</h3>
+	<a name="//api/name/role" title="role"></a>
+	<h3 class="subsubtitle method-title">role</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>returns the value of BitAddress.</p>
+		<p>The role of the sender inside the group. The return value can be one of three constants: Bit6GroupMemberRole_Admin, Bit6GroupMemberRole_User or Bit6GroupMemberRole_Left.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *value</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *role</code></div>
 
     
 	
@@ -308,7 +289,79 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6Address.h</code><br />
+		<code class="declared-in-ref">Bit6Group.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/seen" title="seen"></a>
+	<h3 class="subsubtitle method-title">seen</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The last seen timestamp of the sender.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *seen</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Group.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="subsubtitle method-title">status</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The status of the sender.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *status</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Group.h</code><br />
 	</div>				
 	
 	
@@ -318,126 +371,7 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/addressWithKind:value:" title="addressWithKind:value:"></a>
-	<h3 class="subsubtitle method-title">addressWithKind:value:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes a Bit6Address object</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (instancetype)addressWithKind:(Bit6AddressKind)<em>kind</em> value:(NSString *)<em>value</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>kind</em></dt>
-			<dd><p>Destination kind.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>Destination value.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a Bit6Address object if succesful or nil if failed.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6Address.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/isKind:" title="isKind:"></a>
-	<h3 class="subsubtitle method-title">isKind:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Check the <a href="../Constants/Bit6AddressKind.html">Bit6AddressKind</a> of the sender</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)isKind:(Bit6AddressKind)<em>kind</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>kind</em></dt>
-			<dd><p><a href="../Constants/Bit6AddressKind.html">Bit6AddressKind</a> to compare with the sender</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>YES if the sender match the <a href="../Constants/Bit6AddressKind.html">Bit6AddressKind</a> in the param.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6Address.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
                     

@@ -28,14 +28,14 @@ message.content = "This is a text message"
 message.destination = Bit6Address(kind: .USERNAME, 
                    				 value: "user2");
 message.channel = .PUSH;
-message.sendWithCompletionHandler { (response, error) -> Void in
+message.sendWithCompletionHandler({ (response, error) -> Void in
     if (error == nil) {
         NSLog("Message Sent");
     }
     else {
         NSLog("Message Failed with Error: %@",error.localizedDescription);
     }
-}
+})
 ```
 
 ### Get Messages
@@ -57,35 +57,55 @@ To know when a message has been added or a message status has been updated, regi
 ```objc
 //ObjectiveC
 [[NSNotificationCenter defaultCenter] addObserver:self 
-                                         selector:@selector(messagesUpdatedNotification:) 
-                                             name:Bit6MessagesUpdatedNotification 
+                                         selector:@selector(messagesChangedNotification:) 
+                                             name:Bit6MessagesChangedNotification 
                                            object:nil];
 ```
 ```swift
 //Swift
 var conversation : Bit6Conversation = ...
 NSNotificationCenter.defaultCenter().addObserver(self,
-										selector:"messagesUpdatedNotification:", 
-                                            name: Bit6MessagesUpdatedNotification,
-                                          object: nil)
+										selector:"messagesChangedNotification:", 
+                                            name:Bit6MessagesChangedNotification,
+                                          object:nil)
 ```
 
-Upon receiving a message change notification, update the conversations array:
+Upon receiving a message change notification, update the messages array:
 
 ```objc
 //ObjectiveC
-- (void) messagesUpdatedNotification:(NSNotification*)notification
+- (void) messagesChangedNotification:(NSNotification*)notification
 {
-    //get updated messages
-    self.messages = [Bit6 messagesWithOffset:0 length:NSIntegerMax asc:YES];
+    Bit6Message *msg = notification.userInfo[Bit6ObjectKey];
+    NSString *change = notification.userInfo[Bit6ChangeKey];
+    
+    if ([change isEqualToString:Bit6AddedKey]) {
+        //add message to self.messages and refresh changes in UI
+    }
+    else if ([change isEqualToString:Bit6UpdatedKey]) {
+        //find message in self.messages and refresh changes in UI
+    }
+    else if ([change isEqualToString:Bit6DeletedKey]) {
+        //find message in self.messages, delete it and refresh changes in UI
+    }
 } 
 ```
 ```swift
 //Swift
-func messagesUpdatedNotification(notification:NSNotification)
+func messagesChangedNotification(notification:NSNotification)
 {
-    //get updated messages
-    self.messages = Bit6.messagesWithOffset(0, length: NSIntegerMax, asc: true)
+   var msg = notification.userInfo[Bit6ObjectKey]
+   var change = notification.userInfo[Bit6ChangeKey]
+   
+   if (change == Bit6AddedKey) {
+       //add message to self.messages and refresh changes in UI
+   }
+   else if (change == Bit6UpdatedKey) {
+       //find message in self.messages and refresh changes in UI
+   }
+   else if (change == Bit6DeletedKey) {
+       //find message in self.messages, delete it and refresh changes in UI
+   }
 }
 ```
 
@@ -96,15 +116,15 @@ Although messages do not have to be arranged in conversations, it is frequently 
 ```objc
 //ObjectiveC
 Bit6Conversation *conversation = ...
-NSArray *messages = conversation.messages;
+self.messages = conversation.messages;
 ```
 ```swift
 //Swift
 var conversation : Bit6Conversation = ...
-var messages = conversation.messages
+self.messages = conversation.messages
 ```
 
-### Handle Message Updates
+### Listen to Changes in Messages inside Conversations
 
 To know when a message has been added to a particular conversation, or a message status has been updated, register as an observer for updates on message level:
 
@@ -112,37 +132,55 @@ To know when a message has been added to a particular conversation, or a message
 //ObjectiveC
 Bit6Conversation *conversation = ...
 [[NSNotificationCenter defaultCenter] addObserver:self 
-                                         selector:@selector(messagesUpdatedNotification:) 
-                                             name:Bit6MessagesUpdatedNotification 
+                                         selector:@selector(messagesChangedNotification:) 
+                                             name:Bit6MessagesChangedNotification
                                            object:conversation];
 ```
 ```swift
 //Swift
 var conversation : Bit6Conversation = ...
 NSNotificationCenter.defaultCenter().addObserver(self,
-										selector:"messagesUpdatedNotification:", 
-                                            name: Bit6MessagesUpdatedNotification,
-                                          object: self.conversation)
+										selector:"messagesChangedNotification:", 
+                                            name:Bit6MessagesChangedNotification,
+                                          object:conversation)
 ```
 
 Upon receiving a message change notification, update the conversations array:
 
 ```objc
 //ObjectiveC
-- (void) messagesUpdatedNotification:(NSNotification*)notification
+- (void) messagesChangedNotification:(NSNotification*)notification
 {
-    Bit6Conversation *conversation = (Bit6Conversation *)notification.object;
-    //get updated messages
-    self.messages = conversation.messages;
+    Bit6Message *message = notification.userInfo[Bit6ObjectKey];
+    NSString *change = notification.userInfo[Bit6ChangeKey];
+    
+    if ([change isEqualToString:Bit6AddedKey]) {
+        //add message to self.messages and refresh changes in UI
+    }
+    else if ([change isEqualToString:Bit6UpdatedKey]) {
+        //find message in self.messages and refresh changes in UI
+    }
+    else if ([change isEqualToString:Bit6DeletedKey]) {
+        //find message in self.messages, remove it and refresh changes in UI
+    }
 } 
 ```
 ```swift
 //Swift
-func messagesUpdatedNotification(notification:NSNotification) 
+func messagesChangedNotification(notification:NSNotification) 
 {
-	var conversation : Bit6Conversation = notification.object as Bit6Conversation
-    //get updated messages
-    self.messages = conversation.messages
+   var message = notification.userInfo[Bit6ObjectKey]
+   var change = notification.userInfo[Bit6ChangeKey]
+   
+   if (change == Bit6AddedKey) {
+       //add message to self.messages and refresh changes in UI
+   }
+   else if (change == Bit6UpdatedKey) {
+       //find message in self.messages and refresh changes in UI
+   }
+   else if (change == Bit6DeletedKey) {
+       //find message in self.messages, remove it and refresh changes in UI
+   }
 }
 ```
 
@@ -151,13 +189,22 @@ func messagesUpdatedNotification(notification:NSNotification)
 ```objc
 //ObjectiveC
 Bit6Message *messageToDelete = ...
-[Bit6 deleteMessage:messageToDelete];
+[Bit6 deleteMessage:messageToDelete 
+		 completion:^(NSDictionary *response, NSError *error) {
+		    if (!error) {
+		        //message deleted
+		    }
+}];
 ```
 
 ```swift
 //Swift
 var messageToDelete : Bit6Message = ...
-Bit6.deleteMessage(messageToDelete)
+Bit6.deleteMessage(messageToDelete, completion:{ (response, error) -> Void in
+    if (error == nil) {
+        //message deleted
+    }
+})
 ```
 
 ###Enable Background Push Notifications for Messages

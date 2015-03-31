@@ -65,7 +65,7 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
 	message.destination = Bit6Address(kind:.USERNAME, 
     	                             value:"user2")
     message.channel = .PUSH
-    message.sendWithCompletionHandler { (response, error) -> Void in
+    message.sendWithCompletionHandler ({ (response, error) -> Void in
         if (error == nil) {
             NSLog("Message Sent");
         }
@@ -75,5 +75,5 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     }
     
     // The rest of your imagePickerController:didFinishPickingMediaWithInfo: method
-}
+})
 ```

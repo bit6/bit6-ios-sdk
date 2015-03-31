@@ -30,12 +30,12 @@ message.image = image
 message.destination = Bit6Address(kind:.USERNAME, 
                                  value:"user2")
 message.channel = .PUSH
-message.sendWithCompletionHandler { (response, error) -> Void in
+message.sendWithCompletionHandler ({ (response, error) -> Void in
     if (error == nil) {
         NSLog("Message Sent");
     }
     else {
         NSLog("Message Failed with Error: %@",error.localizedDescription);
     }
-}
+})
 ```
