@@ -22,7 +22,7 @@ var group = Bit6Group(forConversation:conversation)
 
 ```objc
 //ObjectiveC
-[Bit6Group createGroupWithTitle:@"MyGroup" 
+[Bit6Group createGroupWithMetadata:@{@"key1":@"value1", ...} 
 					 completion:^(Bit6Group *group, NSError *error) {
 			            if (!error) {
 			                //group created
@@ -31,7 +31,7 @@ var group = Bit6Group(forConversation:conversation)
 ```
 ```objc
 //Swift
-Bit6Group.createGroupWithTitle:("MyGroup", 
+Bit6Group.createGroupWithMetadata(["key1":"value1", ...], 
 					completion:{(group, error) -> Void in
 					    if (error != nil) {
 					        //group created
@@ -68,18 +68,18 @@ A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will b
 
 ```objc
 //ObjectiveC
-[group setMetadata:@{@"title":"New Title"}
+[group setMetadata:@{@"key1":@"value1", ...}
 			completion:^(NSError *error) {
 				if (!error) {
-					//title has changed
+					//metadata has changed
 				}
 }];
 ```
 ```objc
 //Swift
-group.setMetadata("New Title", completion:{(error) -> Void in
+group.setMetadata(["key1":"value1", ...], completion:{(error) -> Void in
       if (error != nil) {
-          //title has changed
+          //metadata has changed
       }
 })
 ```
