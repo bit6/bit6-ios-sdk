@@ -12,7 +12,7 @@
 @interface ConversationsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *conversations;
+@property (strong, nonatomic) NSMutableArray *conversations;
 
 @end
 
@@ -22,14 +22,14 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(conversationsUpdatedNotification:) name:Bit6ConversationsUpdatedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(conversationsChangedNotification:) name:Bit6ConversationsChangedNotification object:nil];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6ConversationsUpdatedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad
@@ -40,13 +40,14 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
-- (NSArray*)conversations
+- (NSMutableArray*)conversations
 {
     if (!_conversations) {
-        _conversations = [Bit6 conversations];
+        _conversations = [NSMutableArray arrayWithArray:[Bit6 conversations]];
     }
     return _conversations;
 }
@@ -60,7 +61,7 @@
 }
 
 - (IBAction)touchedAddButton:(id)sender {
-    UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the destination username" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the destination username, or type several usernames separated by comma to create a group conversation" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     obj.alertViewStyle = UIAlertViewStylePlainTextInput;
     [obj show];
 }
@@ -69,17 +70,47 @@
 {
     if (buttonIndex!=alertView.cancelButtonIndex) {
         UITextField *textfield = [alertView textFieldAtIndex:0];
-        NSString *destination = textfield.text;
-        if ([destination length]>0) {
-            Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
-            Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
-            if (conversation) {
-                [Bit6 addConversation:conversation];
-            }
-            else {
-                [[[UIAlertView alloc] initWithTitle:@"Invalid username" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        NSString *string = textfield.text;
+        
+        NSArray *destinations = [string componentsSeparatedByString:@","];
+        
+        if (destinations.count == 1) {
+            if (destinations[0]>0) {
+                Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destinations[0]];
+                Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
+                if (conversation) {
+                    [Bit6 addConversation:conversation];
+                }
+                else {
+                    [[[UIAlertView alloc] initWithTitle:@"Invalid username" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                }
             }
         }
+        else if (destinations.count>1) {
+            
+            NSMutableArray *addresses = [NSMutableArray arrayWithCapacity:destinations.count];
+            for (NSString *destination in destinations) {
+                Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
+                if (address) {
+                    [addresses addObject:address];
+                }
+            }
+            
+            [Bit6Group createGroupWithMetadata:@{@"title":@"MyGroup"} completion:^(Bit6Group *group, NSError *error) {
+                if (!error) {
+                    [group inviteAddresses:addresses completion:^(NSArray *members, NSError *error) {
+                        if (error) {
+                            [[[UIAlertView alloc] initWithTitle:@"Failed to invite users to the group" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                        }
+                    }];
+                }
+                else {
+                    [[[UIAlertView alloc] initWithTitle:@"Failed to create the Group" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                }
+            }];
+        }
+        
+        
     }
 }
 
@@ -109,20 +140,51 @@
     UILabel *detailTextLabel = (UILabel*) [cell viewWithTag:2];
     Bit6ThumbnailImageView *imageView = (Bit6ThumbnailImageView*) [cell viewWithTag:3];
     
+    Bit6Group *group = [Bit6Group groupForConversation:conversation];
+    
     NSNumber *badge = conversation.badge;
-    textLabel.text = [NSString stringWithFormat:@"%@%@",conversation.displayName,[badge intValue]!=0?[NSString stringWithFormat:@" (%@)",badge]:@""];
+    textLabel.text = [NSString stringWithFormat:@"%@%@",[group.metadata[@"title"] length]>0?group.metadata[@"title"]:conversation.displayName,[badge intValue]!=0?[NSString stringWithFormat:@" (%@)",badge]:@""];
     Bit6Message *lastMessage = [conversation.messages lastObject];
     
     detailTextLabel.text = lastMessage.content;
     imageView.message = lastMessage;
     imageView.hidden = !lastMessage || (lastMessage.type == Bit6MessageType_Text);
+    
+    if ([conversation.address isKind:Bit6AddressKind_GROUP]) {
+        Bit6Group *group = [Bit6Group groupForConversation:conversation];
+        if (group.hasLeft) {
+            detailTextLabel.text = @"You have left this group";
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         Bit6Conversation *conversation = self.conversations[indexPath.row];
-        [Bit6 deleteConversation:conversation];
+        if ([conversation.address isKind:Bit6AddressKind_GROUP]) {
+            Bit6Group *group = [Bit6Group groupForConversation:conversation];
+            if (!group.hasLeft) {
+                [group leaveGroupWithCompletion:^(NSError *error) {
+                    NSLog(@"Error %@",error.localizedDescription);
+                }];
+                return;
+            }
+        }
+        
+        [Bit6 deleteConversation:conversation completion:nil];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Bit6Conversation *conversation = self.conversations[indexPath.row];
+    if ([conversation.address isKind:Bit6AddressKind_GROUP]) {
+        Bit6Group *group = [Bit6Group groupForConversation:conversation];
+        return group.hasLeft?@"Delete":@"Leave";
+    }
+    else {
+        return @"Delete";
     }
 }
 
@@ -135,17 +197,82 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         Bit6Conversation *conversation = self.conversations[indexPath.row];
         ctvc.conversation = conversation;
-        ctvc.title = conversation.displayName;
+        Bit6Group *group = [Bit6Group groupForConversation:conversation];
+        ctvc.title = [group.metadata[@"title"] length]>0?group.metadata[@"title"]:conversation.displayName;
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 
-#pragma mark - Notifications
+#pragma mark - Data Source changes
 
-- (void) conversationsUpdatedNotification:(NSNotification*)notification
+- (void) conversationsChangedNotification:(NSNotification*)notification
 {
-    self.conversations = nil;
-    [self.tableView reloadData];
+    Bit6Conversation *object = notification.userInfo[Bit6ObjectKey];
+    NSString *change = notification.userInfo[Bit6ChangeKey];
+    
+    if ([change isEqualToString:Bit6AddedKey]) {
+        [self observeAddedBit6Object:object];
+    }
+    if ([change isEqualToString:Bit6UpdatedKey]) {
+        [self observeUpdatedBit6Object:object];
+    }
+    if ([change isEqualToString:Bit6DeletedKey]) {
+        [self observeDeletedBit6Object:object];
+    }
+}
+
+- (void) observeAddedBit6Object:(Bit6Conversation*)conversation
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.conversations insertObject:conversation atIndex:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void) observeUpdatedBit6Object:(Bit6Conversation*)conversation
+{
+    NSUInteger index = NSNotFound;
+    for (NSInteger x=self.conversations.count-1; x>=0; x--) {
+        if ([self.conversations[x] isEqual:conversation]) {
+            index = x;
+            break;
+        }
+    }
+    
+    if (index!=NSNotFound) {
+        if (index!=0) {
+            Bit6Conversation *firstConversation = self.conversations[0];
+            Bit6Conversation *modifiedConversation = self.conversations[index];
+            NSComparisonResult compare = [firstConversation compare:modifiedConversation];
+            if (compare == NSOrderedDescending) {
+                [self.conversations removeObjectAtIndex:index];
+                [self.conversations insertObject:conversation atIndex:0];
+                [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] toIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            }
+            else {
+                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+        }
+        else {
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+    }
+}
+
+- (void) observeDeletedBit6Object:(Bit6Conversation*)conversation
+{
+    NSUInteger index = NSNotFound;
+    for (NSInteger x=self.conversations.count-1; x>=0; x--) {
+        if ([self.conversations[x] isEqual:conversation]) {
+            index = x;
+            break;
+        }
+    }
+    
+    if (index!=NSNotFound) {
+        [self.conversations removeObjectAtIndex:index];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 @end

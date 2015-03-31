@@ -22,6 +22,7 @@
 		D8A9E91C1A8FAA1A00027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E91B1A8FAA1A00027A28 /* AudioToolbox.framework */; };
 		D8A9E91E1A8FAA2000027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E91D1A8FAA2000027A28 /* CoreMedia.framework */; };
 		D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AA8343192A8FEC0065BDA6 /* libz.dylib */; };
+		D8C040FA1ACA7CE600D51A19 /* ConversationDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C040F91ACA7CE600D51A19 /* ConversationDetailsTableViewController.m */; };
 		D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */; };
 		D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACB8194ABD2A00AFFB53 /* main.m */; };
 		D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */; };
@@ -52,6 +53,8 @@
 		D8A9E91B1A8FAA1A00027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D8A9E91D1A8FAA2000027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D8AA8343192A8FEC0065BDA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D8C040F81ACA7CE600D51A19 /* ConversationDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationDetailsTableViewController.h; path = ChatDemo/ConversationDetailsTableViewController.h; sourceTree = SOURCE_ROOT; };
+		D8C040F91ACA7CE600D51A19 /* ConversationDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationDetailsTableViewController.m; path = ChatDemo/ConversationDetailsTableViewController.m; sourceTree = SOURCE_ROOT; };
 		D8EDACB5194ABD2A00AFFB53 /* Bit6ChatDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bit6ChatDemo-Info.plist"; path = "ChatDemo/Bit6ChatDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D8EDACB6194ABD2A00AFFB53 /* Bit6ChatDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bit6ChatDemo-Prefix.pch"; path = "ChatDemo/Bit6ChatDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ChatDemo/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
@@ -154,6 +157,8 @@
 				D8EDACC2194ABD4D00AFFB53 /* ChatsTableViewController.m */,
 				D8EDACC5194ABD4D00AFFB53 /* ImageAttachedViewController.h */,
 				D8EDACC6194ABD4D00AFFB53 /* ImageAttachedViewController.m */,
+				D8C040F81ACA7CE600D51A19 /* ConversationDetailsTableViewController.h */,
+				D8C040F91ACA7CE600D51A19 /* ConversationDetailsTableViewController.m */,
 				D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */,
 				D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */,
 				D8EDACCA194ABD4D00AFFB53 /* Main.storyboard */,
@@ -271,6 +276,7 @@
 				D8EDACD1194ABD4D00AFFB53 /* ConversationsViewController.m in Sources */,
 				D8EDACD6194ABD4D00AFFB53 /* UIBActionSheet.m in Sources */,
 				D8EDACD2194ABD4D00AFFB53 /* ImageAttachedViewController.m in Sources */,
+				D8C040FA1ACA7CE600D51A19 /* ConversationDetailsTableViewController.m in Sources */,
 				D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */,
 				D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */,
 				D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6ThumbnailImageViewDelegate.html">
+	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6ThumbnailImageViewDelegate protocol defines methods that your delegate object must implement to interact with a Bit6ThumbnailImageView object. The methods of this protocol notify your delegate when the imageView has been tapped by the user.</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,19 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6ThumbnailImageViewDelegate/touchedThumbnailImageView:</TokenIdentifier>
-			<Abstract type="html">Tell the delegate that the imageView has been tapped by the user.</Abstract>
-			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>- (void)touchedThumbnailImageView:(Bit6ThumbnailImageView *)thumbnailImageView</Declaration>
+			<Declaration>- (void)currentLocationController:(Bit6CurrentLocationController *)b6clc didFailWithError:(NSError *)error message:(Bit6OutgoingMessage *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>thumbnailImageView</Name>
-					<Abstract type="html">The Bit6ThumbnailImageView object tapped by the user.</Abstract>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/touchedThumbnailImageView:</Anchor>
+			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)currentLocationController:(Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

@@ -59,7 +59,7 @@
 
 /*! Location to send with the message
  */
-@property (nonatomic) CLLocation *location;
+@property (nonatomic, strong) CLLocation *location;
 
 /*! Sends the message.
  @param completion block to be called when the operation is completed.

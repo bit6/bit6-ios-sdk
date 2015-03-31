@@ -96,6 +96,47 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setShouldDownloadVideoBeforePlaying:</TokenIdentifier>
+			<Abstract type="html">Configure the video attachments playing mode.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setShouldDownloadVideoBeforePlaying:(BOOL)shouldDownloadVideoBeforePlaying</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>shouldDownloadVideoBeforePlaying</Name>
+					<Abstract type="html">if true the video attachments will be downloaded to be played locally. If false, the video will be streamed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setShouldDownloadVideoBeforePlaying:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/shouldDownloadVideoBeforePlaying</TokenIdentifier>
+			<Abstract type="html">Obtains the current configuration to play video attachments.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)shouldDownloadVideoBeforePlaying</Declaration>
+			
+			<ReturnValue><Abstract type="html">true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</Abstract></ReturnValue>
+			<Anchor>//api/name/shouldDownloadVideoBeforePlaying</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/groups</TokenIdentifier>
+			<Abstract type="html">Get all the existing groups.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)groups</Declaration>
+			
+			<ReturnValue><Abstract type="html">the existing Bit6Group objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/groups</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/conversations</TokenIdentifier>
 			<Abstract type="html">Get all the existing conversations.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
@@ -125,36 +166,42 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteConversation:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteConversation:completion:</TokenIdentifier>
 			<Abstract type="html">Delete a conversation from the system. All the messages inside the conversation are deleted too.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (void)deleteConversation:(Bit6Conversation *)conversation</Declaration>
+			<Declaration>+ (void)deleteConversation:(Bit6Conversation *)conversation completion:(Bit6CompletionHandler)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>conversation</Name>
 					<Abstract type="html">Bit6Conversation object to be deleted</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called when the operation is completed.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/deleteConversation:</Anchor>
+			<Anchor>//api/name/deleteConversation:completion:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteMessage:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteMessage:completion:</TokenIdentifier>
 			<Abstract type="html">Deletes a message from the system.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (void)deleteMessage:(Bit6Message *)message</Declaration>
+			<Declaration>+ (void)deleteMessage:(Bit6Message *)message completion:(Bit6CompletionHandler)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>message</Name>
 					<Abstract type="html">Bit6Message object to be deleted</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called when the operation is completed.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/deleteMessage:</Anchor>
+			<Anchor>//api/name/deleteMessage:completion:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -412,35 +459,6 @@
 			</Parameters>
 			
 			<Anchor>//api/name/typingBeginToAddress:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setShouldDownloadVideoBeforePlaying:</TokenIdentifier>
-			<Abstract type="html">Configure the video attachments playing mode.</Abstract>
-			<DeclaredIn>Bit6.h</DeclaredIn>
-			
-			<Declaration>+ (void)setShouldDownloadVideoBeforePlaying:(BOOL)shouldDownloadVideoBeforePlaying</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>shouldDownloadVideoBeforePlaying</Name>
-					<Abstract type="html">if true the video attachments will be downloaded to be played locally. If false, the video will be streamed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setShouldDownloadVideoBeforePlaying:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/shouldDownloadVideoBeforePlaying</TokenIdentifier>
-			<Abstract type="html">Obtains the current configuration to play video attachments.</Abstract>
-			<DeclaredIn>Bit6.h</DeclaredIn>
-			
-			<Declaration>+ (BOOL)shouldDownloadVideoBeforePlaying</Declaration>
-			
-			<ReturnValue><Abstract type="html">true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</Abstract></ReturnValue>
-			<Anchor>//api/name/shouldDownloadVideoBeforePlaying</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

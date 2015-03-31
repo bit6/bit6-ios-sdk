@@ -11,6 +11,7 @@
 #import "Bit6ApplicationManager.h"
 #import "Bit6Constants.h"
 #import "Bit6Conversation.h"
+#import "Bit6Group.h"
 #import "Bit6OutgoingMessage.h"
 #import "Bit6Session.h"
 #import "Bit6ImageView.h"
@@ -25,4 +26,4 @@
 #import "Bit6Utils.h"
 #import "Bit6.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.8.5"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.9.0"

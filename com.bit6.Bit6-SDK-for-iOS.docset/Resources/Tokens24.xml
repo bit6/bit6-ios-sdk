@@ -1,87 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6CallState.html">
+	<File path="Protocols/Bit6ThumbnailImageViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
-			<Abstract type="html">Call status for a Bit6CallController.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageViewDelegate protocol defines methods that your delegate object must implement to interact with a Bit6ThumbnailImageView object. The methods of this protocol notify your delegate when the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
-            <Abstract type="html">The call hasn&apos;t started.</Abstract>
-            <Declaration>Bit6CallState_NEW</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6ThumbnailImageViewDelegate/touchedThumbnailImageView:</TokenIdentifier>
+			<Abstract type="html">Tell the delegate that the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)touchedThumbnailImageView:(Bit6ThumbnailImageView *)thumbnailImageView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thumbnailImageView</Name>
+					<Abstract type="html">The Bit6ThumbnailImageView object tapped by the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/touchedThumbnailImageView:</Anchor>
             <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_PROGRESS</TokenIdentifier>
-            <Abstract type="html">The call is starting.</Abstract>
-            <Declaration>Bit6CallState_PROGRESS</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ANSWER</TokenIdentifier>
-            <Abstract type="html">The call has started.</Abstract>
-            <Declaration>Bit6CallState_ANSWER</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
-            <Abstract type="html">The call is disconnected for the moment.</Abstract>
-            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
-            <Abstract type="html">The call ended.</Abstract>
-            <Declaration>Bit6CallState_END</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ERROR</TokenIdentifier>
-            <Abstract type="html">The call ended with an error.</Abstract>
-            <Declaration>Bit6CallState_ERROR</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_MISSED</TokenIdentifier>
-            <Abstract type="html">It is a missed call.</Abstract>
-            <Declaration>Bit6CallState_MISSED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

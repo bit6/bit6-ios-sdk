@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6RTStatus.html">
+	<File path="Constants/Bit6MessageType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6RTStatus</TokenIdentifier>
-			<Abstract type="html">Web Socket connection status.</Abstract>
-			<DeclaredIn>Bit6Constants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageType</TokenIdentifier>
+			<Abstract type="html">Message type for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -14,31 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_DISCONNECTED</TokenIdentifier>
-            <Abstract type="html">Web Socket is disconnected.</Abstract>
-            <Declaration>Bit6RTStatus_DISCONNECTED</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Text</TokenIdentifier>
+            <Abstract type="html">The message has only text.</Abstract>
+            <Declaration>Bit6MessageType_Text</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="33"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTING</TokenIdentifier>
-            <Abstract type="html">Web Socket is tring to connect.</Abstract>
-            <Declaration>Bit6RTStatus_CONNECTING</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="33"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTED</TokenIdentifier>
-            <Abstract type="html">Web Socket is connected.</Abstract>
-            <Declaration>Bit6RTStatus_CONNECTED</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Attachments</TokenIdentifier>
+            <Abstract type="html">The message has an attachment.</Abstract>
+            <Declaration>Bit6MessageType_Attachments</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Location</TokenIdentifier>
+            <Abstract type="html">The message has a location.</Abstract>
+            <Declaration>Bit6MessageType_Location</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="33"/>
         </Token>

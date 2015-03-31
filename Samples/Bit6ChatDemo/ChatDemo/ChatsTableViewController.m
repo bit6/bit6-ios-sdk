@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ImageAttachedViewController.h"
 #import "UIBActionSheet.h"
+#import "ConversationDetailsTableViewController.h"
 
 @interface ChatsTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6ThumbnailImageViewDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate, UITextFieldDelegate, Bit6MenuControllerDelegate>
 {
@@ -28,6 +29,11 @@
 - (void) viewDidLoad
 {
     self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [button addTarget:self action:@selector(showDetailInfo) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *detailButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = detailButton;
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -48,31 +54,49 @@
 
 - (void)dealloc
 {
-    self.conversation.ignoreBadge = NO;
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6MessagesUpdatedNotification object:self.conversation];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6TypingDidBeginRtNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:Bit6TypingDidEndRtNotification object:nil];
+    self.conversation.currentConversation = NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (BOOL) canChat
+{
+    if ([self.conversation.address isKind:Bit6AddressKind_GROUP]) {
+        Bit6Group *group = [Bit6Group groupForConversation:self.conversation];
+        if (group.hasLeft) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void) showDetailInfo
+{
+    [self performSegueWithIdentifier:@"showDetails" sender:nil];
 }
 
 - (void) setConversation:(Bit6Conversation *)conversation
 {
     _conversation = conversation;
-    _conversation.ignoreBadge = YES;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messagesUpdatedNotification:) name:Bit6MessagesUpdatedNotification object:conversation];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(typingDidBeginRtNotification:) name:Bit6TypingDidBeginRtNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(typingDidEndRtNotification:) name:Bit6TypingDidEndRtNotification object:nil];
+    _conversation.currentConversation = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(conversationsChangedNotification:) name:Bit6ConversationsChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messagesChangedNotification:) name:Bit6MessagesChangedNotification object:self.conversation];
 }
 
 - (NSArray*)messages
 {
     if (!_messages && self.conversation) {
-        _messages = [self.conversation.messages mutableCopy];
+        _messages = [NSMutableArray arrayWithArray:self.conversation.messages];
     }
     return _messages;
 }
 
 - (IBAction)touchedAttachButton:(UIBarButtonItem*)sender
 {
+    if (!self.canChat) {
+        [[[UIAlertView alloc] initWithTitle:@"You have left this group" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
+    
     UIBActionSheet *as = [[UIBActionSheet alloc] initWithTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Take Video", @"Select Image", @"Select Video", @"Record Audio", @"Current Location", nil];
     [as showFromBarButtonItem:sender animated:YES dismissHandler:^(NSInteger selectedIndex, BOOL didCancel, BOOL didDestruct) {
         if (!didCancel) {
@@ -150,7 +174,7 @@
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Bit6Message *message = self.messages[indexPath.row];
-    [Bit6 deleteMessage:message];
+    [Bit6 deleteMessage:message completion:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -167,6 +191,10 @@
 #pragma mark - Send Text
 
 - (IBAction)touchedComposeButton:(id)sender {
+    if (!self.canChat) {
+        [[[UIAlertView alloc] initWithTitle:@"You have left this group" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        return;
+    }
     
     UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the message" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send",nil];
     alert_type = 0;
@@ -351,72 +379,82 @@
     }
 }
 
-#pragma mark - Notifications
+#pragma mark - Data Source changes
 
-- (void) messagesUpdatedNotification:(NSNotification*)notification
+- (void) conversationsChangedNotification:(NSNotification*)notification
 {
-    /*
-    //Simpler way to refresh the messages
-    self.messages = nil;
-    [self.tableView reloadData];
+    Bit6Conversation *object = notification.userInfo[Bit6ObjectKey];
+    
+    if ([object isEqual:self.conversation]) {
+        NSString *change = notification.userInfo[Bit6ChangeKey];
+        if ([change isEqualToString:Bit6UpdatedKey]) {
+            Bit6Group *group = [Bit6Group groupForConversation:self.conversation];
+            self.title = [group.metadata[@"title"] length]>0?group.metadata[@"title"]:self.conversation.displayName;
+            if (object.typingAddress) {
+                self.typingBarButtonItem.title = [NSString stringWithFormat:@"%@ is typing...",object.typingAddress.displayName];
+            }
+            else {
+                self.typingBarButtonItem.title = @"";
+            }
+        }
+    }
+}
+
+- (void) messagesChangedNotification:(NSNotification*)notification
+{
+    Bit6Message *object = notification.userInfo[Bit6ObjectKey];
+    NSString *change = notification.userInfo[Bit6ChangeKey];
+    
+    if ([change isEqualToString:Bit6AddedKey]) {
+        [self observeAddedMessage:object];
+    }
+    else if ([change isEqualToString:Bit6UpdatedKey]) {
+        [self observeUpdatedMessage:object];
+    }
+    else if ([change isEqualToString:Bit6DeletedKey]) {
+        [self observeDeletedMessage:object];
+    }
+}
+
+- (void) observeAddedMessage:(Bit6Message*)message
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messages.count inSection:0];
+    [self.messages addObject:message];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self scrollToBottomAnimated:YES];
-     */
-    
-    //Complex way to refresh the messages
-    NSArray *messages = notification.userInfo[@"msgs"];
-    for (NSDictionary *info in messages) {
-        Bit6Message *msg = info[@"msg"];
-        NSString *status = info[@"status"];
-        //new messages
-        if ([status isEqualToString:Bit6MessageNotificationKey_ADDED]) {
-            NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.messages.count inSection:0];
-            [self.messages addObject:msg];
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationTop];
-            [self scrollToBottomAnimated:YES];
-        }
-        //updated messages
-        else {
-            
-            //searching the index of the message
-            NSUInteger index = NSNotFound;
-            for (int x=(int)self.messages.count-1; x>=0; x--) {
-                if ([self.messages[x] isEqual:msg]) {
-                    index = x;
-                    break;
-                }
-            }
-            
-            if (index!=NSNotFound) {
-                //message has changed
-                if ([status isEqualToString:Bit6MessageNotificationKey_UPDATED]) {
-                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-                    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                    [self tableView:self.tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
-                }
-                //message has been deleted
-                else if ([status isEqualToString:Bit6MessageNotificationKey_DELETED]) {
-                    [self.messages removeObjectAtIndex:index];
-                    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-                }
-            }
+}
+
+- (void) observeUpdatedMessage:(Bit6Message*)message
+{
+    NSUInteger index = NSNotFound;
+    for (NSInteger x=self.messages.count-1; x>=0; x--) {
+        if ([self.messages[x] isEqual:message]) {
+            index = x;
+            break;
         }
     }
     
-}
-
-- (void) typingDidBeginRtNotification:(NSNotification*)notification
-{
-    Bit6Address *address = notification.object;
-    if ([address isEqual:self.conversation.address]) {
-        self.typingBarButtonItem.title = @"Typing...";
+    if (index!=NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [self tableView:self.tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
     }
 }
 
-- (void) typingDidEndRtNotification:(NSNotification*)notification
+- (void) observeDeletedMessage:(Bit6Message*)message
 {
-    Bit6Address *address = notification.object;
-    if ([address isEqual:self.conversation.address]) {
-        self.typingBarButtonItem.title = @"";
+    NSUInteger index = NSNotFound;
+    for (NSInteger x=self.messages.count-1; x>=0; x--) {
+        if ([self.messages[x] isEqual:message]) {
+            index = x;
+            break;
+        }
+    }
+    
+    if (index!=NSNotFound) {
+        [self.messages removeObjectAtIndex:index];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
@@ -462,6 +500,11 @@
     if ([segue.identifier isEqualToString:@"showFullImage"]) {
         ImageAttachedViewController *iavc = segue.destinationViewController;
         iavc.message = (Bit6Message*)sender;
+    }
+    else if ([segue.identifier isEqualToString:@"showDetails"]) {
+        ConversationDetailsTableViewController *obj = segue.destinationViewController;
+        obj.conversation = self.conversation;
+        obj.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
     }
 }
 

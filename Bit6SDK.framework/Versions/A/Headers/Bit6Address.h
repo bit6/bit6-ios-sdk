@@ -21,7 +21,9 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
     /*! The Bit6Address refers to a Google account */
     Bit6AddressKind_GOOGLE,
     /*! The Bit6Address refers to an anonymous session */
-    Bit6AddressKind_UID
+    Bit6AddressKind_UID,
+    /*! The Bit6Address refers to a group */
+    Bit6AddressKind_GROUP
 };
 
 /*! Bit6Address is used to describe a user identity or a destination for calling and messaging. It consists of a type (<Bit6AddressKind>) and a value. */
@@ -34,16 +36,21 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
  */
 + (instancetype)addressWithKind:(Bit6AddressKind)kind value:(NSString*)value;
 
-/*! A display name for this <Bit6Address> object. */
+/*! A display name for the sender. */
 @property (nonatomic, readonly) NSString *displayName;
 
-/*! returns the kind of BitAddress. 
+/*! returns the kind of sender.
  @note See <Bit6AddressKind> enumeration
 */
 @property (nonatomic, readonly) NSNumber *kind;
 
-/*! returns the value of BitAddress.
+/*! Check the <Bit6AddressKind> of the sender
+ @param kind <Bit6AddressKind> to compare with the sender
+ @return YES if the sender match the <Bit6AddressKind> in the param.
  */
+- (BOOL) isKind:(Bit6AddressKind)kind;
+
+/*! returns the value of BitAddress. */
 @property (nonatomic, readonly) NSString *value;
 
 @end

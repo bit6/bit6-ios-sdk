@@ -15,24 +15,22 @@ extern NSString* const Bit6LogoutStartedNotification;
 extern NSString* const Bit6DidRegisterForRemoteNotifications;
 extern NSString* const Bit6DidFailToRegisterForRemoteNotifications;
 
-extern NSString* const Bit6MessagesUpdatedNotification;
-extern NSString* const Bit6ConversationsUpdatedNotification;
-
-extern NSString* const Bit6TypingDidBeginRtNotification;
-extern NSString* const Bit6TypingDidEndRtNotification;
-
 extern NSString* const Bit6RTConnectionStatusChangedNotification;
 extern NSString* const Bit6CustomRtNotification;
-
-extern NSString* const Bit6MessageNotificationKey_ADDED;
-extern NSString* const Bit6MessageNotificationKey_UPDATED;
-extern NSString* const Bit6MessageNotificationKey_DELETED;
 
 extern NSString* const Bit6IncomingCallNotification;
 
 extern NSString* const Bit6FileDownloadedNotification;
 
 extern NSString* const Bit6AudioPlayingNotification;
+
+extern NSString* const Bit6MessagesChangedNotification;
+extern NSString* const Bit6ConversationsChangedNotification;
+extern NSString* const Bit6ObjectKey;
+extern NSString* const Bit6ChangeKey;
+extern NSString* const Bit6AddedKey;
+extern NSString* const Bit6UpdatedKey;
+extern NSString* const Bit6DeletedKey;
 
 /*! Bit6 error constants */
 typedef NS_ENUM(NSInteger, Bit6Error) {

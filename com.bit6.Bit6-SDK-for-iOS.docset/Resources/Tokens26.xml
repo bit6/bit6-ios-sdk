@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageAttachmentCategory.html">
+	<File path="Constants/Bit6CallState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentCategory</TokenIdentifier>
-			<Abstract type="html">Message attachment category for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
+			<Abstract type="html">Call status for a Bit6CallController.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -14,21 +14,71 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_THUMBNAIL</TokenIdentifier>
-            <Abstract type="html">The thumbnail image for the message.</Abstract>
-            <Declaration>Bit6MessageAttachmentCategory_THUMBNAIL</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
+            <Abstract type="html">The call hasn&apos;t started.</Abstract>
+            <Declaration>Bit6CallState_NEW</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="26"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_FULL_SIZE</TokenIdentifier>
-            <Abstract type="html">The full size attachment for the message.</Abstract>
-            <Declaration>Bit6MessageAttachmentCategory_FULL_SIZE</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_PROGRESS</TokenIdentifier>
+            <Abstract type="html">The call is starting.</Abstract>
+            <Declaration>Bit6CallState_PROGRESS</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ANSWER</TokenIdentifier>
+            <Abstract type="html">The call has started.</Abstract>
+            <Declaration>Bit6CallState_ANSWER</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
+            <Abstract type="html">The call is disconnected for the moment.</Abstract>
+            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
+            <Abstract type="html">The call ended.</Abstract>
+            <Declaration>Bit6CallState_END</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ERROR</TokenIdentifier>
+            <Abstract type="html">The call ended with an error.</Abstract>
+            <Declaration>Bit6CallState_ERROR</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_MISSED</TokenIdentifier>
+            <Abstract type="html">It is a missed call.</Abstract>
+            <Declaration>Bit6CallState_MISSED</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="26"/>
         </Token>

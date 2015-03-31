@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bit6"
-  s.version      = "0.8.5"
+  s.version      = "0.9.0"
   s.summary      = "Bit6 Framework"
 
   s.description  = <<-DESC

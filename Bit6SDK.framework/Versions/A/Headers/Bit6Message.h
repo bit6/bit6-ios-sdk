@@ -10,6 +10,8 @@
 #import "Bit6Address.h"
 #import <UIKit/UIKit.h>
 
+@class Bit6Conversation;
+
 /*! Channels available for sending a <Bit6Message>. */
 typedef NS_ENUM(NSInteger, Bit6MessageChannel) {
     /*! The message is an SMS. */
@@ -85,50 +87,53 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 /*! A Bit6Message object represents a message sent or received by the user. */
 @interface Bit6Message : NSObject
 
-/*! The text content of the message. */
+/*! The conversation the sender belongs to. */
+@property (nonatomic, readonly) Bit6Conversation *conversation;
+
+/*! The text content of the sender. */
 @property (nonatomic, readonly, copy) NSString *content;
 
-/*! The creation timestamp of the message. */
+/*! The creation timestamp of the sender. */
 @property (nonatomic, copy, readonly) NSNumber *created;
 
-/*! The last updated timestamp of the message. */
+/*! The last updated timestamp of the sender. */
 @property (nonatomic, copy, readonly) NSNumber *updated;
 
 /*! YES if this is an incoming message. */
 @property (nonatomic, readonly) BOOL incoming;
 
-/*! Message status as a value of the <Bit6MessageStatus> enumeration. */
+/*! Sender status as a value of the <Bit6MessageStatus> enumeration. */
 @property (nonatomic, readonly) Bit6MessageStatus status;
 
-/*! Message type as a value of the <Bit6MessageType> enumeration. */
+/*! Sender type as a value of the <Bit6MessageType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageType type;
 
 /*! Gets the other person address as a <Bit6Address> object. */
 @property (nonatomic, readonly, copy) Bit6Address *other;
 
-/*! Gets the information about the message attachments. */
+/*! Gets the information about the sender attachments. */
 @property (nonatomic, readonly, strong) Bit6MessageData *data;
 
-/*! Gets the attachment type of this message as a value of the <Bit6MessageFileType> enumeration. */
+/*! Gets the attachment type of the sender as a value of the <Bit6MessageFileType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageFileType attachFileType;
 
-/*! Gets the length of the audio file attached to the message. 
- @note You should check if the message has an audio file attached by using the Bit6Message.attachFileType property. */
+/*! Gets the length of the audio file attached to the sender.
+ @note You should check if the sender has an audio file attached by using the Bit6Message.attachFileType property. */
 @property (nonatomic, readonly) double audioDuration;
 
-/*! Returns the status for the message's attachments
+/*! Returns the status for the sender's attachments
  @param attachmentCategory attachment to query as a value of the <Bit6MessageAttachmentCategory> enumeration
  @return the attachment's status as a value of the <Bit6MessageAttachmentStatus> enumeration
  */
 - (Bit6MessageAttachmentStatus) attachmentStatusForAttachmentCategory:(Bit6MessageAttachmentCategory)attachmentCategory;
 
-/*! Returns the path for the message's attachments
+/*! Returns the path for the sender's attachments
  @param attachmentCategory attachment to query as a value of the <Bit6MessageAttachmentCategory> enumeration
  @return the attachment's path
  */
 - (NSString*) attachmentPathForAttachmentCategory:(Bit6MessageAttachmentCategory)attachmentCategory;
 
-/*! Starts to download the attachment associated with this message. If the attachment is already downloading this method does nothing.
+/*! Starts to download the attachment associated with the sender. If the attachment is already downloading this method does nothing.
  @param attachmentCategory attachment to download.
  @note Listen to the Bit6FileDownloadedNotification to handle downloading events.
  */

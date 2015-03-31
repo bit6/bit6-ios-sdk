@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6SessionProvider.html">
+	<File path="Constants/Bit6PushNotificationMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6SessionProvider</TokenIdentifier>
-			<Abstract type="html">Bit6Session providers</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6PushNotificationMode</TokenIdentifier>
+			<Abstract type="html">Push Notification Mode</Abstract>
+			<DeclaredIn>Bit6Constants.h</DeclaredIn>
             
 			
 			<NodeRef refid="34"/>
@@ -14,21 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6SessionProvider_FACEBOOK</TokenIdentifier>
-            <Abstract type="html">Facebook session</Abstract>
-            <Declaration>Bit6SessionProvider_FACEBOOK</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6PushNotificationMode_DEVELOPMENT</TokenIdentifier>
+            <Abstract type="html">Development Mode for Push Notifications</Abstract>
+            <Declaration>Bit6PushNotificationMode_DEVELOPMENT</Declaration>
             
-            <DeclaredIn>Bit6Session.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="34"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6SessionProvider_GOOGLE</TokenIdentifier>
-            <Abstract type="html">Google session</Abstract>
-            <Declaration>Bit6SessionProvider_GOOGLE</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6PushNotificationMode_PRODUCTION</TokenIdentifier>
+            <Abstract type="html">Production Mode for Push Notifications</Abstract>
+            <Declaration>Bit6PushNotificationMode_PRODUCTION</Declaration>
             
-            <DeclaredIn>Bit6Session.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="34"/>
         </Token>

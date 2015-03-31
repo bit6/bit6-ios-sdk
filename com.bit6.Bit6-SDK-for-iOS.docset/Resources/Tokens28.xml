@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageChannel.html">
+	<File path="Constants/Bit6MessageAttachmentCategory.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageChannel</TokenIdentifier>
-			<Abstract type="html">Channels available for sending a Bit6Message.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentCategory</TokenIdentifier>
+			<Abstract type="html">Message attachment category for a Bit6Message.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_SMS</TokenIdentifier>
-            <Abstract type="html">The message is an SMS.</Abstract>
-            <Declaration>Bit6MessageChannel_SMS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_THUMBNAIL</TokenIdentifier>
+            <Abstract type="html">The thumbnail image for the message.</Abstract>
+            <Declaration>Bit6MessageAttachmentCategory_THUMBNAIL</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageChannel_PUSH</TokenIdentifier>
-            <Abstract type="html">The message is an app-to-app message.</Abstract>
-            <Declaration>Bit6MessageChannel_PUSH</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_FULL_SIZE</TokenIdentifier>
+            <Abstract type="html">The full size attachment for the message.</Abstract>
+            <Declaration>Bit6MessageAttachmentCategory_FULL_SIZE</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             

@@ -32,7 +32,7 @@
 + (void) startWithApiKey:(NSString*)apiKey pushNotificationMode:(Bit6PushNotificationMode)pushNotificationMode launchingWithOptions:(NSDictionary *)launchOptions;
 
 ///---------------------------------------------------------------------------------------
-/// @name ￼Properties
+/// @name ￼Controllers
 ///---------------------------------------------------------------------------------------
 
 /*! Returns the default Bit6Session object.
@@ -61,6 +61,29 @@
 + (Bit6IncomingCallNotificationBanner*) incomingCallNotificationBanner;
 
 ///---------------------------------------------------------------------------------------
+/// @name ￼Properties
+///---------------------------------------------------------------------------------------
+
+/*! Configure the video attachments playing mode.
+ @param shouldDownloadVideoBeforePlaying if true the video attachments will be downloaded to be played locally. If false, the video will be streamed.
+ */
++ (void) setShouldDownloadVideoBeforePlaying:(BOOL)shouldDownloadVideoBeforePlaying;
+
+/*! Obtains the current configuration to play video attachments.
+ @return true if the video attachments will be downloaded to be played locally. false if the video will be streamed.
+ */
++ (BOOL) shouldDownloadVideoBeforePlaying;
+
+///---------------------------------------------------------------------------------------
+/// @name ￼Working with Groups
+///---------------------------------------------------------------------------------------
+
+/*! Get all the existing groups.
+ @return the existing <Bit6Group> objects as a NSArray.
+ */
++ (NSArray*) groups;
+
+///---------------------------------------------------------------------------------------
 /// @name ￼Working with Conversations
 ///---------------------------------------------------------------------------------------
 
@@ -77,13 +100,15 @@
 
 /*! Delete a conversation from the system. All the messages inside the conversation are deleted too.
  @param conversation <Bit6Conversation> object to be deleted
+ @param completion block to be called when the operation is completed.
  */
-+ (void) deleteConversation:(Bit6Conversation*)conversation;
++ (void) deleteConversation:(Bit6Conversation*)conversation completion:(Bit6CompletionHandler)completion;
 
 /*! Deletes a message from the system.
  @param message <Bit6Message> object to be deleted
+ @param completion block to be called when the operation is completed.
  */
-+ (void) deleteMessage:(Bit6Message*)message;
++ (void) deleteMessage:(Bit6Message*)message completion:(Bit6CompletionHandler)completion;
 
 /*! Gets the number of unread messages for all existing conversations.
  @discussion This is done by adding the values of <-[Bit6Conversation badge]> for all existing conversations
@@ -193,16 +218,6 @@
  @param address address where the notification will be sent
  */
 + (void) typingBeginToAddress:(Bit6Address*)address;
-
-/*! Configure the video attachments playing mode.
- @param shouldDownloadVideoBeforePlaying if true the video attachments will be downloaded to be played locally. If false, the video will be streamed.
- */
-+ (void) setShouldDownloadVideoBeforePlaying:(BOOL)shouldDownloadVideoBeforePlaying;
-
-/*! Obtains the current configuration to play video attachments.
- @return true if the video attachments will be downloaded to be played locally. false if the video will be streamed.
- */
-+ (BOOL) shouldDownloadVideoBeforePlaying;
 
 /*! Used to send a notification to another user. To receive the notification in the other end you can hear to the Bit6CustomRtNotification notifications.
  @param address The <Bit6Address> object to send the message
