@@ -15,14 +15,14 @@ class AppDelegate: Bit6ApplicationManager, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let apikey : NSString = "your_api_key";
-        Bit6.startWithApiKey(apikey, pushNotificationMode: .DEVELOPMENT, launchingWithOptions: launchOptions);
+        let apikey : NSString = "your_api_key"
+        Bit6.startWithApiKey(apikey, pushNotificationMode: .DEVELOPMENT, launchingWithOptions: launchOptions)
         
         return true
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        super.didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler);
+        super.didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler)
     }
 
 }

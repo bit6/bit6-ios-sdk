@@ -13,22 +13,21 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
 
     var conversation : Bit6Conversation! {
         didSet {
-            conversation.ignoreBadge = true
-            NSNotificationCenter.defaultCenter().addObserver(self, selector:"messagesUpdatedNotification:", name: Bit6MessagesUpdatedNotification, object: self.conversation)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector:"typingDidBeginRtNotification:", name: Bit6TypingDidBeginRtNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector:"typingDidEndRtNotification:", name: Bit6TypingDidEndRtNotification, object: nil)
+            conversation.currentConversation = true
+            NSNotificationCenter.defaultCenter().addObserver(self, selector:"messagesChangedNotification:", name: Bit6MessagesChangedNotification, object: self.conversation)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector:"conversationsChangedNotification:", name: Bit6ConversationsChangedNotification, object: nil)
         }
     }
     
     var scroll : Bool
-    var _messages : NSArray!
-    var messages : NSArray {
+    var _messages : NSMutableArray!
+    var messages : NSMutableArray {
         get {
             if (_messages != nil){
                 return _messages
             }
             else {
-                _messages = self.conversation.messages
+                _messages = NSMutableArray(array:self.conversation.messages)
                 return _messages
             }
         }
@@ -45,34 +44,60 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     deinit {
-        self.conversation.ignoreBadge = false
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6MessagesUpdatedNotification, object: self.conversation)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6TypingDidBeginRtNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: Bit6TypingDidEndRtNotification, object: nil)
+        self.conversation.currentConversation = false
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func canChat() -> Bool {
+        var group = Bit6Group(forConversation:self.conversation)
+        if (group != nil && group.hasLeft) {
+            return false
+        }
+        return true
+    }
+    
+    func showDetailInfo() {
+        self.performSegueWithIdentifier("showDetails", sender:nil)
     }
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6.session().userIdentity.displayName);
+        self.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
+        
+        var button = UIButton.buttonWithType(.InfoLight) as UIButton
+        button.addTarget(self, action:"showDetailInfo", forControlEvents:.TouchUpInside)
+        var detailButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = detailButton
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: true)
         if (!self.scroll) {
-            self.scroll = true;
+            self.scroll = true
             self.tableView.reloadData()
             self.tableView.setContentOffset(CGPointMake(0, CGFloat.max), animated: false)
         }
     }
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         Bit6.audioPlayer().stopPlayingAudioFile()
     }
     
     @IBAction func touchedAttachButton(sender : UIBarButtonItem) {
+        
+        if (!self.canChat()) {
+            var alert = UIAlertController(title:"You have left this group", message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:{(action :UIAlertAction!) in
+            }))
+            self.navigationController?.presentViewController(alert, animated: true, completion:nil)
+            return;
+        }
+        
         var alert = UIAlertController(title:nil, message: nil, preferredStyle: .ActionSheet)
         
         alert.addAction(UIAlertAction(title: "Take Photo", style: .Default, handler:{(action :UIAlertAction!) in
-            self.takePhoto();
+            self.takePhoto()
         }))
         alert.addAction(UIAlertAction(title: "Take Video", style: .Default, handler:{(action :UIAlertAction!) in
             self.takeVideo()
@@ -105,7 +130,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        var message = self.messages[indexPath.row] as Bit6Message;
+        var message = self.messages[indexPath.row] as Bit6Message
         var cell : UITableViewCell
         if (message.type == .Text) {
             if (message.incoming){
@@ -139,25 +164,25 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         var view = cell.viewWithTag(1)
         if (view != nil){
             var textLabel = view as Bit6MessageLabel
-            textLabel.menuControllerDelegate = self;
-            textLabel.layer.borderColor = UIColor.grayColor().CGColor;
-            textLabel.layer.borderWidth = 0.7;
+            textLabel.menuControllerDelegate = self
+            textLabel.layer.borderColor = UIColor.grayColor().CGColor
+            textLabel.layer.borderWidth = 0.7
         }
         
         view = cell.viewWithTag(3)
         if (view != nil){
             var imageView = view as Bit6ThumbnailImageView
             imageView.thumbnailImageViewDelegate = self
-            imageView.menuControllerDelegate = self;
-            imageView.layer.borderWidth=1;
-            imageView.layer.cornerRadius=10;
+            imageView.menuControllerDelegate = self
+            imageView.layer.borderWidth=1
+            imageView.layer.cornerRadius=10
             imageView.layer.borderColor=UIColor.blackColor().CGColor
         }
         return cell
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var message = self.messages[indexPath.row] as Bit6Message;
+        var message = self.messages[indexPath.row] as Bit6Message
         
         var view = cell.viewWithTag(1)
         if ((view) != nil){
@@ -196,9 +221,33 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         }
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if (indexPath.row < self.messages.count) {
+            var message = self.messages[indexPath.row] as Bit6Message
+            return !message.incoming
+        }
+        else {
+            return false
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        var message = self.messages[indexPath.row] as Bit6Message
+        Bit6.deleteMessage(message, completion:nil)
+    }
+    
     // MARK: - Send Text
     
     @IBAction func touchedComposeButton(sender : UIBarButtonItem) {
+        
+        if (!self.canChat()) {
+            var alert = UIAlertController(title:"You have left this group", message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:{(action :UIAlertAction!) in
+            }))
+            self.navigationController?.presentViewController(alert, animated: true, completion:nil)
+            return;
+        }
+        
         var alert = UIAlertController(title:"Type the message", message: nil, preferredStyle: .Alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:{(action :UIAlertAction!) in
@@ -225,10 +274,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             message.channel = .PUSH
             message.sendWithCompletionHandler({ (response, error) -> Void in
                 if (error == nil){
-                    NSLog("Message Sent");
+                    NSLog("Message Sent")
                 }
                 else {
-                    NSLog("Message Failed with Error: %@",error.localizedDescription);
+                    NSLog("Message Failed with Error: %@",error.localizedDescription)
                 }
             })
         }
@@ -294,10 +343,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         message.channel = .PUSH
         message.sendWithCompletionHandler { (response, error) -> Void in
             if (error == nil){
-                NSLog("Message Sent");
+                NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: %@",error.localizedDescription);
+                NSLog("Message Failed with Error: %@",error.localizedDescription)
             }
         }
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
@@ -321,10 +370,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func currentLocationController(b6clc: Bit6CurrentLocationController!, didGetLocationForMessage message: Bit6OutgoingMessage!) {
         message.sendWithCompletionHandler { (response, error) -> Void in
             if (error == nil) {
-                NSLog("Message Sent");
+                NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: %@",error.localizedDescription);
+                NSLog("Message Failed with Error: %@",error.localizedDescription)
             }
         }
     }
@@ -346,34 +395,101 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         if (message.audioDuration > 1.0){
             message.sendWithCompletionHandler { (response, error) -> Void in
                 if (error == nil) {
-                    NSLog("Message Sent");
+                    NSLog("Message Sent")
                 }
                 else {
-                    NSLog("Message Failed with Error: %@",error.localizedDescription);
+                    NSLog("Message Failed with Error: %@",error.localizedDescription)
                 }
             }
         }
     }
     
-    // MARK: - Notifications
+    // MARK: - Data Source changes
     
-    func messagesUpdatedNotification(notification:NSNotification) {
-        _messages = nil
-        self.tableView.reloadData()
-        self.scrollToBottomAnimated(true)
-    }
-    
-    func typingDidBeginRtNotification(notification:NSNotification) {
-        var address = notification.object as Bit6Address
-        if (address.isEqual(self.conversation.address)){
-            self.typingBarButtonItem.title = "Typing..."
+    func conversationsChangedNotification(notification:NSNotification) {
+        var userInfo = notification.userInfo!
+        var object = userInfo[Bit6ObjectKey] as Bit6Conversation
+        
+        if (object.isEqual(self.conversation)) {
+            var change = userInfo[Bit6ChangeKey] as NSString
+            if (change == Bit6UpdatedKey) {
+                
+                var group = Bit6Group(forConversation:self.conversation)
+                if (group != nil) {
+                    var title = group.metadata["title"] as NSString!
+                    var displayName = ""
+                    
+                    if let title = title {
+                        self.title = title.length > 0 ? title : conversation.displayName
+                    }
+                    else {
+                        self.title = conversation.displayName
+                    }
+                    
+                    if (object.typingAddress != nil) {
+                        self.typingBarButtonItem.title = "\(object.typingAddress.displayName) is typing..."
+                    }
+                    else {
+                        self.typingBarButtonItem.title = ""
+                    }
+                }
+            }
         }
     }
     
-    func typingDidEndRtNotification(notification:NSNotification) {
-        var address = notification.object as Bit6Address
-        if (address.isEqual(self.conversation.address)){
-            self.typingBarButtonItem.title = ""
+    func messagesChangedNotification(notification:NSNotification) {
+        var userInfo = notification.userInfo!
+        var object = userInfo[Bit6ObjectKey] as Bit6Message
+        var change = userInfo[Bit6ChangeKey] as NSString
+        
+        if (change == Bit6AddedKey) {
+            self.observeAddedMessage(object)
+        }
+        else if (change == Bit6UpdatedKey) {
+            self.observeUpdatedMessage(object)
+        }
+        else if (change == Bit6DeletedKey) {
+            self.observeDeletedMessage(object)
+        }
+    }
+    
+    
+    func observeAddedMessage(message:Bit6Message) {
+        var indexPath = NSIndexPath(forRow: self.messages.count, inSection: 0)
+        self.messages.addObject(message)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation:.Automatic)
+        self.scrollToBottomAnimated(true)
+    }
+    
+    func observeUpdatedMessage(message:Bit6Message) {
+        var index = NSNotFound
+        for (var x = self.messages.count-1 ; x>=0 ; x--) {
+            if (self.messages[x].isEqual(message)) {
+                index = x
+                break
+            }
+        }
+        
+        if (index != NSNotFound) {
+            var indexPath = NSIndexPath(forRow:index, inSection: 0)
+            var cell = self.tableView.cellForRowAtIndexPath(indexPath)
+            self.tableView(self.tableView, willDisplayCell:cell!, forRowAtIndexPath:indexPath)
+        }
+    }
+    
+    func observeDeletedMessage(message:Bit6Message) {
+        var index = NSNotFound
+        for (var x = self.messages.count-1 ; x>=0 ; x--) {
+            if (self.messages[x].isEqual(message)) {
+                index = x
+                break
+            }
+        }
+        
+        if (index != NSNotFound) {
+            self.messages.removeObjectAtIndex(index)
+            var indexPath = NSIndexPath(forRow:index, inSection: 0)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:.Automatic)
         }
     }
     
@@ -409,10 +525,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
                 message.channel = .PUSH
                 message.sendWithCompletionHandler { (response, error) -> Void in
                     if (error == nil) {
-                        NSLog("Message Sent");
+                        NSLog("Message Sent")
                     }
                     else {
-                        NSLog("Message Failed with Error: %@",error.localizedDescription);
+                        NSLog("Message Failed with Error: %@",error.localizedDescription)
                     }
                 }
             }
@@ -427,10 +543,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func resendFailedMessage(msg:Bit6OutgoingMessage){
         msg.sendWithCompletionHandler { (response, error) -> Void in
             if (error == nil) {
-                NSLog("Message Sent");
+                NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: %@",error.localizedDescription);
+                NSLog("Message Failed with Error: %@",error.localizedDescription)
             }
         }
     }
@@ -443,7 +559,11 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             var iavc = segue.destinationViewController as ImageAttachedViewController
             iavc.message = sender as Bit6Message
         }
-        
+        else if (segue.identifier == "showDetails") {
+            var obj = segue.destinationViewController as ConversationDetailsTableViewController
+            obj.conversation = self.conversation;
+            obj.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
+        }
     }
     
     // MARK: - UITextFieldDelegate
@@ -497,11 +617,11 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             else if (msg.attachFileType == .VideoMP4) {
                 if (Bit6.shouldDownloadVideoBeforePlaying()) {
                     if (fullAttachStatus == .FOUND) {
-                        Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
+                        Bit6.playVideoFromMessage(msg, viewController:self.navigationController)
                     }
                 }
                 else {
-                    Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
+                    Bit6.playVideoFromMessage(msg, viewController:self.navigationController)
                 }
             }
             else if (msg.attachFileType == .ImageJPG || msg.attachFileType == .ImagePNG) {
