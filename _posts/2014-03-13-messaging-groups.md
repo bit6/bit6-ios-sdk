@@ -15,7 +15,7 @@ Bit6Group *group = [Bit6Group groupForConversation:conversation];
 ```swift
 //Swift
 var conversation = ...
-var group = Bit6Group.groupForConversation(conversation)
+var group = Bit6Group(forConversation:conversation)
 ```
 
 ###Create a Group
@@ -62,13 +62,13 @@ group.leaveGroupWithCompletion({(error) -> Void in
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
 
-###Change Group Title
+###Change Group Metadata
 
 #####Note. only available if group.isAdmin returns YES;
 
 ```objc
 //ObjectiveC
-[group setTitle:@"New Title"
+[group setMetadata:@{@"title":"New Title"}
 			completion:^(NSError *error) {
 				if (!error) {
 					//title has changed
@@ -77,7 +77,7 @@ A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will b
 ```
 ```objc
 //Swift
-group.setTitle("New Title", completion:{(error) -> Void in
+group.setMetadata("New Title", completion:{(error) -> Void in
       if (error != nil) {
           //title has changed
       }
@@ -98,7 +98,7 @@ NSArray *friendsToInvite = @[friendToInvite];
 [group inviteAddresses:friendsToInvite 
 			completion:^(NSArray *members, NSError *error) {
 				if (!error) {
-					//friend has been invited
+					//friends have been invited
 					//members is the updated list of group members
 				}
 }];
@@ -110,7 +110,7 @@ let friendsToInvite = [friendToInvite]
 
 group.inviteAddresses(friendsToInvite, completion:{(members, error) -> Void in
       if (error != nil) {
-          //friend has been invited
+          //friends have been invited
 		  //members is the updated list of group members
       }
 })
