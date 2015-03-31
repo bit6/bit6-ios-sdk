@@ -75,15 +75,13 @@
         NSArray *destinations = [string componentsSeparatedByString:@","];
         
         if (destinations.count == 1) {
-            if (destinations[0]>0) {
-                Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destinations[0]];
-                Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
-                if (conversation) {
-                    [Bit6 addConversation:conversation];
-                }
-                else {
-                    [[[UIAlertView alloc] initWithTitle:@"Invalid username" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-                }
+            Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destinations[0]];
+            Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
+            if (conversation) {
+                [Bit6 addConversation:conversation];
+            }
+            else {
+                [[[UIAlertView alloc] initWithTitle:@"Invalid username" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }
         }
         else if (destinations.count>1) {
@@ -150,11 +148,8 @@
     imageView.message = lastMessage;
     imageView.hidden = !lastMessage || (lastMessage.type == Bit6MessageType_Text);
     
-    if ([conversation.address isKind:Bit6AddressKind_GROUP]) {
-        Bit6Group *group = [Bit6Group groupForConversation:conversation];
-        if (group.hasLeft) {
-            detailTextLabel.text = @"You have left this group";
-        }
+    if (group && group.hasLeft) {
+        detailTextLabel.text = @"You have left this group";
     }
 }
 
@@ -162,14 +157,14 @@
 {
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         Bit6Conversation *conversation = self.conversations[indexPath.row];
-        if ([conversation.address isKind:Bit6AddressKind_GROUP]) {
-            Bit6Group *group = [Bit6Group groupForConversation:conversation];
-            if (!group.hasLeft) {
-                [group leaveGroupWithCompletion:^(NSError *error) {
+        Bit6Group *group = [Bit6Group groupForConversation:conversation];
+        if (group != nil && !group.hasLeft) {
+            [group leaveGroupWithCompletion:^(NSError *error) {
+                if (error) {
                     NSLog(@"Error %@",error.localizedDescription);
-                }];
-                return;
-            }
+                }
+            }];
+            return;
         }
         
         [Bit6 deleteConversation:conversation completion:nil];
@@ -179,8 +174,8 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Bit6Conversation *conversation = self.conversations[indexPath.row];
-    if ([conversation.address isKind:Bit6AddressKind_GROUP]) {
-        Bit6Group *group = [Bit6Group groupForConversation:conversation];
+    Bit6Group *group = [Bit6Group groupForConversation:conversation];
+    if (group != nil) {
         return group.hasLeft?@"Delete":@"Leave";
     }
     else {

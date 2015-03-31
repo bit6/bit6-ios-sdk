@@ -35,8 +35,8 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    [self.subjectTextField resignFirstResponder];
     [super viewWillDisappear:animated];
+    [self.subjectTextField resignFirstResponder];
 }
 
 - (void) setConversation:(Bit6Conversation *)conversation
@@ -56,7 +56,9 @@
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
         [self.group setMetadata:@{@"title":self.subjectTextField.text} completion:^(NSError *error) {
-            
+            if (error != nil) {
+                NSLog(@"Failed to change the title");
+            }
         }];
     }
     
@@ -149,15 +151,8 @@
     return cell;
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44.0f;
-}
-
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Bit6Address *address = nil;
-    
     if (self.group) {
         //title
         if (indexPath.row == 0) {
@@ -166,8 +161,7 @@
         //members
         else if (indexPath.row-1 < (int)self.group.members.count) {
             Bit6GroupMember *member = [self memberForIndexPath:indexPath];
-            address = member.address;
-            cell.textLabel.text = address.displayName;
+            cell.textLabel.text = member.address.displayName;
             cell.detailTextLabel.text = [member.role isEqualToString:@"admin"]?@"Group Admin":@"";
         }
         //add member
@@ -176,9 +170,13 @@
         }
     }
     else {
-        address = self.conversation.address;
-        cell.textLabel.text = address.displayName;
+        cell.textLabel.text = self.conversation.address.displayName;
     }
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44.0f;
 }
 
 - (NSIndexPath*) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -233,15 +231,9 @@
 
 - (void) inviteParticipant
 {
-
-//    [self.group inviteAddresses:[selectionArray valueForKey:@"address"] completion:^(NSArray *members, NSError *error) {
-//        [self.delegate doneWithAddress:self.group.address];
-//    }];
-
     UIAlertView *obj = [[UIAlertView alloc] initWithTitle:@"Type the friend username to invite" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     obj.alertViewStyle = UIAlertViewStylePlainTextInput;
     [obj show];
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
