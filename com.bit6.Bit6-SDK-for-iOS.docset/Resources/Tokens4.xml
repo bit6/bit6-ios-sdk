@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6AudioPlayerController.html">
+	<File path="Classes/Bit6AudioRecorderController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioPlayerController</TokenIdentifier>
-			<Abstract type="html">Audio player allows to play an audio file attached to a message.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioRecorderController</TokenIdentifier>
+			<Abstract type="html">Bit6AudioRecorderController is used to record an audio file and attach it to a message.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
@@ -13,113 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileInMessage:errorHandler:</TokenIdentifier>
-			<Abstract type="html">Starts playing the audio file attached to a message. You can listen to the Bit6AudioPlayingNotification to update your UI while playing an audio file.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</TokenIdentifier>
+			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)startPlayingAudioFileInMessage:(Bit6Message *)msg errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
+			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>
-					<Abstract type="html">A Bit6Message object with the audio attachment to play.</Abstract>
+					<Abstract type="html">a Bit6OutgoingMessage object where the audio file will be included.</Abstract>
+				</Parameter><Parameter>
+					<Name>maxDuration</Name>
+					<Abstract type="html">maximum allowed duration (in seconds) of the audio file to be recorded.</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see Bit6AudioRecorderControllerDelegate Protocol Reference.</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultPrompt</Name>
+					<Abstract type="html">if YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.</Abstract>
 				</Parameter><Parameter>
 					<Name>errorHandler</Name>
 					<Abstract type="html">block to call if an error occurs</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startPlayingAudioFileInMessage:errorHandler:</Anchor>
+			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setIsPlayingAudioFile:</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/isPlayingAudioFile</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/isPlayingAudioFile</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/isPlayingAudioFile</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/isPlayingAudioFile</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/isPlayingAudioFile</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/stopPlayingAudioFile</TokenIdentifier>
-			<Abstract type="html">Stop the audio file playing at the time</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>- (void)stopPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/stopPlayingAudioFile</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setCurrentTime:</TokenIdentifier>
-			<Abstract type="html">Gets the audio file playing current time.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
-			
-			
-			<Anchor>//api/name/currentTime</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/currentTime</TokenIdentifier>
-			<Abstract type="html">Gets the audio file playing current time.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
-			
-			
-			<Anchor>//api/name/currentTime</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/currentTime</TokenIdentifier>
-			<Abstract type="html">Gets the audio file playing current time.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
-			
-			
-			<Anchor>//api/name/currentTime</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setDuration:</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setDuration:</TokenIdentifier>
+			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
 			
@@ -129,9 +54,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/duration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
 			
@@ -141,9 +66,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/duration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
 			
@@ -153,38 +78,62 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setMessagePlaying:</TokenIdentifier>
-			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/cancelRecording</TokenIdentifier>
+			<Abstract type="html">Cancel a recording without saving the audio file.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
+			<Declaration>- (void)cancelRecording</Declaration>
 			
-			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/messagePlaying</Anchor>
+			
+			<Anchor>//api/name/cancelRecording</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/messagePlaying</TokenIdentifier>
-			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/stopRecording</TokenIdentifier>
+			<Abstract type="html">Finish the recording and saves the audio file to cache.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
+			<Declaration>- (void)stopRecording</Declaration>
 			
-			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/messagePlaying</Anchor>
+			
+			<Anchor>//api/name/stopRecording</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/messagePlaying</TokenIdentifier>
-			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setIsRecording:</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
 			
-			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/messagePlaying</Anchor>
+			
+			<Anchor>//api/name/isRecording</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/isRecording</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			
+			
+			<Anchor>//api/name/isRecording</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/isRecording</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			
+			
+			<Anchor>//api/name/isRecording</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

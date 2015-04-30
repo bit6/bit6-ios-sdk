@@ -1,0 +1,21 @@
+//
+//  MyConfig.xcconfig
+//  BasicDemo
+//
+//  Created by Carlos Thurber on 06/08/14.
+//  Copyright (c) 2014 Bit6. All rights reserved.
+//
+
+OTHER_LDFLAGS = -ObjC -l"icucore" -l"z" -l"stdc++" -l"sqlite3" -framework GLKit -framework CoreMedia -framework AudioToolbox -framework AVFoundation -framework AssetsLibrary -framework SystemConfiguration -framework MediaPlayer -framework MobileCoreServices -framework MapKit
+
+IPHONEOS_DEPLOYMENT_TARGET = 7.0
+ARCHS=$(ARCHS_STANDARD)
+ARCHS[sdk=iphonesimulator*] =$(ARCHS_STANDARD_32_BIT)
+ARCHS[sdk=iphoneos*] = $(ARCHS_STANDARD)
+
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR) ../../
+LIBRARY_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)
+HEADER_SEARCH_PATHS =  ../Bit6
+CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist
+
+COPY_PHASE_STRIP = NO

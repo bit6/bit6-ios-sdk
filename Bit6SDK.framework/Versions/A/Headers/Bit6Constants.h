@@ -12,9 +12,6 @@ typedef void (^Bit6ActionNotificationCompletionHandler) (void);
 extern NSString* const Bit6LoginCompletedNotification;
 extern NSString* const Bit6LogoutStartedNotification;
 
-extern NSString* const Bit6DidRegisterForRemoteNotifications;
-extern NSString* const Bit6DidFailToRegisterForRemoteNotifications;
-
 extern NSString* const Bit6RTConnectionStatusChangedNotification;
 extern NSString* const Bit6CustomRtNotification;
 
@@ -32,55 +29,60 @@ extern NSString* const Bit6AddedKey;
 extern NSString* const Bit6UpdatedKey;
 extern NSString* const Bit6DeletedKey;
 
+extern NSString* const Bit6TransferUpdateNotification;
+extern NSString* const Bit6ProgressKey;
+extern NSString* const Bit6TransferStartedKey;
+extern NSString* const Bit6TransferProgressKey;
+extern NSString* const Bit6TransferEndedKey;
+extern NSString* const Bit6TransferEndedWithErrorKey;
+
 /*! Bit6 error constants */
 typedef NS_ENUM(NSInteger, Bit6Error) {
-    /*! Internet connection not found */
+    /*! The recipient was not found. */
+    Bit6Error_RecipientNotFound=500,
+    /*! Internet connection not found. */
     Bit6Error_NotConnectedToInternet = NSURLErrorNotConnectedToInternet,
-    
-    /*! Restricted access to the Microphone */
+    /*! Restricted access to the Microphone. */
     Bit6Error_MicNotAllowed=-6001,
-    /*! Restricted access to the Camera */
+    /*! Restricted access to the Camera. */
     Bit6Error_CameraNotAllowed=-6002,
-    /*! Restricted access to Location */
+    /*! Restricted access to Location. */
     Bit6Error_LocationNotAllowed=-6003,
-    /*! Session hasn't being initiated */
+    /*! Session hasn't being initiated. */
     Bit6Error_SessionNotInitiated=-6011,
-    /*! Invalid Address */
+    /*! Invalid Address. */
     Bit6Error_InvalidAddress=-6012,
-    /*! Insuficient Parameters */
+    /*! Insuficient Parameters. */
     Bit6Error_InsuficientParameters=-6013,
-    /*! Invalid Session Provider */
+    /*! Invalid Session Provider. */
     Bit6Error_InvalidSessionProvider=-6014,
-    /*! Attachment wasn't saved to cache */
+    /*! Attachment wasn't saved to cache. */
     Bit6Error_SaveToCacheFailed=-6021,
-    /*! Attachment doesn't exist in cache */
+    /*! Attachment doesn't exist in cache. */
     Bit6Error_FileDoesNotExists=-6022,
-    /*! Attachment doesn't exist in cache, but it is being downloaded */
+    /*! Attachment doesn't exist in cache, but it is being downloaded. */
     Bit6Error_FileDoesNotExistsWillDownload=-6023,
-    /*! Attachment doesn't exist in the server, probably because an error during the upload process */
+    /*! Attachment doesn't exist in the server, probably because an error during the upload process. */
     Bit6Error_FileDoesNotExistsOnServer=-6024,
-    /*! An HTTP status = 5xx occur when interacting with the server */
+    /*! An HTTP status = 5xx occur when interacting with the server. */
     Bit6Error_HTTPServerError=-6031,
-    /*! An HTTP status = 4xx occur when interacting with the server */
+    /*! An HTTP status = 4xx occur when interacting with the server. */
     Bit6Error_HTTPClientError=-6032,
     /*! Failed to Start the call. */
     Bit6Error_FailedToStartTheCallError=-6041,
-    /*! Can't answer the call because another call is in progress */
+    /*! Can't answer the call because another call is in progress. */
     Bit6Error_CallInProgressError=-6042,
-    
-    /*! An HTTP status = 4xx occur when interacting with the server */
+    /*! An HTTP status = 4xx occur when interacting with the server. */
     Bit6Error_InvalidRESTAPICall=-6051,
     
-    /*! The recipient was not found */
-    Bit6Error_RecipientNotFound=500,
-};
-
-/*! Push Notification Mode */
-typedef NS_ENUM(NSInteger, Bit6PushNotificationMode) {
-    /*! Development Mode for Push Notifications */
-    Bit6PushNotificationMode_DEVELOPMENT = 1,
-    /*! Production Mode for Push Notifications */
-    Bit6PushNotificationMode_PRODUCTION
+    /*! The <Bit6Transfer> failed because the data channel wasn't open. */
+    Bit6Error_TransferDataChannelNotOpenError=-10001,
+    
+    /*! The <Bit6Transfer> failed because of an unknown error. */
+    Bit6Error_TransferDataChannelUnknownError=-10002,
+    
+    /*! The <Bit6Transfer> failed because of an buffer overflow error. */
+    Bit6Error_TransferDataChannelBufferOverflowError=-10003
 };
 
 /*! Web Socket connection status. */

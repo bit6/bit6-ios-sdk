@@ -66,7 +66,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
             
         }))
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields?[0] as UITextField
+            var usernameTextField = alert.textFields?[0] as! UITextField
             if ((usernameTextField.text as NSString).length>0){
                 
                 var destinations =  usernameTextField.text.componentsSeparatedByString(",")
@@ -98,7 +98,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
                     
                     Bit6Group.createGroupWithMetadata(["title":"MyGroup"], completion: { (group, error) -> Void in
                         if (error == nil){
-                            group.inviteAddresses(addresses, completion:{ (members, error) -> Void in
+                            group.inviteAddresses(addresses as [AnyObject], completion:{ (members, error) -> Void in
                                 if (error != nil){
                                     var alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)
                                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:{(action :UIAlertAction!) in
@@ -131,9 +131,9 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("conversationCell", forIndexPath: indexPath) as! UITableViewCell
         
-        var imageView = cell.viewWithTag(3) as Bit6ThumbnailImageView
+        var imageView = cell.viewWithTag(3) as! Bit6ThumbnailImageView
         imageView.layer.borderWidth = 1
         imageView.layer.cornerRadius = 10
         imageView.layer.borderColor = UIColor.blackColor().CGColor
@@ -141,19 +141,19 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell!, forRowAtIndexPath indexPath: NSIndexPath!) {
-        var conversation = self.conversations[indexPath.row] as Bit6Conversation
-        var textLabel = cell.viewWithTag(1) as UILabel
-        var detailTextLabel = cell.viewWithTag(2) as UILabel
-        var imageView = cell.viewWithTag(3) as Bit6ThumbnailImageView
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var conversation = self.conversations[indexPath.row] as! Bit6Conversation
+        var textLabel = cell.viewWithTag(1) as! UILabel
+        var detailTextLabel = cell.viewWithTag(2) as! UILabel
+        var imageView = cell.viewWithTag(3) as! Bit6ThumbnailImageView
         
         var displayName = conversation.displayName
         var group = Bit6Group(forConversation:conversation)
         
         if group != nil {
-            var title = group.metadata!["title"] as NSString!
+            var title = group.metadata!["title"] as! String!
             if let title = title {
-                displayName = title.length > 0 ? title : conversation.displayName
+                displayName = count(title) > 0 ? title : conversation.displayName
             }
             else {
                 displayName = conversation.displayName
@@ -169,7 +169,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         var messages = conversation.messages as NSArray
-        var lastMessage = messages.lastObject as Bit6Message!
+        var lastMessage = messages.lastObject as! Bit6Message!
         if ((lastMessage) != nil){
             detailTextLabel.text = lastMessage.content
             imageView.message = lastMessage
@@ -187,9 +187,9 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!){
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if (editingStyle == .Delete) {
-            var conversation = self.conversations[indexPath.row] as Bit6Conversation
+            var conversation = self.conversations[indexPath.row] as! Bit6Conversation
             var group = Bit6Group(forConversation:conversation)
             if (group != nil && !group.hasLeft) {
                 group.leaveGroupWithCompletion({ (error) -> Void in
@@ -204,9 +204,8 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> NSString
-    {
-        var conversation = self.conversations[indexPath.row] as Bit6Conversation
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
+        var conversation = self.conversations[indexPath.row] as! Bit6Conversation
         var group = Bit6Group(forConversation:conversation)
         
         if (group != nil) {
@@ -222,18 +221,18 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "showChats"){
-            var ctvc = segue.destinationViewController as ChatsTableViewController
-            var cell = sender as UITableViewCell
+            var ctvc = segue.destinationViewController as! ChatsTableViewController
+            var cell = sender as! UITableViewCell
             var indexPath = self.tableView.indexPathForCell(cell)
-            var conversation = self.conversations[indexPath!.row] as Bit6Conversation
+            var conversation = self.conversations[indexPath!.row] as! Bit6Conversation
             ctvc.conversation = conversation
             
             var group = Bit6Group(forConversation:conversation)
             
             if group != nil {
-                var title = group.metadata!["title"] as NSString!
+                var title = group.metadata!["title"] as! String!
                 if let title = title {
-                    ctvc.title = title.length > 0 ? title : conversation.displayName
+                    ctvc.title = count(title) > 0 ? title : conversation.displayName
                 }
                 else {
                     ctvc.title = conversation.displayName
@@ -251,8 +250,8 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     
     func conversationsChangedNotification(notification:NSNotification) {
         var userInfo = notification.userInfo!
-        var object = userInfo[Bit6ObjectKey] as Bit6Conversation
-        var change = userInfo[Bit6ChangeKey] as NSString
+        var object = userInfo[Bit6ObjectKey] as! Bit6Conversation
+        var change = userInfo[Bit6ChangeKey] as! NSString
         
         if (change == Bit6AddedKey) {
             self.observeAddedBit6Object(object)

@@ -1,87 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6CallState.html">
+	<File path="Protocols/Bit6IncomingCallHandlerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
-			<Abstract type="html">Call status for a Bit6CallController.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6IncomingCallHandlerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6IncomingCallHandlerDelegate protocol defines the methods a delegate of the Bit6IncomingCallHandler object could implement to customize the behaviour when an incoming call is received.</Abstract>
+			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
-            <Abstract type="html">The call hasn&apos;t started.</Abstract>
-            <Declaration>Bit6CallState_NEW</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/inCallViewController</TokenIdentifier>
+			<Abstract type="html">Implement to customize the view controller used to handle the incoming call.</Abstract>
+			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
+			
+			<Declaration>- (Bit6CallViewController *)inCallViewController</Declaration>
+			
+			<ReturnValue><Abstract type="html">a view controller to be used during the incoming call.</Abstract></ReturnValue>
+			<Anchor>//api/name/inCallViewController</Anchor>
             <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_PROGRESS</TokenIdentifier>
-            <Abstract type="html">The call is starting.</Abstract>
-            <Declaration>Bit6CallState_PROGRESS</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/incomingCallNotificationBannerContentView</TokenIdentifier>
+			<Abstract type="html">Implement to customize the view shown in the incoming call notification banner.</Abstract>
+			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
+			
+			<Declaration>- (UIView *)incomingCallNotificationBannerContentView</Declaration>
+			
+			<ReturnValue><Abstract type="html">a view to use in the incoming call notification banner.</Abstract></ReturnValue>
+			<Anchor>//api/name/incomingCallNotificationBannerContentView</Anchor>
             <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ANSWER</TokenIdentifier>
-            <Abstract type="html">The call has started.</Abstract>
-            <Declaration>Bit6CallState_ANSWER</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/receivedIncomingCallNotification:</TokenIdentifier>
+			<Abstract type="html">Starting point of the incoming calls flow. Implement if you want to handle the entire flow.</Abstract>
+			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
+			
+			<Declaration>- (void)receivedIncomingCallNotification:(NSNotification *)notification</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notification</Name>
+					<Abstract type="html">incoming call notification to be used with [Bit6 callControllerFromIncomingCallNotification:]</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/receivedIncomingCallNotification:</Anchor>
             <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
-            <Abstract type="html">The call is disconnected for the moment.</Abstract>
-            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
-            <Abstract type="html">The call ended.</Abstract>
-            <Declaration>Bit6CallState_END</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ERROR</TokenIdentifier>
-            <Abstract type="html">The call ended with an error.</Abstract>
-            <Declaration>Bit6CallState_ERROR</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="26"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_MISSED</TokenIdentifier>
-            <Abstract type="html">It is a missed call.</Abstract>
-            <Declaration>Bit6CallState_MISSED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="26"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

@@ -17,31 +17,37 @@
  */
 + (Bit6CallViewController*) createDefaultCallViewController;
 
-/*! Reference to the <Bit6CallController> to work with. */
-@property (nonatomic, strong, readonly) Bit6CallController *callController;
-
 /*! Used if you need to force a call to <updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:>. */
 - (void)setNeedsUpdateVideoViewLayout;
 
 ///---------------------------------------------------------------------------------------
-/// @name ￼Methods to extend
+/// @name ￼Callbacks
 ///---------------------------------------------------------------------------------------
 
 /*! Called in the Main Thread when the UI controls should be updated. For example when the "mute" property changed this method will be called to allow updating the UI accordingly. The default implementation does nothing. */
 - (void)refreshControlsView;
 
-/*! Called in the Main Thread when the status of the call changes. The default implementation does nothing. */
-- (void)callStateChangedNotification;
+/*! Called in the Main Thread when the status of the call changes. The default implementation does nothing. 
+ @param callController <BitCallController> object which state has changed.
+ */
+- (void)callStateChangedNotificationForCallController:(Bit6CallController*)callController;
 
-/*! Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing. */
-- (void)secondsChangedNotification;
+/*! Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing. 
+ @param callController <BitCallController> object which 'seconds' property has changed.
+ */
+- (void)secondsChangedNotificationForCallController:(Bit6CallController*)callController;
 
 /*! Called in the Main Thread to customize the frames for the video feeds. You can call <setNeedsUpdateVideoViewLayout> at any time to force a refresh of the frames. 
-  @param remoteVideoView the UIView reference to the remote video feed
-  @param localVideoView the UIView reference to the local video feed
-  @param remoteVideoAspectRatio the aspect ratio to use for the remote video feed
-  @param localVideoAspectRatio the aspect ratio to use for the local video feed
+  @param videoFeedViews the <Bit6VideoFeedView> references to the video feed.
  */
-- (void)updateLayoutForRemoteVideoView:(UIView*)remoteVideoView localVideoView:(UIView*)localVideoView remoteVideoAspectRatio:(CGSize)remoteVideoAspectRatio localVideoAspectRatio:(CGSize)localVideoAspectRatio;
+- (void)updateLayoutForVideoFeedViews:(NSArray*)videoFeedViews;
+
+@end
+
+/*! UIView to render a video feed during a call. */
+@interface Bit6VideoFeedView : UIView
+
+/*! Yes is the view is rendering the local video feed. */
+@property (nonatomic, readonly) BOOL isLocal;
 
 @end

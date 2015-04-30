@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6SessionProvider.html">
+	<File path="Constants/Bit6MessageType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6SessionProvider</TokenIdentifier>
-			<Abstract type="html">Bit6Session providers</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageType</TokenIdentifier>
+			<Abstract type="html">Message type for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="36"/>
@@ -14,21 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6SessionProvider_FACEBOOK</TokenIdentifier>
-            <Abstract type="html">Facebook session</Abstract>
-            <Declaration>Bit6SessionProvider_FACEBOOK</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Text</TokenIdentifier>
+            <Abstract type="html">The message has only text.</Abstract>
+            <Declaration>Bit6MessageType_Text</Declaration>
             
-            <DeclaredIn>Bit6Session.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="36"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6SessionProvider_GOOGLE</TokenIdentifier>
-            <Abstract type="html">Google session</Abstract>
-            <Declaration>Bit6SessionProvider_GOOGLE</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Attachments</TokenIdentifier>
+            <Abstract type="html">The message has an attachment.</Abstract>
+            <Declaration>Bit6MessageType_Attachments</Declaration>
             
-            <DeclaredIn>Bit6Session.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Location</TokenIdentifier>
+            <Abstract type="html">The message has a location.</Abstract>
+            <Declaration>Bit6MessageType_Location</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="36"/>
         </Token>

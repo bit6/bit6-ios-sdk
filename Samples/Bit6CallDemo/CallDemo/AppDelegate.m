@@ -10,7 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "MyCallViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UIAlertViewDelegate, Bit6IncomingCallHandlerDelegate>
 
 @property (strong, nonatomic) Bit6CallController *callController;
 
@@ -21,12 +21,51 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     #warning Remember to set your api key
-    [Bit6 startWithApiKey:@"your_api_key" pushNotificationMode:Bit6PushNotificationMode_DEVELOPMENT launchingWithOptions:launchOptions];
+    [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
+    
+    NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (remoteNotificationPayload) {
+        [Bit6.pushNotification didReceiveRemoteNotification:remoteNotificationPayload];
+    }
+    
+    Bit6.incomingCallHandler.delegate = self;
     
     return YES;
 }
 
-#pragma mark - Calls
+#pragma mark - Notifications
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    [Bit6.pushNotification handleActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [Bit6.pushNotification didReceiveRemoteNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    [Bit6.pushNotification didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
+- (void) application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [Bit6.pushNotification didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void) application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [Bit6.pushNotification didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+#pragma mark - Bit6IncomingCallHandlerDelegate
 
 /*
 //use a custom in-call UIViewController
@@ -97,8 +136,6 @@
 }
 */
 
-#pragma mark - Handling Call Full Flow
-
 /*
 //implement if you want to handle the entire incoming call flow
 - (void) receivedIncomingCallNotification:(NSNotification*)notification
@@ -106,8 +143,8 @@
     //create the callController
     Bit6CallController *callController = [Bit6 callControllerFromIncomingCallNotification:notification];
     
-    //if there's a call on the way we decline this one
-    if ([Bit6 currentCallController] || self.callController) {
+    //if there's a call prompt on the way we decline this call
+    if (self.callController) {
         [callController declineCall];
     }
     else {
@@ -119,7 +156,7 @@
         callController.otherDisplayName = [msg stringByReplacingOccurrencesOfString:@" is calling..." withString:@""];
         
         //get the call type
-        NSString *type = callController.hasVideo?@"Video":@"Audio";
+        NSString *type = callController.hasVideo?@"Video":(callController.hasAudio?@"Audio":@"Data");
         
         //show an incoming-call prompt
         NSString *message = [NSString stringWithFormat:@"Incoming %@ Call from: %@", type, callController.otherDisplayName];
@@ -153,8 +190,11 @@
 
 - (void) answerCall:(Bit6CallController*)callController
 {
+    //create the default in-call UIViewController
+    Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
+ 
     //create the in-call UIViewController
-    Bit6CallViewController *callVC = [self inCallViewController];
+    Bit6CallViewController *callVC = [[MyCallViewController alloc] init];
     
     //start the call
     [callController connectToViewController:callVC];
@@ -179,22 +219,19 @@
             [callController removeObserver:self forKeyPath:@"callState"];
             self.callController = nil;
             [Bit6.incomingCallNotificationBanner dismiss];
-            [Bit6 dismissCallController:callController];
             [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
         //the call is starting: show the viewController
         else if (callController.callState == Bit6CallState_PROGRESS) {
-            [Bit6 presentCallController:callController];
+            [Bit6 presentCallViewController];
         }
         //the call ended: remove the observer and dismiss the viewController
         else if (callController.callState == Bit6CallState_END) {
             [callController removeObserver:self forKeyPath:@"callState"];
-            [Bit6 dismissCallController:callController];
         }
         //the call ended with an error: remove the observer and dismiss the viewController
         else if (callController.callState == Bit6CallState_ERROR) {
             [callController removeObserver:self forKeyPath:@"callState"];
-            [Bit6 dismissCallController:callController];
             [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     });

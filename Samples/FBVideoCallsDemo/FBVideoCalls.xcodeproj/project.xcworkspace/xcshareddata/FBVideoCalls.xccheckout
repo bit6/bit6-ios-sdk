@@ -10,31 +10,31 @@
 	<string>FBVideoCalls</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DB0877F3E18CDEBA6A40F9695D4C50F2FA149277</key>
-		<string>https://github.com/bit6/bit6-ios-sdk-source</string>
+		<key>84E03A93C7C518918B87B116700167E97B13BAAD</key>
+		<string>https://github.com/bit6/bit6-ios-sdk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>InstallerGenerator/Bit6SDK/Samples/FBVideoCallsDemo/FBVideoCalls.xcodeproj</string>
+	<string>Samples/FBVideoCallsDemo/FBVideoCalls.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DB0877F3E18CDEBA6A40F9695D4C50F2FA149277</key>
-		<string>../../../../../..</string>
+		<key>84E03A93C7C518918B87B116700167E97B13BAAD</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/bit6/bit6-ios-sdk-source</string>
+	<string>https://github.com/bit6/bit6-ios-sdk</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DB0877F3E18CDEBA6A40F9695D4C50F2FA149277</string>
+	<string>84E03A93C7C518918B87B116700167E97B13BAAD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DB0877F3E18CDEBA6A40F9695D4C50F2FA149277</string>
+			<string>84E03A93C7C518918B87B116700167E97B13BAAD</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Bit6_SDK</string>
+			<string>bit6-ios-sdk</string>
 		</dict>
 	</array>
 </dict>

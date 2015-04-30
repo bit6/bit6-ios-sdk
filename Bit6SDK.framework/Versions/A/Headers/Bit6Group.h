@@ -17,6 +17,8 @@ extern NSString* const Bit6GroupMemberRole_Admin;
 extern NSString* const Bit6GroupMemberRole_User;
 extern NSString* const Bit6GroupMemberRole_Left;
 
+extern NSString* const Bit6GroupMetadataTitleKey;
+
 @class Bit6GroupPermissions;
 @class Bit6GroupMember;
 

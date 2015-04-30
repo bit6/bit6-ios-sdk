@@ -14,7 +14,7 @@ class MakeCallViewController: UIViewController {
     @IBOutlet var phoneNumberTextField:UITextField!
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = NSString(format: "Logged as %@", Bit6.session().userIdentity.displayName);
+        self.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
     }
     
     @IBAction func touchedLogoutBarButton(sender: UIButton) {
@@ -26,23 +26,23 @@ class MakeCallViewController: UIViewController {
     }
     
     @IBAction func touchedAudioCallButton(sender : UIButton) {
-        var username : NSString = self.destinationUsernameTextField.text;
+        var username = self.destinationUsernameTextField.text
         var address = Bit6Address(kind: .USERNAME, value:username)
         
-        var callController = Bit6.startCallToAddress(address, hasVideo:false)
+        var callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:false, hasData:false)
         self.startCallToCalController(callController)
     }
     
     @IBAction func touchedVideoCallButton(sender : UIButton) {
-        var username : NSString = self.destinationUsernameTextField.text;
+        var username = self.destinationUsernameTextField.text
         var address = Bit6Address(kind: .USERNAME, value:username)
         
-        var callController = Bit6.startCallToAddress(address, hasVideo:true)
+        var callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:true, hasData:false)
         self.startCallToCalController(callController)
     }
     
     @IBAction func touchedDialButton(sender : UIButton) {
-        var phoneNumber : NSString = self.phoneNumberTextField.text;
+        var phoneNumber = self.phoneNumberTextField.text
         
         var callController = Bit6.startCallToPhoneNumber(phoneNumber)
         self.startCallToCalController(callController)
@@ -73,7 +73,7 @@ class MakeCallViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             if (object.isKindOfClass(Bit6CallController)) {
                 if (keyPath == "callState") {
-                    self.callStateChangedNotification(object as Bit6CallController)
+                    self.callStateChangedNotification(object as! Bit6CallController)
                 }
             }
         }
@@ -83,17 +83,15 @@ class MakeCallViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             //the call is starting: show the viewController
             if (callController.callState == .PROGRESS) {
-                Bit6.presentCallController(callController)
+                Bit6.presentCallViewController()
             }
                 //the call ended: remove the observer and dismiss the viewController
             else if (callController.callState == .END) {
                 callController.removeObserver(self, forKeyPath:"callState")
-                Bit6.dismissCallController(callController)
             }
                 //the call ended with an error: remove the observer and dismiss the viewController
             else if (callController.callState == .ERROR) {
                 callController.removeObserver(self, forKeyPath:"callState")
-                Bit6.dismissCallController(callController)
                 
                 var alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))

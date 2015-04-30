@@ -219,7 +219,6 @@
                 
                 Bit6OutgoingMessage *msg = [Bit6OutgoingMessage outgoingCopyOfMessage:self.messageToForward];
                 msg.destination = address;
-                msg.channel = Bit6MessageChannel_PUSH;
                 [msg sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
                     if (!error) {
                         NSLog(@"Message Sent");
@@ -240,7 +239,6 @@
         Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
         message.content = msg;
         message.destination = self.conversation.address;
-        message.channel = Bit6MessageChannel_PUSH;
         [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
             if (!error) {
                 NSLog(@"Message Sent");
@@ -314,7 +312,6 @@
     }
     
     message.destination = self.conversation.address;
-    message.channel = Bit6MessageChannel_PUSH;
     [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             NSLog(@"Message Sent");
@@ -332,7 +329,6 @@
 {
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
     message.destination = self.conversation.address;
-    message.channel = Bit6MessageChannel_PUSH;
     [Bit6.locationController startListeningToLocationForMessage:message delegate:self];
 }
 
@@ -359,7 +355,6 @@
 {
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
     message.destination = self.conversation.address;
-    message.channel = Bit6MessageChannel_PUSH;
     [Bit6.audioRecorder startRecordingAudioForMessage:message maxDuration:60 delegate:self defaultPrompt:YES errorHandler:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
@@ -389,7 +384,7 @@
         NSString *change = notification.userInfo[Bit6ChangeKey];
         if ([change isEqualToString:Bit6UpdatedKey]) {
             Bit6Group *group = [Bit6Group groupForConversation:self.conversation];
-            self.title = [group.metadata[@"title"] length]>0?group.metadata[@"title"]:self.conversation.displayName;
+            self.title = [group.metadata[Bit6GroupMetadataTitleKey] length]>0?group.metadata[Bit6GroupMetadataTitleKey]:self.conversation.displayName;
             if (object.typingAddress) {
                 self.typingBarButtonItem.title = [NSString stringWithFormat:@"%@ is typing...",object.typingAddress.displayName];
             }

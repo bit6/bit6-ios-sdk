@@ -16,6 +16,8 @@
 #import "Bit6AudioRecorderController.h"
 #import "Bit6CurrentLocationController.h"
 #import "Bit6IncomingCallNotificationBanner.h"
+#import "Bit6PushNotificationCenter.h"
+#import "Bit6IncomingCallHandler.h"
 
 /*! Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object */
 @interface Bit6 : NSObject
@@ -26,10 +28,9 @@
 
 /*! Bit6 startup method. It should be the first call to Bit6 api made.
  @param apiKey unique key for the current developer.
- @param pushNotificationMode One of the values in <Bit6PushNotificationMode> enumeration.
- @param launchOptions used to send the launchOptions from [UIApplicationDelegate application:didFinishLaunchingWithOptions:] to Bit6
+ @param apnsProduction YES if want to use the APNS Production Environment.
  */
-+ (void) startWithApiKey:(NSString*)apiKey pushNotificationMode:(Bit6PushNotificationMode)pushNotificationMode launchingWithOptions:(NSDictionary *)launchOptions;
++ (void) startWithApiKey:(NSString*)apiKey apnsProduction:(BOOL)apnsProduction;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Controllers
@@ -54,6 +55,16 @@
  @return the default Bit6CurrentLocationController object.
  */
 + (Bit6CurrentLocationController*) locationController;
+
+/*! Returns the default Bit6PushNotificationCenter object.
+ @return the default Bit6PushNotificationCenter object.
+ */
++ (Bit6PushNotificationCenter*) pushNotification;
+
+/*! Returns the default Bit6IncomingCallHandler object.
+ @return the default Bit6IncomingCallHandler object.
+ */
++ (Bit6IncomingCallHandler*) incomingCallHandler;
 
 /*! Returns the default Bit6IncomingCallNotificationBanner object.
  @return the default Bit6IncomingCallNotificationBanner object.
@@ -166,17 +177,24 @@
 /// @name ￼Calls
 ///---------------------------------------------------------------------------------------
 
-/*! Get the <Bit6CallController> object of the current call.
- @return <Bit6CallController> object of the current call
+/*! The in-call view controller used during the current call.
+ @return <Bit6CallViewController> object referencing the current in-call view controller.
  */
-+ (Bit6CallController*) currentCallController;
++ (Bit6CallViewController*) callViewController;
+
+/*! List of <Bit6CallController> objects in the current call.
+ @return an NSArray of <Bit6CallController> objects in the current call.
+ */
++ (NSArray*) callControllers;
 
 /*! Creates a <Bit6CallController> to reference a VoIP call
  @param address address of the user to call
+ @param hasAudio indicate if the call will include an audio stream
  @param hasVideo indicate if the call will include a video stream
+ @param hasData indicate if the call will include a data stream
  @return <Bit6CallController> object to handle the call
  */
-+ (Bit6CallController*) startCallToAddress:(Bit6Address*)address hasVideo:(BOOL)hasVideo;
++ (Bit6CallController*) startCallToAddress:(Bit6Address*)address hasAudio:(BOOL)hasAudio hasVideo:(BOOL)hasVideo hasData:(BOOL)hasData;
 
 /*! Creates a <Bit6CallController> to reference a PSTN call
  @param phoneNumber phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.
@@ -190,15 +208,9 @@
  */
 + (Bit6CallController*) callControllerFromIncomingCallNotification:(NSNotification*)notification;
 
-/*! Shows the UI associated to a call controller in a new UIWindow using a "slide up from the bottom of the screen" transition.
- @param callController call controller object to present.
+/*! Shows the callViewController in a new UIWindow using a "slide up from the bottom of the screen" transition.
  */
-+ (void) presentCallController:(Bit6CallController*)callController;
-
-/*! Dismiss the UI associated to a call controller using a "slide down from the top of the screen" transition. The UI must have been presented using <presentCallController:>.
- @param callController call controller object to dismiss.
- */
-+ (void) dismissCallController:(Bit6CallController*)callController;
++ (void) presentCallViewController;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Actions

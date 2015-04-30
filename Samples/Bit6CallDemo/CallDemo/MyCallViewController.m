@@ -34,9 +34,12 @@
     return self;
 }
 
+- (Bit6CallController*) callController
+{
+    return [[Bit6 callControllers] firstObject];
+}
+
 - (void)viewDidLoad {
-    self.usernameLabel.text = self.callController.otherDisplayName;
-    
     if (self.callController.hasVideo) {
         self.speakerButton.hidden = YES;
         self.speakerLabel.hidden = YES;
@@ -73,17 +76,17 @@
 
 - (void) refreshControlsView
 {
-    self.muteLabel.text = self.callController.audioMuted?@"Unmute":@"Mute";
-    self.speakerLabel.text = self.callController.speakerEnabled?@"Disable Speaker":@"Enable Speaker";
+    self.muteLabel.text = [Bit6CallController audioMuted]?@"Unmute":@"Mute";
+    self.speakerLabel.text = [Bit6CallController speakerEnabled]?@"Disable Speaker":@"Enable Speaker";
 }
 
-- (void) callStateChangedNotification
+- (void) callStateChangedNotificationForCallController:(Bit6CallController*)callController
 {
     self.controlsView.hidden = !(self.callController.callState == Bit6CallState_ANSWER);
-    [self secondsChangedNotification];
+    [self secondsChangedNotificationForCallController:callController];
 }
 
-- (void) secondsChangedNotification
+- (void) secondsChangedNotificationForCallController:(Bit6CallController*)callController
 {
     switch (self.callController.callState) {
         case Bit6CallState_NEW: case Bit6CallState_PROGRESS:
@@ -95,27 +98,31 @@
     }
 }
 
-- (void)updateLayoutForRemoteVideoView:(UIView*)remoteVideoView localVideoView:(UIView*)localVideoView remoteVideoAspectRatio:(CGSize)remoteVideoAspectRatio localVideoAspectRatio:(CGSize)localVideoAspectRatio
+- (void)updateLayoutForVideoFeedViews:(NSArray*)videoFeedViews
 {
-    [super updateLayoutForRemoteVideoView:remoteVideoView localVideoView:localVideoView remoteVideoAspectRatio:remoteVideoAspectRatio localVideoAspectRatio:localVideoAspectRatio];
+    self.usernameLabel.text = self.callController.otherDisplayName;
+    self.usernameLabel.hidden = [Bit6 callControllers].count>1;
+    self.timerLabel.hidden = self.usernameLabel.hidden;
+    
+    [super updateLayoutForVideoFeedViews:videoFeedViews];
 }
 
 #pragma mark Actions
 
 - (IBAction)switchCamera:(id)sender {
-    [self.callController switchCamera];
+    [Bit6CallController switchCamera];
 }
 
 - (IBAction)muteCall:(id)sender {
-    [self.callController switchMuteAudio];
+    [Bit6CallController switchMuteAudio];
 }
 
 - (IBAction)hangup:(id)sender {
-    [self.callController hangup];
+    [Bit6CallController hangupAll];
 }
 
 - (IBAction)speaker:(id)sender {
-    [self.callController switchSpeaker];
+    [Bit6CallController switchSpeaker];
 }
 
 @end

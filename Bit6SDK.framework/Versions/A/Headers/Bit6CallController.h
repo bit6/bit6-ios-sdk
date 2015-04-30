@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "Bit6Address.h"
+#import "Bit6Transfer.h"
 
 @class Bit6CallViewController;
 
@@ -30,13 +31,11 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
     Bit6CallState_MISSED,
 };
 
-@protocol Bit6CallControllerDelegate;
-
 /*! Bit6CallController represents an in-progress call. */
 @interface Bit6CallController : NSObject
 
 /*! Starts a call
- @param viewController a <Bit6CallViewController> object in which to start the call. Cannot be nil.
+ @param viewController a <Bit6CallViewController> object in which to start the call. 
  */
 - (void) connectToViewController:(Bit6CallViewController*)viewController;
 
@@ -59,42 +58,65 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 /*! The latest error to occur during the call. */
 @property (nonatomic, strong, readonly) NSError *error;
 
-/*! View Controller associated with this call. It will be retained until the call state is Bit6CallState_END, Bit6CallState_MISSED_CALL or Bit6CallState_ERROR. */
-@property (nonatomic, strong) Bit6CallViewController *viewController;
-
 /*! Identity of the other side of the call. */
 @property (nonatomic, strong, readonly) Bit6Address *other;
 
-/*! The current call is a video call */
+/*! The current call supports video. */
 @property (nonatomic, readonly) BOOL hasVideo;
+
+/*! The current call supports audio. */
+@property (nonatomic, readonly) BOOL hasAudio;
+
+/*! The current call supports data transfer. */
+@property (nonatomic, readonly) BOOL hasData;
 
 /*! The number of seconds the call has been going */
 @property (nonatomic, readonly) NSUInteger seconds;
 
 /*! The audio from the call is going through the speaker */
-@property (nonatomic, readonly) BOOL speakerEnabled;
++ (BOOL) speakerEnabled;
 
 /*! The audio is muted for the current call */
-@property (nonatomic, readonly) BOOL audioMuted;
++ (BOOL) audioMuted;
+
+/*! The video is muted for the current call */
++ (BOOL) videoMuted;
+
+/*! List of outgoing <Bit6Transfer> for the current call. */
+@property (nonatomic, readonly) NSArray *outgoingTransfers;
+
+/*! List of incoming <Bit6Transfer> for the current call. */
+@property (nonatomic, readonly) NSArray *incomingTransfers;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Actions
 ///---------------------------------------------------------------------------------------
 
-/*! Switch between the frontal and rear camera, if available. */
-- (void) switchCamera;
+/*! Switch between the frontal and rear camera, if available. This will be applied to all the running callControllers. */
++ (void) switchCamera;
 
-/*! Mute and unmute the audio in the current call. */
-- (void) switchMuteAudio;
+/*! Mute and unmute the microphone in the current call. This will be applied to all the running callControllers. */
++ (void) switchMuteAudio;
 
-/*! Change the audio route from the default one to the speaker, and vice versa. */
-- (void) switchSpeaker;
+/*! Mute and unmute the video in the current call. This will be applied to all the running callControllers. */
++ (void) switchMuteVideo;
 
-/*! End the current call. */
+/*! Change the audio route from the default one to the speaker, and vice versa. This will be applied to all the running callControllers. */
++ (void) switchSpeaker;
+
+/*! Send a hangup message to the sender. */
 - (void) hangup;
+
+/*! Send a hangup message to all <Bit6CallController> objects. */
++ (void) hangupAll;
 
 /*! Declines the call */
 - (void) declineCall;
+
+/*! Starts the specified <Bit6Transfer> through this call.
+@param transfer <Bit6Transfer> to start.
+ */
+- (void) startTransfer:(Bit6Transfer*)transfer;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Ringtone

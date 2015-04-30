@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Bit6ApplicationManager.h"
 #import "Bit6Constants.h"
 #import "Bit6Conversation.h"
 #import "Bit6Group.h"
@@ -20,10 +19,12 @@
 #import "Bit6AudioPlayerController.h"
 #import "Bit6AudioRecorderController.h"
 #import "Bit6CurrentLocationController.h"
+#import "Bit6Transfer.h"
 #import "Bit6CallController.h"
 #import "Bit6IncomingCallNotificationBanner.h"
 #import "Bit6CallViewController.h"
 #import "Bit6Utils.h"
+#import "Bit6PushNotificationCenter.h"
 #import "Bit6.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.9.0"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.9.1"

@@ -13,25 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:pushNotificationMode:launchingWithOptions:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:apnsProduction:</TokenIdentifier>
 			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (void)startWithApiKey:(NSString *)apiKey pushNotificationMode:(Bit6PushNotificationMode)pushNotificationMode launchingWithOptions:(NSDictionary *)launchOptions</Declaration>
+			<Declaration>+ (void)startWithApiKey:(NSString *)apiKey apnsProduction:(BOOL)apnsProduction</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>apiKey</Name>
 					<Abstract type="html">unique key for the current developer.</Abstract>
 				</Parameter><Parameter>
-					<Name>pushNotificationMode</Name>
-					<Abstract type="html">One of the values in Bit6PushNotificationMode enumeration.</Abstract>
-				</Parameter><Parameter>
-					<Name>launchOptions</Name>
-					<Abstract type="html">used to send the launchOptions from [UIApplicationDelegate application:didFinishLaunchingWithOptions:] to Bit6</Abstract>
+					<Name>apnsProduction</Name>
+					<Abstract type="html">YES if want to use the APNS Production Environment.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startWithApiKey:pushNotificationMode:launchingWithOptions:</Anchor>
+			<Anchor>//api/name/startWithApiKey:apnsProduction:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -80,6 +77,30 @@
 			
 			<ReturnValue><Abstract type="html">the default Bit6CurrentLocationController object.</Abstract></ReturnValue>
 			<Anchor>//api/name/locationController</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/pushNotification</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6PushNotificationCenter object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6PushNotificationCenter *)pushNotification</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6PushNotificationCenter object.</Abstract></ReturnValue>
+			<Anchor>//api/name/pushNotification</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/incomingCallHandler</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6IncomingCallHandler object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6IncomingCallHandler *)incomingCallHandler</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6IncomingCallHandler object.</Abstract></ReturnValue>
+			<Anchor>//api/name/incomingCallHandler</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -309,34 +330,52 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/currentCallController</TokenIdentifier>
-			<Abstract type="html">Get the Bit6CallController object of the current call.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/callViewController</TokenIdentifier>
+			<Abstract type="html">The in-call view controller used during the current call.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (Bit6CallController *)currentCallController</Declaration>
+			<Declaration>+ (Bit6CallViewController *)callViewController</Declaration>
 			
-			<ReturnValue><Abstract type="html">Bit6CallController object of the current call</Abstract></ReturnValue>
-			<Anchor>//api/name/currentCallController</Anchor>
+			<ReturnValue><Abstract type="html">Bit6CallViewController object referencing the current in-call view controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/callViewController</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToAddress:hasVideo:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/callControllers</TokenIdentifier>
+			<Abstract type="html">List of Bit6CallController objects in the current call.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)callControllers</Declaration>
+			
+			<ReturnValue><Abstract type="html">an NSArray of Bit6CallController objects in the current call.</Abstract></ReturnValue>
+			<Anchor>//api/name/callControllers</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallToAddress:hasAudio:hasVideo:hasData:</TokenIdentifier>
 			<Abstract type="html">Creates a Bit6CallController to reference a VoIP call</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (Bit6CallController *)startCallToAddress:(Bit6Address *)address hasVideo:(BOOL)hasVideo</Declaration>
+			<Declaration>+ (Bit6CallController *)startCallToAddress:(Bit6Address *)address hasAudio:(BOOL)hasAudio hasVideo:(BOOL)hasVideo hasData:(BOOL)hasData</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
 					<Abstract type="html">address of the user to call</Abstract>
 				</Parameter><Parameter>
+					<Name>hasAudio</Name>
+					<Abstract type="html">indicate if the call will include an audio stream</Abstract>
+				</Parameter><Parameter>
 					<Name>hasVideo</Name>
 					<Abstract type="html">indicate if the call will include a video stream</Abstract>
+				</Parameter><Parameter>
+					<Name>hasData</Name>
+					<Abstract type="html">indicate if the call will include a data stream</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Bit6CallController object to handle the call</Abstract></ReturnValue>
-			<Anchor>//api/name/startCallToAddress:hasVideo:</Anchor>
+			<Anchor>//api/name/startCallToAddress:hasAudio:hasVideo:hasData:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -375,36 +414,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/presentCallController:</TokenIdentifier>
-			<Abstract type="html">Shows the UI associated to a call controller in a new UIWindow using a &quot;slide up from the bottom of the screen&quot; transition.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/presentCallViewController</TokenIdentifier>
+			<Abstract type="html">Shows the callViewController in a new UIWindow using a &quot;slide up from the bottom of the screen&quot; transition.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (void)presentCallController:(Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">call controller object to present.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (void)presentCallViewController</Declaration>
 			
-			<Anchor>//api/name/presentCallController:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6/dismissCallController:</TokenIdentifier>
-			<Abstract type="html">Dismiss the UI associated to a call controller using a &quot;slide down from the top of the screen&quot; transition. The UI must have been presented using presentCallController:.</Abstract>
-			<DeclaredIn>Bit6.h</DeclaredIn>
 			
-			<Declaration>+ (void)dismissCallController:(Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">call controller object to dismiss.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/dismissCallController:</Anchor>
+			<Anchor>//api/name/presentCallViewController</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

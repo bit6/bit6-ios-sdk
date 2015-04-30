@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
             
         }))
         alert.addAction(UIAlertAction(title: "Done", style: .Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields?[0] as UITextField
-            var passwordTextField = alert.textFields?[1] as UITextField
+            var usernameTextField = alert.textFields?[0] as! UITextField
+            var passwordTextField = alert.textFields?[1] as! UITextField
             self.login(usernameTextField.text,password: passwordTextField.text)
         }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
@@ -43,8 +43,8 @@ class LoginViewController: UIViewController {
             
             }))
         alert.addAction(UIAlertAction(title: "Done", style: .Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields?[0] as UITextField
-            var passwordTextField = alert.textFields?[1] as UITextField
+            var usernameTextField = alert.textFields?[0] as! UITextField
+            var passwordTextField = alert.textFields?[1] as! UITextField
             self.signUp(usernameTextField.text,password: passwordTextField.text)
             }))
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in

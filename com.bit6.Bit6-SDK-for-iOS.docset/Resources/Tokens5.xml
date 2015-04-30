@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6AudioRecorderController.html">
+	<File path="Classes/Bit6CallController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioRecorderController</TokenIdentifier>
-			<Abstract type="html">Bit6AudioRecorderController is used to record an audio file and attach it to a message.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6CallController</TokenIdentifier>
+			<Abstract type="html">Bit6CallController represents an in-progress call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -13,127 +13,600 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</TokenIdentifier>
-			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/connectToViewController:</TokenIdentifier>
+			<Abstract type="html">Starts a call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
+			<Declaration>- (void)connectToViewController:(Bit6CallViewController *)viewController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">a Bit6OutgoingMessage object where the audio file will be included.</Abstract>
-				</Parameter><Parameter>
-					<Name>maxDuration</Name>
-					<Abstract type="html">maximum allowed duration (in seconds) of the audio file to be recorded.</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see Bit6AudioRecorderControllerDelegate Protocol Reference.</Abstract>
-				</Parameter><Parameter>
-					<Name>defaultPrompt</Name>
-					<Abstract type="html">if YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.</Abstract>
-				</Parameter><Parameter>
-					<Name>errorHandler</Name>
-					<Abstract type="html">block to call if an error occurs</Abstract>
+					<Name>viewController</Name>
+					<Abstract type="html">a Bit6CallViewController object in which to start the call.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</Anchor>
+			<Anchor>//api/name/connectToViewController:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setDuration:</TokenIdentifier>
-			<Abstract type="html">Gets the length of the current recording.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setCallState:</TokenIdentifier>
+			<Abstract type="html">Call status as a value of the Bit6MessageStatus enumeration.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			<Declaration>@property (nonatomic, readonly) Bit6CallState callState</Declaration>
 			
 			
-			<Anchor>//api/name/duration</Anchor>
+			<Anchor>//api/name/callState</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the current recording.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/callState</TokenIdentifier>
+			<Abstract type="html">Call status as a value of the Bit6MessageStatus enumeration.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			<Declaration>@property (nonatomic, readonly) Bit6CallState callState</Declaration>
 			
 			
-			<Anchor>//api/name/duration</Anchor>
+			<Anchor>//api/name/callState</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the current recording.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/callState</TokenIdentifier>
+			<Abstract type="html">Call status as a value of the Bit6MessageStatus enumeration.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			<Declaration>@property (nonatomic, readonly) Bit6CallState callState</Declaration>
 			
 			
-			<Anchor>//api/name/duration</Anchor>
+			<Anchor>//api/name/callState</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/cancelRecording</TokenIdentifier>
-			<Abstract type="html">Cancel a recording without saving the audio file.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setOtherDisplayName:</TokenIdentifier>
+			<Abstract type="html">Display name of other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)cancelRecording</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
 			
 			
-			<Anchor>//api/name/cancelRecording</Anchor>
+			<Anchor>//api/name/otherDisplayName</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/stopRecording</TokenIdentifier>
-			<Abstract type="html">Finish the recording and saves the audio file to cache.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/otherDisplayName</TokenIdentifier>
+			<Abstract type="html">Display name of other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)stopRecording</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
 			
 			
-			<Anchor>//api/name/stopRecording</Anchor>
+			<Anchor>//api/name/otherDisplayName</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setIsRecording:</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/otherDisplayName</TokenIdentifier>
+			<Abstract type="html">Display name of other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
 			
 			
-			<Anchor>//api/name/isRecording</Anchor>
+			<Anchor>//api/name/otherDisplayName</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/isRecording</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setIncomingCallAnswered:</TokenIdentifier>
+			<Abstract type="html">The incoming call was answered by using the system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCallAnswered</Declaration>
 			
 			
-			<Anchor>//api/name/isRecording</Anchor>
+			<Anchor>//api/name/incomingCallAnswered</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/isRecording</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s a recording in process.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/incomingCallAnswered</TokenIdentifier>
+			<Abstract type="html">The incoming call was answered by using the system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isRecording</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCallAnswered</Declaration>
 			
 			
-			<Anchor>//api/name/isRecording</Anchor>
+			<Anchor>//api/name/incomingCallAnswered</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/incomingCallAnswered</TokenIdentifier>
+			<Abstract type="html">The incoming call was answered by using the system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCallAnswered</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAnswered</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setIncomingCallAlert:</TokenIdentifier>
+			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAlert</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/incomingCallAlert</TokenIdentifier>
+			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAlert</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/incomingCallAlert</TokenIdentifier>
+			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCallAlert</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setError:</TokenIdentifier>
+			<Abstract type="html">The latest error to occur during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/error</TokenIdentifier>
+			<Abstract type="html">The latest error to occur during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/error</TokenIdentifier>
+			<Abstract type="html">The latest error to occur during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setOther:</TokenIdentifier>
+			<Abstract type="html">Identity of the other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
+			
+			
+			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/other</TokenIdentifier>
+			<Abstract type="html">Identity of the other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
+			
+			
+			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/other</TokenIdentifier>
+			<Abstract type="html">Identity of the other side of the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
+			
+			
+			<Anchor>//api/name/other</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasVideo:</TokenIdentifier>
+			<Abstract type="html">The current call supports video.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasVideo</TokenIdentifier>
+			<Abstract type="html">The current call supports video.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasVideo</TokenIdentifier>
+			<Abstract type="html">The current call supports video.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasAudio:</TokenIdentifier>
+			<Abstract type="html">The current call supports audio.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasAudio</Declaration>
+			
+			
+			<Anchor>//api/name/hasAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasAudio</TokenIdentifier>
+			<Abstract type="html">The current call supports audio.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasAudio</Declaration>
+			
+			
+			<Anchor>//api/name/hasAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasAudio</TokenIdentifier>
+			<Abstract type="html">The current call supports audio.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasAudio</Declaration>
+			
+			
+			<Anchor>//api/name/hasAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasData:</TokenIdentifier>
+			<Abstract type="html">The current call supports data transfer.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasData</Declaration>
+			
+			
+			<Anchor>//api/name/hasData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasData</TokenIdentifier>
+			<Abstract type="html">The current call supports data transfer.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasData</Declaration>
+			
+			
+			<Anchor>//api/name/hasData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasData</TokenIdentifier>
+			<Abstract type="html">The current call supports data transfer.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasData</Declaration>
+			
+			
+			<Anchor>//api/name/hasData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setSeconds:</TokenIdentifier>
+			<Abstract type="html">The number of seconds the call has been going</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger seconds</Declaration>
+			
+			
+			<Anchor>//api/name/seconds</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/seconds</TokenIdentifier>
+			<Abstract type="html">The number of seconds the call has been going</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger seconds</Declaration>
+			
+			
+			<Anchor>//api/name/seconds</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/seconds</TokenIdentifier>
+			<Abstract type="html">The number of seconds the call has been going</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger seconds</Declaration>
+			
+			
+			<Anchor>//api/name/seconds</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/speakerEnabled</TokenIdentifier>
+			<Abstract type="html">The audio from the call is going through the speaker</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)speakerEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/speakerEnabled</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/audioMuted</TokenIdentifier>
+			<Abstract type="html">The audio is muted for the current call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)audioMuted</Declaration>
+			
+			
+			<Anchor>//api/name/audioMuted</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/videoMuted</TokenIdentifier>
+			<Abstract type="html">The video is muted for the current call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)videoMuted</Declaration>
+			
+			
+			<Anchor>//api/name/videoMuted</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setOutgoingTransfers:</TokenIdentifier>
+			<Abstract type="html">List of outgoing Bit6Transfer for the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *outgoingTransfers</Declaration>
+			
+			
+			<Anchor>//api/name/outgoingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/outgoingTransfers</TokenIdentifier>
+			<Abstract type="html">List of outgoing Bit6Transfer for the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *outgoingTransfers</Declaration>
+			
+			
+			<Anchor>//api/name/outgoingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/outgoingTransfers</TokenIdentifier>
+			<Abstract type="html">List of outgoing Bit6Transfer for the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *outgoingTransfers</Declaration>
+			
+			
+			<Anchor>//api/name/outgoingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setIncomingTransfers:</TokenIdentifier>
+			<Abstract type="html">List of incoming Bit6Transfer for the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *incomingTransfers</Declaration>
+			
+			
+			<Anchor>//api/name/incomingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/incomingTransfers</TokenIdentifier>
+			<Abstract type="html">List of incoming Bit6Transfer for the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *incomingTransfers</Declaration>
+			
+			
+			<Anchor>//api/name/incomingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/incomingTransfers</TokenIdentifier>
+			<Abstract type="html">List of incoming Bit6Transfer for the current call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *incomingTransfers</Declaration>
+			
+			
+			<Anchor>//api/name/incomingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/switchCamera</TokenIdentifier>
+			<Abstract type="html">Switch between the frontal and rear camera, if available. This will be applied to all the running callControllers.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (void)switchCamera</Declaration>
+			
+			
+			<Anchor>//api/name/switchCamera</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/switchMuteAudio</TokenIdentifier>
+			<Abstract type="html">Mute and unmute the microphone in the current call. This will be applied to all the running callControllers.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (void)switchMuteAudio</Declaration>
+			
+			
+			<Anchor>//api/name/switchMuteAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/switchMuteVideo</TokenIdentifier>
+			<Abstract type="html">Mute and unmute the video in the current call. This will be applied to all the running callControllers.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (void)switchMuteVideo</Declaration>
+			
+			
+			<Anchor>//api/name/switchMuteVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/switchSpeaker</TokenIdentifier>
+			<Abstract type="html">Change the audio route from the default one to the speaker, and vice versa. This will be applied to all the running callControllers.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (void)switchSpeaker</Declaration>
+			
+			
+			<Anchor>//api/name/switchSpeaker</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hangup</TokenIdentifier>
+			<Abstract type="html">Send a hangup message to the sender.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)hangup</Declaration>
+			
+			
+			<Anchor>//api/name/hangup</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/hangupAll</TokenIdentifier>
+			<Abstract type="html">Send a hangup message to all &lt;Bit6CallController&gt; objects.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (void)hangupAll</Declaration>
+			
+			
+			<Anchor>//api/name/hangupAll</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/declineCall</TokenIdentifier>
+			<Abstract type="html">Declines the call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)declineCall</Declaration>
+			
+			
+			<Anchor>//api/name/declineCall</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/startTransfer:</TokenIdentifier>
+			<Abstract type="html">Starts the specified Bit6Transfer through this call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)startTransfer:(Bit6Transfer *)transfer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>transfer</Name>
+					<Abstract type="html">Bit6Transfer to start.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startTransfer:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/startRingtone</TokenIdentifier>
+			<Abstract type="html">Play the ringtone defined in the incoming push notification payload.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)startRingtone</Declaration>
+			
+			
+			<Anchor>//api/name/startRingtone</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

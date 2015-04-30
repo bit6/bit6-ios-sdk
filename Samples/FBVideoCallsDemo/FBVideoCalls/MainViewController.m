@@ -64,7 +64,7 @@
             [[FBSession activeSession] closeAndClearTokenInformation];
             [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
                 if (state==FBSessionStateOpen) {
-                    [Bit6.session oauthForProvider:Bit6SessionProvider_FACEBOOK params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
+                    [Bit6.session oauthForProvider:@"facebook" params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
                         if (!error) {
                             if (__weakSelf.presentingViewController==nil) {
                                 [__weakSelf performSegueWithIdentifier:@"loginCompleted" sender:nil];

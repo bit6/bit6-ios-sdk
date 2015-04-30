@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/Bit6TransferState.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6TransferState</TokenIdentifier>
+			<Abstract type="html">States for a Bit6Transfer.</Abstract>
+			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferState_NEW</TokenIdentifier>
+            <Abstract type="html">The transfer is new.</Abstract>
+            <Declaration>Bit6TransferState_NEW</Declaration>
+            
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferState_STARTED</TokenIdentifier>
+            <Abstract type="html">The transfer has started.</Abstract>
+            <Declaration>Bit6TransferState_STARTED</Declaration>
+            
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferState_ENDED</TokenIdentifier>
+            <Abstract type="html">The transfer ended successfully.</Abstract>
+            <Declaration>Bit6TransferState_ENDED</Declaration>
+            
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferState_ENDED_WITH_ERROR</TokenIdentifier>
+            <Abstract type="html">The transfer ended with an error.</Abstract>
+            <Declaration>Bit6TransferState_ENDED_WITH_ERROR</Declaration>
+            
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+	</File>
+</Tokens>

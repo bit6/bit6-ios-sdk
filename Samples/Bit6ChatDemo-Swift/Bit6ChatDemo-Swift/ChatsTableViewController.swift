@@ -63,7 +63,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     override func viewDidLoad() {
         self.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
         
-        var button = UIButton.buttonWithType(.InfoLight) as UIButton
+        var button = UIButton.buttonWithType(.InfoLight) as! UIButton
         button.addTarget(self, action:"showDetailInfo", forControlEvents:.TouchUpInside)
         var detailButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = detailButton
@@ -130,19 +130,19 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        var message = self.messages[indexPath.row] as Bit6Message
+        var message = self.messages[indexPath.row] as! Bit6Message
         var cell : UITableViewCell
         if (message.type == .Text) {
             if (message.incoming){
-                cell = tableView.dequeueReusableCellWithIdentifier("textInCell") as UITableViewCell
+                cell = tableView.dequeueReusableCellWithIdentifier("textInCell") as! UITableViewCell
             }
             else {
-                cell = tableView.dequeueReusableCellWithIdentifier("textOutCell") as UITableViewCell
+                cell = tableView.dequeueReusableCellWithIdentifier("textOutCell") as! UITableViewCell
             }
 
             var view = cell.viewWithTag(1)
             if (view != nil){
-                var textLabel = cell.viewWithTag(1) as UILabel
+                var textLabel = cell.viewWithTag(1) as! UILabel
                 if (message.incoming){
                     textLabel.textAlignment = .Left
                 }
@@ -154,16 +154,16 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             
         else {
             if (message.incoming){
-                cell = tableView.dequeueReusableCellWithIdentifier("attachmentInCell") as UITableViewCell
+                cell = tableView.dequeueReusableCellWithIdentifier("attachmentInCell") as! UITableViewCell
             }
             else {
-                cell = tableView.dequeueReusableCellWithIdentifier("attachmentOutCell") as UITableViewCell
+                cell = tableView.dequeueReusableCellWithIdentifier("attachmentOutCell") as! UITableViewCell
             }
         }
         
         var view = cell.viewWithTag(1)
         if (view != nil){
-            var textLabel = view as Bit6MessageLabel
+            var textLabel = view as! Bit6MessageLabel
             textLabel.menuControllerDelegate = self
             textLabel.layer.borderColor = UIColor.grayColor().CGColor
             textLabel.layer.borderWidth = 0.7
@@ -171,7 +171,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         
         view = cell.viewWithTag(3)
         if (view != nil){
-            var imageView = view as Bit6ThumbnailImageView
+            var imageView = view as! Bit6ThumbnailImageView
             imageView.thumbnailImageViewDelegate = self
             imageView.menuControllerDelegate = self
             imageView.layer.borderWidth=1
@@ -182,16 +182,16 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var message = self.messages[indexPath.row] as Bit6Message
+        var message = self.messages[indexPath.row] as! Bit6Message
         
         var view = cell.viewWithTag(1)
         if ((view) != nil){
-            var textLabel = view as Bit6MessageLabel
+            var textLabel = view as! Bit6MessageLabel
             textLabel.message = message
         }
         view = cell.viewWithTag(2)
         if ((view) != nil){
-            var detailTextLabel = view as UILabel
+            var detailTextLabel = view as! UILabel
             
             if (message.incoming){
                 detailTextLabel.text = ""
@@ -216,14 +216,14 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         
         view = cell.viewWithTag(3)
         if ((view) != nil){
-            var imageView = view as Bit6ThumbnailImageView
+            var imageView = view as! Bit6ThumbnailImageView
             imageView.message = message
         }
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if (indexPath.row < self.messages.count) {
-            var message = self.messages[indexPath.row] as Bit6Message
+            var message = self.messages[indexPath.row] as! Bit6Message
             return !message.incoming
         }
         else {
@@ -232,7 +232,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        var message = self.messages[indexPath.row] as Bit6Message
+        var message = self.messages[indexPath.row] as! Bit6Message
         Bit6.deleteMessage(message, completion:nil)
     }
     
@@ -254,7 +254,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             
         }))
         alert.addAction(UIAlertAction(title: "Done", style: .Default, handler:{(action :UIAlertAction!) in
-            var msgTextField = alert.textFields?[0] as UITextField
+            var msgTextField = alert.textFields?[0] as! UITextField
             self.sendTextMsg(msgTextField.text)
         }))
         
@@ -269,9 +269,8 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func sendTextMsg(msg : NSString){
         if (msg.length > 0){
             var message = Bit6OutgoingMessage()
-            message.content = msg
+            message.content = msg as String
             message.destination = self.conversation.address
-            message.channel = .PUSH
             message.sendWithCompletionHandler({ (response, error) -> Void in
                 if (error == nil){
                     NSLog("Message Sent")
@@ -328,19 +327,19 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     {
         var message = Bit6OutgoingMessage()
-        var mediaType = info[UIImagePickerControllerMediaType] as NSString
-        if (mediaType.isEqualToString(kUTTypeImage)){
-            var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        var mediaType = info[UIImagePickerControllerMediaType] as! NSString
+        var imageType = kUTTypeImage as String
+        if (mediaType.isEqualToString(imageType)){
+            var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             message.image = chosenImage
         }
         else {
-            message.videoURL = info[UIImagePickerControllerMediaURL] as NSURL
-            message.videoCropStart = info["_UIImagePickerControllerVideoEditingStart"] as NSNumber
-            message.videoCropEnd = info["_UIImagePickerControllerVideoEditingEnd"] as NSNumber
+            message.videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+            message.videoCropStart = info["_UIImagePickerControllerVideoEditingStart"] as! NSNumber
+            message.videoCropEnd = info["_UIImagePickerControllerVideoEditingEnd"] as! NSNumber
         }
         
         message.destination = self.conversation.address
-        message.channel = .PUSH
         message.sendWithCompletionHandler { (response, error) -> Void in
             if (error == nil){
                 NSLog("Message Sent")
@@ -357,7 +356,6 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func sendLocation() -> Void {
         var message = Bit6OutgoingMessage()
         message.destination = self.conversation.address
-        message.channel = .PUSH
         Bit6.locationController().startListeningToLocationForMessage(message, delegate: self)
     }
     
@@ -383,7 +381,6 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     func sendAudio() -> Void {
         var message = Bit6OutgoingMessage()
         message.destination = self.conversation.address
-        message.channel = .PUSH
         Bit6.audioRecorder().startRecordingAudioForMessage(message, maxDuration: 60, delegate: self, defaultPrompt: true, errorHandler:{ (error) -> Void in
             var alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
@@ -408,30 +405,28 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     
     func conversationsChangedNotification(notification:NSNotification) {
         var userInfo = notification.userInfo!
-        var object = userInfo[Bit6ObjectKey] as Bit6Conversation
+        var object = userInfo[Bit6ObjectKey] as! Bit6Conversation
         
         if (object.isEqual(self.conversation)) {
-            var change = userInfo[Bit6ChangeKey] as NSString
+            var change = userInfo[Bit6ChangeKey] as! NSString
             if (change == Bit6UpdatedKey) {
+                var title = conversation.displayName
                 
                 var group = Bit6Group(forConversation:self.conversation)
                 if (group != nil) {
-                    var title = group.metadata["title"] as NSString!
-                    var displayName = ""
-                    
-                    if let title = title {
-                        self.title = title.length > 0 ? title : conversation.displayName
+                    var groupTitle = group.metadata[Bit6GroupMetadataTitleKey] as! String!
+                    if (groupTitle != nil && count(groupTitle)>0){
+                        title = groupTitle
                     }
-                    else {
-                        self.title = conversation.displayName
-                    }
-                    
-                    if (object.typingAddress != nil) {
-                        self.typingBarButtonItem.title = "\(object.typingAddress.displayName) is typing..."
-                    }
-                    else {
-                        self.typingBarButtonItem.title = ""
-                    }
+                }
+                
+                self.title = title
+            
+                if (object.typingAddress != nil) {
+                    self.typingBarButtonItem.title = "\(object.typingAddress.displayName) is typing..."
+                }
+                else {
+                    self.typingBarButtonItem.title = ""
                 }
             }
         }
@@ -439,8 +434,8 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     
     func messagesChangedNotification(notification:NSNotification) {
         var userInfo = notification.userInfo!
-        var object = userInfo[Bit6ObjectKey] as Bit6Message
-        var change = userInfo[Bit6ChangeKey] as NSString
+        var object = userInfo[Bit6ObjectKey] as! Bit6Message
+        var change = userInfo[Bit6ChangeKey] as! NSString
         
         if (change == Bit6AddedKey) {
             self.observeAddedMessage(object)
@@ -473,7 +468,9 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         if (index != NSNotFound) {
             var indexPath = NSIndexPath(forRow:index, inSection: 0)
             var cell = self.tableView.cellForRowAtIndexPath(indexPath)
-            self.tableView(self.tableView, willDisplayCell:cell!, forRowAtIndexPath:indexPath)
+            if (cell != nil){
+                self.tableView(self.tableView, willDisplayCell:cell!, forRowAtIndexPath:indexPath)
+            }
         }
     }
     
@@ -517,12 +514,11 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             
         }))
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields?[0] as UITextField
+            var usernameTextField = alert.textFields?[0] as! UITextField
             if ((usernameTextField.text as NSString).length>0){
                 var address = Bit6Address(kind: .USERNAME, value: usernameTextField.text)
                 var message = Bit6OutgoingMessage.outgoingCopyOfMessage(msg)
                 message.destination = address
-                message.channel = .PUSH
                 message.sendWithCompletionHandler { (response, error) -> Void in
                     if (error == nil) {
                         NSLog("Message Sent")
@@ -556,11 +552,11 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "showFullImage"){
-            var iavc = segue.destinationViewController as ImageAttachedViewController
-            iavc.message = sender as Bit6Message
+            var iavc = segue.destinationViewController as! ImageAttachedViewController
+            iavc.message = sender as! Bit6Message
         }
         else if (segue.identifier == "showDetails") {
-            var obj = segue.destinationViewController as ConversationDetailsTableViewController
+            var obj = segue.destinationViewController as! ConversationDetailsTableViewController
             obj.conversation = self.conversation;
             obj.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
         }

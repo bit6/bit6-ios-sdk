@@ -19,7 +19,6 @@
     Bit6OutgoingMessage *message = [[Bit6OutgoingMessage alloc] init];
     message.content = @"This is a text message";
     message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:@"user2"];
-    message.channel = Bit6MessageChannel_PUSH;
     [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             NSLog(@"Message Sent");
@@ -37,11 +36,6 @@
 
 /*! The <Bit6Address> object to reference the message's destination. */
 @property (nonatomic, strong) Bit6Address *destination;
-
-/*! Channel of the message. One of the values in <Bit6MessageChannel> enumeration.
- @warning The only channel currently allowed is Bit6MessageChannel_PUSH.
- */
-@property (nonatomic) Bit6MessageChannel channel;
 
 /*! Image to send as an attachment. */
 @property (nonatomic, strong) UIImage *image;

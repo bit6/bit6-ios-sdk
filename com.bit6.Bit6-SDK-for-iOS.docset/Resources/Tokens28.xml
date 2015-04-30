@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageAttachmentCategory.html">
+	<File path="Protocols/Bit6ThumbnailImageViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentCategory</TokenIdentifier>
-			<Abstract type="html">Message attachment category for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageViewDelegate protocol defines methods that your delegate object must implement to interact with a Bit6ThumbnailImageView object. The methods of this protocol notify your delegate when the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_THUMBNAIL</TokenIdentifier>
-            <Abstract type="html">The thumbnail image for the message.</Abstract>
-            <Declaration>Bit6MessageAttachmentCategory_THUMBNAIL</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6ThumbnailImageViewDelegate/touchedThumbnailImageView:</TokenIdentifier>
+			<Abstract type="html">Tell the delegate that the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)touchedThumbnailImageView:(Bit6ThumbnailImageView *)thumbnailImageView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thumbnailImageView</Name>
+					<Abstract type="html">The Bit6ThumbnailImageView object tapped by the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/touchedThumbnailImageView:</Anchor>
             <NodeRef refid="28"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentCategory_FULL_SIZE</TokenIdentifier>
-            <Abstract type="html">The full size attachment for the message.</Abstract>
-            <Declaration>Bit6MessageAttachmentCategory_FULL_SIZE</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="28"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

@@ -10,14 +10,6 @@
 #import "Bit6Address.h"
 #import "Bit6Constants.h"
 
-/*! Bit6Session providers */
-typedef NS_ENUM(NSInteger, Bit6SessionProvider) {
-    /*! Facebook session */
-    Bit6SessionProvider_FACEBOOK,
-    /*! Google session */
-    Bit6SessionProvider_GOOGLE
-};
-
 /*! A Bit6Session object contains the session information about the current connection to the Bit6 platform. It allows the user to sign up for a new account with the app, login into an existing account or logout. */
 @interface Bit6Session : NSObject
 
@@ -77,6 +69,6 @@ typedef NS_ENUM(NSInteger, Bit6SessionProvider) {
  @param params additional params required to perform the sign in
  @param completion Block to be executed after the operation has been completed. The "error" value can be use to know if the session was initiated.
  */
-- (void)oauthForProvider:(Bit6SessionProvider)provider params:(NSDictionary*)params completion:(Bit6CompletionHandler)completion;
+- (void)oauthForProvider:(NSString*)provider params:(NSDictionary*)params completion:(Bit6CompletionHandler)completion;
 
 @end

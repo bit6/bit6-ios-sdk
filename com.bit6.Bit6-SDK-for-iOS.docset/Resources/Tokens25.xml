@@ -1,87 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6AddressKind.html">
+	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6AddressKind</TokenIdentifier>
-			<Abstract type="html">Bit6Address kind</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_PHONE</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a phone number</Abstract>
-            <Declaration>Bit6AddressKind_PHONE</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)currentLocationController:(Bit6CurrentLocationController *)b6clc didFailWithError:(NSError *)error message:(Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
             <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_USERNAME</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an username</Abstract>
-            <Declaration>Bit6AddressKind_USERNAME</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)currentLocationController:(Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
             <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_EMAIL</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an email account</Abstract>
-            <Declaration>Bit6AddressKind_EMAIL</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_FACEBOOK</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a Facebook account</Abstract>
-            <Declaration>Bit6AddressKind_FACEBOOK</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GOOGLE</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a Google account</Abstract>
-            <Declaration>Bit6AddressKind_GOOGLE</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_UID</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an anonymous session</Abstract>
-            <Declaration>Bit6AddressKind_UID</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GROUP</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a group</Abstract>
-            <Declaration>Bit6AddressKind_GROUP</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="25"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

@@ -1,197 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6Error.html">
+	<File path="Protocols/Bit6MenuControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6Error</TokenIdentifier>
-			<Abstract type="html">Bit6 error constants</Abstract>
-			<DeclaredIn>Bit6Constants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6MenuControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6MenuControllerDelegate protocol defines methods that your delegate object must implement to allow the standard UIMenuController to be shown on a UIView element related to a Bit6Message with options like &apos;forward a sent message&apos;, &apos;send again a failed message&apos; and &apos;copy text&apos;.</Abstract>
+			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_NotConnectedToInternet</TokenIdentifier>
-            <Abstract type="html">Internet connection not found</Abstract>
-            <Declaration>Bit6Error_NotConnectedToInternet</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/forwardMessage:</TokenIdentifier>
+			<Abstract type="html">If implemented, the &quot;forward&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;forward&quot; menu was pressed.</Abstract>
+			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)forwardMessage:(Bit6Message *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The Bit6Message object to be forwarded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/forwardMessage:</Anchor>
             <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_MicNotAllowed</TokenIdentifier>
-            <Abstract type="html">Restricted access to the Microphone</Abstract>
-            <Declaration>Bit6Error_MicNotAllowed</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/resendFailedMessage:</TokenIdentifier>
+			<Abstract type="html">If implemented, the &quot;send&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;send&quot; menu was pressed.</Abstract>
+			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)resendFailedMessage:(Bit6OutgoingMessage *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The Bit6Message object to be send again.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resendFailedMessage:</Anchor>
             <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_CameraNotAllowed</TokenIdentifier>
-            <Abstract type="html">Restricted access to the Camera</Abstract>
-            <Declaration>Bit6Error_CameraNotAllowed</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_LocationNotAllowed</TokenIdentifier>
-            <Abstract type="html">Restricted access to Location</Abstract>
-            <Declaration>Bit6Error_LocationNotAllowed</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_SessionNotInitiated</TokenIdentifier>
-            <Abstract type="html">Session hasn&apos;t being initiated</Abstract>
-            <Declaration>Bit6Error_SessionNotInitiated</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_InvalidAddress</TokenIdentifier>
-            <Abstract type="html">Invalid Address</Abstract>
-            <Declaration>Bit6Error_InvalidAddress</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_InsuficientParameters</TokenIdentifier>
-            <Abstract type="html">Insuficient Parameters</Abstract>
-            <Declaration>Bit6Error_InsuficientParameters</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_InvalidSessionProvider</TokenIdentifier>
-            <Abstract type="html">Invalid Session Provider</Abstract>
-            <Declaration>Bit6Error_InvalidSessionProvider</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_SaveToCacheFailed</TokenIdentifier>
-            <Abstract type="html">Attachment wasn&apos;t saved to cache</Abstract>
-            <Declaration>Bit6Error_SaveToCacheFailed</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FileDoesNotExists</TokenIdentifier>
-            <Abstract type="html">Attachment doesn&apos;t exist in cache</Abstract>
-            <Declaration>Bit6Error_FileDoesNotExists</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FileDoesNotExistsWillDownload</TokenIdentifier>
-            <Abstract type="html">Attachment doesn&apos;t exist in cache, but it is being downloaded</Abstract>
-            <Declaration>Bit6Error_FileDoesNotExistsWillDownload</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FileDoesNotExistsOnServer</TokenIdentifier>
-            <Abstract type="html">Attachment doesn&apos;t exist in the server, probably because an error during the upload process</Abstract>
-            <Declaration>Bit6Error_FileDoesNotExistsOnServer</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_HTTPServerError</TokenIdentifier>
-            <Abstract type="html">An HTTP status = 5xx occur when interacting with the server</Abstract>
-            <Declaration>Bit6Error_HTTPServerError</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_HTTPClientError</TokenIdentifier>
-            <Abstract type="html">An HTTP status = 4xx occur when interacting with the server</Abstract>
-            <Declaration>Bit6Error_HTTPClientError</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_FailedToStartTheCallError</TokenIdentifier>
-            <Abstract type="html">Failed to Start the call.</Abstract>
-            <Declaration>Bit6Error_FailedToStartTheCallError</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_CallInProgressError</TokenIdentifier>
-            <Abstract type="html">Can&apos;t answer the call because another call is in progress</Abstract>
-            <Declaration>Bit6Error_CallInProgressError</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_InvalidRESTAPICall</TokenIdentifier>
-            <Abstract type="html">An HTTP status = 4xx occur when interacting with the server</Abstract>
-            <Declaration>Bit6Error_InvalidRESTAPICall</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_RecipientNotFound</TokenIdentifier>
-            <Abstract type="html">The recipient was not found</Abstract>
-            <Declaration>Bit6Error_RecipientNotFound</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

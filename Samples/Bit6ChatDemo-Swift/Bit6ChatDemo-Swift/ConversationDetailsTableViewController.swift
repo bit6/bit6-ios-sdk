@@ -66,7 +66,7 @@ class ConversationDetailsTableViewController: UITableViewController {
 
     func memberForIndexPath(indexPath:NSIndexPath) -> Bit6GroupMember! {
         if (self.group != nil) {
-            var member = self.group.members[indexPath.row-1] as Bit6GroupMember
+            var member = self.group.members[indexPath.row-1] as! Bit6GroupMember
             return member
         }
         return nil
@@ -93,7 +93,7 @@ class ConversationDetailsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //title
         if (self.group != nil && indexPath.row == 0) {
-            var cell = tableView.dequeueReusableCellWithIdentifier("group_subject") as UITableViewCell!
+            var cell = tableView.dequeueReusableCellWithIdentifier("group_subject") as! UITableViewCell!
             if (cell == nil) {
                 cell = UITableViewCell(style: .Default, reuseIdentifier: "group_subject")
                 var subjectLabel = UILabel(frame: CGRectZero)
@@ -114,9 +114,9 @@ class ConversationDetailsTableViewController: UITableViewController {
                 subjectTextField.placeholder = Bit6EmptyGroupSubject;
                 subjectTextField.enabled = self.editing;
                 
-                var title = self.group.metadata!["title"] as NSString!
+                var title = self.group.metadata!["title"] as! NSString!
                 if let title = title {
-                    subjectTextField.text = title
+                    subjectTextField.text = title as String
                 }
                 subjectTextField.addTarget(self, action:"subjectTextFieldDidChange:", forControlEvents:.EditingDidEndOnExit)
                 cell.contentView.addSubview(subjectTextField)
@@ -129,7 +129,7 @@ class ConversationDetailsTableViewController: UITableViewController {
             
             //members
         else if (self.group == nil  || (indexPath.row-1 < self.group.members.count)) {
-            var cell = tableView.dequeueReusableCellWithIdentifier("group_member") as UITableViewCell!
+            var cell = tableView.dequeueReusableCellWithIdentifier("group_member") as! UITableViewCell!
             if (cell == nil) {
                 cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "group_member")
                 cell.detailTextLabel!.textColor = UIColor.redColor()
@@ -141,7 +141,7 @@ class ConversationDetailsTableViewController: UITableViewController {
             
             //add member
         else {
-            var cell = tableView.dequeueReusableCellWithIdentifier("add_member") as UITableViewCell!
+            var cell = tableView.dequeueReusableCellWithIdentifier("add_member") as! UITableViewCell!
             if (cell == nil) {
                 cell = UITableViewCell(style: .Default, reuseIdentifier: "add_member")
                 cell.textLabel!.textColor = UIColor(red: 0, green: 0.478431, blue: 1.0, alpha: 1.0)
@@ -228,7 +228,7 @@ class ConversationDetailsTableViewController: UITableViewController {
             
         }))
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:{(action :UIAlertAction!) in
-            var usernameTextField = alert.textFields?[0] as UITextField
+            var usernameTextField = alert.textFields?[0] as! UITextField
             if ((usernameTextField.text as NSString).length>0){
                 
                 var destinations =  [usernameTextField.text]
@@ -244,7 +244,7 @@ class ConversationDetailsTableViewController: UITableViewController {
                         }
                     }
                     
-                    self.group.inviteAddresses(addresses, completion:{ (members, error) -> Void in
+                    self.group.inviteAddresses(addresses as [AnyObject], completion:{ (members, error) -> Void in
                         if (error != nil){
                             var alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:{(action :UIAlertAction!) in

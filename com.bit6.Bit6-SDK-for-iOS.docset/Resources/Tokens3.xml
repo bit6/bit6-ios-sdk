@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6ApplicationManager.html">
+	<File path="Classes/Bit6AudioPlayerController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6ApplicationManager</TokenIdentifier>
-			<Abstract type="html">Class to be extended by the ApplicationDelegate</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioPlayerController</TokenIdentifier>
+			<Abstract type="html">Audio player allows to play an audio file attached to a message.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -13,171 +13,178 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/application:didRegisterUserNotificationSettings:</TokenIdentifier>
-			<Abstract type="html">Bit6 implementation of -[UIApplicationDelegate application:didRegisterUserNotificationSettings:]</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileInMessage:errorHandler:</TokenIdentifier>
+			<Abstract type="html">Starts playing the audio file attached to a message. You can listen to the Bit6AudioPlayingNotification to update your UI while playing an audio file.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings</Declaration>
+			<Declaration>- (void)startPlayingAudioFileInMessage:(Bit6Message *)msg errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>application</Name>
-					<Abstract type="html">The app object that received the remote notification.</Abstract>
+					<Name>msg</Name>
+					<Abstract type="html">A Bit6Message object with the audio attachment to play.</Abstract>
 				</Parameter><Parameter>
-					<Name>notificationSettings</Name>
-					<Abstract type="html">The user notification settings that are available to your app. The settings in this object may be different than the ones you originally requested.</Abstract>
+					<Name>errorHandler</Name>
+					<Abstract type="html">block to call if an error occurs</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/application:didRegisterUserNotificationSettings:</Anchor>
+			<Anchor>//api/name/startPlayingAudioFileInMessage:errorHandler:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/application:handleActionWithIdentifier:forRemoteNotification:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Bit6 implementation of -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:]</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setIsPlayingAudioFile:</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void ( ^ ) ( ))completionHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>application</Name>
-					<Abstract type="html">The app object that received the remote notification.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier associated with the custom action.</Abstract>
-				</Parameter><Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
 			
-			<Anchor>//api/name/application:handleActionWithIdentifier:forRemoteNotification:completionHandler:</Anchor>
+			
+			<Anchor>//api/name/isPlayingAudioFile</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/application:didReceiveRemoteNotification:</TokenIdentifier>
-			<Abstract type="html">Bit6 implementation of -[UIApplicationDelegate application:didReceiveRemoteNotification:]</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/isPlayingAudioFile</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>application</Name>
-					<Abstract type="html">The app object that received the remote notification.</Abstract>
-				</Parameter><Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
 			
-			<Anchor>//api/name/application:didReceiveRemoteNotification:</Anchor>
+			
+			<Anchor>//api/name/isPlayingAudioFile</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/didReceiveRemoteNotification:fetchCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">To be called by the implementation of -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:]</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/isPlayingAudioFile</TokenIdentifier>
+			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult result ))completionHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The block to execute when the download operation is complete. When calling this block, pass in the fetch result value that best describes the results of your download operation. You must call this handler and should do so as soon as possible.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
 			
-			<Anchor>//api/name/didReceiveRemoteNotification:fetchCompletionHandler:</Anchor>
+			
+			<Anchor>//api/name/isPlayingAudioFile</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/application:didRegisterForRemoteNotificationsWithDeviceToken:</TokenIdentifier>
-			<Abstract type="html">Bit6 implementation of -[UIApplicationDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:]</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/stopPlayingAudioFile</TokenIdentifier>
+			<Abstract type="html">Stop the audio file playing at the time</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>application</Name>
-					<Abstract type="html">The app object that initiated the remote-notification registration process.</Abstract>
-				</Parameter><Parameter>
-					<Name>deviceToken</Name>
-					<Abstract type="html">A token that identifies the device to APS. The token is an opaque data type because that is the form that the provider needs to submit to the APS servers when it sends a notification to a device. The APS servers require a binary format for performance reasons.
-The size of a device token is 32 bytes.
-Note that the device token is different from the uniqueIdentifier property of UIDevice because, for security and privacy reasons, it must change when the device is wiped.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)stopPlayingAudioFile</Declaration>
 			
-			<Anchor>//api/name/application:didRegisterForRemoteNotificationsWithDeviceToken:</Anchor>
+			
+			<Anchor>//api/name/stopPlayingAudioFile</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/application:didFailToRegisterForRemoteNotificationsWithError:</TokenIdentifier>
-			<Abstract type="html">Bit6 implementation of -[UIApplicationDelegate application:didFailToRegisterForRemoteNotificationsWithError:]</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setCurrentTime:</TokenIdentifier>
+			<Abstract type="html">Gets the audio file playing current time.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>application</Name>
-					<Abstract type="html">The app object that initiated the remote-notification registration process.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">An NSError object that encapsulates information why registration did not succeed. The app can choose to display this information to the user.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
 			
-			<Anchor>//api/name/application:didFailToRegisterForRemoteNotificationsWithError:</Anchor>
+			
+			<Anchor>//api/name/currentTime</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/receivedIncomingCallNotification:</TokenIdentifier>
-			<Abstract type="html">Starting point of the incoming calls flow. Implement if you want to handle the entire flow.</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/currentTime</TokenIdentifier>
+			<Abstract type="html">Gets the audio file playing current time.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)receivedIncomingCallNotification:(NSNotification *)notification</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>notification</Name>
-					<Abstract type="html">incoming call notification to be used with [Bit6 callControllerFromIncomingCallNotification:]</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
 			
-			<Anchor>//api/name/receivedIncomingCallNotification:</Anchor>
+			
+			<Anchor>//api/name/currentTime</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/inCallViewController</TokenIdentifier>
-			<Abstract type="html">Implement to customize the view controller used to handle the incoming call.</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/currentTime</TokenIdentifier>
+			<Abstract type="html">Gets the audio file playing current time.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (Bit6CallViewController *)inCallViewController</Declaration>
+			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
 			
-			<ReturnValue><Abstract type="html">a view controller to be used during the incoming call.</Abstract></ReturnValue>
-			<Anchor>//api/name/inCallViewController</Anchor>
+			
+			<Anchor>//api/name/currentTime</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ApplicationManager/incomingCallNotificationBannerContentView</TokenIdentifier>
-			<Abstract type="html">Implement to customize the view show in the incoming call notification banner.</Abstract>
-			<DeclaredIn>Bit6ApplicationManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setDuration:</TokenIdentifier>
+			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (UIView *)incomingCallNotificationBannerContentView</Declaration>
+			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
 			
-			<ReturnValue><Abstract type="html">a view to use in the incoming call notification banner.</Abstract></ReturnValue>
-			<Anchor>//api/name/incomingCallNotificationBannerContentView</Anchor>
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/duration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/duration</TokenIdentifier>
+			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setMessagePlaying:</TokenIdentifier>
+			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
+			
+			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagePlaying</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/messagePlaying</TokenIdentifier>
+			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
+			
+			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagePlaying</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/messagePlaying</TokenIdentifier>
+			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
+			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
+			
+			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagePlaying</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

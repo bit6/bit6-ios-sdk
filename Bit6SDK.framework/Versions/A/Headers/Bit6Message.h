@@ -12,14 +12,6 @@
 
 @class Bit6Conversation;
 
-/*! Channels available for sending a <Bit6Message>. */
-typedef NS_ENUM(NSInteger, Bit6MessageChannel) {
-    /*! The message is an SMS. */
-    Bit6MessageChannel_SMS = 2,
-    /*! The message is an app-to-app message. */
-    Bit6MessageChannel_PUSH = 3
-};
-
 /*! Delivery status for a <Bit6Message>. */
 typedef NS_ENUM(NSInteger, Bit6MessageStatus){
     /*! The message is new. */

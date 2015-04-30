@@ -85,42 +85,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setChannel:</TokenIdentifier>
-			<Abstract type="html">Channel of the message. One of the values in Bit6MessageChannel enumeration.</Abstract>
-			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) Bit6MessageChannel channel</Declaration>
-			
-			
-			<Anchor>//api/name/channel</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/channel</TokenIdentifier>
-			<Abstract type="html">Channel of the message. One of the values in Bit6MessageChannel enumeration.</Abstract>
-			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) Bit6MessageChannel channel</Declaration>
-			
-			
-			<Anchor>//api/name/channel</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/channel</TokenIdentifier>
-			<Abstract type="html">Channel of the message. One of the values in Bit6MessageChannel enumeration.</Abstract>
-			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) Bit6MessageChannel channel</Declaration>
-			
-			
-			<Anchor>//api/name/channel</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setImage:</TokenIdentifier>
 			<Abstract type="html">Image to send as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>

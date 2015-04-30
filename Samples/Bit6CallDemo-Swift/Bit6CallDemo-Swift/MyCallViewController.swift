@@ -21,10 +21,17 @@ class MyCallViewController: Bit6CallViewController {
     
     @IBOutlet var controlsView:UIView!
     
+    var callController : Bit6CallController {
+        get {
+            var callControllers = Bit6.callControllers()
+            return callControllers.first as! Bit6CallController
+        }
+    }
+    
     var statusBarOrientation:UIInterfaceOrientation!
     
-    override init() {
-        super.init(nibName:"MyCallViewController", bundle:nil);
+    init() {
+        super.init(nibName:"MyCallViewController", bundle:nil)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -32,7 +39,7 @@ class MyCallViewController: Bit6CallViewController {
     }
     
     override func viewDidLoad() {
-        self.usernameLabel.text = self.callController.otherDisplayName
+        super.viewDidLoad()
         
         if (self.callController.hasVideo) {
             self.speakerButton.hidden = true
@@ -50,8 +57,6 @@ class MyCallViewController: Bit6CallViewController {
         }
         
         self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
-        
-        super.viewDidLoad()
     }
     
     override func viewWillAppear(animated:Bool){
@@ -67,47 +72,54 @@ class MyCallViewController: Bit6CallViewController {
     // MARK: Bit6CallViewController methods
     
     override func refreshControlsView() {
-        self.muteLabel.text = self.callController.audioMuted ?"Unmute":"Mute"
-        self.speakerLabel.text = self.callController.speakerEnabled ?"Disable Speaker":"Enable Speaker"
+        self.muteLabel.text = Bit6CallController.audioMuted() ?"Unmute":"Mute"
+        self.speakerLabel.text = Bit6CallController.speakerEnabled() ?"Disable Speaker":"Enable Speaker"
     }
     
-    override func callStateChangedNotification() {
-        self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
-        self.secondsChangedNotification()
-    }
-    
-    override func secondsChangedNotification() {
-        switch (self.callController.callState) {
-        case .NEW: fallthrough case .PROGRESS:
-            self.timerLabel.text = "Connecting..."
-        case .ANSWER:
-            self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(self.callController.seconds))
-        case .DISCONNECTED:fallthrough case .END:fallthrough case .MISSED:fallthrough case .ERROR:
-            self.timerLabel.text = "Disconnected"
+    override func callStateChangedNotificationForCallController(callController: Bit6CallController!) {
+        if (self.controlsView != nil) {
+            self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
+            self.secondsChangedNotificationForCallController(callController)
         }
     }
     
-    override func updateLayoutForRemoteVideoView(remoteVideoView:UIView, localVideoView:UIView, remoteVideoAspectRatio:CGSize, localVideoAspectRatio:CGSize)
-    {
-        super.updateLayoutForRemoteVideoView(remoteVideoView, localVideoView:localVideoView, remoteVideoAspectRatio:remoteVideoAspectRatio, localVideoAspectRatio:localVideoAspectRatio)
+    override func secondsChangedNotificationForCallController(callController: Bit6CallController!) {
+        if (self.timerLabel != nil) {
+            switch (self.callController.callState) {
+            case .NEW: fallthrough case .PROGRESS:
+                self.timerLabel.text = "Connecting..."
+            case .ANSWER:
+                self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(self.callController.seconds))
+            case .DISCONNECTED:fallthrough case .END:fallthrough case .MISSED:fallthrough case .ERROR:
+                self.timerLabel.text = "Disconnected"
+            }
+        }
+    }
+    
+    override func updateLayoutForVideoFeedViews(videoFeedViews: [AnyObject]!) {
+        self.usernameLabel.text = self.callController.otherDisplayName
+        self.usernameLabel.hidden = Bit6.callControllers().count>1
+        self.timerLabel.hidden = self.usernameLabel.hidden;
+        
+        super.updateLayoutForVideoFeedViews(videoFeedViews)
     }
     
     // MARK: Actions
     
     @IBAction func switchCamera(sender : UIButton) {
-        self.callController.switchCamera()
+        Bit6CallController.switchCamera()
     }
     
     @IBAction func muteCall(sender : UIButton) {
-        self.callController.switchMuteAudio()
+        Bit6CallController.switchMuteAudio()
     }
     
     @IBAction func hangup(sender : UIButton) {
-        self.callController.hangup()
+        Bit6CallController.hangupAll()
     }
     
     @IBAction func speaker(sender : UIButton) {
-        self.callController.switchSpeaker()
+        Bit6CallController.switchSpeaker()
     }
     
 }

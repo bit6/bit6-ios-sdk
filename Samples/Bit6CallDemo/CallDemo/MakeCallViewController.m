@@ -49,7 +49,7 @@
     NSString *username = self.destinationUsernameTextField.text;
     Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
     
-    Bit6CallController *callController = [Bit6 startCallToAddress:address hasVideo:NO];
+    Bit6CallController *callController = [Bit6 startCallToAddress:address hasAudio:YES hasVideo:NO hasData:NO];
     [self startCallToCalController:callController];
 }
 
@@ -57,7 +57,7 @@
     NSString *username = self.destinationUsernameTextField.text;
     Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
     
-    Bit6CallController *callController = [Bit6 startCallToAddress:address hasVideo:YES];
+    Bit6CallController *callController = [Bit6 startCallToAddress:address hasAudio:YES hasVideo:YES hasData:NO];
     [self startCallToCalController:callController];
 }
 
@@ -104,17 +104,15 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         //the call is starting: show the viewController
         if (callController.callState == Bit6CallState_PROGRESS) {
-            [Bit6 presentCallController:callController];
+            [Bit6 presentCallViewController];
         }
         //the call ended: remove the observer and dismiss the viewController
         else if (callController.callState == Bit6CallState_END) {
             [callController removeObserver:self forKeyPath:@"callState"];
-            [Bit6 dismissCallController:callController];
         }
         //the call ended with an error: remove the observer and dismiss the viewController
         else if (callController.callState == Bit6CallState_ERROR) {
             [callController removeObserver:self forKeyPath:@"callState"];
-            [Bit6 dismissCallController:callController];
             [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     });

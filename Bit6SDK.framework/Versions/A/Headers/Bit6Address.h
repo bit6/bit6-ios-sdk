@@ -36,6 +36,12 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
  */
 + (instancetype)addressWithKind:(Bit6AddressKind)kind value:(NSString*)value;
 
+/*! Initializes a Bit6Address object
+ @param uri URI string to identify the address
+ @return a Bit6Address object if succesful or nil if failed.
+ */
++ (instancetype)addressWithURI:(NSString*)uri;
+
 /*! A display name for the sender. */
 @property (nonatomic, readonly) NSString *displayName;
 
@@ -43,6 +49,10 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
  @note See <Bit6AddressKind> enumeration
 */
 @property (nonatomic, readonly) NSNumber *kind;
+
+/*! returns the string representation of the <Bit6Address> object.
+ */
+@property (nonatomic, readonly) NSString *uri;
 
 /*! Check the <Bit6AddressKind> of the sender
  @param kind <Bit6AddressKind> to compare with the sender

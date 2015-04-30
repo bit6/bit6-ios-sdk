@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6MenuControllerDelegate.html">
+	<File path="Classes/Bit6VideoFeedView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6MenuControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6MenuControllerDelegate protocol defines methods that your delegate object must implement to allow the standard UIMenuController to be shown on a UIView element related to a Bit6Message with options like &apos;forward a sent message&apos;, &apos;send again a failed message&apos; and &apos;copy text&apos;.</Abstract>
-			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6VideoFeedView</TokenIdentifier>
+			<Abstract type="html">UIView to render a video feed during a call.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,36 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/forwardMessage:</TokenIdentifier>
-			<Abstract type="html">If implemented, the &quot;forward&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;forward&quot; menu was pressed.</Abstract>
-			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6VideoFeedView/setIsLocal:</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)forwardMessage:(Bit6Message *)msg</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">The Bit6Message object to be forwarded.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/forwardMessage:</Anchor>
+			
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6MenuControllerDelegate/resendFailedMessage:</TokenIdentifier>
-			<Abstract type="html">If implemented, the &quot;send&quot; action will be available in the standard UIMenuController. Tells the delegate that the &quot;send&quot; menu was pressed.</Abstract>
-			<DeclaredIn>Bit6MenuControllerDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6VideoFeedView/isLocal</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)resendFailedMessage:(Bit6OutgoingMessage *)msg</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">The Bit6Message object to be send again.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/resendFailedMessage:</Anchor>
+			
+			<Anchor>//api/name/isLocal</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6VideoFeedView/isLocal</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
+			
+			
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
