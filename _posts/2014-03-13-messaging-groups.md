@@ -41,6 +41,18 @@ Bit6Group.createGroupWithMetadata(["key1":"value1", ...],
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6AddedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
 
+__Note.__ If you want to set the title for a group the use of Bit6GroupMetadataTitleKey is recomended, as in:
+
+```objc
+//ObjectiveC
+[Bit6Group createGroupWithMetadata:@{Bit6GroupMetadataTitleKey:@"some title", ...} 
+					 completion:^(Bit6Group *group, NSError *error) {
+			            if (!error) {
+			                //group created
+			            }
+}];
+```
+
 ###Leave a Group
 
 ```objc
@@ -85,6 +97,8 @@ group.setMetadata(["key1":"value1", ...], completion:{(error) -> Void in
 ```
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
+
+__Note.__ If you want to set the title for a group the use of Bit6GroupMetadataTitleKey is recomended
 
 ###Invite members to a Group
 

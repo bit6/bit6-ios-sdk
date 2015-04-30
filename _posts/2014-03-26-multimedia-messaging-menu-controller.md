@@ -84,7 +84,6 @@ To show this action, implement forwardMessage:
     //set the destination and the channel
     Bit6Address *address = ...
     messageToForward.destination = address;
-    messageToForward.channel = Bit6MessageChannel_PUSH;
 
     //send a copy of the message to the new destination
     [messageToForward sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
@@ -102,7 +101,6 @@ func forwardMessage(msg:Bit6Message)
     //set the destination and the channel
     var address : Bit6Address = ...
     messageToForward.destination = address
-    messageToForward.channel = .PUSH
 
     //send a copy of the message to the new destination
     messageToForward.sendWithCompletionHandler ({ (response, error) -> Void in

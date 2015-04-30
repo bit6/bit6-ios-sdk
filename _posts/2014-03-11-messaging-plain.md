@@ -11,7 +11,6 @@ Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
 message.content = @"This is a text message";
 message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
                                              value:@"user2"];
-message.channel = Bit6MessageChannel_PUSH;
 [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
     if (!error) {
         NSLog(@"Message Sent");
@@ -27,7 +26,6 @@ var message = Bit6OutgoingMessage()
 message.content = "This is a text message"
 message.destination = Bit6Address(kind: .USERNAME, 
                    				 value: "user2");
-message.channel = .PUSH;
 message.sendWithCompletionHandler({ (response, error) -> Void in
     if (error == nil) {
         NSLog("Message Sent");
@@ -221,7 +219,7 @@ Then in your Bit6ApplicationManager subclass you need to implement the following
 		didReceiveRemoteNotification:(NSDictionary *)userInfo 
         	  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
-    [super didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    [[Bit6 pushNotification] didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 ```
 
@@ -230,6 +228,6 @@ func application(application: UIApplication,
 		didReceiveRemoteNotification userInfo: [NSObject : AnyObject], 
      fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) 
 {
-    super.didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler);
+	Bit6.pushNotification().didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler);
 }
 ```

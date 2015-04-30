@@ -28,7 +28,6 @@ If you are using `UIImagePickerController` to take/select a video you can do the
     
     message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
                                                  value:@"user2"];
-    message.channel = Bit6MessageChannel_PUSH;
     [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             NSLog(@"Message Sent");
@@ -64,7 +63,6 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     
 	message.destination = Bit6Address(kind:.USERNAME, 
     	                             value:"user2")
-    message.channel = .PUSH
     message.sendWithCompletionHandler ({ (response, error) -> Void in
         if (error == nil) {
             NSLog("Message Sent");

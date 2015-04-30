@@ -42,29 +42,11 @@ __Note__ If you are working on a Swift project remember to set a Swift-Objective
 
 ### Setup Application Delegate
 
-In your Application Delegate:
-
-__Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>` in you `AppDelegate.h` file.
+__Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>`.
 
 __Note.__ If you are working on a Swift project you need to add this import on the Swift-ObjectiveC Bridge Header file
-
-__Step 2.__ Make sure your AppDelegate extends Bit6ApplicationManager
-
-```objc
-//ObjectiveC
-@interface AppDelegate : Bit6ApplicationManager <UIApplicationDelegate>
-...
-@end
-```
-
-```swift
-//Swift
-class AppDelegate: UIApplicationDelegate, Bit6ApplicationManager {
-    
-}
-```
  
-__Step 3.__ Launch Bit6 with your API Key
+__Step 2.__ Launch Bit6 with your API Key.
 
 ```objc
 //ObjectiveC
@@ -74,9 +56,12 @@ __Step 3.__ Launch Bit6 with your API Key
         // start of your application:didFinishLaunchingWithOptions: method
         // ...
         
-        [Bit6 startWithApiKey:@"your_api_key" 
-              pushNotificationMode:Bit6PushNotificationMode_DEVELOPMENT 
-              launchingWithOptions:launchOptions];
+        [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
+    
+		NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+	    if (remoteNotificationPayload) {
+	        [[Bit6 pushNotification] didReceiveRemoteNotification:remoteNotificationPayload];
+	    }
     
         // The rest of your application:didFinishLaunchingWithOptions: method
         // ...
@@ -91,11 +76,73 @@ func application(application: UIApplication,
         // start of your application:didFinishLaunchingWithOptions: method
         // ...
         
-        Bit6.startWithApiKey("your_api_key", 
-              pushNotificationMode: .DEVELOPMENT,
-              launchingWithOptions: launchOptions);
+        Bit6.startWithApiKey("your_api_key", apnsProduction: false);
+        
+        if let remoteNotificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+            Bit6.pushNotification().didReceiveRemoteNotification(remoteNotificationPayload as [NSObject : AnyObject])
+        }
         
         // The rest of your application:didFinishLaunchingWithOptions: method
         // ...
     }
+```
+
+__Step 3.__ Support for Push Notifications
+
+Implement the following methods in your AppDelegate
+
+```objc
+//ObjectiveC
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    [[Bit6 pushNotification] handleActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [[Bit6 pushNotification] didReceiveRemoteNotification:userInfo];
+}
+
+- (void) application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [[Bit6 pushNotification] didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void) application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [[Bit6 pushNotification] didFailToRegisterForRemoteNotificationsWithError:error];
+}
+```
+
+```swift
+//Swift
+func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+   application.registerForRemoteNotifications()
+}
+    
+func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+   Bit6.pushNotification().handleActionWithIdentifier(identifier, forRemoteNotification: userInfo, completionHandler: completionHandler)
+}
+    
+func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+   Bit6.pushNotification().didReceiveRemoteNotification(userInfo)
+}
+    
+func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+   Bit6.pushNotification().didReceiveRemoteNotification(userInfo, fetchCompletionHandler: completionHandler)
+}
+    
+func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+   Bit6.pushNotification().didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
+}
+    
+func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+   Bit6.pushNotification().didFailToRegisterForRemoteNotificationsWithError(error)
+}
+
 ```

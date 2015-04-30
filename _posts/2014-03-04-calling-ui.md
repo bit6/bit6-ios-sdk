@@ -15,15 +15,20 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 
 @implementation MyCallViewController
 
+- (Bit6CallController*) callController
+{
+    return [[Bit6 callControllers] firstObject];
+}
+
 //called in the Main Thread when the UI controls should be updated. For example when the speaker is activated or the audio is muted.
 - (void) refreshControlsView
 {
-	NSLog(@"Audio Muted: %@",self.callController.audioMuted?@"YES":@"NO");
-    NSLog(@"Speaker Enabled: %@",self.callController.speakerEnabled?@"YES":@"NO");
+	NSLog(@"Audio Muted: %@",[Bit6CallController audioMuted]?@"YES":@"NO");
+    NSLog(@"Speaker Enabled: %@",[Bit6CallController speakerEnabled]?@"YES":@"NO");
 }
 
 //called in the Main Thread when the status of the call changes.
-- (void) callStateChangedNotification
+- (void) callStateChangedNotificationForCallController:(Bit6CallController*)callController
 {
 	switch (self.callController.callState) {
         case Bit6CallState_NEW: NSLog(@"Call created"); break;
@@ -35,11 +40,11 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
     }
 
 	//refresh the timer label
-	[self secondsChangedNotification];
+	[self secondsChangedNotificationForCallController:callController];
 }
 
 //called in the Main Thread each second to allow the refresh of a timer UILabel.
-- (void) secondsChangedNotification
+- (void) secondsChangedNotificationForCallController:(Bit6CallController*)callController
 {
 	switch (self.callController.callState) {
         case Bit6CallState_NEW: case Bit6CallState_PROGRESS:
@@ -52,24 +57,10 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 }
 
 //called in the Main Thread to customize the frames for the video feeds. You can call [self setNeedsUpdateVideoViewLayout] at any time to force a refresh of the frames.
-- (void) updateLayoutForRemoteVideoView:(UIView*)remoteVideoView 
- 						localVideoView:(UIView*)localVideoView 
- 				remoteVideoAspectRatio:(CGSize)remoteVideoAspectRatio
- 				 localVideoAspectRatio:(CGSize)localVideoAspectRatio
+- (void)updateLayoutForVideoFeedViews:(NSArray*)videoFeedViews
 {
 	//Here you can do your own calculations to set the frames or just call super. You can easily keep the aspect ratio by using AVMakeRectWithAspectRatioInsideRect() (import AVFoundation/AVFoundation.h) to do an scaleToFit or Bit6MakeRectWithAspectRatioToFillRect to do an scaleToFill.
-
-	CGFloat padding = 20.0f;
-    CGRect localVideoFrame = AVMakeRectWithAspectRatioInsideRect(localVideoAspectRatio, self.view.bounds);
-    localVideoFrame.size.width = localVideoFrame.size.width / 3;
-    localVideoFrame.size.height = localVideoFrame.size.height / 3;
-    localVideoFrame.origin.x = CGRectGetMaxX(self.view.bounds) - localVideoFrame.size.width - padding;
-    localVideoFrame.origin.y = CGRectGetMaxY(self.view.bounds) - localVideoFrame.size.height -  padding;
-    
-    CGRect remoteVideoFrame = AVMakeRectWithAspectRatioInsideRect(remoteVideoAspectRatio, self.view.bounds);
-    
-    remoteVideoView.frame = remoteVideoFrame;
-    localVideoView.frame = localVideoFrame;
+	[super updateLayoutForVideoFeedViews:videoFeedViews];
 }
 
 @end
@@ -78,17 +69,23 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 //Swift
 class MyCallViewController: Bit6CallViewController
 
+var callController : Bit6CallController {
+   get {
+       return Bit6.callControllers().first as! Bit6CallController
+   }
+}
+
 //called in the Main Thread when the UI controls should be updated. For example when the speaker is activated or the audio is muted.
 override func refreshControlsView()
 {
-	if (self.callController.audioMuted){
+	if (Bit6CallController.audioMuted()){
        NSLog("Audio Muted: true")
    }
    else {
        NSLog("Audio Muted: false")
    }
    
-   if (self.callController.speakerEnabled){
+   if (Bit6CallController.speakerEnabled()){
        NSLog("Speaker Enabled: true")
    }
    else {
@@ -97,7 +94,7 @@ override func refreshControlsView()
 }
 
 //called in the Main Thread when the status of the call changes.
-- (void) callStateChangedNotification
+override func callStateChangedNotificationForCallController(callController: Bit6CallController!)
 {
 	switch (self.callController.callState) {
        case .NEW: NSLog("Call created");
@@ -110,11 +107,12 @@ override func refreshControlsView()
     }
 
 	//refresh the timer label
-	self.secondsChangedNotification()
+	self.secondsChangedNotificationForCallController(callController)
 }
 
 //called in the Main Thread each second to allow the refresh of a timer UILabel.
-override func secondsChangedNotification() {
+override func secondsChangedNotificationForCallController(callController: Bit6CallController!) 
+{
    switch (self.callController.callState) {
 	   case .NEW: fallthrough case .PROGRESS:
 	       self.timerLabel.text = "Connecting..."
@@ -126,24 +124,10 @@ override func secondsChangedNotification() {
 }
 
 //called to customize the frames for the video feeds. You can call [self setNeedsUpdateVideoViewLayout] at any time to force a refresh of the frames.
-override func updateLayoutForRemoteVideoView(remoteVideoView:UIView,
-                                              localVideoView:UIView,
-                                      remoteVideoAspectRatio:CGSize,
-                                       localVideoAspectRatio:CGSize)
-{
+override func updateLayoutForVideoFeedViews(videoFeedViews: [AnyObject]!)
 {
 	//Here you can do your own calculations to set the frames or just call super. You can easily keep the aspect ratio by using AVMakeRectWithAspectRatioInsideRect() (import AVFoundation/AVFoundation.h) to do an scaleToFit or Bit6MakeRectWithAspectRatioToFillRect to do an scaleToFill.
-
-	var padding = 20.0 as CGFloat
-    var localVideoFrame = AVMakeRectWithAspectRatioInsideRect(localVideoAspectRatio, self.view.bounds)
-    localVideoFrame.size.width = localVideoFrame.size.width / 3
-    localVideoFrame.size.height = localVideoFrame.size.height / 3
-    localVideoFrame.origin.x = CGRectGetMaxX(self.view.bounds) - localVideoFrame.size.width - padding
-    localVideoFrame.origin.y = CGRectGetMaxY(self.view.bounds) - localVideoFrame.size.height -  padding
-    localVideoView.frame = localVideoFrame
-    
-    var remoteVideoFrame = AVMakeRectWithAspectRatioInsideRect(remoteVideoAspectRatio, self.view.bounds)
-    remoteVideoView.frame = remoteVideoFrame
+	super.updateLayoutForVideoFeedViews(videoFeedViews)
 }
 
 @end
@@ -154,37 +138,37 @@ __Step 2.__ Implement the actions and do the connections in your nib/storyboard 
 ```objc
 //ObjectiveC
 - (IBAction) switchCamera:(id)sender {
-    [self.callController switchCamera];
+    [Bit6CallController switchCamera];
 }
 
 - (IBAction) muteCall:(id)sender {
-    [self.callController switchMuteAudio];
+    [Bit6CallController switchMuteAudio];
 }
 
 - (IBAction) hangup:(id)sender {
-    [self.callController hangup];
+    [Bit6CallController hangupAll];
 }
 
 - (IBAction) speaker:(id)sender {
-    [self.callController switchSpeaker];
+    [Bit6CallController switchSpeaker];
 }
 ```
 ```swift
 //Swift
 @IBAction func switchCamera(sender : UIButton) {
-   self.callController.switchCamera()
+   Bit6CallController.switchCamera()
 }
     
 @IBAction func muteCall(sender : UIButton) {
-   self.callController.switchMuteAudio()
+   Bit6CallController.switchMuteAudio()
 }
     
 @IBAction func hangup(sender : UIButton) {
-   self.callController.hangup()
+   Bit6CallController.hangupAll()
 }
     
 @IBAction func speaker(sender : UIButton) {
-   self.callController.switchSpeaker()
+   Bit6CallController.switchSpeaker()
 }
 ```
 

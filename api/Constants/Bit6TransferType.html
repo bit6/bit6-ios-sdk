@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6MessageChannel Constants Reference</title>
+		<title>Bit6TransferType Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6MessageChannel Constants Reference</h1>
+				<h1 class="hideInXcode">Bit6TransferType Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -45,7 +45,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6MessageChannel Constants Reference" name="top"></a>
+				<a title="Bit6TransferType Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6MessageChannel Constants Reference</h1>
+						<h1 class="title title-header">Bit6TransferType Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -62,7 +62,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">Bit6Message.h</td>
+	<td class="specification-value">Bit6Transfer.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -74,11 +74,11 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">Bit6MessageChannel</h3>
+                    <h3 class="subsubtitle method-title">Bit6TransferType</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Channels available for sending a <a href="../Classes/Bit6Message.html">Bit6Message</a>.</p>
+                        <p>Type of <a href="../Classes/Bit6Transfer.html">Bit6Transfer</a>.</p>
 					</div>
 					
 					
@@ -86,11 +86,11 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, Bit6MessageChannel ) {<br/>
+                        <code>typedef NS_ENUM(NSInteger, Bit6TransferType ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6MessageChannel_SMS</a> = 2,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6TransferType_INCOMING</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6MessageChannel_PUSH</a> = 3,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6TransferType_OUTGOING</a>,<br/>
                             
                             };</code>
                     
@@ -100,11 +100,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="Bit6MessageChannel_SMS"></a><code>Bit6MessageChannel_SMS</code></dt>
+                            <dt><a name="" title="Bit6TransferType_INCOMING"></a><code>Bit6TransferType_INCOMING</code></dt>
 <dd>
 
 
-<p>The message is an SMS.</p>
+<p>Incoming transfer.</p>
 
     
 
@@ -112,16 +112,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
+		Declared In <code class="declared-in-ref">Bit6Transfer.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6MessageChannel_PUSH"></a><code>Bit6MessageChannel_PUSH</code></dt>
+                            <dt><a name="" title="Bit6TransferType_OUTGOING"></a><code>Bit6TransferType_OUTGOING</code></dt>
 <dd>
 
 
-<p>The message is an app-to-app message.</p>
+<p>Outoing transfer.</p>
 
     
 
@@ -129,7 +129,7 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
+		Declared In <code class="declared-in-ref">Bit6Transfer.h</code>.
 	</p>
 	
 </dd>
@@ -146,7 +146,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <code class="declared-in-ref">Bit6Message.h</code><br />
+                        <code class="declared-in-ref">Bit6Transfer.h</code><br />
                     </div>				
                     
                     
@@ -161,7 +161,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-03)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-04-22)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

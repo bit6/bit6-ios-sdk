@@ -19,7 +19,7 @@ Create a new Bit6 account or login into an existing one. In this example we use 
         [[FBSession activeSession] closeAndClearTokenInformation];
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
             if (state==FBSessionStateOpen) {
-                [[Bit6 session] oauthForProvider:Bit6SessionProvider_FACEBOOK params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
+                [[Bit6 session] oauthForProvider:@"facebook" params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
                     if (error==nil) {
                         NSLog("Login Failed With Error: %s",error.localizedDescription);
                     }
@@ -43,7 +43,7 @@ Bit6.session().getAuthInfoCompletionHandler({ (response, error) -> Void in
         FBSession.activeSession().closeAndClearTokenInformation();
         FBSession.openActiveSessionWithReadPermissions(["public_profile","email","user_friends"], allowLoginUI: true, completionHandler: { (session, state, error) -> Void in
             if (state == FBSessionState.Open){
-                Bit6.session().oauthForProvider(.FACEBOOK, params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
+                Bit6.session().oauthForProvider("facebook", params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
                     in
                         if ((error) != nil){
                             NSLog("Login Failed With Error: %s",error.localizedDescription);
@@ -58,7 +58,7 @@ Bit6.session().getAuthInfoCompletionHandler({ (response, error) -> Void in
 });
 ```
 
-To get an Bit6Address object you can do the following:
+To get a Bit6Address object you can do the following:
 
 ```objc
 //ObjectiveC

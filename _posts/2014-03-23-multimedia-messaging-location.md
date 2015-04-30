@@ -14,14 +14,12 @@ __Step 1.__ Prepare the message:
 Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
 message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
                                              value:@"user2"];
-message.channel = Bit6MessageChannel_PUSH;
 ```
 ```swift
 //Swift
 var message = Bit6OutgoingMessage()
 message.destination = Bit6Address(kind:.USERNAME, 
                                  value:"user2")
-message.channel = .PUSH
 ```
 
 __Step 2.__ Start the location service:
@@ -98,7 +96,6 @@ Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
 message.location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
 message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
                                              value:@"user2"];
-message.channel = Bit6MessageChannel_PUSH;
 [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
     if (!error) {
         NSLog(@"Message Sent");
@@ -114,7 +111,6 @@ var message = Bit6OutgoingMessage()
 message.location = CLLocation(latitude: latitude, longitude: longitude);
 message.destination = Bit6Address(kind: .USERNAME, 
                    				 value: "user2");
-message.channel = .PUSH;
 message.sendWithCompletionHandler ({ (response, error) -> Void in
     if (error == nil) {
         NSLog("Message Sent");

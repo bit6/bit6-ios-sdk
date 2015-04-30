@@ -88,6 +88,8 @@
                         <h4 class="method-subtitle">Definition</h4>
                         <code>typedef NS_ENUM(NSInteger, Bit6Error ) {<br/>
                             
+                            &nbsp;&nbsp; <a href="">Bit6Error_RecipientNotFound</a> = 500,<br/>
+                            
                             &nbsp;&nbsp; <a href="">Bit6Error_NotConnectedToInternet</a> = NSURLErrorNotConnectedToInternet,<br/>
                             
                             &nbsp;&nbsp; <a href="">Bit6Error_MicNotAllowed</a> = -6001,<br/>
@@ -122,7 +124,11 @@
                             
                             &nbsp;&nbsp; <a href="">Bit6Error_InvalidRESTAPICall</a> = -6051,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6Error_RecipientNotFound</a> = 500,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelNotOpenError</a> = -10001,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelUnknownError</a> = -10002,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelBufferOverflowError</a> = -10003,<br/>
                             
                             };</code>
                     
@@ -132,11 +138,28 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
+                            <dt><a name="" title="Bit6Error_RecipientNotFound"></a><code>Bit6Error_RecipientNotFound</code></dt>
+<dd>
+
+
+<p>The recipient was not found.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
                             <dt><a name="" title="Bit6Error_NotConnectedToInternet"></a><code>Bit6Error_NotConnectedToInternet</code></dt>
 <dd>
 
 
-<p>Internet connection not found</p>
+<p>Internet connection not found.</p>
 
     
 
@@ -153,7 +176,7 @@
 <dd>
 
 
-<p>Restricted access to the Microphone</p>
+<p>Restricted access to the Microphone.</p>
 
     
 
@@ -170,7 +193,7 @@
 <dd>
 
 
-<p>Restricted access to the Camera</p>
+<p>Restricted access to the Camera.</p>
 
     
 
@@ -187,7 +210,7 @@
 <dd>
 
 
-<p>Restricted access to Location</p>
+<p>Restricted access to Location.</p>
 
     
 
@@ -204,7 +227,7 @@
 <dd>
 
 
-<p>Session hasn&rsquo;t being initiated</p>
+<p>Session hasn&rsquo;t being initiated.</p>
 
     
 
@@ -221,7 +244,7 @@
 <dd>
 
 
-<p>Invalid Address</p>
+<p>Invalid Address.</p>
 
     
 
@@ -238,7 +261,7 @@
 <dd>
 
 
-<p>Insuficient Parameters</p>
+<p>Insuficient Parameters.</p>
 
     
 
@@ -255,7 +278,7 @@
 <dd>
 
 
-<p>Invalid Session Provider</p>
+<p>Invalid Session Provider.</p>
 
     
 
@@ -272,7 +295,7 @@
 <dd>
 
 
-<p>Attachment wasn&rsquo;t saved to cache</p>
+<p>Attachment wasn&rsquo;t saved to cache.</p>
 
     
 
@@ -289,7 +312,7 @@
 <dd>
 
 
-<p>Attachment doesn&rsquo;t exist in cache</p>
+<p>Attachment doesn&rsquo;t exist in cache.</p>
 
     
 
@@ -306,7 +329,7 @@
 <dd>
 
 
-<p>Attachment doesn&rsquo;t exist in cache, but it is being downloaded</p>
+<p>Attachment doesn&rsquo;t exist in cache, but it is being downloaded.</p>
 
     
 
@@ -323,7 +346,7 @@
 <dd>
 
 
-<p>Attachment doesn&rsquo;t exist in the server, probably because an error during the upload process</p>
+<p>Attachment doesn&rsquo;t exist in the server, probably because an error during the upload process.</p>
 
     
 
@@ -340,7 +363,7 @@
 <dd>
 
 
-<p>An HTTP status = 5xx occur when interacting with the server</p>
+<p>An HTTP status = 5xx occur when interacting with the server.</p>
 
     
 
@@ -357,7 +380,7 @@
 <dd>
 
 
-<p>An HTTP status = 4xx occur when interacting with the server</p>
+<p>An HTTP status = 4xx occur when interacting with the server.</p>
 
     
 
@@ -391,7 +414,7 @@
 <dd>
 
 
-<p>Can&rsquo;t answer the call because another call is in progress</p>
+<p>Can&rsquo;t answer the call because another call is in progress.</p>
 
     
 
@@ -408,7 +431,7 @@
 <dd>
 
 
-<p>An HTTP status = 4xx occur when interacting with the server</p>
+<p>An HTTP status = 4xx occur when interacting with the server.</p>
 
     
 
@@ -421,11 +444,45 @@
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6Error_RecipientNotFound"></a><code>Bit6Error_RecipientNotFound</code></dt>
+                            <dt><a name="" title="Bit6Error_TransferDataChannelNotOpenError"></a><code>Bit6Error_TransferDataChannelNotOpenError</code></dt>
 <dd>
 
 
-<p>The recipient was not found</p>
+<p>The <a href="../Classes/Bit6Transfer.html">Bit6Transfer</a> failed because the data channel wasn&rsquo;t open.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6Error_TransferDataChannelUnknownError"></a><code>Bit6Error_TransferDataChannelUnknownError</code></dt>
+<dd>
+
+
+<p>The <a href="../Classes/Bit6Transfer.html">Bit6Transfer</a> failed because of an unknown error.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6Error_TransferDataChannelBufferOverflowError"></a><code>Bit6Error_TransferDataChannelBufferOverflowError</code></dt>
+<dd>
+
+
+<p>The <a href="../Classes/Bit6Transfer.html">Bit6Transfer</a> failed because of an buffer overflow error.</p>
 
     
 
@@ -465,7 +522,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-02-23)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-04-22)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
