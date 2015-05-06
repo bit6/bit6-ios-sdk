@@ -195,6 +195,14 @@ To check if it is video or voice call: `callController.hasVideo`
 
 To play the defined ringtone: `[callController startRingtone]`
 
+###Setting the Ringtone
+
+1. Add the ringtone file to your Xcode project. [Apple Docs](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6)
+
+2. Open the [Bit6 Dashboard](https://dashboard.bit6.com) and sign in. Then select your app and open the Settings tab. Here you need to set the ringtone file name for both the APNS development and the APNS production configurations.
+
+<img class="shot" src="images/ringtone.png"/>
+
 ###Continue Calls in the Background
 
 You can continue the calls in the background by enable "Audio and Airplay" and "Voice over IP" Background Modes in your target configuration.
