@@ -58,7 +58,7 @@ __Step 2.__ Launch Bit6 with your API Key.
         
         [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
     
-		NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+		NSDictionary *remoteNotificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
 	    if (remoteNotificationPayload) {
 	        [[Bit6 pushNotification] didReceiveRemoteNotification:remoteNotificationPayload];
 	    }

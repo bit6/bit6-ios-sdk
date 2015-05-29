@@ -35,14 +35,18 @@ else {
 ```objc
 //ObjectiveC
 [[Bit6 session] logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-    NSLog(@"Logout Completed");
+	if (! error) {
+		NSLog(@"Logout Completed");
+	}
 }];
 ```
 
 ```swift
 //Swift
-Bit6.session().logoutWithCompletionHandler({(response,error) in            
-    NSLog("Logout Completed")
+Bit6.session().logoutWithCompletionHandler({(response,error) in 
+	if (error != nil) {
+		NSLog("Logout Completed")
+	}
 })
 ```
 
