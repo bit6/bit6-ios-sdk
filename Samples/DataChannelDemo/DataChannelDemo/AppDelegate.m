@@ -19,7 +19,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[NSUserDefaults standardUserDefaults] setObject:@1015 forKey:@"Bit6Environment"];
     #warning Remember to set your api key
     [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
     
@@ -29,7 +28,7 @@
     self.splitView.delegate = self;
     
     [Bit6.session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-        if (! Bit6.session.authenticated) {
+        if (! error) {
             self.window.rootViewController.view.hidden = YES;
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Enter your username and password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", @"Anonymous", nil];

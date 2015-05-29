@@ -47,6 +47,8 @@
 	
 	<option value="//api/name/isAdmin">&nbsp;&nbsp;&nbsp;&nbsp;isAdmin</option>
 	
+	<option value="//api/name/isPublic">&nbsp;&nbsp;&nbsp;&nbsp;isPublic</option>
+	
 	<option value="//api/name/members">&nbsp;&nbsp;&nbsp;&nbsp;members</option>
 	
 	<option value="//api/name/metadata">&nbsp;&nbsp;&nbsp;&nbsp;metadata</option>
@@ -63,6 +65,8 @@
 	<option value="//api/name/groupForAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupForAddress:</option>
 	
 	<option value="//api/name/groupForConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupForConversation:</option>
+	
+	<option value="//api/name/joinGroupWithAddress:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ joinGroupWithAddress:completion:</option>
 	
 	
 	
@@ -111,6 +115,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAdmin">isAdmin</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPublic">isPublic</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/members">members</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/metadata">metadata</a></span></li>
@@ -128,6 +134,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupForAddress:">groupForAddress:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupForConversation:">groupForConversation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/joinGroupWithAddress:completion:">joinGroupWithAddress:completion:</a></span></li>
 	
 </ul></li>
 
@@ -218,6 +226,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/joinGroupWithAddress:completion:">+&nbsp;joinGroupWithAddress:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/setMetadata:completion:">&ndash;&nbsp;setMetadata:completion:</a></code>
 	</span>
 	
@@ -267,6 +281,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/hasLeft">&nbsp;&nbsp;hasLeft</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isPublic">&nbsp;&nbsp;isPublic</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -422,6 +442,42 @@
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isAdmin</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Group.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isPublic" title="isPublic"></a>
+	<h3 class="subsubtitle method-title">isPublic</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if the group is public.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isPublic</code></div>
 
     
 	
@@ -714,6 +770,62 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/joinGroupWithAddress:completion:" title="joinGroupWithAddress:completion:"></a>
+	<h3 class="subsubtitle method-title">joinGroupWithAddress:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Join a public group.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)joinGroupWithAddress:(Bit6Address *)<em>address</em> completion:(void ( ^ ) ( Bit6Group *group , NSError *error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p><a href="../Classes/Bit6Address.html">Bit6Address</a> of the group to join.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> You can check if a group is public by using <a href="#//api/name/isPublic">[Bit6Group isPublic]</a></p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Group.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -987,7 +1099,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-04-30)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-05-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

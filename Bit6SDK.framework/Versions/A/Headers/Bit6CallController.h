@@ -70,17 +70,20 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 /*! The current call supports data transfer. */
 @property (nonatomic, readonly) BOOL hasData;
 
-/*! The number of seconds the call has been going */
+/*! The number of seconds the call has been going. */
 @property (nonatomic, readonly) NSUInteger seconds;
 
-/*! The audio from the call is going through the speaker */
+/*! The audio from the call is going through the speaker. */
 + (BOOL) speakerEnabled;
 
-/*! The audio is muted for the current call */
+/*! The audio is muted for the current call. */
 + (BOOL) audioMuted;
 
-/*! The video is muted for the current call */
+/*! The video is muted for the current call. */
 + (BOOL) videoMuted;
+
+/*! The call is streaming the video feed from the back camera. */
++ (BOOL) usingBackCamera;
 
 /*! List of outgoing <Bit6Transfer> for the current call. */
 @property (nonatomic, readonly) NSArray *outgoingTransfers;

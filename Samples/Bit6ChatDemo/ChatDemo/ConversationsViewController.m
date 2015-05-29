@@ -56,7 +56,9 @@
 
 - (IBAction)touchedLogoutBarButton:(id)sender {
     [Bit6.session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-        [self.navigationController popViewControllerAnimated:YES];
+        if (! error) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }];
 }
 

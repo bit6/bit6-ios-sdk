@@ -23,7 +23,11 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
     /*! The Bit6Address refers to an anonymous session */
     Bit6AddressKind_UID,
     /*! The Bit6Address refers to a group */
-    Bit6AddressKind_GROUP
+    Bit6AddressKind_GROUP,
+    /*! The Bit6Address refers to Zendesk user */
+    Bit6AddressKind_ZENDESK,
+    /*! The Bit6Address refers to a generic identity */
+    Bit6AddressKind_GENERIC
 };
 
 /*! Bit6Address is used to describe a user identity or a destination for calling and messaging. It consists of a type (<Bit6AddressKind>) and a value. */
@@ -37,7 +41,7 @@ typedef NS_ENUM(NSInteger, Bit6AddressKind) {
 + (instancetype)addressWithKind:(Bit6AddressKind)kind value:(NSString*)value;
 
 /*! Initializes a Bit6Address object
- @param uri URI string to identify the address
+ @param uri URI string to identify the address. An uri address is a two part string composed by a kind and a value, separated by a colon. Examples `usr:calitb`, mailto:bit6@bit6.com .
  @return a Bit6Address object if succesful or nil if failed.
  */
 + (instancetype)addressWithURI:(NSString*)uri;

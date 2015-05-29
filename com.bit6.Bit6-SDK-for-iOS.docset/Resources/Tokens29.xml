@@ -83,5 +83,25 @@
             <NodeRef refid="29"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_ZENDESK</TokenIdentifier>
+            <Abstract type="html">The Bit6Address refers to Zendesk user</Abstract>
+            <Declaration>Bit6AddressKind_ZENDESK</Declaration>
+            
+            <DeclaredIn>Bit6Address.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GENERIC</TokenIdentifier>
+            <Abstract type="html">The Bit6Address refers to a generic identity</Abstract>
+            <Declaration>Bit6AddressKind_GENERIC</Declaration>
+            
+            <DeclaredIn>Bit6Address.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
 	</File>
 </Tokens>

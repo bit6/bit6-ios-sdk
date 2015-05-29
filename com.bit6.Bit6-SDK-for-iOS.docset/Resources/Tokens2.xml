@@ -41,7 +41,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>uri</Name>
-					<Abstract type="html">URI string to identify the address</Abstract>
+					<Abstract type="html">URI string to identify the address. An uri address is a two part string composed by a kind and a value, separated by a colon. Examples usr:calitb, mailto:bit6@bit6.com .</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a Bit6Address object if succesful or nil if failed.</Abstract></ReturnValue>

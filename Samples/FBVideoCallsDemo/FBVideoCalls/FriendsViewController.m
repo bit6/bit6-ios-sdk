@@ -28,8 +28,7 @@
 }
 
 - (void)touchedLogoutBarButton:(id)sender {
-    [Bit6.session logoutWithCompletionHandler:^(NSDictionary *response, NSError *error) {
-    }];
+    [Bit6.session logoutWithCompletionHandler:nil];
 }
 
 #pragma mark - TableView

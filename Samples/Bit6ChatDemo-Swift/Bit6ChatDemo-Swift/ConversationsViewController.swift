@@ -54,8 +54,10 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBAction func touchedLogoutBarButton(sender : UIBarButtonItem) {
         Bit6.session().logoutWithCompletionHandler({(response,error) in
-            self.navigationController?.popViewControllerAnimated(true)
-            NSLog("Logout")
+            if (error != nil) {
+                self.navigationController?.popViewControllerAnimated(true)
+                NSLog("Logout")
+            }
             }
         )
     }

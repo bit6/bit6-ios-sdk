@@ -14,8 +14,10 @@ extern NSString* const Bit6LogoutStartedNotification;
 
 extern NSString* const Bit6RTConnectionStatusChangedNotification;
 extern NSString* const Bit6CustomRtNotification;
+extern NSString* const Bit6PresenceRtNotification;
 
 extern NSString* const Bit6IncomingCallNotification;
+extern NSString* const Bit6TappedIncomingMessageNotification;
 
 extern NSString* const Bit6FileDownloadedNotification;
 

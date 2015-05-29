@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bit6"
-  s.version      = "0.9.1"
+  s.version      = "0.9.2"
   s.summary      = "Bit6 Framework"
 
   s.description  = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/bit6/bit6-ios-sdk.git", :tag => s.version }
 
   s.vendored_frameworks = "Bit6SDK.framework"
-  s.documentation_url = "https://bit6.github.io/bit6-ios-sdk/api/"
+  s.documentation_url = "https://bit6.github.io/bit6-ios-sdk/api/index.html"
 
   s.resource_bundle = { 'Bit6Resources' => 'Bit6Resources.bundle/*.*' }
 

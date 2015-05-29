@@ -43,6 +43,13 @@ extern NSString* const Bit6GroupMetadataTitleKey;
  */
 + (void) createGroupWithMetadata:(NSDictionary*)metadata completion:(void (^)(Bit6Group *group, NSError *error))completion;
 
+/*! Join a public group.
+ @param address <Bit6Address> of the group to join.
+ @param completion block to be called when the operation is completed.
+ @note You can check if a group is public by using <[Bit6Group isPublic]>
+ */
++ (void) joinGroupWithAddress:(Bit6Address*)address completion:(void (^)(Bit6Group *group, NSError *error))completion;
+
 /*! Sets the metadata for the sender.
  @param metadata new metadata for the sender.
  @param completion block to be called when the operation is completed.
@@ -68,6 +75,8 @@ extern NSString* const Bit6GroupMetadataTitleKey;
 @property (nonatomic, readonly) BOOL isAdmin;
 /*! YES if the user has left the group. */
 @property (nonatomic, readonly) BOOL hasLeft;
+/*! YES if the group is public. */
+@property (nonatomic, readonly) BOOL isPublic;
 
 /*! Refreshes the members of the sender.
  @param completion block to be called when the operation is completed.

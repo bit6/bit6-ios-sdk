@@ -12,7 +12,6 @@
 		D8A3AF3D1A44A7F9002205C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF3B1A44A7F9002205C2 /* Main.storyboard */; };
 		D8A3AF3F1A44A7F9002205C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF3E1A44A7F9002205C2 /* Images.xcassets */; };
 		D8A3AF421A44A7F9002205C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF401A44A7F9002205C2 /* LaunchScreen.xib */; };
-		D8A3AF581A44A82F002205C2 /* DemoConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF571A44A82F002205C2 /* DemoConfig.xcconfig */; };
 		D8A3AF5A1A44A89B002205C2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF591A44A89B002205C2 /* libicucore.dylib */; };
 		D8A3AF5F1A44A8AC002205C2 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF5B1A44A8AC002205C2 /* libstdc++.dylib */; };
 		D8A3AF601A44A8AC002205C2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF5C1A44A8AC002205C2 /* libsqlite3.dylib */; };
@@ -219,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A3AF3D1A44A7F9002205C2 /* Main.storyboard in Resources */,
-				D8A3AF581A44A82F002205C2 /* DemoConfig.xcconfig in Resources */,
 				D8A3AF421A44A7F9002205C2 /* LaunchScreen.xib in Resources */,
 				D8A3AF701A44C800002205C2 /* Bit6Resources.bundle in Resources */,
 				D8A3AF3F1A44A7F9002205C2 /* Images.xcassets in Resources */,

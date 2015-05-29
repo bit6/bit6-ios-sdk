@@ -355,7 +355,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setSeconds:</TokenIdentifier>
-			<Abstract type="html">The number of seconds the call has been going</Abstract>
+			<Abstract type="html">The number of seconds the call has been going.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger seconds</Declaration>
@@ -367,7 +367,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/seconds</TokenIdentifier>
-			<Abstract type="html">The number of seconds the call has been going</Abstract>
+			<Abstract type="html">The number of seconds the call has been going.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger seconds</Declaration>
@@ -379,7 +379,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/seconds</TokenIdentifier>
-			<Abstract type="html">The number of seconds the call has been going</Abstract>
+			<Abstract type="html">The number of seconds the call has been going.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger seconds</Declaration>
@@ -391,7 +391,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/speakerEnabled</TokenIdentifier>
-			<Abstract type="html">The audio from the call is going through the speaker</Abstract>
+			<Abstract type="html">The audio from the call is going through the speaker.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>+ (BOOL)speakerEnabled</Declaration>
@@ -403,7 +403,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/audioMuted</TokenIdentifier>
-			<Abstract type="html">The audio is muted for the current call</Abstract>
+			<Abstract type="html">The audio is muted for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>+ (BOOL)audioMuted</Declaration>
@@ -415,13 +415,25 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/videoMuted</TokenIdentifier>
-			<Abstract type="html">The video is muted for the current call</Abstract>
+			<Abstract type="html">The video is muted for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>+ (BOOL)videoMuted</Declaration>
 			
 			
 			<Anchor>//api/name/videoMuted</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/usingBackCamera</TokenIdentifier>
+			<Abstract type="html">The call is streaming the video feed from the back camera.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)usingBackCamera</Declaration>
+			
+			
+			<Anchor>//api/name/usingBackCamera</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
