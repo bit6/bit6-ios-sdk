@@ -61,8 +61,8 @@ Bit6.session().logoutWithCompletionHandler({(response,error) in
                                            object:nil];
 
 [[NSNotificationCenter defaultCenter] addObserver:self
-										 selector:@selector(logoutStartedNotification:) 
-                                             name:Bit6LogoutStartedNotification
+										 selector:@selector(logoutCompletedNotification:) 
+                                             Bit6LogoutCompletedNotification
                                            object:nil];
 
 - (void) loginCompletedNotification:(NSNotification*)notification
@@ -70,7 +70,7 @@ Bit6.session().logoutWithCompletionHandler({(response,error) in
 
 }
 
-- (void) logoutStartedNotification:(NSNotification*)notification
+- (void) logoutCompletedNotification:(NSNotification*)notification
 {
 
 }
