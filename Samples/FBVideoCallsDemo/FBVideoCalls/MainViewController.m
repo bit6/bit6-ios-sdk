@@ -18,7 +18,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:Bit6LogoutStartedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:Bit6LogoutCompletedNotification object:nil];
     }
     return self;
 }

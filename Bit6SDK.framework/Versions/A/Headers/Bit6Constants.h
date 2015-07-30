@@ -10,7 +10,7 @@ typedef void (^Bit6CompletionHandler) (NSDictionary *response, NSError *error);
 typedef void (^Bit6ActionNotificationCompletionHandler) (void);
 
 extern NSString* const Bit6LoginCompletedNotification;
-extern NSString* const Bit6LogoutStartedNotification;
+extern NSString* const Bit6LogoutCompletedNotification;
 
 extern NSString* const Bit6RTConnectionStatusChangedNotification;
 extern NSString* const Bit6CustomRtNotification;
@@ -25,6 +25,7 @@ extern NSString* const Bit6AudioPlayingNotification;
 
 extern NSString* const Bit6MessagesChangedNotification;
 extern NSString* const Bit6ConversationsChangedNotification;
+extern NSString* const Bit6GroupsChangedNotification;
 extern NSString* const Bit6ObjectKey;
 extern NSString* const Bit6ChangeKey;
 extern NSString* const Bit6AddedKey;
@@ -66,6 +67,8 @@ typedef NS_ENUM(NSInteger, Bit6Error) {
     Bit6Error_FileDoesNotExistsWillDownload=-6023,
     /*! Attachment doesn't exist in the server, probably because an error during the upload process. */
     Bit6Error_FileDoesNotExistsOnServer=-6024,
+    /*! Can't delete a message with status Sending. */
+    Bit6Error_UnableToDeleteSendingMessage=-631,
     /*! An HTTP status = 5xx occur when interacting with the server. */
     Bit6Error_HTTPServerError=-6031,
     /*! An HTTP status = 4xx occur when interacting with the server. */

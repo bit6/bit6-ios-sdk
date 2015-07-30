@@ -37,11 +37,18 @@ extern NSString* const Bit6GroupMetadataTitleKey;
  */
 + (Bit6Group*) groupForConversation:(Bit6Conversation*)conversation;
 
-/*! Creates an empty group with the specified title.
+/*! Creates an empty group.
  @param metadata metadata for the new group.
  @param completion block to be called when the operation is completed.
  */
 + (void) createGroupWithMetadata:(NSDictionary*)metadata completion:(void (^)(Bit6Group *group, NSError *error))completion;
+
+/*! Creates an empty public group with the specified identifier.
+ @param identifier unique identifier to use
+ @param metadata metadata for the new group.
+ @param completion block to be called when the operation is completed.
+ */
++ (void) createPublicGroupWithIdentifier:(NSString*)identifier metadata:(NSDictionary*)metadata completion:(void (^)(Bit6Group *group, NSError *error))completion;
 
 /*! Join a public group.
  @param address <Bit6Address> of the group to join.

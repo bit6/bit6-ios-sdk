@@ -144,6 +144,16 @@
         </Token>
         
         <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6Error_UnableToDeleteSendingMessage</TokenIdentifier>
+            <Abstract type="html">Can&apos;t delete a message with status Sending.</Abstract>
+            <Declaration>Bit6Error_UnableToDeleteSendingMessage</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="31"/>
+        </Token>
+        
+        <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6Error_HTTPServerError</TokenIdentifier>
             <Abstract type="html">An HTTP status = 5xx occur when interacting with the server.</Abstract>
             <Declaration>Bit6Error_HTTPServerError</Declaration>
