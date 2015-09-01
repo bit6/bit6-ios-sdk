@@ -27,4 +27,4 @@
 #import "Bit6PushNotificationCenter.h"
 #import "Bit6.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.9.3"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.9.4"
