@@ -40,6 +40,34 @@ it, simply add the following line to your Podfile:
 __Note__ If you are working on a Swift project remember to set a Swift-ObjectiveC Bridge Header file
 <img class="shot" src="images/swift_bridge.png"/>
 
+### Building for iOS9
+
+__Whitelist Bit6 for Network Requests__
+
+If you compile your app with iOS SDK 9.0, you will be affected by [App Transport Security](https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/). You will need to add the following to your info.plist file:
+
+```
+<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>amazonaws.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+		</dict>
+	</dict>
+```
+
+__Bitcode__  Bit6 SDK v0.9.4 an earlier doesn't include support for [bitcode](https://developer.apple.com/library/prerelease/watchos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2). You can disable bitcode in your target configuration:
+
+<img class="shot" src="images/bitcode.png"/>
+
 ### Setup Application Delegate
 
 __Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>`.
