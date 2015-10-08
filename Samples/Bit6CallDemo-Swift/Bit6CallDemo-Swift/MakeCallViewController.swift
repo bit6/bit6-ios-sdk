@@ -18,45 +18,44 @@ class MakeCallViewController: UIViewController {
     }
     
     @IBAction func touchedLogoutBarButton(sender: UIButton) {
-        Bit6.session().logoutWithCompletionHandler({(response,error) in
-            if (error != nil) {
+        Bit6.session().logoutWithCompletionHandler{ (response,error) in
+            if error != nil {
                 self.navigationController?.popViewControllerAnimated(true)
                 NSLog("Logout")
             }
-            }
-        )
+        }
     }
     
     @IBAction func touchedAudioCallButton(sender : UIButton) {
-        var username = self.destinationUsernameTextField.text
-        var address = Bit6Address(kind: .USERNAME, value:username)
+        let username = self.destinationUsernameTextField.text
+        let address = Bit6Address(kind: .USERNAME, value:username)
         
-        var callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:false, hasData:false)
+        let callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:false, hasData:false)
         self.startCallToCalController(callController)
     }
     
     @IBAction func touchedVideoCallButton(sender : UIButton) {
-        var username = self.destinationUsernameTextField.text
-        var address = Bit6Address(kind: .USERNAME, value:username)
+        let username = self.destinationUsernameTextField.text
+        let address = Bit6Address(kind: .USERNAME, value:username)
         
-        var callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:true, hasData:false)
+        let callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:true, hasData:false)
         self.startCallToCalController(callController)
     }
     
     @IBAction func touchedDialButton(sender : UIButton) {
-        var phoneNumber = self.phoneNumberTextField.text
+        let phoneNumber = self.phoneNumberTextField.text
         
-        var callController = Bit6.startCallToPhoneNumber(phoneNumber)
+        let callController = Bit6.startCallToPhoneNumber(phoneNumber)
         self.startCallToCalController(callController)
     }
     
     func startCallToCalController(callController:Bit6CallController!){
-        if (callController != nil){
+        if callController != nil {
             //we listen to call state changes
             callController.addObserver(self, forKeyPath:"callState", options: .Old, context:nil)
             
             //create the default in-call UIViewController
-            var callVC = Bit6CallViewController.createDefaultCallViewController()
+            let callVC = Bit6CallViewController.createDefaultCallViewController()
             
             //use a custom in-call UIViewController
             //var callVC = MyCallViewController()
@@ -71,10 +70,10 @@ class MakeCallViewController: UIViewController {
     
     // MARK: - CALLS
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
         dispatch_async(dispatch_get_main_queue()) {
-            if (object.isKindOfClass(Bit6CallController)) {
-                if (keyPath == "callState") {
+            if object!.isKindOfClass(Bit6CallController) {
+                if keyPath == "callState" {
                     self.callStateChangedNotification(object as! Bit6CallController)
                 }
             }
@@ -84,18 +83,18 @@ class MakeCallViewController: UIViewController {
     func callStateChangedNotification(callController:Bit6CallController) {
         dispatch_async(dispatch_get_main_queue()) {
             //the call is starting: show the viewController
-            if (callController.callState == .PROGRESS) {
+            if callController.callState == .PROGRESS {
                 Bit6.presentCallViewController()
             }
                 //the call ended: remove the observer and dismiss the viewController
-            else if (callController.callState == .END) {
+            else if callController.callState == .END {
                 callController.removeObserver(self, forKeyPath:"callState")
             }
                 //the call ended with an error: remove the observer and dismiss the viewController
-            else if (callController.callState == .ERROR) {
+            else if callController.callState == .ERROR {
                 callController.removeObserver(self, forKeyPath:"callState")
                 
-                var alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)
+                let alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.view.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
             }

@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
         
         var deviceType = UIDevice.currentDevice().model as NSString
         
-        if (deviceType.hasPrefix("iPad")) {
+        if deviceType.hasPrefix("iPad") {
             var width = 450.0 as CGFloat
             frame.origin.x = (frame.size.width-width)/2.0
             frame.size.width = width
@@ -137,7 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
         var callController = Bit6.callControllerFromIncomingCallNotification(notification)
         
         //if there's a call prompt on the way we decline the new call
-        if (self.callController != nil) {
+        if self.callController != nil {
             callController.declineCall()
         }
         else {
@@ -156,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
             callController.incomingCallAlert = message
             
             //the call was answered by taping the push notification
-            if (callController.incomingCallAnswered) {
+            if callController.incomingCallAnswered {
                 self.answerCall(callController)
             }
             else {
@@ -194,8 +194,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
         dispatch_async(dispatch_get_main_queue()) {
-            if (object.isKindOfClass(Bit6CallController)) {
-                if (keyPath == "callState") {
+            if object.isKindOfClass(Bit6CallController) {
+                if keyPath == "callState" {
                     self.callStateChangedNotification(object as! Bit6CallController)
                 }
             }
@@ -205,7 +205,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
     func callStateChangedNotification(callController:Bit6CallController) {
         dispatch_async(dispatch_get_main_queue()) {
             //it's a missed call: remove the observer, dismiss the incoming-call prompt and the viewController
-            if (callController.callState == .MISSED) {
+            if callController.callState == .MISSED {
                 callController.removeObserver(self, forKeyPath:"callState")
                 self.callController = nil
                 Bit6.incomingCallNotificationBanner().dismiss()
@@ -215,15 +215,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
                 self.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
             }
             //the call is starting: show the viewController
-            else if (callController.callState == .PROGRESS) {
+            else if callController.callState == .PROGRESS {
                 Bit6.presentCallViewController()
             }
             //the call ended: remove the observer and dismiss the viewController
-            else if (callController.callState == .END) {
+            else if callController.callState == .END {
                 callController.removeObserver(self, forKeyPath:"callState")
             }
             //the call ended with an error: remove the observer and dismiss the viewController
-            else if (callController.callState == .ERROR) {
+            else if callController.callState == .ERROR {
                 callController.removeObserver(self, forKeyPath:"callState")
                 
                 var alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)

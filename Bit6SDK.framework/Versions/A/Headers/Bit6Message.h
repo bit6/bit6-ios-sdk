@@ -12,6 +12,16 @@
 
 @class Bit6Conversation;
 
+/*! Channel of a <Bit6Message> call. */
+typedef NS_ENUM(NSInteger, Bit6MessageCallChannel) {
+    /*! The message refers to an audio call. */
+    Bit6MessageCallChannel_Audio = 4,
+    /*! The message refers to a data transfer call. */
+    Bit6MessageCallChannel_Data,
+    /*! The message refers to a video call. */
+    Bit6MessageCallChannel_Video
+};
+
 /*! Delivery status for a <Bit6Message>. */
 typedef NS_ENUM(NSInteger, Bit6MessageStatus){
     /*! The message is new. */
@@ -28,10 +38,24 @@ typedef NS_ENUM(NSInteger, Bit6MessageStatus){
     Bit6MessageStatus_Read
 };
 
+/*! Call status for a <Bit6Message>. */
+typedef NS_ENUM(NSInteger, Bit6MessageCallStatus){
+    /*! The call has been answered. */
+    Bit6MessageCallStatus_Answer = 1,
+    /*! The call has been missed. */
+    Bit6MessageCallStatus_Missed,
+    /*! The call failed. */
+    Bit6MessageCallStatus_Failed,
+    /*! The call wasn't answered. */
+    Bit6MessageCallStatus_NoAnswer,
+};
+
 /*! Message type for a <Bit6Message>. */
 typedef NS_ENUM(NSInteger, Bit6MessageType) {
     /*! The message has only text. */
     Bit6MessageType_Text = 1,
+    /*! The message is for a call. */
+    Bit6MessageType_Call = 3,
     /*! The message has an attachment. */
     Bit6MessageType_Attachments = 5,
     /*! The message has a location. */
@@ -42,14 +66,12 @@ typedef NS_ENUM(NSInteger, Bit6MessageType) {
 typedef NS_ENUM(NSInteger, Bit6MessageFileType) {
     /*! The message has no attachment. */
     Bit6MessageFileType_None = 0,
-    /*! The message has an MP4 audio attachment. */
-    Bit6MessageFileType_AudioMP4,
-    /*! The message has an PNG image attachment. */
-    Bit6MessageFileType_ImagePNG,
-    /*! The message has an JPEG image attachment. */
-    Bit6MessageFileType_ImageJPG,
-    /*! The message has an MP4 video attachment. */
-    Bit6MessageFileType_VideoMP4,
+    /*! The message has an audio attachment. */
+    Bit6MessageFileType_Audio,
+    /*! The message has an image attachment. */
+    Bit6MessageFileType_Image,
+    /*! The message has a video attachment. */
+    Bit6MessageFileType_Video = 4,
 };
 
 /*! Message attachment category for a <Bit6Message>. */
@@ -97,6 +119,12 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 /*! Sender status as a value of the <Bit6MessageStatus> enumeration. */
 @property (nonatomic, readonly) Bit6MessageStatus status;
 
+/*! Call status as a value of the <Bit6MessageCallStatus> enumeration. This property should be used only if self.type == Bit6MessageType_Call.*/
+@property (nonatomic, readonly) Bit6MessageCallStatus callStatus;
+
+/*! Call channel as a value of the <Bit6MessageCallChannel> enumeration. This property should be used only if self.type == Bit6MessageType_Call.*/
+@property (nonatomic, readonly) Bit6MessageCallChannel callChannel;
+
 /*! Sender type as a value of the <Bit6MessageType> enumeration. */
 @property (nonatomic, readonly) Bit6MessageType type;
 
@@ -141,5 +169,8 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 
 /*! Longitude of the location included in the message. */
 @property (nonatomic, copy) NSNumber *lng;
+
+/*! Gets the length of the call. This property should be used only if message == Bit6MessageType_Call. */
+@property (nonatomic, copy) NSNumber *callDuration;
 
 @end

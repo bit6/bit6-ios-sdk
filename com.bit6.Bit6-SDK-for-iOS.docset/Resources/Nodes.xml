@@ -69,6 +69,8 @@
 						<NodeRef refid="37"/>
 						<NodeRef refid="38"/>
 						<NodeRef refid="39"/>
+						<NodeRef refid="40"/>
+						<NodeRef refid="41"/>
 						
 					</Subnodes>
 				</Node>
@@ -959,31 +961,41 @@
             
         </Node>
 		<Node id="34" type="file" documentType="reference">
+            <Name>Bit6MessageCallChannel</Name>
+            <Path>Constants/Bit6MessageCallChannel.html</Path>
+            
+        </Node>
+		<Node id="35" type="file" documentType="reference">
+            <Name>Bit6MessageCallStatus</Name>
+            <Path>Constants/Bit6MessageCallStatus.html</Path>
+            
+        </Node>
+		<Node id="36" type="file" documentType="reference">
             <Name>Bit6MessageFileType</Name>
             <Path>Constants/Bit6MessageFileType.html</Path>
             
         </Node>
-		<Node id="35" type="file" documentType="reference">
+		<Node id="37" type="file" documentType="reference">
             <Name>Bit6MessageStatus</Name>
             <Path>Constants/Bit6MessageStatus.html</Path>
             
         </Node>
-		<Node id="36" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>Bit6MessageType</Name>
             <Path>Constants/Bit6MessageType.html</Path>
             
         </Node>
-		<Node id="37" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>Bit6RTStatus</Name>
             <Path>Constants/Bit6RTStatus.html</Path>
             
         </Node>
-		<Node id="38" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>Bit6TransferState</Name>
             <Path>Constants/Bit6TransferState.html</Path>
             
         </Node>
-		<Node id="39" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>Bit6TransferType</Name>
             <Path>Constants/Bit6TransferType.html</Path>
             

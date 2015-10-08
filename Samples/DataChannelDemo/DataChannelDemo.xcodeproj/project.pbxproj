@@ -15,7 +15,6 @@
 		D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E58B1AD38AF00086B31E /* Images.xcassets */; };
 		D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E58D1AD38AF00086B31E /* LaunchScreen.xib */; };
 		D8D4E5A51AD38B710086B31E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */; };
-		D8D4E5A91AD390A40086B31E /* BasicDemoConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E5A81AD390A40086B31E /* BasicDemoConfig.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,7 +116,7 @@
 		D8D4E5701AD38AF00086B31E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Bit6;
 				TargetAttributes = {
 					D8D4E5771AD38AF00086B31E = {
@@ -148,7 +147,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D4E5A91AD390A40086B31E /* BasicDemoConfig.xcconfig in Resources */,
 				D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */,
 				D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */,
 				D8D4E5A51AD38B710086B31E /* Storyboard.storyboard in Resources */,
@@ -203,6 +201,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -271,6 +270,7 @@
 				INFOPLIST_FILE = DataChannelDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -287,6 +287,7 @@
 				INFOPLIST_FILE = DataChannelDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};

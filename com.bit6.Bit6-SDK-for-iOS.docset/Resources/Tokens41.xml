@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/Bit6TransferType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6TransferType</TokenIdentifier>
+			<Abstract type="html">Type of Bit6Transfer.</Abstract>
+			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="41"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_INCOMING</TokenIdentifier>
+            <Abstract type="html">Incoming transfer.</Abstract>
+            <Declaration>Bit6TransferType_INCOMING</Declaration>
+            
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+            <NodeRef refid="41"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_OUTGOING</TokenIdentifier>
+            <Abstract type="html">Outoing transfer.</Abstract>
+            <Declaration>Bit6TransferType_OUTGOING</Declaration>
+            
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            
+            <NodeRef refid="41"/>
+        </Token>
+        
+	</File>
+</Tokens>

@@ -538,12 +538,12 @@
         */
     }
     else if (msg.type == Bit6MessageType_Attachments) {
-        if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
+        if (msg.attachFileType == Bit6MessageFileType_Audio) {
             [Bit6.audioPlayer startPlayingAudioFileInMessage:msg errorHandler:^(NSError *error) {
                 [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }];
         }
-        else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
+        else if (msg.attachFileType == Bit6MessageFileType_Video) {
             if ([Bit6 shouldDownloadVideoBeforePlaying]) {
                 if (fullAttachStatus==Bit6MessageAttachmentStatus_FOUND) {
                     [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
@@ -553,7 +553,7 @@
                 [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
             }
         }
-        else if (msg.attachFileType == Bit6MessageFileType_ImageJPG||msg.attachFileType == Bit6MessageFileType_ImagePNG) {
+        else if (msg.attachFileType == Bit6MessageFileType_Image) {
             [self performSegueWithIdentifier:@"showFullImage" sender:msg];
         }
     }

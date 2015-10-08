@@ -33,7 +33,7 @@
 					<Abstract type="html">if YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.</Abstract>
 				</Parameter><Parameter>
 					<Name>errorHandler</Name>
-					<Abstract type="html">block to call if an error occurs</Abstract>
+					<Abstract type="html">used to determine if an error occurs</Abstract>
 				</Parameter>
 			</Parameters>
 			

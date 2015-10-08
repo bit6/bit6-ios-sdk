@@ -229,6 +229,78 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setCallStatus:</TokenIdentifier>
+			<Abstract type="html">Call status as a value of the Bit6MessageCallStatus enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageCallStatus callStatus</Declaration>
+			
+			
+			<Anchor>//api/name/callStatus</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/callStatus</TokenIdentifier>
+			<Abstract type="html">Call status as a value of the Bit6MessageCallStatus enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageCallStatus callStatus</Declaration>
+			
+			
+			<Anchor>//api/name/callStatus</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/callStatus</TokenIdentifier>
+			<Abstract type="html">Call status as a value of the Bit6MessageCallStatus enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageCallStatus callStatus</Declaration>
+			
+			
+			<Anchor>//api/name/callStatus</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setCallChannel:</TokenIdentifier>
+			<Abstract type="html">Call channel as a value of the Bit6MessageCallChannel enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageCallChannel callChannel</Declaration>
+			
+			
+			<Anchor>//api/name/callChannel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/callChannel</TokenIdentifier>
+			<Abstract type="html">Call channel as a value of the Bit6MessageCallChannel enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageCallChannel callChannel</Declaration>
+			
+			
+			<Anchor>//api/name/callChannel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/callChannel</TokenIdentifier>
+			<Abstract type="html">Call channel as a value of the Bit6MessageCallChannel enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6MessageCallChannel callChannel</Declaration>
+			
+			
+			<Anchor>//api/name/callChannel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setType:</TokenIdentifier>
 			<Abstract type="html">Sender type as a value of the Bit6MessageType enumeration.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>

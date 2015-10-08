@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D80D4B9F1A21581900391E04 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B9E1A21581900391E04 /* GLKit.framework */; };
-		D80D4BA31A21582A00391E04 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4BA21A21582A00391E04 /* libsqlite3.dylib */; };
-		D8182E591A22FE7500E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8182E581A22FE7500E41160 /* libstdc++.dylib */; };
-		D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D83971F41923BDC4003565E4 /* libicucore.dylib */; };
+		D87D0A9C1BBD72500096118A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A981BBD72500096118A /* libicucore.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A9D1BBD72500096118A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A991BBD72500096118A /* libz.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A9E1BBD72500096118A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A9A1BBD72500096118A /* libstdc++.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A9F1BBD72500096118A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A9B1BBD72500096118A /* libsqlite3.tbd */; settings = {ASSET_TAGS = (); }; };
 		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
 		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
 		D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A518DBFC540070378D /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		D8A9E91A1A8FAA1600027A28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9191A8FAA1600027A28 /* AVFoundation.framework */; };
 		D8A9E91C1A8FAA1A00027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E91B1A8FAA1A00027A28 /* AudioToolbox.framework */; };
 		D8A9E91E1A8FAA2000027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E91D1A8FAA2000027A28 /* CoreMedia.framework */; };
-		D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AA8343192A8FEC0065BDA6 /* libz.dylib */; };
 		D8C040FA1ACA7CE600D51A19 /* ConversationDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C040F91ACA7CE600D51A19 /* ConversationDetailsTableViewController.m */; };
 		D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */; };
 		D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACB8194ABD2A00AFFB53 /* main.m */; };
@@ -38,9 +38,10 @@
 
 /* Begin PBXFileReference section */
 		D80D4B9E1A21581900391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		D80D4BA21A21582A00391E04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		D8182E581A22FE7500E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		D83971F41923BDC4003565E4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D87D0A981BBD72500096118A /* libicucore.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libicucore.tbd; sourceTree = "<absolute>"; };
+		D87D0A991BBD72500096118A /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libz.tbd; sourceTree = "<absolute>"; };
+		D87D0A9A1BBD72500096118A /* libstdc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libstdc++.tbd"; sourceTree = "<absolute>"; };
+		D87D0A9B1BBD72500096118A /* libsqlite3.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libsqlite3.tbd; sourceTree = "<absolute>"; };
 		D880E49E18DBFC540070378D /* Bit6ChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bit6ChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D880E4A118DBFC540070378D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,7 +53,6 @@
 		D8A9E9191A8FAA1600027A28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D8A9E91B1A8FAA1A00027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D8A9E91D1A8FAA2000027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		D8AA8343192A8FEC0065BDA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D8C040F81ACA7CE600D51A19 /* ConversationDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationDetailsTableViewController.h; path = ChatDemo/ConversationDetailsTableViewController.h; sourceTree = SOURCE_ROOT; };
 		D8C040F91ACA7CE600D51A19 /* ConversationDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationDetailsTableViewController.m; path = ChatDemo/ConversationDetailsTableViewController.m; sourceTree = SOURCE_ROOT; };
 		D8EDACB5194ABD2A00AFFB53 /* Bit6ChatDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bit6ChatDemo-Info.plist"; path = "ChatDemo/Bit6ChatDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -82,20 +82,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87D0A9F1BBD72500096118A /* libsqlite3.tbd in Frameworks */,
 				D8A9E91E1A8FAA2000027A28 /* CoreMedia.framework in Frameworks */,
 				D8A9E91C1A8FAA1A00027A28 /* AudioToolbox.framework in Frameworks */,
 				D8A9E91A1A8FAA1600027A28 /* AVFoundation.framework in Frameworks */,
 				D8A9E9181A8FAA1100027A28 /* AssetsLibrary.framework in Frameworks */,
+				D87D0A9D1BBD72500096118A /* libz.tbd in Frameworks */,
 				D8A9E9161A8FAA0B00027A28 /* SystemConfiguration.framework in Frameworks */,
 				D8A9E9141A8FAA0600027A28 /* MediaPlayer.framework in Frameworks */,
 				D80D4B9F1A21581900391E04 /* GLKit.framework in Frameworks */,
-				D8182E591A22FE7500E41160 /* libstdc++.dylib in Frameworks */,
-				D80D4BA31A21582A00391E04 /* libsqlite3.dylib in Frameworks */,
-				D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */,
-				D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */,
+				D87D0A9C1BBD72500096118A /* libicucore.tbd in Frameworks */,
 				D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */,
 				D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */,
 				D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */,
+				D87D0A9E1BBD72500096118A /* libstdc++.tbd in Frameworks */,
 				D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,17 +123,17 @@
 		D880E4A018DBFC540070378D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D87D0A981BBD72500096118A /* libicucore.tbd */,
+				D87D0A991BBD72500096118A /* libz.tbd */,
+				D87D0A9A1BBD72500096118A /* libstdc++.tbd */,
+				D87D0A9B1BBD72500096118A /* libsqlite3.tbd */,
 				D8A9E91D1A8FAA2000027A28 /* CoreMedia.framework */,
 				D8A9E91B1A8FAA1A00027A28 /* AudioToolbox.framework */,
 				D8A9E9191A8FAA1600027A28 /* AVFoundation.framework */,
 				D8A9E9171A8FAA1100027A28 /* AssetsLibrary.framework */,
 				D8A9E9151A8FAA0B00027A28 /* SystemConfiguration.framework */,
 				D8A9E9131A8FAA0600027A28 /* MediaPlayer.framework */,
-				D8182E581A22FE7500E41160 /* libstdc++.dylib */,
-				D80D4BA21A21582A00391E04 /* libsqlite3.dylib */,
 				D80D4B9E1A21581900391E04 /* GLKit.framework */,
-				D8AA8343192A8FEC0065BDA6 /* libz.dylib */,
-				D83971F41923BDC4003565E4 /* libicucore.dylib */,
 				D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */,
 				D880E4A118DBFC540070378D /* Foundation.framework */,
 				D880E4A318DBFC540070378D /* CoreGraphics.framework */,
@@ -207,7 +207,7 @@
 		D880E49618DBFC540070378D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Voxofon;
 				TargetAttributes = {
 					D880E49D18DBFC540070378D = {
@@ -305,6 +305,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -368,6 +369,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6ChatDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6ChatDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6ChatDemo;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -385,6 +387,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6ChatDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6ChatDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6ChatDemo;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

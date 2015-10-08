@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bit6"
-  s.version      = "0.9.4"
+  s.version      = "0.9.5"
   s.summary      = "Bit6 Framework"
 
   s.description  = <<-DESC
@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
   s.libraries = "icucore", "z", "stdc++", "sqlite3"
   s.requires_arc = true
   
-  s.xcconfig = {"ARCHS[sdk=iphonesimulator*]" => "$(ARCHS_STANDARD_32_BIT)", "ARCHS[sdk=iphoneos*]" => "$(ARCHS_STANDARD)"}
+  s.xcconfig = {"ARCHS[sdk=iphonesimulator*]" => "$(ARCHS_STANDARD_32_BIT)", "ARCHS[sdk=iphoneos*]" => "$(ARCHS_STANDARD)", "ENABLE_BITCODE" => "NO"}
 
 end

@@ -19,7 +19,7 @@
  @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
  @param delegate the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <Bit6AudioRecorderControllerDelegate> Protocol Reference.
  @param defaultPrompt if YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.
- @param errorHandler block to call if an error occurs
+ @param errorHandler used to determine if an error occurs
  */
 - (void) startRecordingAudioForMessage:(Bit6OutgoingMessage*)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id <Bit6AudioRecorderControllerDelegate>)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(void (^)(NSError *error))errorHandler;
 

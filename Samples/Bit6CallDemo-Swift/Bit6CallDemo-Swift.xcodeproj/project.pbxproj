@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8182E5B1A22FE8C00E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */; };
+		D87D0A901BBD71D00096118A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A8C1BBD71D00096118A /* libicucore.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A911BBD71D00096118A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A8D1BBD71D00096118A /* libz.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A921BBD71D00096118A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A8E1BBD71D00096118A /* libstdc++.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A931BBD71D00096118A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A8F1BBD71D00096118A /* libsqlite3.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0A951BBD721A0096118A /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D87D0A941BBD721A0096118A /* Bit6Resources.bundle */; settings = {ASSET_TAGS = (); }; };
 		D89CDCAE1989A5F800E76C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89CDCAD1989A5F800E76C44 /* AppDelegate.swift */; };
 		D89CDCB31989A5F800E76C44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89CDCB11989A5F800E76C44 /* Main.storyboard */; };
 		D89CDCB51989A5F800E76C44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89CDCB41989A5F800E76C44 /* Images.xcassets */; };
 		D89CDCDA1989A82200E76C44 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89CDCD91989A82200E76C44 /* Bit6SDK.framework */; };
-		D89CDCE31989A88A00E76C44 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D89CDCE11989A87B00E76C44 /* libicucore.dylib */; };
-		D89CDCE41989A88A00E76C44 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D89CDCDF1989A86A00E76C44 /* libz.dylib */; };
 		D89CDCE61989A8C100E76C44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89CDCE51989A8C100E76C44 /* LoginViewController.swift */; };
 		D89CDCE81989A8F600E76C44 /* MakeCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89CDCE71989A8F600E76C44 /* MakeCallViewController.swift */; };
-		D89CDCEA1989ABA800E76C44 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D89CDCE91989ABA800E76C44 /* Bit6Resources.bundle */; };
 		D8A9E9381A8FAE3500027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9371A8FAE3500027A28 /* MediaPlayer.framework */; };
 		D8A9E93A1A8FAE3C00027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9391A8FAE3C00027A28 /* SystemConfiguration.framework */; };
 		D8A9E93C1A8FAE4300027A28 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E93B1A8FAE4300027A28 /* AssetsLibrary.framework */; };
@@ -25,13 +26,16 @@
 		D8A9E9421A8FAE5A00027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9411A8FAE5A00027A28 /* CoreMedia.framework */; };
 		D8A9E9441A8FC94E00027A28 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9431A8FC94E00027A28 /* CoreLocation.framework */; };
 		D8B94EA81A1E884C0046E839 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B94EA71A1E884C0046E839 /* GLKit.framework */; };
-		D8B94EAA1A1E886E0046E839 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B94EA91A1E886E0046E839 /* libsqlite3.dylib */; };
 		D8BAEB601A33BCAB003C0A79 /* MyCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8BAEB5E1A33BCAB003C0A79 /* MyCallViewController.xib */; };
 		D8BAEB621A33BCE0003C0A79 /* MyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAEB611A33BCE0003C0A79 /* MyCallViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		D87D0A8C1BBD71D00096118A /* libicucore.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D87D0A8D1BBD71D00096118A /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D87D0A8E1BBD71D00096118A /* libstdc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D87D0A8F1BBD71D00096118A /* libsqlite3.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D87D0A941BBD721A0096118A /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
 		D89CDCA81989A5F800E76C44 /* Bit6CallDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit6CallDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89CDCAC1989A5F800E76C44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D89CDCAD1989A5F800E76C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,11 +44,8 @@
 		D89CDCCA1989A63600E76C44 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
 		D89CDCD51989A7A100E76C44 /* Bit6CallDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bit6CallDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D89CDCD91989A82200E76C44 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../../Bit6SDK.framework; sourceTree = "<group>"; };
-		D89CDCDF1989A86A00E76C44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D89CDCE11989A87B00E76C44 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D89CDCE51989A8C100E76C44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D89CDCE71989A8F600E76C44 /* MakeCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeCallViewController.swift; sourceTree = "<group>"; };
-		D89CDCE91989ABA800E76C44 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
 		D8A9E9371A8FAE3500027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D8A9E9391A8FAE3C00027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8A9E93B1A8FAE4300027A28 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -53,7 +54,6 @@
 		D8A9E9411A8FAE5A00027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D8A9E9431A8FC94E00027A28 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D8B94EA71A1E884C0046E839 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		D8B94EA91A1E886E0046E839 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D8BAEB5F1A33BCAB003C0A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyCallViewController.xib; sourceTree = "<group>"; };
 		D8BAEB611A33BCE0003C0A79 /* MyCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCallViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,17 +64,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A9E9441A8FC94E00027A28 /* CoreLocation.framework in Frameworks */,
+				D87D0A911BBD71D00096118A /* libz.tbd in Frameworks */,
+				D87D0A901BBD71D00096118A /* libicucore.tbd in Frameworks */,
 				D8A9E9421A8FAE5A00027A28 /* CoreMedia.framework in Frameworks */,
 				D8A9E9401A8FAE5600027A28 /* AudioToolbox.framework in Frameworks */,
+				D87D0A931BBD71D00096118A /* libsqlite3.tbd in Frameworks */,
 				D8A9E93E1A8FAE4C00027A28 /* AVFoundation.framework in Frameworks */,
 				D8A9E93C1A8FAE4300027A28 /* AssetsLibrary.framework in Frameworks */,
 				D8A9E93A1A8FAE3C00027A28 /* SystemConfiguration.framework in Frameworks */,
+				D87D0A921BBD71D00096118A /* libstdc++.tbd in Frameworks */,
 				D8A9E9381A8FAE3500027A28 /* MediaPlayer.framework in Frameworks */,
 				D8B94EA81A1E884C0046E839 /* GLKit.framework in Frameworks */,
-				D8182E5B1A22FE8C00E41160 /* libstdc++.dylib in Frameworks */,
-				D8B94EAA1A1E886E0046E839 /* libsqlite3.dylib in Frameworks */,
-				D89CDCE41989A88A00E76C44 /* libz.dylib in Frameworks */,
-				D89CDCE31989A88A00E76C44 /* libicucore.dylib in Frameworks */,
 				D89CDCDA1989A82200E76C44 /* Bit6SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +118,11 @@
 		D89CDCAB1989A5F800E76C44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D87D0A941BBD721A0096118A /* Bit6Resources.bundle */,
+				D87D0A8C1BBD71D00096118A /* libicucore.tbd */,
+				D87D0A8D1BBD71D00096118A /* libz.tbd */,
+				D87D0A8E1BBD71D00096118A /* libstdc++.tbd */,
+				D87D0A8F1BBD71D00096118A /* libsqlite3.tbd */,
 				D8A9E9431A8FC94E00027A28 /* CoreLocation.framework */,
 				D8A9E9411A8FAE5A00027A28 /* CoreMedia.framework */,
 				D8A9E93F1A8FAE5600027A28 /* AudioToolbox.framework */,
@@ -126,11 +131,6 @@
 				D8A9E9391A8FAE3C00027A28 /* SystemConfiguration.framework */,
 				D8A9E9371A8FAE3500027A28 /* MediaPlayer.framework */,
 				D8B94EA71A1E884C0046E839 /* GLKit.framework */,
-				D8182E5A1A22FE8B00E41160 /* libstdc++.dylib */,
-				D8B94EA91A1E886E0046E839 /* libsqlite3.dylib */,
-				D89CDCE11989A87B00E76C44 /* libicucore.dylib */,
-				D89CDCDF1989A86A00E76C44 /* libz.dylib */,
-				D89CDCE91989ABA800E76C44 /* Bit6Resources.bundle */,
 				D89CDCD91989A82200E76C44 /* Bit6SDK.framework */,
 				D89CDCAC1989A5F800E76C44 /* Info.plist */,
 			);
@@ -163,7 +163,9 @@
 		D89CDCA01989A5F800E76C44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Bit6;
 				TargetAttributes = {
 					D89CDCA71989A5F800E76C44 = {
@@ -199,7 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89CDCEA1989ABA800E76C44 /* Bit6Resources.bundle in Resources */,
+				D87D0A951BBD721A0096118A /* Bit6Resources.bundle in Resources */,
 				D89CDCB31989A5F800E76C44 /* Main.storyboard in Resources */,
 				D89CDCB51989A5F800E76C44 /* Images.xcassets in Resources */,
 				D8BAEB601A33BCAB003C0A79 /* MyCallViewController.xib in Resources */,
@@ -262,6 +264,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -328,6 +331,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Bit6CallDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = "Bit6CallDemo-Swift";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -342,6 +346,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Bit6CallDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = "Bit6CallDemo-Swift";
 			};
 			name = Release;

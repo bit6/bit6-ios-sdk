@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8182E5C1A22FEB300E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D890D4CD1A202D4D00D2E837 /* libstdc++.dylib */; };
-		D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D83971F41923BDC4003565E4 /* libicucore.dylib */; };
+		D87D0A851BBD71950096118A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A841BBD71950096118A /* libsqlite3.tbd */; };
+		D87D0A871BBD719C0096118A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A861BBD719C0096118A /* libstdc++.tbd */; };
+		D87D0A891BBD71A60096118A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A881BBD71A60096118A /* libz.tbd */; };
+		D87D0A8B1BBD71AF0096118A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A8A1BBD71AF0096118A /* libicucore.tbd */; };
+		D87D0A971BBD722A0096118A /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D87D0A961BBD722A0096118A /* Bit6Resources.bundle */; settings = {ASSET_TAGS = (); }; };
 		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
 		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
 		D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A518DBFC540070378D /* UIKit.framework */; };
-		D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D886702C1926D5B400799E00 /* Bit6Resources.bundle */; };
-		D890D4D01A202D5500D2E837 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D890D4CF1A202D5500D2E837 /* libsqlite3.dylib */; };
 		D890D4D21A202D5F00D2E837 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D890D4D11A202D5F00D2E837 /* GLKit.framework */; };
 		D8A9E92C1A8FAACC00027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E92B1A8FAACC00027A28 /* MediaPlayer.framework */; };
 		D8A9E92E1A8FAAD100027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E92D1A8FAAD100027A28 /* SystemConfiguration.framework */; };
@@ -22,7 +23,6 @@
 		D8A9E9341A8FAAE300027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9331A8FAAE300027A28 /* AudioToolbox.framework */; };
 		D8A9E9361A8FAAEA00027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9351A8FAAEA00027A28 /* CoreMedia.framework */; };
 		D8A9E9461A8FC97100027A28 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9451A8FC97100027A28 /* CoreLocation.framework */; };
-		D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AA8343192A8FEC0065BDA6 /* libz.dylib */; };
 		D8BAEB5C1A335C2A003C0A79 /* MyCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BAEB5A1A335C2A003C0A79 /* MyCallViewController.m */; };
 		D8BAEB5D1A335C2A003C0A79 /* MyCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8BAEB5B1A335C2A003C0A79 /* MyCallViewController.xib */; };
 		D8DB6C20194AC08E0062D819 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8DB6C1D194AC08E0062D819 /* InfoPlist.strings */; };
@@ -36,14 +36,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D83971F41923BDC4003565E4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D87D0A841BBD71950096118A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D87D0A861BBD719C0096118A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D87D0A881BBD71A60096118A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D87D0A8A1BBD71AF0096118A /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D87D0A961BBD722A0096118A /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
 		D880E49E18DBFC540070378D /* Bit6CallDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bit6CallDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D880E4A118DBFC540070378D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D880E4A518DBFC540070378D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D886702C1926D5B400799E00 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
-		D890D4CD1A202D4D00D2E837 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		D890D4CF1A202D5500D2E837 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D890D4D11A202D5F00D2E837 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		D8A9E92B1A8FAACC00027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D8A9E92D1A8FAAD100027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -52,7 +53,6 @@
 		D8A9E9331A8FAAE300027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D8A9E9351A8FAAEA00027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D8A9E9451A8FC97100027A28 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D8AA8343192A8FEC0065BDA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D8BAEB591A335C2A003C0A79 /* MyCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCallViewController.h; path = CallDemo/MyCallViewController.h; sourceTree = SOURCE_ROOT; };
 		D8BAEB5A1A335C2A003C0A79 /* MyCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCallViewController.m; path = CallDemo/MyCallViewController.m; sourceTree = SOURCE_ROOT; };
 		D8BAEB5B1A335C2A003C0A79 /* MyCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyCallViewController.xib; path = CallDemo/MyCallViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -77,6 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87D0A8B1BBD71AF0096118A /* libicucore.tbd in Frameworks */,
+				D87D0A891BBD71A60096118A /* libz.tbd in Frameworks */,
+				D87D0A871BBD719C0096118A /* libstdc++.tbd in Frameworks */,
+				D87D0A851BBD71950096118A /* libsqlite3.tbd in Frameworks */,
 				D8A9E9461A8FC97100027A28 /* CoreLocation.framework in Frameworks */,
 				D8A9E9361A8FAAEA00027A28 /* CoreMedia.framework in Frameworks */,
 				D8A9E9341A8FAAE300027A28 /* AudioToolbox.framework in Frameworks */,
@@ -84,10 +88,6 @@
 				D8A9E9301A8FAAD700027A28 /* AssetsLibrary.framework in Frameworks */,
 				D8A9E92E1A8FAAD100027A28 /* SystemConfiguration.framework in Frameworks */,
 				D8A9E92C1A8FAACC00027A28 /* MediaPlayer.framework in Frameworks */,
-				D8182E5C1A22FEB300E41160 /* libstdc++.dylib in Frameworks */,
-				D890D4D01A202D5500D2E837 /* libsqlite3.dylib in Frameworks */,
-				D8AA8344192A8FEC0065BDA6 /* libz.dylib in Frameworks */,
-				D83971F51923BDC4003565E4 /* libicucore.dylib in Frameworks */,
 				D890D4D21A202D5F00D2E837 /* GLKit.framework in Frameworks */,
 				D8F7BA2819107A2F00CEE571 /* Bit6SDK.framework in Frameworks */,
 				D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */,
@@ -119,6 +119,10 @@
 		D880E4A018DBFC540070378D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D87D0A8A1BBD71AF0096118A /* libicucore.tbd */,
+				D87D0A881BBD71A60096118A /* libz.tbd */,
+				D87D0A861BBD719C0096118A /* libstdc++.tbd */,
+				D87D0A841BBD71950096118A /* libsqlite3.tbd */,
 				D8A9E9451A8FC97100027A28 /* CoreLocation.framework */,
 				D8A9E9351A8FAAEA00027A28 /* CoreMedia.framework */,
 				D8A9E9331A8FAAE300027A28 /* AudioToolbox.framework */,
@@ -126,10 +130,6 @@
 				D8A9E92F1A8FAAD700027A28 /* AssetsLibrary.framework */,
 				D8A9E92D1A8FAAD100027A28 /* SystemConfiguration.framework */,
 				D8A9E92B1A8FAACC00027A28 /* MediaPlayer.framework */,
-				D890D4CF1A202D5500D2E837 /* libsqlite3.dylib */,
-				D890D4CD1A202D4D00D2E837 /* libstdc++.dylib */,
-				D8AA8343192A8FEC0065BDA6 /* libz.dylib */,
-				D83971F41923BDC4003565E4 /* libicucore.dylib */,
 				D890D4D11A202D5F00D2E837 /* GLKit.framework */,
 				D8F7BA2719107A2F00CEE571 /* Bit6SDK.framework */,
 				D880E4A118DBFC540070378D /* Foundation.framework */,
@@ -163,11 +163,11 @@
 		D880E4A818DBFC540070378D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D87D0A961BBD722A0096118A /* Bit6Resources.bundle */,
 				D8DB6C1B194AC08E0062D819 /* Bit6CallDemo-Info.plist */,
 				D8DB6C1C194AC08E0062D819 /* Bit6CallDemo-Prefix.pch */,
 				D8DB6C1D194AC08E0062D819 /* InfoPlist.strings */,
 				D8DB6C1E194AC08E0062D819 /* main.m */,
-				D886702C1926D5B400799E00 /* Bit6Resources.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 		D880E49618DBFC540070378D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Voxofon;
 				TargetAttributes = {
 					D880E49D18DBFC540070378D = {
@@ -234,10 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D886702D1926D5B400799E00 /* Bit6Resources.bundle in Resources */,
 				D8DB6C2D194AC10C0062D819 /* Main.storyboard in Resources */,
 				D8DB6C2B194AC10C0062D819 /* Images.xcassets in Resources */,
 				D8DB6C20194AC08E0062D819 /* InfoPlist.strings in Resources */,
+				D87D0A971BBD722A0096118A /* Bit6Resources.bundle in Resources */,
 				D8BAEB5D1A335C2A003C0A79 /* MyCallViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +295,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -358,6 +359,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CallDemo/Bit6CallDemo-Prefix.pch";
 				INFOPLIST_FILE = "CallDemo/Bit6CallDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6CallDemo;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -375,6 +377,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CallDemo/Bit6CallDemo-Prefix.pch";
 				INFOPLIST_FILE = "CallDemo/Bit6CallDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6CallDemo;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

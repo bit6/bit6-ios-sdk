@@ -26,22 +26,14 @@
 - (void) logout:(NSNotification*)notification
 {
     [self.navigationController popViewControllerAnimated:YES];
-    [[FBSession activeSession] closeAndClearTokenInformation];
+    [[[FBSDKLoginManager alloc] init] logOut];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     if (Bit6.session.authenticated) {
-        if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:NO
-                                          completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                              if (session.state==FBSessionStateOpen || session.state==FBSessionStateOpenTokenExtended){
-                                                  [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
-                                              }
-                                              else if (session.state == FBSessionStateClosed || session.state == FBSessionStateClosedLoginFailed){
-                                                  [Bit6.session logoutWithCompletionHandler:nil];
-                                              }
-                                          }];
+        if ([FBSDKProfile currentProfile] != nil) {
+            [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
         }
         else {
             [Bit6.session logoutWithCompletionHandler:nil];
@@ -61,18 +53,25 @@
     
     [Bit6.session getAuthInfoCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (response[@"facebook"][@"client_id"]){
-            [[FBSession activeSession] closeAndClearTokenInformation];
-            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                if (state==FBSessionStateOpen) {
-                    [Bit6.session oauthForProvider:@"facebook" params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":FBSession.activeSession.accessTokenData.accessToken} completion:^(NSDictionary *response, NSError *error) {
-                        if (!error) {
-                            if (__weakSelf.presentingViewController==nil) {
-                                [__weakSelf performSegueWithIdentifier:@"loginCompleted" sender:nil];
+            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+            [login logInWithReadPermissions:@[@"public_profile",@"email",@"user_friends"] fromViewController:self.view.window.rootViewController handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                if (error || result.isCancelled) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[[UIAlertView alloc] initWithTitle:@"An Error Ocurred" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                    });
+                }
+                else {
+                    [Bit6.session oauthForProvider:@"facebook" params:@{@"client_id":response[@"facebook"][@"client_id"], @"access_token":[FBSDKAccessToken currentAccessToken].tokenString} completion:^(NSDictionary *response, NSError *error) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            if (!error) {
+                                if (__weakSelf.presentingViewController==nil) {
+                                    [__weakSelf performSegueWithIdentifier:@"loginCompleted" sender:nil];
+                                }
                             }
-                        }
-                        else {
-                            [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-                        }
+                            else {
+                                [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                            }
+                        });
                     }];
                 }
             }];

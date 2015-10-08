@@ -118,5 +118,7 @@ extern NSString* const Bit6GroupMetadataTitleKey;
 @property (nonatomic, copy, readonly) NSString *status;
 /*! The conversation the sender belongs to. */
 @property (nonatomic, copy, readonly) Bit6Group *group;
+/*! The public profile of the group member. */
+@property (nonatomic, copy, readonly) NSDictionary *publicProfile;
 
 @end

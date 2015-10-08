@@ -10,10 +10,6 @@
 		D80D4B661A2150DA00391E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4B651A2150DA00391E04 /* AppDelegate.swift */; };
 		D80D4B6B1A2150DA00391E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B691A2150DA00391E04 /* Main.storyboard */; };
 		D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B6C1A2150DA00391E04 /* Images.xcassets */; };
-		D80D4B861A2150F800391E04 /* DemoConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */; };
-		D80D4B8F1A21514A00391E04 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B881A21514A00391E04 /* libsqlite3.dylib */; };
-		D80D4B901A21514A00391E04 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B891A21514A00391E04 /* libicucore.dylib */; };
-		D80D4B911A21514A00391E04 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8A1A21514A00391E04 /* libz.dylib */; };
 		D80D4B921A21514A00391E04 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */; };
 		D80D4B931A21514A00391E04 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8C1A21514A00391E04 /* GLKit.framework */; };
 		D80D4B941A21514A00391E04 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */; };
@@ -21,7 +17,10 @@
 		D80D4BAB1A215B1C00391E04 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */; };
 		D80D4BAD1A216AD400391E04 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */; };
 		D8182E4C1A22E83800E41160 /* ImageAttachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */; };
-		D8182E571A22FE2A00E41160 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8182E561A22FE2A00E41160 /* libstdc++.dylib */; };
+		D87D0AA41BBD72640096118A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA01BBD72640096118A /* libicucore.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0AA51BBD72640096118A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA11BBD72640096118A /* libz.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0AA61BBD72640096118A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA21BBD72640096118A /* libstdc++.tbd */; settings = {ASSET_TAGS = (); }; };
+		D87D0AA71BBD72640096118A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA31BBD72640096118A /* libsqlite3.tbd */; settings = {ASSET_TAGS = (); }; };
 		D8A9E9201A8FAA7400027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E91F1A8FAA7400027A28 /* MediaPlayer.framework */; };
 		D8A9E9221A8FAA7B00027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9211A8FAA7B00027A28 /* SystemConfiguration.framework */; };
 		D8A9E9241A8FAA8000027A28 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9231A8FAA8000027A28 /* AssetsLibrary.framework */; };
@@ -38,9 +37,6 @@
 		D80D4B6A1A2150DA00391E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D80D4B6C1A2150DA00391E04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
-		D80D4B881A21514A00391E04 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		D80D4B891A21514A00391E04 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		D80D4B8A1A21514A00391E04 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
 		D80D4B8C1A21514A00391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../../Bit6SDK.framework; sourceTree = "<group>"; };
@@ -49,7 +45,10 @@
 		D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachedViewController.swift; sourceTree = "<group>"; };
-		D8182E561A22FE2A00E41160 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		D87D0AA01BBD72640096118A /* libicucore.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D87D0AA11BBD72640096118A /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D87D0AA21BBD72640096118A /* libstdc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D87D0AA31BBD72640096118A /* libsqlite3.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D8A9E91F1A8FAA7400027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D8A9E9211A8FAA7B00027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8A9E9231A8FAA8000027A28 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -68,14 +67,14 @@
 				D8A9E9281A8FAA8B00027A28 /* AudioToolbox.framework in Frameworks */,
 				D8A9E9261A8FAA8400027A28 /* AVFoundation.framework in Frameworks */,
 				D8A9E9241A8FAA8000027A28 /* AssetsLibrary.framework in Frameworks */,
+				D87D0AA41BBD72640096118A /* libicucore.tbd in Frameworks */,
 				D8A9E9221A8FAA7B00027A28 /* SystemConfiguration.framework in Frameworks */,
+				D87D0AA71BBD72640096118A /* libsqlite3.tbd in Frameworks */,
 				D8A9E9201A8FAA7400027A28 /* MediaPlayer.framework in Frameworks */,
 				D80D4B931A21514A00391E04 /* GLKit.framework in Frameworks */,
-				D8182E571A22FE2A00E41160 /* libstdc++.dylib in Frameworks */,
-				D80D4B8F1A21514A00391E04 /* libsqlite3.dylib in Frameworks */,
-				D80D4B911A21514A00391E04 /* libz.dylib in Frameworks */,
-				D80D4B901A21514A00391E04 /* libicucore.dylib in Frameworks */,
 				D80D4B941A21514A00391E04 /* Bit6SDK.framework in Frameworks */,
+				D87D0AA51BBD72640096118A /* libz.tbd in Frameworks */,
+				D87D0AA61BBD72640096118A /* libstdc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +110,7 @@
 				D80D4B691A2150DA00391E04 /* Main.storyboard */,
 				D80D4B6C1A2150DA00391E04 /* Images.xcassets */,
 				D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */,
+				D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */,
 				D80D4B631A2150DA00391E04 /* Supporting Files */,
 			);
 			path = "Bit6ChatDemo-Swift";
@@ -119,6 +119,10 @@
 		D80D4B631A2150DA00391E04 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D87D0AA01BBD72640096118A /* libicucore.tbd */,
+				D87D0AA11BBD72640096118A /* libz.tbd */,
+				D87D0AA21BBD72640096118A /* libstdc++.tbd */,
+				D87D0AA31BBD72640096118A /* libsqlite3.tbd */,
 				D8A9E9291A8FAA9200027A28 /* CoreMedia.framework */,
 				D8A9E9271A8FAA8B00027A28 /* AudioToolbox.framework */,
 				D8A9E9251A8FAA8400027A28 /* AVFoundation.framework */,
@@ -126,11 +130,6 @@
 				D8A9E9211A8FAA7B00027A28 /* SystemConfiguration.framework */,
 				D8A9E91F1A8FAA7400027A28 /* MediaPlayer.framework */,
 				D80D4B8C1A21514A00391E04 /* GLKit.framework */,
-				D8182E561A22FE2A00E41160 /* libstdc++.dylib */,
-				D80D4B881A21514A00391E04 /* libsqlite3.dylib */,
-				D80D4B891A21514A00391E04 /* libicucore.dylib */,
-				D80D4B8A1A21514A00391E04 /* libz.dylib */,
-				D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */,
 				D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */,
 				D80D4B641A2150DA00391E04 /* Info.plist */,
 			);
@@ -163,7 +162,9 @@
 		D80D4B581A2150DA00391E04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Bit6;
 				TargetAttributes = {
 					D80D4B5F1A2150DA00391E04 = {
@@ -200,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80D4B921A21514A00391E04 /* Bit6Resources.bundle in Resources */,
-				D80D4B861A2150F800391E04 /* DemoConfig.xcconfig in Resources */,
 				D80D4B6B1A2150DA00391E04 /* Main.storyboard in Resources */,
 				D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */,
 			);
@@ -256,6 +256,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -321,6 +322,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Bit6ChatDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -333,6 +335,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Bit6ChatDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

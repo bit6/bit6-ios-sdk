@@ -59,6 +59,24 @@
 /*! Current user identity as a <Bit6Address> object */
 @property (nonatomic, readonly) Bit6Address *userIdentity;
 
+/*! Public profile of the current user. */
+- (NSDictionary*)publicProfile;
+
+/*! Used to set the public profile of the current user. 
+ @param publicProfile New public profile for the current user.
+ @param completion Block to call after the operation has been completed.
+ */
+- (void)setPublicProfile:(NSDictionary*)publicProfile completion:(Bit6CompletionHandler)completion;
+
+/*! Private profile of the current user. */
+- (NSDictionary*)privateData;
+
+/*! Used to set the private profile of the current user.
+ @param privateData New private profile for the current user.
+ @param completion Block to call after the operation has been completed.
+ */
+- (void)setPrivateData:(NSDictionary*)privateData completion:(Bit6CompletionHandler)completion;
+
 /*! Get the OAuth configurations available
  @param completion Block to be executed after the operation has been completed.
  */

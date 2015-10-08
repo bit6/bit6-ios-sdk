@@ -64,14 +64,15 @@
 #pragma mark - Facebook
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Handle the user leaving the app while the Facebook login dialog is being shown
-    // For example: when the user presses the iOS "home" button while the login dialog is active
-    [FBAppCall handleDidBecomeActive];
+    [FBSDKAppEvents activateApp];
 }
 
 @end

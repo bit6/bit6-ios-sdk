@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6TransferType.html">
+	<File path="Constants/Bit6RTStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6TransferType</TokenIdentifier>
-			<Abstract type="html">Type of Bit6Transfer.</Abstract>
-			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6RTStatus</TokenIdentifier>
+			<Abstract type="html">Web Socket connection status.</Abstract>
+			<DeclaredIn>Bit6Constants.h</DeclaredIn>
             
 			
 			<NodeRef refid="39"/>
@@ -14,21 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_INCOMING</TokenIdentifier>
-            <Abstract type="html">Incoming transfer.</Abstract>
-            <Declaration>Bit6TransferType_INCOMING</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_DISCONNECTED</TokenIdentifier>
+            <Abstract type="html">Web Socket is disconnected.</Abstract>
+            <Declaration>Bit6RTStatus_DISCONNECTED</Declaration>
             
-            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="39"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_OUTGOING</TokenIdentifier>
-            <Abstract type="html">Outoing transfer.</Abstract>
-            <Declaration>Bit6TransferType_OUTGOING</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTING</TokenIdentifier>
+            <Abstract type="html">Web Socket is tring to connect.</Abstract>
+            <Declaration>Bit6RTStatus_CONNECTING</Declaration>
             
-            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTED</TokenIdentifier>
+            <Abstract type="html">Web Socket is connected.</Abstract>
+            <Declaration>Bit6RTStatus_CONNECTED</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="39"/>
         </Token>

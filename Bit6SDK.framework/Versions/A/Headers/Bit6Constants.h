@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Bit6. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 typedef void (^Bit6CompletionHandler) (NSDictionary *response, NSError *error);
 typedef void (^Bit6ActionNotificationCompletionHandler) (void);
 

@@ -23,7 +23,7 @@ class MyCallViewController: Bit6CallViewController {
     
     var callController : Bit6CallController {
         get {
-            var callControllers = Bit6.callControllers()
+            let callControllers = Bit6.callControllers()
             return callControllers.first as! Bit6CallController
         }
     }
@@ -34,14 +34,14 @@ class MyCallViewController: Bit6CallViewController {
         super.init(nibName:"MyCallViewController", bundle:nil)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (self.callController.hasVideo) {
+        if self.callController.hasVideo {
             self.speakerButton.hidden = true
             self.speakerLabel.hidden = true
         }
@@ -50,8 +50,8 @@ class MyCallViewController: Bit6CallViewController {
             self.cameraLabel.hidden = true
         }
         
-        var deviceType : NSString = UIDevice.currentDevice().model
-        if ( deviceType.isEqualToString("iPhone") ) {
+        let deviceType = UIDevice.currentDevice().model
+        if deviceType == "iPhone" {
             self.speakerButton.hidden = true
             self.speakerLabel.hidden = true
         }
@@ -77,14 +77,14 @@ class MyCallViewController: Bit6CallViewController {
     }
     
     override func callStateChangedNotificationForCallController(callController: Bit6CallController!) {
-        if (self.controlsView != nil) {
+        if self.controlsView != nil {
             self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
             self.secondsChangedNotificationForCallController(callController)
         }
     }
     
     override func secondsChangedNotificationForCallController(callController: Bit6CallController!) {
-        if (self.timerLabel != nil) {
+        if self.timerLabel != nil {
             switch (self.callController.callState) {
             case .NEW: fallthrough case .PROGRESS:
                 self.timerLabel.text = "Connecting..."

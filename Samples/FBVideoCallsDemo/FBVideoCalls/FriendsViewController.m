@@ -8,7 +8,7 @@
 
 #import "FriendsViewController.h"
 
-@interface FriendsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FriendsViewController () <UITableViewDataSource, UITableViewDelegate, FBSDKAppInviteDialogDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDictionary *friendsDict;
@@ -107,59 +107,44 @@
 - (void) loadFacebookFriends
 {
     __weak FriendsViewController *conv = self;
-    [FBRequestConnection startWithGraphPath:@"/me/friends"
-                                 parameters:nil
-                                 HTTPMethod:@"GET"
-                          completionHandler:^(FBRequestConnection *connection,NSDictionary *result,NSError *error) {
-                              
-                              NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:result.count];
-                              NSMutableArray *array = [NSMutableArray arrayWithCapacity:result.count];
-                              
-                              NSArray* friends = result[@"data"];
-                              for (NSDictionary<FBGraphUser>* friend in friends) {
-                                  [array addObject:friend.objectID];
-                                  dict[friend.objectID] = friend.name;
-                              }
-                              
-                              conv.friendsIds = array;
-                              conv.friendsDict = dict;
-                              
-                              [conv.tableView reloadData];
-                          }];
+    FBSDKGraphRequest *graph = [[FBSDKGraphRequest alloc] initWithGraphPath:@"/me/friends"
+                                                                 parameters:@{@"fields":@"name,first_name,last_name,id"}
+                                                                 HTTPMethod:@"GET"];
+    
+    [graph startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, NSDictionary *result, NSError *error) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:result.count];
+        NSMutableArray *array = [NSMutableArray arrayWithCapacity:result.count];
+        
+        NSArray* friends = result[@"data"];
+        for (NSDictionary* friend in friends) {
+            [array addObject:friend[@"id"]];
+            dict[friend[@"id"]] = friend[@"name"];
+        }
+        
+        conv.friendsIds = array;
+        conv.friendsDict = dict;
+        
+        [conv.tableView reloadData];
+    }];
 }
 
 #pragma mark - Invite Friends
 
 - (void) inviteFriendsButtonTouched:(UIBarButtonItem*)sender
 {
-    NSDictionary* params = @{@"filters":@"app_non_users",@"message":@"Try FBVideoCalls"};
+    FBSDKAppInviteContent *content =[[FBSDKAppInviteContent alloc] init];
+    #warning Remember to set your invitation url
+    content.appLinkURL = [NSURL URLWithString:@""];
+    FBSDKAppInviteDialog *dialog = [[FBSDKAppInviteDialog alloc] init];
+    dialog.content = content;
+    dialog.delegate = self;
     
-    // Display the requests dialog
-    [FBWebDialogs
-     presentRequestsDialogModallyWithSession:nil
-     message:nil
-     title:nil
-     parameters:params
-     handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
-         if (error) {
-             // Case A: Error launching the dialog or sending request.
-             NSLog(@"Error sending request.");
-         } else {
-             if (result == FBWebDialogResultDialogNotCompleted) {
-                 // Case B: User clicked the "x" icon
-                 NSLog(@"User canceled request.");
-             } else {
-                 NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
-                 if (![urlParams valueForKey:@"request"]) {
-                     // User clicked the Cancel button
-                     NSLog(@"User canceled request.");
-                 } else {
-                     // User clicked the Send button
-                     NSLog(@"User sent request.");
-                 }
-             }
-         }
-     }];
+    if ([dialog canShow]) {
+        [dialog show];
+    }
+    else {
+        NSLog(@"Can't show");
+    }
 }
 
 - (NSDictionary*)parseURLParams:(NSString *)query
@@ -175,6 +160,18 @@
         params[kv[0]] = val;
     }
     return params;
+}
+
+#pragma mark - FBSDKAppInviteDialogDelegate
+
+- (void)appInviteDialog:(FBSDKAppInviteDialog *)appInviteDialog didCompleteWithResults:(NSDictionary *)results
+{
+    
+}
+
+- (void)appInviteDialog:(FBSDKAppInviteDialog *)appInviteDialog didFailWithError:(NSError *)error
+{
+    
 }
 
 @end

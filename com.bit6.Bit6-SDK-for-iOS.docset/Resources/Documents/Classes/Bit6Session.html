@@ -64,6 +64,14 @@
 	
 	<option value="//api/name/oauthForProvider:params:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- oauthForProvider:params:completion:</option>
 	
+	<option value="//api/name/privateData">&nbsp;&nbsp;&nbsp;&nbsp;- privateData</option>
+	
+	<option value="//api/name/publicProfile">&nbsp;&nbsp;&nbsp;&nbsp;- publicProfile</option>
+	
+	<option value="//api/name/setPrivateData:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- setPrivateData:completion:</option>
+	
+	<option value="//api/name/setPublicProfile:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- setPublicProfile:completion:</option>
+	
 	<option value="//api/name/signUpWithUserIdentity:password:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- signUpWithUserIdentity:password:completionHandler:</option>
 	
 	<option value="//api/name/valueForProfileKey:">&nbsp;&nbsp;&nbsp;&nbsp;- valueForProfileKey:</option>
@@ -117,6 +125,14 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logoutWithCompletionHandler:">logoutWithCompletionHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/oauthForProvider:params:completion:">oauthForProvider:params:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/privateData">privateData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicProfile">publicProfile</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPrivateData:completion:">setPrivateData:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPublicProfile:completion:">setPublicProfile:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/signUpWithUserIdentity:password:completionHandler:">signUpWithUserIdentity:password:completionHandler:</a></span></li>
 	
@@ -228,6 +244,30 @@
 		<code><a href="#//api/name/userIdentity">&nbsp;&nbsp;userIdentity</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicProfile">&ndash;&nbsp;publicProfile</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPublicProfile:completion:">&ndash;&nbsp;setPublicProfile:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/privateData">&ndash;&nbsp;privateData</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPrivateData:completion:">&ndash;&nbsp;setPrivateData:completion:</a></code>
+	</span>
+	
 	
 </li><li>
 	<span class="tooltip">
@@ -679,6 +719,180 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/privateData" title="privateData"></a>
+	<h3 class="subsubtitle method-title">privateData</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Private profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)privateData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicProfile" title="publicProfile"></a>
+	<h3 class="subsubtitle method-title">publicProfile</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Public profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)publicProfile</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPrivateData:completion:" title="setPrivateData:completion:"></a>
+	<h3 class="subsubtitle method-title">setPrivateData:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to set the private profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPrivateData:(NSDictionary *)<em>privateData</em> completion:(Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>privateData</em></dt>
+			<dd><p>New private profile for the current user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPublicProfile:completion:" title="setPublicProfile:completion:"></a>
+	<h3 class="subsubtitle method-title">setPublicProfile:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to set the public profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPublicProfile:(NSDictionary *)<em>publicProfile</em> completion:(Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>publicProfile</em></dt>
+			<dd><p>New public profile for the current user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/signUpWithUserIdentity:password:completionHandler:" title="signUpWithUserIdentity:password:completionHandler:"></a>
 	<h3 class="subsubtitle method-title">signUpWithUserIdentity:password:completionHandler:</h3>
 	
@@ -800,7 +1014,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-07-29)</span><br />
+						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-10-01)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

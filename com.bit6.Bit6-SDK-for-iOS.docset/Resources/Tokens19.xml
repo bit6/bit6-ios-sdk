@@ -241,6 +241,70 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/publicProfile</TokenIdentifier>
+			<Abstract type="html">Public profile of the current user.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)publicProfile</Declaration>
+			
+			
+			<Anchor>//api/name/publicProfile</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setPublicProfile:completion:</TokenIdentifier>
+			<Abstract type="html">Used to set the public profile of the current user.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			
+			<Declaration>- (void)setPublicProfile:(NSDictionary *)publicProfile completion:(Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>publicProfile</Name>
+					<Abstract type="html">New public profile for the current user.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block to call after the operation has been completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPublicProfile:completion:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/privateData</TokenIdentifier>
+			<Abstract type="html">Private profile of the current user.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)privateData</Declaration>
+			
+			
+			<Anchor>//api/name/privateData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setPrivateData:completion:</TokenIdentifier>
+			<Abstract type="html">Used to set the private profile of the current user.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			
+			<Declaration>- (void)setPrivateData:(NSDictionary *)privateData completion:(Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>privateData</Name>
+					<Abstract type="html">New private profile for the current user.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Block to call after the operation has been completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPrivateData:completion:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/getAuthInfoCompletionHandler:</TokenIdentifier>
 			<Abstract type="html">Get the OAuth configurations available</Abstract>
 			<DeclaredIn>Bit6Session.h</DeclaredIn>

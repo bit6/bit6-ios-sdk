@@ -18,8 +18,6 @@
 
 @implementation DetailViewController
 
-#warning show more received images
-
 - (NSMutableArray*) images
 {
     if (!_images) {
