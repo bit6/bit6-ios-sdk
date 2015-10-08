@@ -21,11 +21,11 @@ else {
 
 ```swift
 //Swift
-if (Bit6.session().authenticated {
-    NSLog("Active Session");
+if Bit6.session().authenticated {
+    NSLog("Active Session")
 }
 else {
-    NSLog("Not Active Session");
+    NSLog("Not Active Session")
 }
 ```
 
@@ -44,7 +44,7 @@ else {
 ```swift
 //Swift
 Bit6.session().logoutWithCompletionHandler({(response,error) in 
-	if (error != nil) {
+	if error == nil {
 		NSLog("Logout Completed")
 	}
 })

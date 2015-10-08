@@ -78,14 +78,14 @@ var callController : Bit6CallController {
 //called in the Main Thread when the UI controls should be updated. For example when the speaker is activated or the audio is muted.
 override func refreshControlsView()
 {
-	if (Bit6CallController.audioMuted()){
+	if Bit6CallController.audioMuted() {
        NSLog("Audio Muted: true")
    }
    else {
        NSLog("Audio Muted: false")
    }
    
-   if (Bit6CallController.speakerEnabled()){
+   if Bit6CallController.speakerEnabled() {
        NSLog("Speaker Enabled: true")
    }
    else {
@@ -97,13 +97,13 @@ override func refreshControlsView()
 override func callStateChangedNotificationForCallController(callController: Bit6CallController!)
 {
 	switch (self.callController.callState) {
-       case .NEW: NSLog("Call created");
-       case .PROGRESS: NSLog("Call is being started");
-       case .ANSWER: NSLog("Call was answered");
-       case .END: NSLog("Call ends");
-       case .MISSED: NSLog("Missed Call");
-       case .ERROR: NSLog("Call ends with an error");
-       case .DISCONNECTED: NSLog("Call is disconnected for the moment. Will try to reconnect again.");
+       case .NEW: NSLog("Call created")
+       case .PROGRESS: NSLog("Call is being started")
+       case .ANSWER: NSLog("Call was answered")
+       case .END: NSLog("Call ends")
+       case .MISSED: NSLog("Missed Call")
+       case .ERROR: NSLog("Call ends with an error")
+       case .DISCONNECTED: NSLog("Call is disconnected for the moment. Will try to reconnect again.")
     }
 
 	//refresh the timer label
@@ -197,13 +197,13 @@ __Step 3.__ Do some additional configurations on your viewDidLoad method
 override func viewDidLoad() {
    NSLog("Other User Display Name \(self.callController.otherDisplayName)")
    
-   if (!self.callController.hasVideo) {
+   if !self.callController.hasVideo {
        //hide switch camera option from the UI
    }
    
    //On iPad and iPod the audio always goes through the speaker.
-   var deviceType : NSString = UIDevice.currentDevice().model
-   if (!deviceType.isEqualToString("iPhone") ) {
+   var deviceType = UIDevice.currentDevice().model
+   if deviceType != "iPhone" {
        //hide speaker option from the UI
    }
    

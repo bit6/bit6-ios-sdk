@@ -49,29 +49,29 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
 	
     var message = Bit6OutgoingMessage()
     
-    var mediaType = info[UIImagePickerControllerMediaType] as NSString
-    if (mediaType.isEqualToString(kUTTypeMovie)) {
+    let mediaType = info[UIImagePickerControllerMediaType] as! String
+    if mediaType == (kUTTypeMovie as String) {
     	//here we add the video to the message
-        message.videoURL = info[UIImagePickerControllerMediaURL] as NSURL
+        message.videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
         
         //if we used the camera to take the video we have to set the cropping times 
         message.videoCropStart = 
-               info["_UIImagePickerControllerVideoEditingStart"] as NSNumber
+               info["_UIImagePickerControllerVideoEditingStart"] as! NSNumber
         message.videoCropEnd = 
-               info["_UIImagePickerControllerVideoEditingEnd"] as NSNumber
+               info["_UIImagePickerControllerVideoEditingEnd"] as! NSNumber
     }
     
 	message.destination = Bit6Address(kind:.USERNAME, 
     	                             value:"user2")
-    message.sendWithCompletionHandler ({ (response, error) -> Void in
-        if (error == nil) {
-            NSLog("Message Sent");
+    message.sendWithCompletionHandler { (response, error) in
+        if error == nil {
+            NSLog("Message Sent")
         }
         else {
-            NSLog("Message Failed with Error: %@",error.localizedDescription);
+            NSLog("Message Failed with Error: \(error.localizedDescription)")
         }
     }
     
     // The rest of your imagePickerController:didFinishPickingMediaWithInfo: method
-})
+}
 ```

@@ -28,12 +28,12 @@ var message = Bit6OutgoingMessage()
 message.image = image
 message.destination = Bit6Address(kind:.USERNAME, 
                                  value:"user2")
-message.sendWithCompletionHandler ({ (response, error) -> Void in
-    if (error == nil) {
-        NSLog("Message Sent");
+message.sendWithCompletionHandler{ (response, error) in
+    if error == nil {
+        NSLog("Message Sent")
     }
     else {
-        NSLog("Message Failed with Error: %@",error.localizedDescription);
+        NSLog("Message Failed with Error: \(error.localizedDescription)")
     }
-})
+}
 ```

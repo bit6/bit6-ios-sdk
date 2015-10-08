@@ -26,13 +26,11 @@ __Step 2.__ Start the location service:
 
 ```objc
 //ObjectiveC
-[[Bit6 locationController] startListeningToLocationForMessage:message
-						  												delegate:self];
+[[Bit6 locationController] startListeningToLocationForMessage:message delegate:self];
 ```
 ```swift
 //Swift
-Bit6.locationController().startListeningToLocationForMessage(message, 
-																		  delegate: self)
+Bit6.locationController().startListeningToLocationForMessage(message, delegate: self)
 ```
 
 __Step 3.__ Implement the `Bit6CurrentLocationControllerDelegate` and send the message when the location has been obtained
@@ -68,15 +66,15 @@ class ChatsViewController : Bit6CurrentLocationControllerDelegate
 func currentLocationController(b6clc: Bit6CurrentLocationController!, 
 	didGetLocationForMessage message: Bit6OutgoingMessage!)
 {
-    message.sendWithCompletionHandler ({ (response, error) -> Void in
-        if (error == nil) {
-            NSLog("Message Sent");
+    message.sendWithCompletionHandler{ (response, error) in
+        if error == nil {
+            NSLog("Message Sent")
         }
         else {
-            NSLog("Message Failed with Error: %@",error.localizedDescription);
+            NSLog("Message Failed with Error: \(error.localizedDescription)")
         }
     }
-})
+}
 
 func currentLocationController(b6clc: Bit6CurrentLocationController!, 
 			  didFailWithError error: NSError!, 
@@ -108,17 +106,17 @@ message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME
 ```swift
 //Swift
 var message = Bit6OutgoingMessage()
-message.location = CLLocation(latitude: latitude, longitude: longitude);
+message.location = CLLocation(latitude: latitude, longitude: longitude)
 message.destination = Bit6Address(kind: .USERNAME, 
                    				 value: "user2");
-message.sendWithCompletionHandler ({ (response, error) -> Void in
-    if (error == nil) {
-        NSLog("Message Sent");
+message.sendWithCompletionHandler{ (response, error) in
+    if error == nil {
+        NSLog("Message Sent")
     }
     else {
-        NSLog("Message Failed with Error: %@",error.localizedDescription);
+        NSLog("Message Failed with Error: \(error.localizedDescription)")
     }
-})
+}
 ```
 
 ### Open a Location
@@ -159,20 +157,20 @@ Bit6.openLocationOnMapsFromMessage(message)
 
 /*
     //Open in GoogleMaps app, if available
-    var urlString = String(format:"comgooglemaps://?center=%@,%@&zoom=14", 
+    let urlString = String(format:"comgooglemaps://?center=%@,%@&zoom=14", 
     					   message.data.lat.description, message.data.lng.description)
-    var url = NSURL(string: urlString)
-    if (UIApplication.sharedApplication().canOpenURL(url!)){
+    let url = NSURL(string: urlString)
+    if UIApplication.sharedApplication().canOpenURL(url!) {
         UIApplication.sharedApplication().openURL(url!)
     }
 */
 
 /*
     //Open in Waze app, if available
-    var urlString = String(format:"waze://?ll=%@,%@&navigate=yes",
+    let urlString = String(format:"waze://?ll=%@,%@&navigate=yes",
     					   message.data.lat.description, message.data.lng.description)
-    var url = NSURL(string: urlString)
-    if (UIApplication.sharedApplication().canOpenURL(url!)){
+    let url = NSURL(string: urlString)
+    if UIApplication.sharedApplication().canOpenURL(url!) {
             UIApplication.sharedApplication().openURL(url!)
     }
 */

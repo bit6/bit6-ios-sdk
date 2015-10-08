@@ -64,7 +64,7 @@ If you compile your app with iOS SDK 9.0, you will be affected by [App Transport
 	</dict>
 ```
 
-__Bitcode__  Bit6 SDK v0.9.4 an earlier doesn't include support for [bitcode](https://developer.apple.com/library/prerelease/watchos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2). You can disable bitcode in your target configuration:
+__Bitcode__  Bit6 SDK doesn't include support for [bitcode](https://developer.apple.com/library/prerelease/watchos/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35-SW2) yet. You can disable bitcode in your target configuration:
 
 <img class="shot" src="images/bitcode.png"/>
 

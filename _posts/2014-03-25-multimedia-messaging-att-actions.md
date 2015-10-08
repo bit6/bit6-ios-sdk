@@ -63,8 +63,7 @@ Bit6Message *msg = ...;
 ```swift
 //Swift
 var msg : Bit6Message = ...
-	switch (msg.attachmentStatusForAttachmentCategory(
-            .FULL_SIZE)) {
+	switch msg.attachmentStatusForAttachmentCategory(.FULL_SIZE) {
         case .INVALID:
             //the message can't have an attachment, for example a text message
             break;
@@ -81,7 +80,7 @@ var msg : Bit6Message = ...
         case .FOUND:
             //the file is in cache, ready to be used
             break;
-        }
+	}
 ```
 
 
@@ -94,14 +93,14 @@ __Step 1.__ Check if the message has a preview to show:
 //ObjectiveC
 Bit6Message *message = ...
 if (message.type != Bit6MessageType_Text) {
-//can show preview
+	//can show preview
 }
 ```
 ```swift
 //Swift
 var msg : Bit6Message = ...
-if (message.type != .Text) {
-//can show preview
+if message.type != .Text {
+	//can show preview
 }
 ```
 __Step 2.__ To show the preview, use a `Bit6ThumbnailImageView` object. To add `Bit6ThumbnailImageView` to your nib/storyboard just add an `UIImageView` object and change its class to `Bit6ThumbnailImageView`:
@@ -150,12 +149,12 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
     }
     else if (msg.type == Bit6MessageType_Attachments) {
         //play an audio file
-        if (msg.attachFileType == Bit6MessageFileType_AudioMP4) {
+        if (msg.attachFileType == Bit6MessageFileType_Audio) {
             [[Bit6 audioPlayer] startPlayingAudioFileInMessage:msg errorHandler:^(NSError *error) {
                 //an error occurred
             }];
         }
-        else if (msg.attachFileType == Bit6MessageFileType_VideoMP4) {
+        else if (msg.attachFileType == Bit6MessageFileType_Video) {
             if ([Bit6 shouldDownloadVideoBeforePlaying]) {
                 if (fullAttachStatus==Bit6MessageAttachmentStatus_FOUND) {
                     [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
@@ -165,8 +164,7 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
                 [Bit6 playVideoFromMessage:msg viewController:self.navigationController];
             }
         }
-        else if (msg.attachFileType == Bit6MessageFileType_ImageJPG || 
-                 msg.attachFileType == Bit6MessageFileType_ImagePNG) {
+        else if (msg.attachFileType == Bit6MessageFileType_Image) {
         //code to navigate to another screen to show the image in full size
         }
     }
@@ -179,29 +177,29 @@ func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
         
         var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(.FULL_SIZE)
         
-        if (msg.type == .Location){
+        if msg.type == .Location{
             //Open in AppleMaps
             Bit6.openLocationOnMapsFromMessage(msg)
         }
             
-        else if (msg.type == .Attachments) {
+        else if msg.type == .Attachments {
         	//play an audio file
-            if (msg.attachFileType == .AudioMP4) {
-                Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) -> Void in
-                        //an error occurred
+            if msg.attachFileType == .Audio {
+                Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) in
+                    //an error occurred
                 })
             }
-            else if (msg.attachFileType == .VideoMP4) {
-                if (Bit6.shouldDownloadVideoBeforePlaying()) {
-                    if (fullAttachStatus == .FOUND) {
-                        Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
+            else if msg.attachFileType == .Video {
+                if Bit6.shouldDownloadVideoBeforePlaying() {
+                    if fullAttachStatus == .FOUND {
+                        Bit6.playVideoFromMessage(msg, viewController:self.navigationController)
                     }
                 }
                 else {
-                    Bit6.playVideoFromMessage(msg, viewController:self.navigationController);
+                    Bit6.playVideoFromMessage(msg, viewController:self.navigationController)
                 }
             }
-            else if (msg.attachFileType == .ImageJPG || msg.attachFileType == .ImagePNG) {
+            else if msg.attachFileType == .Image {
                 //code to navigate to another screen to show the image in full size
             }
         }
@@ -229,19 +227,15 @@ __Step 1.__ Check if a message has an image to show:
 ```objc
 //ObjectiveC
 Bit6Message *msg = ...
-if (msg.type == Bit6MessageType_Attachments && 
-                            (msg.attachFileType == Bit6MessageFileType_ImageJPG || 
-                             msg.attachFileType == Bit6MessageFileType_ImagePNG)) {
-//can show full image
+if (msg.type == Bit6MessageType_Attachments && msg.attachFileType == Bit6MessageFileType_Image) {
+	//can show full image
 }
 ```
 ```swift
 //Swift
 var msg : Bit6Message = ...
-if (msg.type == .Attachments && 
-                            (msg.attachFileType == .ImageJPG || 
-                             msg.attachFileType == .ImagePNG)) {
-//can show full image
+if msg.type == .Attachments && msg.attachFileType == .Image {
+	//can show full image
 }
 ```
 __Step 2.__ Use a `Bit6ImageView` object to show the image.

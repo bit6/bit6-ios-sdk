@@ -52,9 +52,9 @@ NSNotificationCenter.defaultCenter().addObserver(self,
 
 var message : Bit6Message = ...
 //download the thumbnail
-message.downloadAttachment(.THUMBNAIL);
+message.downloadAttachment(.THUMBNAIL)
 //download the full attachment
-message.downloadAttachment(.FULL_SIZE);
+message.downloadAttachment(.FULL_SIZE)
 
 func fileDownloadedNotification(notification:NSNotification){
 
@@ -62,7 +62,7 @@ dispatch_async(dispatch_get_main_queue()) {
 	//Can be Bit6MessageAttachmentCategory.THUMBNAIL or Bit6MessageAttachmentCategory.FULL_SIZE
 	var category : Bit6MessageAttachmentCategory = notification.userInfo["attachmentCategory"].intValue()
 
-    switch (category) {
+    switch category {
         case .INVALID: // the message doesn't have the specified attachment
         case .FAILED: // failed to download the attachment
         case .NOT_FOUND: // attachment is not downloading

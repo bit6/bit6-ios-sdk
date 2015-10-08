@@ -38,8 +38,7 @@ Bit6.audioRecorder().startRecordingAudioForMessage(message,
 										maxDuration: 60, 
                                            delegate: self, 
                                       defaultPrompt: true, 
-                                       errorHandler: { (error) -> Void 
-                                           in
+                                       errorHandler: { (error) in
     //an error occurred
 });
 ```
@@ -83,17 +82,17 @@ class ChatsViewController : Bit6AudioRecorderControllerDelegate
 
 func doneRecorderController(b6rc: Bit6AudioRecorderController!, 
 						 message: Bit6OutgoingMessage!) {
-	if (message.audioDuration > 1.0) {
-        message.sendWithCompletionHandler ({ (response, error) -> Void in
-            if (error == nil) {
-                NSLog("Message Sent");
+	if message.audioDuration > 1.0 {
+        message.sendWithCompletionHandler{ (response, error) in
+            if error == nil {
+                NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: %@",error.localizedDescription);
+                NSLog("Message Failed with Error: \(error.localizedDescription)")
             }
         }
     }
-})
+}
 ```
 
 ### Play an Audio File
@@ -110,8 +109,7 @@ Bit6Message *message = ...
 //Swift
 var message : Bit6OutgoingMessage() = ...
 Bit6.audioPlayer().startPlayingAudioFileInMessage(messages,
-							errorHandler: { (error) -> Void 
-                            in
+							errorHandler: { (error) in
     //an error occurred
 })
 ```

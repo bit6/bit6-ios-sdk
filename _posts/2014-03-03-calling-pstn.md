@@ -31,7 +31,7 @@ else {
 var destination = "+14445556666";
 var callController = Bit6.startCallToPhoneNumber(destination)
 
-if (callController != nil){
+if callController != nil {
 	//create an in-call UIViewController
     var callVC = Bit6CallViewController.createDefaultCallViewController()
 

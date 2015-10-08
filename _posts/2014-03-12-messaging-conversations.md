@@ -49,11 +49,11 @@ Bit6Conversation *conversationToDelete = ...
 ```swift
 //Swift
 var conversationToDelete : Bit6Conversation = ...
-Bit6.deleteConversation(conversationToDelete, completion:{ (response, error) -> Void in
-    if (error == nil) {
+Bit6.deleteConversation(conversationToDelete) { (response, error) in
+    if error == nil {
         //conversation deleted
     }
-})
+}
 ```
 
 ###Listen to Changes in Conversations
@@ -100,16 +100,16 @@ Upon receiving a conversation change notification, update the conversations arra
 ```swift
 //Swift
 func conversationsChangedNotification(notification:NSNotification){
-   var conversation = notification.userInfo[Bit6ObjectKey]
-   var change = notification.userInfo[Bit6ChangeKey]
+   let conversation = notification.userInfo[Bit6ObjectKey]
+   let change = notification.userInfo[Bit6ChangeKey]
    
-   if (change == Bit6AddedKey) {
+   if change == Bit6AddedKey {
        //add conversation to self.conversations and refresh changes in UI
    }
-   else if (change == Bit6UpdatedKey) {
+   else if change == Bit6UpdatedKey {
        //find conversation in self.conversations and refresh changes in UI
    }
-   else if (change == Bit6DeletedKey) {
+   else if change == Bit6DeletedKey {
        //find conversation in self.conversations, remove it and refresh changes in UI
    }
 }
@@ -126,7 +126,7 @@ NSNumber *badge = conversation.badge;
 ```swift
 //Swift
 var conversation : Bit6Conversation = ...
-var badge = conversation.badge;
+var badge = conversation.badge
 ```
 
 When showing a messages UIViewController the following code must be called to mark the messages as read and stop increasing the badge value while in the UIViewController:
@@ -139,7 +139,7 @@ conversation.currentConversation = YES;
 ```swift
 //Swift
 var conversation : Bit6Conversation = ...
-conversation.currentConversation = true;
+conversation.currentConversation = true
 ```
 
 When you are leaving the messages UIViewController the following code must be called:
@@ -155,6 +155,6 @@ When you are leaving the messages UIViewController the following code must be ca
 //Swift
 deinit {
     var conversation : Bit6Conversation = ...
-    conversation.currentConversation = false;
+    conversation.currentConversation = false
 }
 ```

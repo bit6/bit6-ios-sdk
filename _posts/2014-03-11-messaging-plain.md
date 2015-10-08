@@ -26,14 +26,14 @@ var message = Bit6OutgoingMessage()
 message.content = "This is a text message"
 message.destination = Bit6Address(kind: .USERNAME, 
                    				 value: "user2");
-message.sendWithCompletionHandler({ (response, error) -> Void in
-    if (error == nil) {
-        NSLog("Message Sent");
+message.sendWithCompletionHandler { (response, error) in
+    if error == nil {
+        NSLog("Message Sent")
     }
     else {
-        NSLog("Message Failed with Error: %@",error.localizedDescription);
+        NSLog("Message Failed with Error: \(error.localizedDescription)")
     }
-})
+}
 ```
 
 ### Get Messages
@@ -92,16 +92,16 @@ Upon receiving a message change notification, update the messages array:
 //Swift
 func messagesChangedNotification(notification:NSNotification)
 {
-   var msg = notification.userInfo[Bit6ObjectKey]
-   var change = notification.userInfo[Bit6ChangeKey]
+   let msg = notification.userInfo[Bit6ObjectKey]
+   let change = notification.userInfo[Bit6ChangeKey]
    
-   if (change == Bit6AddedKey) {
+   if change == Bit6AddedKey {
        //add message to self.messages and refresh changes in UI
    }
-   else if (change == Bit6UpdatedKey) {
+   else if change == Bit6UpdatedKey {
        //find message in self.messages and refresh changes in UI
    }
-   else if (change == Bit6DeletedKey) {
+   else if change == Bit6DeletedKey {
        //find message in self.messages, delete it and refresh changes in UI
    }
 }
@@ -167,16 +167,16 @@ Upon receiving a message change notification, update the conversations array:
 //Swift
 func messagesChangedNotification(notification:NSNotification) 
 {
-   var message = notification.userInfo[Bit6ObjectKey]
-   var change = notification.userInfo[Bit6ChangeKey]
+   let message = notification.userInfo[Bit6ObjectKey]
+   let change = notification.userInfo[Bit6ChangeKey]
    
-   if (change == Bit6AddedKey) {
+   if change == Bit6AddedKey {
        //add message to self.messages and refresh changes in UI
    }
-   else if (change == Bit6UpdatedKey) {
+   else if change == Bit6UpdatedKey {
        //find message in self.messages and refresh changes in UI
    }
-   else if (change == Bit6DeletedKey) {
+   else if change == Bit6DeletedKey {
        //find message in self.messages, remove it and refresh changes in UI
    }
 }
@@ -198,11 +198,11 @@ Bit6Message *messageToDelete = ...
 ```swift
 //Swift
 var messageToDelete : Bit6Message = ...
-Bit6.deleteMessage(messageToDelete, completion:{ (response, error) -> Void in
-    if (error == nil) {
+Bit6.deleteMessage(messageToDelete) { (response, error) in
+    if error == nil {
         //message deleted
     }
-})
+}
 ```
 
 ###Enable Background Push Notifications for Messages
@@ -228,6 +228,6 @@ func application(application: UIApplication,
 		didReceiveRemoteNotification userInfo: [NSObject : AnyObject], 
      fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) 
 {
-	Bit6.pushNotification().didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler);
+	Bit6.pushNotification().didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler)
 }
 ```

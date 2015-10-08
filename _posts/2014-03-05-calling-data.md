@@ -30,7 +30,7 @@ else {
 var address : Bit6Address = ...
 self.callController = Bit6.startCallToAddress(address, hasAudio:false, hasVideo:false, hasData:true)
 
-if (self.callController != nil){
+if self.callController != nil {
 	//we listen to call state changes
 	self.callController.addObserver(self, forKeyPath:"callState", options: .Old, context:nil)
 	

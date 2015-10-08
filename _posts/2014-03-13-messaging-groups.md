@@ -31,12 +31,11 @@ var group = Bit6Group(forConversation:conversation)
 ```
 ```objc
 //Swift
-Bit6Group.createGroupWithMetadata(["key1":"value1", ...], 
-					completion:{(group, error) -> Void in
-					    if (error != nil) {
-					        //group created
-					    }
-});
+Bit6Group.createGroupWithMetadata(["key1":"value1", ...]){ (group, error) in
+    if error == nil {
+        //group created
+    }
+}
 ```
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6AddedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
@@ -65,11 +64,11 @@ __Note.__ If you want to set the title for a group the use of Bit6GroupMetadataT
 ```
 ```swift
 //Swift
-group.leaveGroupWithCompletion({(error) -> Void in
-    if (error != nil) {
+group.leaveGroupWithCompletion(){ (error) in
+    if error == nil {
         //you have left the group
     }
-})
+}
 ```
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
@@ -89,11 +88,11 @@ A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will b
 ```
 ```objc
 //Swift
-group.setMetadata(["key1":"value1", ...], completion:{(error) -> Void in
-      if (error != nil) {
-          //metadata has changed
-      }
-})
+group.setMetadata(["key1":"value1", ...]){ (error) in
+	if error == nil {
+	  //metadata has changed
+	}
+}
 ```
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
@@ -122,12 +121,12 @@ NSArray *friendsToInvite = @[friendToInvite];
 var friendToInvite : Bit6Address = ...
 let friendsToInvite = [friendToInvite]
 
-group.inviteAddresses(friendsToInvite, completion:{(members, error) -> Void in
-      if (error != nil) {
-          //friends have been invited
-		  //members is the updated list of group members
-      }
-})
+group.inviteAddresses(friendsToInvite){ (members, error) in
+	if error == nil {
+		//friends have been invited
+		//members is the updated list of group members
+	}
+}
 ```
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).
@@ -152,12 +151,12 @@ Bit6GroupMember *friendToRemove = group.members[0];
 //Swift
 let friendToRemove = group.members[0]
 
-group.deleteMember(friendToRemove, completion:{(members, error) -> Void in
-      if (error != nil) {
-          //friend has been removed
-		  //members is the updated list of group members
-      }
-})
+group.deleteMember(friendToRemove){ (members, error) in
+	if error == nil {
+		//friend has been removed
+		//members is the updated list of group members
+	}
+}
 ```
 
 A `Bit6ConversationsChangedNotification` with change key `Bit6UpdatedKey` will be sent. See "Listen to Changes" in [Conversations](#messaging-conversations).

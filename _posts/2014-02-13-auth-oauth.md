@@ -34,28 +34,26 @@ Create a new Bit6 account or login into an existing one. In this example we use 
 ```
 ```swift
 //Swift
-Bit6.session().getAuthInfoCompletionHandler({ (response, error) -> Void in
-    if (response["facebook"] != nil) {
+Bit6.session().getAuthInfoCompletionHandler(){ (response, error) in
+    if let facebook = response["facebook"] as? NSDictionary {
 
-        var facebook = response["facebook"] as NSDictionary;
-        var client_id = facebook["client_id"] as NSString;
+        var client_id = facebook["client_id"] as NSString
 
-        FBSession.activeSession().closeAndClearTokenInformation();
-        FBSession.openActiveSessionWithReadPermissions(["public_profile","email","user_friends"], allowLoginUI: true, completionHandler: { (session, state, error) -> Void in
-            if (state == FBSessionState.Open){
-                Bit6.session().oauthForProvider("facebook", params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken], completion: { (response, error) -> Void
-                    in
-                        if ((error) != nil){
-                            NSLog("Login Failed With Error: %s",error.localizedDescription);
-                        }
-                        else {
-                            NSLog("Login Completed");
-                        }
-                    })
+        FBSession.activeSession().closeAndClearTokenInformation()
+        FBSession.openActiveSessionWithReadPermissions(["public_profile","email","user_friends"], allowLoginUI: true) { (session, state, error) in
+            if state == .Open {
+                Bit6.session().oauthForProvider("facebook", params:["client_id":client_id, "access_token":FBSession.activeSession().accessTokenData.accessToken]){ (response, error) in
+                    if error != nil{
+                        NSLog("Login Failed With Error: \(error.localizedDescription)")
+                    }
+                    else {
+                        NSLog("Login Completed")
+                    }
+                }
             }
-        });
+        }
     }
-});
+}
 ```
 
 To get a Bit6Address object you can do the following:

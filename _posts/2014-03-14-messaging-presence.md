@@ -27,7 +27,7 @@ shouldChangeCharactersInRange range: NSRange,
 {
 	var otherUserAddress : Bit6Address = ...
     Bit6.typingBeginToAddress(otherUserAddress)
-    return true;
+    return true
 }
 ```
 
@@ -70,12 +70,12 @@ Upon receiving a notification, update the UI:
 ```swift
 //Swift
 func conversationsChangedNotification(notification:NSNotification){
-   var conversation = notification.userInfo[Bit6ObjectKey]
-   var change = notification.userInfo[Bit6ChangeKey]
+   let conversation = notification.userInfo[Bit6ObjectKey]
+   let change = notification.userInfo[Bit6ChangeKey]
    
-   if (conversation.isEqual(self.conversation)) {
-   		if (change == Bit6UpdatedKey) {
-   			NSLog("%@ is typing...",conversation.typingAddress.displayName)
+   if conversation.isEqual(self.conversation) {
+   		if change == Bit6UpdatedKey {
+   			NSLog("\(conversation.typingAddress.displayName) is typing...")
    		}
    }
 }
@@ -107,9 +107,9 @@ NSNotificationCenter.defaultCenter().addObserver(self,
 
 func receivedRTNotification(notification:NSNotification)
 {
-  var from : Bit6Address = notification.userInfo["from"]
-  var to : Bit6Address = notification.userInfo["to"]
-  var type : String = notification.userInfo["type"]
+  let from : Bit6Address = notification.userInfo["from"]
+  let to : Bit6Address = notification.userInfo["to"]
+  let type : String = notification.userInfo["type"]
 }
 ```
 

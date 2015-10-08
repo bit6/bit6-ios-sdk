@@ -31,22 +31,20 @@ Bit6Address *i = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME
 
 ```swift
 //Swift
-var name = "john";
-var pass = "secret";
+var name = "john"
+var pass = "secret"
 
 var i = Bit6Address(kind: .USERNAME, 
-				   value: name);
+				   value: name)
                    
-Bit6.session().signUpWithUserIdentity(i, 
-						  password:pass, 
-                 completionHandler:{(response,error) in
-    if (error != nil){
-        NSLog("Sign Up Failed With Error: %s",error.localizedDescription);
+Bit6.session().signUpWithUserIdentity(i, password:pass){ (response,error) in
+    if error != nil {
+        NSLog("Sign Up Failed With Error: \(error.localizedDescription)")
     }
     else {
-	    NSLog("Sign Up Completed");
+	    NSLog("Sign Up Completed")
     }
-});
+}
 ```
 
 ### Login
@@ -78,16 +76,14 @@ var name = "john";
 var pass = "secret";
 
 var i = Bit6Address(kind: .USERNAME, 
-				   value: name);
+				   value: name)
                    
-Bit6.session().loginWithUserIdentity(i, 
-						 password: pass, 
-				completionHandler:{(response,error) in
-    if (error != nil){
-        NSLog("Login Failed With Error: %s",error.localizedDescription);
+Bit6.session().loginWithUserIdentity(i, password: pass){ (response,error) in
+    if error != nil {
+        NSLog("Login Failed With Error: \(error.localizedDescription)")
     }
     else {
-        NSLog("Login Completed");
+        NSLog("Login Completed")
     }
-});
+}
 ```

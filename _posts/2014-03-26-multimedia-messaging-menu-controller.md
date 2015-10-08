@@ -64,9 +64,9 @@ To show this action, implement resendFailedMessage:
 //Swift
 func resendFailedMessage(msg:Bit6OutgoingMessage){
     //try to send the message again
-    msg.sendWithCompletionHandler ({ (response, error) -> Void in
+    msg.sendWithCompletionHandler{ (response, error) in
         ...
-    })
+    }
 }
 ```
 
@@ -103,8 +103,8 @@ func forwardMessage(msg:Bit6Message)
     messageToForward.destination = address
 
     //send a copy of the message to the new destination
-    messageToForward.sendWithCompletionHandler ({ (response, error) -> Void in
+    messageToForward.sendWithCompletionHandler{ (response, error) in
         ...
     }
-})
+}
 ```

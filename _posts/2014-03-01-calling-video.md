@@ -33,7 +33,7 @@ else {
 var address : Bit6Address = ...
 var callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:false, hasData:false)
 
-if (callController != nil){
+if callController != nil {
 	//we listen to call state changes
 	callController.addObserver(self, forKeyPath:"callState", options: .Old, context:nil)
 	
@@ -84,8 +84,8 @@ __Step2__ Listen to call state changes
 //Swift
 override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
    dispatch_async(dispatch_get_main_queue()) {
-       if (object.isKindOfClass(Bit6CallController)) {
-           if (keyPath == "callState") {
+       if object.isKindOfClass(Bit6CallController) {
+           if keyPath == "callState" {
                self.callStateChangedNotification(object as Bit6CallController)
            }
        }
@@ -95,15 +95,15 @@ override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject
 func callStateChangedNotification(callController:Bit6CallController) {
    dispatch_async(dispatch_get_main_queue()) {
        //the call is starting: show the viewController
-       if (callController.callState == .PROGRESS) {
+       if callController.callState == .PROGRESS {
            Bit6.presentCallViewController()
        }
-           //the call ended: remove the observer and dismiss the viewController
-       else if (callController.callState == .END) {
+       //the call ended: remove the observer and dismiss the viewController
+       else if callController.callState == .END {
            callController.removeObserver(self, forKeyPath:"callState")
        }
-           //the call ended with an error: remove the observer and dismiss the viewController
-       else if (callController.callState == .ERROR) {
+       //the call ended with an error: remove the observer and dismiss the viewController
+       else if callController.callState == .ERROR {
            callController.removeObserver(self, forKeyPath:"callState")
            
            var alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)
