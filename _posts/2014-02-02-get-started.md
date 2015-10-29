@@ -18,10 +18,12 @@ __Step 3.__ Add `Bit6Resources.bundle` to "Supporting Files".
 __Step 4.__ Set the Architectures value to be `$(ARCHS_STANDARD_32_BIT)` for iPhone Simulators and `$(ARCHS_STANDARD)` for devices.
 <img class="shot" src="images/architectures.png"/>
 
-__Step 5.__ In your project settings add `-ObjC` to the 'Other Linker Flags'
+__Step 5.__ Set your Deployment Target to be iOS 7.0 or above.
+
+__Step 6.__ In your project settings add `-ObjC` to the 'Other Linker Flags'
 <img class="shot" src="images/other_linker_flags.png"/>
 
-__Step 6.__ If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
+__Step 7.__ If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
 <img class="shot" src="images/swift_bridge.png"/>
 
 
