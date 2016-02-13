@@ -32,11 +32,16 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 {
 	switch (self.callController.callState) {
         case Bit6CallState_NEW: NSLog(@"Call created"); break;
-        case Bit6CallState_PROGRESS: NSLog(@"Call is being started"); break;
-        case Bit6CallState_ANSWER: NSLog(@"Call was answered"); break;
+        case Bit6CallState_ACCEPTING_CALL: 
+        case Bit6CallState_GATHERING_CANDIDATES: 
+        case Bit6CallState_WAITING_SDP: 
+        case Bit6CallState_SENDING_SDP: 
+        case Bit6CallState_CONNECTING: NSLog(@"Call is connecting"); break;
+        case Bit6CallState_CONNECTED: NSLog(@"Call connected"); break;
         case Bit6CallState_END: NSLog(@"Call ends"); break;
         case Bit6CallState_ERROR: NSLog(@"Call ends with an error"); break;
         case Bit6CallState_DISCONNECTED: NSLog(@"Call is disconnected for the moment. Will try to reconnect again."); break;
+        case Bit6CallState_MISSED: NSLog(@"Missed Call"); break;
     }
 
 	//refresh the timer label
@@ -47,11 +52,15 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 - (void) secondsChangedNotificationForCallController:(Bit6CallController*)callController
 {
 	switch (self.callController.callState) {
-        case Bit6CallState_NEW: case Bit6CallState_PROGRESS:
+        case Bit6CallState_NEW: case Bit6CallState_ACCEPTING_CALL: 
+        case Bit6CallState_GATHERING_CANDIDATES: 
+        case Bit6CallState_WAITING_SDP: case Bit6CallState_SENDING_SDP: 
+        case Bit6CallState_CONNECTING:
             NSLog(@"Connecting..."); break;
-        case Bit6CallState_ANSWER:
+        case Bit6CallState_CONNECTED:
             NSLog(@"Seconds: %@",[Bit6Utils clockFormatForSeconds:self.callController.seconds]); break;
-        case Bit6CallState_END: case Bit6CallState_MISSED: case Bit6CallState_ERROR: case Bit6CallState_DISCONNECTED:
+        case Bit6CallState_END: case Bit6CallState_MISSED: 
+        case Bit6CallState_ERROR: case Bit6CallState_DISCONNECTED:
             NSLog(@"Disconnected"); break;
     }
 }
@@ -98,12 +107,16 @@ override func override func callStateChangedNotificationForCallController(callCo
 {
 	switch (self.callController.callState) {
        case .NEW: NSLog("Call created")
-       case .PROGRESS: NSLog("Call is being started")
-       case .ANSWER: NSLog("Call was answered")
+       case .ACCEPTING_CALL: fallthrough
+       case .GATHERING_CANDIDATES: fallthrough
+       case .WAITING_SDP: fallthrough
+       case .SENDING_SDP: fallthrough
+       case .CONNECTING: NSLog("Call is connecting")
+       case .CONNECTED: NSLog("Call connected")
        case .END: NSLog("Call ends")
-       case .MISSED: NSLog("Missed Call")
        case .ERROR: NSLog("Call ends with an error")
        case .DISCONNECTED: NSLog("Call is disconnected for the moment. Will try to reconnect again.")
+       case .MISSED: NSLog("Missed Call")
     }
 
 	//refresh the timer label
@@ -114,11 +127,15 @@ override func override func callStateChangedNotificationForCallController(callCo
 override func secondsChangedNotificationForCallController(callController: Bit6CallController!) 
 {
    switch (self.callController.callState) {
-	   case .NEW: fallthrough case .PROGRESS:
-	       self.timerLabel.text = "Connecting..."
-	   case .ANSWER:
+	   case .NEW: fallthrough case .ACCEPTING_CALL: fallthrough
+       case .GATHERING_CANDIDATES: fallthrough
+       case .WAITING_SDP: fallthrough
+       case .SENDING_SDP: fallthrough
+       case .CONNECTING: NSLog("Call is starting")
+       case .CONNECTED:
 	       self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(self.callController.seconds))
-	   case .DISCONNECTED:fallthrough case .END:fallthrough case .MISSED:fallthrough case .ERROR:
+	   case .DISCONNECTED: fallthrough case .END: fallthrough 
+	   case .MISSED: fallthrough case .ERROR:
 	       self.timerLabel.text = "Disconnected"
    }
 }
