@@ -1,0 +1,5 @@
+framework module Bit6 {
+    umbrella header "Bit6.h"
+    
+    export *
+}

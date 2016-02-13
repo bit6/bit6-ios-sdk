@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad
 {
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.activeIdentity.displayName];
     [super viewDidLoad];
 }
 
@@ -77,7 +77,7 @@
         NSArray *destinations = [string componentsSeparatedByString:@","];
         
         if (destinations.count == 1) {
-            Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destinations[0]];
+            Bit6Address *address = [Bit6Address addressWithUsername:destinations[0]];
             Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
             if (conversation) {
                 [Bit6 addConversation:conversation];
@@ -89,16 +89,18 @@
         else if (destinations.count>1) {
             
             NSMutableArray *addresses = [NSMutableArray arrayWithCapacity:destinations.count];
+            NSMutableArray *roles = [NSMutableArray arrayWithCapacity:destinations.count];
             for (NSString *destination in destinations) {
-                Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
+                Bit6Address *address = [Bit6Address addressWithUsername:destination];
                 if (address) {
                     [addresses addObject:address];
+                    [roles addObject:Bit6GroupMemberRole_User];
                 }
             }
             
             [Bit6Group createGroupWithMetadata:@{@"title":@"MyGroup"} completion:^(Bit6Group *group, NSError *error) {
                 if (!error) {
-                    [group inviteAddresses:addresses completion:^(NSArray *members, NSError *error) {
+                    [group inviteGroupMembersWithAddresses:addresses roles:roles completion:^(NSArray *members, NSError *error) {
                         if (error) {
                             [[[UIAlertView alloc] initWithTitle:@"Failed to invite users to the group" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
                         }
@@ -140,10 +142,10 @@
     UILabel *detailTextLabel = (UILabel*) [cell viewWithTag:2];
     Bit6ThumbnailImageView *imageView = (Bit6ThumbnailImageView*) [cell viewWithTag:3];
     
-    Bit6Group *group = [Bit6Group groupForConversation:conversation];
+    Bit6Group *group = [Bit6Group groupWithConversation:conversation];
     
     NSNumber *badge = conversation.badge;
-    textLabel.text = [NSString stringWithFormat:@"%@%@",[group.metadata[@"title"] length]>0?group.metadata[@"title"]:conversation.displayName,[badge intValue]!=0?[NSString stringWithFormat:@" (%@)",badge]:@""];
+    textLabel.text = [NSString stringWithFormat:@"%@%@",[group.metadata[@"title"] length]>0?group.metadata[@"title"]:conversation.address.displayName,[badge intValue]!=0?[NSString stringWithFormat:@" (%@)",badge]:@""];
     Bit6Message *lastMessage = [conversation.messages lastObject];
     
     detailTextLabel.text = lastMessage.content;
@@ -159,7 +161,7 @@
 {
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         Bit6Conversation *conversation = self.conversations[indexPath.row];
-        Bit6Group *group = [Bit6Group groupForConversation:conversation];
+        Bit6Group *group = [Bit6Group groupWithConversation:conversation];
         if (group != nil && !group.hasLeft) {
             [group leaveGroupWithCompletion:^(NSError *error) {
                 if (error) {
@@ -176,7 +178,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Bit6Conversation *conversation = self.conversations[indexPath.row];
-    Bit6Group *group = [Bit6Group groupForConversation:conversation];
+    Bit6Group *group = [Bit6Group groupWithConversation:conversation];
     if (group != nil) {
         return group.hasLeft?@"Delete":@"Leave";
     }
@@ -194,8 +196,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         Bit6Conversation *conversation = self.conversations[indexPath.row];
         ctvc.conversation = conversation;
-        Bit6Group *group = [Bit6Group groupForConversation:conversation];
-        ctvc.title = [group.metadata[@"title"] length]>0?group.metadata[@"title"]:conversation.displayName;
+        Bit6Group *group = [Bit6Group groupWithConversation:conversation];
+        ctvc.title = [group.metadata[@"title"] length]>0?group.metadata[@"title"]:conversation.address.displayName;
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }

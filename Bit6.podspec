@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bit6"
-  s.version      = "0.9.5"
+  s.version      = "0.9.6"
   s.summary      = "Bit6 Framework"
 
   s.description  = <<-DESC
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/bit6/bit6-ios-sdk.git", :tag => s.version }
 
-  s.vendored_frameworks = "Bit6SDK.framework"
+  s.vendored_frameworks = "Bit6.framework"
   s.documentation_url = "https://bit6.github.io/bit6-ios-sdk/api/index.html"
 
   s.resource_bundle = { 'Bit6Resources' => 'Bit6Resources.bundle/*.*' }
 
-  s.frameworks = "GLKit", "CoreMedia", "AudioToolbox", "AVFoundation", "AssetsLibrary", "SystemConfiguration", "MediaPlayer", "CoreLocation"
-  s.libraries = "icucore", "z", "stdc++", "sqlite3"
+  s.frameworks = "GLKit", "VideoToolbox"
+  s.libraries = "icucore", "stdc++"
   s.requires_arc = true
   
   s.xcconfig = {"ARCHS[sdk=iphonesimulator*]" => "$(ARCHS_STANDARD_32_BIT)", "ARCHS[sdk=iphoneos*]" => "$(ARCHS_STANDARD)", "ENABLE_BITCODE" => "NO"}

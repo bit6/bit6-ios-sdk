@@ -8,12 +8,13 @@
 
 import UIKit
 import MobileCoreServices
+import Bit6
 
 class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDelegate, Bit6MenuControllerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, Bit6AudioRecorderControllerDelegate, Bit6CurrentLocationControllerDelegate {
 
     var conversation : Bit6Conversation! {
         didSet {
-            conversation.currentConversation = true
+            Bit6.setCurrentConversation(conversation)
             NSNotificationCenter.defaultCenter().addObserver(self, selector:"messagesChangedNotification:", name: Bit6MessagesChangedNotification, object: self.conversation)
             NSNotificationCenter.defaultCenter().addObserver(self, selector:"conversationsChangedNotification:", name: Bit6ConversationsChangedNotification, object: nil)
         }
@@ -44,16 +45,18 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     deinit {
-        self.conversation.currentConversation = false
+        Bit6.setCurrentConversation(nil)
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func canChat() -> Bool {
-        let group = Bit6Group(forConversation:self.conversation)
-        if group != nil && group.hasLeft {
-            return false
+        if let group = Bit6Group(conversation:self.conversation) {
+            if group.hasLeft {
+                return false
+            }
+            return true
         }
-        return true
+        return false
     }
     
     func showDetailInfo() {
@@ -61,8 +64,10 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     }
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
-        
+        if let userIdentity = Bit6.session().activeIdentity {
+            self.navigationItem.prompt = "Logged as \(userIdentity.displayName)"
+        }
+    
         let button = UIButton(type: .InfoLight)
         button.addTarget(self, action:"showDetailInfo", forControlEvents:.TouchUpInside)
         let detailButton = UIBarButtonItem(customView: button)
@@ -270,7 +275,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
                     NSLog("Message Sent")
                 }
                 else {
-                    NSLog("Message Failed with Error: \(error.localizedDescription)")
+                    NSLog("Message Failed with Error: \(error?.localizedDescription)")
                 }
             }
         }
@@ -328,9 +333,9 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             message.image = chosenImage
         }
         else {
-            message.videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
-            message.videoCropStart = info["_UIImagePickerControllerVideoEditingStart"] as! NSNumber
-            message.videoCropEnd = info["_UIImagePickerControllerVideoEditingEnd"] as! NSNumber
+            message.videoURL = info[UIImagePickerControllerMediaURL] as? NSURL
+            message.videoCropStart = info["_UIImagePickerControllerVideoEditingStart"] as? NSNumber
+            message.videoCropEnd = info["_UIImagePickerControllerVideoEditingEnd"] as? NSNumber
         }
         
         message.destination = self.conversation.address
@@ -339,7 +344,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
                 NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: \(error.localizedDescription)")
+                NSLog("Message Failed with Error: \(error?.localizedDescription)")
             }
         }
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
@@ -353,19 +358,19 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         Bit6.locationController().startListeningToLocationForMessage(message, delegate: self)
     }
     
-    func currentLocationController(b6clc: Bit6CurrentLocationController!, didFailWithError error: NSError!, message: Bit6OutgoingMessage!) {
+    func currentLocationController(b6clc: Bit6CurrentLocationController, didFailWithError error: NSError, message: Bit6OutgoingMessage) {
         let alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
         self.navigationController?.presentViewController(alert, animated: true, completion:nil)
     }
     
-    func currentLocationController(b6clc: Bit6CurrentLocationController!, didGetLocationForMessage message: Bit6OutgoingMessage!) {
+    func currentLocationController(b6clc: Bit6CurrentLocationController, didGetLocationForMessage message: Bit6OutgoingMessage) {
         message.sendWithCompletionHandler { (response, error) in
             if error == nil {
                 NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: \(error.localizedDescription)")
+                NSLog("Message Failed with Error: \(error?.localizedDescription)")
             }
         }
     }
@@ -373,26 +378,38 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     // MARK: - Send Audio
     
     func sendAudio() -> Void {
-        let message = Bit6OutgoingMessage()
-        message.destination = self.conversation.address
-        Bit6.audioRecorder().startRecordingAudioForMessage(message, maxDuration: 60, delegate: self, defaultPrompt: true, errorHandler:{ (error)  in
-            let alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-            self.navigationController?.presentViewController(alert, animated: true, completion:nil)
+        Bit6.audioRecorder().startRecordingAudioWithMaxDuration(60, delegate:self, defaultPrompt:true, errorHandler:{ (error)  in
+            if let error = error {
+                let alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+                self.navigationController?.presentViewController(alert, animated: true, completion:nil)
+            }
         })
     }
     
-    func doneRecorderController(b6rc: Bit6AudioRecorderController!, message: Bit6OutgoingMessage!) {
+    func doneRecorderController(b6rc: Bit6AudioRecorderController, filePath: String) {
+        let message = Bit6OutgoingMessage()
+        message.destination = self.conversation.address
+        message.audioFilePath = filePath
+        
         if message.audioDuration > 1.0 {
             message.sendWithCompletionHandler { (response, error) in
                 if error == nil {
                     NSLog("Message Sent")
                 }
                 else {
-                    NSLog("Message Failed with Error: \(error.localizedDescription)")
+                    NSLog("Message Failed with Error: \(error?.localizedDescription)")
                 }
             }
         }
+    }
+    
+    func isRecordingWithController(b6rc: Bit6AudioRecorderController, filePath: String) {
+        
+    }
+    
+    func cancelRecorderController(b6rc: Bit6AudioRecorderController) {
+        
     }
     
     // MARK: - Data Source changes
@@ -404,20 +421,22 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         if object.isEqual(self.conversation) {
             let change = userInfo[Bit6ChangeKey] as! NSString
             if change == Bit6UpdatedKey {
-                var title = conversation.displayName
+                var title = conversation.address.displayName
                 
-                let group = Bit6Group(forConversation:self.conversation)
-                if group != nil {
-                    let groupTitle = group.metadata[Bit6GroupMetadataTitleKey] as! String!
-                    if groupTitle != nil && groupTitle.characters.count>0 {
-                        title = groupTitle
+                if let group = Bit6Group(conversation:self.conversation) {
+                    if let metadata = group.metadata {
+                        if let groupTitle = metadata[Bit6GroupMetadataTitleKey] as? String {
+                            if groupTitle.characters.count>0 {
+                                title = groupTitle
+                            }
+                        }
                     }
                 }
                 
                 self.title = title
             
-                if object.typingAddress != nil {
-                    self.typingBarButtonItem.title = "\(object.typingAddress.displayName) is typing..."
+                if let typingAddress = object.typingAddress {
+                    self.typingBarButtonItem.title = "\(typingAddress.displayName) is typing..."
                 }
                 else {
                     self.typingBarButtonItem.title = ""
@@ -509,16 +528,17 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         }))
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler:{(action :UIAlertAction) in
             let usernameTextField = alert.textFields![0]
-            if usernameTextField.text?.characters.count > 0 {
-                let address = Bit6Address(kind: .USERNAME, value: usernameTextField.text)
-                let message = Bit6OutgoingMessage.outgoingCopyOfMessage(msg)
-                message.destination = address
-                message.sendWithCompletionHandler { (response, error) in
-                    if error == nil {
-                        NSLog("Message Sent")
-                    }
-                    else {
-                        NSLog("Message Failed with Error: \(error.localizedDescription)")
+            if let username = usernameTextField.text {
+                if let address = Bit6Address(username:username) {
+                    let message = Bit6OutgoingMessage.outgoingCopyOfMessage(msg)
+                    message.destination = address
+                    message.sendWithCompletionHandler { (response, error) in
+                        if error == nil {
+                            NSLog("Message Sent")
+                        }
+                        else {
+                            NSLog("Message Failed with Error: \(error?.localizedDescription)")
+                        }
                     }
                 }
             }
@@ -536,7 +556,7 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
                 NSLog("Message Sent")
             }
             else {
-                NSLog("Message Failed with Error: \(error.localizedDescription)")
+                NSLog("Message Failed with Error: \(error?.localizedDescription)")
             }
         }
     }
@@ -552,7 +572,9 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
         else if segue.identifier == "showDetails" {
             let obj = segue.destinationViewController as! ConversationDetailsTableViewController
             obj.conversation = self.conversation;
-            obj.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
+            if let userIdentity = Bit6.session().activeIdentity {
+                obj.navigationItem.prompt = "Logged as \(userIdentity.displayName)"
+            }
         }
     }
     
@@ -567,9 +589,9 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
     // MARK: - Bit6ThumbnailImageViewDelegate
     
     func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
-        let msg = thumbnailImageView.message
+        guard let msg = thumbnailImageView.message else { return }
         
-        let fullAttachStatus = msg.attachmentStatusForAttachmentCategory(.FULL_SIZE)
+        let fullAttachStatus = msg.statusForFullAttachment
         
         if msg.type == .Location{
             //Open in AppleMaps
@@ -597,20 +619,22 @@ class ChatsTableViewController: UITableViewController, Bit6ThumbnailImageViewDel
             
         else if msg.type == .Attachments {
             if msg.attachFileType == .Audio {
-                Bit6.audioPlayer().startPlayingAudioFileInMessage(msg,errorHandler: { (error) in
+                if let audioPath = msg.pathForFullAttachment {
+                    Bit6.audioPlayer().startPlayingAudioFileAtPath(audioPath, errorHandler: { (error) in
                         let alert = UIAlertController(title:error.localizedDescription, message: nil, preferredStyle: .ActionSheet)
                         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                         self.navigationController?.presentViewController(alert, animated: true, completion:nil)
-                })
+                    })
+                }
             }
             else if msg.attachFileType == .Video {
                 if Bit6.shouldDownloadVideoBeforePlaying() {
                     if fullAttachStatus == .FOUND {
-                        Bit6.playVideoFromMessage(msg, viewController:self.navigationController)
+                        Bit6.playVideoFromMessage(msg, viewController:self.navigationController!)
                     }
                 }
                 else {
-                    Bit6.playVideoFromMessage(msg, viewController:self.navigationController)
+                    Bit6.playVideoFromMessage(msg, viewController:self.navigationController!)
                 }
             }
             else if msg.attachFileType == .Image {

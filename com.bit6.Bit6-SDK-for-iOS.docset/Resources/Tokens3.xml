@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioPlayerController</TokenIdentifier>
-			<Abstract type="html">Audio player allows to play an audio file attached to a message.</Abstract>
+			<Abstract type="html">Audio player allows to play an audio file.</Abstract>
 			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
             
 			
@@ -13,58 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileInMessage:errorHandler:</TokenIdentifier>
-			<Abstract type="html">Starts playing the audio file attached to a message. You can listen to the Bit6AudioPlayingNotification to update your UI while playing an audio file.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileAtPath:errorHandler:</TokenIdentifier>
+			<Abstract type="html">Starts playing an audio file. You can listen to the Bit6AudioPlayingNotification to update your UI while playing an audio file.</Abstract>
 			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>- (void)startPlayingAudioFileInMessage:(Bit6Message *)msg errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
+			<Declaration>- (void)startPlayingAudioFileAtPath:(nonnull NSString *)filePath errorHandler:(nullable void ( ^ ) ( NSError *_Nonnull error ))errorHandler</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">A Bit6Message object with the audio attachment to play.</Abstract>
+					<Name>filePath</Name>
+					<Abstract type="html">Path to the audio file to play.</Abstract>
 				</Parameter><Parameter>
 					<Name>errorHandler</Name>
 					<Abstract type="html">block to call if an error occurs</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startPlayingAudioFileInMessage:errorHandler:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setIsPlayingAudioFile:</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/isPlayingAudioFile</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/isPlayingAudioFile</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/isPlayingAudioFile</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/isPlayingAudioFile</TokenIdentifier>
-			<Abstract type="html">Used to know if there&apos;s an audio file is playing</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isPlayingAudioFile</Declaration>
-			
-			
-			<Anchor>//api/name/isPlayingAudioFile</Anchor>
+			<Anchor>//api/name/startPlayingAudioFileAtPath:errorHandler:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
@@ -81,50 +45,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setCurrentTime:</TokenIdentifier>
-			<Abstract type="html">Gets the audio file playing current time.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
-			
-			
-			<Anchor>//api/name/currentTime</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/currentTime</TokenIdentifier>
 			<Abstract type="html">Gets the audio file playing current time.</Abstract>
 			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
+			<Declaration>- (double)currentTime</Declaration>
 			
 			
 			<Anchor>//api/name/currentTime</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/currentTime</TokenIdentifier>
-			<Abstract type="html">Gets the audio file playing current time.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double currentTime</Declaration>
-			
-			
-			<Anchor>//api/name/currentTime</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setDuration:</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
-			
-			
-			<Anchor>//api/name/duration</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
@@ -133,7 +61,7 @@
 			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
 			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			<Declaration>- (double)duration</Declaration>
 			
 			
 			<Anchor>//api/name/duration</Anchor>
@@ -141,50 +69,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/filePathPlaying</TokenIdentifier>
+			<Abstract type="html">Gets the path to the current audio file being played.</Abstract>
 			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
+			<Declaration>- (nullable NSString *)filePathPlaying</Declaration>
 			
-			
-			<Anchor>//api/name/duration</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/setMessagePlaying:</TokenIdentifier>
-			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
-			
-			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/messagePlaying</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/messagePlaying</TokenIdentifier>
-			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
-			
-			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/messagePlaying</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioPlayerController/messagePlaying</TokenIdentifier>
-			<Abstract type="html">Gets the current Bit6Message object being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</Declaration>
-			
-			<ReturnValue><Abstract type="html">Bit6Message object being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/messagePlaying</Anchor>
+			<ReturnValue><Abstract type="html">path to the current audio file being played.</Abstract></ReturnValue>
+			<Anchor>//api/name/filePathPlaying</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

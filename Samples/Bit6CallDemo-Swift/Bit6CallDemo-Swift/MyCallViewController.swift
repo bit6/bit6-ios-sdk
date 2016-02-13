@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Bit6
 
 class MyCallViewController: Bit6CallViewController {
     @IBOutlet var muteLabel:UILabel!
@@ -21,10 +22,9 @@ class MyCallViewController: Bit6CallViewController {
     
     @IBOutlet var controlsView:UIView!
     
-    var callController : Bit6CallController {
+    var callController : Bit6CallController? {
         get {
-            let callControllers = Bit6.callControllers()
-            return callControllers.first as! Bit6CallController
+            return Bit6.callControllers().first
         }
     }
     
@@ -41,7 +41,9 @@ class MyCallViewController: Bit6CallViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.callController.hasVideo {
+        self.usernameLabel.text = self.callController!.otherDisplayName
+        
+        if self.callController!.hasVideo {
             self.speakerButton.hidden = true
             self.speakerLabel.hidden = true
         }
@@ -56,17 +58,11 @@ class MyCallViewController: Bit6CallViewController {
             self.speakerLabel.hidden = true
         }
         
-        self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
+        self.controlsView.hidden = !(self.callController!.callState == .CONNECTED)
     }
     
-    override func viewWillAppear(animated:Bool){
-        UIApplication.sharedApplication().statusBarHidden = true
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(animated:Bool) {
-        UIApplication.sharedApplication().statusBarHidden = false
-        super.viewWillDisappear(animated)
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     // MARK: Bit6CallViewController methods
@@ -76,28 +72,32 @@ class MyCallViewController: Bit6CallViewController {
         self.speakerLabel.text = Bit6CallController.speakerEnabled() ?"Disable Speaker":"Enable Speaker"
     }
     
-    override func callStateChangedNotificationForCallController(callController: Bit6CallController!) {
+    override func callStateChangedNotificationForCallController(callController: Bit6CallController) {
+        guard let firstCallController = self.callController else { return }
+        
         if self.controlsView != nil {
-            self.controlsView.hidden = !(self.callController.callState == Bit6CallState.ANSWER)
-            self.secondsChangedNotificationForCallController(callController)
+            self.controlsView.hidden = !(firstCallController.callState == .CONNECTED)
+            self.secondsChangedNotificationForCallController(firstCallController)
         }
     }
     
-    override func secondsChangedNotificationForCallController(callController: Bit6CallController!) {
+    override func secondsChangedNotificationForCallController(callController: Bit6CallController) {
+        guard let callController = self.callController else { return }
+        
         if self.timerLabel != nil {
-            switch (self.callController.callState) {
-            case .NEW: fallthrough case .PROGRESS:
+            switch (callController.callState) {
+            case .NEW: fallthrough case .ACCEPTING_CALL: fallthrough case .GATHERING_CANDIDATES: fallthrough case .WAITING_SDP: fallthrough case .SENDING_SDP: fallthrough case .CONNECTING:
                 self.timerLabel.text = "Connecting..."
-            case .ANSWER:
-                self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(self.callController.seconds))
+            case .CONNECTED:
+                self.timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(callController.seconds))
             case .DISCONNECTED:fallthrough case .END:fallthrough case .MISSED:fallthrough case .ERROR:
                 self.timerLabel.text = "Disconnected"
             }
         }
     }
     
-    override func updateLayoutForVideoFeedViews(videoFeedViews: [AnyObject]!) {
-        self.usernameLabel.text = self.callController.otherDisplayName
+    override func updateLayoutForVideoFeedViews(videoFeedViews: [Bit6VideoFeedView]) {
+        self.usernameLabel.text = self.callController!.otherDisplayName
         self.usernameLabel.hidden = Bit6.callControllers().count>1
         self.timerLabel.hidden = self.usernameLabel.hidden;
         

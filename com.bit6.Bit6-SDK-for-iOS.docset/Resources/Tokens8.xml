@@ -17,7 +17,7 @@
 			<Abstract type="html">Starts listening to the user&apos;s location.</Abstract>
 			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>- (void)startListeningToLocationForMessage:(Bit6OutgoingMessage *)msg delegate:(id&lt;Bit6CurrentLocationControllerDelegate&gt;)delegate</Declaration>
+			<Declaration>- (void)startListeningToLocationForMessage:(nonnull Bit6OutgoingMessage *)msg delegate:(nullable id&lt;Bit6CurrentLocationControllerDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>

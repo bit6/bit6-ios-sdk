@@ -57,49 +57,14 @@
     NSString *friendId = self.friendsIds[indexPath.row];
     NSString *name = self.friendsDict[friendId];
     
-    Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_FACEBOOK value:friendId];
+    Bit6Address *address = [Bit6Address addressWithFacebookId:friendId];
     
-    Bit6CallController *callController = [Bit6 startCallToAddress:address hasAudio:YES hasVideo:YES hasData:NO];
+    Bit6CallController *callController = [Bit6 createCallTo:address streams:Bit6CallStreams_Audio|Bit6CallStreams_Video];
     callController.otherDisplayName = name;
-    
-    //we listen to call state changes
-    [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
-    
-    //create the default in-call UIViewController
-    Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
-    
-    //start the call
-    [callController connectToViewController:callVC];
-}
-
-#pragma mark - Calls
-
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([object isKindOfClass:[Bit6CallController class]]) {
-        if ([keyPath isEqualToString:@"callState"]) {
-            [self callStateChangedNotification:object];
-        }
-    }
-}
-
-- (void) callStateChangedNotification:(Bit6CallController*)callController
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //the call is starting: show the viewController
-        if (callController.callState == Bit6CallState_PROGRESS) {
-            [Bit6 presentCallViewController];
-        }
-        //the call ended: remove the observer and dismiss the viewController
-        else if (callController.callState == Bit6CallState_END) {
-            [callController removeObserver:self forKeyPath:@"callState"];
-        }
-        //the call ended with an error: remove the observer and dismiss the viewController
-        else if (callController.callState == Bit6CallState_ERROR) {
-            [callController removeObserver:self forKeyPath:@"callState"];
-            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        }
-    });
+    Bit6CallViewController *callViewController = [Bit6 callViewController] ?: [Bit6CallViewController createDefaultCallViewController];
+    [callViewController addCallController:callController];
+    [callController start];
+    [Bit6 presentCallViewController:callViewController];
 }
 
 #pragma mark - Facebook

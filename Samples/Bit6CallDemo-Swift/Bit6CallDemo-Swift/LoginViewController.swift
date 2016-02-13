@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bit6
 
 class LoginViewController: UIViewController {
 
@@ -58,18 +59,13 @@ class LoginViewController: UIViewController {
     }
 
     func login(username:String?,password:String?){
-        guard let username = username else {
-            return
-        }
+        guard   let username = username,
+                let password = password,
+                let userIdentity = Bit6Address(username:username) else { return }
         
-        guard let password = password else {
-            return
-        }
-        
-        let userIdentity = Bit6Address(kind: .USERNAME, value: username)
         Bit6.session().loginWithUserIdentity(userIdentity, password: password){ (response,error) in
             if error != nil {
-                let alert = UIAlertController(title:"Login Failed", message: error.localizedDescription, preferredStyle: .Alert)
+                let alert = UIAlertController(title:"Login Failed", message: error?.localizedDescription, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.navigationController?.presentViewController(alert, animated: true, completion:nil)
             }
@@ -80,18 +76,13 @@ class LoginViewController: UIViewController {
     }
     
     func signUp(username:String?,password:String?){
-        guard let username = username else {
-            return
-        }
+        guard   let username = username,
+                let password = password,
+                let userIdentity = Bit6Address(username:username) else { return }
         
-        guard let password = password else {
-            return
-        }
-        
-        let userIdentity = Bit6Address(kind: .USERNAME, value: username)
         Bit6.session().signUpWithUserIdentity(userIdentity, password: password){ (response,error) in
             if error != nil {
-                let alert = UIAlertController(title:"SignUp Failed", message: error.localizedDescription, preferredStyle: .Alert)
+                let alert = UIAlertController(title:"SignUp Failed", message: error?.localizedDescription, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.navigationController?.presentViewController(alert, animated: true, completion:nil)
             }

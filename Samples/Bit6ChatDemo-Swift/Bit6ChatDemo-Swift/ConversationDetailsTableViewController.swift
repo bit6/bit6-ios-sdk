@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bit6
 
 class ConversationDetailsTableViewController: UITableViewController {
 
@@ -15,8 +16,8 @@ class ConversationDetailsTableViewController: UITableViewController {
     
     var conversation : Bit6Conversation! {
         didSet {
-            conversation.currentConversation = true
-            self.group = Bit6Group(forConversation:conversation)
+            Bit6.setCurrentConversation(conversation)
+            self.group = Bit6Group(conversation:conversation)
         }
     }
     
@@ -47,7 +48,8 @@ class ConversationDetailsTableViewController: UITableViewController {
     
     override func setEditing(editing:Bool, animated:Bool) {
         super.setEditing(editing, animated:animated)
-        let indexPath = NSIndexPath(forRow: self.group.members.count+1, inSection: 0)
+        let membersCount = self.group.members != nil ? self.group.members!.count : 0
+        let indexPath = NSIndexPath(forRow: membersCount+1, inSection: 0)
         if editing {
             self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation:.Automatic)
         }
@@ -68,8 +70,10 @@ class ConversationDetailsTableViewController: UITableViewController {
 
     func memberForIndexPath(indexPath:NSIndexPath) -> Bit6GroupMember! {
         if self.group != nil {
-            let member = self.group.members[indexPath.row-1] as! Bit6GroupMember
-            return member
+            if let members = self.group.members {
+                let member = members[indexPath.row-1]
+                return member
+            }
         }
         return nil
     }
@@ -82,8 +86,10 @@ class ConversationDetailsTableViewController: UITableViewController {
                 return 0
             }
             else {
+                let membersCount = self.group.members != nil ? self.group.members!.count : 0
+                
                 return 1 + //title cell
-                    self.group.members.count + //members cells
+                    membersCount + //members cells
                     (self.editing ? 1 : 0) //cell to add member
             }
         }
@@ -93,6 +99,8 @@ class ConversationDetailsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let membersCount = self.group.members != nil ? self.group.members!.count : 0
+        
         //title
         if self.group != nil && indexPath.row == 0 {
             var cell = tableView.dequeueReusableCellWithIdentifier("group_subject") as UITableViewCell!
@@ -113,7 +121,7 @@ class ConversationDetailsTableViewController: UITableViewController {
                 frame.origin.x = CGRectGetMaxX(frame) + 5;
                 frame.size.width = self.tableView.frame.size.width - frame.origin.x - 10;
                 subjectTextField.frame = frame;
-                subjectTextField.placeholder = Bit6EmptyGroupSubject;
+                subjectTextField.placeholder = "<No Subject>";
                 subjectTextField.enabled = self.editing;
                 
                 let title = self.group.metadata!["title"] as! NSString!
@@ -129,8 +137,8 @@ class ConversationDetailsTableViewController: UITableViewController {
             return cell
         }
             
-            //members
-        else if self.group == nil  || (indexPath.row-1 < self.group.members.count) {
+        //members
+        else if self.group == nil  || (indexPath.row-1 < membersCount) {
             var cell = tableView.dequeueReusableCellWithIdentifier("group_member") as UITableViewCell!
             if cell == nil {
                 cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "group_member")
@@ -153,13 +161,15 @@ class ConversationDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let membersCount = self.group.members != nil ? self.group.members!.count : 0
+        
         if self.group != nil {
             //title
             if indexPath.row == 0 {
                 
             }
             //members
-            else if (indexPath.row-1 < self.group.members.count) {
+            else if (indexPath.row-1 < membersCount) {
                 let member = self.memberForIndexPath(indexPath)
                 cell.textLabel!.text = member.address.displayName
                 cell.detailTextLabel!.text = member.role == "admin" ? "Group Admin" : ""
@@ -179,7 +189,9 @@ class ConversationDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView:UITableView, willSelectRowAtIndexPath indexPath:NSIndexPath) -> NSIndexPath? {
-        if indexPath.row == self.group.members.count+1 {
+        let membersCount = self.group.members != nil ? self.group.members!.count : 0
+        
+        if indexPath.row == membersCount+1 {
             return indexPath
         }
         return nil
@@ -191,10 +203,12 @@ class ConversationDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView:UITableView, canEditRowAtIndexPath indexPath:NSIndexPath) -> Bool {
+        let membersCount = self.group.members != nil ? self.group.members!.count : 0
+        
         if indexPath.row == 0 { return false } //title row
-        else if (indexPath.row-1) < self.group.members.count {
+        else if (indexPath.row-1) < membersCount {
             let member = self.memberForIndexPath(indexPath)
-            return !member.address.isEqual(Bit6.session().userIdentity) //cannot delete himself
+            return !member.address.isEqual(Bit6.session().activeIdentity) //cannot delete himself
         }
         else {
             return false;
@@ -211,7 +225,7 @@ class ConversationDetailsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         let member = self.memberForIndexPath(indexPath)
-        self.group.deleteMember(member){ (members, error) in
+        self.group.kickGroupMember(member){ (members, error) in
             if error == nil {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
@@ -233,26 +247,18 @@ class ConversationDetailsTableViewController: UITableViewController {
             let usernameTextField = alert.textFields![0]
             if usernameTextField.text?.characters.count > 0 {
                 
-                let destinations =  [usernameTextField.text]
-                
-                if destinations.count == 1 {
+                if let destination = usernameTextField.text {
                     
-                    let addresses = NSMutableArray(capacity: destinations.count)
-                    
-                    for (_, element) in destinations.enumerate() {
-                        if let address = Bit6Address(kind: .USERNAME, value: element) {
-                            addresses.addObject(address)
-                        }
-                    }
-                    
-                    self.group.inviteAddresses(addresses as [AnyObject]) { (members, error) in
-                        if error != nil {
-                            let alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-                            self.navigationController?.presentViewController(alert, animated: true, completion:nil)
-                        }
-                        else {
-                            self.tableView.reloadData()
+                    if let address = Bit6Address(username:destination) {
+                        self.group.inviteGroupMemberWithAddress(address, role:Bit6GroupMemberRole_User) { (members, error) in
+                            if error != nil {
+                                let alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+                                self.navigationController?.presentViewController(alert, animated: true, completion:nil)
+                            }
+                            else {
+                                self.tableView.reloadData()
+                            }
                         }
                     }
                 }

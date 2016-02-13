@@ -40,6 +40,10 @@
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.usernameLabel.text = self.callController.otherDisplayName;
+    
     if (self.callController.hasVideo) {
         self.speakerButton.hidden = YES;
         self.speakerLabel.hidden = YES;
@@ -55,21 +59,12 @@
         self.speakerLabel.hidden = YES;
     }
     
-    self.controlsView.hidden = !(self.callController.callState == Bit6CallState_ANSWER);
-    
-    [super viewDidLoad];
+    self.controlsView.hidden = !(self.callController.callState == Bit6CallState_CONNECTED);
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (BOOL)prefersStatusBarHidden
 {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [super viewWillAppear:animated];
-}
-
-- (void) viewWillDisappear:(BOOL)animated
-{
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    [super viewWillDisappear:animated];
+    return YES;
 }
 
 #pragma mark - Bit6CallViewController methods
@@ -82,23 +77,23 @@
 
 - (void) callStateChangedNotificationForCallController:(Bit6CallController*)callController
 {
-    self.controlsView.hidden = !(self.callController.callState == Bit6CallState_ANSWER);
+    self.controlsView.hidden = !(self.callController.callState == Bit6CallState_CONNECTED);
     [self secondsChangedNotificationForCallController:callController];
 }
 
 - (void) secondsChangedNotificationForCallController:(Bit6CallController*)callController
 {
     switch (self.callController.callState) {
-        case Bit6CallState_NEW: case Bit6CallState_PROGRESS:
+        case Bit6CallState_NEW: case Bit6CallState_ACCEPTING_CALL: case Bit6CallState_GATHERING_CANDIDATES: case Bit6CallState_WAITING_SDP: case Bit6CallState_SENDING_SDP: case Bit6CallState_CONNECTING:
             self.timerLabel.text = @"Connecting..."; break;
-        case Bit6CallState_ANSWER:
+        case Bit6CallState_CONNECTED:
             self.timerLabel.text = [Bit6Utils clockFormatForSeconds:self.callController.seconds]; break;
         case Bit6CallState_END: case Bit6CallState_MISSED: case Bit6CallState_ERROR: case Bit6CallState_DISCONNECTED:
             self.timerLabel.text = @"Disconnected"; break;
     }
 }
 
-- (void)updateLayoutForVideoFeedViews:(NSArray*)videoFeedViews
+- (void)updateLayoutForVideoFeedViews:(NSArray<Bit6VideoFeedView*>*)videoFeedViews
 {
     self.usernameLabel.text = self.callController.otherDisplayName;
     self.usernameLabel.hidden = [Bit6 callControllers].count>1;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6ImageView.html">
+	<File path="Classes/Bit6GroupMember.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6ImageView</TokenIdentifier>
-			<Abstract type="html">Special subclass of UIImageView to work with the full images attached to a message</Abstract>
-			<DeclaredIn>Bit6ImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6GroupMember</TokenIdentifier>
+			<Abstract type="html">A Bit6GroupMember object represents a member of a Bit6Group object.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -13,38 +13,218 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ImageView/setMessage:</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/setAddress:</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) Bit6Address *address</Declaration>
 			
 			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/address</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6ImageView/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/address</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) Bit6Address *address</Declaration>
 			
 			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/address</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6ImageView/message</TokenIdentifier>
-			<Abstract type="html">Message with an attachment to be displayed</Abstract>
-			<DeclaredIn>Bit6ImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6GroupMember/address</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) Bit6Message *message</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) Bit6Address *address</Declaration>
 			
 			
-			<Anchor>//api/name/message</Anchor>
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/setRole:</TokenIdentifier>
+			<Abstract type="html">The role of the sender inside the group. The return value can be one of three constants: Bit6GroupMemberRoleAdmin, Bit6GroupMemberRoleUser or Bit6GroupMemberRole_Left.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSString *role</Declaration>
+			
+			
+			<Anchor>//api/name/role</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/role</TokenIdentifier>
+			<Abstract type="html">The role of the sender inside the group. The return value can be one of three constants: Bit6GroupMemberRoleAdmin, Bit6GroupMemberRoleUser or Bit6GroupMemberRole_Left.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSString *role</Declaration>
+			
+			
+			<Anchor>//api/name/role</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6GroupMember/role</TokenIdentifier>
+			<Abstract type="html">The role of the sender inside the group. The return value can be one of three constants: Bit6GroupMemberRoleAdmin, Bit6GroupMemberRoleUser or Bit6GroupMemberRole_Left.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSString *role</Declaration>
+			
+			
+			<Anchor>//api/name/role</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/setSeen:</TokenIdentifier>
+			<Abstract type="html">The last seen timestamp of the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSNumber *seen</Declaration>
+			
+			
+			<Anchor>//api/name/seen</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/seen</TokenIdentifier>
+			<Abstract type="html">The last seen timestamp of the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSNumber *seen</Declaration>
+			
+			
+			<Anchor>//api/name/seen</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6GroupMember/seen</TokenIdentifier>
+			<Abstract type="html">The last seen timestamp of the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSNumber *seen</Declaration>
+			
+			
+			<Anchor>//api/name/seen</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/setStatus:</TokenIdentifier>
+			<Abstract type="html">The status of the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSString *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/status</TokenIdentifier>
+			<Abstract type="html">The status of the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSString *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6GroupMember/status</TokenIdentifier>
+			<Abstract type="html">The status of the sender.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSString *status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/setGroup:</TokenIdentifier>
+			<Abstract type="html">The conversation the sender belongs to.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) Bit6Group *group</Declaration>
+			
+			
+			<Anchor>//api/name/group</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/group</TokenIdentifier>
+			<Abstract type="html">The conversation the sender belongs to.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) Bit6Group *group</Declaration>
+			
+			
+			<Anchor>//api/name/group</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6GroupMember/group</TokenIdentifier>
+			<Abstract type="html">The conversation the sender belongs to.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) Bit6Group *group</Declaration>
+			
+			
+			<Anchor>//api/name/group</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/setPublicProfile:</TokenIdentifier>
+			<Abstract type="html">The public profile of the group member.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSDictionary&lt;NSString*id&gt; *publicProfile</Declaration>
+			
+			
+			<Anchor>//api/name/publicProfile</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6GroupMember/publicProfile</TokenIdentifier>
+			<Abstract type="html">The public profile of the group member.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSDictionary&lt;NSString*id&gt; *publicProfile</Declaration>
+			
+			
+			<Anchor>//api/name/publicProfile</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6GroupMember/publicProfile</TokenIdentifier>
+			<Abstract type="html">The public profile of the group member.</Abstract>
+			<DeclaredIn>Bit6Group.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy, readonly) NSDictionary&lt;NSString*id&gt; *publicProfile</Declaration>
+			
+			
+			<Anchor>//api/name/publicProfile</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

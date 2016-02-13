@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D84ADB551BDFBA9100F263F8 /* EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84ADB541BDFBA9100F263F8 /* EverliveSDK.framework */; };
+		D87D0A971BBD722A0096118A /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D87D0A961BBD722A0096118A /* Bit6Resources.bundle */; };
+		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
+		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
+		D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A518DBFC540070378D /* UIKit.framework */; };
+		D8A5A4BD1C6F992F00B868B1 /* ringtone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D8A5A4BC1C6F992F00B868B1 /* ringtone.caf */; };
+		D8AFA5151BD07617000D720D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AFA5141BD07617000D720D /* Accounts.framework */; };
+		D8AFA5171BD0761C000D720D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AFA5161BD0761C000D720D /* Social.framework */; };
+		D8DB6C20194AC08E0062D819 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8DB6C1D194AC08E0062D819 /* InfoPlist.strings */; };
+		D8DB6C21194AC08E0062D819 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6C1E194AC08E0062D819 /* main.m */; };
+		D8DB6C29194AC10C0062D819 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6C23194AC10C0062D819 /* AppDelegate.m */; };
+		D8DB6C2B194AC10C0062D819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8DB6C25194AC10C0062D819 /* Images.xcassets */; };
+		D8DB6C2C194AC10C0062D819 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6C27194AC10C0062D819 /* LoginViewController.m */; };
+		D8DB6C2D194AC10C0062D819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DB6C28194AC10C0062D819 /* Main.storyboard */; };
+		D8DB6C33194AC1820062D819 /* MakeCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6C32194AC1820062D819 /* MakeCallViewController.m */; };
+		D8F7BA2819107A2F00CEE571 /* Bit6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7BA2719107A2F00CEE571 /* Bit6.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D84ADB541BDFBA9100F263F8 /* EverliveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverliveSDK.framework; sourceTree = "<group>"; };
+		D87D0A961BBD722A0096118A /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
+		D880E49E18DBFC540070378D /* TelerikDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D880E4A118DBFC540070378D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D880E4A518DBFC540070378D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D8A5A4BC1C6F992F00B868B1 /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ringtone.caf; path = CallDemo/ringtone.caf; sourceTree = SOURCE_ROOT; };
+		D8AFA5141BD07617000D720D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D8AFA5161BD0761C000D720D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D8DB6C1B194AC08E0062D819 /* TelerikDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "TelerikDemo-Info.plist"; path = "CallDemo/TelerikDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D8DB6C1C194AC08E0062D819 /* TelerikDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TelerikDemo-Prefix.pch"; path = "CallDemo/TelerikDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		D8DB6C1D194AC08E0062D819 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = CallDemo/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		D8DB6C1E194AC08E0062D819 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CallDemo/main.m; sourceTree = SOURCE_ROOT; };
+		D8DB6C22194AC10C0062D819 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CallDemo/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		D8DB6C23194AC10C0062D819 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CallDemo/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		D8DB6C24194AC10C0062D819 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = DemoConfig.xcconfig; path = CallDemo/DemoConfig.xcconfig; sourceTree = SOURCE_ROOT; };
+		D8DB6C25194AC10C0062D819 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CallDemo/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		D8DB6C26194AC10C0062D819 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = CallDemo/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		D8DB6C27194AC10C0062D819 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = CallDemo/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		D8DB6C28194AC10C0062D819 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CallDemo/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		D8DB6C31194AC1820062D819 /* MakeCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakeCallViewController.h; path = CallDemo/MakeCallViewController.h; sourceTree = SOURCE_ROOT; };
+		D8DB6C32194AC1820062D819 /* MakeCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakeCallViewController.m; path = CallDemo/MakeCallViewController.m; sourceTree = SOURCE_ROOT; };
+		D8F7BA2719107A2F00CEE571 /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../Bit6.framework; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D880E49B18DBFC540070378D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8AFA5171BD0761C000D720D /* Social.framework in Frameworks */,
+				D8AFA5151BD07617000D720D /* Accounts.framework in Frameworks */,
+				D8F7BA2819107A2F00CEE571 /* Bit6.framework in Frameworks */,
+				D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */,
+				D84ADB551BDFBA9100F263F8 /* EverliveSDK.framework in Frameworks */,
+				D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */,
+				D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D84ADB531BDFBA9100F263F8 /* Telerik */ = {
+			isa = PBXGroup;
+			children = (
+				D84ADB541BDFBA9100F263F8 /* EverliveSDK.framework */,
+			);
+			name = Telerik;
+			path = CallDemo/Telerik;
+			sourceTree = SOURCE_ROOT;
+		};
+		D880E49518DBFC540070378D = {
+			isa = PBXGroup;
+			children = (
+				D880E4A718DBFC540070378D /* TelerikDemo */,
+				D880E4A018DBFC540070378D /* Frameworks */,
+				D880E49F18DBFC540070378D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D880E49F18DBFC540070378D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D880E49E18DBFC540070378D /* TelerikDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D880E4A018DBFC540070378D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8AFA5161BD0761C000D720D /* Social.framework */,
+				D8AFA5141BD07617000D720D /* Accounts.framework */,
+				D8F7BA2719107A2F00CEE571 /* Bit6.framework */,
+				D880E4A118DBFC540070378D /* Foundation.framework */,
+				D880E4A318DBFC540070378D /* CoreGraphics.framework */,
+				D880E4A518DBFC540070378D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D880E4A718DBFC540070378D /* TelerikDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D84ADB531BDFBA9100F263F8 /* Telerik */,
+				D8DB6C22194AC10C0062D819 /* AppDelegate.h */,
+				D8DB6C23194AC10C0062D819 /* AppDelegate.m */,
+				D8DB6C26194AC10C0062D819 /* LoginViewController.h */,
+				D8DB6C27194AC10C0062D819 /* LoginViewController.m */,
+				D8DB6C31194AC1820062D819 /* MakeCallViewController.h */,
+				D8DB6C32194AC1820062D819 /* MakeCallViewController.m */,
+				D8DB6C24194AC10C0062D819 /* DemoConfig.xcconfig */,
+				D8DB6C25194AC10C0062D819 /* Images.xcassets */,
+				D8DB6C28194AC10C0062D819 /* Main.storyboard */,
+				D880E4A818DBFC540070378D /* Supporting Files */,
+			);
+			name = TelerikDemo;
+			path = BasicDemo;
+			sourceTree = "<group>";
+		};
+		D880E4A818DBFC540070378D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D87D0A961BBD722A0096118A /* Bit6Resources.bundle */,
+				D8DB6C1B194AC08E0062D819 /* TelerikDemo-Info.plist */,
+				D8DB6C1C194AC08E0062D819 /* TelerikDemo-Prefix.pch */,
+				D8A5A4BC1C6F992F00B868B1 /* ringtone.caf */,
+				D8DB6C1D194AC08E0062D819 /* InfoPlist.strings */,
+				D8DB6C1E194AC08E0062D819 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D880E49D18DBFC540070378D /* TelerikDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "TelerikDemo" */;
+			buildPhases = (
+				D880E49C18DBFC540070378D /* Resources */,
+				D880E49A18DBFC540070378D /* Sources */,
+				D880E49B18DBFC540070378D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TelerikDemo;
+			productName = BasicDemo;
+			productReference = D880E49E18DBFC540070378D /* TelerikDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D880E49618DBFC540070378D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Voxofon;
+				TargetAttributes = {
+					D880E49D18DBFC540070378D = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D880E49918DBFC540070378D /* Build configuration list for PBXProject "TelerikDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D880E49518DBFC540070378D;
+			productRefGroup = D880E49F18DBFC540070378D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D880E49D18DBFC540070378D /* TelerikDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D880E49C18DBFC540070378D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8DB6C2D194AC10C0062D819 /* Main.storyboard in Resources */,
+				D8A5A4BD1C6F992F00B868B1 /* ringtone.caf in Resources */,
+				D8DB6C2B194AC10C0062D819 /* Images.xcassets in Resources */,
+				D8DB6C20194AC08E0062D819 /* InfoPlist.strings in Resources */,
+				D87D0A971BBD722A0096118A /* Bit6Resources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D880E49A18DBFC540070378D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8DB6C33194AC1820062D819 /* MakeCallViewController.m in Sources */,
+				D8DB6C29194AC10C0062D819 /* AppDelegate.m in Sources */,
+				D8DB6C21194AC08E0062D819 /* main.m in Sources */,
+				D8DB6C2C194AC10C0062D819 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D880E4CE18DBFC540070378D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D880E4CF18DBFC540070378D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D880E4D118DBFC540070378D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DB6C24194AC10C0062D819 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carlos Thurber (X3W4M6QN5H)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CallDemo/TelerikDemo-Prefix.pch";
+				INFOPLIST_FILE = "CallDemo/TelerikDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
+				PRODUCT_NAME = TelerikDemo;
+				PROVISIONING_PROFILE = "38635b74-6529-4992-8d94-789d93bb361c";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D880E4D218DBFC540070378D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DB6C24194AC10C0062D819 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CallDemo/TelerikDemo-Prefix.pch";
+				INFOPLIST_FILE = "CallDemo/TelerikDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
+				PRODUCT_NAME = TelerikDemo;
+				PROVISIONING_PROFILE = "38635b74-6529-4992-8d94-789d93bb361c";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D880E49918DBFC540070378D /* Build configuration list for PBXProject "TelerikDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D880E4CE18DBFC540070378D /* Debug */,
+				D880E4CF18DBFC540070378D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "TelerikDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D880E4D118DBFC540070378D /* Debug */,
+				D880E4D218DBFC540070378D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D880E49618DBFC540070378D /* Project object */;
+}

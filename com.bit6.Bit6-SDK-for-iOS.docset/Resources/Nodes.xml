@@ -34,6 +34,7 @@
 						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
 						
 					</Subnodes>
 				</Node>
@@ -44,11 +45,11 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="24"/>
 						<NodeRef refid="25"/>
 						<NodeRef refid="26"/>
 						<NodeRef refid="27"/>
 						<NodeRef refid="28"/>
+						<NodeRef refid="29"/>
 						
 					</Subnodes>
 				</Node>
@@ -58,7 +59,6 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="29"/>
 						<NodeRef refid="30"/>
 						<NodeRef refid="31"/>
 						<NodeRef refid="32"/>
@@ -160,12 +160,6 @@
                     <Path>Classes/Bit6AudioPlayerController.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/Bit6AudioPlayerController.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
                 </Node>
                 
                 
@@ -351,6 +345,33 @@
             
         </Node>
 		<Node id="9" type="file" documentType="reference">
+            <Name>Bit6FileDownloader</Name>
+            <Path>Classes/Bit6FileDownloader.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/Bit6FileDownloader.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/Bit6FileDownloader.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/Bit6FileDownloader.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
             <Name>Bit6Group</Name>
             <Path>Classes/Bit6Group.html</Path>
             
@@ -389,7 +410,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>Bit6GroupMember</Name>
             <Path>Classes/Bit6GroupMember.html</Path>
             
@@ -416,7 +437,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>Bit6ImageView</Name>
             <Path>Classes/Bit6ImageView.html</Path>
             
@@ -443,7 +464,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>Bit6IncomingCallHandler</Name>
             <Path>Classes/Bit6IncomingCallHandler.html</Path>
             
@@ -470,26 +491,32 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
-            <Name>Bit6IncomingCallNotificationBanner</Name>
-            <Path>Classes/Bit6IncomingCallNotificationBanner.html</Path>
+		<Node id="14" type="file" documentType="reference">
+            <Name>Bit6IncomingCallPrompt</Name>
+            <Path>Classes/Bit6IncomingCallPrompt.html</Path>
             
                 <Subnodes>
                 <Node type="section">
-                    <Path>Classes/Bit6IncomingCallNotificationBanner.html</Path>
+                    <Path>Classes/Bit6IncomingCallPrompt.html</Path>
                     <Name>Overview</Name>
                     <Anchor>overview</Anchor>
                 </Node>
                 <Node type="section">
-                    <Path>Classes/Bit6IncomingCallNotificationBanner.html</Path>
+                    <Path>Classes/Bit6IncomingCallPrompt.html</Path>
                     <Name>Tasks</Name>
                     <Anchor>tasks</Anchor>
                 </Node>
                 
                 
+                <Node type="section">
+                    <Path>Classes/Bit6IncomingCallPrompt.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
                 
                 <Node type="section">
-                    <Path>Classes/Bit6IncomingCallNotificationBanner.html</Path>
+                    <Path>Classes/Bit6IncomingCallPrompt.html</Path>
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>
@@ -497,7 +524,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>Bit6Message</Name>
             <Path>Classes/Bit6Message.html</Path>
             
@@ -526,33 +553,6 @@
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="15" type="file" documentType="reference">
-            <Name>Bit6MessageData</Name>
-            <Path>Classes/Bit6MessageData.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/Bit6MessageData.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/Bit6MessageData.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/Bit6MessageData.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
                 
             </Subnodes>
             
@@ -624,6 +624,33 @@
             
         </Node>
 		<Node id="18" type="file" documentType="reference">
+            <Name>Bit6OutgoingTransfer</Name>
+            <Path>Classes/Bit6OutgoingTransfer.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/Bit6OutgoingTransfer.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/Bit6OutgoingTransfer.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/Bit6OutgoingTransfer.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="19" type="file" documentType="reference">
             <Name>Bit6PushNotificationCenter</Name>
             <Path>Classes/Bit6PushNotificationCenter.html</Path>
             
@@ -650,7 +677,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>Bit6Session</Name>
             <Path>Classes/Bit6Session.html</Path>
             
@@ -683,7 +710,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>Bit6ThumbnailImageView</Name>
             <Path>Classes/Bit6ThumbnailImageView.html</Path>
             
@@ -710,7 +737,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>Bit6Transfer</Name>
             <Path>Classes/Bit6Transfer.html</Path>
             
@@ -734,16 +761,10 @@
                 
                 
                 
-                <Node type="section">
-                    <Path>Classes/Bit6Transfer.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>Bit6Utils</Name>
             <Path>Classes/Bit6Utils.html</Path>
             
@@ -770,7 +791,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>Bit6VideoFeedView</Name>
             <Path>Classes/Bit6VideoFeedView.html</Path>
             
@@ -799,7 +820,7 @@
         </Node>
 		
 		
-        <Node id="24" type="file" documentType="reference">
+        <Node id="25" type="file" documentType="reference">
             <Name>Bit6AudioRecorderControllerDelegate</Name>
             <Path>Protocols/Bit6AudioRecorderControllerDelegate.html</Path>
             
@@ -826,7 +847,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>Bit6CurrentLocationControllerDelegate</Name>
             <Path>Protocols/Bit6CurrentLocationControllerDelegate.html</Path>
             
@@ -853,7 +874,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>Bit6IncomingCallHandlerDelegate</Name>
             <Path>Protocols/Bit6IncomingCallHandlerDelegate.html</Path>
             
@@ -880,7 +901,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>Bit6MenuControllerDelegate</Name>
             <Path>Protocols/Bit6MenuControllerDelegate.html</Path>
             
@@ -907,7 +928,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>Bit6ThumbnailImageViewDelegate</Name>
             <Path>Protocols/Bit6ThumbnailImageViewDelegate.html</Path>
             
@@ -935,24 +956,19 @@
             
         </Node>
 		
-        <Node id="29" type="file" documentType="reference">
-            <Name>Bit6AddressKind</Name>
-            <Path>Constants/Bit6AddressKind.html</Path>
-            
-        </Node>
-		<Node id="30" type="file" documentType="reference">
+        <Node id="30" type="file" documentType="reference">
             <Name>Bit6CallState</Name>
             <Path>Constants/Bit6CallState.html</Path>
             
         </Node>
 		<Node id="31" type="file" documentType="reference">
-            <Name>Bit6Error</Name>
-            <Path>Constants/Bit6Error.html</Path>
+            <Name>Bit6CallStreams</Name>
+            <Path>Constants/Bit6CallStreams.html</Path>
             
         </Node>
 		<Node id="32" type="file" documentType="reference">
-            <Name>Bit6MessageAttachmentCategory</Name>
-            <Path>Constants/Bit6MessageAttachmentCategory.html</Path>
+            <Name>Bit6Error</Name>
+            <Path>Constants/Bit6Error.html</Path>
             
         </Node>
 		<Node id="33" type="file" documentType="reference">

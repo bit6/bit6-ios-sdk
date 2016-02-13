@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Bit6. All rights reserved.
 //
 
-#import <Bit6SDK/Bit6SDK.h>
+@import Bit6;
+
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>

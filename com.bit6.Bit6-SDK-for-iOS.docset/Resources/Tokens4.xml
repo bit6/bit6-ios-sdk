@@ -13,16 +13,13 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</TokenIdentifier>
-			<Abstract type="html">Tries to start to record an audio file showing an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioWithMaxDuration:delegate:defaultPrompt:errorHandler:</TokenIdentifier>
+			<Abstract type="html">Tries to start to record an audio file. It can show an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)startRecordingAudioForMessage:(Bit6OutgoingMessage *)msg maxDuration:(NSTimeInterval)maxDuration delegate:(id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(void ( ^ ) ( NSError *error ))errorHandler</Declaration>
+			<Declaration>- (void)startRecordingAudioWithMaxDuration:(NSTimeInterval)maxDuration delegate:(nullable id&lt;Bit6AudioRecorderControllerDelegate&gt;)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(nullable void ( ^ ) ( NSError *_Nullable error ))errorHandler</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>msg</Name>
-					<Abstract type="html">a Bit6OutgoingMessage object where the audio file will be included.</Abstract>
-				</Parameter><Parameter>
 					<Name>maxDuration</Name>
 					<Abstract type="html">maximum allowed duration (in seconds) of the audio file to be recorded.</Abstract>
 				</Parameter><Parameter>
@@ -37,13 +34,13 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:</Anchor>
+			<Anchor>//api/name/startRecordingAudioWithMaxDuration:delegate:defaultPrompt:errorHandler:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/setDuration:</TokenIdentifier>
-			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<Abstract type="html">Gets the length of the current recording - only valid while recording</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
@@ -55,7 +52,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<Abstract type="html">Gets the length of the current recording - only valid while recording</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
@@ -67,37 +64,13 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6AudioRecorderController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the current recording.</Abstract>
+			<Abstract type="html">Gets the length of the current recording - only valid while recording</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double duration</Declaration>
 			
 			
 			<Anchor>//api/name/duration</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/cancelRecording</TokenIdentifier>
-			<Abstract type="html">Cancel a recording without saving the audio file.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
-			
-			<Declaration>- (void)cancelRecording</Declaration>
-			
-			
-			<Anchor>//api/name/cancelRecording</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/stopRecording</TokenIdentifier>
-			<Abstract type="html">Finish the recording and saves the audio file to cache.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
-			
-			<Declaration>- (void)stopRecording</Declaration>
-			
-			
-			<Anchor>//api/name/stopRecording</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
@@ -134,6 +107,30 @@
 			
 			
 			<Anchor>//api/name/isRecording</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/cancelRecording</TokenIdentifier>
+			<Abstract type="html">Cancel a recording without saving the audio file.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelRecording</Declaration>
+			
+			
+			<Anchor>//api/name/cancelRecording</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/stopRecording</TokenIdentifier>
+			<Abstract type="html">Finish the recording and saves the audio file to cache.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (void)stopRecording</Declaration>
+			
+			
+			<Anchor>//api/name/stopRecording</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

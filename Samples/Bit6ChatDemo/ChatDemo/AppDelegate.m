@@ -8,12 +8,16 @@
 
 #import "AppDelegate.h"
 
+#warning Remember to set your api key
+#define BIT6_API_KEY (@"BIT6_API_KEY")
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    #warning Remember to set your api key
-    [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
+    NSAssert(![BIT6_API_KEY isEqualToString:@"BIT6_API_KEY"], @"[Bit6 SDK]: Setup your Bit6 api key.");
+    
+    [Bit6 startWithApiKey:BIT6_API_KEY];
     
     NSDictionary *remoteNotificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (remoteNotificationPayload) {
@@ -38,11 +42,6 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [Bit6.pushNotification didReceiveRemoteNotification:userInfo];
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
-{
-    [Bit6.pushNotification didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
 - (void) application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken

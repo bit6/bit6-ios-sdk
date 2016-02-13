@@ -15,4 +15,4 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#import <Bit6SDK/Bit6SDK.h>
+@import Bit6;

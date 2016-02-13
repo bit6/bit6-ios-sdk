@@ -28,7 +28,7 @@
 
 - (void) viewDidLoad
 {
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.activeIdentity.displayName];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [button addTarget:self action:@selector(showDetailInfo) forControlEvents:UIControlEventTouchUpInside];
@@ -54,14 +54,14 @@
 
 - (void)dealloc
 {
-    self.conversation.currentConversation = NO;
+    [Bit6 setCurrentConversation:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL) canChat
 {
-    if ([self.conversation.address isKind:Bit6AddressKind_GROUP]) {
-        Bit6Group *group = [Bit6Group groupForConversation:self.conversation];
+    if (self.conversation.address.isGroup) {
+        Bit6Group *group = [Bit6Group groupWithConversation:self.conversation];
         if (group.hasLeft) {
             return NO;
         }
@@ -77,7 +77,7 @@
 - (void) setConversation:(Bit6Conversation *)conversation
 {
     _conversation = conversation;
-    _conversation.currentConversation = YES;
+    [Bit6 setCurrentConversation:conversation];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(conversationsChangedNotification:) name:Bit6ConversationsChangedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messagesChangedNotification:) name:Bit6MessagesChangedNotification object:self.conversation];
 }
@@ -215,7 +215,7 @@
             UITextField *textfield = [alertView textFieldAtIndex:0];
             NSString *destination = textfield.text;
             if ([destination length]>0) {
-                Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
+                Bit6Address *address = [Bit6Address addressWithUsername:destination];
                 
                 Bit6OutgoingMessage *msg = [Bit6OutgoingMessage outgoingCopyOfMessage:self.messageToForward];
                 msg.destination = address;
@@ -353,15 +353,19 @@
 
 - (void)sendAudio
 {
-    Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
-    message.destination = self.conversation.address;
-    [Bit6.audioRecorder startRecordingAudioForMessage:message maxDuration:60 delegate:self defaultPrompt:YES errorHandler:^(NSError *error) {
+    
+    
+    [Bit6.audioRecorder startRecordingAudioWithMaxDuration:60 delegate:self defaultPrompt:YES errorHandler:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
 }
 
-- (void) doneRecorderController:(Bit6AudioRecorderController*)b6rc message:(Bit6OutgoingMessage*)message
+- (void)doneRecorderController:(Bit6AudioRecorderController *)b6rc filePath:(NSString *)filePath
 {
+    Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
+    message.destination = self.conversation.address;
+    message.audioFilePath = filePath;
+    
     if (message.audioDuration) {
         [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
             if (!error) {
@@ -374,6 +378,16 @@
     }
 }
 
+- (void)isRecordingWithController:(Bit6AudioRecorderController *)b6rc filePath:(NSString *)filePath
+{
+    
+}
+
+- (void)cancelRecorderController:(Bit6AudioRecorderController *)b6rc
+{
+    
+}
+
 #pragma mark - Data Source changes
 
 - (void) conversationsChangedNotification:(NSNotification*)notification
@@ -383,8 +397,8 @@
     if ([object isEqual:self.conversation]) {
         NSString *change = notification.userInfo[Bit6ChangeKey];
         if ([change isEqualToString:Bit6UpdatedKey]) {
-            Bit6Group *group = [Bit6Group groupForConversation:self.conversation];
-            self.title = [group.metadata[Bit6GroupMetadataTitleKey] length]>0?group.metadata[Bit6GroupMetadataTitleKey]:self.conversation.displayName;
+            Bit6Group *group = [Bit6Group groupWithConversation:self.conversation];
+            self.title = [group.metadata[Bit6GroupMetadataTitleKey] length]>0?group.metadata[Bit6GroupMetadataTitleKey]:self.conversation.address.displayName;
             if (object.typingAddress) {
                 self.typingBarButtonItem.title = [NSString stringWithFormat:@"%@ is typing...",object.typingAddress.displayName];
             }
@@ -499,7 +513,7 @@
     else if ([segue.identifier isEqualToString:@"showDetails"]) {
         ConversationDetailsTableViewController *obj = segue.destinationViewController;
         obj.conversation = self.conversation;
-        obj.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
+        obj.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.activeIdentity.displayName];
     }
 }
 
@@ -517,7 +531,7 @@
 {
     Bit6Message *msg = thumbnailImageView.message;
     
-    Bit6MessageAttachmentStatus fullAttachStatus = [msg attachmentStatusForAttachmentCategory:Bit6MessageAttachmentCategory_FULL_SIZE];
+    Bit6MessageAttachmentStatus fullAttachStatus = msg.statusForFullAttachment;
     
     if (msg.type == Bit6MessageType_Location) {
         //Open on AppleMaps
@@ -539,7 +553,7 @@
     }
     else if (msg.type == Bit6MessageType_Attachments) {
         if (msg.attachFileType == Bit6MessageFileType_Audio) {
-            [Bit6.audioPlayer startPlayingAudioFileInMessage:msg errorHandler:^(NSError *error) {
+            [Bit6.audioPlayer startPlayingAudioFileAtPath:msg.pathForFullAttachment errorHandler:^(NSError *error) {
                 [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }];
         }

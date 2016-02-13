@@ -48,6 +48,8 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/addCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- addCallController:</option>
+	
 	<option value="//api/name/callStateChangedNotificationForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- callStateChangedNotificationForCallController:</option>
 	
 	<option value="//api/name/refreshControlsView">&nbsp;&nbsp;&nbsp;&nbsp;- refreshControlsView</option>
@@ -93,6 +95,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCallController:">addCallController:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callStateChangedNotificationForCallController:">callStateChangedNotificationForCallController:</a></span></li>
 	
@@ -141,7 +145,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>UIViewController to extend to use during a call.</p>
+						<p>UIViewController to use during a call. This class should be extended. Only one object of this class or its subclasses should be kept in memory.</p>
 					</div>
 					
 					
@@ -160,6 +164,12 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/createDefaultCallViewController">+&nbsp;createDefaultCallViewController</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCallController:">&ndash;&nbsp;addCallController:</a></code>
 	</span>
 	
 	
@@ -228,7 +238,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (Bit6CallViewController *)createDefaultCallViewController</code></div>
+	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6CallViewController *)createDefaultCallViewController</code></div>
 
     
 	
@@ -266,6 +276,52 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/addCallController:" title="addCallController:"></a>
+	<h3 class="subsubtitle method-title">addCallController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> for this viewController.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object to link to this viewController.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/callStateChangedNotificationForCallController:" title="callStateChangedNotificationForCallController:"></a>
 	<h3 class="subsubtitle method-title">callStateChangedNotificationForCallController:</h3>
 	
@@ -277,7 +333,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)callStateChangedNotificationForCallController:(Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)callStateChangedNotificationForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -359,7 +415,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotificationForCallController:(Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotificationForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -441,7 +497,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateLayoutForVideoFeedViews:(NSArray *)<em>videoFeedViews</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateLayoutForVideoFeedViews:(nonnull NSArray&lt;Bit6VideoFeedView*&gt; *)<em>videoFeedViews</em></code></div>
 
     
 	
@@ -490,7 +546,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-07-29)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

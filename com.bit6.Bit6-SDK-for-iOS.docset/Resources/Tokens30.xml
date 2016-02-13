@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_PROGRESS</TokenIdentifier>
-            <Abstract type="html">The call is starting.</Abstract>
-            <Declaration>Bit6CallState_PROGRESS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ACCEPTING_CALL</TokenIdentifier>
+            <Abstract type="html">Answering the incoming call.</Abstract>
+            <Declaration>Bit6CallState_ACCEPTING_CALL</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
@@ -34,9 +34,49 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ANSWER</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_GATHERING_CANDIDATES</TokenIdentifier>
+            <Abstract type="html">Preparing the local sdp candidates.</Abstract>
+            <Declaration>Bit6CallState_GATHERING_CANDIDATES</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_WAITING_SDP</TokenIdentifier>
+            <Abstract type="html">Waiting for remote sdp.</Abstract>
+            <Declaration>Bit6CallState_WAITING_SDP</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_SENDING_SDP</TokenIdentifier>
+            <Abstract type="html">Sending local sdp.</Abstract>
+            <Declaration>Bit6CallState_SENDING_SDP</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTING</TokenIdentifier>
+            <Abstract type="html">Connecting to the call.</Abstract>
+            <Declaration>Bit6CallState_CONNECTING</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTED</TokenIdentifier>
             <Abstract type="html">The call has started.</Abstract>
-            <Declaration>Bit6CallState_ANSWER</Declaration>
+            <Declaration>Bit6CallState_CONNECTED</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             

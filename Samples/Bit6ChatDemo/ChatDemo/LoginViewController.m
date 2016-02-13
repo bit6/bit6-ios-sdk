@@ -57,7 +57,7 @@
 
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password
 {
-    Bit6Address *userIdentity = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
+    Bit6Address *userIdentity = [Bit6Address addressWithUsername:username];
     [Bit6.session loginWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];
@@ -70,7 +70,7 @@
 
 - (void) signUpWithUsername:(NSString*)username password:(NSString*)password
 {
-    Bit6Address *userIdentity = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
+    Bit6Address *userIdentity = [Bit6Address addressWithUsername:username];
     [Bit6.session signUpWithUserIdentity:userIdentity password:password completionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"loginCompleted" sender:nil];

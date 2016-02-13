@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@import Bit6;
+
 @interface MasterViewController : UITableViewController
 
+@property (strong, nonatomic) Bit6CallController *callController;
 
 @end
 

@@ -37,24 +37,19 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/currentTime">&nbsp;&nbsp;&nbsp;&nbsp;currentTime</option>
-	
-	<option value="//api/name/duration">&nbsp;&nbsp;&nbsp;&nbsp;duration</option>
-	
-	<option value="//api/name/isPlayingAudioFile">&nbsp;&nbsp;&nbsp;&nbsp;isPlayingAudioFile</option>
-	
-	<option value="//api/name/messagePlaying">&nbsp;&nbsp;&nbsp;&nbsp;messagePlaying</option>
-	
-	
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/startPlayingAudioFileInMessage:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- startPlayingAudioFileInMessage:errorHandler:</option>
+	<option value="//api/name/currentTime">&nbsp;&nbsp;&nbsp;&nbsp;- currentTime</option>
+	
+	<option value="//api/name/duration">&nbsp;&nbsp;&nbsp;&nbsp;- duration</option>
+	
+	<option value="//api/name/filePathPlaying">&nbsp;&nbsp;&nbsp;&nbsp;- filePathPlaying</option>
+	
+	<option value="//api/name/startPlayingAudioFileAtPath:errorHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- startPlayingAudioFileAtPath:errorHandler:</option>
 	
 	<option value="//api/name/stopPlayingAudioFile">&nbsp;&nbsp;&nbsp;&nbsp;- stopPlayingAudioFile</option>
 	
@@ -80,25 +75,19 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentTime">currentTime</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/duration">duration</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPlayingAudioFile">isPlayingAudioFile</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagePlaying">messagePlaying</a></span></li>
-	
-</ul></li>
-
 
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPlayingAudioFileInMessage:errorHandler:">startPlayingAudioFileInMessage:errorHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentTime">currentTime</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/duration">duration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filePathPlaying">filePathPlaying</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPlayingAudioFileAtPath:errorHandler:">startPlayingAudioFileAtPath:errorHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopPlayingAudioFile">stopPlayingAudioFile</a></span></li>
 	
@@ -139,7 +128,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Audio player allows to play an audio file attached to a message.</p>
+						<p>Audio player allows to play an audio file.</p>
 					</div>
 					
 					
@@ -157,15 +146,9 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startPlayingAudioFileInMessage:errorHandler:">&ndash;&nbsp;startPlayingAudioFileInMessage:errorHandler:</a></code>
+		<code><a href="#//api/name/startPlayingAudioFileAtPath:errorHandler:">&ndash;&nbsp;startPlayingAudioFileAtPath:errorHandler:</a></code>
 	</span>
 	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/isPlayingAudioFile">&nbsp;&nbsp;isPlayingAudioFile</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
@@ -175,21 +158,21 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/currentTime">&nbsp;&nbsp;currentTime</a></code>
+		<code><a href="#//api/name/currentTime">&ndash;&nbsp;currentTime</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/duration">&nbsp;&nbsp;duration</a></code>
+		<code><a href="#//api/name/duration">&ndash;&nbsp;duration</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/messagePlaying">&nbsp;&nbsp;messagePlaying</a></code>
+		<code><a href="#//api/name/filePathPlaying">&ndash;&nbsp;filePathPlaying</a></code>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li>
 						</ul>
@@ -200,9 +183,13 @@
 					
 					
 					
+					
+					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
 	<a name="//api/name/currentTime" title="currentTime"></a>
@@ -216,7 +203,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double currentTime</code></div>
+	<div class="method-subsection method-declaration"><code>- (double)currentTime</code></div>
 
     
 	
@@ -252,7 +239,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double duration</code></div>
+	<div class="method-subsection method-declaration"><code>- (double)duration</code></div>
 
     
 	
@@ -277,54 +264,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/isPlayingAudioFile" title="isPlayingAudioFile"></a>
-	<h3 class="subsubtitle method-title">isPlayingAudioFile</h3>
+	<a name="//api/name/filePathPlaying" title="filePathPlaying"></a>
+	<h3 class="subsubtitle method-title">filePathPlaying</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Used to know if there&rsquo;s an audio file is playing</p>
+		<p>Gets the path to the current audio file being played.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isPlayingAudioFile</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6AudioPlayerController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/messagePlaying" title="messagePlaying"></a>
-	<h3 class="subsubtitle method-title">messagePlaying</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Gets the current <a href="../Classes/Bit6Message.html">Bit6Message</a> object being played.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) Bit6Message *messagePlaying</code></div>
+	<div class="method-subsection method-declaration"><code>- (nullable NSString *)filePathPlaying</code></div>
 
     
 	
@@ -332,7 +283,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><a href="../Classes/Bit6Message.html">Bit6Message</a> object being played.</p>
+		<p>path to the current audio file being played.</p>
 	</div>
 	
 	
@@ -353,29 +304,19 @@
 	
 </div>
 						
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
 						<div class="section-method">
-	<a name="//api/name/startPlayingAudioFileInMessage:errorHandler:" title="startPlayingAudioFileInMessage:errorHandler:"></a>
-	<h3 class="subsubtitle method-title">startPlayingAudioFileInMessage:errorHandler:</h3>
+	<a name="//api/name/startPlayingAudioFileAtPath:errorHandler:" title="startPlayingAudioFileAtPath:errorHandler:"></a>
+	<h3 class="subsubtitle method-title">startPlayingAudioFileAtPath:errorHandler:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Starts playing the audio file attached to a message. You can listen to the <code>Bit6AudioPlayingNotification</code> to update your UI while playing an audio file.</p>
+		<p>Starts playing an audio file. You can listen to the <code>Bit6AudioPlayingNotification</code> to update your UI while playing an audio file.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)startPlayingAudioFileInMessage:(Bit6Message *)<em>msg</em> errorHandler:(void ( ^ ) ( NSError *error ))<em>errorHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)startPlayingAudioFileAtPath:(nonnull NSString *)<em>filePath</em> errorHandler:(nullable void ( ^ ) ( NSError *_Nonnull error ))<em>errorHandler</em></code></div>
 
     
 	
@@ -383,8 +324,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>msg</em></dt>
-			<dd><p>A <a href="../Classes/Bit6Message.html">Bit6Message</a> object with the audio attachment to play.</p></dd>
+			<dt><em>filePath</em></dt>
+			<dd><p>Path to the audio file to play.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -465,7 +406,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-07-29)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

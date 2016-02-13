@@ -4,30 +4,13 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6CallController</TokenIdentifier>
-			<Abstract type="html">Bit6CallController represents an in-progress call.</Abstract>
+			<Abstract type="html">Bit6CallController represents a call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/connectToViewController:</TokenIdentifier>
-			<Abstract type="html">Starts a call</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (void)connectToViewController:(Bit6CallViewController *)viewController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>viewController</Name>
-					<Abstract type="html">a Bit6CallViewController object in which to start the call.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/connectToViewController:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setCallState:</TokenIdentifier>
@@ -70,7 +53,7 @@
 			<Abstract type="html">Display name of other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) NSString *otherDisplayName</Declaration>
 			
 			
 			<Anchor>//api/name/otherDisplayName</Anchor>
@@ -82,7 +65,7 @@
 			<Abstract type="html">Display name of other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) NSString *otherDisplayName</Declaration>
 			
 			
 			<Anchor>//api/name/otherDisplayName</Anchor>
@@ -94,10 +77,46 @@
 			<Abstract type="html">Display name of other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *otherDisplayName</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) NSString *otherDisplayName</Declaration>
 			
 			
 			<Anchor>//api/name/otherDisplayName</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setIncomingCall:</TokenIdentifier>
+			<Abstract type="html">The call is an incoming call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCall</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCall</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/incomingCall</TokenIdentifier>
+			<Abstract type="html">The call is an incoming call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCall</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCall</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/incomingCall</TokenIdentifier>
+			<Abstract type="html">The call is an incoming call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL incomingCall</Declaration>
+			
+			
+			<Anchor>//api/name/incomingCall</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
@@ -142,7 +161,7 @@
 			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *incomingCallAlert</Declaration>
 			
 			
 			<Anchor>//api/name/incomingCallAlert</Anchor>
@@ -154,7 +173,7 @@
 			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *incomingCallAlert</Declaration>
 			
 			
 			<Anchor>//api/name/incomingCallAlert</Anchor>
@@ -166,7 +185,7 @@
 			<Abstract type="html">The message shown in the incoming call system push notification.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *incomingCallAlert</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *incomingCallAlert</Declaration>
 			
 			
 			<Anchor>//api/name/incomingCallAlert</Anchor>
@@ -178,7 +197,7 @@
 			<Abstract type="html">The latest error to occur during the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSError *error</Declaration>
 			
 			
 			<Anchor>//api/name/error</Anchor>
@@ -190,7 +209,7 @@
 			<Abstract type="html">The latest error to occur during the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSError *error</Declaration>
 			
 			
 			<Anchor>//api/name/error</Anchor>
@@ -202,7 +221,7 @@
 			<Abstract type="html">The latest error to occur during the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSError *error</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSError *error</Declaration>
 			
 			
 			<Anchor>//api/name/error</Anchor>
@@ -214,7 +233,7 @@
 			<Abstract type="html">Identity of the other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Address *other</Declaration>
 			
 			
 			<Anchor>//api/name/other</Anchor>
@@ -226,7 +245,7 @@
 			<Abstract type="html">Identity of the other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Address *other</Declaration>
 			
 			
 			<Anchor>//api/name/other</Anchor>
@@ -238,7 +257,7 @@
 			<Abstract type="html">Identity of the other side of the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Address *other</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Address *other</Declaration>
 			
 			
 			<Anchor>//api/name/other</Anchor>
@@ -246,44 +265,80 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasVideo:</TokenIdentifier>
-			<Abstract type="html">The current call supports video.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setLocalStreams:</TokenIdentifier>
+			<Abstract type="html">An integer bit mask that indicates the local streams being sent during the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			<Declaration>@property (nonatomic) Bit6CallStreams localStreams</Declaration>
 			
 			
-			<Anchor>//api/name/hasVideo</Anchor>
+			<Anchor>//api/name/localStreams</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasVideo</TokenIdentifier>
-			<Abstract type="html">The current call supports video.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/localStreams</TokenIdentifier>
+			<Abstract type="html">An integer bit mask that indicates the local streams being sent during the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			<Declaration>@property (nonatomic) Bit6CallStreams localStreams</Declaration>
 			
 			
-			<Anchor>//api/name/hasVideo</Anchor>
+			<Anchor>//api/name/localStreams</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasVideo</TokenIdentifier>
-			<Abstract type="html">The current call supports video.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/localStreams</TokenIdentifier>
+			<Abstract type="html">An integer bit mask that indicates the local streams being sent during the call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			<Declaration>@property (nonatomic) Bit6CallStreams localStreams</Declaration>
 			
 			
-			<Anchor>//api/name/hasVideo</Anchor>
+			<Anchor>//api/name/localStreams</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setRemoteStreams:</TokenIdentifier>
+			<Abstract type="html">An integer bit mask that indicates the remote streams being received during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6CallStreams remoteStreams</Declaration>
+			
+			
+			<Anchor>//api/name/remoteStreams</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/remoteStreams</TokenIdentifier>
+			<Abstract type="html">An integer bit mask that indicates the remote streams being received during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6CallStreams remoteStreams</Declaration>
+			
+			
+			<Anchor>//api/name/remoteStreams</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/remoteStreams</TokenIdentifier>
+			<Abstract type="html">An integer bit mask that indicates the remote streams being received during the call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Bit6CallStreams remoteStreams</Declaration>
+			
+			
+			<Anchor>//api/name/remoteStreams</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasAudio:</TokenIdentifier>
-			<Abstract type="html">The current call supports audio.</Abstract>
+			<Abstract type="html">The local streams being sent include an audio track.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL hasAudio</Declaration>
@@ -295,7 +350,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasAudio</TokenIdentifier>
-			<Abstract type="html">The current call supports audio.</Abstract>
+			<Abstract type="html">The local streams being sent include an audio track.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL hasAudio</Declaration>
@@ -307,7 +362,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasAudio</TokenIdentifier>
-			<Abstract type="html">The current call supports audio.</Abstract>
+			<Abstract type="html">The local streams being sent include an audio track.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL hasAudio</Declaration>
@@ -318,8 +373,44 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasVideo:</TokenIdentifier>
+			<Abstract type="html">The local streams being sent include a video track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasVideo</TokenIdentifier>
+			<Abstract type="html">The local streams being sent include a video track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasVideo</TokenIdentifier>
+			<Abstract type="html">The local streams being sent include a video track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasData:</TokenIdentifier>
-			<Abstract type="html">The current call supports data transfer.</Abstract>
+			<Abstract type="html">The local streams being sent include support for data transfer.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL hasData</Declaration>
@@ -331,7 +422,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasData</TokenIdentifier>
-			<Abstract type="html">The current call supports data transfer.</Abstract>
+			<Abstract type="html">The local streams being sent include support for data transfer.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL hasData</Declaration>
@@ -343,13 +434,121 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasData</TokenIdentifier>
-			<Abstract type="html">The current call supports data transfer.</Abstract>
+			<Abstract type="html">The local streams being sent include support for data transfer.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL hasData</Declaration>
 			
 			
 			<Anchor>//api/name/hasData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasRemoteAudio:</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include an audio track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteAudio</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasRemoteAudio</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include an audio track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteAudio</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasRemoteAudio</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include an audio track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteAudio</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteAudio</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasRemoteVideo:</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include a video track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasRemoteVideo</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include a video track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasRemoteVideo</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include a video track.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteVideo</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteVideo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/setHasRemoteData:</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include support for data transfer.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteData</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hasRemoteData</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include support for data transfer.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteData</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteData</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallController/hasRemoteData</TokenIdentifier>
+			<Abstract type="html">The remote streams being received include support for data transfer.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL hasRemoteData</Declaration>
+			
+			
+			<Anchor>//api/name/hasRemoteData</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
@@ -402,6 +601,18 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/bluetoothEnabled</TokenIdentifier>
+			<Abstract type="html">The audio from the call is going out through a bluetooth device.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)bluetoothEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/bluetoothEnabled</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/audioMuted</TokenIdentifier>
 			<Abstract type="html">The audio is muted for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
@@ -426,14 +637,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/usingBackCamera</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/usingRearCamera</TokenIdentifier>
 			<Abstract type="html">The call is streaming the video feed from the back camera.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)usingBackCamera</Declaration>
+			<Declaration>+ (BOOL)usingRearCamera</Declaration>
 			
 			
-			<Anchor>//api/name/usingBackCamera</Anchor>
+			<Anchor>//api/name/usingRearCamera</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
@@ -442,7 +653,7 @@
 			<Abstract type="html">List of outgoing Bit6Transfer for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *outgoingTransfers</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6OutgoingTransfer*&gt; *outgoingTransfers</Declaration>
 			
 			
 			<Anchor>//api/name/outgoingTransfers</Anchor>
@@ -454,7 +665,7 @@
 			<Abstract type="html">List of outgoing Bit6Transfer for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *outgoingTransfers</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6OutgoingTransfer*&gt; *outgoingTransfers</Declaration>
 			
 			
 			<Anchor>//api/name/outgoingTransfers</Anchor>
@@ -466,7 +677,7 @@
 			<Abstract type="html">List of outgoing Bit6Transfer for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *outgoingTransfers</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6OutgoingTransfer*&gt; *outgoingTransfers</Declaration>
 			
 			
 			<Anchor>//api/name/outgoingTransfers</Anchor>
@@ -478,7 +689,7 @@
 			<Abstract type="html">List of incoming Bit6Transfer for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *incomingTransfers</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Transfer*&gt; *incomingTransfers</Declaration>
 			
 			
 			<Anchor>//api/name/incomingTransfers</Anchor>
@@ -490,7 +701,7 @@
 			<Abstract type="html">List of incoming Bit6Transfer for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *incomingTransfers</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Transfer*&gt; *incomingTransfers</Declaration>
 			
 			
 			<Anchor>//api/name/incomingTransfers</Anchor>
@@ -502,10 +713,51 @@
 			<Abstract type="html">List of incoming Bit6Transfer for the current call.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *incomingTransfers</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Transfer*&gt; *incomingTransfers</Declaration>
 			
 			
 			<Anchor>//api/name/incomingTransfers</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/start</TokenIdentifier>
+			<Abstract type="html">Starts the call</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/startTransfer:</TokenIdentifier>
+			<Abstract type="html">Starts the specified Bit6OutgoingTransfer through this call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)startTransfer:(nonnull Bit6OutgoingTransfer *)transfer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>transfer</Name>
+					<Abstract type="html">Bit6OutgoingTransfer to start.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startTransfer:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/playRingtone</TokenIdentifier>
+			<Abstract type="html">Play the ringtone defined in the incoming push notification payload.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)playRingtone</Declaration>
+			
+			
+			<Anchor>//api/name/playRingtone</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
@@ -558,6 +810,18 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallController/switchBluetooth</TokenIdentifier>
+			<Abstract type="html">Change the audio route from the default one to the available bluetooth device, and vice versa. This will be applied to all the running callControllers.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>+ (void)switchBluetooth</Declaration>
+			
+			
+			<Anchor>//api/name/switchBluetooth</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/hangup</TokenIdentifier>
 			<Abstract type="html">Send a hangup message to the sender.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
@@ -590,35 +854,6 @@
 			
 			
 			<Anchor>//api/name/declineCall</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/startTransfer:</TokenIdentifier>
-			<Abstract type="html">Starts the specified Bit6Transfer through this call.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (void)startTransfer:(Bit6Transfer *)transfer</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>transfer</Name>
-					<Abstract type="html">Bit6Transfer to start.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startTransfer:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallController/startRingtone</TokenIdentifier>
-			<Abstract type="html">Play the ringtone defined in the incoming push notification payload.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
-			
-			<Declaration>- (void)startRingtone</Declaration>
-			
-			
-			<Anchor>//api/name/startRingtone</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

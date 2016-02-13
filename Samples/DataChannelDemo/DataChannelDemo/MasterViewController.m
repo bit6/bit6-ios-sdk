@@ -10,13 +10,10 @@
 #import "DetailViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-#import <Bit6SDK/Bit6SDK.h>
-
 @interface MasterViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *destinationTextField;
 @property (weak, nonatomic) IBOutlet UITextView *logsTextView;
-@property (strong, nonatomic) Bit6CallController *callController;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sentLabel;
@@ -33,10 +30,6 @@
     self = [super initWithCoder:coder];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(loginCompletedNotification:)
-                                                     name:Bit6LoginCompletedNotification
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(transferUpdateNotification:)
                                                      name:Bit6TransferUpdateNotification
                                                    object:nil];
@@ -44,16 +37,17 @@
     return self;
 }
 
-- (void) loginCompletedNotification:(NSNotification*)notification
-{
-    self.addressLabel.text = [NSString stringWithFormat:@"My Address: %@",Bit6.session.userIdentity.uri];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.logsTextView.layer.borderColor = [UIColor blackColor].CGColor;
     self.logsTextView.layer.borderWidth = 1.0f;
-    self.addressLabel.text = [NSString stringWithFormat:@"My Address: %@",Bit6.session.userIdentity.uri];
+    
+    if (![Bit6 session].authenticated) {
+        [self login];
+    }
+    else {
+        [self loginCompletionHandler](nil,nil);
+    }
 }
 
 - (void) log:(NSString*)log
@@ -61,6 +55,70 @@
     NSString *string = [NSString stringWithString:self.logsTextView.text];
     string = [NSString stringWithFormat:@"%@\n%@",log,string];
     self.logsTextView.text = string;
+}
+
+#pragma mark - Login
+
+- (void)login
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Enter your username and password" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Sign Up", @"Login", @"Anonymous", nil];
+    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [alert show];
+}
+
+- (void)logout
+{
+    [[Bit6 session] logoutWithCompletionHandler:^(NSDictionary<id,id> * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.addressLabel.text = @"My Address:";
+                self.navigationItem.leftBarButtonItem = nil;
+                [self login];
+            });
+        }
+    }];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex!=alertView.cancelButtonIndex) {
+        if (buttonIndex==0) {
+            NSString *username = [alertView textFieldAtIndex:0].text;
+            NSString *password = [alertView textFieldAtIndex:1].text;
+            
+            Bit6Address *userIdentity = [Bit6Address addressWithUsername:username];
+            [Bit6.session signUpWithUserIdentity:userIdentity password:password completionHandler:[self loginCompletionHandler]];
+        }
+        else if (buttonIndex==1) {
+            NSString *username = [alertView textFieldAtIndex:0].text;
+            NSString *password = [alertView textFieldAtIndex:1].text;
+            
+            Bit6Address *userIdentity = [Bit6Address addressWithUsername:username];
+            [Bit6.session loginWithUserIdentity:userIdentity password:password completionHandler:[self loginCompletionHandler]];
+        }
+        else {
+            [Bit6.session anonymousWithCompletionHandler:[self loginCompletionHandler]];
+        }
+    }
+}
+
+- (Bit6CompletionHandler) loginCompletionHandler
+{
+    return ^(NSDictionary *response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                [[[UIAlertView alloc] initWithTitle:error.localizedDescription message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                [self login];
+            }
+            else {
+                self.addressLabel.text = [NSString stringWithFormat:@"My Address: %@",Bit6.session.activeIdentity.uri];
+                self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];;
+            }
+        });
+    };
 }
 
 #pragma mark - Call
@@ -73,22 +131,19 @@
             address = [Bit6Address addressWithURI:destinationString];
         }
         else {
-            Bit6Address *currentUser = Bit6.session.userIdentity;
-            Bit6AddressKind kind = [currentUser.kind intValue];
-            address = [Bit6Address addressWithKind:kind value:destinationString];
+            Bit6Address *currentUser = Bit6.session.activeIdentity;
+            NSString *scheme = currentUser.scheme;
+            address = [Bit6Address addressWithScheme:scheme value:destinationString];
         }
         
         if (address) {
-            self.callController = [Bit6 startCallToAddress:address hasAudio:NO hasVideo:NO hasData:YES];
+            self.callController = [Bit6 createCallTo:address streams:Bit6CallStreams_Data];
             [self.callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionNew context:NULL];
-            [self.callController connectToViewController:nil];
+            [self.callController start];
         }
     }
     else {
-        [self.callController removeObserver:self forKeyPath:@"callState"];
         [self.callController hangup];
-        self.callController = nil;
-        [self connect:nil];
     }
 }
 
@@ -106,20 +161,22 @@
 - (void) callStateChangedNotification
 {
     switch (self.callController.callState) {
-        case Bit6CallState_NEW: case Bit6CallState_PROGRESS: case Bit6CallState_MISSED: case Bit6CallState_DISCONNECTED: break;
-        case Bit6CallState_ANSWER:
+        case Bit6CallState_MISSED:
+            [self.callController removeObserver:self forKeyPath:@"callState"];
+            [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",self.callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            break;
+        case Bit6CallState_NEW: case Bit6CallState_ACCEPTING_CALL: case Bit6CallState_GATHERING_CANDIDATES: case Bit6CallState_WAITING_SDP: case Bit6CallState_SENDING_SDP: case Bit6CallState_CONNECTING: case Bit6CallState_DISCONNECTED: break;
+        case Bit6CallState_CONNECTED:
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectPicture:)];
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Disconnect" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
+            [self.connectButton setTitle:@"Disconnect" forState:UIControlStateNormal];
             self.destinationTextField.enabled = NO;
-            self.connectButton.enabled = NO;
             break;
         case Bit6CallState_END: case Bit6CallState_ERROR:
-            self.navigationItem.leftBarButtonItem = nil;
             self.navigationItem.rightBarButtonItem = nil;
+            [self.connectButton setTitle:@"Connect" forState:UIControlStateNormal];
             [self.callController removeObserver:self forKeyPath:@"callState"];
             self.callController = nil;
             self.destinationTextField.enabled = YES;
-            self.connectButton.enabled = YES;
     }
 }
 
@@ -146,14 +203,15 @@
         UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
         NSData *imageData = UIImagePNGRepresentation(chosenImage);
         
-        Bit6Transfer *transfer = [[Bit6Transfer alloc] initOutgoingTransferWithData:imageData name:nil mimeType:@"image/png"];
+        Bit6OutgoingTransfer *transfer = [[Bit6OutgoingTransfer alloc] initWithData:imageData name:nil mimeType:@"image/png"];
+        
         [self log:[NSString stringWithFormat:@"%@ - selected - type: %@ size: %lub\n", transfer.name, transfer.mimeType, (unsigned long)transfer.size]];
         [self.callController startTransfer:transfer];
     }
     [self dismissPopover];
 }
 
-- (void) logout
+- (void)disconnect
 {
     [self.callController hangup];
 }

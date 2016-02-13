@@ -10,25 +10,14 @@
 
 @interface DetailViewController ()
 
-@property (nonatomic, strong) NSMutableArray *images;
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation DetailViewController
 
-- (NSMutableArray*) images
-{
-    if (!_images) {
-        _images = [NSMutableArray arrayWithCapacity:10];
-    }
-    return _images;
-}
-
 - (void) addImage:(UIImage*)image
 {
-    [self.images addObject:image];
     self.imageView.image = image;
 }
 

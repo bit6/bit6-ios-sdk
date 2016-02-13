@@ -15,7 +15,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallChannel_Audio</TokenIdentifier>
-            <Abstract type="html">The message refers to an audio call.</Abstract>
+            <Abstract type="html">The call has an audio channel.</Abstract>
             <Declaration>Bit6MessageCallChannel_Audio</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
@@ -25,7 +25,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallChannel_Data</TokenIdentifier>
-            <Abstract type="html">The message refers to a data transfer call.</Abstract>
+            <Abstract type="html">The call has a data transfer channel.</Abstract>
             <Declaration>Bit6MessageCallChannel_Data</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
@@ -35,7 +35,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallChannel_Video</TokenIdentifier>
-            <Abstract type="html">The message refers to a video call.</Abstract>
+            <Abstract type="html">The call has a video channel.</Abstract>
             <Declaration>Bit6MessageCallChannel_Video</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>

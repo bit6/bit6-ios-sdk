@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6AudioRecorderControllerDelegate.html">
+	<File path="Classes/Bit6VideoFeedView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6AudioRecorderControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6AudioRecorderControllerDelegate protocol defines the methods a delegate of a Bit6AudioRecorderController object should implement. The methods of this protocol notify the delegate when the recording was either completed or canceled by the user.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6VideoFeedView</TokenIdentifier>
+			<Abstract type="html">UIView to render a video feed during a call.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,39 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/doneRecorderController:message:</TokenIdentifier>
-			<Abstract type="html">Called when a user has completed the recording prccess.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6VideoFeedView/setIsLocal:</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
 			
-			<Declaration>- (void)doneRecorderController:(Bit6AudioRecorderController *)b6rc message:(Bit6OutgoingMessage *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>b6rc</Name>
-					<Abstract type="html">The controller object recording the audio file.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">Message object set in [Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:] with the audio file set.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/doneRecorderController:message:</Anchor>
+			
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/cancelRecorderController:</TokenIdentifier>
-			<Abstract type="html">Called when a user has cancelled the recording process.</Abstract>
-			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6VideoFeedView/isLocal</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
 			
-			<Declaration>- (void)cancelRecorderController:(Bit6AudioRecorderController *)b6rc</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>b6rc</Name>
-					<Abstract type="html">The controller object recording the audio file.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/cancelRecorderController:</Anchor>
+			
+			<Anchor>//api/name/isLocal</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6VideoFeedView/isLocal</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
+			
+			
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

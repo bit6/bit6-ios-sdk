@@ -17,7 +17,7 @@
 			<Abstract type="html">Returns a Bit6Conversation object based on the Bit6Address indicated. If the conversation didn&apos;t exists a new one will be created.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>+ (Bit6Conversation *)conversationWithAddress:(Bit6Address *)address</Declaration>
+			<Declaration>+ (nonnull Bit6Conversation *)conversationWithAddress:(nonnull Bit6Address *)address</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
@@ -34,7 +34,7 @@
 			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
 			
 			
 			<Anchor>//api/name/messages</Anchor>
@@ -46,7 +46,7 @@
 			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
 			
 			
 			<Anchor>//api/name/messages</Anchor>
@@ -58,7 +58,7 @@
 			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *messages</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
 			
 			
 			<Anchor>//api/name/messages</Anchor>
@@ -70,7 +70,7 @@
 			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) Bit6Address *address</Declaration>
 			
 			
 			<Anchor>//api/name/address</Anchor>
@@ -82,7 +82,7 @@
 			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) Bit6Address *address</Declaration>
 			
 			
 			<Anchor>//api/name/address</Anchor>
@@ -94,7 +94,7 @@
 			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6Address *address</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) Bit6Address *address</Declaration>
 			
 			
 			<Anchor>//api/name/address</Anchor>
@@ -102,74 +102,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setDisplayName:</TokenIdentifier>
-			<Abstract type="html">A display name for the sender.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setGroup:</TokenIdentifier>
+			<Abstract type="html">The Bit6Group object associated with the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *displayName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) Bit6Group *group</Declaration>
 			
 			
-			<Anchor>//api/name/displayName</Anchor>
+			<Anchor>//api/name/group</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for the sender.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/group</TokenIdentifier>
+			<Abstract type="html">The Bit6Group object associated with the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *displayName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) Bit6Group *group</Declaration>
 			
 			
-			<Anchor>//api/name/displayName</Anchor>
+			<Anchor>//api/name/group</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for the sender.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/group</TokenIdentifier>
+			<Abstract type="html">The Bit6Group object associated with the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *displayName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) Bit6Group *group</Declaration>
 			
 			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setState:</TokenIdentifier>
-			<Abstract type="html">State of the sender. Use it to remember custom properties like &quot;last typed text&quot;.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSMutableDictionary *state</Declaration>
-			
-			
-			<Anchor>//api/name/state</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/state</TokenIdentifier>
-			<Abstract type="html">State of the sender. Use it to remember custom properties like &quot;last typed text&quot;.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSMutableDictionary *state</Declaration>
-			
-			
-			<Anchor>//api/name/state</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/state</TokenIdentifier>
-			<Abstract type="html">State of the sender. Use it to remember custom properties like &quot;last typed text&quot;.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSMutableDictionary *state</Declaration>
-			
-			
-			<Anchor>//api/name/state</Anchor>
+			<Anchor>//api/name/group</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -179,11 +143,11 @@
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/currentConversation</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>@property (nonatomic, readonly) NSNumber *badge</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
 			
 			
 			<Anchor>//api/name/badge</Anchor>
@@ -196,11 +160,11 @@
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/currentConversation</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>@property (nonatomic, readonly) NSNumber *badge</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
 			
 			
 			<Anchor>//api/name/badge</Anchor>
@@ -213,50 +177,14 @@
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/currentConversation</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>@property (nonatomic, readonly) NSNumber *badge</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
 			
 			
 			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setCurrentConversation:</TokenIdentifier>
-			<Abstract type="html">If set to YES then [Bit6Conversation badge] value will be set to 0 and the sender won&apos;t consider new messages to increment the value of [Bit6Conversation badge].</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, getter=isCurrentConversation) BOOL currentConversation</Declaration>
-			
-			
-			<Anchor>//api/name/currentConversation</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/isCurrentConversation</TokenIdentifier>
-			<Abstract type="html">If set to YES then [Bit6Conversation badge] value will be set to 0 and the sender won&apos;t consider new messages to increment the value of [Bit6Conversation badge].</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, getter=isCurrentConversation) BOOL currentConversation</Declaration>
-			
-			
-			<Anchor>//api/name/currentConversation</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/currentConversation</TokenIdentifier>
-			<Abstract type="html">If set to YES then [Bit6Conversation badge] value will be set to 0 and the sender won&apos;t consider new messages to increment the value of [Bit6Conversation badge].</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, getter=isCurrentConversation) BOOL currentConversation</Declaration>
-			
-			
-			<Anchor>//api/name/currentConversation</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -265,7 +193,7 @@
 			<Abstract type="html">Last message received or sent in the conversation.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
 			
 			
 			<Anchor>//api/name/lastMessage</Anchor>
@@ -277,7 +205,7 @@
 			<Abstract type="html">Last message received or sent in the conversation.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
 			
 			
 			<Anchor>//api/name/lastMessage</Anchor>
@@ -289,7 +217,7 @@
 			<Abstract type="html">Last message received or sent in the conversation.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
 			
 			
 			<Anchor>//api/name/lastMessage</Anchor>
@@ -301,7 +229,7 @@
 			<Abstract type="html">Gets the current typing user as a Bit6Address object, if available.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6Address *typingAddress</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *typingAddress</Declaration>
 			
 			
 			<Anchor>//api/name/typingAddress</Anchor>
@@ -313,7 +241,7 @@
 			<Abstract type="html">Gets the current typing user as a Bit6Address object, if available.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6Address *typingAddress</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *typingAddress</Declaration>
 			
 			
 			<Anchor>//api/name/typingAddress</Anchor>
@@ -325,7 +253,7 @@
 			<Abstract type="html">Gets the current typing user as a Bit6Address object, if available.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6Address *typingAddress</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *typingAddress</Declaration>
 			
 			
 			<Anchor>//api/name/typingAddress</Anchor>
@@ -337,7 +265,7 @@
 			<Abstract type="html">Returns an NSComparisonResult value that indicates whether the conversation timestamp value is greater than, equal to, or less than a given conversation timestamp.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>- (NSComparisonResult)compare:(Bit6Conversation *)conversation</Declaration>
+			<Declaration>- (NSComparisonResult)compare:(nonnull Bit6Conversation *)conversation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>conversation</Name>

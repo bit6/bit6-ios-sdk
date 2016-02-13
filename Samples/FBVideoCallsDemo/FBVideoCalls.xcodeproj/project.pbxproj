@@ -7,42 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D87D0A7A1BBD70AC0096118A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A781BBD70AC0096118A /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
-		D87D0A7B1BBD70AC0096118A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A791BBD70AC0096118A /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
-		D87D0A7D1BBD70CA0096118A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A7C1BBD70CA0096118A /* libicucore.tbd */; };
-		D87D0A7F1BBD71240096118A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A7E1BBD71240096118A /* libstdc++.tbd */; };
-		D87D0A811BBD71300096118A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A801BBD71300096118A /* libsqlite3.tbd */; };
-		D87D0A831BBD71370096118A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A821BBD71370096118A /* libz.tbd */; };
-		D87D0AB11BBD74AC0096118A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AB01BBD74AC0096118A /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
-		D87D0AB31BBD74D70096118A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AB21BBD74D70096118A /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		D87D0A7A1BBD70AC0096118A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A781BBD70AC0096118A /* FBSDKCoreKit.framework */; };
+		D87D0A7B1BBD70AC0096118A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A791BBD70AC0096118A /* FBSDKLoginKit.framework */; };
+		D87D0AB11BBD74AC0096118A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AB01BBD74AC0096118A /* FBSDKShareKit.framework */; };
 		D8A3AF341A44A7F9002205C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF331A44A7F9002205C2 /* main.m */; };
 		D8A3AF371A44A7F9002205C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF361A44A7F9002205C2 /* AppDelegate.m */; };
 		D8A3AF3D1A44A7F9002205C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF3B1A44A7F9002205C2 /* Main.storyboard */; };
 		D8A3AF3F1A44A7F9002205C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF3E1A44A7F9002205C2 /* Images.xcassets */; };
 		D8A3AF421A44A7F9002205C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF401A44A7F9002205C2 /* LaunchScreen.xib */; };
-		D8A3AF611A44A8AC002205C2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF5D1A44A8AC002205C2 /* GLKit.framework */; };
-		D8A3AF651A44A8C9002205C2 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF641A44A8C9002205C2 /* Bit6SDK.framework */; };
+		D8A3AF651A44A8C9002205C2 /* Bit6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A3AF641A44A8C9002205C2 /* Bit6.framework */; };
 		D8A3AF691A44A984002205C2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF681A44A984002205C2 /* MainViewController.m */; };
 		D8A3AF6C1A44A992002205C2 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */; };
 		D8A3AF701A44C800002205C2 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8A3AF6F1A44C800002205C2 /* Bit6Resources.bundle */; };
-		D8A9E9481A8FCE1100027A28 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9471A8FCE1100027A28 /* CoreLocation.framework */; };
-		D8A9E94A1A8FCE1500027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9491A8FCE1500027A28 /* CoreMedia.framework */; };
-		D8A9E94C1A8FCE1C00027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E94B1A8FCE1C00027A28 /* AudioToolbox.framework */; };
-		D8A9E94E1A8FCEB300027A28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E94D1A8FCEB300027A28 /* AVFoundation.framework */; };
-		D8A9E9501A8FCEB700027A28 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E94F1A8FCEB700027A28 /* AssetsLibrary.framework */; };
-		D8A9E9521A8FCEC000027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9511A8FCEC000027A28 /* SystemConfiguration.framework */; };
-		D8A9E9541A8FCEDE00027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9531A8FCEDE00027A28 /* MediaPlayer.framework */; };
+		D8A5A4B91C6F990000B868B1 /* ringtone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D8A5A4B81C6F990000B868B1 /* ringtone.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D87D0A781BBD70AC0096118A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D87D0A791BBD70AC0096118A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		D87D0A7C1BBD70CA0096118A /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		D87D0A7E1BBD71240096118A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		D87D0A801BBD71300096118A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D87D0A821BBD71370096118A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D87D0AB01BBD74AC0096118A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		D87D0AB21BBD74D70096118A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D8A3AF2E1A44A7F9002205C2 /* FBVideoCalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBVideoCalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A3AF321A44A7F9002205C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A3AF331A44A7F9002205C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,21 +35,14 @@
 		D8A3AF3E1A44A7F9002205C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D8A3AF411A44A7F9002205C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D8A3AF571A44A82F002205C2 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
-		D8A3AF5D1A44A8AC002205C2 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		D8A3AF641A44A8C9002205C2 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../Bit6SDK.framework; sourceTree = "<group>"; };
+		D8A3AF641A44A8C9002205C2 /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../Bit6.framework; sourceTree = "<group>"; };
 		D8A3AF661A44A8F6002205C2 /* FBVideoCalls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBVideoCalls-Prefix.pch"; sourceTree = "<group>"; };
 		D8A3AF671A44A984002205C2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		D8A3AF681A44A984002205C2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		D8A3AF6A1A44A992002205C2 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		D8A3AF6F1A44C800002205C2 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Bit6Resources.bundle; sourceTree = "<group>"; };
-		D8A9E9471A8FCE1100027A28 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D8A9E9491A8FCE1500027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		D8A9E94B1A8FCE1C00027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D8A9E94D1A8FCEB300027A28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D8A9E94F1A8FCEB700027A28 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		D8A9E9511A8FCEC000027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D8A9E9531A8FCEDE00027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D8A5A4B81C6F990000B868B1 /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ringtone.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,22 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87D0A831BBD71370096118A /* libz.tbd in Frameworks */,
-				D87D0A811BBD71300096118A /* libsqlite3.tbd in Frameworks */,
-				D87D0A7F1BBD71240096118A /* libstdc++.tbd in Frameworks */,
-				D87D0A7D1BBD70CA0096118A /* libicucore.tbd in Frameworks */,
-				D8A9E9541A8FCEDE00027A28 /* MediaPlayer.framework in Frameworks */,
-				D8A9E9521A8FCEC000027A28 /* SystemConfiguration.framework in Frameworks */,
-				D8A9E9501A8FCEB700027A28 /* AssetsLibrary.framework in Frameworks */,
-				D8A9E94E1A8FCEB300027A28 /* AVFoundation.framework in Frameworks */,
 				D87D0AB11BBD74AC0096118A /* FBSDKShareKit.framework in Frameworks */,
-				D8A9E94C1A8FCE1C00027A28 /* AudioToolbox.framework in Frameworks */,
-				D8A9E94A1A8FCE1500027A28 /* CoreMedia.framework in Frameworks */,
-				D8A9E9481A8FCE1100027A28 /* CoreLocation.framework in Frameworks */,
-				D87D0AB31BBD74D70096118A /* Bolts.framework in Frameworks */,
-				D8A3AF611A44A8AC002205C2 /* GLKit.framework in Frameworks */,
 				D87D0A7A1BBD70AC0096118A /* FBSDKCoreKit.framework in Frameworks */,
-				D8A3AF651A44A8C9002205C2 /* Bit6SDK.framework in Frameworks */,
+				D8A3AF651A44A8C9002205C2 /* Bit6.framework in Frameworks */,
 				D87D0A7B1BBD70AC0096118A /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +101,7 @@
 				D8A3AF6F1A44C800002205C2 /* Bit6Resources.bundle */,
 				D8A3AF321A44A7F9002205C2 /* Info.plist */,
 				D8A3AF661A44A8F6002205C2 /* FBVideoCalls-Prefix.pch */,
+				D8A5A4B81C6F990000B868B1 /* ringtone.caf */,
 				D8A3AF331A44A7F9002205C2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -146,23 +110,10 @@
 		D8A3AF631A44A8B4002205C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8A9E9531A8FCEDE00027A28 /* MediaPlayer.framework */,
-				D8A9E9511A8FCEC000027A28 /* SystemConfiguration.framework */,
-				D8A9E94F1A8FCEB700027A28 /* AssetsLibrary.framework */,
-				D8A9E94D1A8FCEB300027A28 /* AVFoundation.framework */,
-				D8A9E94B1A8FCE1C00027A28 /* AudioToolbox.framework */,
-				D8A9E9491A8FCE1500027A28 /* CoreMedia.framework */,
-				D8A9E9471A8FCE1100027A28 /* CoreLocation.framework */,
-				D87D0AB21BBD74D70096118A /* Bolts.framework */,
 				D87D0A781BBD70AC0096118A /* FBSDKCoreKit.framework */,
 				D87D0A791BBD70AC0096118A /* FBSDKLoginKit.framework */,
 				D87D0AB01BBD74AC0096118A /* FBSDKShareKit.framework */,
-				D8A3AF5D1A44A8AC002205C2 /* GLKit.framework */,
-				D8A3AF641A44A8C9002205C2 /* Bit6SDK.framework */,
-				D87D0A7C1BBD70CA0096118A /* libicucore.tbd */,
-				D87D0A821BBD71370096118A /* libz.tbd */,
-				D87D0A801BBD71300096118A /* libsqlite3.tbd */,
-				D87D0A7E1BBD71240096118A /* libstdc++.tbd */,
+				D8A3AF641A44A8C9002205C2 /* Bit6.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A3AF3D1A44A7F9002205C2 /* Main.storyboard in Resources */,
+				D8A5A4B91C6F990000B868B1 /* ringtone.caf in Resources */,
 				D8A3AF421A44A7F9002205C2 /* LaunchScreen.xib in Resources */,
 				D8A3AF701A44C800002205C2 /* Bit6Resources.bundle in Resources */,
 				D8A3AF3F1A44A7F9002205C2 /* Images.xcassets in Resources */,

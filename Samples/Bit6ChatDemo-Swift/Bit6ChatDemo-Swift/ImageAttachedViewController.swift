@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bit6
 
 class ImageAttachedViewController: UIViewController {
 
@@ -15,7 +16,9 @@ class ImageAttachedViewController: UIViewController {
     @IBOutlet var imageView: Bit6ImageView!
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
+        if let userIdentity = Bit6.session().activeIdentity {
+            self.navigationItem.prompt = "Logged as \(userIdentity.displayName)"
+        }
         self.imageView.message = self.message
         self.hidesBottomBarWhenPushed = true
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bit6
 
 class ConversationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -19,7 +20,12 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
             else {
                 let conversations = Bit6.conversations()
                 if conversations != nil {
-                    _conversations = NSMutableArray(array:Bit6.conversations())
+                    if let conversationsArray = Bit6.conversations() {
+                        _conversations = NSMutableArray(array:conversationsArray)
+                    }
+                    else {
+                        _conversations = NSMutableArray()
+                    }
                 }
                 else {
                     _conversations = NSMutableArray();
@@ -42,7 +48,9 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewDidLoad() {
-        self.navigationItem.prompt = "Logged as \(Bit6.session().userIdentity.displayName)"
+        if let userIdentity = Bit6.session().activeIdentity {
+            self.navigationItem.prompt = "Logged as \(userIdentity.displayName)"
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,10 +82,8 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
                 var destinations =  usernameTextField.text!.componentsSeparatedByString(",")
                 
                 if destinations.count == 1 {
-                    let address = Bit6Address(kind: .USERNAME, value: destinations[0])
-                    let conversation = Bit6Conversation(address: address)
-                    
-                    if conversation != nil {
+                    if let address = Bit6Address(username:destinations[0]) {
+                        let conversation = Bit6Conversation(address: address)
                         Bit6.addConversation(conversation)
                     }
                     else {
@@ -89,18 +95,19 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
                 }
                 else if destinations.count>1 {
                     
-                    let addresses = NSMutableArray(capacity: destinations.count)
+                    var addresses = [Bit6Address]()
+                    var roles = [String]()
                     
                     for (_, element) in destinations.enumerate() {
-                        let address = Bit6Address(kind: .USERNAME, value: element)
-                        if address != nil {
-                            addresses.addObject(address)
+                        if let address = Bit6Address(username:element) {
+                            addresses.append(address)
+                            roles.append(Bit6GroupMemberRole_User)
                         }
                     }
                     
                     Bit6Group.createGroupWithMetadata(["title":"MyGroup"]) { (group, error) in
                         if error == nil {
-                            group.inviteAddresses(addresses as [AnyObject]) { (members, error) in
+                            group!.inviteGroupMembersWithAddresses(addresses, roles:roles) { (members, error) in
                                 if error != nil {
                                     let alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)
                                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
@@ -147,18 +154,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
         let detailTextLabel = cell.viewWithTag(2) as! UILabel
         let imageView = cell.viewWithTag(3) as! Bit6ThumbnailImageView
         
-        var displayName = conversation.displayName
-        let group = Bit6Group(forConversation:conversation)
-        
-        if group != nil {
-            let title = group.metadata!["title"] as! String!
-            if let title = title {
-                displayName = title.characters.count > 0 ? title : conversation.displayName
-            }
-            else {
-                displayName = conversation.displayName
-            }
-        }
+        var displayName = conversation.address.displayName
         
         let badge = conversation.badge as NSNumber
         if badge.integerValue != 0 {
@@ -179,7 +175,15 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
             detailTextLabel.text = ""
         }
         
-        if conversation.address.isKind(.GROUP) {
+        if let group = Bit6Group(conversation:conversation) {
+            let title = group.metadata!["title"] as! String!
+            if let title = title {
+                displayName = title.characters.count > 0 ? title : conversation.address.displayName
+            }
+            else {
+                displayName = conversation.address.displayName
+            }
+            
             if group.hasLeft {
                 detailTextLabel.text = "You have left this group"
             }
@@ -189,11 +193,12 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete {
             let conversation = self.conversations[indexPath.row] as! Bit6Conversation
-            let group = Bit6Group(forConversation:conversation)
-            if group != nil && !group.hasLeft {
-                group.leaveGroupWithCompletion{ (error)  in
-                    if error != nil {
-                        NSLog("Error \(error.localizedDescription)")
+            if let group = Bit6Group(conversation:conversation) {
+                if !group.hasLeft {
+                    group.leaveGroupWithCompletion{ (error)  in
+                        if let error = error {
+                            NSLog("Error \(error.localizedDescription)")
+                        }
                     }
                 }
                 return
@@ -206,7 +211,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
         let conversation = self.conversations[indexPath.row] as! Bit6Conversation
 
-        if let group = Bit6Group(forConversation:conversation) {
+        if let group = Bit6Group(conversation:conversation) {
             return group.hasLeft ? "Delete" : "Leave"
         }
         else {
@@ -225,19 +230,17 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
             let conversation = self.conversations[indexPath!.row] as! Bit6Conversation
             ctvc.conversation = conversation
             
-            let group = Bit6Group(forConversation:conversation)
-            
-            if group != nil {
+            if let group = Bit6Group(conversation:conversation) {
                 let title = group.metadata!["title"] as! String!
                 if let title = title {
-                    ctvc.title = title.characters.count > 0 ? title : conversation.displayName
+                    ctvc.title = title.characters.count > 0 ? title : conversation.address.displayName
                 }
                 else {
-                    ctvc.title = conversation.displayName
+                    ctvc.title = conversation.address.displayName
                 }
             }
             else {
-                ctvc.title = conversation.displayName
+                ctvc.title = conversation.address.displayName
             }
             self.tableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }

@@ -7,6 +7,7 @@
 //
 
 #import "MakeCallViewController.h"
+#import "MyCallViewController.h"
 
 @interface MakeCallViewController ()
 
@@ -28,8 +29,15 @@
 
 - (void)viewDidLoad
 {
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.userIdentity.displayName];
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.activeIdentity.displayName];
     [super viewDidLoad];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.navigationItem.prompt = [NSString stringWithFormat:@"Logged as %@",Bit6.session.activeIdentity.displayName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,75 +57,48 @@
 
 - (IBAction)touchedAudioCallButton:(id)sender {
     NSString *username = self.destinationUsernameTextField.text;
-    Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
+    Bit6Address *address = [Bit6Address addressWithUsername:username];
     
-    Bit6CallController *callController = [Bit6 startCallToAddress:address hasAudio:YES hasVideo:NO hasData:NO];
+    Bit6CallController *callController = [Bit6 createCallTo:address streams:Bit6CallStreams_Audio];
     [self startCallToCalController:callController];
 }
 
 - (IBAction)touchedVideoCallButton:(id)sender {
     NSString *username = self.destinationUsernameTextField.text;
-    Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:username];
+    Bit6Address *address = [Bit6Address addressWithUsername:username];
     
-    Bit6CallController *callController = [Bit6 startCallToAddress:address hasAudio:YES hasVideo:YES hasData:NO];
+    Bit6CallController *callController = [Bit6 createCallTo:address streams:Bit6CallStreams_Audio|Bit6CallStreams_Video];
     [self startCallToCalController:callController];
 }
 
 - (IBAction)touchedDialButton:(id)sender {
     NSString *phoneNumber = self.phoneNumberTextField.text;
     
-    Bit6CallController *callController = [Bit6 startCallToPhoneNumber:phoneNumber];
+    Bit6CallController *callController = [Bit6 createCallToPhoneNumber:phoneNumber];
     [self startCallToCalController:callController];
 }
 
 - (void) startCallToCalController:(Bit6CallController*)callController
 {
     if (callController) {
-        //we listen to call state changes
-        [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
+        //trying to reuse the previous viewController, or create a default one
+        Bit6CallViewController *callViewController = [Bit6 callViewController] ?: [Bit6CallViewController createDefaultCallViewController];
         
-        //create the default in-call UIViewController
-        Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
+        //trying to reuse the previous viewController, or create a custom one
+        //Bit6CallViewController *callViewController = [Bit6 callViewController] ?: [[MyCallViewController alloc] init];
         
-        //use a custom in-call UIViewController
-        //MyCallViewController *callVC = [[MyCallViewController alloc] init];
+        //set the call to the viewController
+        [callViewController addCallController:callController];
         
         //start the call
-        [callController connectToViewController:callVC];
+        [callController start];
+        
+        //present the viewController
+        [Bit6 presentCallViewController:callViewController];
     }
     else {
         NSLog(@"Call Failed");
     }
-}
-
-#pragma mark - Calls
-
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([object isKindOfClass:[Bit6CallController class]]) {
-        if ([keyPath isEqualToString:@"callState"]) {
-            [self callStateChangedNotification:object];
-        }
-    }
-}
-
-- (void) callStateChangedNotification:(Bit6CallController*)callController
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //the call is starting: show the viewController
-        if (callController.callState == Bit6CallState_PROGRESS) {
-            [Bit6 presentCallViewController];
-        }
-        //the call ended: remove the observer and dismiss the viewController
-        else if (callController.callState == Bit6CallState_END) {
-            [callController removeObserver:self forKeyPath:@"callState"];
-        }
-        //the call ended with an error: remove the observer and dismiss the viewController
-        else if (callController.callState == Bit6CallState_ERROR) {
-            [callController removeObserver:self forKeyPath:@"callState"];
-            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        }
-    });
 }
 
 @end

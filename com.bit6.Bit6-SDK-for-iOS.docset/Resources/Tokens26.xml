@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6IncomingCallHandlerDelegate.html">
+	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6IncomingCallHandlerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6IncomingCallHandlerDelegate protocol defines the methods a delegate of the Bit6IncomingCallHandler object could implement to customize the behaviour when an incoming call is received.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,43 +13,45 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/inCallViewController</TokenIdentifier>
-			<Abstract type="html">Implement to customize the view controller used to handle the incoming call.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>- (Bit6CallViewController *)inCallViewController</Declaration>
-			
-			<ReturnValue><Abstract type="html">a view controller to be used during the incoming call.</Abstract></ReturnValue>
-			<Anchor>//api/name/inCallViewController</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/incomingCallNotificationBannerContentView</TokenIdentifier>
-			<Abstract type="html">Implement to customize the view shown in the incoming call notification banner.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
-			
-			<Declaration>- (UIView *)incomingCallNotificationBannerContentView</Declaration>
-			
-			<ReturnValue><Abstract type="html">a view to use in the incoming call notification banner.</Abstract></ReturnValue>
-			<Anchor>//api/name/incomingCallNotificationBannerContentView</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/receivedIncomingCallNotification:</TokenIdentifier>
-			<Abstract type="html">Starting point of the incoming calls flow. Implement if you want to handle the entire flow.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
-			
-			<Declaration>- (void)receivedIncomingCallNotification:(NSNotification *)notification</Declaration>
+			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didFailWithError:(nonnull NSError *)error message:(nonnull Bit6OutgoingMessage *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>notification</Name>
-					<Abstract type="html">incoming call notification to be used with [Bit6 callControllerFromIncomingCallNotification:]</Abstract>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/receivedIncomingCallNotification:</Anchor>
+			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(nonnull Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

@@ -39,6 +39,8 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/callController">&nbsp;&nbsp;&nbsp;&nbsp;callController</option>
+	
 	<option value="//api/name/data">&nbsp;&nbsp;&nbsp;&nbsp;data</option>
 	
 	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;error</option>
@@ -60,11 +62,6 @@
 	
 	
 	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/initOutgoingTransferWithData:name:mimeType:">&nbsp;&nbsp;&nbsp;&nbsp;- initOutgoingTransferWithData:name:mimeType:</option>
 	
 	
 	
@@ -90,6 +87,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController">callController</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/data">data</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
@@ -113,12 +112,6 @@
 
 
 
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initOutgoingTransferWithData:name:mimeType:">initOutgoingTransferWithData:name:mimeType:</a></span></li>
-	
-</ul></li>
 
 
 			</ul>
@@ -173,12 +166,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initOutgoingTransferWithData:name:mimeType:">&ndash;&nbsp;initOutgoingTransferWithData:name:mimeType:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/state">&nbsp;&nbsp;state</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -231,6 +218,12 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callController">&nbsp;&nbsp;callController</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -245,6 +238,42 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/callController" title="callController"></a>
+	<h3 class="subsubtitle method-title">callController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to the callController related to this transfer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak, readonly) Bit6CallController *callController</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Transfer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/data" title="data"></a>
 	<h3 class="subsubtitle method-title">data</h3>
 	
@@ -256,7 +285,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSData *data</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSData *data</code></div>
 
     
 	
@@ -292,7 +321,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *error</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSError *error</code></div>
 
     
 	
@@ -328,7 +357,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *mimeType</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSString *mimeType</code></div>
 
     
 	
@@ -364,7 +393,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSString *name</code></div>
 
     
 	
@@ -574,73 +603,6 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/initOutgoingTransferWithData:name:mimeType:" title="initOutgoingTransferWithData:name:mimeType:"></a>
-	<h3 class="subsubtitle method-title">initOutgoingTransferWithData:name:mimeType:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes an outgoing Bit6Transfer object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (instancetype)initOutgoingTransferWithData:(NSData *)<em>data</em> name:(NSString *)<em>name</em> mimeType:(NSString *)<em>mimeType</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>data</em></dt>
-			<dd><p>data to send.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>name</em></dt>
-			<dd><p>name of the file. If nil a random name is given.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>mimeType</em></dt>
-			<dd><p>MIME type of the file to send.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a Bit6Transfer object representing an outgoing transfer.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6Transfer.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
 					
                     
                     
@@ -654,7 +616,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-07-29)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

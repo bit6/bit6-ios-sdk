@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/Bit6CallViewController</TokenIdentifier>
-			<Abstract type="html">UIViewController to extend to use during a call.</Abstract>
+			<Abstract type="html">UIViewController to use during a call. This class should be extended. Only one object of this class or its subclasses should be kept in memory.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
             
 			
@@ -17,10 +17,27 @@
 			<Abstract type="html">Creates a default view controller to use during a call.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>+ (Bit6CallViewController *)createDefaultCallViewController</Declaration>
+			<Declaration>+ (nonnull Bit6CallViewController *)createDefaultCallViewController</Declaration>
 			
 			<ReturnValue><Abstract type="html">view controller to use during a call.</Abstract></ReturnValue>
 			<Anchor>//api/name/createDefaultCallViewController</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/addCallController:</TokenIdentifier>
+			<Abstract type="html">Set the Bit6CallController for this viewController.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)addCallController:(nonnull Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object to link to this viewController.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCallController:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -53,7 +70,7 @@
 			<Abstract type="html">Called in the Main Thread when the status of the call changes. The default implementation does nothing.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)callStateChangedNotificationForCallController:(Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)callStateChangedNotificationForCallController:(nonnull Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>callController</Name>
@@ -70,7 +87,7 @@
 			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)secondsChangedNotificationForCallController:(Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)secondsChangedNotificationForCallController:(nonnull Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>callController</Name>
@@ -87,7 +104,7 @@
 			<Abstract type="html">Called in the Main Thread to customize the frames for the video feeds. You can call setNeedsUpdateVideoViewLayout at any time to force a refresh of the frames.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)updateLayoutForVideoFeedViews:(NSArray *)videoFeedViews</Declaration>
+			<Declaration>- (void)updateLayoutForVideoFeedViews:(nonnull NSArray&lt;Bit6VideoFeedView*&gt; *)videoFeedViews</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>videoFeedViews</Name>

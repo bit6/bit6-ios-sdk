@@ -10,25 +10,28 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "MyCallViewController.h"
 
-@interface AppDelegate () <UIAlertViewDelegate, Bit6IncomingCallHandlerDelegate>
+#warning Remember to set your api key
+#define BIT6_API_KEY (@"BIT6_API_KEY")
 
-@property (strong, nonatomic) Bit6CallController *callController;
+@interface AppDelegate () <Bit6IncomingCallHandlerDelegate>
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
-    #warning Remember to set your api key
-    [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
+{
+    NSAssert(![BIT6_API_KEY isEqualToString:@"BIT6_API_KEY"], @"[Bit6 SDK]: Setup your Bit6 api key.");
+    
+    //uncomment to handle the incoming call
+    //Bit6.incomingCallHandler.delegate = self;
+    
+    [Bit6 startWithApiKey:BIT6_API_KEY];
     
     NSDictionary *remoteNotificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (remoteNotificationPayload) {
         [Bit6.pushNotification didReceiveRemoteNotification:remoteNotificationPayload];
     }
-    
-    Bit6.incomingCallHandler.delegate = self;
     
     return YES;
 }
@@ -50,11 +53,6 @@
     [Bit6.pushNotification didReceiveRemoteNotification:userInfo];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
-{
-    [Bit6.pushNotification didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-}
-
 - (void) application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     [Bit6.pushNotification didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
@@ -69,135 +67,174 @@
 
 /*
 //use a custom in-call UIViewController
-- (Bit6CallViewController*) inCallViewController
+- (nonnull Bit6CallViewController*)inCallViewController
 {
-    MyCallViewController *callVC = [[MyCallViewController alloc] init];
-    return callVC;
+    //if there's another call on the way, we are going to merge the callcontrollers into one viewcontroller
+    if ([Bit6 callViewController]) {
+        return [Bit6 callViewController];
+    }
+    else {
+        //custom view controller
+        return [[MyCallViewController alloc] init];
+        
+        //default view controller
+        //return [Bit6CallViewController createDefaultCallViewController];
+    }
 }
-*/
- 
-/*
- //customize in-app incoming call banner notification
-- (UIView*) incomingCallNotificationBannerContentView
+
+ //customize in-app incoming call prompt
+- (nullable UIView*)incomingCallPromptContentViewForCallController:(nonnull Bit6CallController*)callController
 {
-    int numberOfLinesInMSG = 1;
-    CGFloat padding = 10.0f;
-    CGFloat separation = 3.0f;
-    CGFloat titleHeight = 19.0f;
-    CGFloat messageHeight = 17*numberOfLinesInMSG+5*(numberOfLinesInMSG-1);
-    CGFloat buttonsAreaHeight = 60.0f;
-    CGFloat height = padding*2+titleHeight+separation+messageHeight+buttonsAreaHeight;
+    NSInteger numberOfStreams = (callController.hasRemoteAudio?1:0) + (callController.hasRemoteVideo?1:0) + (callController.hasRemoteData?1:0);
+    NSInteger numberOfButtons = numberOfStreams == 3 ? 3 : numberOfStreams > 0 ? (numberOfStreams + 1) : 2;
+    
+    NSString *title = callController.incomingCallAlert;
+    
+    CGFloat WIDTH = 290;
+    CGSize size = CGSizeMake(WIDTH,130);
     
     CGRect frame = [[UIScreen mainScreen] bounds];
-    frame.size.height = height;
-    
-    NSString *deviceType = [UIDevice currentDevice].model;
-    if([deviceType hasPrefix:@"iPad"]){
-        CGFloat width = 450;
-        frame.origin.x = (frame.size.width-width)/2.0;
-        frame.size.width = width;
-    }
+    frame.origin.x = (frame.size.width-size.width)/2;
+    frame.origin.y = (frame.size.height-size.height)/2;
+    frame.size.width = size.width;
+    frame.size.height = size.height;
     
     UIView *contentView = [[UIView alloc] initWithFrame:frame];
-    contentView.backgroundColor = [UIColor colorWithRed:47/255.0f green:49/255.0f blue:50/255.0f alpha:1.0];
+    contentView.layer.cornerRadius = 10.0;
+    contentView.layer.masksToBounds = YES;
+    contentView.backgroundColor = [UIColor colorWithRed:251/255.0f green:249/255.0f blue:224/255.0f alpha:1.0];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding, padding, frame.size.width - padding*2, titleHeight)];
-    titleLabel.font = [UIFont boldSystemFontOfSize:17];
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.tag = 15;
+    CGFloat labelMargin = 13;
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(labelMargin, labelMargin, size.width-labelMargin*2, 20)];
+    titleLabel.textColor = [UIColor colorWithRed:132/255.0f green:105/255.0f blue:56/255.0f alpha:1.0];
+    titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    titleLabel.text = title;
     [contentView addSubview:titleLabel];
     
-    UILabel *msgLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding, CGRectGetMaxY(titleLabel.frame)+separation, frame.size.width - padding*2, messageHeight)];
-    msgLabel.font = [UIFont systemFontOfSize:15];
-    msgLabel.textColor = [UIColor whiteColor];
-    msgLabel.tag = 16;
-    msgLabel.numberOfLines = numberOfLinesInMSG;
+    UILabel *msgLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    frame = titleLabel.frame;
+    frame.origin.y = CGRectGetMaxY(frame)+13;
+    msgLabel.frame = frame;
+    msgLabel.textColor = [UIColor colorWithRed:132/255.0f green:105/255.0f blue:56/255.0f alpha:1.0];
+    msgLabel.font = [UIFont systemFontOfSize:15.0];
+    msgLabel.text = @"Do you dare to answer this call?";
     [contentView addSubview:msgLabel];
     
-    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button1.tag = 17;
-    button1.frame = CGRectMake(padding, CGRectGetMaxY(msgLabel.frame)+padding+6, (contentView.frame.size.width-padding*3)/2, buttonsAreaHeight-padding*2);
-    [button1 setBackgroundImage:[Bit6Utils imageWithColor:[UIColor redColor]] forState:UIControlStateNormal];
-    button1.layer.cornerRadius = 10.0f;
-    button1.clipsToBounds = YES;
-    [button1 setTitle:@"Decline" forState:UIControlStateNormal];
-    [contentView addSubview:button1];
+    CGFloat buttonSeparationX = 12.5;
+    CGFloat buttonWidth = (WIDTH - buttonSeparationX*(numberOfButtons+1))/numberOfButtons;
+    CGFloat nextButtonX = buttonSeparationX;
+    CGFloat nextButtonY = CGRectGetMaxY(msgLabel.frame)+14;
     
-    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button2.tag = 18;
-    button2.frame = CGRectMake(CGRectGetMaxX(button1.frame)+padding, CGRectGetMaxY(msgLabel.frame)+padding+6, (contentView.frame.size.width-padding*3)/2, buttonsAreaHeight-padding*2);
-    [button2 setBackgroundImage:[Bit6Utils imageWithColor:[UIColor blueColor]] forState:UIControlStateNormal];
-    button2.layer.cornerRadius = 10.0f;
-    button2.clipsToBounds = YES;
-    [button2 setTitle:@"Answer" forState:UIControlStateNormal];
-    [contentView addSubview:button2];
+    //in this case we only show answer and reject buttons
+    if (numberOfStreams < 2) {
+        UIButton *answerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        answerButton.frame = CGRectMake(nextButtonX, nextButtonY, buttonWidth, 40);
+        UIColor *color = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:179/255.0f alpha:1.0];
+        UIImage *backgroundImage = [Bit6Utils imageWithColor:color];
+        [answerButton setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+        answerButton.layer.cornerRadius = 10.0f;
+        answerButton.layer.masksToBounds = YES;
+        [answerButton setTitle:@"Answer" forState:UIControlStateNormal];
+        SEL selector = callController.hasRemoteAudio?@selector(answerAudio):(callController.hasRemoteVideo?@selector(answerVideo):callController.hasRemoteData?@selector(answerData):nil);
+        [answerButton addTarget:[Bit6IncomingCallPrompt sharedInstance] action:selector forControlEvents:UIControlEventTouchUpInside];
+        [contentView addSubview:answerButton];
+    }
+    //in this case we show two buttons
+    else {
+        //AUDIO BUTTON
+        UIButton *audioButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        audioButton.frame = CGRectMake(nextButtonX, nextButtonY, buttonWidth, 40);
+        UIColor *color = [UIColor colorWithRed:86/255.0f green:188/255.0f blue:221/255.0f alpha:1.0];
+        UIImage *backgroundImage = [Bit6Utils imageWithColor:color];
+        [audioButton setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+        audioButton.layer.cornerRadius = 10.0f;
+        audioButton.layer.masksToBounds = YES;
+        [audioButton setTitle:@"Audio" forState:UIControlStateNormal];
+        [audioButton addTarget:[Bit6IncomingCallPrompt sharedInstance] action:@selector(answerAudio) forControlEvents:UIControlEventTouchUpInside];
+        [contentView addSubview:audioButton];
+        
+        //VIDEO BUTTON
+        if (callController.hasRemoteVideo) {
+            nextButtonX = (nextButtonX + buttonWidth) + buttonSeparationX;
+            UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            videoButton.frame = CGRectMake(nextButtonX, nextButtonY, buttonWidth, 40);
+            color = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:179/255.0f alpha:1.0];
+            backgroundImage = [Bit6Utils imageWithColor:color];
+            [videoButton setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+            videoButton.layer.cornerRadius = 10.0f;
+            videoButton.layer.masksToBounds = YES;
+            [videoButton setTitle:@"Video" forState:UIControlStateNormal];
+            [videoButton addTarget:[Bit6IncomingCallPrompt sharedInstance] action:@selector(answerVideo) forControlEvents:UIControlEventTouchUpInside];
+            [contentView addSubview:videoButton];
+        }
+    }
+    
+    //REJECT BUTTON
+    nextButtonX = (nextButtonX + buttonWidth) + buttonSeparationX;
+    UIButton *rejectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    rejectButton.frame = CGRectMake(nextButtonX, nextButtonY, buttonWidth, 40);
+    UIColor *color = [UIColor colorWithRed:206/255.0f green:68/255.0f blue:68/255.0f alpha:1.0];
+    UIImage *backgroundImage = [Bit6Utils imageWithColor:color];
+    [rejectButton setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+    rejectButton.layer.cornerRadius = 10.0f;
+    rejectButton.layer.masksToBounds = YES;
+    [rejectButton setTitle:@"Reject" forState:UIControlStateNormal];
+    [rejectButton addTarget:[Bit6IncomingCallPrompt sharedInstance] action:@selector(reject) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:rejectButton];
     
     return contentView;
 }
-*/
 
-/*
 //implement if you want to handle the entire incoming call flow
-- (void) receivedIncomingCallNotification:(NSNotification*)notification
+- (void)receivedIncomingCall:(nonnull Bit6CallController*)callController
 {
-    //create the callController
-    Bit6CallController *callController = [Bit6 callControllerFromIncomingCallNotification:notification];
+    //get the caller name
+    NSString *msg = callController.incomingCallAlert;
+    callController.otherDisplayName = [msg stringByReplacingOccurrencesOfString:@" is calling..." withString:@""];
     
-    //if there's a call prompt on the way we decline this call
-    if (self.callController) {
-        [callController declineCall];
+    callController.incomingCallAlert = [NSString stringWithFormat:@"%@ is %@calling...", callController.otherDisplayName, callController.hasRemoteData?@"data ":(callController.hasRemoteVideo?@"video ":@"")];
+    
+    //register to listen changes in call status
+    [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
+    
+    //the call was answered by taping the push notification
+    if (callController.incomingCallAnswered) {
+        callController.localStreams = callController.remoteStreams;
+        [self answerCall:callController];
     }
     else {
-        //register to listen changes in call status
-        [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
-        
-        //get the caller name
-        NSString *msg = callController.incomingCallAlert;
-        callController.otherDisplayName = [msg stringByReplacingOccurrencesOfString:@" is calling..." withString:@""];
-        
-        //get the call type
-        NSString *type = callController.hasVideo?@"Video":(callController.hasAudio?@"Audio":@"Data");
-        
         //show an incoming-call prompt
-        NSString *message = [NSString stringWithFormat:@"Incoming %@ Call from: %@", type, callController.otherDisplayName];
-        callController.incomingCallAlert = message;
+        [Bit6IncomingCallPrompt sharedInstance].contentView = [self incomingCallPromptContentViewForCallController:callController];
         
-        //the call was answered by taping the push notification
-        if (callController.incomingCallAnswered) {
+        Bit6IncomingCallPrompt.answerAudioHandler = ^(Bit6CallController* callController){
+            [Bit6IncomingCallPrompt dismiss];
+            callController.localStreams = Bit6CallStreams_Audio;
             [self answerCall:callController];
-        }
-        else {
-            //retain the callController while we show an incoming-call prompt
-            self.callController = callController;
-            
-            //show an incoming-call prompt
-            [Bit6.incomingCallNotificationBanner showBannerForCallController:callController answerHandler:^{
-                Bit6CallController *callController = self.callController;
-                self.callController = nil;
-                [self answerCall:callController];
-            } declineHandler:^{
-                Bit6CallController *callController = self.callController;
-                self.callController = nil;
-                [callController removeObserver:self forKeyPath:@"callState"];
-                [callController declineCall];
-            }];
-            
-            //play the ringtone
-            [callController startRingtone];
-        }
+        };
+        Bit6IncomingCallPrompt.answerVideoHandler = ^(Bit6CallController* callController){
+            [Bit6IncomingCallPrompt dismiss];
+            callController.localStreams = Bit6CallStreams_Audio|Bit6CallStreams_Video;
+            [self answerCall:callController];
+        };
+        Bit6IncomingCallPrompt.rejectHandler = ^(Bit6CallController* callController){
+            [Bit6IncomingCallPrompt dismiss];
+            [callController removeObserver:self forKeyPath:@"callState"];
+            [callController declineCall];
+        };
+        
+        [Bit6IncomingCallPrompt showForCallController:callController];
+        
+        //play the ringtone
+        [callController playRingtone];
     }
 }
 
 - (void) answerCall:(Bit6CallController*)callController
 {
-    //create the default in-call UIViewController
-    Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
- 
-    //create the in-call UIViewController
-    Bit6CallViewController *callVC = [[MyCallViewController alloc] init];
-    
-    //start the call
-    [callController connectToViewController:callVC];
+    Bit6CallViewController *callViewController = [self inCallViewController];
+    [callViewController addCallController:callController];
+    [callController start];
+    [Bit6 presentCallViewController:callViewController];
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -214,29 +251,25 @@
 - (void) callStateChangedNotification:(Bit6CallController*)callController
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        //it's a missed call: remove the observer, dismiss the incoming-call prompt and the viewController
+        //it's a missed call: remove the observer and dismiss the incoming-call prompt
         if (callController.callState == Bit6CallState_MISSED) {
             [callController removeObserver:self forKeyPath:@"callState"];
-            self.callController = nil;
-            [Bit6.incomingCallNotificationBanner dismiss];
+            [Bit6IncomingCallPrompt dismiss];
+            
             [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
-        //the call is starting: show the viewController
-        else if (callController.callState == Bit6CallState_PROGRESS) {
-            [Bit6 presentCallViewController];
-        }
-        //the call ended: remove the observer and dismiss the viewController
+        //the call ended: remove the observer
         else if (callController.callState == Bit6CallState_END) {
             [callController removeObserver:self forKeyPath:@"callState"];
         }
-        //the call ended with an error: remove the observer and dismiss the viewController
+        //the call ended with an error: remove the observer
         else if (callController.callState == Bit6CallState_ERROR) {
             [callController removeObserver:self forKeyPath:@"callState"];
-            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            
+            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     });
 }
- 
 */
 
 @end

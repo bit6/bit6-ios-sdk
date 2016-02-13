@@ -1,107 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6AddressKind.html">
+	<File path="Protocols/Bit6ThumbnailImageViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6AddressKind</TokenIdentifier>
-			<Abstract type="html">Bit6Address kind</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6ThumbnailImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6ThumbnailImageViewDelegate protocol defines methods that your delegate object must implement to interact with a Bit6ThumbnailImageView object. The methods of this protocol notify your delegate when the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_PHONE</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a phone number</Abstract>
-            <Declaration>Bit6AddressKind_PHONE</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6ThumbnailImageViewDelegate/touchedThumbnailImageView:</TokenIdentifier>
+			<Abstract type="html">Tell the delegate that the imageView has been tapped by the user.</Abstract>
+			<DeclaredIn>Bit6ThumbnailImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)touchedThumbnailImageView:(nonnull Bit6ThumbnailImageView *)thumbnailImageView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>thumbnailImageView</Name>
+					<Abstract type="html">The Bit6ThumbnailImageView object tapped by the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/touchedThumbnailImageView:</Anchor>
             <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_USERNAME</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an username</Abstract>
-            <Declaration>Bit6AddressKind_USERNAME</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_EMAIL</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an email account</Abstract>
-            <Declaration>Bit6AddressKind_EMAIL</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_FACEBOOK</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a Facebook account</Abstract>
-            <Declaration>Bit6AddressKind_FACEBOOK</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GOOGLE</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a Google account</Abstract>
-            <Declaration>Bit6AddressKind_GOOGLE</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_UID</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to an anonymous session</Abstract>
-            <Declaration>Bit6AddressKind_UID</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GROUP</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a group</Abstract>
-            <Declaration>Bit6AddressKind_GROUP</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_ZENDESK</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to Zendesk user</Abstract>
-            <Declaration>Bit6AddressKind_ZENDESK</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6AddressKind_GENERIC</TokenIdentifier>
-            <Abstract type="html">The Bit6Address refers to a generic identity</Abstract>
-            <Declaration>Bit6AddressKind_GENERIC</Declaration>
-            
-            <DeclaredIn>Bit6Address.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

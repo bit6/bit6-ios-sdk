@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8852D9D1AE349D400FB82B0 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8852D9C1AE349D400FB82B0 /* Bit6SDK.framework */; };
+		D8852D9D1AE349D400FB82B0 /* Bit6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8852D9C1AE349D400FB82B0 /* Bit6.framework */; };
+		D8A5A4B51C6F989A00B868B1 /* ringtone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D8A5A4B41C6F989A00B868B1 /* ringtone.caf */; };
 		D8D4E57E1AD38AF00086B31E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D4E57D1AD38AF00086B31E /* main.m */; };
 		D8D4E5811AD38AF00086B31E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D4E5801AD38AF00086B31E /* AppDelegate.m */; };
 		D8D4E5841AD38AF00086B31E /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D4E5831AD38AF00086B31E /* MasterViewController.m */; };
@@ -18,7 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D8852D9C1AE349D400FB82B0 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../../Bit6SDK.framework; sourceTree = "<group>"; };
+		D8852D9C1AE349D400FB82B0 /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../../Bit6.framework; sourceTree = "<group>"; };
+		D8A5A4B41C6F989A00B868B1 /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ringtone.caf; sourceTree = "<group>"; };
 		D8D4E5781AD38AF00086B31E /* DataChannelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataChannelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D4E57C1AD38AF00086B31E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8D4E57D1AD38AF00086B31E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		D8D4E58B1AD38AF00086B31E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D8D4E58E1AD38AF00086B31E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		D8D4E5A81AD390A40086B31E /* BasicDemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BasicDemoConfig.xcconfig; sourceTree = "<group>"; };
+		D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8852D9D1AE349D400FB82B0 /* Bit6SDK.framework in Frameworks */,
+				D8852D9D1AE349D400FB82B0 /* Bit6.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +67,7 @@
 		D8D4E57A1AD38AF00086B31E /* DataChannelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */,
 				D8D4E57F1AD38AF00086B31E /* AppDelegate.h */,
 				D8D4E5801AD38AF00086B31E /* AppDelegate.m */,
 				D8D4E5821AD38AF00086B31E /* MasterViewController.h */,
@@ -74,7 +77,6 @@
 				D8D4E58B1AD38AF00086B31E /* Images.xcassets */,
 				D8D4E58D1AD38AF00086B31E /* LaunchScreen.xib */,
 				D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */,
-				D8D4E5A81AD390A40086B31E /* BasicDemoConfig.xcconfig */,
 				D8D4E57B1AD38AF00086B31E /* Supporting Files */,
 			);
 			path = DataChannelDemo;
@@ -83,9 +85,10 @@
 		D8D4E57B1AD38AF00086B31E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D8852D9C1AE349D400FB82B0 /* Bit6SDK.framework */,
+				D8852D9C1AE349D400FB82B0 /* Bit6.framework */,
 				D8D4E57C1AD38AF00086B31E /* Info.plist */,
 				D8D4E57D1AD38AF00086B31E /* main.m */,
+				D8A5A4B41C6F989A00B868B1 /* ringtone.caf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */,
 				D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */,
+				D8A5A4B51C6F989A00B868B1 /* ringtone.caf in Resources */,
 				D8D4E5A51AD38B710086B31E /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +264,7 @@
 		};
 		D8D4E59F1AD38AF00086B31E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8D4E5A81AD390A40086B31E /* BasicDemoConfig.xcconfig */;
+			baseConfigurationReference = D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -278,6 +282,7 @@
 		};
 		D8D4E5A01AD38AF00086B31E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -13,11 +13,28 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/initWithDestination:</TokenIdentifier>
+			<Abstract type="html">Initializes a Bit6OutgoingMessage object</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)initWithDestination:(nonnull Bit6Address *)destination</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>destination</Name>
+					<Abstract type="html">An Bit6Address object to where to send the message.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a new Bit6OutgoingMessage object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDestination:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setContent:</TokenIdentifier>
 			<Abstract type="html">Text content of the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSString *content</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -29,7 +46,7 @@
 			<Abstract type="html">Text content of the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSString *content</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -41,7 +58,7 @@
 			<Abstract type="html">Text content of the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSString *content</Declaration>
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -53,7 +70,7 @@
 			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6Address *destination</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) Bit6Address *destination</Declaration>
 			
 			
 			<Anchor>//api/name/destination</Anchor>
@@ -65,7 +82,7 @@
 			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6Address *destination</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) Bit6Address *destination</Declaration>
 			
 			
 			<Anchor>//api/name/destination</Anchor>
@@ -77,7 +94,7 @@
 			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) Bit6Address *destination</Declaration>
+			<Declaration>@property (nonnull, nonatomic, strong) Bit6Address *destination</Declaration>
 			
 			
 			<Anchor>//api/name/destination</Anchor>
@@ -89,7 +106,7 @@
 			<Abstract type="html">Image to send as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImage *image</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
@@ -101,7 +118,7 @@
 			<Abstract type="html">Image to send as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImage *image</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
@@ -113,7 +130,7 @@
 			<Abstract type="html">Image to send as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) UIImage *image</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *image</Declaration>
 			
 			
 			<Anchor>//api/name/image</Anchor>
@@ -125,7 +142,7 @@
 			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSURL *videoURL</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSURL *videoURL</Declaration>
 			
 			
 			<Anchor>//api/name/videoURL</Anchor>
@@ -137,7 +154,7 @@
 			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSURL *videoURL</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSURL *videoURL</Declaration>
 			
 			
 			<Anchor>//api/name/videoURL</Anchor>
@@ -149,7 +166,7 @@
 			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSURL *videoURL</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSURL *videoURL</Declaration>
 			
 			
 			<Anchor>//api/name/videoURL</Anchor>
@@ -161,7 +178,7 @@
 			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropStart</Declaration>
 			
 			
 			<Anchor>//api/name/videoCropStart</Anchor>
@@ -173,7 +190,7 @@
 			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropStart</Declaration>
 			
 			
 			<Anchor>//api/name/videoCropStart</Anchor>
@@ -185,7 +202,7 @@
 			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropStart</Declaration>
 			
 			
 			<Anchor>//api/name/videoCropStart</Anchor>
@@ -197,7 +214,7 @@
 			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropEnd</Declaration>
 			
 			
 			<Anchor>//api/name/videoCropEnd</Anchor>
@@ -209,7 +226,7 @@
 			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropEnd</Declaration>
 			
 			
 			<Anchor>//api/name/videoCropEnd</Anchor>
@@ -221,7 +238,7 @@
 			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropEnd</Declaration>
 			
 			
 			<Anchor>//api/name/videoCropEnd</Anchor>
@@ -230,10 +247,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setLocation:</TokenIdentifier>
-			<Abstract type="html">Location to send with the message</Abstract>
+			<Abstract type="html">Location to send with the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) CLLocation *location</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D location</Declaration>
 			
 			
 			<Anchor>//api/name/location</Anchor>
@@ -242,10 +259,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/location</TokenIdentifier>
-			<Abstract type="html">Location to send with the message</Abstract>
+			<Abstract type="html">Location to send with the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) CLLocation *location</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D location</Declaration>
 			
 			
 			<Anchor>//api/name/location</Anchor>
@@ -254,13 +271,61 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/location</TokenIdentifier>
-			<Abstract type="html">Location to send with the message</Abstract>
+			<Abstract type="html">Location to send with the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) CLLocation *location</Declaration>
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D location</Declaration>
 			
 			
 			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/uniqueAudioFilePath</TokenIdentifier>
+			<Abstract type="html">Returns an unique path to store an audio file.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSString *)uniqueAudioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/uniqueAudioFilePath</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setAudioFilePath:</TokenIdentifier>
+			<Abstract type="html">Path of the attached audio file, if available.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *audioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/audioFilePath</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/audioFilePath</TokenIdentifier>
+			<Abstract type="html">Path of the attached audio file, if available.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *audioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/audioFilePath</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/audioFilePath</TokenIdentifier>
+			<Abstract type="html">Path of the attached audio file, if available.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *audioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/audioFilePath</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
@@ -269,7 +334,7 @@
 			<Abstract type="html">Sends the message.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>- (void)sendWithCompletionHandler:(Bit6CompletionHandler)completion</Declaration>
+			<Declaration>- (void)sendWithCompletionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>completion</Name>
@@ -286,7 +351,7 @@
 			<Abstract type="html">Creates a copy of a sent message. This copy has a different identifier and it&apos;s ready to be forwarded.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>+ (Bit6OutgoingMessage *)outgoingCopyOfMessage:(Bit6Message *)msg</Declaration>
+			<Declaration>+ (nonnull Bit6OutgoingMessage *)outgoingCopyOfMessage:(nonnull Bit6Message *)msg</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>

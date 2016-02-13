@@ -11,22 +11,11 @@
 		D80D4B6B1A2150DA00391E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B691A2150DA00391E04 /* Main.storyboard */; };
 		D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B6C1A2150DA00391E04 /* Images.xcassets */; };
 		D80D4B921A21514A00391E04 /* Bit6Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */; };
-		D80D4B931A21514A00391E04 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8C1A21514A00391E04 /* GLKit.framework */; };
-		D80D4B941A21514A00391E04 /* Bit6SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */; };
+		D80D4B941A21514A00391E04 /* Bit6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80D4B8D1A21514A00391E04 /* Bit6.framework */; };
 		D80D4BA91A215A8B00391E04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BA81A215A8B00391E04 /* LoginViewController.swift */; };
 		D80D4BAB1A215B1C00391E04 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */; };
 		D80D4BAD1A216AD400391E04 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */; };
 		D8182E4C1A22E83800E41160 /* ImageAttachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */; };
-		D87D0AA41BBD72640096118A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA01BBD72640096118A /* libicucore.tbd */; settings = {ASSET_TAGS = (); }; };
-		D87D0AA51BBD72640096118A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA11BBD72640096118A /* libz.tbd */; settings = {ASSET_TAGS = (); }; };
-		D87D0AA61BBD72640096118A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA21BBD72640096118A /* libstdc++.tbd */; settings = {ASSET_TAGS = (); }; };
-		D87D0AA71BBD72640096118A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AA31BBD72640096118A /* libsqlite3.tbd */; settings = {ASSET_TAGS = (); }; };
-		D8A9E9201A8FAA7400027A28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E91F1A8FAA7400027A28 /* MediaPlayer.framework */; };
-		D8A9E9221A8FAA7B00027A28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9211A8FAA7B00027A28 /* SystemConfiguration.framework */; };
-		D8A9E9241A8FAA8000027A28 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9231A8FAA8000027A28 /* AssetsLibrary.framework */; };
-		D8A9E9261A8FAA8400027A28 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9251A8FAA8400027A28 /* AVFoundation.framework */; };
-		D8A9E9281A8FAA8B00027A28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9271A8FAA8B00027A28 /* AudioToolbox.framework */; };
-		D8A9E92A1A8FAA9200027A28 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E9291A8FAA9200027A28 /* CoreMedia.framework */; };
 		D8BB52791ACB22E30074947D /* ConversationDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,23 +27,11 @@
 		D80D4B6C1A2150DA00391E04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
 		D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6Resources.bundle; path = ../../../Bit6Resources.bundle; sourceTree = "<group>"; };
-		D80D4B8C1A21514A00391E04 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6SDK.framework; path = ../../../Bit6SDK.framework; sourceTree = "<group>"; };
-		D80D4B971A21526100391E04 /* Bit6ChatDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bit6ChatDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D80D4B8D1A21514A00391E04 /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../../Bit6.framework; sourceTree = "<group>"; };
 		D80D4BA81A215A8B00391E04 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		D8182E4B1A22E83800E41160 /* ImageAttachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachedViewController.swift; sourceTree = "<group>"; };
-		D87D0AA01BBD72640096118A /* libicucore.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		D87D0AA11BBD72640096118A /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		D87D0AA21BBD72640096118A /* libstdc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		D87D0AA31BBD72640096118A /* libsqlite3.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D8A9E91F1A8FAA7400027A28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		D8A9E9211A8FAA7B00027A28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D8A9E9231A8FAA8000027A28 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		D8A9E9251A8FAA8400027A28 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D8A9E9271A8FAA8B00027A28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D8A9E9291A8FAA9200027A28 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,18 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A9E92A1A8FAA9200027A28 /* CoreMedia.framework in Frameworks */,
-				D8A9E9281A8FAA8B00027A28 /* AudioToolbox.framework in Frameworks */,
-				D8A9E9261A8FAA8400027A28 /* AVFoundation.framework in Frameworks */,
-				D8A9E9241A8FAA8000027A28 /* AssetsLibrary.framework in Frameworks */,
-				D87D0AA41BBD72640096118A /* libicucore.tbd in Frameworks */,
-				D8A9E9221A8FAA7B00027A28 /* SystemConfiguration.framework in Frameworks */,
-				D87D0AA71BBD72640096118A /* libsqlite3.tbd in Frameworks */,
-				D8A9E9201A8FAA7400027A28 /* MediaPlayer.framework in Frameworks */,
-				D80D4B931A21514A00391E04 /* GLKit.framework in Frameworks */,
-				D80D4B941A21514A00391E04 /* Bit6SDK.framework in Frameworks */,
-				D87D0AA51BBD72640096118A /* libz.tbd in Frameworks */,
-				D87D0AA61BBD72640096118A /* libstdc++.tbd in Frameworks */,
+				D80D4B941A21514A00391E04 /* Bit6.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +66,7 @@
 		D80D4B621A2150DA00391E04 /* Bit6ChatDemo-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				D80D4B971A21526100391E04 /* Bit6ChatDemo-Swift-Bridging-Header.h */,
+				D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */,
 				D80D4B651A2150DA00391E04 /* AppDelegate.swift */,
 				D80D4BA81A215A8B00391E04 /* LoginViewController.swift */,
 				D80D4BAA1A215B1C00391E04 /* ConversationsViewController.swift */,
@@ -109,7 +75,6 @@
 				D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */,
 				D80D4B691A2150DA00391E04 /* Main.storyboard */,
 				D80D4B6C1A2150DA00391E04 /* Images.xcassets */,
-				D80D4B851A2150F800391E04 /* DemoConfig.xcconfig */,
 				D80D4B8B1A21514A00391E04 /* Bit6Resources.bundle */,
 				D80D4B631A2150DA00391E04 /* Supporting Files */,
 			);
@@ -119,18 +84,7 @@
 		D80D4B631A2150DA00391E04 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D87D0AA01BBD72640096118A /* libicucore.tbd */,
-				D87D0AA11BBD72640096118A /* libz.tbd */,
-				D87D0AA21BBD72640096118A /* libstdc++.tbd */,
-				D87D0AA31BBD72640096118A /* libsqlite3.tbd */,
-				D8A9E9291A8FAA9200027A28 /* CoreMedia.framework */,
-				D8A9E9271A8FAA8B00027A28 /* AudioToolbox.framework */,
-				D8A9E9251A8FAA8400027A28 /* AVFoundation.framework */,
-				D8A9E9231A8FAA8000027A28 /* AssetsLibrary.framework */,
-				D8A9E9211A8FAA7B00027A28 /* SystemConfiguration.framework */,
-				D8A9E91F1A8FAA7400027A28 /* MediaPlayer.framework */,
-				D80D4B8C1A21514A00391E04 /* GLKit.framework */,
-				D80D4B8D1A21514A00391E04 /* Bit6SDK.framework */,
+				D80D4B8D1A21514A00391E04 /* Bit6.framework */,
 				D80D4B641A2150DA00391E04 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -146,6 +100,7 @@
 				D80D4B5C1A2150DA00391E04 /* Sources */,
 				D80D4B5D1A2150DA00391E04 /* Frameworks */,
 				D80D4B5E1A2150DA00391E04 /* Resources */,
+				D8A421B21BE9784000CDA3E1 /* Run Script - Swift warnings */,
 			);
 			buildRules = (
 			);
@@ -207,6 +162,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8A421B21BE9784000CDA3E1 /* Run Script - Swift warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Swift warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nTAGS=\"WARNING:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D80D4B5C1A2150DA00391E04 /* Sources */ = {

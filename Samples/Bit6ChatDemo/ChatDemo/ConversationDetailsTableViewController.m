@@ -42,7 +42,7 @@
 - (void) setConversation:(Bit6Conversation *)conversation
 {
     _conversation = conversation;
-    self.group = [Bit6Group groupForConversation:conversation];
+    self.group = [Bit6Group groupWithConversation:conversation];
 }
 
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated
@@ -115,10 +115,13 @@
             frame.origin.x = CGRectGetMaxX(frame) + 5;
             frame.size.width = self.tableView.frame.size.width - frame.origin.x - 10;
             subjectTextField.frame = frame;
-            subjectTextField.placeholder = Bit6EmptyGroupSubject;
+            subjectTextField.placeholder = @"<No Subject>";
             subjectTextField.enabled = self.editing;
-            if ([self.group.metadata[@"title"] length]>0) {
-                subjectTextField.text = self.group.metadata[@"title"];
+            if ([self.group.metadata[@"title"] isKindOfClass:[NSString class]]) {
+                NSString *title = self.group.metadata[@"title"];
+                if (title.length>0) {
+                    subjectTextField.text = title;
+                }
             }
             [subjectTextField addTarget:self action:@selector(subjectTextFieldDidChange:) forControlEvents:UIControlEventEditingDidEndOnExit];
             [cell.contentView addSubview:subjectTextField];
@@ -198,7 +201,7 @@
     if (indexPath.row == 0) return NO; //title row
     else if ((indexPath.row-1) < self.group.members.count){
         Bit6GroupMember *member = [self memberForIndexPath:indexPath];
-        return ![member.address isEqual:Bit6.session.userIdentity]; //cannot delete himself
+        return ![member.address isEqual:Bit6.session.activeIdentity]; //cannot delete himself
     }
     else {
         return NO;
@@ -216,7 +219,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Bit6GroupMember *member = [self memberForIndexPath:indexPath];
-    [self.group deleteMember:member completion:^(NSArray *members, NSError *error) {
+    [self.group kickGroupMember:member completion:^(NSArray *members, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!error) {
                 [self.tableView reloadData];
@@ -242,17 +245,9 @@
         UITextField *textfield = [alertView textFieldAtIndex:0];
         NSString *string = textfield.text;
         
-        NSArray *destinations = @[string];
+        Bit6Address *address = [Bit6Address addressWithUsername:string];
         
-        NSMutableArray *addresses = [NSMutableArray arrayWithCapacity:destinations.count];
-        for (NSString *destination in destinations) {
-            Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME value:destination];
-            if (address) {
-                [addresses addObject:address];
-            }
-        }
-        
-        [self.group inviteAddresses:addresses completion:^(NSArray *members, NSError *error) {
+        [self.group inviteGroupMemberWithAddress:address role:Bit6GroupMemberRole_User completion:^(NSArray *members, NSError *error) {
             if (error) {
                 [[[UIAlertView alloc] initWithTitle:@"Failed to invite users to the group" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
             }
