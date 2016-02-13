@@ -22,15 +22,13 @@ var conversations = Bit6.conversations()
 
 ```objc
 //ObjectiveC
-Bit6Address *address = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
-                                              value:@"user2"];
+Bit6Address *address = [Bit6Address addressWithUsername:@"user2"];
 Bit6Conversation *conversation = [Bit6Conversation conversationWithAddress:address];
 [Bit6 addConversation:conversation];
 ```
 ```objc
 //Swift
-var address = Bit6Address(kind:.USERNAME, 
-						 value:"user2")
+var address = Bit6Address(username:"user2")
 var conversation = Bit6Conversation(address: address)
 Bit6.addConversation(conversation)
 ```
@@ -40,7 +38,7 @@ Bit6.addConversation(conversation)
 //ObjectiveC
 Bit6Conversation *conversationToDelete = ...
 [Bit6 deleteConversation:conversationToDelete 
-		 completion:^(NSDictionary *response, NSError *error) {
+		      completion:^(NSDictionary *response, NSError *error) {
 		    if (!error) {
 		        //conversation deleted
 		    }
@@ -58,7 +56,7 @@ Bit6.deleteConversation(conversationToDelete) { (response, error) in
 
 ###Listen to Changes in Conversations
 
-You will need to know when a conversation has been created, deleted or changed (for example, a new message was received within a certain conversation, an user started typing, the conversation title has changed, etc). 
+You will need to know when a conversation has been created, deleted or changed (for example, a new message was received within a certain conversation, the conversation title has changed, etc). 
 
 Register as an observer for updates on conversation level:
 
@@ -134,12 +132,12 @@ When showing a messages UIViewController the following code must be called to ma
 ```objc
 //ObjectiveC
 Bit6Conversation *conversation = ...
-conversation.currentConversation = YES;
+[Bit6 setCurrentConversation:conversation];
 ```
 ```swift
 //Swift
 var conversation : Bit6Conversation = ...
-conversation.currentConversation = true
+Bit6.setCurrentConversation(conversation)
 ```
 
 When you are leaving the messages UIViewController the following code must be called:
@@ -147,14 +145,98 @@ When you are leaving the messages UIViewController the following code must be ca
 ```objc
 //ObjectiveC
 - (void)dealloc {
-    Bit6Conversation *conversation = ...
-    conversation.currentConversation = NO;
+    [Bit6 setCurrentConversation:nil];
 }
 ```
 ```swift
 //Swift
 deinit {
-    var conversation : Bit6Conversation = ...
-    conversation.currentConversation = false
+	Bit6.setCurrentConversation(nil)
+}
+```
+
+To get the unread messages total:
+
+```objc
+//ObjectiveC
+[Bit6 totalBadge]
+```
+```swift
+//Swift
+Bit6.totalBadge()
+```
+
+### Get Messages in a Conversation
+
+Although messages do not have to be arranged in conversations, it is frequently convenient to have the messages sorted by destination. More docs on handling conversation [here](#/messaging-conversations).
+
+```objc
+//ObjectiveC
+Bit6Conversation *conversation = ...
+self.messages = conversation.messages;
+```
+```swift
+//Swift
+var conversation : Bit6Conversation = ...
+self.messages = conversation.messages
+```
+
+### Listen to Changes in Messages inside Conversations
+
+To know when a message has been added to a particular conversation, or a message status has been updated, register as an observer for updates on message level:
+
+```objc
+//ObjectiveC
+Bit6Conversation *conversation = ...
+[[NSNotificationCenter defaultCenter] addObserver:self 
+                                         selector:@selector(messagesChangedNotification:) 
+                                             name:Bit6MessagesChangedNotification
+                                           object:conversation];
+```
+```swift
+//Swift
+var conversation : Bit6Conversation = ...
+NSNotificationCenter.defaultCenter().addObserver(self,
+										selector:"messagesChangedNotification:", 
+                                            name:Bit6MessagesChangedNotification,
+                                          object:conversation)
+```
+
+Upon receiving a message change notification, update the conversations array:
+
+```objc
+//ObjectiveC
+- (void) messagesChangedNotification:(NSNotification*)notification
+{
+    Bit6Message *message = notification.userInfo[Bit6ObjectKey];
+    NSString *change = notification.userInfo[Bit6ChangeKey];
+    
+    if ([change isEqualToString:Bit6AddedKey]) {
+        //add message to self.messages and refresh changes in UI
+    }
+    else if ([change isEqualToString:Bit6UpdatedKey]) {
+        //find message in self.messages and refresh changes in UI
+    }
+    else if ([change isEqualToString:Bit6DeletedKey]) {
+        //find message in self.messages, remove it and refresh changes in UI
+    }
+} 
+```
+```swift
+//Swift
+func messagesChangedNotification(notification:NSNotification) 
+{
+   let message = notification.userInfo[Bit6ObjectKey]
+   let change = notification.userInfo[Bit6ChangeKey]
+   
+   if change == Bit6AddedKey {
+       //add message to self.messages and refresh changes in UI
+   }
+   else if change == Bit6UpdatedKey {
+       //find message in self.messages and refresh changes in UI
+   }
+   else if change == Bit6DeletedKey {
+       //find message in self.messages, remove it and refresh changes in UI
+   }
 }
 ```

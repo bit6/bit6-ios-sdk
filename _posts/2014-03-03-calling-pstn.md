@@ -14,28 +14,42 @@ For the test purposes we allow short 1 minute calls to destinations in US and Ca
 ```objc
 //ObjectiveC
 NSString *destination = @"+14445556666";
-Bit6CallController *callController = [Bit6 startCallToPhoneNumber:destination];
+Bit6CallController *callController = [Bit6 createCallToPhoneNumber:destination];
 
 if (callController){
-	//create an in-call UIViewController
-	Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
-
-    [callController connectToViewController:callVC];
+	//trying to reuse the previous viewController, or create a default one
+	Bit6CallViewController *callViewController = [Bit6 callViewController] ?: [Bit6CallViewController createDefaultCallViewController];
+	
+	//set the call to the viewController
+    [callViewController addCallController:callController];
+    
+    //start the call
+    [callController start];
+    
+    //present the viewController
+    [Bit6 presentCallViewController:callViewController];
 }
 else {
-    //call failed
+    //cannot make call to specified address
 }
 ```
 ```swift
 //Swift
-var destination = "+14445556666";
-var callController = Bit6.startCallToPhoneNumber(destination)
+let destination = "+14445556666";
+let callController = Bit6.createCallToPhoneNumber(destination)
 
 if callController != nil {
-	//create an in-call UIViewController
-    var callVC = Bit6CallViewController.createDefaultCallViewController()
+	//trying to reuse the previous viewController, or create a default one
+    let callViewController = Bit6.callViewController() ?? Bit6CallViewController.createDefaultCallViewController()
 
-    callController.connectToViewController(callVC)
+    //set the call to the viewController
+    callViewController.addCallController(callController)
+    
+    //start the call
+    callController.start()
+
+    //present the viewController
+    Bit6.presentCallViewController(callViewController)
 }
 else {
     //call failed

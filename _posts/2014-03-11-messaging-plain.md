@@ -9,14 +9,14 @@ title: 'Text Messages'
 //ObjectiveC
 Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
 message.content = @"This is a text message";
-message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
-                                             value:@"user2"];
+message.destination = [Bit6Address addressWithUsername:@"user2"];
+
 [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
     if (!error) {
-        NSLog(@"Message Sent");
+        //Message Sent
     }
     else {
-        NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+        //Message Failed
     }
 }];
 ```
@@ -24,14 +24,14 @@ message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME
 //Swift
 var message = Bit6OutgoingMessage()
 message.content = "This is a text message"
-message.destination = Bit6Address(kind: .USERNAME, 
-                   				 value: "user2");
+message.destination = Bit6Address(username:"user2")
+
 message.sendWithCompletionHandler { (response, error) in
     if error == nil {
-        NSLog("Message Sent")
+        //Message Sent
     }
     else {
-        NSLog("Message Failed with Error: \(error.localizedDescription)")
+        //Message Failed
     }
 }
 ```
@@ -107,81 +107,6 @@ func messagesChangedNotification(notification:NSNotification)
 }
 ```
 
-### Get Messages in a Conversation
-
-Although messages do not have to be arranged in conversations, it is frequently convenient to have the messages sorted by destination. More docs on handling conversation [here](#/messaging-conversations).
-
-```objc
-//ObjectiveC
-Bit6Conversation *conversation = ...
-self.messages = conversation.messages;
-```
-```swift
-//Swift
-var conversation : Bit6Conversation = ...
-self.messages = conversation.messages
-```
-
-### Listen to Changes in Messages inside Conversations
-
-To know when a message has been added to a particular conversation, or a message status has been updated, register as an observer for updates on message level:
-
-```objc
-//ObjectiveC
-Bit6Conversation *conversation = ...
-[[NSNotificationCenter defaultCenter] addObserver:self 
-                                         selector:@selector(messagesChangedNotification:) 
-                                             name:Bit6MessagesChangedNotification
-                                           object:conversation];
-```
-```swift
-//Swift
-var conversation : Bit6Conversation = ...
-NSNotificationCenter.defaultCenter().addObserver(self,
-										selector:"messagesChangedNotification:", 
-                                            name:Bit6MessagesChangedNotification,
-                                          object:conversation)
-```
-
-Upon receiving a message change notification, update the conversations array:
-
-```objc
-//ObjectiveC
-- (void) messagesChangedNotification:(NSNotification*)notification
-{
-    Bit6Message *message = notification.userInfo[Bit6ObjectKey];
-    NSString *change = notification.userInfo[Bit6ChangeKey];
-    
-    if ([change isEqualToString:Bit6AddedKey]) {
-        //add message to self.messages and refresh changes in UI
-    }
-    else if ([change isEqualToString:Bit6UpdatedKey]) {
-        //find message in self.messages and refresh changes in UI
-    }
-    else if ([change isEqualToString:Bit6DeletedKey]) {
-        //find message in self.messages, remove it and refresh changes in UI
-    }
-} 
-```
-```swift
-//Swift
-func messagesChangedNotification(notification:NSNotification) 
-{
-   let message = notification.userInfo[Bit6ObjectKey]
-   let change = notification.userInfo[Bit6ChangeKey]
-   
-   if change == Bit6AddedKey {
-       //add message to self.messages and refresh changes in UI
-   }
-   else if change == Bit6UpdatedKey {
-       //find message in self.messages and refresh changes in UI
-   }
-   else if change == Bit6DeletedKey {
-       //find message in self.messages, remove it and refresh changes in UI
-   }
-}
-```
-
 ###Delete a Message
 
 ```objc
@@ -211,7 +136,7 @@ You can enable background remote notifications by checking the property in your 
 
 <img class="shot" src="images/background_notifications.png"/>
 
-Then in your Bit6ApplicationManager subclass you need to implement the following:
+Then in your UIApplicationDelegate implementation you need to add the following:
 
 ```objc
 //ObjectiveC
@@ -224,10 +149,33 @@ Then in your Bit6ApplicationManager subclass you need to implement the following
 ```
 
 ```swift
+//Swift
 func application(application: UIApplication, 
 		didReceiveRemoteNotification userInfo: [NSObject : AnyObject], 
      fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) 
 {
 	Bit6.pushNotification().didReceiveRemoteNotification(userInfo, fetchCompletionHandler:completionHandler)
 }
+```
+
+#####Note. If you implement `application:didReceiveRemoteNotification:fetchCompletionHandler:` remember to remove this from your `application:didFinishLaunchingWithOptions:`
+
+```objc
+//ObjectiveC
+//Remove
+/*
+	NSDictionary *remoteNotificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+	if (remoteNotificationPayload) {
+	    //[[Bit6 pushNotification] didReceiveRemoteNotification:remoteNotificationPayload];
+	}
+*/
+```
+```swift
+//Swift
+//Remove
+/*
+	if let remoteNotificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+        Bit6.pushNotification().didReceiveRemoteNotification(remoteNotificationPayload as [NSObject : AnyObject])
+    }
+*/
 ```

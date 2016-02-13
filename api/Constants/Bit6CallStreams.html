@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6MessageAttachmentCategory Constants Reference</title>
+		<title>Bit6CallStreams Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6MessageAttachmentCategory Constants Reference</h1>
+				<h1 class="hideInXcode">Bit6CallStreams Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -45,7 +45,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6MessageAttachmentCategory Constants Reference" name="top"></a>
+				<a title="Bit6CallStreams Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6MessageAttachmentCategory Constants Reference</h1>
+						<h1 class="title title-header">Bit6CallStreams Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -62,7 +62,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">Bit6Message.h</td>
+	<td class="specification-value">Bit6CallController.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -74,11 +74,11 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">Bit6MessageAttachmentCategory</h3>
+                    <h3 class="subsubtitle method-title">Bit6CallStreams</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Message attachment category for a <a href="../Classes/Bit6Message.html">Bit6Message</a>.</p>
+                        <p>Call stream for a <a href="../Classes/Bit6CallController.html">Bit6CallController</a>.</p>
 					</div>
 					
 					
@@ -86,11 +86,13 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, Bit6MessageAttachmentCategory ) {<br/>
+                        <code>typedef NS_OPTIONS(NSInteger, Bit6CallStreams ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6MessageAttachmentCategory_THUMBNAIL</a> = 1,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6CallStreams_Audio</a> = 1 &lt; &lt; 0,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6MessageAttachmentCategory_FULL_SIZE</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6CallStreams_Video</a> = 1 &lt; &lt; 1,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6CallStreams_Data</a> = 1 &lt; &lt; 2,<br/>
                             
                             };</code>
                     
@@ -100,11 +102,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="Bit6MessageAttachmentCategory_THUMBNAIL"></a><code>Bit6MessageAttachmentCategory_THUMBNAIL</code></dt>
+                            <dt><a name="" title="Bit6CallStreams_Audio"></a><code>Bit6CallStreams_Audio</code></dt>
 <dd>
 
 
-<p>The thumbnail image for the message.</p>
+<p>Audio stream.</p>
 
     
 
@@ -112,16 +114,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6MessageAttachmentCategory_FULL_SIZE"></a><code>Bit6MessageAttachmentCategory_FULL_SIZE</code></dt>
+                            <dt><a name="" title="Bit6CallStreams_Video"></a><code>Bit6CallStreams_Video</code></dt>
 <dd>
 
 
-<p>The full size attachment for the message.</p>
+<p>Video stream.</p>
 
     
 
@@ -129,7 +131,24 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">Bit6Message.h</code>.
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6CallStreams_Data"></a><code>Bit6CallStreams_Data</code></dt>
+<dd>
+
+
+<p>Data stream.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6CallController.h</code>.
 	</p>
 	
 </dd>
@@ -146,7 +165,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <code class="declared-in-ref">Bit6Message.h</code><br />
+                        <code class="declared-in-ref">Bit6CallController.h</code><br />
                     </div>				
                     
                     
@@ -161,7 +180,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-03)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

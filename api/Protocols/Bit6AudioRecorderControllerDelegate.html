@@ -45,7 +45,9 @@
 	
 	<option value="//api/name/cancelRecorderController:">&nbsp;&nbsp;&nbsp;&nbsp;- cancelRecorderController:</option>
 	
-	<option value="//api/name/doneRecorderController:message:">&nbsp;&nbsp;&nbsp;&nbsp;- doneRecorderController:message:</option>
+	<option value="//api/name/doneRecorderController:filePath:">&nbsp;&nbsp;&nbsp;&nbsp;- doneRecorderController:filePath:</option>
+	
+	<option value="//api/name/isRecordingWithController:filePath:">&nbsp;&nbsp;&nbsp;&nbsp;- isRecordingWithController:filePath:</option>
 	
 	
 	
@@ -77,7 +79,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelRecorderController:">cancelRecorderController:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doneRecorderController:message:">doneRecorderController:message:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doneRecorderController:filePath:">doneRecorderController:filePath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isRecordingWithController:filePath:">isRecordingWithController:filePath:</a></span></li>
 	
 </ul></li>
 
@@ -134,7 +138,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/doneRecorderController:message:">&ndash;&nbsp;doneRecorderController:message:</a></code>
+		<code><a href="#//api/name/doneRecorderController:filePath:">&ndash;&nbsp;doneRecorderController:filePath:</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isRecordingWithController:filePath:">&ndash;&nbsp;isRecordingWithController:filePath:</a></code>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -143,7 +153,7 @@
 		<code><a href="#//api/name/cancelRecorderController:">&ndash;&nbsp;cancelRecorderController:</a></code>
 	</span>
 	
-	
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -173,7 +183,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)cancelRecorderController:(Bit6AudioRecorderController *)<em>b6rc</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)cancelRecorderController:(nonnull Bit6AudioRecorderController *)<em>b6rc</em></code></div>
 
     
 	
@@ -208,8 +218,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/doneRecorderController:message:" title="doneRecorderController:message:"></a>
-	<h3 class="subsubtitle method-title">doneRecorderController:message:</h3>
+	<a name="//api/name/doneRecorderController:filePath:" title="doneRecorderController:filePath:"></a>
+	<h3 class="subsubtitle method-title">doneRecorderController:filePath:</h3>
 	
 	
 	
@@ -219,7 +229,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)doneRecorderController:(Bit6AudioRecorderController *)<em>b6rc</em> message:(Bit6OutgoingMessage *)<em>message</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)doneRecorderController:(nonnull Bit6AudioRecorderController *)<em>b6rc</em> filePath:(nonnull NSString *)<em>filePath</em></code></div>
 
     
 	
@@ -232,8 +242,59 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>message</em></dt>
-			<dd><p>Message object set in <a href="../Classes/Bit6AudioRecorderController.html#//api/name/startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:">[Bit6AudioRecorderController startRecordingAudioForMessage:maxDuration:delegate:defaultPrompt:errorHandler:]</a> with the audio file set.</p></dd>
+			<dt><em>filePath</em></dt>
+			<dd><p>file where the audio was saved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6AudioRecorderController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isRecordingWithController:filePath:" title="isRecordingWithController:filePath:"></a>
+	<h3 class="subsubtitle method-title">isRecordingWithController:filePath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called each 0.5 seconds while recording.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)isRecordingWithController:(nonnull Bit6AudioRecorderController *)<em>b6rc</em> filePath:(nonnull NSString *)<em>filePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>b6rc</em></dt>
+			<dd><p>The controller object recording the audio file.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>file where the audio is being saved.</p></dd>
 		</dl>
 		
 	</div>
@@ -273,7 +334,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-01-03)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

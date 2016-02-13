@@ -5,70 +5,48 @@ title: 'Download Attachments'
 
 ### Download Attachments
 
-`Bit6ThumbnailImageView` and `Bit6ImageView` classes handle attachment downloading and rendering.
+`Bit6ThumbnailImageView` and `Bit6ImageView` classes can downloads the attachments automatically.
 
-You can also download the files manually by using `[Bit6Message downloadAttachment:]` and listen to `Bit6FileDownloadedNotification`.
+You can also download the files manually using the `Bit6FileDownloader` class. For example to download the thumbnail for a message:
 
 ```objc
 //ObjectiveC
+NSURL *url = message.remoteURLForThumbnailAttachment;
+NSString *filePath = message.pathForThumbnailAttachment;
+NSData* (^preparationBlock)(NSData *data) = ^(NSData *imageData) {
+    UIImage *image = [UIImage imageWithData:imageData];
+    UIImage *finalImage = ...
+    return UIImagePNGRepresentation(finalImage);
+};
 
-//listen to download_files notification
-[[NSNotificationCenter defaultCenter] addObserver:self
-										 selector:@selector(fileDownloadedNotification:) 
-                                             name:Bit6FileDownloadedNotification
-                                           object:message];
-
-Bit6Message *message = ...
-//download the thumbnail
-[message downloadAttachment:Bit6MessageAttachmentCategory_THUMBNAIL];
-//download the full attachment
-[message downloadAttachment:Bit6MessageAttachmentCategory_FULL_SIZE];
-
-- (void) fileDownloadedNotification:(NSNotification*)notification
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-		//Can be Bit6MessageAttachmentCategory_THUMBNAIL or Bit6MessageAttachmentCategory_FULL_SIZE
-		Bit6MessageAttachmentCategory category = [notification.userInfo[@"attachmentCategory"] intValue];
-
-        switch (category) {
-            case Bit6MessageAttachmentStatus_INVALID: // the message doesn't have the specified attachment
-            case Bit6MessageAttachmentStatus_FAILED: // failed to download the attachment
-            case Bit6MessageAttachmentStatus_NOT_FOUND: // attachment is not downloading
-            case Bit6MessageAttachmentStatus_DOWNLOADING: // attachment is downloading
-            case Bit6MessageAttachmentStatus_FOUND: //attachment is in cache
-        }
-    });
-}
+[Bit6FileDownloader downloadFileAtURL:url 
+						   toFilePath:filePath 
+					 preparationBlock:preparationBlock 
+					         priority:NSOperationQueuePriorityNormal 
+					completionHandler:^(NSURL* location, NSURLResponse* response, NSError* error) {
+                    	//operation completed
+                    }
+];
 
 ```
+
 ```swift
 //Swift
-
-//listen to download_files notification
-NSNotificationCenter.defaultCenter().addObserver(self, 
-										selector: "fileDownloadedNotification:", 
-											name: Bit6FileDownloadedNotification, 
-										  object: message)
-
-var message : Bit6Message = ...
-//download the thumbnail
-message.downloadAttachment(.THUMBNAIL)
-//download the full attachment
-message.downloadAttachment(.FULL_SIZE)
-
-func fileDownloadedNotification(notification:NSNotification){
-
-dispatch_async(dispatch_get_main_queue()) {
-	//Can be Bit6MessageAttachmentCategory.THUMBNAIL or Bit6MessageAttachmentCategory.FULL_SIZE
-	var category : Bit6MessageAttachmentCategory = notification.userInfo["attachmentCategory"].intValue()
-
-    switch category {
-        case .INVALID: // the message doesn't have the specified attachment
-        case .FAILED: // failed to download the attachment
-        case .NOT_FOUND: // attachment is not downloading
-        case .DOWNLOADING: // attachment is downloading
-        case .FOUND: //attachment is in cache
-    }
-  }
-}
+let url = message.remoteURLForThumbnailAttachment!
+let filePath = message.pathForThumbnailAttachment!
+let preparationBlock = ({ (data:NSData) -> NSData in
+    let image = UIImage(data:data)
+    let finalImage = ...
+    return UIImagePNGRepresentation(finalImage)!
+})
+        
+Bit6FileDownloader.downloadFileAtURL(url, 
+						  toFilePath:filePath, 
+			   		preparationBlock:preparationBlock, 
+			   				priority:.Normal) { (location, response, error) in
+			   					//operation completed
+			   				}
+         
 ```
+
+#####Note. The `preparationBlock` can be used to make changes to the downloaded data before saving it locally. For example you could download the thumbnail and apply a filter using this block.

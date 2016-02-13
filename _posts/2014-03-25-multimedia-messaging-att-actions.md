@@ -7,41 +7,33 @@ Let the user view the attachment preview, play audio files, view location on the
 
 ###Get the Path for a Message Attachment
 
-Check the attachment path for a given message. <br><br>
-Contants to be used:<br>
-`Bit6MessageAttachmentCategory_THUMBNAIL` - for thumbnails
-`Bit6MessageAttachmentCategory_FULL_SIZE` - for full size 
+Check the attachment path for a given message. <br>
 
 ```objc
 //ObjectiveC
 Bit6Message *msg = ...;
-NSString *thumbnailAttachmentPath = [msg attachmentPathForAttachmentCategory:
-									Bit6MessageAttachmentCategory_THUMBNAIL];
-NSString *fullAttachmentPath = [msg attachmentPathForAttachmentCategory:
-									Bit6MessageAttachmentCategory_FULL_SIZE];
+NSString *thumbnailAttachmentPath = msg.pathForThumbnailAttachment;
+NSString *fullAttachmentPath = msg.pathForFullAttachment;
 ```
 ```swift
 //Swift
 var msg : Bit6Message = ...
-var thumbnailAttachmentPath = msg.attachmentStatusForAttachmentCategory(
-						.THUMBNAIL)
-var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(
-						.FULL_SIZE)
+var thumbnailAttachmentPath = msg.pathForThumbnailAttachment
+var fullAttachmentPath = msg.pathForFullAttachment
 ```
 
 
 ###Get the Status for a Message Attachment
 
 Check the attachment state for a given message. <br><br>
-Contants to be used:<br>
-`Bit6MessageAttachmentCategory_THUMBNAIL` - for thumbnails
-`Bit6MessageAttachmentCategory_FULL_SIZE` - for full size 
+Properties:<br>
+`message.statusForThumbnailAttachment` - for thumbnails
+`message.statusForFullAttachment` - for full size 
 
 ```objc
 //ObjectiveC
 Bit6Message *msg = ...;
-    switch ([msg attachmentStatusForAttachmentCategory:
-                 Bit6MessageAttachmentCategory_FULL_SIZE]) {
+    switch (msg.statusForFullAttachment) {
         case Bit6MessageAttachmentStatus_INVALID:
             //the message can't have an attachment, for example a text message
             break;
@@ -63,7 +55,7 @@ Bit6Message *msg = ...;
 ```swift
 //Swift
 var msg : Bit6Message = ...
-	switch msg.attachmentStatusForAttachmentCategory(.FULL_SIZE) {
+	switch msg.statusForFullAttachment {
         case .INVALID:
             //the message can't have an attachment, for example a text message
             break;
@@ -143,6 +135,9 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
 - (void) touchedThumbnailImageView:(Bit6ThumbnailImageView*)thumbnailImageView
 {
     Bit6Message *msg = thumbnailImageView.message;
+    
+    Bit6MessageAttachmentStatus fullAttachStatus = msg.statusForFullAttachment;
+    
     if (msg.type == Bit6MessageType_Location) {
         //Open in AppleMaps
         [Bit6 openLocationOnMapsFromMessage:msg];
@@ -173,9 +168,9 @@ __Step 2.__ Depending on the attachment type, show the location on the map, play
 ```swift
 //Swift
 func touchedThumbnailImageView(thumbnailImageView:Bit6ThumbnailImageView) {
-        var msg = thumbnailImageView.message
+        let msg = thumbnailImageView.message
         
-        var fullAttachStatus = msg.attachmentStatusForAttachmentCategory(.FULL_SIZE)
+        let fullAttachStatus = msg.statusForFullAttachment
         
         if msg.type == .Location{
             //Open in AppleMaps

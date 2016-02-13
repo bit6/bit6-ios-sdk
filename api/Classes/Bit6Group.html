@@ -64,20 +64,22 @@
 	
 	<option value="//api/name/createPublicGroupWithIdentifier:metadata:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ createPublicGroupWithIdentifier:metadata:completion:</option>
 	
-	<option value="//api/name/groupForAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupForAddress:</option>
+	<option value="//api/name/groupWithAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupWithAddress:</option>
 	
-	<option value="//api/name/groupForConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupForConversation:</option>
+	<option value="//api/name/groupWithConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupWithConversation:</option>
 	
-	<option value="//api/name/joinGroupWithAddress:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ joinGroupWithAddress:completion:</option>
+	<option value="//api/name/joinGroupWithAddress:role:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ joinGroupWithAddress:role:completion:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/deleteMember:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteMember:completion:</option>
+	<option value="//api/name/inviteGroupMemberWithAddress:role:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- inviteGroupMemberWithAddress:role:completion:</option>
 	
-	<option value="//api/name/inviteAddresses:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- inviteAddresses:completion:</option>
+	<option value="//api/name/inviteGroupMembersWithAddresses:roles:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- inviteGroupMembersWithAddresses:roles:completion:</option>
+	
+	<option value="//api/name/kickGroupMember:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- kickGroupMember:completion:</option>
 	
 	<option value="//api/name/leaveGroupWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- leaveGroupWithCompletion:</option>
 	
@@ -135,11 +137,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createPublicGroupWithIdentifier:metadata:completion:">createPublicGroupWithIdentifier:metadata:completion:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupForAddress:">groupForAddress:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupWithAddress:">groupWithAddress:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupForConversation:">groupForConversation:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupWithConversation:">groupWithConversation:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/joinGroupWithAddress:completion:">joinGroupWithAddress:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/joinGroupWithAddress:role:completion:">joinGroupWithAddress:role:completion:</a></span></li>
 	
 </ul></li>
 
@@ -147,9 +149,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMember:completion:">deleteMember:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inviteGroupMemberWithAddress:role:completion:">inviteGroupMemberWithAddress:role:completion:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inviteAddresses:completion:">inviteAddresses:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inviteGroupMembersWithAddresses:roles:completion:">inviteGroupMembersWithAddresses:roles:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/kickGroupMember:completion:">kickGroupMember:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/leaveGroupWithCompletion:">leaveGroupWithCompletion:</a></span></li>
 	
@@ -212,13 +216,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/groupForAddress:">+&nbsp;groupForAddress:</a></code>
+		<code><a href="#//api/name/groupWithAddress:">+&nbsp;groupWithAddress:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/groupForConversation:">+&nbsp;groupForConversation:</a></code>
+		<code><a href="#//api/name/groupWithConversation:">+&nbsp;groupWithConversation:</a></code>
 	</span>
 	
 	
@@ -236,7 +240,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/joinGroupWithAddress:completion:">+&nbsp;joinGroupWithAddress:completion:</a></code>
+		<code><a href="#//api/name/joinGroupWithAddress:role:completion:">+&nbsp;joinGroupWithAddress:role:completion:</a></code>
 	</span>
 	
 	
@@ -308,13 +312,19 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/inviteAddresses:completion:">&ndash;&nbsp;inviteAddresses:completion:</a></code>
+		<code><a href="#//api/name/inviteGroupMemberWithAddress:role:completion:">&ndash;&nbsp;inviteGroupMemberWithAddress:role:completion:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/deleteMember:completion:">&ndash;&nbsp;deleteMember:completion:</a></code>
+		<code><a href="#//api/name/inviteGroupMembersWithAddresses:roles:completion:">&ndash;&nbsp;inviteGroupMembersWithAddresses:roles:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/kickGroupMember:completion:">&ndash;&nbsp;kickGroupMember:completion:</a></code>
 	</span>
 	
 	
@@ -343,7 +353,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6Address *address</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) Bit6Address *address</code></div>
 
     
 	
@@ -379,7 +389,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *created</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, copy, readonly) NSNumber *created</code></div>
 
     
 	
@@ -523,7 +533,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *members</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy, readonly) NSArray&lt;Bit6GroupMember*&gt; *members</code></div>
 
     
 	
@@ -559,7 +569,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSDictionary *metadata</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy, readonly) NSDictionary&lt;NSString*id&gt; *metadata</code></div>
 
     
 	
@@ -595,7 +605,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSNumber *updated</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy, readonly) NSNumber *updated</code></div>
 
     
 	
@@ -639,7 +649,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)createGroupWithMetadata:(NSDictionary *)<em>metadata</em> completion:(void ( ^ ) ( Bit6Group *group , NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)createGroupWithMetadata:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>metadata</em> completion:(nullable void ( ^ ) ( Bit6Group *_Nullable group , NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -648,7 +658,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>metadata</em></dt>
-			<dd><p>metadata for the new group.</p></dd>
+			<dd><p>metadata for the new group. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -690,7 +700,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)createPublicGroupWithIdentifier:(NSString *)<em>identifier</em> metadata:(NSDictionary *)<em>metadata</em> completion:(void ( ^ ) ( Bit6Group *group , NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)createPublicGroupWithIdentifier:(nonnull NSString *)<em>identifier</em> metadata:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>metadata</em> completion:(nullable void ( ^ ) ( Bit6Group *_Nullable group , NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -699,12 +709,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>identifier</em></dt>
-			<dd><p>unique identifier to use</p></dd>
+			<dd><p>unique identifier to use.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>metadata</em></dt>
-			<dd><p>metadata for the new group.</p></dd>
+			<dd><p>metadata for the new group. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -735,8 +745,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/groupForAddress:" title="groupForAddress:"></a>
-	<h3 class="subsubtitle method-title">groupForAddress:</h3>
+	<a name="//api/name/groupWithAddress:" title="groupWithAddress:"></a>
+	<h3 class="subsubtitle method-title">groupWithAddress:</h3>
 	
 	
 	
@@ -746,7 +756,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (Bit6Group *)groupForAddress:(Bit6Address *)<em>address</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6Group *)groupWithAddress:(nonnull Bit6Address *)<em>address</em></code></div>
 
     
 	
@@ -786,8 +796,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/groupForConversation:" title="groupForConversation:"></a>
-	<h3 class="subsubtitle method-title">groupForConversation:</h3>
+	<a name="//api/name/groupWithConversation:" title="groupWithConversation:"></a>
+	<h3 class="subsubtitle method-title">groupWithConversation:</h3>
 	
 	
 	
@@ -797,7 +807,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (Bit6Group *)groupForConversation:(Bit6Conversation *)<em>conversation</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6Group *)groupWithConversation:(nonnull Bit6Conversation *)<em>conversation</em></code></div>
 
     
 	
@@ -837,8 +847,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/joinGroupWithAddress:completion:" title="joinGroupWithAddress:completion:"></a>
-	<h3 class="subsubtitle method-title">joinGroupWithAddress:completion:</h3>
+	<a name="//api/name/joinGroupWithAddress:role:completion:" title="joinGroupWithAddress:role:completion:"></a>
+	<h3 class="subsubtitle method-title">joinGroupWithAddress:role:completion:</h3>
 	
 	
 	
@@ -848,7 +858,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)joinGroupWithAddress:(Bit6Address *)<em>address</em> completion:(void ( ^ ) ( Bit6Group *group , NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)joinGroupWithAddress:(nonnull Bit6Address *)<em>address</em> role:(nonnull NSString *)<em>role</em> completion:(nullable void ( ^ ) ( Bit6Group *_Nullable group , NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -858,6 +868,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>address</em></dt>
 			<dd><p><a href="../Classes/Bit6Address.html">Bit6Address</a> of the group to join.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>role</em></dt>
+			<dd><p>requested role in the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -901,18 +916,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/deleteMember:completion:" title="deleteMember:completion:"></a>
-	<h3 class="subsubtitle method-title">deleteMember:completion:</h3>
+	<a name="//api/name/inviteGroupMemberWithAddress:role:completion:" title="inviteGroupMemberWithAddress:role:completion:"></a>
+	<h3 class="subsubtitle method-title">inviteGroupMemberWithAddress:role:completion:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Remove a member from the group.</p>
+		<p>Invite an user to the group.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)deleteMember:(Bit6GroupMember *)<em>member</em> completion:(void ( ^ ) ( NSArray *members , NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)inviteGroupMemberWithAddress:(nonnull Bit6Address *)<em>address</em> role:(nonnull NSString *)<em>role</em> completion:(nullable void ( ^ ) ( NSArray&lt;Bit6GroupMember*&gt; *_Nullable members , NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -920,8 +935,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>member</em></dt>
-			<dd><p>member to be removed from the group.</p></dd>
+			<dt><em>address</em></dt>
+			<dd><p><a href="../Classes/Bit6Address.html">Bit6Address</a> indicating the user to invite.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>role</em></dt>
+			<dd><p>requested role to assign to the user invited to the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -952,8 +972,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/inviteAddresses:completion:" title="inviteAddresses:completion:"></a>
-	<h3 class="subsubtitle method-title">inviteAddresses:completion:</h3>
+	<a name="//api/name/inviteGroupMembersWithAddresses:roles:completion:" title="inviteGroupMembersWithAddresses:roles:completion:"></a>
+	<h3 class="subsubtitle method-title">inviteGroupMembersWithAddresses:roles:completion:</h3>
 	
 	
 	
@@ -963,7 +983,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)inviteAddresses:(NSArray *)<em>addresses</em> completion:(void ( ^ ) ( NSArray *members , NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)inviteGroupMembersWithAddresses:(nonnull NSArray&lt;Bit6Address*&gt; *)<em>addresses</em> roles:(nonnull NSArray&lt;NSString*&gt; *)<em>roles</em> completion:(nullable void ( ^ ) ( NSArray&lt;Bit6GroupMember*&gt; *_Nullable members , NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -973,6 +993,62 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>addresses</em></dt>
 			<dd><p>array of <a href="../Classes/Bit6Address.html">Bit6Address</a> indicating the users to invite.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>roles</em></dt>
+			<dd><p>array of requested roles to assign to the users invited to the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Group.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/kickGroupMember:completion:" title="kickGroupMember:completion:"></a>
+	<h3 class="subsubtitle method-title">kickGroupMember:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove a member from the group.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)kickGroupMember:(nonnull Bit6GroupMember *)<em>member</em> completion:(nullable void ( ^ ) ( NSArray&lt;Bit6GroupMember*&gt; *_Nullable members , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>member</em></dt>
+			<dd><p>member to be removed from the group.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1014,7 +1090,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)leaveGroupWithCompletion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)leaveGroupWithCompletion:(nullable void ( ^ ) ( NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -1060,7 +1136,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)loadMembersListWithCompletion:(void ( ^ ) ( NSArray *members , NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;Bit6GroupMember*&gt; *)loadMembersListWithCompletion:(nullable void ( ^ ) ( NSArray&lt;Bit6GroupMember*&gt; *_Nullable members , NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -1111,7 +1187,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setMetadata:(NSDictionary *)<em>metadata</em> completion:(void ( ^ ) ( NSError *error ))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setMetadata:(nonnull NSDictionary&lt;NSString*,id&gt; *)<em>metadata</em> completion:(nullable void ( ^ ) ( NSError *_Nullable error ))<em>completion</em></code></div>
 
     
 	
@@ -1120,7 +1196,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>metadata</em></dt>
-			<dd><p>new metadata for the sender.</p></dd>
+			<dd><p>new metadata for the sender. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1165,7 +1241,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-07-29)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

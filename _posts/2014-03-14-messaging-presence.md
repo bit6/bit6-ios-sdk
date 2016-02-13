@@ -32,55 +32,65 @@ shouldChangeCharactersInRange range: NSRange,
 ```
 
 
-### Detect when the Recipient is Typing
+### "Typing" Notifications
 
-Register as an observer for changes in the conversations:
+You can check who is typing for a specific conversation:
+
+```objc
+//ObjectiveC
+Bit6Conversation *conv = ...
+Bit6Address *whoIsTyping = conv.typingAddress;
+```
+```swift
+//Swift
+let conv = ...
+let whoIsTyping = conv.typingAddress
+```
+
+To detect when someone is typing register as an observer:
 
 ```objc
 //ObjectiveC
 [[NSNotificationCenter defaultCenter] addObserver:self 
-                       selector:@selector(conversationsChangedNotification:)
-                           name:Bit6ConversationsChangedNotification
+                       selector:@selector(typingBeginNotification:)
+                           name:Bit6TypingDidBeginRtNotification
                          object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self 
+                       selector:@selector(typingEndNotification:)
+                           name:Bit6TypingDidEndRtNotification
+                         object:nil];
+                         
+- (void)typingBeginNotification:(NSNotification*)notification
+{
+    Bit6Address* fromAddress = notification.userInfo[@"from"];
+    Bit6Address* convervationAddress = notification.object;
+}
+- (void)typingEndNotification:(NSNotification*)notification
+{
+    Bit6Address* fromAddress = notification.userInfo[@"from"];
+    Bit6Address* convervationAddress = notification.object;
+}    
 ```
 ```swift
 //Swift
 NSNotificationCenter.defaultCenter().addObserver(self,
-							selector: "conversationsChangedNotification:", 
-                                name: Bit6ConversationsChangedNotification, 
-                              object: nil)
-```
+							selector:"typingBeginNotification:", 
+                                name:Bit6TypingDidBeginRtNotification, 
+                              object:nil)
+NSNotificationCenter.defaultCenter().addObserver(self,
+							selector:"typingEndNotification:", 
+                                name:Bit6TypingDidEndRtNotification, 
+                              object:nil)
 
-Upon receiving a notification, update the UI:
-
-```objc
-//ObjectiveC
-- (void) conversationsChangedNotification:(NSNotification*)notification
-{
-	Bit6Conversation *conversation = notification.userInfo[Bit6ObjectKey];
-    NSString *change = notification.userInfo[Bit6ChangeKey];
-    
-    if ([conversation isEqual:self.conversation]) {
-    	if ([change isEqualToString:Bit6UpdatedKey]) {
-    		NSLog(@"%@ is typing...",conversation.typingAddress.displayName);
-    	}
-    }
+func typingBeginNotification(notification:NSNotification){
+	let fromAddress = notification.userInfo!["from"] as! Bit6Address
+	let convervationAddress = notification.object as! Bit6Address
+}
+func typingEndNotification(notification:NSNotification){
+	let fromAddress = notification.userInfo!["from"] as! Bit6Address
+	let convervationAddress = notification.object as! Bit6Address
 }
 ```
-```swift
-//Swift
-func conversationsChangedNotification(notification:NSNotification){
-   let conversation = notification.userInfo[Bit6ObjectKey]
-   let change = notification.userInfo[Bit6ChangeKey]
-   
-   if conversation.isEqual(self.conversation) {
-   		if change == Bit6UpdatedKey {
-   			NSLog("\(conversation.typingAddress.displayName) is typing...")
-   		}
-   }
-}
-```
-
 
 ### Receiving custom notifications
 

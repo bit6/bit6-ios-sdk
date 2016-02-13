@@ -9,22 +9,16 @@ Go to [Dashboard](https://dashboard.bit6.com/) and get the API Key for your app.
 
 __Step 1.__ [Download](https://github.com/bit6/bit6-ios-sdk/) the Bit6 SDK.
 
-__Step 2.__ Configure 'Linked Frameworks and Libraries' - add `Bit6SDK.framework` as well as the libraries: `libicucore.dylib`, `libz.dylib`, `libstdc++.dylib`, `libsqlite3.dylib`, `CoreMedia`, `AudioToolbox`, `AVFoundation`, `AssetsLibrary`, `SystemConfiguration`, `MediaPlayer`, `CoreLocation` and `GLKit`.
-<img class="shot" src="images/frameworks.png"/>
+__Step 2.__ Add `Bit6.framework` and `Bit6Resources.bundle` to your project.
 
-__Step 3.__ Add `Bit6Resources.bundle` to "Supporting Files".
-<img class="shot" src="images/resources.png"/>
+__Step 3.__ Link the following frameworks and libraries: `libicucore.tdb`, `libstdc++.tdb`, `GLKit` and `VideoToolbox`.
 
 __Step 4.__ Set the Architectures value to be `$(ARCHS_STANDARD_32_BIT)` for iPhone Simulators and `$(ARCHS_STANDARD)` for devices.
 <img class="shot" src="images/architectures.png"/>
 
-__Step 5.__ Set your Deployment Target to be iOS 7.0 or above.
+__Step 5.__ Set your Deployment Target to be iOS 7.0 or later.
 
-__Step 6.__ In your project settings add `-ObjC` to the 'Other Linker Flags'
-<img class="shot" src="images/other_linker_flags.png"/>
-
-__Step 7.__ If you are working on a Swift project remember to set the Swift-ObjectiveC Bridge Header file
-<img class="shot" src="images/swift_bridge.png"/>
+__Step 6.__ In your Build Settings add `-ObjC` to the 'Other Linker Flags'
 
 
 ### Configuration using Cocoapods
@@ -35,12 +29,11 @@ __Step 7.__ If you are working on a Swift project remember to set the Swift-Obje
 #### Installation
 
 Bit6 starting from version v0.8.5 is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following lines to your Podfile:
 
+	# Uncomment this line if you're using Swift
+	# use_frameworks!
     pod "Bit6"
-
-__Note__ If you are working on a Swift project remember to set a Swift-ObjectiveC Bridge Header file
-<img class="shot" src="images/swift_bridge.png"/>
 
 ### Building for iOS9
 
@@ -72,9 +65,7 @@ __Bitcode__  Bit6 SDK doesn't include support for [bitcode](https://developer.ap
 
 ### Setup Application Delegate
 
-__Step 1.__ Import Bit6: `#import <Bit6_SDK/Bit6SDK.h>`.
-
-__Note.__ If you are working on a Swift project you need to add this import on the Swift-ObjectiveC Bridge Header file
+__Step 1.__ Import Bit6: `@import Bit6;` for ObjectiveC and `import Bit6` for Swift.
  
 __Step 2.__ Launch Bit6 with your API Key.
 
@@ -86,8 +77,8 @@ __Step 2.__ Launch Bit6 with your API Key.
         // start of your application:didFinishLaunchingWithOptions: method
         // ...
         
-        [Bit6 startWithApiKey:@"your_api_key" apnsProduction:NO];
-    
+        [Bit6 startWithApiKey:@"your_api_key"];
+        
 		NSDictionary *remoteNotificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
 	    if (remoteNotificationPayload) {
 	        [[Bit6 pushNotification] didReceiveRemoteNotification:remoteNotificationPayload];
@@ -106,7 +97,7 @@ func application(application: UIApplication,
         // start of your application:didFinishLaunchingWithOptions: method
         // ...
         
-        Bit6.startWithApiKey("your_api_key", apnsProduction: false);
+        Bit6.startWithApiKey("your_api_key")
         
         if let remoteNotificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
             Bit6.pushNotification().didReceiveRemoteNotification(remoteNotificationPayload as [NSObject : AnyObject])
@@ -118,6 +109,8 @@ func application(application: UIApplication,
 ```
 
 __Step 3.__ Support for Push Notifications
+
+__NOTE.__ Remember to upload your development and production APNS Certificates to [Dashboard](https://dashboard.bit6.com/).
 
 Implement the following methods in your AppDelegate
 

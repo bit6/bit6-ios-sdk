@@ -57,7 +57,7 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 }
 
 //called in the Main Thread to customize the frames for the video feeds. You can call [self setNeedsUpdateVideoViewLayout] at any time to force a refresh of the frames.
-- (void)updateLayoutForVideoFeedViews:(NSArray*)videoFeedViews
+- (void)updateLayoutForVideoFeedViews:(NSArray<Bit6VideoFeedView*>*)videoFeedViews
 {
 	//Here you can do your own calculations to set the frames or just call super. You can easily keep the aspect ratio by using AVMakeRectWithAspectRatioInsideRect() (import AVFoundation/AVFoundation.h) to do an scaleToFit or Bit6MakeRectWithAspectRatioToFillRect to do an scaleToFill.
 	[super updateLayoutForVideoFeedViews:videoFeedViews];
@@ -69,9 +69,9 @@ __Step 1.__ Create an UIViewController class that extends from Bit6CallViewContr
 //Swift
 class MyCallViewController: Bit6CallViewController
 
-var callController : Bit6CallController {
+var callController : Bit6CallController? {
    get {
-       return Bit6.callControllers().first as! Bit6CallController
+       return Bit6.callControllers().first
    }
 }
 
@@ -94,7 +94,7 @@ override func refreshControlsView()
 }
 
 //called in the Main Thread when the status of the call changes.
-override func callStateChangedNotificationForCallController(callController: Bit6CallController!)
+override func override func callStateChangedNotificationForCallController(callController: Bit6CallController)
 {
 	switch (self.callController.callState) {
        case .NEW: NSLog("Call created")
@@ -124,7 +124,7 @@ override func secondsChangedNotificationForCallController(callController: Bit6Ca
 }
 
 //called to customize the frames for the video feeds. You can call [self setNeedsUpdateVideoViewLayout] at any time to force a refresh of the frames.
-override func updateLayoutForVideoFeedViews(videoFeedViews: [AnyObject]!)
+override func updateLayoutForVideoFeedViews(videoFeedViews: [Bit6VideoFeedView])
 {
 	//Here you can do your own calculations to set the frames or just call super. You can easily keep the aspect ratio by using AVMakeRectWithAspectRatioInsideRect() (import AVFoundation/AVFoundation.h) to do an scaleToFit or Bit6MakeRectWithAspectRatioToFillRect to do an scaleToFill.
 	super.updateLayoutForVideoFeedViews(videoFeedViews)
@@ -177,7 +177,9 @@ __Step 3.__ Do some additional configurations on your viewDidLoad method
 ```objc
 //ObjectiveC
 - (void)viewDidLoad {
-    NSLog(@"Other User Display Name %@", self.callController.otherDisplayName);
+	[super viewDidLoad];
+
+    self.usernameLabel.text = self.callController.otherDisplayName;
     
     if (! self.callController.hasVideo) {
 		//hide switch camera option from the UI
@@ -188,14 +190,14 @@ __Step 3.__ Do some additional configurations on your viewDidLoad method
     if(![deviceType isEqualToString:@"iPhone"]){
         //hide speaker option from the UI
     }
-    
-    [super viewDidLoad];
 }
 ```
 ```swift
 //Swift
 override func viewDidLoad() {
-   NSLog("Other User Display Name \(self.callController.otherDisplayName)")
+   super.viewDidLoad()
+        
+   self.usernameLabel.text = self.callController!.otherDisplayName
    
    if !self.callController.hasVideo {
        //hide switch camera option from the UI
@@ -206,20 +208,5 @@ override func viewDidLoad() {
    if deviceType != "iPhone" {
        //hide speaker option from the UI
    }
-   
-   super.viewDidLoad()
 }
-```
-
-__Step 4.__ To use you custom class add it as a param in the `-[Bit6CallController connectToViewController:]` call.
-
-```objc
-//ObjectiveC
-MyCallViewController *cvc = ....
-[callController connectToViewController:cvc];
-```
-```swift
-//Swift
-var cvc : MyCallViewController = ...
-callController.connectToViewController(cvc)
 ```

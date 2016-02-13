@@ -3,26 +3,27 @@ category: calling
 title: 'Voice & Video Calls'
 ---
 
-### Make a Call
-
 See the Bit6CallDemo and Bit6CallDemo-Swift sample projects included with the sdk.
 
-__Step1.__ Start the call
+### Make a Call
 
 ```objc
 //ObjectiveC
-Bit6Address * address = ...
-Bit6CallController *callController = [Bit6 startCallToAddress:address hasAudio:YES hasVideo:NO hasData:NO];
+Bit6Address *address = ...
+Bit6CallController *callController = [Bit6 createCallTo:address streams:Bit6CallStreams_Audio];
 
 if (callController){
-	//we listen to call state changes
-	[callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
+	//trying to reuse the previous viewController, or create a default one
+	Bit6CallViewController *callViewController = [Bit6 callViewController] ?: [Bit6CallViewController createDefaultCallViewController];
 	
-	//create the default in-call UIViewController
-	Bit6CallViewController *callVC = [Bit6CallViewController createDefaultCallViewController];
-	
-	//start the call
-    [callController connectToViewController:callVC];
+	//set the call to the viewController
+    [callViewController addCallController:callController];
+    
+    //start the call
+    [callController start];
+    
+    //present the viewController
+    [Bit6 presentCallViewController:callViewController];
 }
 else {
     //cannot make call to specified address
@@ -30,28 +31,38 @@ else {
 ```
 ```swift
 //Swift
-var address : Bit6Address = ...
-var callController = Bit6.startCallToAddress(address, hasAudio:true, hasVideo:false, hasData:false)
+let address : Bit6Address = ...
+let callController = Bit6.createCallTo(address, streams:.Audio)
 
 if callController != nil {
-	//we listen to call state changes
-	callController.addObserver(self, forKeyPath:"callState", options: .Old, context:nil)
-	
-	//create the default in-call UIViewController
-	var callVC = Bit6CallViewController.createDefaultCallViewController()
-	
-	//start the call
-    callController.connectToViewController(callVC)
+    //trying to reuse the previous viewController, or create a default one
+    let callViewController = Bit6.callViewController() ?? Bit6CallViewController.createDefaultCallViewController()
+    
+    //set the call to the viewController
+    callViewController.addCallController(callController)
+    
+    //start the call
+    callController.start()
+    
+    //present the viewController
+    Bit6.presentCallViewController(callViewController)
 }
 else {
-    //cannot make call to specified address
+    NSLog("Call Failed")
 }
 ```
 
-__Step2__ Listen to call state changes
+__Listen to call state changes__
 
 ```objc
 //ObjectiveC
+
+//register the observer
+[callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
+
+//deregister observer
+//[callController removeObserver:self forKeyPath:@"callState"];
+
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([object isKindOfClass:[Bit6CallController class]]) {
@@ -63,60 +74,37 @@ __Step2__ Listen to call state changes
 
 - (void) callStateChangedNotification:(Bit6CallController*)callController
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-    	//the call is starting: show the viewController
-        if (callController.callState == Bit6CallState_PROGRESS) {
-            [Bit6 presentCallViewController];
-        }
-        //the call ended: remove the observer and dismiss the viewController
-        else if (callController.callState == Bit6CallState_END) {
-            [callController removeObserver:self forKeyPath:@"callState"];
-        }
-        //the call ended with an error: remove the observer and dismiss the viewController
-        else if (callController.callState == Bit6CallState_ERROR) {
-            [callController removeObserver:self forKeyPath:@"callState"];
-            [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription?:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        }
-    });
+	switch (callController.callState) {
+	        
+	}
 }
 ```
 ```swift
 //Swift
-override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
-   dispatch_async(dispatch_get_main_queue()) {
-       if object.isKindOfClass(Bit6CallController) {
-           if keyPath == "callState" {
-               self.callStateChangedNotification(object as Bit6CallController)
-           }
-       }
+
+//register the observer
+callController.addObserver(self, forKeyPath:"callState", options: .Old, context:nil)
+
+//deregister observer
+//callController.removeObserver(self, forKeyPath:"callState")
+
+override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+	guard let object = object,
+          let callController = object as? Bit6CallController else { return }
+
+   if keyPath == "callState" {
+       self.callStateChangedNotification(callController)
    }
 }
 
 func callStateChangedNotification(callController:Bit6CallController) {
-   dispatch_async(dispatch_get_main_queue()) {
-       //the call is starting: show the viewController
-       if callController.callState == .PROGRESS {
-           Bit6.presentCallViewController()
-       }
-       //the call ended: remove the observer and dismiss the viewController
-       else if callController.callState == .END {
-           callController.removeObserver(self, forKeyPath:"callState")
-       }
-       //the call ended with an error: remove the observer and dismiss the viewController
-       else if callController.callState == .ERROR {
-           callController.removeObserver(self, forKeyPath:"callState")
-           
-           var alert = UIAlertController(title:"An Error Occurred", message: callController.error.localizedDescription, preferredStyle: .Alert)
-           alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-           self.view.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
-       }
-   }
+	switch (callController.callState) {
+	        
+	}
 }
 ```
 
 ### Receive Calls
-
-See the Bit6CallDemo and Bit6CallDemo-Swift sample projects included with the sdk.
 
 By default the incoming calls are handled by a singleton instance of `Bit6IncomingCallHandler`. 
 
@@ -128,30 +116,23 @@ You can customize the incoming in-call screen, the incoming call window prompt o
       didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
    [Bit6 incomingCallHandler].delegate = self;
+   //the rest of your code
 }
 
-- (Bit6CallViewController*) inCallViewController
+- (Bit6CallViewController*)inCallViewController
 {
 	//return your custom view controller
 }
 
-- (UIView*) incomingCallNotificationBannerContentView
+- (UIView*)incomingCallPromptContentViewForCallController:(Bit6CallController*)callController
 {
-	/*
-	Use the following tag values for your controls:
-	15: title UILabel to show the app name
- 	16: message label
- 	17: decline button
- 	18: answer button
-	*/
 	//return your custom in-call prompt view
 }
 
 //implement this method if you want to override the default incoming call flow.
-- (void) receivedIncomingCallNotification:(NSNotification*)notification
+- (void)receivedIncomingCall:(Bit6CallController*)callController
 {
-	Bit6CallController *callController = [Bit6 callControllerFromIncomingCallNotification:notification];
-	//the rest of your code
+	
 }
 ```
 ```swift
@@ -159,6 +140,7 @@ You can customize the incoming in-call screen, the incoming call window prompt o
 func application(application: UIApplication, 
 	didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
 		Bit6.incomingCallHandler().delegate = self
+		//the rest of your code
     }
 
 func inCallViewController() -> Bit6CallViewController
@@ -166,34 +148,16 @@ func inCallViewController() -> Bit6CallViewController
 	//return your custom view controller
 }
 
-func incomingCallNotificationBannerContentView() -> UIView
+func incomingCallPromptContentViewForCallController(callController: Bit6CallController) -> UIView? {
 {
-	/*
-	Use the following tag values for your controls:
-	15: title UILabel to show the app name
- 	16: message label
- 	17: decline button
- 	18: answer button
-	*/
 	//return your custom in-call prompt view
 }
 
 //implement this method if you want to override the default incoming call flow.
-func receivedIncomingCallNotification(notification:NSNotification) {
-   var callController = Bit6.callControllerFromIncomingCallNotification(notification)
-   //the rest of your code
+func receivedIncomingCall(callController: Bit6CallController) {
+   
 }
 ```
-
-Or you can you can customize the entire incoming call flow (See the code included in the sample projects AppDelegate class).
-
-To get caller name: `callController.otherDisplayName`
-
-To get incoming alert message: `callController.incomingCallAlert`
-
-To check if it is video or voice call: `callController.hasVideo`
-
-To play the defined ringtone: `[callController startRingtone]`
 
 ###Setting the Ringtone
 

@@ -13,6 +13,7 @@ If you are using `UIImagePickerController` to take/select a video you can do the
 	// start of your imagePickerController:didFinishPickingMediaWithInfo: method
 	
     Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
+    message.destination = [Bit6Address addressWithUsername:@"user2"];
     
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:(NSString *) kUTTypeMovie]) {
@@ -26,14 +27,12 @@ If you are using `UIImagePickerController` to take/select a video you can do the
                [info objectForKey:@"_UIImagePickerControllerVideoEditingEnd"];
     }
     
-    message.destination = [Bit6Address addressWithKind:Bit6AddressKind_USERNAME 
-                                                 value:@"user2"];
     [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (!error) {
-            NSLog(@"Message Sent");
+            //Message Sent
         }
         else {
-            NSLog(@"Message Failed with Error: %@",error.localizedDescription);
+            //Message Failed
         }
     }];
     
@@ -48,6 +47,7 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
 	// start of your imagePickerController:didFinishPickingMediaWithInfo: method
 	
     var message = Bit6OutgoingMessage()
+    message.destination = Bit6Address(username:"user2")
     
     let mediaType = info[UIImagePickerControllerMediaType] as! String
     if mediaType == (kUTTypeMovie as String) {
@@ -61,14 +61,12 @@ didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
                info["_UIImagePickerControllerVideoEditingEnd"] as! NSNumber
     }
     
-	message.destination = Bit6Address(kind:.USERNAME, 
-    	                             value:"user2")
     message.sendWithCompletionHandler { (response, error) in
         if error == nil {
-            NSLog("Message Sent")
+            //Message Sent
         }
         else {
-            NSLog("Message Failed with Error: \(error.localizedDescription)")
+            //Message Failed
         }
     }
     

@@ -4,8 +4,79 @@ title: 'Session'
 ---
 Each user in the system has one or more identities - user id, username, email, facebook id, google account, phone number etc. Identities are required for user authentication, managing contacts, identifying user's network. An identity is represented by a URI.
 
+An username is case-insensitive and must consist of alphanumeric characters, e.g. `usr:john` or  `usr:test123`.
+
 Bit6 supports various authentication mechanisms described in the following sections. 
 
+### Create user account
+
+Create a new user account with a username identity and a password.
+
+```objc
+//ObjectiveC
+Bit6Address *address = [Bit6Address addressWithUsername:@"john"];
+
+[[Bit6 session] signUpWithUserIdentity:address
+                              password:@"secret" 
+                     completionHandler:^(NSDictionary *response, NSError *error) {
+    if (!error) {
+        //Sign Up Completed
+    }
+    else {
+        //Sign Up Failed
+    }
+}];
+```
+
+```swift
+//Swift
+let address = Bit6Address(username:"john")
+                   
+Bit6.session().signUpWithUserIdentity(address, 
+                             password:"secret") { (response,error) in
+    if error == nil {
+        //Sign Up Completed
+    }
+    else {
+	    //Sign Up Failed
+    }
+}
+```
+
+### Login
+
+Login into an existing account using an Identity and a password.
+
+```objc
+//ObjectiveC
+Bit6Address *address = [Bit6Address addressWithUsername:@"john"];
+
+[[Bit6 session] loginWithUserIdentity:address 
+                             password:@"secret" 
+                    completionHandler:^(NSDictionary *response, NSError *error) {
+    if (!error) {
+        //Login Completed
+    }
+    else {
+        //Login Failed
+    }
+}];
+```
+
+```swift
+//Swift
+let address = Bit6Address(username:"john")
+                   
+Bit6.session().loginWithUserIdentity(address, 
+                            password:@"secret"){ (response,error) in
+    if error == nil {
+        //Login Completed
+    }
+    else {
+        //Login Failed
+    }
+}
+```
 
 ### Check if the user is authenticated
 

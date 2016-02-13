@@ -47,7 +47,15 @@
 	
 	<option value="//api/name/hasData">&nbsp;&nbsp;&nbsp;&nbsp;hasData</option>
 	
+	<option value="//api/name/hasRemoteAudio">&nbsp;&nbsp;&nbsp;&nbsp;hasRemoteAudio</option>
+	
+	<option value="//api/name/hasRemoteData">&nbsp;&nbsp;&nbsp;&nbsp;hasRemoteData</option>
+	
+	<option value="//api/name/hasRemoteVideo">&nbsp;&nbsp;&nbsp;&nbsp;hasRemoteVideo</option>
+	
 	<option value="//api/name/hasVideo">&nbsp;&nbsp;&nbsp;&nbsp;hasVideo</option>
+	
+	<option value="//api/name/incomingCall">&nbsp;&nbsp;&nbsp;&nbsp;incomingCall</option>
 	
 	<option value="//api/name/incomingCallAlert">&nbsp;&nbsp;&nbsp;&nbsp;incomingCallAlert</option>
 	
@@ -55,11 +63,15 @@
 	
 	<option value="//api/name/incomingTransfers">&nbsp;&nbsp;&nbsp;&nbsp;incomingTransfers</option>
 	
+	<option value="//api/name/localStreams">&nbsp;&nbsp;&nbsp;&nbsp;localStreams</option>
+	
 	<option value="//api/name/other">&nbsp;&nbsp;&nbsp;&nbsp;other</option>
 	
 	<option value="//api/name/otherDisplayName">&nbsp;&nbsp;&nbsp;&nbsp;otherDisplayName</option>
 	
 	<option value="//api/name/outgoingTransfers">&nbsp;&nbsp;&nbsp;&nbsp;outgoingTransfers</option>
+	
+	<option value="//api/name/remoteStreams">&nbsp;&nbsp;&nbsp;&nbsp;remoteStreams</option>
 	
 	<option value="//api/name/seconds">&nbsp;&nbsp;&nbsp;&nbsp;seconds</option>
 	
@@ -70,9 +82,13 @@
 	
 	<option value="//api/name/audioMuted">&nbsp;&nbsp;&nbsp;&nbsp;+ audioMuted</option>
 	
+	<option value="//api/name/bluetoothEnabled">&nbsp;&nbsp;&nbsp;&nbsp;+ bluetoothEnabled</option>
+	
 	<option value="//api/name/hangupAll">&nbsp;&nbsp;&nbsp;&nbsp;+ hangupAll</option>
 	
 	<option value="//api/name/speakerEnabled">&nbsp;&nbsp;&nbsp;&nbsp;+ speakerEnabled</option>
+	
+	<option value="//api/name/switchBluetooth">&nbsp;&nbsp;&nbsp;&nbsp;+ switchBluetooth</option>
 	
 	<option value="//api/name/switchCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ switchCamera</option>
 	
@@ -82,7 +98,7 @@
 	
 	<option value="//api/name/switchSpeaker">&nbsp;&nbsp;&nbsp;&nbsp;+ switchSpeaker</option>
 	
-	<option value="//api/name/usingBackCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ usingBackCamera</option>
+	<option value="//api/name/usingRearCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ usingRearCamera</option>
 	
 	<option value="//api/name/videoMuted">&nbsp;&nbsp;&nbsp;&nbsp;+ videoMuted</option>
 	
@@ -91,13 +107,13 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/connectToViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- connectToViewController:</option>
-	
 	<option value="//api/name/declineCall">&nbsp;&nbsp;&nbsp;&nbsp;- declineCall</option>
 	
 	<option value="//api/name/hangup">&nbsp;&nbsp;&nbsp;&nbsp;- hangup</option>
 	
-	<option value="//api/name/startRingtone">&nbsp;&nbsp;&nbsp;&nbsp;- startRingtone</option>
+	<option value="//api/name/playRingtone">&nbsp;&nbsp;&nbsp;&nbsp;- playRingtone</option>
+	
+	<option value="//api/name/start">&nbsp;&nbsp;&nbsp;&nbsp;- start</option>
 	
 	<option value="//api/name/startTransfer:">&nbsp;&nbsp;&nbsp;&nbsp;- startTransfer:</option>
 	
@@ -121,8 +137,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Actions">￼Actions</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Ringtone">￼Ringtone</a></span></li>
-	
 </ul></li>
 
 
@@ -139,7 +153,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasData">hasData</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRemoteAudio">hasRemoteAudio</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRemoteData">hasRemoteData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasRemoteVideo">hasRemoteVideo</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasVideo">hasVideo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCall">incomingCall</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallAlert">incomingCallAlert</a></span></li>
 	
@@ -147,11 +169,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingTransfers">incomingTransfers</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localStreams">localStreams</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/other">other</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/otherDisplayName">otherDisplayName</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/outgoingTransfers">outgoingTransfers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remoteStreams">remoteStreams</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/seconds">seconds</a></span></li>
 	
@@ -163,9 +189,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/audioMuted">audioMuted</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bluetoothEnabled">bluetoothEnabled</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hangupAll">hangupAll</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/speakerEnabled">speakerEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchBluetooth">switchBluetooth</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchCamera">switchCamera</a></span></li>
 	
@@ -175,7 +205,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchSpeaker">switchSpeaker</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/usingBackCamera">usingBackCamera</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/usingRearCamera">usingRearCamera</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/videoMuted">videoMuted</a></span></li>
 	
@@ -185,13 +215,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectToViewController:">connectToViewController:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/declineCall">declineCall</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hangup">hangup</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startRingtone">startRingtone</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/playRingtone">playRingtone</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start">start</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startTransfer:">startTransfer:</a></span></li>
 	
@@ -232,7 +262,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Bit6CallController represents an in-progress call.</p>
+						<p>Bit6CallController represents a call.</p>
 					</div>
 					
 					
@@ -242,20 +272,6 @@
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
-						
-						
-						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/connectToViewController:">&ndash;&nbsp;connectToViewController:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
 						
 						
 						<a title="￼Call Properties" name="task_￼Call Properties"></a>
@@ -271,6 +287,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/otherDisplayName">&nbsp;&nbsp;otherDisplayName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/incomingCall">&nbsp;&nbsp;incomingCall</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -300,7 +322,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/hasVideo">&nbsp;&nbsp;hasVideo</a></code>
+		<code><a href="#//api/name/localStreams">&nbsp;&nbsp;localStreams</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/remoteStreams">&nbsp;&nbsp;remoteStreams</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -312,7 +340,31 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/hasVideo">&nbsp;&nbsp;hasVideo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/hasData">&nbsp;&nbsp;hasData</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasRemoteAudio">&nbsp;&nbsp;hasRemoteAudio</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasRemoteVideo">&nbsp;&nbsp;hasRemoteVideo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasRemoteData">&nbsp;&nbsp;hasRemoteData</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -330,6 +382,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/bluetoothEnabled">+&nbsp;bluetoothEnabled</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/audioMuted">+&nbsp;audioMuted</a></code>
 	</span>
 	
@@ -342,7 +400,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/usingBackCamera">+&nbsp;usingBackCamera</a></code>
+		<code><a href="#//api/name/usingRearCamera">+&nbsp;usingRearCamera</a></code>
 	</span>
 	
 	
@@ -368,6 +426,24 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startTransfer:">&ndash;&nbsp;startTransfer:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/playRingtone">&ndash;&nbsp;playRingtone</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/switchCamera">+&nbsp;switchCamera</a></code>
 	</span>
 	
@@ -392,6 +468,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/switchBluetooth">+&nbsp;switchBluetooth</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/hangup">&ndash;&nbsp;hangup</a></code>
 	</span>
 	
@@ -405,26 +487,6 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/declineCall">&ndash;&nbsp;declineCall</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/startTransfer:">&ndash;&nbsp;startTransfer:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="￼Ringtone" name="task_￼Ringtone"></a>
-						<h3 class="subsubtitle task-title">￼Ringtone</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/startRingtone">&ndash;&nbsp;startRingtone</a></code>
 	</span>
 	
 	
@@ -463,6 +525,12 @@
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>For incoming calls the states go: <b>NEW</b> -> <b>ACCEPTING_CALL</b> -> <b>WAITING_SDP</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br />
+For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>WAITING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br /></p>
+	</div>
+	
 	
 	
 	
@@ -489,7 +557,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSError *error</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSError *error</code></div>
 
     
 	
@@ -520,7 +588,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The current call supports audio.</p>
+		<p>The local streams being sent include an audio track.</p>
 	</div>		
 	
     
@@ -556,12 +624,120 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The current call supports data transfer.</p>
+		<p>The local streams being sent include support for data transfer.</p>
 	</div>		
 	
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasRemoteAudio" title="hasRemoteAudio"></a>
+	<h3 class="subsubtitle method-title">hasRemoteAudio</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The remote streams being received include an audio track.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasRemoteAudio</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasRemoteData" title="hasRemoteData"></a>
+	<h3 class="subsubtitle method-title">hasRemoteData</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The remote streams being received include support for data transfer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasRemoteData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasRemoteVideo" title="hasRemoteVideo"></a>
+	<h3 class="subsubtitle method-title">hasRemoteVideo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The remote streams being received include a video track.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasRemoteVideo</code></div>
 
     
 	
@@ -592,12 +768,48 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The current call supports video.</p>
+		<p>The local streams being sent include a video track.</p>
 	</div>		
 	
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL hasVideo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/incomingCall" title="incomingCall"></a>
+	<h3 class="subsubtitle method-title">incomingCall</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The call is an incoming call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL incomingCall</code></div>
 
     
 	
@@ -633,7 +845,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *incomingCallAlert</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *incomingCallAlert</code></div>
 
     
 	
@@ -705,7 +917,43 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *incomingTransfers</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Transfer*&gt; *incomingTransfers</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localStreams" title="localStreams"></a>
+	<h3 class="subsubtitle method-title">localStreams</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An integer bit mask that indicates the local streams being sent during the call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) Bit6CallStreams localStreams</code></div>
 
     
 	
@@ -741,7 +989,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) Bit6Address *other</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) Bit6Address *other</code></div>
 
     
 	
@@ -777,7 +1025,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *otherDisplayName</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong) NSString *otherDisplayName</code></div>
 
     
 	
@@ -813,7 +1061,43 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *outgoingTransfers</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6OutgoingTransfer*&gt; *outgoingTransfers</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/remoteStreams" title="remoteStreams"></a>
+	<h3 class="subsubtitle method-title">remoteStreams</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An integer bit mask that indicates the remote streams being received during the call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6CallStreams remoteStreams</code></div>
 
     
 	
@@ -918,6 +1202,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/bluetoothEnabled" title="bluetoothEnabled"></a>
+	<h3 class="subsubtitle method-title">bluetoothEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The audio from the call is going out through a bluetooth device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)bluetoothEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/hangupAll" title="hangupAll"></a>
 	<h3 class="subsubtitle method-title">hangupAll</h3>
 	
@@ -966,6 +1286,42 @@
     
 
 	<div class="method-subsection method-declaration"><code>+ (BOOL)speakerEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/switchBluetooth" title="switchBluetooth"></a>
+	<h3 class="subsubtitle method-title">switchBluetooth</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Change the audio route from the default one to the available bluetooth device, and vice versa. This will be applied to all the running callControllers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)switchBluetooth</code></div>
 
     
 	
@@ -1134,8 +1490,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/usingBackCamera" title="usingBackCamera"></a>
-	<h3 class="subsubtitle method-title">usingBackCamera</h3>
+	<a name="//api/name/usingRearCamera" title="usingRearCamera"></a>
+	<h3 class="subsubtitle method-title">usingRearCamera</h3>
 	
 	
 	
@@ -1145,7 +1501,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)usingBackCamera</code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)usingRearCamera</code></div>
 
     
 	
@@ -1212,52 +1568,6 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/connectToViewController:" title="connectToViewController:"></a>
-	<h3 class="subsubtitle method-title">connectToViewController:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Starts a call</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)connectToViewController:(Bit6CallViewController *)<em>viewController</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>viewController</em></dt>
-			<dd><p>a <a href="../Classes/Bit6CallViewController.html">Bit6CallViewController</a> object in which to start the call.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/declineCall" title="declineCall"></a>
@@ -1332,8 +1642,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startRingtone" title="startRingtone"></a>
-	<h3 class="subsubtitle method-title">startRingtone</h3>
+	<a name="//api/name/playRingtone" title="playRingtone"></a>
+	<h3 class="subsubtitle method-title">playRingtone</h3>
 	
 	
 	
@@ -1343,7 +1653,43 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)startRingtone</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)playRingtone</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/start" title="start"></a>
+	<h3 class="subsubtitle method-title">start</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts the call</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)start</code></div>
 
     
 	
@@ -1374,12 +1720,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Starts the specified <a href="../Classes/Bit6Transfer.html">Bit6Transfer</a> through this call.</p>
+		<p>Starts the specified <a href="../Classes/Bit6OutgoingTransfer.html">Bit6OutgoingTransfer</a> through this call.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)startTransfer:(Bit6Transfer *)<em>transfer</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)startTransfer:(nonnull Bit6OutgoingTransfer *)<em>transfer</em></code></div>
 
     
 	
@@ -1388,7 +1734,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>transfer</em></dt>
-			<dd><p><a href="../Classes/Bit6Transfer.html">Bit6Transfer</a> to start.</p></dd>
+			<dd><p><a href="../Classes/Bit6OutgoingTransfer.html">Bit6OutgoingTransfer</a> to start.</p></dd>
 		</dl>
 		
 	</div>
@@ -1428,7 +1774,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-05-29)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

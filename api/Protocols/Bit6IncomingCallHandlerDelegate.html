@@ -45,9 +45,9 @@
 	
 	<option value="//api/name/inCallViewController">&nbsp;&nbsp;&nbsp;&nbsp;- inCallViewController</option>
 	
-	<option value="//api/name/incomingCallNotificationBannerContentView">&nbsp;&nbsp;&nbsp;&nbsp;- incomingCallNotificationBannerContentView</option>
+	<option value="//api/name/incomingCallPromptContentViewForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- incomingCallPromptContentViewForCallController:</option>
 	
-	<option value="//api/name/receivedIncomingCallNotification:">&nbsp;&nbsp;&nbsp;&nbsp;- receivedIncomingCallNotification:</option>
+	<option value="//api/name/receivedIncomingCall:">&nbsp;&nbsp;&nbsp;&nbsp;- receivedIncomingCall:</option>
 	
 	
 	
@@ -79,9 +79,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inCallViewController">inCallViewController</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallNotificationBannerContentView">incomingCallNotificationBannerContentView</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallPromptContentViewForCallController:">incomingCallPromptContentViewForCallController:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/receivedIncomingCallNotification:">receivedIncomingCallNotification:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/receivedIncomingCall:">receivedIncomingCall:</a></span></li>
 	
 </ul></li>
 
@@ -144,13 +144,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/incomingCallNotificationBannerContentView">&ndash;&nbsp;incomingCallNotificationBannerContentView</a></code>
+		<code><a href="#//api/name/incomingCallPromptContentViewForCallController:">&ndash;&nbsp;incomingCallPromptContentViewForCallController:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/receivedIncomingCallNotification:">&ndash;&nbsp;receivedIncomingCallNotification:</a></code>
+		<code><a href="#//api/name/receivedIncomingCall:">&ndash;&nbsp;receivedIncomingCall:</a></code>
 	</span>
 	
 	
@@ -183,7 +183,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (Bit6CallViewController *)inCallViewController</code></div>
+	<div class="method-subsection method-declaration"><code>- (nonnull Bit6CallViewController *)inCallViewController</code></div>
 
     
 	
@@ -213,44 +213,41 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/incomingCallNotificationBannerContentView" title="incomingCallNotificationBannerContentView"></a>
-	<h3 class="subsubtitle method-title">incomingCallNotificationBannerContentView</h3>
+	<a name="//api/name/incomingCallPromptContentViewForCallController:" title="incomingCallPromptContentViewForCallController:"></a>
+	<h3 class="subsubtitle method-title">incomingCallPromptContentViewForCallController:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Implement to customize the view shown in the incoming call notification banner.</p>
+		<p>Implement to customize the view shown in the incoming call prompt.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (UIView *)incomingCallNotificationBannerContentView</code></div>
+	<div class="method-subsection method-declaration"><code>- (nullable UIView *)incomingCallPromptContentViewForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p>object with the information about the call.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a view to use in the incoming call notification banner.</p>
+		<p>a view to use in the incoming call prompt.</p>
 	</div>
 	
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>You should set this tags to your UI elements:</p>
-
-<pre>
-title UILabel: tag=15
-message UILabel: tag=16
-decline UIButton: tag=17
-answer UIButton: tag=18
-</pre>
-
-	</div>
 	
 	
 	
@@ -267,8 +264,8 @@ answer UIButton: tag=18
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/receivedIncomingCallNotification:" title="receivedIncomingCallNotification:"></a>
-	<h3 class="subsubtitle method-title">receivedIncomingCallNotification:</h3>
+	<a name="//api/name/receivedIncomingCall:" title="receivedIncomingCall:"></a>
+	<h3 class="subsubtitle method-title">receivedIncomingCall:</h3>
 	
 	
 	
@@ -278,7 +275,7 @@ answer UIButton: tag=18
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)receivedIncomingCallNotification:(NSNotification *)<em>notification</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)receivedIncomingCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -286,8 +283,8 @@ answer UIButton: tag=18
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>notification</em></dt>
-			<dd><p>incoming call notification to be used with <a href="../Classes/Bit6.html#//api/name/callControllerFromIncomingCallNotification:">[Bit6 callControllerFromIncomingCallNotification:]</a></p></dd>
+			<dt><em>callController</em></dt>
+			<dd><p>object with the information about the call.</p></dd>
 		</dl>
 		
 	</div>
@@ -327,7 +324,7 @@ answer UIButton: tag=18
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Bit6. All rights reserved. (Last updated: 2015-04-29)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
