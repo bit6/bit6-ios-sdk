@@ -234,7 +234,14 @@
     Bit6CallViewController *callViewController = [self inCallViewController];
     [callViewController addCallController:callController];
     [callController start];
-    [Bit6 presentCallViewController:callViewController];
+    
+    UIViewController *vc = [UIApplication sharedApplication].windows[0].rootViewController;
+    if (vc.presentedViewController) {
+        [self presentCallViewController:callViewController];
+    }
+    else {
+        [Bit6 presentCallViewController:callViewController];
+    }
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -250,25 +257,45 @@
 
 - (void) callStateChangedNotification:(Bit6CallController*)callController
 {
+    //the call ended: remove the observer
+    if (callController.callState == Bit6CallState_MISSED || callController.callState == Bit6CallState_END || callController.callState == Bit6CallState_ERROR) {
+        [callController removeObserver:self forKeyPath:@"callState"];
+    }
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        //it's a missed call: remove the observer and dismiss the incoming-call prompt
+        //it's a missed call: dismiss the incoming-call prompt
         if (callController.callState == Bit6CallState_MISSED) {
-            [callController removeObserver:self forKeyPath:@"callState"];
             [Bit6IncomingCallPrompt dismiss];
             
             [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
-        //the call ended: remove the observer
+        //the call ended
         else if (callController.callState == Bit6CallState_END) {
-            [callController removeObserver:self forKeyPath:@"callState"];
+            
+#warning uncomment if presented with [self presentCallViewController:callViewController];
+//            [self dismissCallViewController];
+            
         }
-        //the call ended with an error: remove the observer
+        //the call ended with an error
         else if (callController.callState == Bit6CallState_ERROR) {
-            [callController removeObserver:self forKeyPath:@"callState"];
+            
+#warning uncomment if presented with [self presentCallViewController:callViewController];
+//            [self dismissCallViewController];
             
             [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:callController.error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     });
+}
+
+- (void)presentCallViewController:(Bit6CallViewController*)callViewController
+{
+#warning Add your code to present the callViewController
+    
+}
+
+- (void)dismissCallViewController
+{
+#warning Add your code to dismiss the callViewController
 }
 */
 

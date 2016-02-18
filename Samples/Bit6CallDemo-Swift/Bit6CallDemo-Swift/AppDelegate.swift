@@ -226,7 +226,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
         let callViewController = self.inCallViewController()
         callViewController.addCallController(callController)
         callController.start()
-        Bit6.presentCallViewController(callViewController)
+    
+        let vc = UIApplication.sharedApplication().windows[0].rootViewController!
+        if (vc.presentedViewController != nil) {
+            self.presentCallViewController(callViewController)
+        }
+        else {
+            Bit6.presentCallViewController(callViewController)
+        }
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -242,29 +249,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
     }
 
     func callStateChangedNotification(callController:Bit6CallController) {
+        //the call ended: remove the observer
+        if callController.callState == .MISSED || callController.callState == .END || callController.callState == .ERROR {
+            callController.removeObserver(self, forKeyPath:"callState")
+        }
+        
+        
         dispatch_async(dispatch_get_main_queue()) {
-            //it's a missed call: remove the observer, dismiss the incoming-call prompt
+            //it's a missed call: dismiss the incoming-call prompt
             if callController.callState == .MISSED {
-                callController.removeObserver(self, forKeyPath:"callState")
                 Bit6IncomingCallPrompt.dismiss()
                 
                 let alert = UIAlertController(title:"Missed Call from \(callController.otherDisplayName)", message: nil, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
             }
-            //the call ended: remove the observer
+            //the call ended
             else if callController.callState == .END {
-                callController.removeObserver(self, forKeyPath:"callState")
+                //WARNING: uncomment if presented with self.presentCallViewController(callViewController)
+//                self.dismissCallViewController()
             }
-            //the call ended with an error: remove the observer
+            //the call ended with an error
             else if callController.callState == .ERROR {
-                callController.removeObserver(self, forKeyPath:"callState")
+                //WARNING: uncomment if presented with self.presentCallViewController(callViewController)
+//                self.dismissCallViewController()
                 
                 let alert = UIAlertController(title:"An Error Occurred", message:callController.error?.localizedDescription, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
                 self.window?.rootViewController?.presentViewController(alert, animated: true, completion:nil)
             }
         }
+    }
+    
+    func presentCallViewController(callViewController:Bit6CallViewController) {
+        //WARNING: Add your code to present the callViewController
+    }
+    
+    func dismissCallViewController() {
+        //WARNING: Add your code to dismiss the callViewController
     }
     */
 

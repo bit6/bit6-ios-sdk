@@ -94,11 +94,45 @@
         [callController start];
         
         //present the viewController
-        [Bit6 presentCallViewController:callViewController];
+        UIViewController *vc = [UIApplication sharedApplication].windows[0].rootViewController;
+        if (vc.presentedViewController) {
+            [callController addObserver:self forKeyPath:@"callState" options:NSKeyValueObservingOptionOld context:NULL];
+            [self presentCallViewController:callViewController];
+        }
+        else {
+            [Bit6 presentCallViewController:callViewController];
+        }
     }
     else {
         NSLog(@"Call Failed");
     }
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([object isKindOfClass:[Bit6CallController class]]) {
+        if ([keyPath isEqualToString:@"callState"]) {
+            [self callStateChangedNotification:object];
+        }
+    }
+}
+
+- (void) callStateChangedNotification:(Bit6CallController*)callController
+{
+    if (callController.callState == Bit6CallState_END || callController.callState == Bit6CallState_ERROR) {
+        [callController removeObserver:self forKeyPath:@"callState"];
+        [self dismissCallViewController];
+    }
+}
+
+- (void)presentCallViewController:(Bit6CallViewController*)callViewController
+{
+    [self presentViewController:callViewController animated:YES completion:nil];
+}
+
+- (void)dismissCallViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -80,11 +80,45 @@ class MakeCallViewController: UIViewController {
             callController.start()
             
             //present the viewController
-            Bit6.presentCallViewController(callViewController)
+            let vc = UIApplication.sharedApplication().windows[0].rootViewController!
+            if (vc.presentedViewController != nil) {
+                callController.addObserver(self, forKeyPath:"callState", options:.Old, context:nil)
+                self.presentCallViewController(callViewController)
+            }
+            else {
+                Bit6.presentCallViewController(callViewController)
+            }
         }
         else {
             NSLog("Call Failed")
         }
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        
+        guard let object = object,
+            let callController = object as? Bit6CallController else { return }
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            if keyPath == "callState" {
+                self.callStateChangedNotification(callController)
+            }
+        }
+    }
+    
+    func callStateChangedNotification(callController:Bit6CallController) {
+        if callController.callState == .END || callController.callState == .ERROR {
+            callController.removeObserver(self, forKeyPath:"callState")
+            self.dismissCallViewController()
+        }
+    }
+    
+    func presentCallViewController(callViewController:Bit6CallViewController) {
+        self.presentViewController(callViewController, animated:true, completion:nil)
+    }
+    
+    func dismissCallViewController() {
+        self.dismissViewControllerAnimated(true, completion:nil)
     }
 
 }
