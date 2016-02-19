@@ -14,6 +14,30 @@ class MakeCallViewController: UIViewController {
     @IBOutlet var destinationUsernameTextField:UITextField!
     @IBOutlet var phoneNumberTextField:UITextField!
     
+    var showingCallObserver : AnyObject?;
+    var dismissingCallObserver : AnyObject?;
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        showingCallObserver = NSNotificationCenter.defaultCenter().addObserverForName("SHOW_CALL", object:nil, queue:nil) { (note) in
+            let callViewController = note.object as! Bit6CallViewController;
+            self.presentCallViewController(callViewController)
+        }
+        dismissingCallObserver = NSNotificationCenter.defaultCenter().addObserverForName("DISMISS_CALL", object:nil, queue:nil) { (note) in
+            self.dismissCallViewController()
+        }
+    }
+    
+    deinit {
+        if let observer = showingCallObserver {
+            NSNotificationCenter.defaultCenter().removeObserver(observer)
+        }
+        if let observer = dismissingCallObserver {
+            NSNotificationCenter.defaultCenter().removeObserver(observer)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

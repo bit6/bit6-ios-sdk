@@ -282,11 +282,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, Bit6IncomingCallHandlerDe
     }
     
     func presentCallViewController(callViewController:Bit6CallViewController) {
-        //WARNING: Add your code to present the callViewController
+        NSNotificationCenter.defaultCenter().postNotificationName("SHOW_CALL", object:callViewController)
     }
     
     func dismissCallViewController() {
-        //WARNING: Add your code to dismiss the callViewController
+        NSNotificationCenter.defaultCenter().postNotificationName("DISMISS_CALL", object:nil)
     }
     */
 

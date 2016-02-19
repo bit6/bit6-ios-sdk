@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *destinationUsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
+@property (strong, nonatomic) id showingCallObserver;
+@property (strong, nonatomic) id dismissingCallObserver;
+
 @end
 
 @implementation MakeCallViewController
@@ -22,9 +25,22 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        
+        __weak typeof(self) weakSelf = self;
+        self.showingCallObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"SHOW_CALL" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+            Bit6CallViewController *callViewController = note.object;
+            [weakSelf presentCallViewController:callViewController];
+        }];
+        self.dismissingCallObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"DISMISS_CALL" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+            [weakSelf dismissCallViewController];
+        }];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self.showingCallObserver];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.dismissingCallObserver];
 }
 
 - (void)viewDidLoad

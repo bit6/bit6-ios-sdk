@@ -289,13 +289,12 @@
 
 - (void)presentCallViewController:(Bit6CallViewController*)callViewController
 {
-#warning Add your code to present the callViewController
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_CALL" object:callViewController userInfo:nil];
 }
 
 - (void)dismissCallViewController
 {
-#warning Add your code to dismiss the callViewController
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DISMISS_CALL" object:nil userInfo:nil];
 }
 */
 
