@@ -256,32 +256,6 @@ imageView.message = message
 
 ###Download Video Attachments
 
-By default when interacting with a video attachment the file will be streamed. If you want to change this behaviour by forcing the video file to download you can add the following in your `AppDelegate`
+By default when playing a video attachment (`[Bit6 playVideoFromMessage:msg viewController:viewController]`) the file will be streamed if not found in the device. If you want to change this behaviour by forcing the video file to be downloaded you can add the following to your target info.plist
 
-```objc
-//ObjectiveC
-- (BOOL)application:(UIApplication *)application 
-      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-    {
-        // start of your application:didFinishLaunchingWithOptions: method
-        // ...
-        
-        [Bit6 setShouldDownloadVideoBeforePlaying:YES];
-        
-        // The rest of your application:didFinishLaunchingWithOptions: method
-        // ...
-    }
-```
-```swift
-//Swift
-func application(application: UIApplication, 
-		didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // start of your application:didFinishLaunchingWithOptions: method
-        // ...
-        
-        Bit6.setShouldDownloadVideoBeforePlaying(true)
-        
-        // The rest of your application:didFinishLaunchingWithOptions: method
-        // ...
-    }
-```
+<img class="shot" src="images/download_videos_before_playing.png"/>
