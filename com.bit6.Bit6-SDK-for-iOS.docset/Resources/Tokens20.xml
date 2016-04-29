@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6Session.html">
+	<File path="Protocols/Bit6AudioRecorderControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6Session</TokenIdentifier>
-			<Abstract type="html">A Bit6Session object contains the session information about the current connection to the Bit6 platform. It allows the user to sign up for a new account with the app, login into an existing account or logout.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6AudioRecorderControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6AudioRecorderControllerDelegate protocol defines the methods a delegate of a Bit6AudioRecorderController object should implement. The methods of this protocol notify the delegate when the recording was either completed or canceled by the user.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,395 +13,59 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/signUpWithUserIdentity:password:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Creates an account and initiates the session.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/doneRecorderController:filePath:</TokenIdentifier>
+			<Abstract type="html">Called when a user has completed the recording prccess.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)signUpWithUserIdentity:(nonnull Bit6Address *)userIdentity password:(nonnull NSString *)pass completionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Declaration>- (void)doneRecorderController:(nonnull Bit6AudioRecorderController *)b6rc filePath:(nonnull NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>userIdentity</Name>
-					<Abstract type="html">A Bit6Address object that represents the local user.</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
-					<Name>pass</Name>
-					<Abstract type="html">User&apos;s password</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the account was created.</Abstract>
+					<Name>filePath</Name>
+					<Abstract type="html">file where the audio was saved.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/signUpWithUserIdentity:password:completionHandler:</Anchor>
+			<Anchor>//api/name/doneRecorderController:filePath:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/loginWithUserIdentity:password:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Signs into an existing account.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/isRecordingWithController:filePath:</TokenIdentifier>
+			<Abstract type="html">Called each 0.5 seconds while recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)loginWithUserIdentity:(nonnull Bit6Address *)userIdentity password:(nonnull NSString *)pass completionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Declaration>- (void)isRecordingWithController:(nonnull Bit6AudioRecorderController *)b6rc filePath:(nonnull NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>userIdentity</Name>
-					<Abstract type="html">Bit6Address object that represents the local user</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
-					<Name>pass</Name>
-					<Abstract type="html">User&apos;s password</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the session was initiated.</Abstract>
+					<Name>filePath</Name>
+					<Abstract type="html">file where the audio is being saved.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/loginWithUserIdentity:password:completionHandler:</Anchor>
+			<Anchor>//api/name/isRecordingWithController:filePath:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/anonymousWithCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Signs in using an anonymous account.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/cancelRecorderController:</TokenIdentifier>
+			<Abstract type="html">Called when a user has cancelled the recording process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)anonymousWithCompletionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Declaration>- (void)cancelRecorderController:(nonnull Bit6AudioRecorderController *)b6rc</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the session was initiated.</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/anonymousWithCompletionHandler:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/getAuthInfoCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Get the OAuth configurations available.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)getAuthInfoCompletionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to be executed after the operation has been completed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getAuthInfoCompletionHandler:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/oauthForProvider:params:completion:</TokenIdentifier>
-			<Abstract type="html">Signs in using an OAuth provider</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)oauthForProvider:(nonnull NSString *)provider params:(nonnull NSDictionary&lt;NSString*,id&gt; *)params completion:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>provider</Name>
-					<Abstract type="html">the provider to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>params</Name>
-					<Abstract type="html">additional params required to perform the sign in. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to be executed after the operation has been completed. The &quot;error&quot; value can be use to know if the session was initiated.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/oauthForProvider:params:completion:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/authWithExternalToken:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Signs in using a token from an external Service.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)authWithExternalToken:(nonnull NSString *)token completionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>token</Name>
-					<Abstract type="html">token to be used to authenticate the user</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the session was initiated.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/authWithExternalToken:completionHandler:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/logoutWithCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Ends the current session.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)logoutWithCompletionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to be executed after the operation has been completed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/logoutWithCompletionHandler:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setActiveIdentity:</TokenIdentifier>
-			<Abstract type="html">Active user identity as a Bit6Address object. It can be nil if a session has not been created. Only values returned in [Bit6Session identities] can be set in this property.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *activeIdentity</Declaration>
-			
-			
-			<Anchor>//api/name/activeIdentity</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/activeIdentity</TokenIdentifier>
-			<Abstract type="html">Active user identity as a Bit6Address object. It can be nil if a session has not been created. Only values returned in [Bit6Session identities] can be set in this property.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *activeIdentity</Declaration>
-			
-			
-			<Anchor>//api/name/activeIdentity</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Session/activeIdentity</TokenIdentifier>
-			<Abstract type="html">Active user identity as a Bit6Address object. It can be nil if a session has not been created. Only values returned in [Bit6Session identities] can be set in this property.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *activeIdentity</Declaration>
-			
-			
-			<Anchor>//api/name/activeIdentity</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setIdentities:</TokenIdentifier>
-			<Abstract type="html">List of user identities for the current session.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Address*&gt; *identities</Declaration>
-			
-			
-			<Anchor>//api/name/identities</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/identities</TokenIdentifier>
-			<Abstract type="html">List of user identities for the current session.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Address*&gt; *identities</Declaration>
-			
-			
-			<Anchor>//api/name/identities</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Session/identities</TokenIdentifier>
-			<Abstract type="html">List of user identities for the current session.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Address*&gt; *identities</Declaration>
-			
-			
-			<Anchor>//api/name/identities</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/isMyIdentity:</TokenIdentifier>
-			<Abstract type="html">Convenience method to find if an Bit6Address identity belongs to the current user. This is done by performing a loop through [Bit6Session identities] to try to find the identity.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/Bit6Session/identities</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (BOOL)isMyIdentity:(nonnull Bit6Address *)address</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>address</Name>
-					<Abstract type="html">identity to search</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES if the address belongs to the current user.</Abstract></ReturnValue>
-			<Anchor>//api/name/isMyIdentity:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/publicProfile</TokenIdentifier>
-			<Abstract type="html">Public profile of the current user.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (nullable NSDictionary&lt;NSString*,id&gt; *)publicProfile</Declaration>
-			
-			
-			<Anchor>//api/name/publicProfile</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setPublicProfile:completion:</TokenIdentifier>
-			<Abstract type="html">Used to set the public profile of the current user.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)setPublicProfile:(nonnull NSDictionary&lt;NSString*,id&gt; *)publicProfile completion:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>publicProfile</Name>
-					<Abstract type="html">New public profile for the current user. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPublicProfile:completion:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/privateData</TokenIdentifier>
-			<Abstract type="html">Private profile of the current user.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (nullable NSDictionary&lt;NSString*,id&gt; *)privateData</Declaration>
-			
-			
-			<Anchor>//api/name/privateData</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setPrivateData:completion:</TokenIdentifier>
-			<Abstract type="html">Used to set the private profile of the current user.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)setPrivateData:(nonnull NSDictionary&lt;NSString*,id&gt; *)privateData completion:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>privateData</Name>
-					<Abstract type="html">New private profile for the current user. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPrivateData:completion:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setAuthenticated:</TokenIdentifier>
-			<Abstract type="html">Checks if the user is authenticated with the Bit6 platform and the session has been established.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL authenticated</Declaration>
-			
-			
-			<Anchor>//api/name/authenticated</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/authenticated</TokenIdentifier>
-			<Abstract type="html">Checks if the user is authenticated with the Bit6 platform and the session has been established.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL authenticated</Declaration>
-			
-			
-			<Anchor>//api/name/authenticated</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Session/authenticated</TokenIdentifier>
-			<Abstract type="html">Checks if the user is authenticated with the Bit6 platform and the session has been established.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL authenticated</Declaration>
-			
-			
-			<Anchor>//api/name/authenticated</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/setRtConnectionStatus:</TokenIdentifier>
-			<Abstract type="html">Web Socket connection status.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6RTStatus rtConnectionStatus</Declaration>
-			
-			
-			<Anchor>//api/name/rtConnectionStatus</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/rtConnectionStatus</TokenIdentifier>
-			<Abstract type="html">Web Socket connection status.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6RTStatus rtConnectionStatus</Declaration>
-			
-			
-			<Anchor>//api/name/rtConnectionStatus</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Session/rtConnectionStatus</TokenIdentifier>
-			<Abstract type="html">Web Socket connection status.</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6RTStatus rtConnectionStatus</Declaration>
-			
-			
-			<Anchor>//api/name/rtConnectionStatus</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/changePassword:newPassword:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Change the password for the current user</Abstract>
-			<DeclaredIn>Bit6Session.h</DeclaredIn>
-			
-			<Declaration>- (void)changePassword:(nonnull NSString *)oldPassword newPassword:(nonnull NSString *)newPassword completionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>oldPassword</Name>
-					<Abstract type="html">the user&apos;s old password</Abstract>
-				</Parameter><Parameter>
-					<Name>newPassword</Name>
-					<Abstract type="html">the new password for the user</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Block to call after the operation has been completed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/changePassword:newPassword:completionHandler:</Anchor>
+			<Anchor>//api/name/cancelRecorderController:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

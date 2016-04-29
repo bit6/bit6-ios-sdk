@@ -50,6 +50,9 @@
 /*! Path of the attached audio file, if available. */
 @property (nullable, nonatomic, strong) NSString *audioFilePath;
 
+/*! Returns YES if the message attachment has been successfuly saved to cache. */
+@property (nonatomic, readonly) BOOL attachmentsSavedInCache;
+
 /*! Sends the message.
  @param completion block to be called when the operation is completed.
  */

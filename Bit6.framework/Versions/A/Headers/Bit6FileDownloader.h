@@ -14,14 +14,15 @@
 /*! Cancels all pending download operations. */
 + (void)cancelOperations;
 
-/*! Download a file.
+/*! Download a file. It can be set to replace any file in the indicated path if necessary.
  @param url remote URL address of the file to download.
  @param filePath local path where to save the file.
- @param preparationBlock block to process the downloaded data before saving it to the filePath
+ @param replace the file will be downloaded and will replace the file in cache.
+ @param preparationBlock block to process the downloaded data before saving it to the filePath.
  @param priority the execution priority of the operation in the operation queue.
  @param completionHandler Block to call after the operation has been completed. The "error" value can be use to know if the file was downloaded and saved in cache.
  */
-+ (void)downloadFileAtURL:(nonnull NSURL*)url toFilePath:(nonnull NSString*)filePath preparationBlock:(nullable NSData* _Nonnull (^)(NSData* _Nonnull data))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void(^)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
++ (void)downloadFileAtURL:(nonnull NSURL*)url toFilePath:(nonnull NSString*)filePath canReplace:(BOOL)replace preparationBlock:(nullable NSData* _Nonnull (^)(NSData* _Nonnull data))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void(^)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
 
 /*! Query is a URL is being downloaded.
  @param url remote URL address of the file.

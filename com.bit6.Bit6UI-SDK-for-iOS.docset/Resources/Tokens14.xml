@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUProgressWindow.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUProgressWindow</TokenIdentifier>
+			<Abstract type="html">Nice UIWindow to dim the screen and block the user interaction when an operation is in progress.</Abstract>
+			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUProgressWindow/showWithTitle:</TokenIdentifier>
+			<Abstract type="html">Show the BXUProgressWindow with a custom text.</Abstract>
+			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			
+			<Declaration>+ (void)showWithTitle:(nullable NSString *)title</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">text to show in the window</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showWithTitle:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUProgressWindow/dismissWithHandler:</TokenIdentifier>
+			<Abstract type="html">Dismiss the BXUProgressWindow.</Abstract>
+			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			
+			<Declaration>+ (void)dismissWithHandler:(nullable void ( ^ ) ( ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to execute when the BXUProgressWindow is dismissed. This block will be called in the main thread.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dismissWithHandler:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUProgressWindow/setShowing:</TokenIdentifier>
+			<Abstract type="html">Yes if the BXUProgressWindow is visible.</Abstract>
+			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL showing</Declaration>
+			
+			
+			<Anchor>//api/name/showing</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUProgressWindow/showing</TokenIdentifier>
+			<Abstract type="html">Yes if the BXUProgressWindow is visible.</Abstract>
+			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL showing</Declaration>
+			
+			
+			<Anchor>//api/name/showing</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUProgressWindow/showing</TokenIdentifier>
+			<Abstract type="html">Yes if the BXUProgressWindow is visible.</Abstract>
+			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL showing</Declaration>
+			
+			
+			<Anchor>//api/name/showing</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

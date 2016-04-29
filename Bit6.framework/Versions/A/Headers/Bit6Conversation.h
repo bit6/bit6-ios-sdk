@@ -22,7 +22,7 @@
 + (nonnull Bit6Conversation*)conversationWithAddress:(nonnull Bit6Address*)address;
 
 /*! The <Bit6Message> objects in the sender as a NSArray. */
-@property (nonnull, nonatomic, readonly) NSArray<Bit6Message*>* messages;
+@property (nonnull, nonatomic, copy, readonly) NSArray<Bit6Message*>* messages;
 
 /*! The <Bit6Address> object associated with the sender. */
 @property (nonnull, nonatomic, readonly) Bit6Address* address;
@@ -31,7 +31,6 @@
 @property (nullable, nonatomic, readonly) Bit6Group* group;
 
 /*! Gets the number of unread messages for the sender.
- @see [Bit6.setCurrentConversation](Bit6.html#//api/name/setCurrentConversation:)
  */
 @property (nonnull, nonatomic, readonly) NSNumber* badge;
 
@@ -45,5 +44,11 @@
  @param conversation The conversation to compare to the conversation timestamp's value. This value must not be nil.
  */
 - (NSComparisonResult)compare:(nonnull Bit6Conversation*)conversation;
+
+/*! Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered. */
+@property (nonatomic, readonly) double deliveredUntil;
+
+/*! Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read. */
+@property (nonatomic, readonly) double readUntil;
 
 @end

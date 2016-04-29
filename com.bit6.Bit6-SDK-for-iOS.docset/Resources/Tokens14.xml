@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6IncomingCallPrompt.html">
+	<File path="Classes/Bit6OutgoingTransfer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6IncomingCallPrompt</TokenIdentifier>
-			<Abstract type="html">Used to show a nice and clean incoming call prompt that dim the entire screen while it&apos;s visible. This class is intented to be used as a singleton instance, please use Bit6IncomingCallPrompt.sharedInstance()</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6OutgoingTransfer</TokenIdentifier>
+			<Abstract type="html">A Bit6OutgoingTransfer object represents an outgoing peer to peer data transfer.</Abstract>
+			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -13,188 +13,25 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/setAnswerAudioHandler:</TokenIdentifier>
-			<Abstract type="html">Set a block of code to be executed on the Bit6IncomingCallPrompt.answerAudio() event.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingTransfer/initWithData:name:mimeType:</TokenIdentifier>
+			<Abstract type="html">Initializes a Bit6OutgoingTransfer object.</Abstract>
+			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
 			
-			<Declaration>+ (void)setAnswerAudioHandler:(nullable void ( ^ ) ( Bit6CallController *_Nonnull ))answerAudioHandler</Declaration>
+			<Declaration>- (nonnull instancetype)initWithData:(nonnull NSData *)data name:(nullable NSString *)name mimeType:(nonnull NSString *)mimeType</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>answerAudioHandler</Name>
-					<Abstract type="html">block of code to be executed.</Abstract>
+					<Name>data</Name>
+					<Abstract type="html">data to send.</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">name of the file. If nil a random name is given.</Abstract>
+				</Parameter><Parameter>
+					<Name>mimeType</Name>
+					<Abstract type="html">MIME type of the file to send.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setAnswerAudioHandler:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/setAnswerVideoHandler:</TokenIdentifier>
-			<Abstract type="html">Set a block of code to be executed on the Bit6IncomingCallPrompt.answerVideo() event.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (void)setAnswerVideoHandler:(nullable void ( ^ ) ( Bit6CallController *_Nonnull ))answerVideoHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>answerVideoHandler</Name>
-					<Abstract type="html">block of code to be executed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setAnswerVideoHandler:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/setAnswerDataHandler:</TokenIdentifier>
-			<Abstract type="html">Set a block of code to be executed on the Bit6IncomingCallPrompt.answerData() event.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (void)setAnswerDataHandler:(nullable void ( ^ ) ( Bit6CallController *_Nonnull ))answerDataHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>answerDataHandler</Name>
-					<Abstract type="html">block of code to be executed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setAnswerDataHandler:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/setRejectHandler:</TokenIdentifier>
-			<Abstract type="html">Set a block of code to be executed on the Bit6IncomingCallPrompt.reject() event.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (void)setRejectHandler:(nullable void ( ^ ) ( Bit6CallController *_Nonnull ))rejectHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rejectHandler</Name>
-					<Abstract type="html">block of code to be executed.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setRejectHandler:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/showForCallController:</TokenIdentifier>
-			<Abstract type="html">Presents the Bit6IncomingCallPrompt.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (void)showForCallController:(nonnull Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">call to be linked to the prompt</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/showForCallController:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/dismiss</TokenIdentifier>
-			<Abstract type="html">Dismiss the Bit6IncomingCallPrompt.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (void)dismiss</Declaration>
-			
-			
-			<Anchor>//api/name/dismiss</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/callController</TokenIdentifier>
-			<Abstract type="html">Returns the call linked to the prompt</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (nullable Bit6CallController *)callController</Declaration>
-			
-			<ReturnValue><Abstract type="html">callController linked to the prompt</Abstract></ReturnValue>
-			<Anchor>//api/name/callController</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6IncomingCallPrompt/sharedInstance</TokenIdentifier>
-			<Abstract type="html">Returns the singleton Bit6IncomingCallPrompt instance</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>+ (nonnull Bit6IncomingCallPrompt *)sharedInstance</Declaration>
-			
-			<ReturnValue><Abstract type="html">singleton Bit6IncomingCallPrompt instance</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedInstance</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6IncomingCallPrompt/setContentView:</TokenIdentifier>
-			<Abstract type="html">Set a view to be shown at the center of the Bit6IncomingCallPrompt view.</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>- (void)setContentView:(nullable UIView *)contentView</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>contentView</Name>
-					<Abstract type="html">view to be shown in the Bit6IncomingCallPrompt.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setContentView:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6IncomingCallPrompt/reject</TokenIdentifier>
-			<Abstract type="html">Action to be used to reject a call</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>- (void)reject</Declaration>
-			
-			
-			<Anchor>//api/name/reject</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6IncomingCallPrompt/answerAudio</TokenIdentifier>
-			<Abstract type="html">Action to be used to answer an audio call</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>- (void)answerAudio</Declaration>
-			
-			
-			<Anchor>//api/name/answerAudio</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6IncomingCallPrompt/answerVideo</TokenIdentifier>
-			<Abstract type="html">Action to be used to answer an video call</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>- (void)answerVideo</Declaration>
-			
-			
-			<Anchor>//api/name/answerVideo</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6IncomingCallPrompt/answerData</TokenIdentifier>
-			<Abstract type="html">Action to be used to answer an data call</Abstract>
-			<DeclaredIn>Bit6IncomingCallPrompt.h</DeclaredIn>
-			
-			<Declaration>- (void)answerData</Declaration>
-			
-			
-			<Anchor>//api/name/answerData</Anchor>
+			<ReturnValue><Abstract type="html">a Bit6OutgoingTransfer object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithData:name:mimeType:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

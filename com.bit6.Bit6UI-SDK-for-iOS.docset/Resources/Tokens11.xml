@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXULocationViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXULocationViewController</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UIViewController to display a location in a MKMapView.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">Location to display in the sender.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/coordinate</TokenIdentifier>
+			<Abstract type="html">Location to display in the sender.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXULocationViewController/coordinate</TokenIdentifier>
+			<Abstract type="html">Location to display in the sender.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/setActions:</TokenIdentifier>
+			<Abstract type="html">Additional actions to display in the sender&apos;s UITabBar. These can be handled using the BXULocationViewControllerDelegate protocol.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) NSArray&lt;NSString*&gt; *actions</Declaration>
+			
+			
+			<Anchor>//api/name/actions</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/actions</TokenIdentifier>
+			<Abstract type="html">Additional actions to display in the sender&apos;s UITabBar. These can be handled using the BXULocationViewControllerDelegate protocol.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) NSArray&lt;NSString*&gt; *actions</Declaration>
+			
+			
+			<Anchor>//api/name/actions</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXULocationViewController/actions</TokenIdentifier>
+			<Abstract type="html">Additional actions to display in the sender&apos;s UITabBar. These can be handled using the BXULocationViewControllerDelegate protocol.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) NSArray&lt;NSString*&gt; *actions</Declaration>
+			
+			
+			<Anchor>//api/name/actions</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when an action has been selected in the viewcontroller or it has to be dismissed. For details about the methods that can be implemented by the delegate, see BXULocationViewControllerDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXULocationViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when an action has been selected in the viewcontroller or it has to be dismissed. For details about the methods that can be implemented by the delegate, see BXULocationViewControllerDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXULocationViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXULocationViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when an action has been selected in the viewcontroller or it has to be dismissed. For details about the methods that can be implemented by the delegate, see BXULocationViewControllerDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXULocationViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

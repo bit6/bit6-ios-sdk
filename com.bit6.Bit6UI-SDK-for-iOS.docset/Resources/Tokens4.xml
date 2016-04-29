@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUContactNameLabel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUContactNameLabel</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UILabel to show the display name for a contact. This class work together with BXUContactSource to know the display name to show.</Abstract>
+			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+            
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/intf/BXUContactSource</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUContactNameLabel/setAddress:</TokenIdentifier>
+			<Abstract type="html">Identity of the contact for this label.</Abstract>
+			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUContactNameLabel/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact for this label.</Abstract>
+			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUContactNameLabel/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact for this label.</Abstract>
+			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

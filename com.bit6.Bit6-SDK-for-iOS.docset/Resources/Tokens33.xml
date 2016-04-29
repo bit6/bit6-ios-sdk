@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageAttachmentStatus.html">
+	<File path="Constants/Bit6TransferType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentStatus</TokenIdentifier>
-			<Abstract type="html">Message attachment status for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6TransferType</TokenIdentifier>
+			<Abstract type="html">Type of Bit6Transfer.</Abstract>
+			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -14,51 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_INVALID</TokenIdentifier>
-            <Abstract type="html">The message doesn&apos;t have the specified attachment</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_INVALID</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_INCOMING</TokenIdentifier>
+            <Abstract type="html">Incoming transfer.</Abstract>
+            <Declaration>Bit6TransferType_INCOMING</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="33"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_FAILED</TokenIdentifier>
-            <Abstract type="html">The attachment doesn&apos;t exists</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_FAILED</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
             
             <NodeRef refid="33"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_NOT_FOUND</TokenIdentifier>
-            <Abstract type="html">The attachment is not in cache</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_NOT_FOUND</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_OUTGOING</TokenIdentifier>
+            <Abstract type="html">Outoing transfer.</Abstract>
+            <Declaration>Bit6TransferType_OUTGOING</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="33"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_DOWNLOADING</TokenIdentifier>
-            <Abstract type="html">The attachment is being downloaded</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_DOWNLOADING</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="33"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_FOUND</TokenIdentifier>
-            <Abstract type="html">The attachment is in cache</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_FOUND</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
             
             <NodeRef refid="33"/>
         </Token>

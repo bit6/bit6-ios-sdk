@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BXUImageViewControllerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUImageViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The BXUImageViewControllerDelegate protocol defines the methods a delegate of a BXUImageViewController object should implement. The methods of this protocol notify the delegate when the viewcontroller has to be dismissed.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUImageViewControllerDelegate/dismissImageViewController:</TokenIdentifier>
+			<Abstract type="html">Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)dismissImageViewController:(nonnull BXUImageViewController *)imageViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>imageViewController</Name>
+					<Abstract type="html">view controller to dismiss</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dismissImageViewController:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

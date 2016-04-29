@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BXULocationViewControllerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BXULocationViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The BXULocationViewControllerDelegate protocol defines the methods a delegate of a BXULocationViewController object should implement. The methods of this protocol notify the delegate when an action has been selected in the viewcontroller or it has to be dismissed.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXULocationViewControllerDelegate/dismissLocationViewController:</TokenIdentifier>
+			<Abstract type="html">Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)dismissLocationViewController:(nonnull BXULocationViewController *)locationViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationViewController</Name>
+					<Abstract type="html">view controller to dismiss</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dismissLocationViewController:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXULocationViewControllerDelegate/didSelectLocationAction:coordinate:</TokenIdentifier>
+			<Abstract type="html">Called when the user selects one of the &lt;BXULocationViewController.actions&gt; defined.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didSelectLocationAction:(nonnull NSString *)action coordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>action</Name>
+					<Abstract type="html">action selected</Abstract>
+				</Parameter><Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">location&apos;s coordinate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didSelectLocationAction:coordinate:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

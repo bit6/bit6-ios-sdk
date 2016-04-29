@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IUg-ks-Nqt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Chats Table View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ChatsTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e7s-uJ-d7j"/>
+                    <connections>
+                        <segue destination="hwP-hg-aUh" kind="show" identifier="showDetails" id="GqA-ZD-R8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120.5" y="373.5"/>
+        </scene>
+        <!--Conversations View Controller-->
+        <scene sceneID="R6o-pu-k4k">
+            <objects>
+                <viewController id="TPM-Bg-DDw" customClass="ConversationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G5n-jR-FDd"/>
+                        <viewControllerLayoutGuide type="bottom" id="LRC-qg-50v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FWu-gx-7yZ">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B8d-m2-5Oh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bWj-TI-XhK">
+                            <connections>
+                                <action selector="touchedAddButton:" destination="TPM-Bg-DDw" id="Fiq-B5-9ob"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showConversation" id="7tT-oI-YjH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqm-Ms-PPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577.5" y="373.5"/>
+        </scene>
+        <!--Conversation-->
+        <scene sceneID="hdk-dJ-Sex">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ne8-et-jpp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Conversation" image="734-chat" id="lzc-Tn-7ss" customClass="BXUConversationsTabBarItem"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gcO-ZN-hOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Gs-Xz-dzy" kind="relationship" relationship="rootViewController" id="GWo-Q7-u5M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19a-pS-G7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="474.5" y="373.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sD3-lL-2DY">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IUg-ks-Nqt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="CAL-fR-9Gr">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ne8-et-jpp" kind="relationship" relationship="viewControllers" id="IpO-u5-Yul"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HrX-o9-MMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="374"/>
+        </scene>
+        <!--Bit6 Demo-->
+        <scene sceneID="piC-OU-wZo">
+            <objects>
+                <viewController id="1Gs-Xz-dzy" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sdZ-iR-6OR"/>
+                        <viewControllerLayoutGuide type="bottom" id="05N-0M-KM5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HvB-e6-UxN">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3og-ve-Opd">
+                                <rect key="frame" x="143" y="93" width="89" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign Up &gt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedSignUpButton:" destination="1Gs-Xz-dzy" eventType="touchUpInside" id="ih6-he-bdL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vz-zM-9rG">
+                                <rect key="frame" x="153.5" y="24" width="68" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login &gt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedLoginBarButton:" destination="1Gs-Xz-dzy" eventType="touchUpInside" id="yJV-fI-ewn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3og-ve-Opd" firstAttribute="centerX" secondItem="HvB-e6-UxN" secondAttribute="centerX" id="6EL-Xd-aJw"/>
+                            <constraint firstItem="4Vz-zM-9rG" firstAttribute="centerX" secondItem="HvB-e6-UxN" secondAttribute="centerX" id="Ond-hJ-51J"/>
+                            <constraint firstItem="4Vz-zM-9rG" firstAttribute="top" secondItem="sdZ-iR-6OR" secondAttribute="bottom" constant="24" id="Q7M-yg-vXW"/>
+                            <constraint firstItem="3og-ve-Opd" firstAttribute="top" secondItem="4Vz-zM-9rG" secondAttribute="bottom" constant="33" id="oSH-rg-Ga0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bit6 Demo" id="mAc-vx-UKM"/>
+                    <connections>
+                        <segue destination="TPM-Bg-DDw" kind="show" identifier="loginCompleted" id="Fno-aD-r2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwg-4w-VIo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025.5" y="373.5"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="ftN-6P-NvR">
+            <objects>
+                <tableViewController id="hwP-hg-aUh" customClass="ConversationDetailsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="1me-HT-VL6">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="hwP-hg-aUh" id="1I5-Yx-Gj3"/>
+                            <outlet property="delegate" destination="hwP-hg-aUh" id="Gkr-nu-p9Q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Details" id="TNf-Nx-FgG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="359-g3-ssR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2642.5" y="373.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="734-chat" width="28" height="25"/>
+    </resources>
+</document>

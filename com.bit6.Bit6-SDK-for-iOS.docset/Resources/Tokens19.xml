@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6PushNotificationCenter.html">
+	<File path="Classes/Bit6VideoFeedView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6PushNotificationCenter</TokenIdentifier>
-			<Abstract type="html">Bit6PushNotificationCenter is used to handle the remote notifications.</Abstract>
-			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6VideoFeedView</TokenIdentifier>
+			<Abstract type="html">UIView to render a video feed during a call.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,98 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveRemoteNotification:</TokenIdentifier>
-			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] implementation.</Abstract>
-			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6VideoFeedView/setIsLocal:</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/didReceiveRemoteNotification:</Anchor>
+			
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveRemoteNotification:fetchCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] implementation.</Abstract>
-			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6VideoFeedView/isLocal</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The block to execute when the download operation is complete. When calling this block, pass in the fetch result value that best describes the results of your download operation. You must call this handler and should do so as soon as possible.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/didReceiveRemoteNotification:fetchCompletionHandler:</Anchor>
+			
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/handleActionWithIdentifier:forRemoteNotification:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:] implementation.</Abstract>
-			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6VideoFeedView/isLocal</TokenIdentifier>
+			<Abstract type="html">Yes is the view is rendering the local video feed.</Abstract>
+			<DeclaredIn>Bit6VideoFeedView.h</DeclaredIn>
 			
-			<Declaration>- (void)handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo completionHandler:(nonnull void ( ^ ) ( ))completionHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The identifier associated with the custom action.</Abstract>
-				</Parameter><Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLocal</Declaration>
 			
-			<Anchor>//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didRegisterForRemoteNotificationsWithDeviceToken:</TokenIdentifier>
-			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:] implementation.</Abstract>
-			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>- (void)didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>deviceToken</Name>
-					<Abstract type="html">A token that identifies the device to APS. The token is an opaque data type because that is the form that the provider needs to submit to the APS servers when it sends a notification to a device. The APS servers require a binary format for performance reasons.
-The size of a device token is 32 bytes.
-Note that the device token is different from the uniqueIdentifier property of UIDevice because, for security and privacy reasons, it must change when the device is wiped.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didRegisterForRemoteNotificationsWithDeviceToken:</Anchor>
-            <NodeRef refid="19"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didFailToRegisterForRemoteNotificationsWithError:</TokenIdentifier>
-			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didFailToRegisterForRemoteNotificationsWithError:] implementation.</Abstract>
-			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
-			
-			<Declaration>- (void)didFailToRegisterForRemoteNotificationsWithError:(nonnull NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">An NSError object that encapsulates information why registration did not succeed. The app can choose to display this information to the user.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didFailToRegisterForRemoteNotificationsWithError:</Anchor>
+			<Anchor>//api/name/isLocal</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

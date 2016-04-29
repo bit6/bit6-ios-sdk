@@ -1,60 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
+	<File path="Constants/Bit6MessageCallChannel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageCallChannel</TokenIdentifier>
+			<Abstract type="html">Channel of a Bit6Message call.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
-			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
-			
-			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didFailWithError:(nonnull NSError *)error message:(nonnull Bit6OutgoingMessage *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>b6clc</Name>
-					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallChannel_Audio</TokenIdentifier>
+            <Abstract type="html">The call has an audio channel.</Abstract>
+            <Declaration>Bit6MessageCallChannel_Audio</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
             <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
-			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
-			
-			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(nonnull Bit6OutgoingMessage *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>b6clc</Name>
-					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallChannel_Data</TokenIdentifier>
+            <Abstract type="html">The call has a data transfer channel.</Abstract>
+            <Declaration>Bit6MessageCallChannel_Data</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
             <NodeRef refid="26"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallChannel_Video</TokenIdentifier>
+            <Abstract type="html">The call has a video channel.</Abstract>
+            <Declaration>Bit6MessageCallChannel_Video</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
         
 	</File>
 </Tokens>

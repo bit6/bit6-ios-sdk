@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6CallState.html">
+	<File path="Constants/Bit6MessageType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
-			<Abstract type="html">Call status for a Bit6CallController.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageType</TokenIdentifier>
+			<Abstract type="html">Message type for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="30"/>
@@ -14,111 +14,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
-            <Abstract type="html">The call hasn&apos;t started.</Abstract>
-            <Declaration>Bit6CallState_NEW</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Text</TokenIdentifier>
+            <Abstract type="html">The message has only text.</Abstract>
+            <Declaration>Bit6MessageType_Text</Declaration>
             
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ACCEPTING_CALL</TokenIdentifier>
-            <Abstract type="html">Answering the incoming call.</Abstract>
-            <Declaration>Bit6CallState_ACCEPTING_CALL</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="30"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_GATHERING_CANDIDATES</TokenIdentifier>
-            <Abstract type="html">Preparing the local sdp candidates.</Abstract>
-            <Declaration>Bit6CallState_GATHERING_CANDIDATES</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Call</TokenIdentifier>
+            <Abstract type="html">The message is for a call.</Abstract>
+            <Declaration>Bit6MessageType_Call</Declaration>
             
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_WAITING_SDP</TokenIdentifier>
-            <Abstract type="html">Waiting for remote sdp.</Abstract>
-            <Declaration>Bit6CallState_WAITING_SDP</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="30"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_SENDING_SDP</TokenIdentifier>
-            <Abstract type="html">Sending local sdp.</Abstract>
-            <Declaration>Bit6CallState_SENDING_SDP</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Attachments</TokenIdentifier>
+            <Abstract type="html">The message has an attachment.</Abstract>
+            <Declaration>Bit6MessageType_Attachments</Declaration>
             
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTING</TokenIdentifier>
-            <Abstract type="html">Connecting to the call.</Abstract>
-            <Declaration>Bit6CallState_CONNECTING</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="30"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTED</TokenIdentifier>
-            <Abstract type="html">The call has started.</Abstract>
-            <Declaration>Bit6CallState_CONNECTED</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Location</TokenIdentifier>
+            <Abstract type="html">The message has a location.</Abstract>
+            <Declaration>Bit6MessageType_Location</Declaration>
             
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
-            <Abstract type="html">The call is disconnected for the moment.</Abstract>
-            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
-            <Abstract type="html">The call ended.</Abstract>
-            <Declaration>Bit6CallState_END</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ERROR</TokenIdentifier>
-            <Abstract type="html">The call ended with an error.</Abstract>
-            <Declaration>Bit6CallState_ERROR</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_MISSED</TokenIdentifier>
-            <Abstract type="html">It is a missed call.</Abstract>
-            <Declaration>Bit6CallState_MISSED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="30"/>
         </Token>

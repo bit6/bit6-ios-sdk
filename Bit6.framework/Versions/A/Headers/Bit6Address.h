@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString* _Nonnull const Bit6AddressSchemeGroup;
+extern NSString* _Nonnull const Bit6AddressSchemeFacebook;
+extern NSString* _Nonnull const Bit6AddressSchemeEmail;
+extern NSString* _Nonnull const Bit6AddressSchemePSTN;
+extern NSString* _Nonnull const Bit6AddressSchemeUser;
+extern NSString* _Nonnull const Bit6AddressSchemeUID;
+extern NSString* _Nonnull const Bit6AddressSchemeGoogle;
+extern NSString* _Nonnull const Bit6AddressSchemeZendesk;
+
+extern NSString* _Nonnull const Bit6ProfilePicturePrefix;
+
 /*! Bit6Address is used to describe an user identity for calling and messaging. */
 @interface Bit6Address : NSObject
 
@@ -56,9 +67,6 @@
 /// @name ￼Properties
 ///---------------------------------------------------------------------------------------
 
-/*! A display name for the sender. */
-@property (nullable, nonatomic, readonly) NSString* displayName;
-
 /*! returns the URI representation of the sender. */
 @property (nonnull, nonatomic, readonly) NSString* uri;
 
@@ -74,6 +82,15 @@
 
 /*! indicates if the sender refers to a group. */
 @property (nonatomic, readonly) BOOL isGroup;
+
+/*! indicates whether the sender supports using a data stream. */
+@property (nonatomic, readonly) BOOL supportsDataStream;
+
+/*! indicates whether the sender supports using a video stream. */
+@property (nonatomic, readonly) BOOL supportsVideoStream;
+
+/*! indicates whether the sender supports sending and receiving messages. */
+@property (nonatomic, readonly) BOOL supportsMessaging;
 
 /*! Returns a Boolean value that indicates whether a given scheme matches the sender's scheme.
  @param aString A string.

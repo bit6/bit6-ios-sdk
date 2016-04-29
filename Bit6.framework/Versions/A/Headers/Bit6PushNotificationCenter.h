@@ -30,6 +30,14 @@
  */
 - (void)handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo completionHandler:(nonnull void(^)())completionHandler;
 
+/*! Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:] implementation.
+ @param identifier The identifier associated with the custom action.
+ @param userInfo A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.
+ @param responseInfo The data dictionary sent by the action.
+ @param completionHandler The block to execute when you are finished performing the specified action. You must call this block at the end of your method.
+ */
+- (void)handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo withResponseInfo:(nonnull NSDictionary *)responseInfo completionHandler:(nonnull void(^)())completionHandler NS_AVAILABLE_IOS(9_0);
+
 /*! Should be called inside the -[UIApplicationDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:] implementation.
  @param deviceToken A token that identifies the device to APS. The token is an opaque data type because that is the form that the provider needs to submit to the APS servers when it sends a notification to a device. The APS servers require a binary format for performance reasons.
  The size of a device token is 32 bytes.

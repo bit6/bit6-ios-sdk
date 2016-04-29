@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <CoreGraphics/CGGeometry.h>
 #import <UIKit/UIKit.h>
 
 /*! Bit6 utility class. */
@@ -30,12 +29,6 @@
  @return seconds in a clock format. Returns nil if the isnan(seconds).
  */
 + (nullable NSString*)clockFormatForSeconds:(double)seconds;
-
-/*! Convenient method to return an UIImage of a single color.
- @param color color to fill the UIImage with.
- @return UIImage of a single color.
- */
-+ (nonnull UIImage *)imageWithColor:(nonnull UIColor *)color;
 
 /*! Convenient method to retrieve the duration of an audio file.
  @param filePath path to the audio file.

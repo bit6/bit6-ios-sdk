@@ -61,19 +61,19 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
  @discussion For incoming calls the states go: <b>NEW</b> -> <b>ACCEPTING_CALL</b> -> <b>WAITING_SDP</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br />
  For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>WAITING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br />
  */
-@property (nonatomic, readonly) Bit6CallState callState;
+@property (nonatomic, readonly) Bit6CallState state;
 
 /*! Display name of other side of the call. */
 @property (nonnull, nonatomic, strong) NSString *otherDisplayName;
 
 /*! The call is an incoming call. */
-@property (nonatomic, readonly) BOOL incomingCall;
+@property (nonatomic, readonly) BOOL incoming;
 
 /*! The incoming call was answered by using the system push notification. */
-@property (nonatomic, readonly) BOOL incomingCallAnswered;
+@property (nonatomic, readonly) BOOL answered;
 
 /*! The message shown in the incoming call system push notification. */
-@property (nullable, nonatomic, strong) NSString *incomingCallAlert;
+@property (nullable, nonatomic, strong, readonly) NSString *incomingAlert;
 
 /*! The latest error to occur during the call. */
 @property (nullable, nonatomic, strong, readonly) NSError *error;
@@ -108,6 +108,12 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 /*! The number of seconds the call has been going. */
 @property (nonatomic, readonly) NSUInteger seconds;
 
+/*! Cause code for the call ended, if available. */
+@property (nonatomic, readonly) NSInteger endedCauseCode;
+
+/*! Cause message for the call ended, if available. */
+@property (nullable, nonatomic, strong, readonly) NSString* endedCause;
+
 /*! The audio from the call is going through the speaker. */
 + (BOOL)speakerEnabled;
 
@@ -122,6 +128,10 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 
 /*! The call is streaming the video feed from the back camera. */
 + (BOOL)usingRearCamera;
+
+///---------------------------------------------------------------------------------------
+/// @name ￼Transfers
+///---------------------------------------------------------------------------------------
 
 /*! List of outgoing <Bit6Transfer> for the current call. */
 @property (nonnull, nonatomic, readonly) NSArray<Bit6OutgoingTransfer*>* outgoingTransfers;
@@ -166,7 +176,7 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 + (void)hangupAll;
 
 /*! Declines the call */
-- (void)declineCall;
+- (void)decline;
 
 @end
 

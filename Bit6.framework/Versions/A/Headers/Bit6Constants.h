@@ -19,10 +19,21 @@ extern NSString* _Nonnull const Bit6CustomRtNotification;
 extern NSString* _Nonnull const Bit6PresenceRtNotification;
 
 extern NSString* _Nonnull const Bit6IncomingCallNotification;
-extern NSString* _Nonnull const Bit6IncomingCallKey;
-extern NSString* _Nonnull const Bit6TappedIncomingMessageNotification;
+extern NSString* _Nonnull const Bit6CallAddedNotification;
+extern NSString* _Nonnull const Bit6CallMissedNotification;
+extern NSString* _Nonnull const Bit6CallPermissionsMissingNotification;
+extern NSString* _Nonnull const Bit6ErrorKey;
+
+extern NSString* _Nonnull const Bit6IncomingMessageNotification;
+extern NSString* _Nonnull const Bit6MessageKey;
+extern NSString* _Nonnull const Bit6AddressKey;
+extern NSString* _Nonnull const Bit6FromKey;
+extern NSString* _Nonnull const Bit6ToKey;
+extern NSString* _Nonnull const Bit6TappedKey;
 
 extern NSString* _Nonnull const Bit6AudioPlayingNotification;
+
+extern NSString* _Nonnull const Bit6CacheDeletedNotification;
 
 extern NSString* _Nonnull const Bit6MessagesChangedNotification;
 extern NSString* _Nonnull const Bit6ConversationsChangedNotification;

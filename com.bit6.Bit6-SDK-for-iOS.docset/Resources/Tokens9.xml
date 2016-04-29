@@ -25,11 +25,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/downloadFileAtURL:toFilePath:preparationBlock:priority:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Download a file.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Download a file. It can be set to replace any file in the indicated path if necessary.</Abstract>
 			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
 			
-			<Declaration>+ (void)downloadFileAtURL:(nonnull NSURL *)url toFilePath:(nonnull NSString *)filePath preparationBlock:(nullable NSData *_Nonnull ( ^ ) ( NSData *_Nonnull data ))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void ( ^ ) ( NSURL *_Nullable location , NSURLResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Declaration>+ (void)downloadFileAtURL:(nonnull NSURL *)url toFilePath:(nonnull NSString *)filePath canReplace:(BOOL)replace preparationBlock:(nullable NSData *_Nonnull ( ^ ) ( NSData *_Nonnull data ))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void ( ^ ) ( NSURL *_Nullable location , NSURLResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>url</Name>
@@ -38,8 +38,11 @@
 					<Name>filePath</Name>
 					<Abstract type="html">local path where to save the file.</Abstract>
 				</Parameter><Parameter>
+					<Name>replace</Name>
+					<Abstract type="html">the file will be downloaded and will replace the file in cache.</Abstract>
+				</Parameter><Parameter>
 					<Name>preparationBlock</Name>
-					<Abstract type="html">block to process the downloaded data before saving it to the filePath</Abstract>
+					<Abstract type="html">block to process the downloaded data before saving it to the filePath.</Abstract>
 				</Parameter><Parameter>
 					<Name>priority</Name>
 					<Abstract type="html">the execution priority of the operation in the operation queue.</Abstract>
@@ -49,7 +52,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/downloadFileAtURL:toFilePath:preparationBlock:priority:completionHandler:</Anchor>
+			<Anchor>//api/name/downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

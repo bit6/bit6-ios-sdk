@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUTypingLabel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUTypingLabel</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UILabel to show when another user is typing.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/setAddress:</TokenIdentifier>
+			<Abstract type="html">Identity of the contact to detect when typing, or nil to work with any contact.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact to detect when typing, or nil to work with any contact.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUTypingLabel/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact to detect when typing, or nil to work with any contact.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the typing label will become visible or hidden. For details about the methods that can be implemented by the delegate, see BXUTypingLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUTypingLabelDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the typing label will become visible or hidden. For details about the methods that can be implemented by the delegate, see BXUTypingLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUTypingLabelDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUTypingLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the typing label will become visible or hidden. For details about the methods that can be implemented by the delegate, see BXUTypingLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUTypingLabelDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

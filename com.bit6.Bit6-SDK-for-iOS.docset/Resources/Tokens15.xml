@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6Message.html">
+	<File path="Classes/Bit6PushNotificationCenter.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6Message</TokenIdentifier>
-			<Abstract type="html">A Bit6Message object represents a message sent or received by the user.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6PushNotificationCenter</TokenIdentifier>
+			<Abstract type="html">Bit6PushNotificationCenter is used to handle the remote notifications.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,739 +13,124 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setConversation:</TokenIdentifier>
-			<Abstract type="html">The conversation the sender belongs to.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) Bit6Conversation *conversation</Declaration>
-			
-			
-			<Anchor>//api/name/conversation</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/conversation</TokenIdentifier>
-			<Abstract type="html">The conversation the sender belongs to.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) Bit6Conversation *conversation</Declaration>
-			
-			
-			<Anchor>//api/name/conversation</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/conversation</TokenIdentifier>
-			<Abstract type="html">The conversation the sender belongs to.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) Bit6Conversation *conversation</Declaration>
-			
-			
-			<Anchor>//api/name/conversation</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setContent:</TokenIdentifier>
-			<Abstract type="html">The text content of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly, copy) NSString *content</Declaration>
-			
-			
-			<Anchor>//api/name/content</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/content</TokenIdentifier>
-			<Abstract type="html">The text content of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly, copy) NSString *content</Declaration>
-			
-			
-			<Anchor>//api/name/content</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/content</TokenIdentifier>
-			<Abstract type="html">The text content of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly, copy) NSString *content</Declaration>
-			
-			
-			<Anchor>//api/name/content</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setCreated:</TokenIdentifier>
-			<Abstract type="html">The creation timestamp of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSNumber *created</Declaration>
-			
-			
-			<Anchor>//api/name/created</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/created</TokenIdentifier>
-			<Abstract type="html">The creation timestamp of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSNumber *created</Declaration>
-			
-			
-			<Anchor>//api/name/created</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/created</TokenIdentifier>
-			<Abstract type="html">The creation timestamp of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSNumber *created</Declaration>
-			
-			
-			<Anchor>//api/name/created</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setUpdated:</TokenIdentifier>
-			<Abstract type="html">The last updated timestamp of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy, readonly) NSNumber *updated</Declaration>
-			
-			
-			<Anchor>//api/name/updated</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/updated</TokenIdentifier>
-			<Abstract type="html">The last updated timestamp of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy, readonly) NSNumber *updated</Declaration>
-			
-			
-			<Anchor>//api/name/updated</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/updated</TokenIdentifier>
-			<Abstract type="html">The last updated timestamp of the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy, readonly) NSNumber *updated</Declaration>
-			
-			
-			<Anchor>//api/name/updated</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setIncoming:</TokenIdentifier>
-			<Abstract type="html">YES if this is an incoming message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL incoming</Declaration>
-			
-			
-			<Anchor>//api/name/incoming</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/incoming</TokenIdentifier>
-			<Abstract type="html">YES if this is an incoming message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL incoming</Declaration>
-			
-			
-			<Anchor>//api/name/incoming</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/incoming</TokenIdentifier>
-			<Abstract type="html">YES if this is an incoming message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL incoming</Declaration>
-			
-			
-			<Anchor>//api/name/incoming</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setStatus:</TokenIdentifier>
-			<Abstract type="html">Sender status as a value of the Bit6MessageStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/status</TokenIdentifier>
-			<Abstract type="html">Sender status as a value of the Bit6MessageStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/status</TokenIdentifier>
-			<Abstract type="html">Sender status as a value of the Bit6MessageStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setCallStatus:</TokenIdentifier>
-			<Abstract type="html">Call status as a value of the Bit6MessageCallStatus enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageCallStatus callStatus</Declaration>
-			
-			
-			<Anchor>//api/name/callStatus</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/callStatus</TokenIdentifier>
-			<Abstract type="html">Call status as a value of the Bit6MessageCallStatus enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageCallStatus callStatus</Declaration>
-			
-			
-			<Anchor>//api/name/callStatus</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/callStatus</TokenIdentifier>
-			<Abstract type="html">Call status as a value of the Bit6MessageCallStatus enumeration. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageCallStatus callStatus</Declaration>
-			
-			
-			<Anchor>//api/name/callStatus</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setType:</TokenIdentifier>
-			<Abstract type="html">Sender type as a value of the Bit6MessageType enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageType type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/type</TokenIdentifier>
-			<Abstract type="html">Sender type as a value of the Bit6MessageType enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageType type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/type</TokenIdentifier>
-			<Abstract type="html">Sender type as a value of the Bit6MessageType enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageType type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setOther:</TokenIdentifier>
-			<Abstract type="html">Gets the other person address as a Bit6Address object.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly, copy) Bit6Address *other</Declaration>
-			
-			
-			<Anchor>//api/name/other</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/other</TokenIdentifier>
-			<Abstract type="html">Gets the other person address as a Bit6Address object.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly, copy) Bit6Address *other</Declaration>
-			
-			
-			<Anchor>//api/name/other</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/other</TokenIdentifier>
-			<Abstract type="html">Gets the other person address as a Bit6Address object.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly, copy) Bit6Address *other</Declaration>
-			
-			
-			<Anchor>//api/name/other</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setAttachFileType:</TokenIdentifier>
-			<Abstract type="html">Gets the attachment type of the sender as a value of the Bit6MessageFileType enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageFileType attachFileType</Declaration>
-			
-			
-			<Anchor>//api/name/attachFileType</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/attachFileType</TokenIdentifier>
-			<Abstract type="html">Gets the attachment type of the sender as a value of the Bit6MessageFileType enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageFileType attachFileType</Declaration>
-			
-			
-			<Anchor>//api/name/attachFileType</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/attachFileType</TokenIdentifier>
-			<Abstract type="html">Gets the attachment type of the sender as a value of the Bit6MessageFileType enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageFileType attachFileType</Declaration>
-			
-			
-			<Anchor>//api/name/attachFileType</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setAudioDuration:</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file attached to the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double audioDuration</Declaration>
-			
-			
-			<Anchor>//api/name/audioDuration</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/audioDuration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file attached to the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double audioDuration</Declaration>
-			
-			
-			<Anchor>//api/name/audioDuration</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/audioDuration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file attached to the sender.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double audioDuration</Declaration>
-			
-			
-			<Anchor>//api/name/audioDuration</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/callHasChannel:</TokenIdentifier>
-			<Abstract type="html">Determine if the call had the specific channel. This method should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)callHasChannel:(Bit6MessageCallChannel)channel</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveRemoteNotification:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>channel</Name>
-					<Abstract type="html">Channel to look for in the call.</Abstract>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">true if the call had the specific channel.</Abstract></ReturnValue>
-			<Anchor>//api/name/callHasChannel:</Anchor>
+			
+			<Anchor>//api/name/didReceiveRemoteNotification:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setStatusForThumbnailAttachment:</TokenIdentifier>
-			<Abstract type="html">The status for the sender&apos;s thumbnail attachment as a value of the Bit6MessageAttachmentStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveRemoteNotification:fetchCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageAttachmentStatus statusForThumbnailAttachment</Declaration>
+			<Declaration>- (void)didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when the download operation is complete. When calling this block, pass in the fetch result value that best describes the results of your download operation. You must call this handler and should do so as soon as possible.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/statusForThumbnailAttachment</Anchor>
+			<Anchor>//api/name/didReceiveRemoteNotification:fetchCompletionHandler:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/statusForThumbnailAttachment</TokenIdentifier>
-			<Abstract type="html">The status for the sender&apos;s thumbnail attachment as a value of the Bit6MessageAttachmentStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/handleActionWithIdentifier:forRemoteNotification:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageAttachmentStatus statusForThumbnailAttachment</Declaration>
+			<Declaration>- (void)handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo completionHandler:(nonnull void ( ^ ) ( ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier associated with the custom action.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/statusForThumbnailAttachment</Anchor>
+			<Anchor>//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/statusForThumbnailAttachment</TokenIdentifier>
-			<Abstract type="html">The status for the sender&apos;s thumbnail attachment as a value of the Bit6MessageAttachmentStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageAttachmentStatus statusForThumbnailAttachment</Declaration>
+			<Declaration>- (void)handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo withResponseInfo:(nonnull NSDictionary *)responseInfo completionHandler:(nonnull void ( ^ ) ( ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier associated with the custom action.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>responseInfo</Name>
+					<Abstract type="html">The data dictionary sent by the action.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/statusForThumbnailAttachment</Anchor>
+			<Anchor>//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setStatusForFullAttachment:</TokenIdentifier>
-			<Abstract type="html">The status for the sender&apos;s full attachment as a value of the Bit6MessageAttachmentStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didRegisterForRemoteNotificationsWithDeviceToken:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageAttachmentStatus statusForFullAttachment</Declaration>
+			<Declaration>- (void)didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deviceToken</Name>
+					<Abstract type="html">A token that identifies the device to APS. The token is an opaque data type because that is the form that the provider needs to submit to the APS servers when it sends a notification to a device. The APS servers require a binary format for performance reasons.
+The size of a device token is 32 bytes.
+Note that the device token is different from the uniqueIdentifier property of UIDevice because, for security and privacy reasons, it must change when the device is wiped.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/statusForFullAttachment</Anchor>
+			<Anchor>//api/name/didRegisterForRemoteNotificationsWithDeviceToken:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/statusForFullAttachment</TokenIdentifier>
-			<Abstract type="html">The status for the sender&apos;s full attachment as a value of the Bit6MessageAttachmentStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageAttachmentStatus statusForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/statusForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/statusForFullAttachment</TokenIdentifier>
-			<Abstract type="html">The status for the sender&apos;s full attachment as a value of the Bit6MessageAttachmentStatus enumeration.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Bit6MessageAttachmentStatus statusForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/statusForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setPathForThumbnailAttachment:</TokenIdentifier>
-			<Abstract type="html">The path for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *pathForThumbnailAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/pathForThumbnailAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/pathForThumbnailAttachment</TokenIdentifier>
-			<Abstract type="html">The path for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *pathForThumbnailAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/pathForThumbnailAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/pathForThumbnailAttachment</TokenIdentifier>
-			<Abstract type="html">The path for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *pathForThumbnailAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/pathForThumbnailAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setPathForFullAttachment:</TokenIdentifier>
-			<Abstract type="html">The path for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *pathForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/pathForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/pathForFullAttachment</TokenIdentifier>
-			<Abstract type="html">The path for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *pathForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/pathForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/pathForFullAttachment</TokenIdentifier>
-			<Abstract type="html">The path for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *pathForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/pathForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setRemoteURLForThumbnailAttachment:</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s thumbnail attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSURL *remoteURLForThumbnailAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/remoteURLForThumbnailAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/remoteURLForThumbnailAttachment</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s thumbnail attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSURL *remoteURLForThumbnailAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/remoteURLForThumbnailAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/remoteURLForThumbnailAttachment</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s thumbnail attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSURL *remoteURLForThumbnailAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/remoteURLForThumbnailAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setRemoteURLForFullAttachment:</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSURL *remoteURLForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/remoteURLForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/remoteURLForFullAttachment</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSURL *remoteURLForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/remoteURLForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/remoteURLForFullAttachment</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSURL *remoteURLForFullAttachment</Declaration>
-			
-			
-			<Anchor>//api/name/remoteURLForFullAttachment</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setAttachmentType:</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *attachmentType</Declaration>
-			
-			
-			<Anchor>//api/name/attachmentType</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/attachmentType</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *attachmentType</Declaration>
-			
-			
-			<Anchor>//api/name/attachmentType</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/attachmentType</TokenIdentifier>
-			<Abstract type="html">The remote url for the sender&apos;s full attachment.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *attachmentType</Declaration>
-			
-			
-			<Anchor>//api/name/attachmentType</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setLocation:</TokenIdentifier>
-			<Abstract type="html">Location attached to the message if available, or kCLLocationCoordinate2DInvalid if not.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/location</TokenIdentifier>
-			<Abstract type="html">Location attached to the message if available, or kCLLocationCoordinate2DInvalid if not.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/location</TokenIdentifier>
-			<Abstract type="html">Location attached to the message if available, or kCLLocationCoordinate2DInvalid if not.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setCallDuration:</TokenIdentifier>
-			<Abstract type="html">Gets the length of the call. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSNumber *callDuration</Declaration>
-			
-			
-			<Anchor>//api/name/callDuration</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/callDuration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the call. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSNumber *callDuration</Declaration>
-			
-			
-			<Anchor>//api/name/callDuration</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Message/callDuration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the call. This property should be used only if self.type == Bit6MessageType_Call.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSNumber *callDuration</Declaration>
-			
-			
-			<Anchor>//api/name/callDuration</Anchor>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didFailToRegisterForRemoteNotificationsWithError:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didFailToRegisterForRemoteNotificationsWithError:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)didFailToRegisterForRemoteNotificationsWithError:(nonnull NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">An NSError object that encapsulates information why registration did not succeed. The app can choose to display this information to the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didFailToRegisterForRemoteNotificationsWithError:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

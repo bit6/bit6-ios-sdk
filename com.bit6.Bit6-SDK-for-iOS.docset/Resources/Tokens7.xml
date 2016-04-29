@@ -34,7 +34,7 @@
 			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
 			
 			
 			<Anchor>//api/name/messages</Anchor>
@@ -46,7 +46,7 @@
 			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
 			
 			
 			<Anchor>//api/name/messages</Anchor>
@@ -58,7 +58,7 @@
 			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
 			
 			
 			<Anchor>//api/name/messages</Anchor>
@@ -142,11 +142,6 @@
 			<Abstract type="html">Gets the number of unread messages for the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
 			
 			
@@ -159,11 +154,6 @@
 			<Abstract type="html">Gets the number of unread messages for the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
 			
 			
@@ -176,11 +166,6 @@
 			<Abstract type="html">Gets the number of unread messages for the sender.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
 			
 			
@@ -274,6 +259,78 @@
 			</Parameters>
 			
 			<Anchor>//api/name/compare:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setDeliveredUntil:</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			
+			
+			<Anchor>//api/name/deliveredUntil</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/deliveredUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			
+			
+			<Anchor>//api/name/deliveredUntil</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/deliveredUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			
+			
+			<Anchor>//api/name/deliveredUntil</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setReadUntil:</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			
+			
+			<Anchor>//api/name/readUntil</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/readUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			
+			
+			<Anchor>//api/name/readUntil</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/readUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read.</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			
+			
+			<Anchor>//api/name/readUntil</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

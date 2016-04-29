@@ -13,35 +13,6 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallViewController/createDefaultCallViewController</TokenIdentifier>
-			<Abstract type="html">Creates a default view controller to use during a call.</Abstract>
-			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
-			
-			<Declaration>+ (nonnull Bit6CallViewController *)createDefaultCallViewController</Declaration>
-			
-			<ReturnValue><Abstract type="html">view controller to use during a call.</Abstract></ReturnValue>
-			<Anchor>//api/name/createDefaultCallViewController</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/addCallController:</TokenIdentifier>
-			<Abstract type="html">Set the Bit6CallController for this viewController.</Abstract>
-			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
-			
-			<Declaration>- (void)addCallController:(nonnull Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">&lt;BitCallController&gt; object to link to this viewController.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addCallController:</Anchor>
-            <NodeRef refid="6"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/setNeedsUpdateVideoViewLayout</TokenIdentifier>
 			<Abstract type="html">Used if you need to force a call to &lt;updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:&gt;.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
@@ -50,6 +21,35 @@
 			
 			
 			<Anchor>//api/name/setNeedsUpdateVideoViewLayout</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/show</TokenIdentifier>
+			<Abstract type="html">Shows the callViewController in a new UIWindow using a &quot;slide up from the bottom of the screen&quot; transition.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)show</Declaration>
+			
+			
+			<Anchor>//api/name/show</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallViewController/createForCall:</TokenIdentifier>
+			<Abstract type="html">Needs to be implemented in the subclass to return a new view controller for the call.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull Bit6CallViewController *)createForCall:(nonnull Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object to build the UI around.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">an UIViewController to use for the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/createForCall:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -66,11 +66,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callStateChangedNotificationForCallController:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callStateChangedNotificationForCall:</TokenIdentifier>
 			<Abstract type="html">Called in the Main Thread when the status of the call changes. The default implementation does nothing.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)callStateChangedNotificationForCallController:(nonnull Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)callStateChangedNotificationForCall:(nonnull Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>callController</Name>
@@ -78,16 +78,16 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/callStateChangedNotificationForCallController:</Anchor>
+			<Anchor>//api/name/callStateChangedNotificationForCall:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/secondsChangedNotificationForCallController:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/secondsChangedNotificationForCall:</TokenIdentifier>
 			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)secondsChangedNotificationForCallController:(nonnull Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>callController</Name>
@@ -95,7 +95,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/secondsChangedNotificationForCallController:</Anchor>
+			<Anchor>//api/name/secondsChangedNotificationForCall:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

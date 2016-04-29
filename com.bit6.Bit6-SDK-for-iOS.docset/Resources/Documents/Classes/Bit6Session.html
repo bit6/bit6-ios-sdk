@@ -39,9 +39,15 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/activeDisplayName">&nbsp;&nbsp;&nbsp;&nbsp;activeDisplayName</option>
+	
 	<option value="//api/name/activeIdentity">&nbsp;&nbsp;&nbsp;&nbsp;activeIdentity</option>
 	
 	<option value="//api/name/authenticated">&nbsp;&nbsp;&nbsp;&nbsp;authenticated</option>
+	
+	<option value="//api/name/currentDevice">&nbsp;&nbsp;&nbsp;&nbsp;currentDevice</option>
+	
+	<option value="//api/name/devices">&nbsp;&nbsp;&nbsp;&nbsp;devices</option>
 	
 	<option value="//api/name/identities">&nbsp;&nbsp;&nbsp;&nbsp;identities</option>
 	
@@ -114,9 +120,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeDisplayName">activeDisplayName</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeIdentity">activeIdentity</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticated">authenticated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentDevice">currentDevice</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devices">devices</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identities">identities</a></span></li>
 	
@@ -267,6 +279,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/activeDisplayName">&nbsp;&nbsp;activeDisplayName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/identities">&nbsp;&nbsp;identities</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -329,6 +347,18 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devices">&nbsp;&nbsp;devices</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentDevice">&nbsp;&nbsp;currentDevice</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -357,13 +387,49 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/activeDisplayName" title="activeDisplayName"></a>
+	<h3 class="subsubtitle method-title">activeDisplayName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Display name to use for the active user. It can be nil if a session has not been created.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *activeDisplayName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/activeIdentity" title="activeIdentity"></a>
 	<h3 class="subsubtitle method-title">activeIdentity</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Active user identity as a <a href="../Classes/Bit6Address.html">Bit6Address</a> object. It can be nil if a session has not been created. Only values returned in <a href="#//api/name/identities">[Bit6Session identities]</a> can be set in this property.</p>
+		<p>Active user identity as a <a href="../Classes/Bit6Address.html">Bit6Address</a> object. It can be nil if a session has not been created.</p>
 	</div>		
 	
     
@@ -405,6 +471,78 @@
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL authenticated</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentDevice" title="currentDevice"></a>
+	<h3 class="subsubtitle method-title">currentDevice</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unique identifier for this device for the active user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly, strong) NSString *currentDevice</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devices" title="devices"></a>
+	<h3 class="subsubtitle method-title">devices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>List of device identifiers for the active user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *devices</code></div>
 
     
 	
@@ -1172,7 +1310,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-13)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-04-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -1,108 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6Utils.html">
+	<File path="Constants/Bit6CallStreams.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6Utils</TokenIdentifier>
-			<Abstract type="html">Bit6 utility class.</Abstract>
-			<DeclaredIn>Bit6Utils.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallStreams</TokenIdentifier>
+			<Abstract type="html">Call stream for a Bit6CallController.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Utils/requestAccessToCameraWithSuccessBlock:failedBlock:</TokenIdentifier>
-			<Abstract type="html">Request access to the Camera. On iOS7 and earlier it always succeeds.</Abstract>
-			<DeclaredIn>Bit6Utils.h</DeclaredIn>
-			
-			<Declaration>+ (void)requestAccessToCameraWithSuccessBlock:(nullable void ( ^ ) ( ))successBlock failedBlock:(nullable void ( ^ ) ( ))failedBlock</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>successBlock</Name>
-					<Abstract type="html">block to be called if camera access has been granted</Abstract>
-				</Parameter><Parameter>
-					<Name>failedBlock</Name>
-					<Abstract type="html">block to be called if camera access is not granted</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Audio</TokenIdentifier>
+            <Abstract type="html">Audio stream.</Abstract>
+            <Declaration>Bit6CallStreams_Audio</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Utils/requestAccessToMicrophoneWithSuccessBlock:failedBlock:</TokenIdentifier>
-			<Abstract type="html">Request access to the Microphone. On iOS6 it always succeeds.</Abstract>
-			<DeclaredIn>Bit6Utils.h</DeclaredIn>
-			
-			<Declaration>+ (void)requestAccessToMicrophoneWithSuccessBlock:(nullable void ( ^ ) ( ))successBlock failedBlock:(nullable void ( ^ ) ( ))failedBlock</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>successBlock</Name>
-					<Abstract type="html">block to be called if microphone access has been granted</Abstract>
-				</Parameter><Parameter>
-					<Name>failedBlock</Name>
-					<Abstract type="html">block to be called if microphone access is not granted</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Video</TokenIdentifier>
+            <Abstract type="html">Video stream.</Abstract>
+            <Declaration>Bit6CallStreams_Video</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Utils/clockFormatForSeconds:</TokenIdentifier>
-			<Abstract type="html">Convenient method to convert seconds into a clock format NSString. For example 75s will be converted to 01:15</Abstract>
-			<DeclaredIn>Bit6Utils.h</DeclaredIn>
-			
-			<Declaration>+ (nullable NSString *)clockFormatForSeconds:(double)seconds</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>seconds</Name>
-					<Abstract type="html">number of seconds to convert</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">seconds in a clock format. Returns nil if the isnan(seconds).</Abstract></ReturnValue>
-			<Anchor>//api/name/clockFormatForSeconds:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Data</TokenIdentifier>
+            <Abstract type="html">Data stream.</Abstract>
+            <Declaration>Bit6CallStreams_Data</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
             <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Utils/imageWithColor:</TokenIdentifier>
-			<Abstract type="html">Convenient method to return an UIImage of a single color.</Abstract>
-			<DeclaredIn>Bit6Utils.h</DeclaredIn>
-			
-			<Declaration>+ (nonnull UIImage *)imageWithColor:(nonnull UIColor *)color</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>color</Name>
-					<Abstract type="html">color to fill the UIImage with.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">UIImage of a single color.</Abstract></ReturnValue>
-			<Anchor>//api/name/imageWithColor:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Utils/audioDurationForFileAtPath:</TokenIdentifier>
-			<Abstract type="html">Convenient method to retrieve the duration of an audio file.</Abstract>
-			<DeclaredIn>Bit6Utils.h</DeclaredIn>
-			
-			<Declaration>+ (double)audioDurationForFileAtPath:(nonnull NSString *)filePath</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>filePath</Name>
-					<Abstract type="html">path to the audio file.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">duration in seconds of the audio file.</Abstract></ReturnValue>
-			<Anchor>//api/name/audioDurationForFileAtPath:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
+        </Token>
         
 	</File>
 </Tokens>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUConversationTableViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUConversationTableViewController</TokenIdentifier>
+			<Abstract type="html">Component to show all the conversations in the system.</Abstract>
+			<DeclaredIn>BXUConversationTableViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUConversationTableViewController/didSelectConversation:</TokenIdentifier>
+			<Abstract type="html">Called after a conversation has been selected. The default implementation does nothing. You usually override this method to perform additional operations.</Abstract>
+			<DeclaredIn>BXUConversationTableViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didSelectConversation:(Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">conversation selected.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didSelectConversation:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

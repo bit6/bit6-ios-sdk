@@ -1,63 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6IncomingCallHandlerDelegate.html">
+	<File path="Constants/Bit6MessageCallStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6IncomingCallHandlerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6IncomingCallHandlerDelegate protocol defines the methods a delegate of the Bit6IncomingCallHandler object could implement to customize the behaviour when an incoming call is received.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageCallStatus</TokenIdentifier>
+			<Abstract type="html">Call status for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/inCallViewController</TokenIdentifier>
-			<Abstract type="html">Implement to customize the view controller used to handle the incoming call.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
-			
-			<Declaration>- (nonnull Bit6CallViewController *)inCallViewController</Declaration>
-			
-			<ReturnValue><Abstract type="html">a view controller to be used during the incoming call.</Abstract></ReturnValue>
-			<Anchor>//api/name/inCallViewController</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Answer</TokenIdentifier>
+            <Abstract type="html">The call has been answered.</Abstract>
+            <Declaration>Bit6MessageCallStatus_Answer</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
             <NodeRef refid="27"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/incomingCallPromptContentViewForCallController:</TokenIdentifier>
-			<Abstract type="html">Implement to customize the view shown in the incoming call prompt.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
-			
-			<Declaration>- (nullable UIView *)incomingCallPromptContentViewForCallController:(nonnull Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">object with the information about the call.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">a view to use in the incoming call prompt.</Abstract></ReturnValue>
-			<Anchor>//api/name/incomingCallPromptContentViewForCallController:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Missed</TokenIdentifier>
+            <Abstract type="html">The call has been missed.</Abstract>
+            <Declaration>Bit6MessageCallStatus_Missed</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
             <NodeRef refid="27"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6IncomingCallHandlerDelegate/receivedIncomingCall:</TokenIdentifier>
-			<Abstract type="html">Starting point of the incoming calls flow. Implement if you want to handle the entire flow.</Abstract>
-			<DeclaredIn>Bit6IncomingCallHandler.h</DeclaredIn>
-			
-			<Declaration>- (void)receivedIncomingCall:(nonnull Bit6CallController *)callController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">object with the information about the call.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/receivedIncomingCall:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Failed</TokenIdentifier>
+            <Abstract type="html">The call failed.</Abstract>
+            <Declaration>Bit6MessageCallStatus_Failed</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
             <NodeRef refid="27"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_NoAnswer</TokenIdentifier>
+            <Abstract type="html">The call wasn&apos;t answered.</Abstract>
+            <Declaration>Bit6MessageCallStatus_NoAnswer</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
         
 	</File>
 </Tokens>

@@ -41,22 +41,22 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/createDefaultCallViewController">&nbsp;&nbsp;&nbsp;&nbsp;+ createDefaultCallViewController</option>
+	<option value="//api/name/createForCall:">&nbsp;&nbsp;&nbsp;&nbsp;+ createForCall:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/addCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- addCallController:</option>
-	
-	<option value="//api/name/callStateChangedNotificationForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- callStateChangedNotificationForCallController:</option>
+	<option value="//api/name/callStateChangedNotificationForCall:">&nbsp;&nbsp;&nbsp;&nbsp;- callStateChangedNotificationForCall:</option>
 	
 	<option value="//api/name/refreshControlsView">&nbsp;&nbsp;&nbsp;&nbsp;- refreshControlsView</option>
 	
-	<option value="//api/name/secondsChangedNotificationForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsChangedNotificationForCallController:</option>
+	<option value="//api/name/secondsChangedNotificationForCall:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsChangedNotificationForCall:</option>
 	
 	<option value="//api/name/setNeedsUpdateVideoViewLayout">&nbsp;&nbsp;&nbsp;&nbsp;- setNeedsUpdateVideoViewLayout</option>
+	
+	<option value="//api/name/show">&nbsp;&nbsp;&nbsp;&nbsp;- show</option>
 	
 	<option value="//api/name/updateLayoutForVideoFeedViews:">&nbsp;&nbsp;&nbsp;&nbsp;- updateLayoutForVideoFeedViews:</option>
 	
@@ -88,7 +88,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createDefaultCallViewController">createDefaultCallViewController</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createForCall:">createForCall:</a></span></li>
 	
 </ul></li>
 
@@ -96,15 +96,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCallController:">addCallController:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callStateChangedNotificationForCallController:">callStateChangedNotificationForCallController:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callStateChangedNotificationForCall:">callStateChangedNotificationForCall:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshControlsView">refreshControlsView</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsChangedNotificationForCallController:">secondsChangedNotificationForCallController:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsChangedNotificationForCall:">secondsChangedNotificationForCall:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNeedsUpdateVideoViewLayout">setNeedsUpdateVideoViewLayout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/show">show</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateLayoutForVideoFeedViews:">updateLayoutForVideoFeedViews:</a></span></li>
 	
@@ -163,19 +163,13 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/createDefaultCallViewController">+&nbsp;createDefaultCallViewController</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addCallController:">&ndash;&nbsp;addCallController:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/setNeedsUpdateVideoViewLayout">&ndash;&nbsp;setNeedsUpdateVideoViewLayout</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/show">&ndash;&nbsp;show</a></code>
 	</span>
 	
 	
@@ -189,19 +183,25 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/createForCall:">+&nbsp;createForCall:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/refreshControlsView">&ndash;&nbsp;refreshControlsView</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/callStateChangedNotificationForCallController:">&ndash;&nbsp;callStateChangedNotificationForCallController:</a></code>
+		<code><a href="#//api/name/callStateChangedNotificationForCall:">&ndash;&nbsp;callStateChangedNotificationForCall:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/secondsChangedNotificationForCallController:">&ndash;&nbsp;secondsChangedNotificationForCallController:</a></code>
+		<code><a href="#//api/name/secondsChangedNotificationForCall:">&ndash;&nbsp;secondsChangedNotificationForCall:</a></code>
 	</span>
 	
 	
@@ -227,26 +227,36 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/createDefaultCallViewController" title="createDefaultCallViewController"></a>
-	<h3 class="subsubtitle method-title">createDefaultCallViewController</h3>
+	<a name="//api/name/createForCall:" title="createForCall:"></a>
+	<h3 class="subsubtitle method-title">createForCall:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates a default view controller to use during a call.</p>
+		<p>Needs to be implemented in the subclass to return a new view controller for the call.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6CallViewController *)createDefaultCallViewController</code></div>
+	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6CallViewController *)createForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object to build the UI around.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>view controller to use during a call.</p>
+		<p>an UIViewController to use for the call.</p>
 	</div>
 	
 	
@@ -276,54 +286,8 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/addCallController:" title="addCallController:"></a>
-	<h3 class="subsubtitle method-title">addCallController:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Set the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> for this viewController.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)addCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>callController</em></dt>
-			<dd><p><BitCallController> object to link to this viewController.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/callStateChangedNotificationForCallController:" title="callStateChangedNotificationForCallController:"></a>
-	<h3 class="subsubtitle method-title">callStateChangedNotificationForCallController:</h3>
+	<a name="//api/name/callStateChangedNotificationForCall:" title="callStateChangedNotificationForCall:"></a>
+	<h3 class="subsubtitle method-title">callStateChangedNotificationForCall:</h3>
 	
 	
 	
@@ -333,7 +297,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)callStateChangedNotificationForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)callStateChangedNotificationForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -404,8 +368,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/secondsChangedNotificationForCallController:" title="secondsChangedNotificationForCallController:"></a>
-	<h3 class="subsubtitle method-title">secondsChangedNotificationForCallController:</h3>
+	<a name="//api/name/secondsChangedNotificationForCall:" title="secondsChangedNotificationForCall:"></a>
+	<h3 class="subsubtitle method-title">secondsChangedNotificationForCall:</h3>
 	
 	
 	
@@ -415,7 +379,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotificationForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -462,6 +426,42 @@
     
 
 	<div class="method-subsection method-declaration"><code>- (void)setNeedsUpdateVideoViewLayout</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/show" title="show"></a>
+	<h3 class="subsubtitle method-title">show</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows the callViewController in a new UIWindow using a &ldquo;slide up from the bottom of the screen&rdquo; transition.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)show</code></div>
 
     
 	
@@ -546,7 +546,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-13)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-04-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

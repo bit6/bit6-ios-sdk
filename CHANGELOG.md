@@ -1,3 +1,26 @@
+## 0.9.7 [2016-04-22]
+
+### Breaking Changes
+- All UI related classes (like Bit6ThumbnailImageView and Bit6ImageView) have been moved to UI lib.
+- To handle incoming calls and to prepare the in-call UI you need to register for `Bit6IncomingCallNotification` and `Bit6CallAddedNotification`. To handle errors because of video and mic restricted access you can listen to `Bit6CallPermissionsMissingNotification`.
+- [Bit6 createCallTo:streams:] replaced with [Bit6 startCallTo:streams:] and [Bit6 createCallToPhoneNumber:] replaced with [Bit6 startPhoneCallTo:]. 
+- To use an in-call viewcontroller its classname must be set in your target's info.plist and then call `[Bit6 createViewControllerForCall]` to create the object.
+- Bit6CallViewController subclasses need to implement `callStateChangedNotificationForCall:` and `secondsChangedNotificationForCall:` instead of `callStateChangedNotificationForCallController:` and `secondsChangedNotificationForCallController:`. Please check the startup guide for a complete list of necessary methods to implement.
+- Added localization to messages and calls. A Localizable.strings file is needed in the project (see sample apps)
+- Bit6CallController.callState has been renamed to Bit6CallController.state, please make sure this is considered if listening to KVO notifications.
+
+### Features
+- Support for quick reply in message push notifications
+- Methods to handle the cache directory: cacheSize(), numberOfItemsInCache() and clearCache()
+
+### Bugfixes
+- Bit6.presentCallViewController() doesn't present the in-call screen if there's a UIViewController being presented modally.
+- 'decline' option in push notifications for incoming calls doesn't work.
+- Bit6Session.publicProfile has no content after a login through facebook and other services.
+- fails to detect when a push notification has been tapped by the user or not.
+- push notifications aren't sent correcly when apps are running in AdHoc distributions
+- issues with video feeds inside in-call screen when using it for many calls.
+
 ## 0.9.6 [2016-02-13]
 
 ### Features

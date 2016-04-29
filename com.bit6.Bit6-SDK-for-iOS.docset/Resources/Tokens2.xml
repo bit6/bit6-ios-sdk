@@ -118,42 +118,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setDisplayName:</TokenIdentifier>
-			<Abstract type="html">A display name for the sender.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *displayName</Declaration>
-			
-			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for the sender.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *displayName</Declaration>
-			
-			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/displayName</TokenIdentifier>
-			<Abstract type="html">A display name for the sender.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) NSString *displayName</Declaration>
-			
-			
-			<Anchor>//api/name/displayName</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setUri:</TokenIdentifier>
 			<Abstract type="html">returns the URI representation of the sender.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
@@ -294,6 +258,114 @@
 			
 			
 			<Anchor>//api/name/isGroup</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsDataStream:</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports using a data stream.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsDataStream</Declaration>
+			
+			
+			<Anchor>//api/name/supportsDataStream</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsDataStream</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports using a data stream.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsDataStream</Declaration>
+			
+			
+			<Anchor>//api/name/supportsDataStream</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsDataStream</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports using a data stream.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsDataStream</Declaration>
+			
+			
+			<Anchor>//api/name/supportsDataStream</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsVideoStream:</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports using a video stream.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsVideoStream</Declaration>
+			
+			
+			<Anchor>//api/name/supportsVideoStream</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsVideoStream</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports using a video stream.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsVideoStream</Declaration>
+			
+			
+			<Anchor>//api/name/supportsVideoStream</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsVideoStream</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports using a video stream.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsVideoStream</Declaration>
+			
+			
+			<Anchor>//api/name/supportsVideoStream</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsMessaging:</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports sending and receiving messages.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsMessaging</Declaration>
+			
+			
+			<Anchor>//api/name/supportsMessaging</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsMessaging</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports sending and receiving messages.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsMessaging</Declaration>
+			
+			
+			<Anchor>//api/name/supportsMessaging</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsMessaging</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports sending and receiving messages.</Abstract>
+			<DeclaredIn>Bit6Address.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL supportsMessaging</Declaration>
+			
+			
+			<Anchor>//api/name/supportsMessaging</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

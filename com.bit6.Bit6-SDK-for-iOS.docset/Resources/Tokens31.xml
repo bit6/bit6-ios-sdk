@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6CallStreams.html">
+	<File path="Constants/Bit6RTStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallStreams</TokenIdentifier>
-			<Abstract type="html">Call stream for a Bit6CallController.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6RTStatus</TokenIdentifier>
+			<Abstract type="html">Web Socket connection status.</Abstract>
+			<DeclaredIn>Bit6Constants.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -14,31 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Audio</TokenIdentifier>
-            <Abstract type="html">Audio stream.</Abstract>
-            <Declaration>Bit6CallStreams_Audio</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_DISCONNECTED</TokenIdentifier>
+            <Abstract type="html">Web Socket is disconnected.</Abstract>
+            <Declaration>Bit6RTStatus_DISCONNECTED</Declaration>
             
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="31"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Video</TokenIdentifier>
-            <Abstract type="html">Video stream.</Abstract>
-            <Declaration>Bit6CallStreams_Video</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="31"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Data</TokenIdentifier>
-            <Abstract type="html">Data stream.</Abstract>
-            <Declaration>Bit6CallStreams_Data</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTING</TokenIdentifier>
+            <Abstract type="html">Web Socket is tring to connect.</Abstract>
+            <Declaration>Bit6RTStatus_CONNECTING</Declaration>
             
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="31"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTED</TokenIdentifier>
+            <Abstract type="html">Web Socket is connected.</Abstract>
+            <Declaration>Bit6RTStatus_CONNECTED</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="31"/>
         </Token>

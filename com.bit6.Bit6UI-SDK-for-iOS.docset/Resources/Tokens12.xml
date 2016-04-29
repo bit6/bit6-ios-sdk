@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUMessageTableViewCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUMessageTableViewCell</TokenIdentifier>
+			<Abstract type="html">Unique cell to be used in BXUMessageTableViewController.</Abstract>
+			<DeclaredIn>BXUMessageTableViewCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewCell/setUI_APPEARANCE_SELECTOR:</TokenIdentifier>
+			<Abstract type="html">Font for the text content of the message.</Abstract>
+			<DeclaredIn>BXUMessageTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIFont *UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewCell/UI_APPEARANCE_SELECTOR</TokenIdentifier>
+			<Abstract type="html">Font for the text content of the message.</Abstract>
+			<DeclaredIn>BXUMessageTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIFont *UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewCell/UI_APPEARANCE_SELECTOR</TokenIdentifier>
+			<Abstract type="html">Font for the text content of the message.</Abstract>
+			<DeclaredIn>BXUMessageTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIFont *UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

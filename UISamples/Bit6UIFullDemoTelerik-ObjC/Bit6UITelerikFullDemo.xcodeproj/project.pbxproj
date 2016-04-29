@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D86261FB1CC7C27100E061DD /* Bit6UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86261FA1CC7C27100E061DD /* Bit6UI.framework */; };
+		D86261FD1CC7C27E00E061DD /* Bit6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86261FC1CC7C27E00E061DD /* Bit6.framework */; };
+		D86261FF1CC7C28400E061DD /* Bit6UIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D86261FE1CC7C28400E061DD /* Bit6UIResources.bundle */; };
+		D86262011CC7C34C00E061DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86262001CC7C34C00E061DD /* Main.storyboard */; };
+		D86262101CC7E40600E061DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D862620E1CC7E40600E061DD /* Localizable.strings */; };
+		D86262111CC7E40600E061DD /* ringtone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D862620F1CC7E40600E061DD /* ringtone.caf */; };
+		D862621A1CC7E42D00E061DD /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86262131CC7E42D00E061DD /* ConversationsViewController.m */; };
+		D862621B1CC7E42D00E061DD /* ChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86262151CC7E42D00E061DD /* ChatsTableViewController.m */; };
+		D862621C1CC7E42D00E061DD /* ConversationDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86262171CC7E42D00E061DD /* ConversationDetailsTableViewController.m */; };
+		D862621D1CC7E42D00E061DD /* DemoContactSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D86262191CC7E42D00E061DD /* DemoContactSource.m */; };
+		D86262251CC7E65100E061DD /* EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86262241CC7E65100E061DD /* EverliveSDK.framework */; };
+		D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A118DBFC540070378D /* Foundation.framework */; };
+		D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A318DBFC540070378D /* CoreGraphics.framework */; };
+		D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D880E4A518DBFC540070378D /* UIKit.framework */; };
+		D894B8961CC93E4500211A29 /* Bit6UI.strings in Resources */ = {isa = PBXBuildFile; fileRef = D894B8951CC93E4500211A29 /* Bit6UI.strings */; };
+		D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */; };
+		D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACB8194ABD2A00AFFB53 /* main.m */; };
+		D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */; };
+		D8EDACD3194ABD4D00AFFB53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */; };
+		D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D86261FA1CC7C27100E061DD /* Bit6UI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6UI.framework; path = ../../Bit6UI.framework; sourceTree = "<group>"; };
+		D86261FC1CC7C27E00E061DD /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../Bit6.framework; sourceTree = "<group>"; };
+		D86261FE1CC7C28400E061DD /* Bit6UIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6UIResources.bundle; path = ../../Bit6UIResources.bundle; sourceTree = SOURCE_ROOT; };
+		D86262001CC7C34C00E061DD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ChatDemo/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		D862620E1CC7E40600E061DD /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Localizable.strings"; sourceTree = SOURCE_ROOT; };
+		D862620F1CC7E40600E061DD /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ringtone.caf; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ringtone.caf"; sourceTree = SOURCE_ROOT; };
+		D86262121CC7E42D00E061DD /* ConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationsViewController.h; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ConversationsViewController.h"; sourceTree = SOURCE_ROOT; };
+		D86262131CC7E42D00E061DD /* ConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationsViewController.m; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ConversationsViewController.m"; sourceTree = SOURCE_ROOT; };
+		D86262141CC7E42D00E061DD /* ChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatsTableViewController.h; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ChatsTableViewController.h"; sourceTree = SOURCE_ROOT; };
+		D86262151CC7E42D00E061DD /* ChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatsTableViewController.m; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ChatsTableViewController.m"; sourceTree = SOURCE_ROOT; };
+		D86262161CC7E42D00E061DD /* ConversationDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationDetailsTableViewController.h; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ConversationDetailsTableViewController.h"; sourceTree = SOURCE_ROOT; };
+		D86262171CC7E42D00E061DD /* ConversationDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationDetailsTableViewController.m; path = "../Bit6UIFullDemo-ObjC/ChatDemo/ConversationDetailsTableViewController.m"; sourceTree = SOURCE_ROOT; };
+		D86262181CC7E42D00E061DD /* DemoContactSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoContactSource.h; path = "../Bit6UIFullDemo-ObjC/ChatDemo/DemoContactSource.h"; sourceTree = SOURCE_ROOT; };
+		D86262191CC7E42D00E061DD /* DemoContactSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoContactSource.m; path = "../Bit6UIFullDemo-ObjC/ChatDemo/DemoContactSource.m"; sourceTree = SOURCE_ROOT; };
+		D86262241CC7E65100E061DD /* EverliveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverliveSDK.framework; sourceTree = "<group>"; };
+		D880E49E18DBFC540070378D /* Bit6UITelerikFullDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bit6UITelerikFullDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D880E4A118DBFC540070378D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D880E4A518DBFC540070378D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D894B8951CC93E4500211A29 /* Bit6UI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Bit6UI.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Bit6UI.strings"; sourceTree = SOURCE_ROOT; };
+		D8EDACB5194ABD2A00AFFB53 /* Bit6UITelerikFullDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bit6UITelerikFullDemo-Info.plist"; path = "ChatDemo/Bit6UITelerikFullDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D8EDACB6194ABD2A00AFFB53 /* Bit6UITelerikFullDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bit6UITelerikFullDemo-Prefix.pch"; path = "ChatDemo/Bit6UITelerikFullDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ChatDemo/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		D8EDACB8194ABD2A00AFFB53 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChatDemo/main.m; sourceTree = SOURCE_ROOT; };
+		D8EDACBC194ABD4D00AFFB53 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ChatDemo/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ChatDemo/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = DemoConfig.xcconfig; path = ChatDemo/DemoConfig.xcconfig; sourceTree = SOURCE_ROOT; };
+		D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChatDemo/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		D8EDACC8194ABD4D00AFFB53 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ChatDemo/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ChatDemo/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D880E49B18DBFC540070378D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D86261FB1CC7C27100E061DD /* Bit6UI.framework in Frameworks */,
+				D880E4A418DBFC540070378D /* CoreGraphics.framework in Frameworks */,
+				D86262251CC7E65100E061DD /* EverliveSDK.framework in Frameworks */,
+				D880E4A618DBFC540070378D /* UIKit.framework in Frameworks */,
+				D86261FD1CC7C27E00E061DD /* Bit6.framework in Frameworks */,
+				D880E4A218DBFC540070378D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D86262231CC7E65100E061DD /* Telerik */ = {
+			isa = PBXGroup;
+			children = (
+				D86262241CC7E65100E061DD /* EverliveSDK.framework */,
+			);
+			name = Telerik;
+			path = ChatDemo/Telerik;
+			sourceTree = SOURCE_ROOT;
+		};
+		D880E49518DBFC540070378D = {
+			isa = PBXGroup;
+			children = (
+				D880E4A718DBFC540070378D /* ChatDemo */,
+				D880E4A018DBFC540070378D /* Frameworks */,
+				D880E49F18DBFC540070378D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D880E49F18DBFC540070378D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D880E49E18DBFC540070378D /* Bit6UITelerikFullDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D880E4A018DBFC540070378D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D86261FC1CC7C27E00E061DD /* Bit6.framework */,
+				D86261FA1CC7C27100E061DD /* Bit6UI.framework */,
+				D880E4A118DBFC540070378D /* Foundation.framework */,
+				D880E4A318DBFC540070378D /* CoreGraphics.framework */,
+				D880E4A518DBFC540070378D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D880E4A718DBFC540070378D /* ChatDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D86262231CC7E65100E061DD /* Telerik */,
+				D8EDACBC194ABD4D00AFFB53 /* AppDelegate.h */,
+				D8EDACBD194ABD4D00AFFB53 /* AppDelegate.m */,
+				D8EDACC8194ABD4D00AFFB53 /* LoginViewController.h */,
+				D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */,
+				D86262121CC7E42D00E061DD /* ConversationsViewController.h */,
+				D86262131CC7E42D00E061DD /* ConversationsViewController.m */,
+				D86262141CC7E42D00E061DD /* ChatsTableViewController.h */,
+				D86262151CC7E42D00E061DD /* ChatsTableViewController.m */,
+				D86262161CC7E42D00E061DD /* ConversationDetailsTableViewController.h */,
+				D86262171CC7E42D00E061DD /* ConversationDetailsTableViewController.m */,
+				D86262181CC7E42D00E061DD /* DemoContactSource.h */,
+				D86262191CC7E42D00E061DD /* DemoContactSource.m */,
+				D86262001CC7C34C00E061DD /* Main.storyboard */,
+				D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */,
+				D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */,
+				D880E4A818DBFC540070378D /* Supporting Files */,
+			);
+			name = ChatDemo;
+			path = BasicDemo;
+			sourceTree = "<group>";
+		};
+		D880E4A818DBFC540070378D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D894B8951CC93E4500211A29 /* Bit6UI.strings */,
+				D862620E1CC7E40600E061DD /* Localizable.strings */,
+				D862620F1CC7E40600E061DD /* ringtone.caf */,
+				D86261FE1CC7C28400E061DD /* Bit6UIResources.bundle */,
+				D8EDACB5194ABD2A00AFFB53 /* Bit6UITelerikFullDemo-Info.plist */,
+				D8EDACB6194ABD2A00AFFB53 /* Bit6UITelerikFullDemo-Prefix.pch */,
+				D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */,
+				D8EDACB8194ABD2A00AFFB53 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D880E49D18DBFC540070378D /* Bit6UITelerikFullDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "Bit6UITelerikFullDemo" */;
+			buildPhases = (
+				D880E49C18DBFC540070378D /* Resources */,
+				D880E49A18DBFC540070378D /* Sources */,
+				D880E49B18DBFC540070378D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bit6UITelerikFullDemo;
+			productName = BasicDemo;
+			productReference = D880E49E18DBFC540070378D /* Bit6UITelerikFullDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D880E49618DBFC540070378D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Voxofon;
+				TargetAttributes = {
+					D880E49D18DBFC540070378D = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D880E49918DBFC540070378D /* Build configuration list for PBXProject "Bit6UITelerikFullDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D880E49518DBFC540070378D;
+			productRefGroup = D880E49F18DBFC540070378D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D880E49D18DBFC540070378D /* Bit6UITelerikFullDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D880E49C18DBFC540070378D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D86262101CC7E40600E061DD /* Localizable.strings in Resources */,
+				D8EDACD3194ABD4D00AFFB53 /* Images.xcassets in Resources */,
+				D86261FF1CC7C28400E061DD /* Bit6UIResources.bundle in Resources */,
+				D86262011CC7C34C00E061DD /* Main.storyboard in Resources */,
+				D894B8961CC93E4500211A29 /* Bit6UI.strings in Resources */,
+				D86262111CC7E40600E061DD /* ringtone.caf in Resources */,
+				D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D880E49A18DBFC540070378D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D862621B1CC7E42D00E061DD /* ChatsTableViewController.m in Sources */,
+				D862621C1CC7E42D00E061DD /* ConversationDetailsTableViewController.m in Sources */,
+				D862621D1CC7E42D00E061DD /* DemoContactSource.m in Sources */,
+				D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */,
+				D862621A1CC7E42D00E061DD /* ConversationsViewController.m in Sources */,
+				D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */,
+				D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D880E4CE18DBFC540070378D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D880E4CF18DBFC540070378D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D880E4D118DBFC540070378D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChatDemo/Telerik",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatDemo/Bit6UITelerikFullDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChatDemo/Bit6UITelerikFullDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
+				PRODUCT_NAME = Bit6UITelerikFullDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D880E4D218DBFC540070378D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChatDemo/Telerik",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChatDemo/Bit6UITelerikFullDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChatDemo/Bit6UITelerikFullDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
+				PRODUCT_NAME = Bit6UITelerikFullDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D880E49918DBFC540070378D /* Build configuration list for PBXProject "Bit6UITelerikFullDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D880E4CE18DBFC540070378D /* Debug */,
+				D880E4CF18DBFC540070378D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D880E4D018DBFC540070378D /* Build configuration list for PBXNativeTarget "Bit6UITelerikFullDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D880E4D118DBFC540070378D /* Debug */,
+				D880E4D218DBFC540070378D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D880E49618DBFC540070378D /* Project object */;
+}

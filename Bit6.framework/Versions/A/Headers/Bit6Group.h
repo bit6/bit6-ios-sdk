@@ -104,6 +104,13 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
  */
 - (void)inviteGroupMembersWithAddresses:(nonnull NSArray<Bit6Address*>*)addresses roles:(nonnull NSArray<NSString*>*)roles completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
 
+/*! Invite users to the group.
+ @param addresses array of <Bit6Address> indicating the users to invite.
+ @param role role to assign to the users invited to the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.
+ @param completion block to be called when the operation is completed.
+ */
+- (void)inviteGroupMembersWithAddresses:(nonnull NSArray<Bit6Address*>*)addresses role:(nonnull NSString*)role completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
+
 /*! Remove a member from the group.
  @param member member to be removed from the group.
  @param completion block to be called when the operation is completed.

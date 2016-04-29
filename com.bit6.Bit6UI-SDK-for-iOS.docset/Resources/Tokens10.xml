@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUIncomingCallPrompt.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUIncomingCallPrompt</TokenIdentifier>
+			<Abstract type="html">Used to show a nice and clean incoming call prompt that dim the entire screen while it&apos;s visible. This class is intented to be used as a singleton instance, please use Bit6IncomingCallPrompt.sharedInstance() when necessary.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/showForCallController:</TokenIdentifier>
+			<Abstract type="html">Presents the BXUIncomingCallPrompt.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>+ (void)showForCallController:(nonnull Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">call to be linked to the prompt</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showForCallController:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/dismiss</TokenIdentifier>
+			<Abstract type="html">Dismiss the BXUIncomingCallPrompt.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>+ (void)dismiss</Declaration>
+			
+			
+			<Anchor>//api/name/dismiss</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/callController</TokenIdentifier>
+			<Abstract type="html">Returns the call linked to the prompt</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6CallController *)callController</Declaration>
+			
+			<ReturnValue><Abstract type="html">callController linked to the prompt</Abstract></ReturnValue>
+			<Anchor>//api/name/callController</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Returns the singleton BXUIncomingCallPrompt instance</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull BXUIncomingCallPrompt *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">singleton BXUIncomingCallPrompt instance</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/setContentView:</TokenIdentifier>
+			<Abstract type="html">Set a view to be shown at the center of the BXUIncomingCallPrompt view.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>- (void)setContentView:(nullable UIView *)contentView</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>contentView</Name>
+					<Abstract type="html">view to be shown in the BXUIncomingCallPrompt.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setContentView:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/reject</TokenIdentifier>
+			<Abstract type="html">Action to be used to reject a call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>- (void)reject</Declaration>
+			
+			
+			<Anchor>//api/name/reject</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/answerAudio</TokenIdentifier>
+			<Abstract type="html">Action to be used to answer an audio call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>- (void)answerAudio</Declaration>
+			
+			
+			<Anchor>//api/name/answerAudio</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/answerVideo</TokenIdentifier>
+			<Abstract type="html">Action to be used to answer an video call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>- (void)answerVideo</Declaration>
+			
+			
+			<Anchor>//api/name/answerVideo</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/answerData</TokenIdentifier>
+			<Abstract type="html">Action to be used to answer an data call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>- (void)answerData</Declaration>
+			
+			
+			<Anchor>//api/name/answerData</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

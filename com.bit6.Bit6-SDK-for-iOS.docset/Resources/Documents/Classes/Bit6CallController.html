@@ -39,7 +39,11 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/callState">&nbsp;&nbsp;&nbsp;&nbsp;callState</option>
+	<option value="//api/name/answered">&nbsp;&nbsp;&nbsp;&nbsp;answered</option>
+	
+	<option value="//api/name/endedCause">&nbsp;&nbsp;&nbsp;&nbsp;endedCause</option>
+	
+	<option value="//api/name/endedCauseCode">&nbsp;&nbsp;&nbsp;&nbsp;endedCauseCode</option>
 	
 	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;error</option>
 	
@@ -55,11 +59,9 @@
 	
 	<option value="//api/name/hasVideo">&nbsp;&nbsp;&nbsp;&nbsp;hasVideo</option>
 	
-	<option value="//api/name/incomingCall">&nbsp;&nbsp;&nbsp;&nbsp;incomingCall</option>
+	<option value="//api/name/incoming">&nbsp;&nbsp;&nbsp;&nbsp;incoming</option>
 	
-	<option value="//api/name/incomingCallAlert">&nbsp;&nbsp;&nbsp;&nbsp;incomingCallAlert</option>
-	
-	<option value="//api/name/incomingCallAnswered">&nbsp;&nbsp;&nbsp;&nbsp;incomingCallAnswered</option>
+	<option value="//api/name/incomingAlert">&nbsp;&nbsp;&nbsp;&nbsp;incomingAlert</option>
 	
 	<option value="//api/name/incomingTransfers">&nbsp;&nbsp;&nbsp;&nbsp;incomingTransfers</option>
 	
@@ -74,6 +76,8 @@
 	<option value="//api/name/remoteStreams">&nbsp;&nbsp;&nbsp;&nbsp;remoteStreams</option>
 	
 	<option value="//api/name/seconds">&nbsp;&nbsp;&nbsp;&nbsp;seconds</option>
+	
+	<option value="//api/name/state">&nbsp;&nbsp;&nbsp;&nbsp;state</option>
 	
 	
 	
@@ -107,7 +111,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/declineCall">&nbsp;&nbsp;&nbsp;&nbsp;- declineCall</option>
+	<option value="//api/name/decline">&nbsp;&nbsp;&nbsp;&nbsp;- decline</option>
 	
 	<option value="//api/name/hangup">&nbsp;&nbsp;&nbsp;&nbsp;- hangup</option>
 	
@@ -135,6 +139,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Call Properties">￼Call Properties</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Transfers">￼Transfers</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Actions">￼Actions</a></span></li>
 	
 </ul></li>
@@ -145,7 +151,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callState">callState</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/answered">answered</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endedCause">endedCause</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endedCauseCode">endedCauseCode</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
 	
@@ -161,11 +171,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasVideo">hasVideo</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCall">incomingCall</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incoming">incoming</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallAlert">incomingCallAlert</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallAnswered">incomingCallAnswered</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingAlert">incomingAlert</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingTransfers">incomingTransfers</a></span></li>
 	
@@ -180,6 +188,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remoteStreams">remoteStreams</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/seconds">seconds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/state">state</a></span></li>
 	
 </ul></li>
 
@@ -215,7 +225,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/declineCall">declineCall</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/decline">decline</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hangup">hangup</a></span></li>
 	
@@ -280,7 +290,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/callState">&nbsp;&nbsp;callState</a></code>
+		<code><a href="#//api/name/state">&nbsp;&nbsp;state</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -292,19 +302,19 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/incomingCall">&nbsp;&nbsp;incomingCall</a></code>
+		<code><a href="#//api/name/incoming">&nbsp;&nbsp;incoming</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/incomingCallAnswered">&nbsp;&nbsp;incomingCallAnswered</a></code>
+		<code><a href="#//api/name/answered">&nbsp;&nbsp;answered</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/incomingCallAlert">&nbsp;&nbsp;incomingCallAlert</a></code>
+		<code><a href="#//api/name/incomingAlert">&nbsp;&nbsp;incomingAlert</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -376,6 +386,18 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/endedCauseCode">&nbsp;&nbsp;endedCauseCode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/endedCause">&nbsp;&nbsp;endedCause</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/speakerEnabled">+&nbsp;speakerEnabled</a></code>
 	</span>
 	
@@ -404,7 +426,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="￼Transfers" name="task_￼Transfers"></a>
+						<h3 class="subsubtitle task-title">￼Transfers</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/outgoingTransfers">&nbsp;&nbsp;outgoingTransfers</a></code>
 	</span>
@@ -486,7 +516,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/declineCall">&ndash;&nbsp;declineCall</a></code>
+		<code><a href="#//api/name/decline">&ndash;&nbsp;decline</a></code>
 	</span>
 	
 	
@@ -504,18 +534,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/callState" title="callState"></a>
-	<h3 class="subsubtitle method-title">callState</h3>
+	<a name="//api/name/answered" title="answered"></a>
+	<h3 class="subsubtitle method-title">answered</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Call status as a value of the <a href="../Constants/Bit6MessageStatus.html">Bit6MessageStatus</a> enumeration.</p>
+		<p>The incoming call was answered by using the system push notification.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6CallState callState</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL answered</code></div>
 
     
 	
@@ -525,11 +555,77 @@
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>For incoming calls the states go: <b>NEW</b> -> <b>ACCEPTING_CALL</b> -> <b>WAITING_SDP</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br />
-For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>WAITING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br /></p>
-	</div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/endedCause" title="endedCause"></a>
+	<h3 class="subsubtitle method-title">endedCause</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Cause message for the call ended, if available.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *endedCause</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/endedCauseCode" title="endedCauseCode"></a>
+	<h3 class="subsubtitle method-title">endedCauseCode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Cause code for the call ended, if available.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger endedCauseCode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -798,8 +894,8 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/incomingCall" title="incomingCall"></a>
-	<h3 class="subsubtitle method-title">incomingCall</h3>
+	<a name="//api/name/incoming" title="incoming"></a>
+	<h3 class="subsubtitle method-title">incoming</h3>
 	
 	
 	
@@ -809,7 +905,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL incomingCall</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL incoming</code></div>
 
     
 	
@@ -834,8 +930,8 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/incomingCallAlert" title="incomingCallAlert"></a>
-	<h3 class="subsubtitle method-title">incomingCallAlert</h3>
+	<a name="//api/name/incomingAlert" title="incomingAlert"></a>
+	<h3 class="subsubtitle method-title">incomingAlert</h3>
 	
 	
 	
@@ -845,43 +941,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *incomingCallAlert</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/incomingCallAnswered" title="incomingCallAnswered"></a>
-	<h3 class="subsubtitle method-title">incomingCallAnswered</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The incoming call was answered by using the system push notification.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL incomingCallAnswered</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *incomingAlert</code></div>
 
     
 	
@@ -1142,6 +1202,48 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/state" title="state"></a>
+	<h3 class="subsubtitle method-title">state</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Call status as a value of the <a href="../Constants/Bit6MessageStatus.html">Bit6MessageStatus</a> enumeration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6CallState state</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>For incoming calls the states go: <b>NEW</b> -> <b>ACCEPTING_CALL</b> -> <b>WAITING_SDP</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br />
+For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>WAITING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br /></p>
+	</div>
 	
 	
 	
@@ -1570,8 +1672,8 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/declineCall" title="declineCall"></a>
-	<h3 class="subsubtitle method-title">declineCall</h3>
+	<a name="//api/name/decline" title="decline"></a>
+	<h3 class="subsubtitle method-title">decline</h3>
 	
 	
 	
@@ -1581,7 +1683,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)declineCall</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)decline</code></div>
 
     
 	
@@ -1774,7 +1876,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-02-13)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-04-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

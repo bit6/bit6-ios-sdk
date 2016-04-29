@@ -19,26 +19,25 @@
 #import "Bit6Message.h"
 #import "Bit6OutgoingMessage.h"
 #import "Bit6Session.h"
-#import "Bit6MenuControllerDelegate.h"
-#import "Bit6ImageView.h"
-#import "Bit6ThumbnailImageView.h"
-#import "Bit6MessageLabel.h"
 #import "Bit6AudioPlayerController.h"
 #import "Bit6AudioRecorderController.h"
 #import "Bit6CurrentLocationController.h"
 #import "Bit6Transfer.h"
 #import "Bit6CallController.h"
-#import "Bit6IncomingCallPrompt.h"
-#import "Bit6IncomingCallHandler.h"
 #import "Bit6CallViewController.h"
 #import "Bit6Utils.h"
 #import "Bit6PushNotificationCenter.h"
 #import "Bit6FileDownloader.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.9.6"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.9.7"
 
-/*! Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object */
+/*! Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object and offers some generic functionality. */
 @interface Bit6 : NSObject
+
+/*! Gets the default Bit6 object.
+ @return Default Bit6 object.
+ */
++ (nonnull Bit6 *)sharedInstance;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Initialization
@@ -48,6 +47,15 @@
  @param apiKey unique key for the current developer.
  */
 + (void)startWithApiKey:(nonnull NSString*)apiKey;
+
+/*! Bit6 startup method. It should be the first call to Bit6 api made.
+ @param apiKey unique key for the current developer.
+ @param endPoint custom server URL
+ */
++ (void)startWithApiKey:(nonnull NSString*)apiKey endPoint:(nonnull NSString*)endPoint;
+
+/*! Returns YES if the Bit6 framework has been initialized */
++ (BOOL)started;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Controllers
@@ -78,24 +86,51 @@
  */
 + (nonnull Bit6PushNotificationCenter*)pushNotification;
 
-/*! Returns the default Bit6IncomingCallHandler object.
- @return the default Bit6IncomingCallHandler object.
- */
-+ (nonnull Bit6IncomingCallHandler*)incomingCallHandler;
-
 ///---------------------------------------------------------------------------------------
 /// @name ￼Properties
 ///---------------------------------------------------------------------------------------
 
-/*! Configure the video attachments playing mode.
- @param shouldDownloadVideoBeforePlaying if true the video attachments will be downloaded to be played locally. If false, the video will be streamed.
- */
-+ (void)setShouldDownloadVideoBeforePlaying:(BOOL)shouldDownloadVideoBeforePlaying;
-
-/*! Obtains the current configuration to play video attachments.
+/*! Get the current configuration to play video attachments.
  @return true if the video attachments will be downloaded to be played locally. false if the video will be streamed.
+ @see +[Bit6 playVideoFromMessage:viewController:]
  */
 + (BOOL)shouldDownloadVideoBeforePlaying;
+
+/*! Get the current configuration to download audio attachments automatically.
+ @return true if the audio attachments will be downloaded automatically.
+ */
++ (BOOL)shouldDownloadAudioRecordings;
+
+/*! Returns the timestamp matching the last message with status Bit6MessageStatus_Delivered. */
+@property (nonatomic, readonly) double deliveredUntil;
+
+/*! Returns the timestamp matching the last message with status Bit6MessageStatus_Read. */
+@property (nonatomic, readonly) double readUntil;
+
+///---------------------------------------------------------------------------------------
+/// @name ￼Cache
+///---------------------------------------------------------------------------------------
+
+/*! Get the size of the /Cache/bit6 directory.
+ @return cache size in bytes.
+ */
++ (NSUInteger)cacheSize;
+
+/*! Get the number of files inside the /Cache/bit6 directory.
+ @return number of files in cache.
+ */
++ (NSUInteger)numberOfItemsInCache;
+
+/*! Delete all the files inside the /Cache/bit6 directory.
+ @return number of files deleted.
+ */
++ (NSUInteger)clearCache;
+
+/*! Delete the files inside the /Cache/bit6 directory that matches the specified prefix.
+ @param prefix prefix of the files to delete
+ @return number of files deleted.
+ */
++ (NSUInteger)clearCacheWithPrefix:(nonnull NSString*)prefix;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Working with Groups
@@ -109,6 +144,11 @@
 ///---------------------------------------------------------------------------------------
 /// @name ￼Working with Conversations
 ///---------------------------------------------------------------------------------------
+
+/*! Set the comparator block that will be used to sort the conversations.
+ @param cmptr new sorting comparator..
+ */
++ (void)setConversationSortingComparator:(nonnull NSComparator)cmptr;
 
 /*! Get all the existing conversations.
  @return the existing <Bit6Conversation> objects as a NSArray, or null if no session has been initiated.
@@ -149,6 +189,9 @@
  @param conversation conversation to become the current conversation.
  */
 + (void)setCurrentConversation:(nullable Bit6Conversation*)conversation;
+
+/*! Gets the current conversation for the application. */
++ (nullable Bit6Conversation*)currentConversation;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Getting Messages
@@ -210,23 +253,23 @@
  */
 + (nonnull NSArray<Bit6CallController*>*)callControllers;
 
-/*! Creates a <Bit6CallController> to reference a VoIP call
+/*! Starts a VoIP call.
  @param identity address of the user to call
  @param streams An integer bit mask that determines the local media that will be sent.
- @return <Bit6CallController> object to handle the call. It returns nil if a call to the specified address is happening.
  */
-+ (nullable Bit6CallController*)createCallTo:(nonnull Bit6Address*)identity streams:(Bit6CallStreams)streams;
++ (BOOL)startCallTo:(nonnull Bit6Address*)identity streams:(Bit6CallStreams)streams;
 
-/*! Creates a <Bit6CallController> to reference a PSTN call
+/*! Starts a PSTN call
  @param phoneNumber phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.
- @return <Bit6CallController> object to handle the call. It can return nil if an error occur.
  */
-+ (nullable Bit6CallController*)createCallToPhoneNumber:(nonnull NSString*)phoneNumber;
++ (BOOL)startPhoneCallTo:(nonnull NSString*)phoneNumber;
 
-/*! Shows the callViewController using a modal transition.
- @param callViewController viewController to be presented.
+/*! Creates a view controller to use during a call, or reuse an existing one.
+ @discussion The class for the returned viewcontroller can be customize by adding the class name with the key 'in_call_class_name' in the Bit6 dictionary in the target info.plist. If set then the <+(nonnull Bit6CallViewController*)createViewController> method for that class will be called to create the viewcontroller.
+ @param callController call for which the viewcontroller will be generated.
+ @return viewcontroller to use during a call.
  */
-+ (void)presentCallViewController:(nonnull Bit6CallViewController*)callViewController;
++ (nullable Bit6CallViewController*)createViewControllerForCall:(nonnull Bit6CallController*)callController;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Actions
@@ -235,6 +278,7 @@
 /*! Plays the attached video included in a <Bit6Message> object using the MPMoviePlayerViewController class.
  @param msg A <Bit6Message> object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageType_Attachments and Bit6Message.attachFileType == Bit6MessageFileType_VideoMP4.
  @param vc viewcontroller from which to present the MPMoviePlayerViewController control to play the video
+ @see +[Bit6 shouldDownloadVideoBeforePlaying]
  */
 + (void)playVideoFromMessage:(nonnull Bit6Message*)msg viewController:(nonnull UIViewController*)vc;
 

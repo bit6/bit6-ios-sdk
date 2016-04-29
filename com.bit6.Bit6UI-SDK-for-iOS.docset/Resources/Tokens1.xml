@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXU.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXU</TokenIdentifier>
+			<Abstract type="html">BXU offers some generic functionality like setting the ContactDataSource to use through the framework, to show incoming message banners and deletion of cache pictures.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/contactSource</TokenIdentifier>
+			<Abstract type="html">Gets the current BXUContactSource object.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (nullable id&lt;BXUContactSource&gt;)contactSource</Declaration>
+			
+			<ReturnValue><Abstract type="html">contact source object.</Abstract></ReturnValue>
+			<Anchor>//api/name/contactSource</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/setContactSource:</TokenIdentifier>
+			<Abstract type="html">Sets the current BXUContactSource object to use through the framework.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)setContactSource:(nullable id&lt;BXUContactSource&gt;)contactDataSource</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>contactDataSource</Name>
+					<Abstract type="html">contact source object to set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setContactSource:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/clearProfilePictures</TokenIdentifier>
+			<Abstract type="html">Deletes the profile pictures from cache.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)clearProfilePictures</Declaration>
+			
+			<ReturnValue><Abstract type="html">number of files deleted.</Abstract></ReturnValue>
+			<Anchor>//api/name/clearProfilePictures</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/clearProfilePictureForAddress:</TokenIdentifier>
+			<Abstract type="html">Deletes an identity profile picture from cache.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)clearProfilePictureForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">identity of the profile picture to delete.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the file was deleted from cache.</Abstract></ReturnValue>
+			<Anchor>//api/name/clearProfilePictureForAddress:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/showNotificationFrom:message:tappedHandler:</TokenIdentifier>
+			<Abstract type="html">Shows a incoming message notification banner.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)showNotificationFrom:(nonnull Bit6Address *)from message:(nonnull NSString *)message tappedHandler:(nullable void ( ^ ) ( Bit6Address *_Nullable from ))tappedHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>from</Name>
+					<Abstract type="html">identity to use as the sender of the message.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">message to show in the banner</Abstract>
+				</Parameter><Parameter>
+					<Name>tappedHandler</Name>
+					<Abstract type="html">handler to execute if the banner is tapped</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the file was deleted from cache.</Abstract></ReturnValue>
+			<Anchor>//api/name/showNotificationFrom:message:tappedHandler:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

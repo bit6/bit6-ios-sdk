@@ -63,8 +63,11 @@
 /// @name Identities
 ///---------------------------------------------------------------------------------------
 
-/*! Active user identity as a <Bit6Address> object. It can be nil if a session has not been created. Only values returned in <[Bit6Session identities]> can be set in this property. */
+/*! Active user identity as a <Bit6Address> object. It can be nil if a session has not been created. */
 @property (nullable, nonatomic, strong) Bit6Address* activeIdentity;
+
+/*! Display name to use for the active user. It can be nil if a session has not been created. */
+@property (nullable, nonatomic, strong) NSString* activeDisplayName;
 
 /*! List of user identities for the current session. */
 @property (nonnull, nonatomic, readonly) NSArray<Bit6Address*>* identities;
@@ -107,6 +110,12 @@
 
 /*! Web Socket connection status. */
 @property (nonatomic, readonly) Bit6RTStatus rtConnectionStatus;
+
+/*! List of device identifiers for the active user. */
+@property (nullable, nonatomic, readonly, strong) NSArray<NSString*>* devices;
+
+/*! Unique identifier for this device for the active user. */
+@property (nullable, nonatomic, readonly, strong) NSString *currentDevice;
 
 ///---------------------------------------------------------------------------------------
 /// @name Password

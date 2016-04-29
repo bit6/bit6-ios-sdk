@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BXUTypingLabelDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUTypingLabelDelegate</TokenIdentifier>
+			<Abstract type="html">The BXUTypingLabelDelegate protocol defines the methods a delegate of a BXUTypingLabel object should implement. The methods of this protocol notify the delegate when the typing label will become visible or hidden.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUTypingLabelDelegate/showTypingLabel:</TokenIdentifier>
+			<Abstract type="html">Called when the typing label is going to be shown.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>- (void)showTypingLabel:(nonnull BXUTypingLabel *)typingLabel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>typingLabel</Name>
+					<Abstract type="html">typing label to be shown</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/showTypingLabel:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUTypingLabelDelegate/hideTypingLabel:</TokenIdentifier>
+			<Abstract type="html">Called when the typing label is going to be hidden.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>- (void)hideTypingLabel:(nonnull BXUTypingLabel *)typingLabel</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>typingLabel</Name>
+					<Abstract type="html">typing label to be hidden</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hideTypingLabel:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
