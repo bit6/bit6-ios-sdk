@@ -140,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController?.dismissViewControllerAnimated(true, completion:nil)
         }
         
-        let title = "Missed Call from \(callController.otherDisplayName)"
+        let title = "Missed Call from \(callController.other.value)"
         let alertView = UIAlertController(title:title, message:nil, preferredStyle:.Alert)
         alertView.addAction(UIAlertAction(title:"OK", style:.Cancel, handler:nil))
         self.window?.rootViewController?.presentViewController(alertView, animated:true, completion:nil)
