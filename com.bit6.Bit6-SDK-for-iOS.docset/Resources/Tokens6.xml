@@ -83,8 +83,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callController:callDidChangeToState:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the status of the call changes. Needs to call super if implemented.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)callController:(nonnull Bit6CallController *)callController callDidChangeToState:(Bit6CallState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object which state has changed.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">new state for the call.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/callController:callDidChangeToState:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/secondsChangedNotificationForCall:</TokenIdentifier>
-			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing.</Abstract>
+			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UI. The default implementation does nothing.</Abstract>
 			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
 			<Declaration>- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController *)callController</Declaration>
@@ -96,6 +116,23 @@
 			</Parameters>
 			
 			<Anchor>//api/name/secondsChangedNotificationForCall:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/secondsDidChangeForCallController:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UI. Needs to call super if implemented.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)secondsDidChangeForCallController:(nonnull Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object which &apos;seconds&apos; property has changed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/secondsDidChangeForCallController:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

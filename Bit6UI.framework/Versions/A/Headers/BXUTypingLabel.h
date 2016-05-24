@@ -17,7 +17,7 @@
 @property (nullable, strong, nonatomic) Bit6Address *address;
 
 /*! The delegate to be notified when the typing label will become visible or hidden. For details about the methods that can be implemented by the delegate, see <BXUTypingLabelDelegate> Protocol Reference. */
-@property (nullable, weak, nonatomic) id<BXUTypingLabelDelegate> delegate;
+@property (nullable, weak, nonatomic) IBOutlet id<BXUTypingLabelDelegate> delegate;
 
 @end
 

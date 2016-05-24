@@ -27,6 +27,7 @@
 						<NodeRef refid="14"/>
 						<NodeRef refid="15"/>
 						<NodeRef refid="16"/>
+						<NodeRef refid="17"/>
 						
 					</Subnodes>
 				</Node>
@@ -37,12 +38,13 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
 						<NodeRef refid="19"/>
 						<NodeRef refid="20"/>
 						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
 						
 					</Subnodes>
 				</Node>
@@ -76,6 +78,12 @@
                     <Anchor>class_methods</Anchor>
                 </Node>
                 
+                
+                <Node type="section">
+                    <Path>Classes/BXU.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
                 
             </Subnodes>
             
@@ -114,6 +122,11 @@
             
         </Node>
 		<Node id="3" type="file" documentType="reference">
+            <Name>BXUCallViewController</Name>
+            <Path>Classes/BXUCallViewController.html</Path>
+            
+        </Node>
+		<Node id="4" type="file" documentType="reference">
             <Name>BXUContactAvatarImageView</Name>
             <Path>Classes/BXUContactAvatarImageView.html</Path>
             
@@ -146,7 +159,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="4" type="file" documentType="reference">
+		<Node id="5" type="file" documentType="reference">
             <Name>BXUContactNameLabel</Name>
             <Path>Classes/BXUContactNameLabel.html</Path>
             
@@ -173,7 +186,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="5" type="file" documentType="reference">
+		<Node id="6" type="file" documentType="reference">
             <Name>BXUConversationAvatarView</Name>
             <Path>Classes/BXUConversationAvatarView.html</Path>
             
@@ -200,7 +213,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="7" type="file" documentType="reference">
             <Name>BXUConversationTableViewCell</Name>
             <Path>Classes/BXUConversationTableViewCell.html</Path>
             
@@ -227,7 +240,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="8" type="file" documentType="reference">
             <Name>BXUConversationTableViewController</Name>
             <Path>Classes/BXUConversationTableViewController.html</Path>
             
@@ -254,12 +267,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="8" type="file" documentType="reference">
+		<Node id="9" type="file" documentType="reference">
             <Name>BXUConversationsTabBarItem</Name>
             <Path>Classes/BXUConversationsTabBarItem.html</Path>
             
         </Node>
-		<Node id="9" type="file" documentType="reference">
+		<Node id="10" type="file" documentType="reference">
             <Name>BXUImageViewController</Name>
             <Path>Classes/BXUImageViewController.html</Path>
             
@@ -292,7 +305,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>BXUIncomingCallPrompt</Name>
             <Path>Classes/BXUIncomingCallPrompt.html</Path>
             
@@ -325,7 +338,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>BXULocationViewController</Name>
             <Path>Classes/BXULocationViewController.html</Path>
             
@@ -352,7 +365,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>BXUMessageTableViewCell</Name>
             <Path>Classes/BXUMessageTableViewCell.html</Path>
             
@@ -379,7 +392,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>BXUMessageTableViewController</Name>
             <Path>Classes/BXUMessageTableViewController.html</Path>
             
@@ -412,7 +425,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>BXUProgressWindow</Name>
             <Path>Classes/BXUProgressWindow.html</Path>
             
@@ -428,12 +441,6 @@
                     <Anchor>tasks</Anchor>
                 </Node>
                 
-                <Node type="section">
-                    <Path>Classes/BXUProgressWindow.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
                 
                 <Node type="section">
                     <Path>Classes/BXUProgressWindow.html</Path>
@@ -445,7 +452,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>BXUTypingLabel</Name>
             <Path>Classes/BXUTypingLabel.html</Path>
             
@@ -472,7 +479,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>BXUWebSocketStatusLabel</Name>
             <Path>Classes/BXUWebSocketStatusLabel.html</Path>
             
@@ -501,7 +508,7 @@
         </Node>
 		
 		
-        <Node id="17" type="file" documentType="reference">
+        <Node id="18" type="file" documentType="reference">
             <Name>BXUAttachmentImageViewDelegate</Name>
             <Path>Protocols/BXUAttachmentImageViewDelegate.html</Path>
             
@@ -528,7 +535,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>BXUContact</Name>
             <Path>Protocols/BXUContact.html</Path>
             
@@ -555,7 +562,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>BXUContactSource</Name>
             <Path>Protocols/BXUContactSource.html</Path>
             
@@ -582,7 +589,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>BXUImageViewControllerDelegate</Name>
             <Path>Protocols/BXUImageViewControllerDelegate.html</Path>
             
@@ -609,7 +616,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>BXULocationViewControllerDelegate</Name>
             <Path>Protocols/BXULocationViewControllerDelegate.html</Path>
             
@@ -636,7 +643,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>BXUTypingLabelDelegate</Name>
             <Path>Protocols/BXUTypingLabelDelegate.html</Path>
             
@@ -656,6 +663,33 @@
                 
                 <Node type="section">
                     <Path>Protocols/BXUTypingLabelDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="24" type="file" documentType="reference">
+            <Name>BXUWebSocketStatusLabelDelegate</Name>
+            <Path>Protocols/BXUWebSocketStatusLabelDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/BXUWebSocketStatusLabelDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/BXUWebSocketStatusLabelDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/BXUWebSocketStatusLabelDelegate.html</Path>
                     <Name>Instance Methods</Name>
                     <Anchor>instance_methods</Anchor>
                 </Node>

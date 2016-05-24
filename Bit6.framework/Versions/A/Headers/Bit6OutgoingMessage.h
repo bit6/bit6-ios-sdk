@@ -21,11 +21,11 @@
  */
 - (nonnull instancetype)initWithDestination:(nonnull Bit6Address*)destination;
 
-/*! Text content of the message. */
-@property (nullable, nonatomic, copy) NSString *content;
-
 /*! The <Bit6Address> object to reference the message's destination. */
 @property (nonnull, nonatomic, strong) Bit6Address *destination;
+
+/*! Text content of the message. */
+@property (nullable, nonatomic, copy) NSString *content;
 
 /*! Image to send as an attachment. */
 @property (nullable, nonatomic, strong) UIImage *image;
@@ -52,6 +52,9 @@
 
 /*! Returns YES if the message attachment has been successfuly saved to cache. */
 @property (nonatomic, readonly) BOOL attachmentsSavedInCache;
+
+/*! Set to NO to disable push notifications for this message. */
+@property (nonatomic) BOOL sendPush;
 
 /*! Sends the message.
  @param completion block to be called when the operation is completed.

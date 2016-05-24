@@ -42,6 +42,7 @@
 					<Subnodes>
 						<NodeRef refid="20"/>
 						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
 						
 					</Subnodes>
 				</Node>
@@ -51,7 +52,6 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
 						<NodeRef refid="24"/>
 						<NodeRef refid="25"/>
@@ -63,6 +63,10 @@
 						<NodeRef refid="31"/>
 						<NodeRef refid="32"/>
 						<NodeRef refid="33"/>
+						<NodeRef refid="34"/>
+						<NodeRef refid="35"/>
+						<NodeRef refid="36"/>
+						<NodeRef refid="37"/>
 						
 					</Subnodes>
 				</Node>
@@ -101,6 +105,12 @@
                     <Anchor>class_methods</Anchor>
                 </Node>
                 
+                
+                <Node type="section">
+                    <Path>Classes/Bit6.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
                 
             </Subnodes>
             
@@ -551,6 +561,12 @@
                 </Node>
                 
                 
+                <Node type="section">
+                    <Path>Classes/Bit6PushNotificationCenter.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
                 
                 <Node type="section">
                     <Path>Classes/Bit6PushNotificationCenter.html</Path>
@@ -705,6 +721,33 @@
             
         </Node>
 		<Node id="21" type="file" documentType="reference">
+            <Name>Bit6CallControllerDelegate</Name>
+            <Path>Protocols/Bit6CallControllerDelegate.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/Bit6CallControllerDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/Bit6CallControllerDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/Bit6CallControllerDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="22" type="file" documentType="reference">
             <Name>Bit6CurrentLocationControllerDelegate</Name>
             <Path>Protocols/Bit6CurrentLocationControllerDelegate.html</Path>
             
@@ -732,64 +775,79 @@
             
         </Node>
 		
-        <Node id="22" type="file" documentType="reference">
+        <Node id="23" type="file" documentType="reference">
             <Name>Bit6CallState</Name>
             <Path>Constants/Bit6CallState.html</Path>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>Bit6CallStreams</Name>
             <Path>Constants/Bit6CallStreams.html</Path>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
+            <Name>Bit6DataChannelState</Name>
+            <Path>Constants/Bit6DataChannelState.html</Path>
+            
+        </Node>
+		<Node id="26" type="file" documentType="reference">
             <Name>Bit6Error</Name>
             <Path>Constants/Bit6Error.html</Path>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>Bit6MessageAttachmentStatus</Name>
             <Path>Constants/Bit6MessageAttachmentStatus.html</Path>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>Bit6MessageCallChannel</Name>
             <Path>Constants/Bit6MessageCallChannel.html</Path>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>Bit6MessageCallStatus</Name>
             <Path>Constants/Bit6MessageCallStatus.html</Path>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
             <Name>Bit6MessageFileType</Name>
             <Path>Constants/Bit6MessageFileType.html</Path>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
+		<Node id="31" type="file" documentType="reference">
             <Name>Bit6MessageStatus</Name>
             <Path>Constants/Bit6MessageStatus.html</Path>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>Bit6MessageType</Name>
             <Path>Constants/Bit6MessageType.html</Path>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="33" type="file" documentType="reference">
             <Name>Bit6RTStatus</Name>
             <Path>Constants/Bit6RTStatus.html</Path>
             
         </Node>
-		<Node id="32" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>Bit6TransferState</Name>
             <Path>Constants/Bit6TransferState.html</Path>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
             <Name>Bit6TransferType</Name>
             <Path>Constants/Bit6TransferType.html</Path>
+            
+        </Node>
+		<Node id="36" type="file" documentType="reference">
+            <Name>Bit6VideoSource</Name>
+            <Path>Constants/Bit6VideoSource.html</Path>
+            
+        </Node>
+		<Node id="37" type="file" documentType="reference">
+            <Name>FreeSWITCHHangupCause</Name>
+            <Path>Constants/FreeSWITCHHangupCause.html</Path>
             
         </Node>
 		

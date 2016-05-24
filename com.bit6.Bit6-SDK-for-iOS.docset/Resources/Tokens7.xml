@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init</Abstract>
+			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/conversationWithAddress:</TokenIdentifier>
 			<Abstract type="html">Returns a Bit6Conversation object based on the Bit6Address indicated. If the conversation didn&apos;t exists a new one will be created.</Abstract>
 			<DeclaredIn>Bit6Conversation.h</DeclaredIn>

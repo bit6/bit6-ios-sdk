@@ -159,7 +159,7 @@
         [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     }
     
-    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",callController.other.value];
+    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",callController.otherDisplayName];
     UIAlertController *alertView = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertView addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
     [self.window.rootViewController presentViewController:alertView animated:YES completion:nil];

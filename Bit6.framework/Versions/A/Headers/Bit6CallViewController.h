@@ -11,7 +11,7 @@
 #import "Bit6VideoFeedView.h"
 
 /*! UIViewController to use during a call. This class should be extended. Only one object of this class or its subclasses should be kept in memory. */
-@interface Bit6CallViewController : UIViewController
+@interface Bit6CallViewController : UIViewController <Bit6CallControllerDelegate>
 
 /*! Used if you need to force a call to <updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:>. */
 - (void)setNeedsUpdateVideoViewLayout;
@@ -33,13 +33,26 @@
 
 /*! Called in the Main Thread when the status of the call changes. The default implementation does nothing. 
  @param callController <BitCallController> object which state has changed.
+ @note Deprecated: Please use -[Bit6CallViewController callController:callDidChangeToState:] instead
  */
-- (void)callStateChangedNotificationForCall:(nonnull Bit6CallController*)callController;
+- (void)callStateChangedNotificationForCall:(nonnull Bit6CallController*)callController __attribute__((deprecated("Please use -[Bit6CallViewController callController:callDidChangeToState:] instead")));
 
-/*! Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing. 
+/*! Called in the Main Thread when the status of the call changes. Needs to call super if implemented.
+ @param callController <BitCallController> object which state has changed.
+ @param state new state for the call.
+ */
+- (void)callController:(nonnull Bit6CallController*)callController callDidChangeToState:(Bit6CallState)state;
+
+/*! Called in the Main Thread each second to allow the refresh of a timer UI. The default implementation does nothing.
+ @param callController <BitCallController> object which 'seconds' property has changed.
+ @note Deprecated: Please use -[Bit6CallViewController secondsDidChangeForCallController:] instead
+ */
+- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController*)callController __attribute__((deprecated("Please use -[Bit6CallViewController secondsDidChangeForCallController:] instead")));
+
+/*! Called in the Main Thread each second to allow the refresh of a timer UI. Needs to call super if implemented.
  @param callController <BitCallController> object which 'seconds' property has changed.
  */
-- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController*)callController;
+- (void)secondsDidChangeForCallController:(nonnull Bit6CallController*)callController;
 
 /*! Called in the Main Thread to customize the frames for the video feeds. You can call <setNeedsUpdateVideoViewLayout> at any time to force a refresh of the frames. 
   @param videoFeedViews the <Bit6VideoFeedView> references to the video feed.

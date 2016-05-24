@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Message/setConversation:</TokenIdentifier>
 			<Abstract type="html">The conversation the sender belongs to.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>

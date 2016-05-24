@@ -48,11 +48,15 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/callController:callDidChangeToState:">&nbsp;&nbsp;&nbsp;&nbsp;- callController:callDidChangeToState:</option>
+	
 	<option value="//api/name/callStateChangedNotificationForCall:">&nbsp;&nbsp;&nbsp;&nbsp;- callStateChangedNotificationForCall:</option>
 	
 	<option value="//api/name/refreshControlsView">&nbsp;&nbsp;&nbsp;&nbsp;- refreshControlsView</option>
 	
 	<option value="//api/name/secondsChangedNotificationForCall:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsChangedNotificationForCall:</option>
+	
+	<option value="//api/name/secondsDidChangeForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsDidChangeForCallController:</option>
 	
 	<option value="//api/name/setNeedsUpdateVideoViewLayout">&nbsp;&nbsp;&nbsp;&nbsp;- setNeedsUpdateVideoViewLayout</option>
 	
@@ -96,11 +100,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:callDidChangeToState:">callController:callDidChangeToState:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callStateChangedNotificationForCall:">callStateChangedNotificationForCall:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshControlsView">refreshControlsView</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsChangedNotificationForCall:">secondsChangedNotificationForCall:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsDidChangeForCallController:">secondsDidChangeForCallController:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNeedsUpdateVideoViewLayout">setNeedsUpdateVideoViewLayout</a></span></li>
 	
@@ -133,6 +141,9 @@
 						<tr>
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">UIViewController</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/Bit6CallControllerDelegate.html">Bit6CallControllerDelegate</a></td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">Bit6CallViewController.h</td>
@@ -201,7 +212,19 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/callController:callDidChangeToState:">&ndash;&nbsp;callController:callDidChangeToState:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/secondsChangedNotificationForCall:">&ndash;&nbsp;secondsChangedNotificationForCall:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secondsDidChangeForCallController:">&ndash;&nbsp;secondsDidChangeForCallController:</a></code>
 	</span>
 	
 	
@@ -286,6 +309,57 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/callController:callDidChangeToState:" title="callController:callDidChangeToState:"></a>
+	<h3 class="subsubtitle method-title">callController:callDidChangeToState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread when the status of the call changes. Needs to call super if implemented.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)callController:(nonnull Bit6CallController *)<em>callController</em> callDidChangeToState:(Bit6CallState)<em>state</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object which state has changed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>state</em></dt>
+			<dd><p>new state for the call.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/callStateChangedNotificationForCall:" title="callStateChangedNotificationForCall:"></a>
 	<h3 class="subsubtitle method-title">callStateChangedNotificationForCall:</h3>
 	
@@ -316,6 +390,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6CallViewController callController:callDidChangeToState:] instead</p></div>
+	</div>
 	
 	
 	
@@ -374,12 +453,63 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called in the Main Thread each second to allow the refresh of a timer UILabel. The default implementation does nothing.</p>
+		<p>Called in the Main Thread each second to allow the refresh of a timer UI. The default implementation does nothing.</p>
 	</div>		
 	
     
 
 	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object which &lsquo;seconds&rsquo; property has changed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6CallViewController secondsDidChangeForCallController:] instead</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secondsDidChangeForCallController:" title="secondsDidChangeForCallController:"></a>
+	<h3 class="subsubtitle method-title">secondsDidChangeForCallController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread each second to allow the refresh of a timer UI. Needs to call super if implemented.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)secondsDidChangeForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -546,7 +676,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-04-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

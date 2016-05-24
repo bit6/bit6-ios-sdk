@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/BXUWebSocketStatusLabelDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUWebSocketStatusLabelDelegate</TokenIdentifier>
+			<Abstract type="html">The BXUWebSocketStatusLabelDelegate protocol defines the methods a delegate of a BXUWebSocketStatusLabel object should implement. The methods of this protocol notify the delegate when the websocket label has change state.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUWebSocketStatusLabelDelegate/webSocketLabel:didChangeToStatus:</TokenIdentifier>
+			<Abstract type="html">Called when the websocket label has change state.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>- (void)webSocketLabel:(nonnull BXUWebSocketStatusLabel *)webSocketLabel didChangeToStatus:(Bit6RTStatus)status</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>webSocketLabel</Name>
+					<Abstract type="html">websocket label</Abstract>
+				</Parameter><Parameter>
+					<Name>status</Name>
+					<Abstract type="html">new state for the websocket label</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/webSocketLabel:didChangeToStatus:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

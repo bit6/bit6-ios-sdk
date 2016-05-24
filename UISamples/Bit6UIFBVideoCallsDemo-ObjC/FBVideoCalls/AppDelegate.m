@@ -17,6 +17,8 @@
 {
     NSAssert(![BIT6_API_KEY isEqualToString:@"BIT6_API_KEY"], @"[Bit6 SDK]: Setup your Bit6 api key.");
     
+    [Bit6 setInCallClass:[BXUCallViewController class]];
+    
     //prepare to receive incoming calls
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingCallNotification:) name:Bit6IncomingCallNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callAddedNotification:) name:Bit6CallAddedNotification object:nil];
@@ -95,10 +97,6 @@
 - (void)callAddedNotification:(NSNotification*)notification
 {
     Bit6CallController *callController = notification.object;
-    
-    id<BXUContact> contact = [BXU.contactSource contactForURI:callController.other.uri];
-    callController.otherDisplayName = contact.name;
-    
     Bit6CallViewController *vc = [Bit6 createViewControllerForCall:callController];
     [vc show];
 }
@@ -114,7 +112,7 @@
 - (void)callMissedNotification:(NSNotification*)notification
 {
     Bit6CallController *callController = notification.object;
-    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",callController.otherDisplayName];
+    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",[BXU displayNameForAddress:callController.other]];
     UIAlertController *alertView = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertView addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
     [self.window.rootViewController presentViewController:alertView animated:YES completion:nil];

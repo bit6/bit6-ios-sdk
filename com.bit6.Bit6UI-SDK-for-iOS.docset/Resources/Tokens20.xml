@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUImageViewControllerDelegate.html">
+	<File path="Protocols/BXUContactSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUImageViewControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The BXUImageViewControllerDelegate protocol defines the methods a delegate of a BXUImageViewController object should implement. The methods of this protocol notify the delegate when the viewcontroller has to be dismissed.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUContactSource</TokenIdentifier>
+			<Abstract type="html">Data Source to provide the display names and avatars for each identity through the framework.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,19 +13,36 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUImageViewControllerDelegate/dismissImageViewController:</TokenIdentifier>
-			<Abstract type="html">Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContactSource/contactForURI:</TokenIdentifier>
+			<Abstract type="html">Called to retrieve a BXUContact for an identity.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
 			
-			<Declaration>- (void)dismissImageViewController:(nonnull BXUImageViewController *)imageViewController</Declaration>
+			<Declaration>- (nullable id&lt;BXUContact&gt;)contactForURI:(nonnull NSString *)uri</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>imageViewController</Name>
-					<Abstract type="html">view controller to dismiss</Abstract>
+					<Name>uri</Name>
+					<Abstract type="html">URI identity of the contact.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">contact matching the URI provided.</Abstract></ReturnValue>
+			<Anchor>//api/name/contactForURI:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContactSource/matchContactsForString:</TokenIdentifier>
+			<Abstract type="html">Called to retrieve BXUContact objects based on a string.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
 			
-			<Anchor>//api/name/dismissImageViewController:</Anchor>
+			<Declaration>- (nonnull NSArray&lt;id&lt;BXUContact&gt; &gt; *)matchContactsForString:(nonnull NSString *)string</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract type="html">string to obtain BXUContact objects</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">contacts matching the string provided.</Abstract></ReturnValue>
+			<Anchor>//api/name/matchContactsForString:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

@@ -13,6 +13,35 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use Bit6.pushNotification instead.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/setCategories:</TokenIdentifier>
+			<Abstract type="html">Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>+ (void)setCategories:(nonnull NSArray&lt;UIUserNotificationCategory*&gt; *)categories</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>categories</Name>
+					<Abstract type="html">array of categories to register.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCategories:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveRemoteNotification:</TokenIdentifier>
 			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] implementation.</Abstract>
 			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>

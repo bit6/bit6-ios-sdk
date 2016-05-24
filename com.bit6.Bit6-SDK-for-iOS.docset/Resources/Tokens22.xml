@@ -1,127 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6CallState.html">
+	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
-			<Abstract type="html">Call status for a Bit6CallController.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
-            <Abstract type="html">The call hasn&apos;t started.</Abstract>
-            <Declaration>Bit6CallState_NEW</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didFailWithError:(nonnull NSError *)error message:(nonnull Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
             <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ACCEPTING_CALL</TokenIdentifier>
-            <Abstract type="html">Answering the incoming call.</Abstract>
-            <Declaration>Bit6CallState_ACCEPTING_CALL</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
+			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			
+			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(nonnull Bit6OutgoingMessage *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b6clc</Name>
+					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
             <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_GATHERING_CANDIDATES</TokenIdentifier>
-            <Abstract type="html">Preparing the local sdp candidates.</Abstract>
-            <Declaration>Bit6CallState_GATHERING_CANDIDATES</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_WAITING_SDP</TokenIdentifier>
-            <Abstract type="html">Waiting for remote sdp.</Abstract>
-            <Declaration>Bit6CallState_WAITING_SDP</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_SENDING_SDP</TokenIdentifier>
-            <Abstract type="html">Sending local sdp.</Abstract>
-            <Declaration>Bit6CallState_SENDING_SDP</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTING</TokenIdentifier>
-            <Abstract type="html">Connecting to the call.</Abstract>
-            <Declaration>Bit6CallState_CONNECTING</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTED</TokenIdentifier>
-            <Abstract type="html">The call has started.</Abstract>
-            <Declaration>Bit6CallState_CONNECTED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
-            <Abstract type="html">The call is disconnected for the moment.</Abstract>
-            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
-            <Abstract type="html">The call ended.</Abstract>
-            <Declaration>Bit6CallState_END</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ERROR</TokenIdentifier>
-            <Abstract type="html">The call ended with an error.</Abstract>
-            <Declaration>Bit6CallState_ERROR</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_MISSED</TokenIdentifier>
-            <Abstract type="html">It is a missed call.</Abstract>
-            <Declaration>Bit6CallState_MISSED</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="22"/>
-        </Token>
+		</Token>
+		
         
 	</File>
 </Tokens>

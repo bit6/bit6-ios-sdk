@@ -94,8 +94,6 @@
 @property (weak, nonatomic) IBOutlet CircleButton *muteAudioButton;
 @property (weak, nonatomic) IBOutlet CircleButton *bluetoothButton;
 @property (weak, nonatomic) IBOutlet CircleButton *speakerButton;
-@property (weak, nonatomic) IBOutlet CircleButton *muteVideoButton;
-@property (weak, nonatomic) IBOutlet CircleButton *transferFileButton;
 @property (weak, nonatomic) IBOutlet CircleButton *cameraButton;
 
 @end
@@ -125,9 +123,6 @@
     [self.speakerButton setBackgroundImage:[UIImage imageNamed:@"speaker"] forState:UIControlStateNormal];
     [self.muteAudioButton setTitle:@"" forState:UIControlStateNormal];
     [self.muteAudioButton setBackgroundImage:[UIImage imageNamed:@"mute"] forState:UIControlStateNormal];
-    self.muteVideoButton.titleLabel.numberOfLines = 2;
-    self.muteVideoButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.muteVideoButton setTitle:@"Mute\nVideo" forState:UIControlStateNormal];
     [self.cameraButton setTitle:@"" forState:UIControlStateNormal];
     [self.cameraButton setBackgroundImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
     
@@ -179,8 +174,10 @@
 
 #pragma mark - Bit6CallViewController methods
 
-- (void)callStateChangedNotificationForCall:(Bit6CallController*)callController
+- (void)callController:(Bit6CallController *)callController callDidChangeToState:(Bit6CallState)state
 {
+    [super callController:callController callDidChangeToState:state];
+    
     if (callController.state == Bit6CallState_ERROR) {
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"An Error Occurred" message:callController.error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
@@ -189,11 +186,13 @@
     
     [self refreshState];
     
-    [self secondsChangedNotificationForCall:callController];
+    [self secondsDidChangeForCallController:callController];
 }
 
-- (void)secondsChangedNotificationForCall:(Bit6CallController*)callController
+- (void)secondsDidChangeForCallController:(Bit6CallController *)callController
 {
+    [super secondsDidChangeForCallController:callController];
+    
     NSUInteger longerCall = 0;
     NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
     for (Bit6CallController *call in callControllers) {
@@ -209,7 +208,6 @@
 
 - (void)refreshState
 {
-    BOOL atLeastOneCallConnected = NO;
     Bit6CallController *smallerCall = nil;
     Bit6CallState smallerState = Bit6CallState_MISSED;
     NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
@@ -218,12 +216,10 @@
             smallerState = call.state;
             smallerCall = call;
         }
-        if (call.state >= Bit6CallState_CONNECTED) {
-            atLeastOneCallConnected = YES;
+        if (call.state == Bit6CallState_CONNECTED) {
+            self.controlsView.hidden = NO;
         }
     }
-    
-    self.controlsView.hidden = !atLeastOneCallConnected;
     
     if (smallerCall.incoming) {
         switch (smallerState) {
@@ -267,8 +263,6 @@
 
 - (void) refreshControlsView
 {
-    self.transferFileButton.enabled = NO;
-    
     BOOL atLeastOneCallHasVideo = NO;
     BOOL atLeastOneCallHasAudio = NO;
     BOOL atLeastOneCallHasRemoteAudio = NO;
@@ -286,13 +280,11 @@
     }
     
     if (TARGET_OS_SIMULATOR) {
-        self.muteVideoButton.enabled = NO;
         self.cameraButton.enabled = NO;
         self.bluetoothButton.enabled = NO;
         self.speakerButton.enabled = NO;
     }
     else {
-        self.muteVideoButton.enabled = atLeastOneCallHasVideo;
         self.cameraButton.enabled = atLeastOneCallHasVideo;
         self.bluetoothButton.enabled = atLeastOneCallHasRemoteAudio;
         self.speakerButton.enabled = atLeastOneCallHasRemoteAudio;
@@ -306,16 +298,13 @@
     }
     
     if (self.muteAudioButton.enabled) {
-        self.muteAudioButton.on = [Bit6CallController audioMuted];
+        self.muteAudioButton.on = ![Bit6CallController isLocalAudioEnabled];
     }
     if (self.bluetoothButton.enabled) {
-        self.bluetoothButton.on = [Bit6CallController bluetoothEnabled];
+        self.bluetoothButton.on = [Bit6CallController isBluetoothEnabled];
     }
     if (self.speakerButton.enabled) {
-        self.speakerButton.on = [Bit6CallController speakerEnabled];
-    }
-    if (self.muteVideoButton.enabled) {
-        self.muteVideoButton.on = [Bit6CallController videoMuted];
+        self.speakerButton.on = [Bit6CallController isSpeakerEnabled];
     }
 }
 
@@ -329,23 +318,19 @@
 #pragma mark Actions
 
 - (IBAction)muteAudioCall:(id)sender {
-    [Bit6CallController switchMuteAudio];
+    [Bit6CallController setLocalAudioEnabled:!Bit6CallController.isLocalAudioEnabled];
 }
 
 - (IBAction)bluetooth:(id)sender {
-    [Bit6CallController switchBluetooth];
+    [Bit6CallController setBluetoothEnabled:!Bit6CallController.isBluetoothEnabled];
 }
 
 - (IBAction)speaker:(id)sender {
-    [Bit6CallController switchSpeaker];
-}
-
-- (IBAction)muteVideoCall:(id)sender {
-    [Bit6CallController switchMuteVideo];
+    [Bit6CallController setSpeakerEnabled:!Bit6CallController.isSpeakerEnabled];
 }
 
 - (IBAction)switchCamera:(id)sender {
-    [Bit6CallController switchCamera];
+    [Bit6CallController setLocalVideoSource:[Bit6CallController localVideoSource]==Bit6VideoSource_CameraBack ? Bit6VideoSource_CameraFront : Bit6VideoSource_CameraBack];
 }
 
 - (IBAction)hangup:(id)sender {

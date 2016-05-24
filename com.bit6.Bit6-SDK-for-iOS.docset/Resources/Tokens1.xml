@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use [Bit6 sharedInstance] instead.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/sharedInstance</TokenIdentifier>
 			<Abstract type="html">Gets the default Bit6 object.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
@@ -26,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:</TokenIdentifier>
-			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
+			<Abstract type="html">Bit6 startup method.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
 			<Declaration>+ (void)startWithApiKey:(nonnull NSString *)apiKey</Declaration>
@@ -43,7 +55,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:endPoint:</TokenIdentifier>
-			<Abstract type="html">Bit6 startup method. It should be the first call to Bit6 api made.</Abstract>
+			<Abstract type="html">Bit6 startup method.</Abstract>
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
 			<Declaration>+ (void)startWithApiKey:(nonnull NSString *)apiKey endPoint:(nonnull NSString *)endPoint</Declaration>
@@ -159,6 +171,120 @@
 			
 			<ReturnValue><Abstract type="html">true if the audio attachments will be downloaded automatically.</Abstract></ReturnValue>
 			<Anchor>//api/name/shouldDownloadAudioRecordings</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/downloadVideosBeforePlaying</TokenIdentifier>
+			<Abstract type="html">Get the current configuration to play video attachments. By default it&apos;s set to NO.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/playVideoFromMessage:viewController:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (BOOL)downloadVideosBeforePlaying</Declaration>
+			
+			<ReturnValue><Abstract type="html">true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</Abstract></ReturnValue>
+			<Anchor>//api/name/downloadVideosBeforePlaying</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setDownloadVideosBeforePlaying:</TokenIdentifier>
+			<Abstract type="html">Set the current configuration to play video attachments.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDownloadVideosBeforePlaying:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the video attachments should be downloaded to be played locally. false if the video should be streamed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDownloadVideosBeforePlaying:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/downloadAudioRecordings</TokenIdentifier>
+			<Abstract type="html">Get the current configuration to download audio attachments automatically. By default it&apos;s set to YES.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)downloadAudioRecordings</Declaration>
+			
+			<ReturnValue><Abstract type="html">true if the audio attachments will be downloaded automatically.</Abstract></ReturnValue>
+			<Anchor>//api/name/downloadAudioRecordings</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setDownloadAudioRecordings:</TokenIdentifier>
+			<Abstract type="html">Set the current configuration to download audio attachments automatically.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDownloadAudioRecordings:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the audio attachments should be downloaded automatically.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDownloadAudioRecordings:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setLoadOfMessagesAndGroups:</TokenIdentifier>
+			<Abstract type="html">Set the current configuration to load the messages and groups. If set to NO, the messages and groups won&apos;t be loaded from the server. By default it&apos;s set to YES.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLoadOfMessagesAndGroups:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the messages and groups should be retrieved from the server.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLoadOfMessagesAndGroups:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setLoggingEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable the logs for Bit6. By default it&apos;s set to NO.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLoggingEnabled:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the logs for Bit6 should be enabled.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLoggingEnabled:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setInCallClass:</TokenIdentifier>
+			<Abstract type="html">Set the Bit6CallViewController subclass to be used during a call. This method should be called before [Bit6 startWithApiKey:].</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setInCallClass:(nonnull Class)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">UI class to be used during a call.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setInCallClass:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -573,7 +699,7 @@
 					<Abstract type="html">An integer bit mask that determines the local media that will be sent.</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">NO if the call can&apos;t be started</Abstract></ReturnValue>
 			<Anchor>//api/name/startCallTo:streams:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
@@ -590,7 +716,7 @@
 					<Abstract type="html">phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">NO if the call can&apos;t be started</Abstract></ReturnValue>
 			<Anchor>//api/name/startPhoneCallTo:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
@@ -618,7 +744,7 @@
 			<DeclaredIn>Bit6.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/Bit6/shouldDownloadVideoBeforePlaying</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/downloadVideosBeforePlaying</TokenIdentifier>
 		
 	</RelatedTokens>
 	

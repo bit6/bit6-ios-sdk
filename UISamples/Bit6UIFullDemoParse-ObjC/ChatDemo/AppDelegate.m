@@ -30,6 +30,8 @@
     NSAssert(![PARSE_APP_ID isEqualToString:@"PARSE_APP_ID"], @"[Parse SDK]: Setup your Parse application id.");
     NSAssert(![PARSE_CLIENT_KEY isEqualToString:@"PARSE_CLIENT_KEY"], @"[Parse SDK]: Setup your Parse client key.");
     
+    [Bit6 setInCallClass:[BXUCallViewController class]];
+    
     //prepare for incoming messages
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingMessageNotification:) name:Bit6IncomingMessageNotification object:nil];
     
@@ -114,10 +116,6 @@
 - (void)callAddedNotification:(NSNotification*)notification
 {
     Bit6CallController *callController = notification.object;
-    
-    id<BXUContact> contact = [BXU.contactSource contactForURI:callController.other.uri];
-    callController.otherDisplayName = contact.name;
-    
     Bit6CallViewController *vc = [Bit6 createViewControllerForCall:callController];
     [vc show];
 }
@@ -133,7 +131,7 @@
 - (void)callMissedNotification:(NSNotification*)notification
 {
     Bit6CallController *callController = notification.object;
-    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",callController.other.value];
+    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",[BXU displayNameForAddress:callController.other]];
     UIAlertController *alertView = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertView addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
     [self.window.rootViewController presentViewController:alertView animated:YES completion:nil];

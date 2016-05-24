@@ -12,6 +12,17 @@
 /*! Bit6PushNotificationCenter is used to handle the remote notifications. */
 @interface Bit6PushNotificationCenter : NSObject
 
+/*! Unavailable init. Use Bit6.pushNotification instead.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
+/*! Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].
+ @param categories array of categories to register.
+ @note These identifiers cannot be used in custom categories/actions: com.bit6.actionDecline, com.bit6.actionAnswer, com.bit6.msgReply, com.bit6.incomingCall, reply.
+ */
++ (void)setCategories:(nonnull NSArray<UIUserNotificationCategory*>*)categories;
+
 /*! Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] implementation.
  @param userInfo A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.
  */

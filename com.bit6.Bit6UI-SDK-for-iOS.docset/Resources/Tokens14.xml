@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXUProgressWindow.html">
+	<File path="Classes/BXUMessageTableViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXUProgressWindow</TokenIdentifier>
-			<Abstract type="html">Nice UIWindow to dim the screen and block the user interaction when an operation is in progress.</Abstract>
-			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUMessageTableViewController</TokenIdentifier>
+			<Abstract type="html">Component to show all the messages in one conversation, or all the messages for all conversations at the same time. It includes support to send/receive messages with attachments and make calls.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -13,72 +13,449 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/BXUProgressWindow/showWithTitle:</TokenIdentifier>
-			<Abstract type="html">Show the BXUProgressWindow with a custom text.</Abstract>
-			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setTitleLabel:</TokenIdentifier>
+			<Abstract type="html">Reference to the title label in self.navigationItem.titleView</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
 			
-			<Declaration>+ (void)showWithTitle:(nullable NSString *)title</Declaration>
+			<Declaration>@property (nullable, weak, nonatomic, readonly) BXUContactNameLabel *titleLabel</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/titleLabel</TokenIdentifier>
+			<Abstract type="html">Reference to the title label in self.navigationItem.titleView</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic, readonly) BXUContactNameLabel *titleLabel</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/titleLabel</TokenIdentifier>
+			<Abstract type="html">Reference to the title label in self.navigationItem.titleView</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic, readonly) BXUContactNameLabel *titleLabel</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setTypingLabel:</TokenIdentifier>
+			<Abstract type="html">Reference to the typing label in self.navigationItem.titleView</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic, readonly) BXUTypingLabel *typingLabel</Declaration>
+			
+			
+			<Anchor>//api/name/typingLabel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/typingLabel</TokenIdentifier>
+			<Abstract type="html">Reference to the typing label in self.navigationItem.titleView</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic, readonly) BXUTypingLabel *typingLabel</Declaration>
+			
+			
+			<Anchor>//api/name/typingLabel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/typingLabel</TokenIdentifier>
+			<Abstract type="html">Reference to the typing label in self.navigationItem.titleView</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic, readonly) BXUTypingLabel *typingLabel</Declaration>
+			
+			
+			<Anchor>//api/name/typingLabel</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setCallButtonItem:</TokenIdentifier>
+			<Abstract type="html">Reference to the call button item in self.navigationItem.rightBarButtonItem</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic, readonly) UIBarButtonItem *callButtonItem</Declaration>
+			
+			
+			<Anchor>//api/name/callButtonItem</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/callButtonItem</TokenIdentifier>
+			<Abstract type="html">Reference to the call button item in self.navigationItem.rightBarButtonItem</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic, readonly) UIBarButtonItem *callButtonItem</Declaration>
+			
+			
+			<Anchor>//api/name/callButtonItem</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/callButtonItem</TokenIdentifier>
+			<Abstract type="html">Reference to the call button item in self.navigationItem.rightBarButtonItem</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic, readonly) UIBarButtonItem *callButtonItem</Declaration>
+			
+			
+			<Anchor>//api/name/callButtonItem</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setAddress:</TokenIdentifier>
+			<Abstract type="html">Identity to apply to this component.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/address</TokenIdentifier>
+			<Abstract type="html">Identity to apply to this component.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/address</TokenIdentifier>
+			<Abstract type="html">Identity to apply to this component.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setTableViewAddress:</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the table view. This identity will be use to set which messages to show in the table.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *tableViewAddress</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/tableViewAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the table view. This identity will be use to set which messages to show in the table.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *tableViewAddress</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/tableViewAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the table view. This identity will be use to set which messages to show in the table.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *tableViewAddress</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setComposePanelAddress:</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the compose panel. This identity will be use to set the destination of the outgoing messages.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *composePanelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/composePanelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/composePanelAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the compose panel. This identity will be use to set the destination of the outgoing messages.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *composePanelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/composePanelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/composePanelAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the compose panel. This identity will be use to set the destination of the outgoing messages.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *composePanelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/composePanelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setCallButtonAddress:</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the call button. This identity will be use to determine the contact to call.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *callButtonAddress</Declaration>
+			
+			
+			<Anchor>//api/name/callButtonAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/callButtonAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the call button. This identity will be use to determine the contact to call.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *callButtonAddress</Declaration>
+			
+			
+			<Anchor>//api/name/callButtonAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/callButtonAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the call button. This identity will be use to determine the contact to call.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *callButtonAddress</Declaration>
+			
+			
+			<Anchor>//api/name/callButtonAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setTitleLabelAddress:</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the title label. This identity will be use to determine the title of the view controller.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *titleLabelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/titleLabelAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the title label. This identity will be use to determine the title of the view controller.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *titleLabelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/titleLabelAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the title label. This identity will be use to determine the title of the view controller.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *titleLabelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setTypingLabelAddress:</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the typing label. This identity will be use to detect when a contact is typing.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *typingLabelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/typingLabelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/typingLabelAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the typing label. This identity will be use to detect when a contact is typing.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *typingLabelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/typingLabelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/typingLabelAddress</TokenIdentifier>
+			<Abstract type="html">Identity to apply only to the typing label. This identity will be use to detect when a contact is typing.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *typingLabelAddress</Declaration>
+			
+			
+			<Anchor>//api/name/typingLabelAddress</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setAudioMaxDuration:</TokenIdentifier>
+			<Abstract type="html">Maximum allowed duration (in seconds) of the audio files to be recorded.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat audioMaxDuration</Declaration>
+			
+			
+			<Anchor>//api/name/audioMaxDuration</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/audioMaxDuration</TokenIdentifier>
+			<Abstract type="html">Maximum allowed duration (in seconds) of the audio files to be recorded.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat audioMaxDuration</Declaration>
+			
+			
+			<Anchor>//api/name/audioMaxDuration</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/audioMaxDuration</TokenIdentifier>
+			<Abstract type="html">Maximum allowed duration (in seconds) of the audio files to be recorded.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat audioMaxDuration</Declaration>
+			
+			
+			<Anchor>//api/name/audioMaxDuration</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/setVideoMaxDuration:</TokenIdentifier>
+			<Abstract type="html">Maximum allowed duration (in seconds) of the video files to be sent.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat videoMaxDuration</Declaration>
+			
+			
+			<Anchor>//api/name/videoMaxDuration</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/videoMaxDuration</TokenIdentifier>
+			<Abstract type="html">Maximum allowed duration (in seconds) of the video files to be sent.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat videoMaxDuration</Declaration>
+			
+			
+			<Anchor>//api/name/videoMaxDuration</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUMessageTableViewController/videoMaxDuration</TokenIdentifier>
+			<Abstract type="html">Maximum allowed duration (in seconds) of the video files to be sent.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGFloat videoMaxDuration</Declaration>
+			
+			
+			<Anchor>//api/name/videoMaxDuration</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/didSelectImageMessage:</TokenIdentifier>
+			<Abstract type="html">Called after an image attachment has been tapped. The default implementation does nothing. You usually override this method to perform additional operations.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didSelectImageMessage:(nonnull Bit6Message *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">text to show in the window</Abstract>
+					<Name>message</Name>
+					<Abstract type="html">message of the attachment tapped.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/showWithTitle:</Anchor>
+			<Anchor>//api/name/didSelectImageMessage:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/BXUProgressWindow/dismissWithHandler:</TokenIdentifier>
-			<Abstract type="html">Dismiss the BXUProgressWindow.</Abstract>
-			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/didSelectVideoMessage:</TokenIdentifier>
+			<Abstract type="html">Called after an video attachment has been tapped. The default implementation does nothing. You usually override this method to perform additional operations.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
 			
-			<Declaration>+ (void)dismissWithHandler:(nullable void ( ^ ) ( ))completion</Declaration>
+			<Declaration>- (void)didSelectVideoMessage:(nonnull Bit6Message *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">block to execute when the BXUProgressWindow is dismissed. This block will be called in the main thread.</Abstract>
+					<Name>message</Name>
+					<Abstract type="html">message of the attachment tapped.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/dismissWithHandler:</Anchor>
+			<Anchor>//api/name/didSelectVideoMessage:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUProgressWindow/setShowing:</TokenIdentifier>
-			<Abstract type="html">Yes if the BXUProgressWindow is visible.</Abstract>
-			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUMessageTableViewController/didSelectLocationMessage:</TokenIdentifier>
+			<Abstract type="html">Called after an location attachment has been tapped. The default implementation does nothing. You usually override this method to perform additional operations.</Abstract>
+			<DeclaredIn>BXUMessageTableViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL showing</Declaration>
+			<Declaration>- (void)didSelectLocationMessage:(nonnull Bit6Message *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">message of the attachment tapped.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/showing</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUProgressWindow/showing</TokenIdentifier>
-			<Abstract type="html">Yes if the BXUProgressWindow is visible.</Abstract>
-			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL showing</Declaration>
-			
-			
-			<Anchor>//api/name/showing</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUProgressWindow/showing</TokenIdentifier>
-			<Abstract type="html">Yes if the BXUProgressWindow is visible.</Abstract>
-			<DeclaredIn>BXUProgressWindow.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL showing</Declaration>
-			
-			
-			<Anchor>//api/name/showing</Anchor>
+			<Anchor>//api/name/didSelectLocationMessage:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

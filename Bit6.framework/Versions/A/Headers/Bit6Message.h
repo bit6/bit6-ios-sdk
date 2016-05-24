@@ -94,6 +94,11 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 /*! A Bit6Message object represents a message sent or received by the user. */
 @interface Bit6Message : NSObject
 
+/*! Unavailable init
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 /*! The conversation the sender belongs to. */
 @property (nullable, nonatomic, readonly) Bit6Conversation *conversation;
 

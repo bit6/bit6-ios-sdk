@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         assert(BIT6_API_KEY != "BIT6_API_KEY", "[Bit6 SDK]: Setup your Bit6 api key.")
         
+        Bit6.setInCallClass(MyCallViewController)
+        
         //prepare to receive incoming calls
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(AppDelegate.incomingCallNotification(_:)), name:Bit6IncomingCallNotification, object:nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(AppDelegate.callAddedNotification(_:)), name:Bit6CallAddedNotification, object:nil)
@@ -140,7 +142,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController?.dismissViewControllerAnimated(true, completion:nil)
         }
         
-        let title = "Missed Call from \(callController.other.value)"
+        let title = "Missed Call from \(callController.otherDisplayName)"
         let alertView = UIAlertController(title:title, message:nil, preferredStyle:.Alert)
         alertView.addAction(UIAlertAction(title:"OK", style:.Cancel, handler:nil))
         self.window?.rootViewController?.presentViewController(alertView, animated:true, completion:nil)

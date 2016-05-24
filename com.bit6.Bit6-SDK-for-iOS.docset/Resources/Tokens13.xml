@@ -30,42 +30,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setContent:</TokenIdentifier>
-			<Abstract type="html">Text content of the message.</Abstract>
-			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
-			
-			
-			<Anchor>//api/name/content</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/content</TokenIdentifier>
-			<Abstract type="html">Text content of the message.</Abstract>
-			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
-			
-			
-			<Anchor>//api/name/content</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/content</TokenIdentifier>
-			<Abstract type="html">Text content of the message.</Abstract>
-			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
-			
-			
-			<Anchor>//api/name/content</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setDestination:</TokenIdentifier>
 			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
 			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
@@ -98,6 +62,42 @@
 			
 			
 			<Anchor>//api/name/destination</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setContent:</TokenIdentifier>
+			<Abstract type="html">Text content of the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/content</TokenIdentifier>
+			<Abstract type="html">Text content of the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/content</TokenIdentifier>
+			<Abstract type="html">Text content of the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
@@ -362,6 +362,42 @@
 			
 			
 			<Anchor>//api/name/attachmentsSavedInCache</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setSendPush:</TokenIdentifier>
+			<Abstract type="html">Set to NO to disable push notifications for this message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL sendPush</Declaration>
+			
+			
+			<Anchor>//api/name/sendPush</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/sendPush</TokenIdentifier>
+			<Abstract type="html">Set to NO to disable push notifications for this message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL sendPush</Declaration>
+			
+			
+			<Anchor>//api/name/sendPush</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/sendPush</TokenIdentifier>
+			<Abstract type="html">Set to NO to disable push notifications for this message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL sendPush</Declaration>
+			
+			
+			<Anchor>//api/name/sendPush</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

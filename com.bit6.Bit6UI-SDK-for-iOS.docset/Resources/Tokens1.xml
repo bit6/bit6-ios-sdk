@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXU/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/BXU/contactSource</TokenIdentifier>
 			<Abstract type="html">Gets the current BXUContactSource object.</Abstract>
 			<DeclaredIn>BXU.h</DeclaredIn>
@@ -38,6 +50,90 @@
 			</Parameters>
 			
 			<Anchor>//api/name/setContactSource:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/displayNameForAddress:</TokenIdentifier>
+			<Abstract type="html">Returns the display name for an specified identity. If no contact is provided for the identity in the +[BXU contactSource] then a default display name will be generated.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/BXU/contactSource</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (nonnull NSString *)displayNameForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">identity to search for an display name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">display name for the identity.</Abstract></ReturnValue>
+			<Anchor>//api/name/displayNameForAddress:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/initialsForAddress:</TokenIdentifier>
+			<Abstract type="html">Returns the name initials for an specified identity.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/BXU/displayNameForAddress:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/BXU/contactSource</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (nonnull NSString *)initialsForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">identity to search for the name initials.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">name initials for the identity.</Abstract></ReturnValue>
+			<Anchor>//api/name/initialsForAddress:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/displayImageURLForAddress:</TokenIdentifier>
+			<Abstract type="html">Returns the image URL for an specified identity.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/BXU/contactSource</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (nullable NSURL *)displayImageURLForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">identity to search for the image URL.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">image URL for the identity.</Abstract></ReturnValue>
+			<Anchor>//api/name/displayImageURLForAddress:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/setOutgoingDataCallEnabled:</TokenIdentifier>
+			<Abstract type="html">If set to YES then the default call UIButton provided by the framework will make calls that support data transfers.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)setOutgoingDataCallEnabled:(BOOL)outgoingDataCallEnabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>outgoingDataCallEnabled</Name>
+					<Abstract type="html">set to YES to support data transfers in calls.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOutgoingDataCallEnabled:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

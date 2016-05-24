@@ -76,8 +76,6 @@ class MyCallViewController: Bit6CallViewController {
     @IBOutlet var muteAudioButton:CircleButton!
     @IBOutlet var bluetoothButton:CircleButton!
     @IBOutlet var speakerButton:CircleButton!
-//    @IBOutlet var muteVideoButton:CircleButton!
-//    @IBOutlet var transferFileButton:CircleButton!
     @IBOutlet var cameraButton:CircleButton!
     
     override class func createForCall(callController:Bit6CallController) -> Bit6CallViewController {
@@ -103,9 +101,6 @@ class MyCallViewController: Bit6CallViewController {
         speakerButton.setBackgroundImage(UIImage(named:"speaker"), forState:.Normal)
         muteAudioButton.setTitle("", forState:.Normal)
         muteAudioButton.setBackgroundImage(UIImage(named:"mute"), forState:.Normal)
-//        muteVideoButton.titleLabel?.numberOfLines = 2
-//        muteVideoButton.titleLabel?.textAlignment = .Center
-//        muteVideoButton.setTitle("Mute\nVideo", forState:.Normal)
         cameraButton.setTitle("", forState:.Normal)
         cameraButton.setBackgroundImage(UIImage(named:"camera"), forState:.Normal)
         
@@ -159,7 +154,9 @@ class MyCallViewController: Bit6CallViewController {
     
     // MARK: Bit6CallViewController methods
     
-    override func callStateChangedNotificationForCall(callController: Bit6CallController) {
+    override func callController(callController: Bit6CallController, callDidChangeToState state: Bit6CallState) {
+        super.callController(callController, callDidChangeToState:state)
+        
         if callController.state == .ERROR {
             let alert = UIAlertController(title:"An Error Occurred", message:nil, preferredStyle:.Alert)
             if let error = callController.error {
@@ -169,28 +166,32 @@ class MyCallViewController: Bit6CallViewController {
             self.navigationController?.presentViewController(alert, animated:true, completion:nil)
         }
         
-        refreshState()
-        
-        secondsChangedNotificationForCall(callController)
-    }
-    
-    override func secondsChangedNotificationForCall(callController: Bit6CallController) {
-        
-        var longerCall : UInt = 0
-        let callControllers = Bit6.callControllers()
-        for call in callControllers {
-            if call.seconds > longerCall {
-                longerCall = call.seconds
-            }
+        if isViewLoaded() {
+            refreshState()
         }
         
-        if callController.state == .CONNECTED {
-            timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(longerCall))
+        secondsDidChangeForCallController(callController)
+    }
+    
+    override func secondsDidChangeForCallController(callController: Bit6CallController) {
+        super.secondsDidChangeForCallController(callController)
+        
+        if isViewLoaded() {
+            var longerCall : UInt = 0
+            let callControllers = Bit6.callControllers()
+            for call in callControllers {
+                if call.seconds > longerCall {
+                    longerCall = call.seconds
+                }
+            }
+            
+            if callController.state == .CONNECTED {
+                timerLabel.text = Bit6Utils.clockFormatForSeconds(Double(longerCall))
+            }
         }
     }
     
     func refreshState(){
-        var atLeastOneCallConnected = false
         var smallerCall : Bit6CallController? = nil
         var smallerState = Bit6CallState.MISSED
         
@@ -200,12 +201,10 @@ class MyCallViewController: Bit6CallViewController {
                 smallerState = call.state
                 smallerCall = call
             }
-            if call.state.rawValue >= Bit6CallState.CONNECTED.rawValue {
-                atLeastOneCallConnected = true
+            if call.state == Bit6CallState.CONNECTED {
+                controlsView.hidden = false
             }
         }
-        
-        controlsView.hidden = !atLeastOneCallConnected
         
         if let smallerCall = smallerCall {
             if smallerCall.incoming {
@@ -250,8 +249,6 @@ class MyCallViewController: Bit6CallViewController {
     }
     
     override func refreshControlsView() {
-//        transferFileButton.enabled = false
-        
         var atLeastOneCallHasVideo = false
         var atLeastOneCallHasAudio = false
         var atLeastOneCallHasRemoteAudio = false
@@ -270,13 +267,11 @@ class MyCallViewController: Bit6CallViewController {
         }
         
         if (TARGET_OS_SIMULATOR != 0) {
-//            muteVideoButton.enabled = false
             cameraButton.enabled = false
             bluetoothButton.enabled = false
             speakerButton.enabled = false
         }
         else {
-//            muteVideoButton.enabled = atLeastOneCallHasVideo
             cameraButton.enabled = atLeastOneCallHasVideo
             bluetoothButton.enabled = atLeastOneCallHasRemoteAudio
             speakerButton.enabled = atLeastOneCallHasRemoteAudio
@@ -291,17 +286,14 @@ class MyCallViewController: Bit6CallViewController {
         }
         
         if muteAudioButton.enabled {
-            muteAudioButton.on = Bit6CallController.audioMuted()
+            muteAudioButton.on = !Bit6CallController.isLocalAudioEnabled()
         }
         if bluetoothButton.enabled {
-            bluetoothButton.on = Bit6CallController.bluetoothEnabled()
+            bluetoothButton.on = Bit6CallController.isBluetoothEnabled()
         }
         if speakerButton.enabled {
-            speakerButton.on = Bit6CallController.speakerEnabled()
+            speakerButton.on = Bit6CallController.isSpeakerEnabled()
         }
-//        if muteVideoButton.enabled {
-//            muteVideoButton.on = Bit6CallController.videoMuted()
-//        }
     }
     
     override func updateLayoutForVideoFeedViews(videoFeedViews: [Bit6VideoFeedView]) {
@@ -312,23 +304,19 @@ class MyCallViewController: Bit6CallViewController {
     // MARK: Actions
     
     @IBAction func muteAudioCall(sender : UIButton) {
-        Bit6CallController.switchMuteAudio()
+        Bit6CallController.setLocalAudioEnabled(!Bit6CallController.isLocalAudioEnabled())
     }
     
     @IBAction func bluetooth(sender : UIButton) {
-        Bit6CallController.switchBluetooth()
+        Bit6CallController.setBluetoothEnabled(!Bit6CallController.isBluetoothEnabled())
     }
     
     @IBAction func speaker(sender : UIButton) {
-        Bit6CallController.switchSpeaker()
-    }
-    
-    @IBAction func muteVideoCall(sender : UIButton) {
-        Bit6CallController.switchMuteVideo()
+        Bit6CallController.setSpeakerEnabled(!Bit6CallController.isSpeakerEnabled())
     }
     
     @IBAction func switchCamera(sender : UIButton) {
-        Bit6CallController.switchCamera()
+        Bit6CallController.setLocalVideoSource(Bit6CallController.localVideoSource() == .CameraBack ? .CameraFront : .CameraBack)
     }
     
     @IBAction func hangup(sender : UIButton) {

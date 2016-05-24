@@ -22,7 +22,4 @@
  */
 + (void)dismissWithHandler:(nullable void (^)())completion;
 
-/*! Yes if the BXUProgressWindow is visible. */
-@property (nonatomic, readonly) BOOL showing;
-
 @end

@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use Bit6.session instead.</Abstract>
+			<DeclaredIn>Bit6Session.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6Session/signUpWithUserIdentity:password:completionHandler:</TokenIdentifier>
 			<Abstract type="html">Creates an account and initiates the session.</Abstract>
 			<DeclaredIn>Bit6Session.h</DeclaredIn>

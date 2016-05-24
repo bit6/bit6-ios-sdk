@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface MasterViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate>
+@interface MasterViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, Bit6CallControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *destinationTextField;
 @property (weak, nonatomic) IBOutlet UITextView *logsTextView;
@@ -137,11 +137,11 @@
 - (void)setCallController:(Bit6CallController *)callController
 {
     if (_callController) {
-        [_callController removeObserver:self forKeyPath:NSStringFromSelector(@selector(state))];
+        [_callController removeDelegate:self];
     }
     _callController = callController;
     if (callController) {
-        [callController addObserver:self forKeyPath:NSStringFromSelector(@selector(state)) options:NSKeyValueObservingOptionNew context:NULL];
+        [callController addDelegate:self];
     }
 }
 
@@ -164,38 +164,6 @@
     }
     else {
         [self.callController hangup];
-    }
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (object == self.callController) {
-            if ([keyPath isEqualToString:NSStringFromSelector(@selector(state))]) {
-                [self callStateChangedNotification];
-            }
-        }
-    });
-}
-
-- (void)callStateChangedNotification
-{
-    switch (self.callController.state) {
-        case Bit6CallState_MISSED:
-            self.callController = nil;
-            [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",self.callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            break;
-        case Bit6CallState_NEW: case Bit6CallState_ACCEPTING_CALL: case Bit6CallState_GATHERING_CANDIDATES: case Bit6CallState_WAITING_SDP: case Bit6CallState_SENDING_SDP: case Bit6CallState_CONNECTING: case Bit6CallState_DISCONNECTED: break;
-        case Bit6CallState_CONNECTED:
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectPicture:)];
-            [self.connectButton setTitle:@"Disconnect" forState:UIControlStateNormal];
-            self.destinationTextField.enabled = NO;
-            break;
-        case Bit6CallState_END: case Bit6CallState_ERROR:
-            self.navigationItem.rightBarButtonItem = nil;
-            [self.connectButton setTitle:@"Connect" forState:UIControlStateNormal];
-            self.callController = nil;
-            self.destinationTextField.enabled = YES;
     }
 }
 
@@ -225,7 +193,7 @@
         Bit6OutgoingTransfer *transfer = [[Bit6OutgoingTransfer alloc] initWithData:imageData name:nil mimeType:@"image/png"];
         
         [self log:[NSString stringWithFormat:@"%@ - selected - type: %@ size: %lub\n", transfer.name, transfer.mimeType, (unsigned long)transfer.size]];
-        [self.callController startTransfer:transfer];
+        [self.callController addTransfer:transfer];
     }
     [self dismissPopover];
 }
@@ -246,6 +214,29 @@
 {
     [self.myPopoverController dismissPopoverAnimated:YES];
     self.myPopoverController = nil;
+}
+
+#pragma mark - Bit6CallControllerDelegate
+
+- (void)callController:(nonnull Bit6CallController*)callController callDidChangeToState:(Bit6CallState)state
+{
+    switch (state) {
+        case Bit6CallState_MISSED:
+            self.callController = nil;
+            [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",self.callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            break;
+        case Bit6CallState_NEW: case Bit6CallState_ACCEPTING_CALL: case Bit6CallState_GATHERING_CANDIDATES: case Bit6CallState_WAITING_SDP: case Bit6CallState_SENDING_SDP: case Bit6CallState_CONNECTING: case Bit6CallState_DISCONNECTED: break;
+        case Bit6CallState_CONNECTED:
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectPicture:)];
+            [self.connectButton setTitle:@"Disconnect" forState:UIControlStateNormal];
+            self.destinationTextField.enabled = NO;
+            break;
+        case Bit6CallState_END: case Bit6CallState_ERROR:
+            self.navigationItem.rightBarButtonItem = nil;
+            [self.connectButton setTitle:@"Connect" forState:UIControlStateNormal];
+            self.callController = nil;
+            self.destinationTextField.enabled = YES;
+    }
 }
 
 #pragma mark - Transfers

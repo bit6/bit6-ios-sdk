@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use Bit6.audioRecorder instead.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioRecorderController/startRecordingAudioWithMaxDuration:delegate:defaultPrompt:errorHandler:</TokenIdentifier>
 			<Abstract type="html">Tries to start to record an audio file. It can show an &lt;UIAlertView&gt; object as the UI control to cancel or finish the recording.</Abstract>
 			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>

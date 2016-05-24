@@ -29,10 +29,16 @@
 #import "Bit6PushNotificationCenter.h"
 #import "Bit6FileDownloader.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.9.7"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.9.8"
+#define WEBRTC_VERSION_STRING @"M49"
 
 /*! Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object and offers some generic functionality. */
 @interface Bit6 : NSObject
+
+/*! Unavailable init. Use [Bit6 sharedInstance] instead.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
 
 /*! Gets the default Bit6 object.
  @return Default Bit6 object.
@@ -43,12 +49,12 @@
 /// @name ￼Initialization
 ///---------------------------------------------------------------------------------------
 
-/*! Bit6 startup method. It should be the first call to Bit6 api made.
+/*! Bit6 startup method.
  @param apiKey unique key for the current developer.
  */
 + (void)startWithApiKey:(nonnull NSString*)apiKey;
 
-/*! Bit6 startup method. It should be the first call to Bit6 api made.
+/*! Bit6 startup method.
  @param apiKey unique key for the current developer.
  @param endPoint custom server URL
  */
@@ -93,13 +99,51 @@
 /*! Get the current configuration to play video attachments.
  @return true if the video attachments will be downloaded to be played locally. false if the video will be streamed.
  @see +[Bit6 playVideoFromMessage:viewController:]
+ @note Deprecated: Please use +[Bit6 downloadVideosBeforePlaying] instead
  */
-+ (BOOL)shouldDownloadVideoBeforePlaying;
++ (BOOL)shouldDownloadVideoBeforePlaying __attribute__((deprecated("Please use +[Bit6 downloadVideosBeforePlaying] instead")));
 
 /*! Get the current configuration to download audio attachments automatically.
  @return true if the audio attachments will be downloaded automatically.
+ @note Deprecated: Please use +[Bit6 downloadAudioRecordings] instead
  */
-+ (BOOL)shouldDownloadAudioRecordings;
++ (BOOL)shouldDownloadAudioRecordings __attribute__((deprecated("Please use +[Bit6 downloadAudioRecordings] instead")));;
+
+/*! Get the current configuration to play video attachments. By default it's set to NO.
+ @return true if the video attachments will be downloaded to be played locally. false if the video will be streamed.
+ @see +[Bit6 playVideoFromMessage:viewController:]
+ */
++ (BOOL)downloadVideosBeforePlaying;
+
+/*! Set the current configuration to play video attachments.
+ @param flag true if the video attachments should be downloaded to be played locally. false if the video should be streamed.
+ */
++ (void)setDownloadVideosBeforePlaying:(BOOL)flag;
+
+/*! Get the current configuration to download audio attachments automatically. By default it's set to YES.
+ @return true if the audio attachments will be downloaded automatically.
+ */
++ (BOOL)downloadAudioRecordings;
+
+/*! Set the current configuration to download audio attachments automatically.
+ @param flag true if the audio attachments should be downloaded automatically.
+ */
++ (void)setDownloadAudioRecordings:(BOOL)flag;
+
+/*! Set the current configuration to load the messages and groups. If set to NO, the messages and groups won't be loaded from the server. By default it's set to YES.
+ @param flag true if the messages and groups should be retrieved from the server.
+ */
++ (void)setLoadOfMessagesAndGroups:(BOOL)flag;
+
+/*! Enable the logs for Bit6. By default it's set to NO.
+ @param flag true if the logs for Bit6 should be enabled.
+ */
++ (void)setLoggingEnabled:(BOOL)flag;
+
+/*! Set the <Bit6CallViewController> subclass to be used during a call. This method should be called before [Bit6 startWithApiKey:].
+ @param value UI class to be used during a call.
+ */
++ (void)setInCallClass:(nonnull Class)value;
 
 /*! Returns the timestamp matching the last message with status Bit6MessageStatus_Delivered. */
 @property (nonatomic, readonly) double deliveredUntil;
@@ -256,11 +300,13 @@
 /*! Starts a VoIP call.
  @param identity address of the user to call
  @param streams An integer bit mask that determines the local media that will be sent.
+ @return NO if the call can't be started
  */
 + (BOOL)startCallTo:(nonnull Bit6Address*)identity streams:(Bit6CallStreams)streams;
 
 /*! Starts a PSTN call
  @param phoneNumber phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.
+ @return NO if the call can't be started
  */
 + (BOOL)startPhoneCallTo:(nonnull NSString*)phoneNumber;
 
@@ -278,7 +324,7 @@
 /*! Plays the attached video included in a <Bit6Message> object using the MPMoviePlayerViewController class.
  @param msg A <Bit6Message> object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageType_Attachments and Bit6Message.attachFileType == Bit6MessageFileType_VideoMP4.
  @param vc viewcontroller from which to present the MPMoviePlayerViewController control to play the video
- @see +[Bit6 shouldDownloadVideoBeforePlaying]
+ @see +[Bit6 downloadVideosBeforePlaying]
  */
 + (void)playVideoFromMessage:(nonnull Bit6Message*)msg viewController:(nonnull UIViewController*)vc;
 

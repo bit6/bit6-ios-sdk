@@ -22,6 +22,11 @@ extern NSString* _Nonnull const Bit6ProfilePicturePrefix;
 /*! Bit6Address is used to describe an user identity for calling and messaging. */
 @interface Bit6Address : NSObject
 
+/*! Unavailable init.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 ///---------------------------------------------------------------------------------------
 /// @name ￼Initializers
 ///---------------------------------------------------------------------------------------

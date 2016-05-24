@@ -13,6 +13,11 @@
 /*! A Bit6Session object contains the session information about the current connection to the Bit6 platform. It allows the user to sign up for a new account with the app, login into an existing account or logout. */
 @interface Bit6Session : NSObject
 
+/*! Unavailable init. Use Bit6.session instead.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 ///---------------------------------------------------------------------------------------
 /// @name ￼Start/Destroy a session
 ///---------------------------------------------------------------------------------------

@@ -47,11 +47,24 @@
 	
 	<option value="//api/name/contactSource">&nbsp;&nbsp;&nbsp;&nbsp;+ contactSource</option>
 	
+	<option value="//api/name/displayImageURLForAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ displayImageURLForAddress:</option>
+	
+	<option value="//api/name/displayNameForAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ displayNameForAddress:</option>
+	
+	<option value="//api/name/initialsForAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ initialsForAddress:</option>
+	
 	<option value="//api/name/setContactSource:">&nbsp;&nbsp;&nbsp;&nbsp;+ setContactSource:</option>
+	
+	<option value="//api/name/setOutgoingDataCallEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;+ setOutgoingDataCallEnabled:</option>
 	
 	<option value="//api/name/showNotificationFrom:message:tappedHandler:">&nbsp;&nbsp;&nbsp;&nbsp;+ showNotificationFrom:message:tappedHandler:</option>
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
 	
 	
 	
@@ -85,13 +98,27 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contactSource">contactSource</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/displayImageURLForAddress:">displayImageURLForAddress:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/displayNameForAddress:">displayNameForAddress:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initialsForAddress:">initialsForAddress:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setContactSource:">setContactSource:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setOutgoingDataCallEnabled:">setOutgoingDataCallEnabled:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showNotificationFrom:message:tappedHandler:">showNotificationFrom:message:tappedHandler:</a></span></li>
 	
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -146,6 +173,12 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/contactSource">+&nbsp;contactSource</a></code>
 	</span>
 	
@@ -153,6 +186,30 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setContactSource:">+&nbsp;setContactSource:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/displayNameForAddress:">+&nbsp;displayNameForAddress:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initialsForAddress:">+&nbsp;initialsForAddress:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/displayImageURLForAddress:">+&nbsp;displayImageURLForAddress:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setOutgoingDataCallEnabled:">+&nbsp;setOutgoingDataCallEnabled:</a></code>
 	</span>
 	
 	
@@ -323,6 +380,188 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/displayImageURLForAddress:" title="displayImageURLForAddress:"></a>
+	<h3 class="subsubtitle method-title">displayImageURLForAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the image URL for an specified identity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable NSURL *)displayImageURLForAddress:(nonnull Bit6Address *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>identity to search for the image URL.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>image URL for the identity.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/contactSource">[BXU contactSource]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BXU.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/displayNameForAddress:" title="displayNameForAddress:"></a>
+	<h3 class="subsubtitle method-title">displayNameForAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the display name for an specified identity. If no contact is provided for the identity in the +[BXU contactSource] then a default display name will be generated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)displayNameForAddress:(nonnull Bit6Address *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>identity to search for an display name.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>display name for the identity.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/contactSource">[BXU contactSource]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BXU.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initialsForAddress:" title="initialsForAddress:"></a>
+	<h3 class="subsubtitle method-title">initialsForAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name initials for an specified identity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)initialsForAddress:(nonnull Bit6Address *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>identity to search for the name initials.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>name initials for the identity.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/displayNameForAddress:">[BXU displayNameForAddress:]</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/contactSource">[BXU contactSource]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BXU.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setContactSource:" title="setContactSource:"></a>
 	<h3 class="subsubtitle method-title">setContactSource:</h3>
 	
@@ -358,6 +597,52 @@
 		<h4 class="method-subtitle">Discussion</h4>
 		<div class="note"><p><strong>Note:</strong> After a logout this value will be set to nil automatically.</p></div>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BXU.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setOutgoingDataCallEnabled:" title="setOutgoingDataCallEnabled:"></a>
+	<h3 class="subsubtitle method-title">setOutgoingDataCallEnabled:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If set to YES then the default call UIButton provided by the framework will make calls that support data transfers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setOutgoingDataCallEnabled:(BOOL)<em>outgoingDataCallEnabled</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outgoingDataCallEnabled</em></dt>
+			<dd><p>set to YES to support data transfers in calls.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -438,6 +723,53 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unavailable init</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance of the class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BXU.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
                     
                     
@@ -451,7 +783,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-04-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-18)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -1,3 +1,25 @@
+## 0.9.8 [2016-05-24]
+
+### Changes (Core)
+- `[Bit6CallController callStateChangedNotificationForCall:]` and `[Bit6CallController secondsChangedNotificationForCall]` are now deprecated in favor of `Bit6CallControllerDelegate`.
+- It's not recommented the usage of KVO to listen to Bit6CallController notifications. Now `[callController addObserver:... forKeyPath:@"state" options:NSKeyValueObservingOptionOld context:NULL]` should be replaced by the usage of `Bit6CallControllerDelegate`.
+
+### Changes (UI)
+- BXUWebSocketStatusLabel now uses a delegate to customize its behavior instead of `viewsWhileConnecting` and `viewsWhenConnected` properties.
+- BXUIncomingCallPrompt is now customizable by using `setContentViewGenerator(frame)` instead of `setContentView()`.
+
+### Bugfixes (Core)
+- DataChannel transfer fails in the initial seconds of a call
+- callController.otherDisplayName could be reset to nil for Missed Calls
+- calls might not connect if Bit6.session.activeDisplayName was used
+
+### Bugfixes (UI)
+- BXUIncomingCallPrompt now can answer audio and video calls with data stream component.
+- Setting callController.otherDisplayName in BXUIncomingCallPrompt only works for existing BXUContacts
+- BXUIncomingCallPrompt wasn't shown in the center of the application if the application was running in iOS9 SlideOver or SplitView.
+
+
+
 ## 0.9.7 [2016-04-22]
 
 ### Breaking Changes

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef UIView* _Nonnull (^BXUContentViewGenerator) (CGRect incomingCallPromptFrame);
+
 /*! Used to show a nice and clean incoming call prompt that dim the entire screen while it's visible. This class is intented to be used as a singleton instance, please use Bit6IncomingCallPrompt.sharedInstance() when necessary. */
 @interface BXUIncomingCallPrompt : NSObject
 
@@ -29,6 +31,11 @@
 /// @name ￼ContentView Full Customization
 ///---------------------------------------------------------------------------------------
 
+/*! Unavailable init. Use [BXUIncomingCallPrompt sharedInstance] instead.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 /*! Returns the singleton BXUIncomingCallPrompt instance
  @return singleton BXUIncomingCallPrompt instance
  */
@@ -36,8 +43,14 @@
 
 /*! Set a view to be shown at the center of the BXUIncomingCallPrompt view.
  @param contentView view to be shown in the BXUIncomingCallPrompt.
+ @note Deprecated: Please use +[BXUIncomingCallPrompt setContentViewGenerator:] instead
  */
-- (void)setContentView:(nullable UIView*)contentView;
+- (void)setContentView:(nullable UIView*)contentView __attribute__((deprecated("Please use -[BXUIncomingCallPrompt setContentViewGenerator:] instead")));
+
+/*! Set a block to generate the view to be shown at the center of the BXUIncomingCallPrompt view.
+ @param contentViewGenerator block to generate the view to be shown in the BXUIncomingCallPrompt.
+ */
+- (void)setContentViewGenerator:(nonnull BXUContentViewGenerator)contentViewGenerator;
 
 /*! Action to be used to reject a call */
 - (void)reject;

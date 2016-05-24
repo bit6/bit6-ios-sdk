@@ -39,6 +39,11 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/setCategories:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCategories:</option>
+	
+	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
@@ -54,6 +59,8 @@
 	<option value="//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forRemoteNotification:completionHandler:</option>
 	
 	<option value="//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
 	
 	
 	
@@ -79,6 +86,12 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCategories:">setCategories:</a></span></li>
+	
+</ul></li>
+
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
@@ -94,6 +107,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:">handleActionWithIdentifier:forRemoteNotification:completionHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
 	
 </ul></li>
 
@@ -150,6 +165,18 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCategories:">+&nbsp;setCategories:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/didReceiveRemoteNotification:">&ndash;&nbsp;didReceiveRemoteNotification:</a></code>
 	</span>
 	
@@ -194,6 +221,63 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/setCategories:" title="setCategories:"></a>
+	<h3 class="subsubtitle method-title">setCategories:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setCategories:(nonnull NSArray&lt;UIUserNotificationCategory*&gt; *)<em>categories</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>categories</em></dt>
+			<dd><p>array of categories to register.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> These identifiers cannot be used in custom categories/actions: com.bit6.actionDecline, com.bit6.actionAnswer, com.bit6.msgReply, com.bit6.incomingCall, reply.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -509,6 +593,47 @@ Note that the device token is different from the uniqueIdentifier property of UI
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unavailable init. Use Bit6.pushNotification instead.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance of the class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -524,7 +649,7 @@ Note that the device token is different from the uniqueIdentifier property of UI
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-04-28)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

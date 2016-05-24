@@ -13,6 +13,11 @@
 /*! Bit6AudioRecorderController is used to record an audio file and attach it to a message. */
 @interface Bit6AudioRecorderController : NSObject
 
+/*! Unavailable init. Use Bit6.audioRecorder instead.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 /*! Tries to start to record an audio file. It can show an <UIAlertView> object as the UI control to cancel or finish the recording.
  @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
  @param delegate the delegate to be notified when the recording has been completed or canceled. For details about the methods that can be implemented by the delegate, see <Bit6AudioRecorderControllerDelegate> Protocol Reference.

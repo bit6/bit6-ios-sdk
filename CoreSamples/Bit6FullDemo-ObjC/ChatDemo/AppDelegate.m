@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MyCallViewController.h"
 
 #warning Remember to set your api key
 #define BIT6_API_KEY (@"BIT6_API_KEY")
@@ -20,6 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSAssert(![BIT6_API_KEY isEqualToString:@"BIT6_API_KEY"], @"[Bit6 SDK]: Setup your Bit6 api key.");
+    
+    [Bit6 setInCallClass:[MyCallViewController class]];
     
     //prepare to receive incoming calls
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingCallNotification:) name:Bit6IncomingCallNotification object:nil];
@@ -143,7 +146,7 @@
         [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
     }
     
-    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",callController.other.value];
+    NSString *title = [NSString stringWithFormat:@"Missed Call from %@",callController.otherDisplayName];
     UIAlertController *alertView = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertView addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
     [self.window.rootViewController presentViewController:alertView animated:YES completion:nil];

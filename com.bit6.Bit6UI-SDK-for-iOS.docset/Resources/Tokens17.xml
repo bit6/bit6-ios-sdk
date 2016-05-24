@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUAttachmentImageViewDelegate.html">
+	<File path="Classes/BXUWebSocketStatusLabel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUAttachmentImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The BXUAttachmentImageViewDelegate protocol defines the methods a delegate of a BXUAttachmentImageView object should implement. The methods of this protocol notify the delegate when the imageview  has been tapped.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUWebSocketStatusLabel</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UILabel to show the status of the signaling websocket.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,82 +13,146 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectImageMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with an image attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectImageMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectImageMessage:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectVideoMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with a video attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectVideoMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectVideoMessage:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectLocationMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with a location attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectLocationMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectLocationMessage:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectAudioMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with an audio attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setViewsWhileConnecting:</TokenIdentifier>
+			<Abstract type="html">Views to show while the websocket status is &quot;connecting&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectAudioMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhileConnecting</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectAudioMessage:</Anchor>
+			
+			<Anchor>//api/name/viewsWhileConnecting</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/viewsWhileConnecting</TokenIdentifier>
+			<Abstract type="html">Views to show while the websocket status is &quot;connecting&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhileConnecting</Declaration>
+			
+			
+			<Anchor>//api/name/viewsWhileConnecting</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/viewsWhileConnecting</TokenIdentifier>
+			<Abstract type="html">Views to show while the websocket status is &quot;connecting&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhileConnecting</Declaration>
+			
+			
+			<Anchor>//api/name/viewsWhileConnecting</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setViewsWhenConnected:</TokenIdentifier>
+			<Abstract type="html">Views to show while the websocket status is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/viewsWhenConnected</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/viewsWhenConnected</TokenIdentifier>
+			<Abstract type="html">Views to show while the websocket status is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/viewsWhenConnected</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/viewsWhenConnected</TokenIdentifier>
+			<Abstract type="html">Views to show while the websocket status is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/viewsWhenConnected</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setHideWhenConnected:</TokenIdentifier>
+			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/hideWhenConnected</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/hideWhenConnected</TokenIdentifier>
+			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/hideWhenConnected</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/hideWhenConnected</TokenIdentifier>
+			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/hideWhenConnected</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

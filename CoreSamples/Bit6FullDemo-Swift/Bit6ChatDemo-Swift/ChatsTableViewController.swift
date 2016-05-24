@@ -182,9 +182,8 @@ class ChatsTableViewController: UITableViewController, UITextFieldDelegate {
 
     func sendTextMsg(msg : NSString){
         if msg.length > 0 {
-            let message = Bit6OutgoingMessage()
+            let message = Bit6OutgoingMessage(destination:self.conversation.address)
             message.content = msg as String
-            message.destination = self.conversation.address
             message.sendWithCompletionHandler{ (response, error) in
                 if error == nil {
                     NSLog("Message Sent")

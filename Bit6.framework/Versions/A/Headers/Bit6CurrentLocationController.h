@@ -14,6 +14,11 @@
 /*! This controller is used to obtain user's current location. */
 @interface Bit6CurrentLocationController : NSObject
 
+/*! Unavailable init. Use Bit6.locationController instead.
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 /*! Starts listening to the user's location.
  @param msg a <Bit6OutgoingMessage> object where the user's location will be included.
  @param delegate delegate to be notified when the location has been obtained. For information about the methods you can implement for your delegate object, see <Bit6CurrentLocationControllerDelegate> Protocol Reference.

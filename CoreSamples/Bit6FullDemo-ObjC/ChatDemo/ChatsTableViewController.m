@@ -163,9 +163,8 @@
                                                       UITextField *textField = alert.textFields[0];
                                                       NSString *msg = textField.text;
                                                       
-                                                      Bit6OutgoingMessage *message = [Bit6OutgoingMessage new];
+                                                      Bit6OutgoingMessage *message = [[Bit6OutgoingMessage alloc] initWithDestination:self.conversation.address];
                                                       message.content = msg;
-                                                      message.destination = self.conversation.address;
                                                       [message sendWithCompletionHandler:^(NSDictionary *response, NSError *error) {
                                                           if (!error) {
                                                               NSLog(@"Message Sent");

@@ -23,6 +23,11 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
 /*! A Bit6Group object represents a group formed by several users. */
 @interface Bit6Group : NSObject
 
+/*! Unavailable init
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 /*! Returns a Bit6Group object based on the <Bit6Address> indicated.
  @param address <Bit6Address> of the group.
  @return a Bit6Group object for the <Bit6Address> indicated.

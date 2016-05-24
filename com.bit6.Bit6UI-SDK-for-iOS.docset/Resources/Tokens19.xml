@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUContactSource.html">
+	<File path="Protocols/BXUContact.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUContactSource</TokenIdentifier>
-			<Abstract type="html">Data Source to provide the display names and avatars for each identity through the framework.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUContact</TokenIdentifier>
+			<Abstract type="html">Contact model that contains all the information for an identity.</Abstract>
 			<DeclaredIn>BXUContactSource.h</DeclaredIn>
             
 			
@@ -13,36 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContactSource/contactForURI:</TokenIdentifier>
-			<Abstract type="html">Called to retrieve a BXUContact for an identity.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/uri</TokenIdentifier>
+			<Abstract type="html">Identity URI for the contact.</Abstract>
 			<DeclaredIn>BXUContactSource.h</DeclaredIn>
 			
-			<Declaration>- (nullable id&lt;BXUContact&gt;)contactForURI:(nonnull NSString *)uri</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>uri</Name>
-					<Abstract type="html">URI identity of the contact.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">contact matching the URI provided.</Abstract></ReturnValue>
-			<Anchor>//api/name/contactForURI:</Anchor>
+			<Declaration>- (nonnull NSString *)uri</Declaration>
+			
+			
+			<Anchor>//api/name/uri</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContactSource/matchContactsForString:</TokenIdentifier>
-			<Abstract type="html">Called to retrieve BXUContact objects based on a string.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/name</TokenIdentifier>
+			<Abstract type="html">Display name for the contact.</Abstract>
 			<DeclaredIn>BXUContactSource.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSArray&lt;id&lt;BXUContact&gt; &gt; *)matchContactsForString:(nonnull NSString *)string</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>string</Name>
-					<Abstract type="html">string to obtain BXUContact objects</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">contacts matching the string provided.</Abstract></ReturnValue>
-			<Anchor>//api/name/matchContactsForString:</Anchor>
+			<Declaration>- (nonnull NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/avatarURL</TokenIdentifier>
+			<Abstract type="html">URL for the contact&apos;s avatar.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSURL *)avatarURL</Declaration>
+			
+			
+			<Anchor>//api/name/avatarURL</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/initials</TokenIdentifier>
+			<Abstract type="html">Initials to show in the BXUContactAvatarImageView and BXUConversationAvatarView when the contact&apos;s avatar is not loaded.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)initials</Declaration>
+			
+			
+			<Anchor>//api/name/initials</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

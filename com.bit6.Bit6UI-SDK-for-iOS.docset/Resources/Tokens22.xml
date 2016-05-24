@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUTypingLabelDelegate.html">
+	<File path="Protocols/BXULocationViewControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUTypingLabelDelegate</TokenIdentifier>
-			<Abstract type="html">The BXUTypingLabelDelegate protocol defines the methods a delegate of a BXUTypingLabel object should implement. The methods of this protocol notify the delegate when the typing label will become visible or hidden.</Abstract>
-			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/BXULocationViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The BXULocationViewControllerDelegate protocol defines the methods a delegate of a BXULocationViewController object should implement. The methods of this protocol notify the delegate when an action has been selected in the viewcontroller or it has to be dismissed.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,36 +13,39 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUTypingLabelDelegate/showTypingLabel:</TokenIdentifier>
-			<Abstract type="html">Called when the typing label is going to be shown.</Abstract>
-			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXULocationViewControllerDelegate/dismissLocationViewController:</TokenIdentifier>
+			<Abstract type="html">Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)showTypingLabel:(nonnull BXUTypingLabel *)typingLabel</Declaration>
+			<Declaration>- (void)dismissLocationViewController:(nonnull BXULocationViewController *)locationViewController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>typingLabel</Name>
-					<Abstract type="html">typing label to be shown</Abstract>
+					<Name>locationViewController</Name>
+					<Abstract type="html">view controller to dismiss</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/showTypingLabel:</Anchor>
+			<Anchor>//api/name/dismissLocationViewController:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUTypingLabelDelegate/hideTypingLabel:</TokenIdentifier>
-			<Abstract type="html">Called when the typing label is going to be hidden.</Abstract>
-			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXULocationViewControllerDelegate/didSelectLocationAction:coordinate:</TokenIdentifier>
+			<Abstract type="html">Called when the user selects one of the &lt;BXULocationViewController.actions&gt; defined.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)hideTypingLabel:(nonnull BXUTypingLabel *)typingLabel</Declaration>
+			<Declaration>- (void)didSelectLocationAction:(nonnull NSString *)action coordinate:(CLLocationCoordinate2D)coordinate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>typingLabel</Name>
-					<Abstract type="html">typing label to be hidden</Abstract>
+					<Name>action</Name>
+					<Abstract type="html">action selected</Abstract>
+				</Parameter><Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">location&apos;s coordinate</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/hideTypingLabel:</Anchor>
+			<Anchor>//api/name/didSelectLocationAction:coordinate:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

@@ -75,6 +75,6 @@ typedef NS_ENUM(NSInteger, Bit6TransferState) {
  @param mimeType MIME type of the file to send.
  @return a Bit6OutgoingTransfer object.
  */
-- (nonnull instancetype)initWithData:(nonnull NSData*)data name:(nullable NSString*)name mimeType:(nonnull NSString*)mimeType;
+- (nonnull instancetype)initWithData:(nonnull NSData*)data name:(nullable NSString*)name mimeType:(nonnull NSString*)mimeType NS_DESIGNATED_INITIALIZER;
 
 @end

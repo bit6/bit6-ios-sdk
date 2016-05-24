@@ -15,6 +15,11 @@
 /*! Bit6Conversation represents a conversation (or a chat) - a set of messages between two participants. */
 @interface Bit6Conversation : NSObject
 
+/*! Unavailable init
+ @return a new instance of the class.
+ */
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
 /*! Returns a Bit6Conversation object based on the <Bit6Address> indicated. If the conversation didn't exists a new one will be created.
  @param address <Bit6Address> object for the conversation.
  @return a Bit6Conversation object for the <Bit6Address> indicated.
