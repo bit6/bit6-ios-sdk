@@ -54,7 +54,7 @@
                             remoteVideoView.frame = Bit6MakeRectWithAspectRatioToFillRect(remoteVideoAspectRatio,self.view.bounds);
  @note                      Similar to AVMakeRectWithAspectRatioInsideRect in <AVFoundation/AVUtilities.h>
  @param aspectRatio			The width & height ratio, or aspect, you wish to maintain.
- @param	boundingRect		The CGRect you wish to fill.
+ @param	destinationRect		The CGRect you wish to fill.
  */
 CGRect Bit6MakeRectWithAspectRatioToFillRect(CGSize aspectRatio, CGRect destinationRect);
 

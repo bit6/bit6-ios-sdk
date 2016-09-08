@@ -167,7 +167,7 @@
 					<Abstract type="html">handler to execute if the banner is tapped</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES if the file was deleted from cache.</Abstract></ReturnValue>
+			
 			<Anchor>//api/name/showNotificationFrom:message:tappedHandler:</Anchor>
             <NodeRef refid="1"/>
 		</Token>

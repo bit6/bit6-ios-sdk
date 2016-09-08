@@ -101,7 +101,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param from identity to use as the sender of the message.
  @param message message to show in the banner
  @param tappedHandler handler to execute if the banner is tapped
- @return YES if the file was deleted from cache.
  */
 + (void)showNotificationFrom:(Bit6Address*)from message:(NSString*)message tappedHandler:(nullable void(^)(Bit6Address * _Nullable from))tappedHandler;
 
