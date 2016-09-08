@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! Bit6FileDownloader handles the downloads of the framework using NSOperationQueue and NSURLSessionDownloadTask. */
 @interface Bit6FileDownloader : NSObject
 
@@ -22,18 +24,20 @@
  @param priority the execution priority of the operation in the operation queue.
  @param completionHandler Block to call after the operation has been completed. The "error" value can be use to know if the file was downloaded and saved in cache.
  */
-+ (void)downloadFileAtURL:(nonnull NSURL*)url toFilePath:(nonnull NSString*)filePath canReplace:(BOOL)replace preparationBlock:(nullable NSData* _Nonnull (^)(NSData* _Nonnull data))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void(^)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
++ (void)downloadFileAtURL:(NSURL*)url toFilePath:(NSString*)filePath canReplace:(BOOL)replace preparationBlock:(nullable NSData* (^)(NSData* data))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void(^)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
 
 /*! Query is a URL is being downloaded.
  @param url remote URL address of the file.
  @return true if the specified URL is being downloaded.
  */
-+ (BOOL)isDownloadingFileAtURL:(nonnull NSURL*)url;
++ (BOOL)isDownloadingFileAtURL:(NSURL*)url;
 
 /*! Get the full path for a file in the ~/Cache/bit6 directory.
  @param fileName name of the file.
  @return full path for a file in the Bit6 cache directory.
  */
-+ (nonnull NSString*)pathForFileName:(nonnull NSString*)fileName;
++ (NSString*)pathForFileName:(NSString*)fileName;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6Conversation.html">
+	<File path="Classes/Bit6CallViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6Conversation</TokenIdentifier>
-			<Abstract type="html">Bit6Conversation represents a conversation (or a chat) - a set of messages between two participants.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6CallViewController</TokenIdentifier>
+			<Abstract type="html">UIViewController to use during a call. This class should be extended. Only one object of this class or its subclasses should be kept in memory.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,336 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/init</TokenIdentifier>
-			<Abstract type="html">Unavailable init</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/setLocalVideoView:</TokenIdentifier>
+			<Abstract type="html">View to render the local video feed.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>- (nonnull instancetype)init</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) Bit6VideoFeedView *localVideoView</Declaration>
 			
-			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
-			<Anchor>//api/name/init</Anchor>
+			
+			<Anchor>//api/name/localVideoView</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6Conversation/conversationWithAddress:</TokenIdentifier>
-			<Abstract type="html">Returns a Bit6Conversation object based on the Bit6Address indicated. If the conversation didn&apos;t exists a new one will be created.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/localVideoView</TokenIdentifier>
+			<Abstract type="html">View to render the local video feed.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>+ (nonnull Bit6Conversation *)conversationWithAddress:(nonnull Bit6Address *)address</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) Bit6VideoFeedView *localVideoView</Declaration>
+			
+			
+			<Anchor>//api/name/localVideoView</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6CallViewController/localVideoView</TokenIdentifier>
+			<Abstract type="html">View to render the local video feed.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong, readonly) Bit6VideoFeedView *localVideoView</Declaration>
+			
+			
+			<Anchor>//api/name/localVideoView</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/setNeedsUpdateVideoViewLayout</TokenIdentifier>
+			<Abstract type="html">Used if you need to force a call to &lt;updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:&gt;.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setNeedsUpdateVideoViewLayout</Declaration>
+			
+			
+			<Anchor>//api/name/setNeedsUpdateVideoViewLayout</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/show</TokenIdentifier>
+			<Abstract type="html">Shows the callViewController in a new UIWindow using a &quot;slide up from the bottom of the screen&quot; transition.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)show</Declaration>
+			
+			
+			<Anchor>//api/name/show</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6CallViewController/createForCall:</TokenIdentifier>
+			<Abstract type="html">Needs to be implemented in the subclass to return a new view controller for the call.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CallViewController *)createForCall:(Bit6CallController *)callController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>address</Name>
-					<Abstract type="html">Bit6Address object for the conversation.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object to build the UI around.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a Bit6Conversation object for the Bit6Address indicated.</Abstract></ReturnValue>
-			<Anchor>//api/name/conversationWithAddress:</Anchor>
+			<ReturnValue><Abstract type="html">an UIViewController to use for the call.</Abstract></ReturnValue>
+			<Anchor>//api/name/createForCall:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setMessages:</TokenIdentifier>
-			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/refreshControlsView</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the UI controls should be updated. For example when the &quot;mute&quot; property changed this method will be called to allow updating the UI accordingly. The default implementation does nothing.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
+			<Declaration>- (void)refreshControlsView</Declaration>
 			
 			
-			<Anchor>//api/name/messages</Anchor>
+			<Anchor>//api/name/refreshControlsView</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/messages</TokenIdentifier>
-			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callController:callDidChangeToState:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the status of the call changes. Needs to call super if implemented.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
-			
-			
-			<Anchor>//api/name/messages</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/messages</TokenIdentifier>
-			<Abstract type="html">The Bit6Message objects in the sender as a NSArray.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray&lt;Bit6Message*&gt; *messages</Declaration>
-			
-			
-			<Anchor>//api/name/messages</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setAddress:</TokenIdentifier>
-			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/address</TokenIdentifier>
-			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/address</TokenIdentifier>
-			<Abstract type="html">The Bit6Address object associated with the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setGroup:</TokenIdentifier>
-			<Abstract type="html">The Bit6Group object associated with the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) Bit6Group *group</Declaration>
-			
-			
-			<Anchor>//api/name/group</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/group</TokenIdentifier>
-			<Abstract type="html">The Bit6Group object associated with the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) Bit6Group *group</Declaration>
-			
-			
-			<Anchor>//api/name/group</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/group</TokenIdentifier>
-			<Abstract type="html">The Bit6Group object associated with the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, readonly) Bit6Group *group</Declaration>
-			
-			
-			<Anchor>//api/name/group</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setBadge:</TokenIdentifier>
-			<Abstract type="html">Gets the number of unread messages for the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
-			
-			
-			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/badge</TokenIdentifier>
-			<Abstract type="html">Gets the number of unread messages for the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
-			
-			
-			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/badge</TokenIdentifier>
-			<Abstract type="html">Gets the number of unread messages for the sender.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSNumber *badge</Declaration>
-			
-			
-			<Anchor>//api/name/badge</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setLastMessage:</TokenIdentifier>
-			<Abstract type="html">Last message received or sent in the conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
-			
-			
-			<Anchor>//api/name/lastMessage</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/lastMessage</TokenIdentifier>
-			<Abstract type="html">Last message received or sent in the conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
-			
-			
-			<Anchor>//api/name/lastMessage</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/lastMessage</TokenIdentifier>
-			<Abstract type="html">Last message received or sent in the conversation.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonnull, nonatomic, strong, readonly) Bit6Message *lastMessage</Declaration>
-			
-			
-			<Anchor>//api/name/lastMessage</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setTypingAddress:</TokenIdentifier>
-			<Abstract type="html">Gets the current typing user as a Bit6Address object, if available.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *typingAddress</Declaration>
-			
-			
-			<Anchor>//api/name/typingAddress</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/typingAddress</TokenIdentifier>
-			<Abstract type="html">Gets the current typing user as a Bit6Address object, if available.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *typingAddress</Declaration>
-			
-			
-			<Anchor>//api/name/typingAddress</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/typingAddress</TokenIdentifier>
-			<Abstract type="html">Gets the current typing user as a Bit6Address object, if available.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, nonatomic, strong) Bit6Address *typingAddress</Declaration>
-			
-			
-			<Anchor>//api/name/typingAddress</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/compare:</TokenIdentifier>
-			<Abstract type="html">Returns an NSComparisonResult value that indicates whether the conversation timestamp value is greater than, equal to, or less than a given conversation timestamp.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>- (NSComparisonResult)compare:(nonnull Bit6Conversation *)conversation</Declaration>
+			<Declaration>- (void)callController:(Bit6CallController *)callController callDidChangeToState:(Bit6CallState)state</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>conversation</Name>
-					<Abstract type="html">The conversation to compare to the conversation timestamp&apos;s value. This value must not be nil.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object which state has changed.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">new state for the call.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/compare:</Anchor>
+			<Anchor>//api/name/callController:callDidChangeToState:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setDeliveredUntil:</TokenIdentifier>
-			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/secondsDidChangeForCallController:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread each second to allow the refresh of a timer UI. Needs to call super if implemented.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			<Declaration>- (void)secondsDidChangeForCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object which &apos;seconds&apos; property has changed.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/deliveredUntil</Anchor>
+			<Anchor>//api/name/secondsDidChangeForCallController:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/deliveredUntil</TokenIdentifier>
-			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/updateLayoutForVideoFeedViews:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread to customize the frames for the video feeds. You can call setNeedsUpdateVideoViewLayout at any time to force a refresh of the frames.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			<Declaration>- (void)updateLayoutForVideoFeedViews:(NSArray&lt;Bit6VideoFeedView*&gt; *)videoFeedViews</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoFeedViews</Name>
+					<Abstract type="html">the Bit6VideoFeedView references to the video feed.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/deliveredUntil</Anchor>
+			<Anchor>//api/name/updateLayoutForVideoFeedViews:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/deliveredUntil</TokenIdentifier>
-			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Delivered.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/callController:localVideoFeedInterruptedBecause:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the local video feed will be interrupted. Needs to call super if implemented.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			<Declaration>- (void)callController:(Bit6CallController *)callController localVideoFeedInterruptedBecause:(int)reason</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object referring to the call.</Abstract>
+				</Parameter><Parameter>
+					<Name>reason</Name>
+					<Abstract type="html">reason for the interruption as a AVCaptureSessionInterruptionReason value. Only AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps is supported at the moment.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/deliveredUntil</Anchor>
+			<Anchor>//api/name/callController:localVideoFeedInterruptedBecause:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/setReadUntil:</TokenIdentifier>
-			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CallViewController/localVideoFeedInterruptionEndedForCallController:</TokenIdentifier>
+			<Abstract type="html">Called in the Main Thread when the local video feed interruption has ended. Needs to call super if implemented.</Abstract>
+			<DeclaredIn>Bit6CallViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			<Declaration>- (void)localVideoFeedInterruptionEndedForCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object referring to the call.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/readUntil</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Conversation/readUntil</TokenIdentifier>
-			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
-			
-			
-			<Anchor>//api/name/readUntil</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Conversation/readUntil</TokenIdentifier>
-			<Abstract type="html">Returns the timestamp matching the last message in this conversation with status Bit6MessageStatus_Read.</Abstract>
-			<DeclaredIn>Bit6Conversation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
-			
-			
-			<Anchor>//api/name/readUntil</Anchor>
+			<Anchor>//api/name/localVideoFeedInterruptionEndedForCallController:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

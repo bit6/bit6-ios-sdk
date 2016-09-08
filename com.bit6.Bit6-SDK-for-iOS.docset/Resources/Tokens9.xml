@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6FileDownloader.html">
+	<File path="Classes/Bit6CurrentLocationController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6FileDownloader</TokenIdentifier>
-			<Abstract type="html">Bit6FileDownloader handles the downloads of the framework using NSOperationQueue and NSURLSessionDownloadTask.</Abstract>
-			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6CurrentLocationController</TokenIdentifier>
+			<Abstract type="html">This controller is used to obtain user&apos;s current location.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -13,80 +13,46 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/cancelOperations</TokenIdentifier>
-			<Abstract type="html">Cancels all pending download operations.</Abstract>
-			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CurrentLocationController/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use Bit6.locationController instead.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>+ (void)cancelOperations</Declaration>
+			<Declaration>- (instancetype)init</Declaration>
 			
-			
-			<Anchor>//api/name/cancelOperations</Anchor>
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Download a file. It can be set to replace any file in the indicated path if necessary.</Abstract>
-			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CurrentLocationController/startListeningToLocationForMessage:delegate:</TokenIdentifier>
+			<Abstract type="html">Starts listening to the user&apos;s location.</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>+ (void)downloadFileAtURL:(nonnull NSURL *)url toFilePath:(nonnull NSString *)filePath canReplace:(BOOL)replace preparationBlock:(nullable NSData *_Nonnull ( ^ ) ( NSData *_Nonnull data ))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void ( ^ ) ( NSURL *_Nullable location , NSURLResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Declaration>- (void)startListeningToLocationForMessage:(Bit6OutgoingMessage *)msg delegate:(nullable id&lt;Bit6CurrentLocationControllerDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">remote URL address of the file to download.</Abstract>
+					<Name>msg</Name>
+					<Abstract type="html">a Bit6OutgoingMessage object where the user&apos;s location will be included.</Abstract>
 				</Parameter><Parameter>
-					<Name>filePath</Name>
-					<Abstract type="html">local path where to save the file.</Abstract>
-				</Parameter><Parameter>
-					<Name>replace</Name>
-					<Abstract type="html">the file will be downloaded and will replace the file in cache.</Abstract>
-				</Parameter><Parameter>
-					<Name>preparationBlock</Name>
-					<Abstract type="html">block to process the downloaded data before saving it to the filePath.</Abstract>
-				</Parameter><Parameter>
-					<Name>priority</Name>
-					<Abstract type="html">the execution priority of the operation in the operation queue.</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the file was downloaded and saved in cache.</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate to be notified when the location has been obtained. For information about the methods you can implement for your delegate object, see Bit6CurrentLocationControllerDelegate Protocol Reference.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:</Anchor>
+			<Anchor>//api/name/startListeningToLocationForMessage:delegate:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/isDownloadingFileAtURL:</TokenIdentifier>
-			<Abstract type="html">Query is a URL is being downloaded.</Abstract>
-			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6CurrentLocationController/stopListeningToLocation</TokenIdentifier>
+			<Abstract type="html">Stops listening to the user&apos;s location</Abstract>
+			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)isDownloadingFileAtURL:(nonnull NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">remote URL address of the file.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">true if the specified URL is being downloaded.</Abstract></ReturnValue>
-			<Anchor>//api/name/isDownloadingFileAtURL:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/pathForFileName:</TokenIdentifier>
-			<Abstract type="html">Get the full path for a file in the ~/Cache/bit6 directory.</Abstract>
-			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			<Declaration>- (void)stopListeningToLocation</Declaration>
 			
-			<Declaration>+ (nonnull NSString *)pathForFileName:(nonnull NSString *)fileName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>fileName</Name>
-					<Abstract type="html">name of the file.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">full path for a file in the Bit6 cache directory.</Abstract></ReturnValue>
-			<Anchor>//api/name/pathForFileName:</Anchor>
+			
+			<Anchor>//api/name/stopListeningToLocation</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

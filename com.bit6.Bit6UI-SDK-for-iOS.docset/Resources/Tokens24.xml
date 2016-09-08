@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUWebSocketStatusLabelDelegate.html">
+	<File path="Protocols/BXULocationViewControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUWebSocketStatusLabelDelegate</TokenIdentifier>
-			<Abstract type="html">The BXUWebSocketStatusLabelDelegate protocol defines the methods a delegate of a BXUWebSocketStatusLabel object should implement. The methods of this protocol notify the delegate when the websocket label has change state.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/BXULocationViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The BXULocationViewControllerDelegate protocol defines the methods a delegate of a BXULocationViewController object should implement. The methods of this protocol notify the delegate when an action has been selected in the viewcontroller or it has to be dismissed.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,22 +13,39 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUWebSocketStatusLabelDelegate/webSocketLabel:didChangeToStatus:</TokenIdentifier>
-			<Abstract type="html">Called when the websocket label has change state.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXULocationViewControllerDelegate/dismissLocationViewController:</TokenIdentifier>
+			<Abstract type="html">Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)webSocketLabel:(nonnull BXUWebSocketStatusLabel *)webSocketLabel didChangeToStatus:(Bit6RTStatus)status</Declaration>
+			<Declaration>- (void)dismissLocationViewController:(BXULocationViewController *)locationViewController</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>webSocketLabel</Name>
-					<Abstract type="html">websocket label</Abstract>
-				</Parameter><Parameter>
-					<Name>status</Name>
-					<Abstract type="html">new state for the websocket label</Abstract>
+					<Name>locationViewController</Name>
+					<Abstract type="html">view controller to dismiss</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/webSocketLabel:didChangeToStatus:</Anchor>
+			<Anchor>//api/name/dismissLocationViewController:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXULocationViewControllerDelegate/didSelectLocationAction:coordinate:</TokenIdentifier>
+			<Abstract type="html">Called when the user selects one of the &lt;BXULocationViewController.actions&gt; defined.</Abstract>
+			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)didSelectLocationAction:(NSString *)action coordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>action</Name>
+					<Abstract type="html">action selected</Abstract>
+				</Parameter><Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">location&apos;s coordinate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didSelectLocationAction:coordinate:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6TransferType.html">
+	<File path="Constants/Bit6MessageType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6TransferType</TokenIdentifier>
-			<Abstract type="html">Type of Bit6Transfer.</Abstract>
-			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageType</TokenIdentifier>
+			<Abstract type="html">Message type for a Bit6Message.</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -14,21 +14,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_INCOMING</TokenIdentifier>
-            <Abstract type="html">Incoming transfer.</Abstract>
-            <Declaration>Bit6TransferType_INCOMING</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Text</TokenIdentifier>
+            <Abstract type="html">The message has only text.</Abstract>
+            <Declaration>Bit6MessageType_Text</Declaration>
             
-            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="35"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6TransferType_OUTGOING</TokenIdentifier>
-            <Abstract type="html">Outoing transfer.</Abstract>
-            <Declaration>Bit6TransferType_OUTGOING</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Call</TokenIdentifier>
+            <Abstract type="html">The message is for a call.</Abstract>
+            <Declaration>Bit6MessageType_Call</Declaration>
             
-            <DeclaredIn>Bit6Transfer.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Attachments</TokenIdentifier>
+            <Abstract type="html">The message has an attachment.</Abstract>
+            <Declaration>Bit6MessageType_Attachments</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Location</TokenIdentifier>
+            <Abstract type="html">The message has a location.</Abstract>
+            <Declaration>Bit6MessageType_Location</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="35"/>
         </Token>

@@ -31,6 +31,8 @@ typedef NS_ENUM(NSInteger, Bit6TransferState) {
     Bit6TransferState_ENDED_WITH_ERROR
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! A Bit6Transfer object represents a peer to peer data transfer. */
 @interface Bit6Transfer : NSObject
 
@@ -44,10 +46,10 @@ typedef NS_ENUM(NSInteger, Bit6TransferState) {
 @property (nullable, nonatomic, readonly) NSData *data;
 
 /*! File name. */
-@property (nonnull, nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 
 /*! MIME type of the file. */
-@property (nonnull, nonatomic, readonly) NSString *mimeType;
+@property (nonatomic, readonly) NSString *mimeType;
 
 /*! Size of an outgoing file or final size of an incoming file. */
 @property (nonatomic, readonly) NSUInteger size;
@@ -75,6 +77,8 @@ typedef NS_ENUM(NSInteger, Bit6TransferState) {
  @param mimeType MIME type of the file to send.
  @return a Bit6OutgoingTransfer object.
  */
-- (nonnull instancetype)initWithData:(nonnull NSData*)data name:(nullable NSString*)name mimeType:(nonnull NSString*)mimeType NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithData:(NSData*)data name:(nullable NSString*)name mimeType:(NSString*)mimeType NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,6 +9,12 @@
 // [caller name] is calling
 "BX_INCOMING_CALL" = "%@ is calling...";
 
+// [caller name]: Join a group call...
+"BX_INCOMING_UNTITLED_GROUP_CALL" = "%@: Join a group call...";
+
+// [caller name]: Join [group title] call...
+"BX_INCOMING_GROUP_CALL" = "%@: Join %@ call...";
+
 // Missed call from [caller name]
 "BX_MISSED_CALL" = "Missed call from %@";
 
@@ -29,3 +35,12 @@
 
 // [sender]: sent a file
 "BX_MESSAGE_FILE" = "%@ sent a file";
+
+/* Decline */
+"push_decline_call_action" = "Decline";
+
+/* Answer */
+"push_answer_call_action" = "Answer";
+
+/* Reply */
+"push_reply_msg_action" = "Reply";

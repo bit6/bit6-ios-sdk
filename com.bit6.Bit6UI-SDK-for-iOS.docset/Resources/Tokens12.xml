@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXULocationViewController.html">
+	<File path="Classes/BXUIncomingCallPrompt.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXULocationViewController</TokenIdentifier>
-			<Abstract type="html">Convenience subclass of UIViewController to display a location in a MKMapView.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUIncomingCallPrompt</TokenIdentifier>
+			<Abstract type="html">Used to show a nice and clean incoming call prompt that dim the entire screen while it&apos;s visible. This class is intented to be used as a singleton instance, please use Bit6IncomingCallPrompt.sharedInstance() when necessary.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,110 +13,132 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/setCoordinate:</TokenIdentifier>
-			<Abstract type="html">Location to display in the sender.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/showForCallController:</TokenIdentifier>
+			<Abstract type="html">Presents the BXUIncomingCallPrompt.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			<Declaration>+ (void)showForCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">call to be linked to the prompt</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/coordinate</Anchor>
+			<Anchor>//api/name/showForCallController:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/coordinate</TokenIdentifier>
-			<Abstract type="html">Location to display in the sender.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/dismiss</TokenIdentifier>
+			<Abstract type="html">Dismiss the BXUIncomingCallPrompt.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			<Declaration>+ (void)dismiss</Declaration>
 			
 			
-			<Anchor>//api/name/coordinate</Anchor>
+			<Anchor>//api/name/dismiss</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXULocationViewController/coordinate</TokenIdentifier>
-			<Abstract type="html">Location to display in the sender.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/callController</TokenIdentifier>
+			<Abstract type="html">Returns the call linked to the prompt</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic) CLLocationCoordinate2D coordinate</Declaration>
+			<Declaration>+ (nullable Bit6CallController *)callController</Declaration>
 			
-			
-			<Anchor>//api/name/coordinate</Anchor>
+			<ReturnValue><Abstract type="html">callController linked to the prompt</Abstract></ReturnValue>
+			<Anchor>//api/name/callController</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/setActions:</TokenIdentifier>
-			<Abstract type="html">Additional actions to display in the sender&apos;s UITabBar. These can be handled using the BXULocationViewControllerDelegate protocol.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use [BXUIncomingCallPrompt sharedInstance] instead.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, strong, nonatomic) NSArray&lt;NSString*&gt; *actions</Declaration>
+			<Declaration>- (instancetype)init</Declaration>
 			
-			
-			<Anchor>//api/name/actions</Anchor>
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/actions</TokenIdentifier>
-			<Abstract type="html">Additional actions to display in the sender&apos;s UITabBar. These can be handled using the BXULocationViewControllerDelegate protocol.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUIncomingCallPrompt/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Returns the singleton BXUIncomingCallPrompt instance</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, strong, nonatomic) NSArray&lt;NSString*&gt; *actions</Declaration>
+			<Declaration>+ (BXUIncomingCallPrompt *)sharedInstance</Declaration>
 			
-			
-			<Anchor>//api/name/actions</Anchor>
+			<ReturnValue><Abstract type="html">singleton BXUIncomingCallPrompt instance</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXULocationViewController/actions</TokenIdentifier>
-			<Abstract type="html">Additional actions to display in the sender&apos;s UITabBar. These can be handled using the BXULocationViewControllerDelegate protocol.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/setContentViewGenerator:</TokenIdentifier>
+			<Abstract type="html">Set a block to generate the view to be shown at the center of the BXUIncomingCallPrompt view.</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, strong, nonatomic) NSArray&lt;NSString*&gt; *actions</Declaration>
+			<Declaration>- (void)setContentViewGenerator:(BXUContentViewGenerator)contentViewGenerator</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>contentViewGenerator</Name>
+					<Abstract type="html">block to generate the view to be shown in the BXUIncomingCallPrompt.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/actions</Anchor>
+			<Anchor>//api/name/setContentViewGenerator:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when an action has been selected in the viewcontroller or it has to be dismissed. For details about the methods that can be implemented by the delegate, see BXULocationViewControllerDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/reject</TokenIdentifier>
+			<Abstract type="html">Action to be used to reject a call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXULocationViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>- (void)reject</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/reject</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXULocationViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when an action has been selected in the viewcontroller or it has to be dismissed. For details about the methods that can be implemented by the delegate, see BXULocationViewControllerDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/answerAudio</TokenIdentifier>
+			<Abstract type="html">Action to be used to answer an audio call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXULocationViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>- (void)answerAudio</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/answerAudio</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXULocationViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when an action has been selected in the viewcontroller or it has to be dismissed. For details about the methods that can be implemented by the delegate, see BXULocationViewControllerDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXULocationViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/answerVideo</TokenIdentifier>
+			<Abstract type="html">Action to be used to answer an video call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXULocationViewControllerDelegate&gt; delegate</Declaration>
+			<Declaration>- (void)answerVideo</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/answerVideo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUIncomingCallPrompt/answerData</TokenIdentifier>
+			<Abstract type="html">Action to be used to answer an data call</Abstract>
+			<DeclaredIn>BXUIncomingCallPrompt.h</DeclaredIn>
+			
+			<Declaration>- (void)answerData</Declaration>
+			
+			
+			<Anchor>//api/name/answerData</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

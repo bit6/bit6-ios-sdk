@@ -13,6 +13,8 @@
 
 @class Bit6Conversation;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! Channel of a <Bit6Message> call. */
 typedef NS_ENUM(NSInteger, Bit6MessageCallChannel) {
     /*! The call has an audio channel. */
@@ -97,16 +99,19 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 /*! Unavailable init
  @return a new instance of the class.
  */
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
+/*! The conversation address the sender belongs to. */
+@property (nullable, nonatomic, readonly) Bit6Address *conversationAddress;
 
 /*! The conversation the sender belongs to. */
-@property (nullable, nonatomic, readonly) Bit6Conversation *conversation;
+@property (nonatomic, readonly) Bit6Conversation *conversation;
 
 /*! The text content of the sender. */
 @property (nullable, nonatomic, readonly, copy) NSString *content;
 
 /*! The creation timestamp of the sender. */
-@property (nonnull, nonatomic, copy, readonly) NSNumber *created;
+@property (nonatomic, copy, readonly) NSNumber *created;
 
 /*! The last updated timestamp of the sender. */
 @property (nullable, nonatomic, copy, readonly) NSNumber *updated;
@@ -166,4 +171,9 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 /*! Gets the length of the call. This property should be used only if self.type == Bit6MessageType_Call. */
 @property (nullable, nonatomic, readonly) NSNumber *callDuration;
 
+/*! The message is a text message that only contains one emoji character. */
+@property (nonatomic, readonly) BOOL isSingleEmoji;
+
 @end
+
+NS_ASSUME_NONNULL_END

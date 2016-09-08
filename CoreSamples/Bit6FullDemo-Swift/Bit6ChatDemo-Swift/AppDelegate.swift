@@ -21,6 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         assert(BIT6_API_KEY != "BIT6_API_KEY", "[Bit6 SDK]: Setup your Bit6 api key.")
         
+        NSNotificationCenter.defaultCenter().addObserverForName(Bit6LogoutCompletedNotification, object:nil, queue:nil) { (note) in
+            if let error = note.userInfo?[Bit6ErrorKey] as? NSNumber {
+                if error.integerValue == NSURLErrorUserCancelledAuthentication {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        Bit6AlertView.showAlertControllerWithTitle("Invalid Session", message:"Please login again", cancelButtonTitle:"OK")
+                    }
+                }
+            }
+        }
+        
         Bit6.setInCallClass(MyCallViewController)
         
         //prepare to receive incoming calls
@@ -41,25 +51,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
     }
     
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
-        Bit6.pushNotification().handleActionWithIdentifier(identifier, forRemoteNotification: userInfo, completionHandler: completionHandler)
-    }
-    
-    @available(iOS 9.0, *)
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
-        Bit6.pushNotification().handleActionWithIdentifier(identifier, forRemoteNotification: userInfo, withResponseInfo: responseInfo, completionHandler: completionHandler)
-    }
-    
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        Bit6.pushNotification().didReceiveRemoteNotification(userInfo, fetchCompletionHandler: completionHandler)
-    }
-    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         Bit6.pushNotification().didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         Bit6.pushNotification().didFailToRegisterForRemoteNotificationsWithError(error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        Bit6.pushNotification().didReceiveNotificationUserInfo(userInfo, fetchCompletionHandler: completionHandler)
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        Bit6.pushNotification().handleActionWithIdentifier(identifier, forNotificationUserInfo: userInfo, completionHandler: completionHandler)
+    }
+    
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        Bit6.pushNotification().handleActionWithIdentifier(identifier, forNotificationUserInfo: userInfo, withResponseInfo: responseInfo, completionHandler: completionHandler)
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        Bit6.pushNotification().didReceiveNotificationUserInfo(notification.userInfo!)
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        Bit6.pushNotification().handleActionWithIdentifier(identifier, forNotificationUserInfo: notification.userInfo!, completionHandler: completionHandler)
+    }
+    
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        Bit6.pushNotification().handleActionWithIdentifier(identifier, forNotificationUserInfo: notification.userInfo!, withResponseInfo: responseInfo, completionHandler: completionHandler)
     }
     
     // MARK: - Call Listener
@@ -74,10 +97,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let callController = self.callController {
             //if this is not the same call as the one being shown for the prompt then we reject it
             if self.callController != callController {
-                callController.decline()
+                callController.hangup()
             }
         }
         else {
+            callController.remoteStreams = callController.availableStreamsForIncomingCall
+            
             //the call was answered by taping the push notification
             if callController.answered {
                 callController.localStreams = callController.remoteStreams
@@ -104,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         })
                 }
                 alertView.addAction(UIAlertAction(title:"Reject", style:.Cancel) { (action) in
-                    callController.decline()
+                    callController.hangup()
                     self.callController = nil
                     })
                 
@@ -127,25 +152,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //there's restricted access to microphone or camera
     func callPermissionsMissingNotification(notification:NSNotification)
     {
-        let error = notification.userInfo![Bit6ErrorKey] as! NSError
-        let alertView = UIAlertController(title:error.localizedDescription, message:nil, preferredStyle:.Alert)
-        alertView.addAction(UIAlertAction(title:"OK", style:.Cancel, handler:nil))
-        self.window?.rootViewController?.presentViewController(alertView, animated:true, completion:nil)
+        let callController = notification.object as! Bit6CallController
+        let error = callController.error!
+        Bit6AlertView.showAlertControllerWithTitle(error.localizedDescription, message:nil, cancelButtonTitle:"OK")
     }
     
     //missed call
     func callMissedNotification(notification:NSNotification)
     {
-        let callController = notification.object as! Bit6CallController
-        if self.callController == callController {
-            self.callController = nil
-            self.window?.rootViewController?.dismissViewControllerAnimated(true, completion:nil)
+        let appState = UIApplication.sharedApplication().applicationState
+        if appState == .Active {
+            let callController = notification.object as! Bit6CallController
+            if self.callController == callController {
+                self.callController = nil
+                self.window?.rootViewController?.dismissViewControllerAnimated(true, completion:nil)
+            }
+            
+            let title = "Missed Call from \(callController.otherDisplayName)"
+            Bit6AlertView.showAlertControllerWithTitle(title, message:nil, cancelButtonTitle:"OK")
         }
-        
-        let title = "Missed Call from \(callController.otherDisplayName)"
-        let alertView = UIAlertController(title:title, message:nil, preferredStyle:.Alert)
-        alertView.addAction(UIAlertAction(title:"OK", style:.Cancel, handler:nil))
-        self.window?.rootViewController?.presentViewController(alertView, animated:true, completion:nil)
     }
 
 }

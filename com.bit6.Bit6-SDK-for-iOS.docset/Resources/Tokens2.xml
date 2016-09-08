@@ -17,7 +17,7 @@
 			<Abstract type="html">Unavailable init.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>- (nonnull instancetype)init</Declaration>
+			<Declaration>- (instancetype)init</Declaration>
 			
 			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
 			<Anchor>//api/name/init</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Initializes a Bit6Address object</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>+ (nullable instancetype)addressWithURI:(nonnull NSString *)uri</Declaration>
+			<Declaration>+ (nullable instancetype)addressWithURI:(NSString *)uri</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>uri</Name>
@@ -46,7 +46,7 @@
 			<Abstract type="html">Initializes a Bit6Address object using a scheme and a value. The resulting object URI will become scheme:value .</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>+ (nullable instancetype)addressWithScheme:(nonnull NSString *)scheme value:(nonnull NSString *)value</Declaration>
+			<Declaration>+ (nullable instancetype)addressWithScheme:(Bit6AddressScheme)scheme value:(NSString *)value</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>scheme</Name>
@@ -66,7 +66,7 @@
 			<Abstract type="html">Initializes a Bit6Address object using an username. The resulting object URI will become usr:username .</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>+ (nullable instancetype)addressWithUsername:(nonnull NSString *)username</Declaration>
+			<Declaration>+ (nullable instancetype)addressWithUsername:(NSString *)username</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>username</Name>
@@ -83,7 +83,7 @@
 			<Abstract type="html">Initializes a Bit6Address object using an email. The resulting object URI will become mailto:email .</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>+ (nullable instancetype)addressWithEmail:(nonnull NSString *)email</Declaration>
+			<Declaration>+ (nullable instancetype)addressWithEmail:(NSString *)email</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>email</Name>
@@ -100,11 +100,11 @@
 			<Abstract type="html">Initializes a Bit6Address object using an email. The resulting object URI will become tel:phone .</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>+ (nullable instancetype)addressWithPhone:(nonnull NSString *)phone</Declaration>
+			<Declaration>+ (nullable instancetype)addressWithPhone:(NSString *)phone</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>phone</Name>
-					<Abstract type="html">a valid phone number. It must include the country code, for example +19543308410.</Abstract>
+					<Abstract type="html">a valid phone number. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a Bit6Address object if succesful or nil if failed.</Abstract></ReturnValue>
@@ -117,7 +117,7 @@
 			<Abstract type="html">Initializes a Bit6Address object using a Facebook identifier. The resulting object URI will become fb:facebookId .</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>+ (nullable instancetype)addressWithFacebookId:(nonnull NSString *)facebookId</Declaration>
+			<Declaration>+ (nullable instancetype)addressWithFacebookId:(NSString *)facebookId</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>facebookId</Name>
@@ -134,7 +134,7 @@
 			<Abstract type="html">returns the URI representation of the sender.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *uri</Declaration>
+			<Declaration>@property (nonatomic, readonly, strong) NSString *uri</Declaration>
 			
 			
 			<Anchor>//api/name/uri</Anchor>
@@ -146,7 +146,7 @@
 			<Abstract type="html">returns the URI representation of the sender.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *uri</Declaration>
+			<Declaration>@property (nonatomic, readonly, strong) NSString *uri</Declaration>
 			
 			
 			<Anchor>//api/name/uri</Anchor>
@@ -158,7 +158,7 @@
 			<Abstract type="html">returns the URI representation of the sender.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *uri</Declaration>
+			<Declaration>@property (nonatomic, readonly, strong) NSString *uri</Declaration>
 			
 			
 			<Anchor>//api/name/uri</Anchor>
@@ -170,7 +170,7 @@
 			<Abstract type="html">returns the sender&apos;s scheme.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *scheme</Declaration>
+			<Declaration>@property (nonatomic, readonly) Bit6AddressScheme scheme</Declaration>
 			
 			
 			<Anchor>//api/name/scheme</Anchor>
@@ -182,7 +182,7 @@
 			<Abstract type="html">returns the sender&apos;s scheme.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *scheme</Declaration>
+			<Declaration>@property (nonatomic, readonly) Bit6AddressScheme scheme</Declaration>
 			
 			
 			<Anchor>//api/name/scheme</Anchor>
@@ -194,7 +194,7 @@
 			<Abstract type="html">returns the sender&apos;s scheme.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *scheme</Declaration>
+			<Declaration>@property (nonatomic, readonly) Bit6AddressScheme scheme</Declaration>
 			
 			
 			<Anchor>//api/name/scheme</Anchor>
@@ -206,7 +206,7 @@
 			<Abstract type="html">returns the sender&apos;s value.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *value</Declaration>
+			<Declaration>@property (nonatomic, readonly, strong) NSString *value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -218,7 +218,7 @@
 			<Abstract type="html">returns the sender&apos;s value.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *value</Declaration>
+			<Declaration>@property (nonatomic, readonly, strong) NSString *value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -230,7 +230,7 @@
 			<Abstract type="html">returns the sender&apos;s value.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, nonatomic, readonly) NSString *value</Declaration>
+			<Declaration>@property (nonatomic, readonly, strong) NSString *value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -274,110 +274,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsDataStream:</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports using a data stream.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsOffNetCommunications:</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports OFFNET communications.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsDataStream</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL supportsOffNetCommunications</Declaration>
 			
 			
-			<Anchor>//api/name/supportsDataStream</Anchor>
+			<Anchor>//api/name/supportsOffNetCommunications</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsDataStream</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports using a data stream.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsOffNetCommunications</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports OFFNET communications.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsDataStream</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL supportsOffNetCommunications</Declaration>
 			
 			
-			<Anchor>//api/name/supportsDataStream</Anchor>
+			<Anchor>//api/name/supportsOffNetCommunications</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsDataStream</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports using a data stream.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsOffNetCommunications</TokenIdentifier>
+			<Abstract type="html">indicates whether the sender supports OFFNET communications.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsDataStream</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL supportsOffNetCommunications</Declaration>
 			
 			
-			<Anchor>//api/name/supportsDataStream</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsVideoStream:</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports using a video stream.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsVideoStream</Declaration>
-			
-			
-			<Anchor>//api/name/supportsVideoStream</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsVideoStream</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports using a video stream.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsVideoStream</Declaration>
-			
-			
-			<Anchor>//api/name/supportsVideoStream</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsVideoStream</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports using a video stream.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsVideoStream</Declaration>
-			
-			
-			<Anchor>//api/name/supportsVideoStream</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/setSupportsMessaging:</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports sending and receiving messages.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsMessaging</Declaration>
-			
-			
-			<Anchor>//api/name/supportsMessaging</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6Address/supportsMessaging</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports sending and receiving messages.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsMessaging</Declaration>
-			
-			
-			<Anchor>//api/name/supportsMessaging</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/Bit6Address/supportsMessaging</TokenIdentifier>
-			<Abstract type="html">indicates whether the sender supports sending and receiving messages.</Abstract>
-			<DeclaredIn>Bit6Address.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL supportsMessaging</Declaration>
-			
-			
-			<Anchor>//api/name/supportsMessaging</Anchor>
+			<Anchor>//api/name/supportsOffNetCommunications</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
@@ -386,7 +314,7 @@
 			<Abstract type="html">Returns a Boolean value that indicates whether a given scheme matches the sender&apos;s scheme.</Abstract>
 			<DeclaredIn>Bit6Address.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)hasScheme:(nonnull NSString *)aString</Declaration>
+			<Declaration>- (BOOL)hasScheme:(Bit6AddressScheme)aString</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>aString</Name>

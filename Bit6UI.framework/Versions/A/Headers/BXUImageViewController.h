@@ -10,6 +10,8 @@
 
 @protocol BXUImageViewControllerDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! Convenience subclass of UIViewController to display an image attached to a message. 
  @discussion This viewController will present an UITabBar with options to share the image. 
  */
@@ -18,7 +20,7 @@
 /*! Sets the message for the sender. 
  @param message a message with an image attachment to show in the sender.
  */
-- (void)setMessage:(nonnull Bit6Message*)message;
+- (void)setMessage:(Bit6Message*)message;
 
 /*! The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see <BXUImageViewControllerDelegate> Protocol Reference. */
 @property (nullable, weak, nonatomic) id<BXUImageViewControllerDelegate> delegate;
@@ -31,6 +33,8 @@
 /*! Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.
  @param imageViewController view controller to dismiss
  */
-- (void)dismissImageViewController:(nonnull BXUImageViewController*)imageViewController;
+- (void)dismissImageViewController:(BXUImageViewController*)imageViewController;
 
 @end
+
+NS_ASSUME_NONNULL_END

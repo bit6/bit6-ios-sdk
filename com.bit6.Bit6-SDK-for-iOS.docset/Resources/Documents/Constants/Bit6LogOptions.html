@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>Bit6RTStatus Constants Reference</title>
+		<title>Bit6LogOptions Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">Bit6RTStatus Constants Reference</h1>
+				<h1 class="hideInXcode">Bit6LogOptions Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -45,7 +45,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="Bit6RTStatus Constants Reference" name="top"></a>
+				<a title="Bit6LogOptions Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">Bit6RTStatus Constants Reference</h1>
+						<h1 class="title title-header">Bit6LogOptions Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -74,25 +74,33 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">Bit6RTStatus</h3>
+                    <h3 class="subsubtitle method-title">Bit6LogOptions</h3>
                     
-					
-					<div class="section section-overview">
-                        <p>Web Socket connection status.</p>
-					</div>
-					
-					
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, Bit6RTStatus ) {<br/>
+                        <code>typedef NS_OPTIONS(NSInteger, Bit6LogOptions ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6RTStatus_DISCONNECTED</a> = 0,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_None</a> = 0,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6RTStatus_CONNECTING</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_Default</a> = 1 &lt; &lt; 0,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6RTStatus_CONNECTED</a>,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_Models</a> = 1 &lt; &lt; 1,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_ApiCalls</a> = 1 &lt; &lt; 2,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_VoIP</a> = 1 &lt; &lt; 3,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_CallKit</a> = 1 &lt; &lt; 4,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_RTNotifications</a> = 1 &lt; &lt; 5,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_FileManager</a> = 1 &lt; &lt; 6,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_SQLite</a> = 1 &lt; &lt; 7,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6LogOptions_Debug</a> = 1 &lt; &lt; 8,<br/>
                             
                             };</code>
                     
@@ -102,15 +110,8 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="Bit6RTStatus_DISCONNECTED"></a><code>Bit6RTStatus_DISCONNECTED</code></dt>
+                            <dt><a name="" title="Bit6LogOptions_None"></a><code>Bit6LogOptions_None</code></dt>
 <dd>
-
-
-<p>Web Socket is disconnected.</p>
-
-    
-
-    
 
     
 	<p>
@@ -119,15 +120,8 @@
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6RTStatus_CONNECTING"></a><code>Bit6RTStatus_CONNECTING</code></dt>
+                            <dt><a name="" title="Bit6LogOptions_Default"></a><code>Bit6LogOptions_Default</code></dt>
 <dd>
-
-
-<p>Web Socket is tring to connect.</p>
-
-    
-
-    
 
     
 	<p>
@@ -136,15 +130,78 @@
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6RTStatus_CONNECTED"></a><code>Bit6RTStatus_CONNECTED</code></dt>
+                            <dt><a name="" title="Bit6LogOptions_Models"></a><code>Bit6LogOptions_Models</code></dt>
 <dd>
 
-
-<p>Web Socket is connected.</p>
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_ApiCalls"></a><code>Bit6LogOptions_ApiCalls</code></dt>
+<dd>
 
     
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_VoIP"></a><code>Bit6LogOptions_VoIP</code></dt>
+<dd>
 
     
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_CallKit"></a><code>Bit6LogOptions_CallKit</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_RTNotifications"></a><code>Bit6LogOptions_RTNotifications</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_FileManager"></a><code>Bit6LogOptions_FileManager</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_SQLite"></a><code>Bit6LogOptions_SQLite</code></dt>
+<dd>
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6LogOptions_Debug"></a><code>Bit6LogOptions_Debug</code></dt>
+<dd>
 
     
 	<p>
@@ -159,17 +216,6 @@
                     
                     
                     
-
-                    
-                    
-                    
-                    <div class="method-subsection declared-in-section">
-                        <h4 class="method-subtitle">Declared In</h4>
-                        <code class="declared-in-ref">Bit6Constants.h</code><br />
-                    </div>				
-                    
-                    
-                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -180,7 +226,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

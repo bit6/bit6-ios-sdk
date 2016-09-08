@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXUConversationTableViewController.html">
+	<File path="Classes/BXUConversationTableViewCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXUConversationTableViewController</TokenIdentifier>
-			<Abstract type="html">Component to show all the conversations in the system.</Abstract>
-			<DeclaredIn>BXUConversationTableViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUConversationTableViewCell</TokenIdentifier>
+			<Abstract type="html">Unique cell to be used in BXUConversationTableViewController.</Abstract>
+			<DeclaredIn>BXUConversationTableViewCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="8"/>
@@ -13,19 +13,38 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUConversationTableViewController/didSelectConversation:</TokenIdentifier>
-			<Abstract type="html">Called after a conversation has been selected. The default implementation does nothing. You usually override this method to perform additional operations.</Abstract>
-			<DeclaredIn>BXUConversationTableViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUConversationTableViewCell/setUI_APPEARANCE_SELECTOR:</TokenIdentifier>
+			<Abstract type="html">Set to YES to hide the avatar imageView in the cell.</Abstract>
+			<DeclaredIn>BXUConversationTableViewCell.h</DeclaredIn>
 			
-			<Declaration>- (void)didSelectConversation:(Bit6Conversation *)conversation</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>conversation</Name>
-					<Abstract type="html">conversation selected.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic) BOOL hideAvatar UI_APPEARANCE_SELECTOR</Declaration>
 			
-			<Anchor>//api/name/didSelectConversation:</Anchor>
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUConversationTableViewCell/UI_APPEARANCE_SELECTOR</TokenIdentifier>
+			<Abstract type="html">Set to YES to hide the avatar imageView in the cell.</Abstract>
+			<DeclaredIn>BXUConversationTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideAvatar UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUConversationTableViewCell/UI_APPEARANCE_SELECTOR</TokenIdentifier>
+			<Abstract type="html">Set to YES to hide the avatar imageView in the cell.</Abstract>
+			<DeclaredIn>BXUConversationTableViewCell.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideAvatar UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

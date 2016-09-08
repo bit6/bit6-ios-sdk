@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "Bit6Address.h"
 #import "Bit6Transfer.h"
 
@@ -83,7 +84,7 @@ typedef NS_OPTIONS(NSInteger, FreeSWITCHHangupCause) {
     FreeSWITCHHangupCause_GATEWAY_DOWN = 609
 };
 
-/*! Call stream for a <Bit6CallController>. */
+/*! Call streams. */
 typedef NS_OPTIONS(NSInteger, Bit6CallStreams) {
     /*! No stream. */
     Bit6CallStreams_None = 0,
@@ -117,10 +118,11 @@ typedef NS_OPTIONS(NSInteger, Bit6VideoSource) {
     Bit6VideoSource_CameraFront
 };
 
-/*! Call status for a <Bit6CallController>. */
+/*! Call status. */
 typedef NS_ENUM(NSInteger, Bit6CallState) {
     /*! The call hasn't started. */
     Bit6CallState_NEW,
+    
     /*! Answering the incoming call. */
     Bit6CallState_ACCEPTING_CALL,
     /*! Preparing the local sdp candidates. */
@@ -135,14 +137,26 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
     Bit6CallState_CONNECTED,
     /*! The call is disconnected for the moment. */
     Bit6CallState_DISCONNECTED,
-    /*! The call ended. */
-    Bit6CallState_END,
     
-    /*! The call ended with an error. */
-    Bit6CallState_ERROR,
-    /*! It is a missed call. */
-    Bit6CallState_MISSED
+    /*! The call ended. */
+    Bit6CallState_END
 };
+
+/*! Call Capabilities. */
+typedef NS_ENUM(NSInteger, Bit6CallCapability) {
+    /*! The call can be recorded. */
+    Bit6CallCapability_Recording
+};
+
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NSString* Bit6CallMediaMode NS_STRING_ENUM;
+
+/*! The call will go P2P. */
+extern Bit6CallMediaMode const Bit6CallMediaModeP2P;
+
+/*! The call media will be processed by Bit6 servers. */
+extern Bit6CallMediaMode const Bit6CallMediaModeMix;
 
 /*! Bit6CallController represents a call. */
 @interface Bit6CallController : NSObject
@@ -151,18 +165,18 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 /// @name ￼Call Properties
 ///---------------------------------------------------------------------------------------
 
-/*! The delegate to be notified of changes in the call. */
-//@property (nullable, nonatomic, weak) id<Bit6CallControllerDelegate> delegate;
+/*! Unique identifier for the call */
+@property (nonatomic, strong) NSUUID *uuid;
 
 /*! Adds a delegate to be notified of changes in the call. 
  @param delegate object to notify of changes in the call.
  */
-- (void)addDelegate:(nonnull id<Bit6CallControllerDelegate>)delegate;
+- (void)addDelegate:(id<Bit6CallControllerDelegate>)delegate;
 
 /*! Removes a call delegate.
  @param delegate object to remove from the call delegates.
  */
-- (void)removeDelegate:(nonnull id<Bit6CallControllerDelegate>)delegate;
+- (void)removeDelegate:(id<Bit6CallControllerDelegate>)delegate;
 
 /*! Call state as a value of the <Bit6MessageStatus> enumeration.
  @discussion For incoming calls the states go: <b>NEW</b> -> <b>ACCEPTING_CALL</b> -> <b>WAITING_SDP</b> -> <b>GATHERING_CANDIDATES</b> -> <b>SENDING_SDP</b> -> <b>CONNECTING</b> -> <b>CONNECTED</b> -> <b>END</b><br />
@@ -170,8 +184,11 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
  */
 @property (nonatomic, readonly) Bit6CallState state;
 
+/*! Unique identifier for the incoming call. */
+@property (nullable, nonatomic, readonly) NSString *incomingCallIdentifier;
+
 /*! Display name of other side of the call. */
-@property (nonnull, nonatomic, strong) NSString *otherDisplayName;
+@property (nonatomic, strong) NSString *otherDisplayName;
 
 /*! The call is an incoming call. */
 @property (nonatomic, readonly) BOOL incoming;
@@ -186,13 +203,16 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 @property (nullable, nonatomic, strong, readonly) NSError *error;
 
 /*! Identity of the other side of the call. */
-@property (nonnull, nonatomic, strong, readonly) Bit6Address *other;
+@property (nonatomic, strong, readonly) Bit6Address *other;
 
 /*! An integer bit mask that indicates the local streams being sent during the call. */
 @property (nonatomic) Bit6CallStreams localStreams;
 
 /*! An integer bit mask that indicates the remote streams being received during the call. */
-@property (nonatomic, readonly) Bit6CallStreams remoteStreams;
+@property (nonatomic) Bit6CallStreams remoteStreams;
+
+/*! An integer bit mask that indicates the possible streams in the incoming call. */
+@property (nonatomic) Bit6CallStreams availableStreamsForIncomingCall;
 
 /*! The local streams being sent include an audio track. */
 @property (nonatomic, readonly) BOOL hasAudio;
@@ -221,8 +241,31 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 /*! Cause message for the call ended, if available. */
 @property (nullable, nonatomic, strong, readonly) NSString* endedCause;
 
-/*! Used to know if the call didn't connect because the other user rejected the call. */
+/*! Used to know if the call didn't connect because it was rejected. */
 @property (nonatomic, readonly) BOOL rejected;
+
+/*! Used to know if the call ended without being answered. */
+@property (nonatomic, readonly) BOOL missed;
+
+/*! Indicates if the call will go P2P or if the server should process the media. P2P Can't be used for group calls, or if offnet property is set to true. */
+@property (nonatomic, strong) Bit6CallMediaMode mediaMode;
+
+/*! Indicates if the call will go within the Bit6 world (set to false) or it should be a real phone call (set to true). */
+@property (nonatomic) BOOL offnet;
+
+///---------------------------------------------------------------------------------------
+/// @name ￼Capabilities
+///---------------------------------------------------------------------------------------
+
+/*! Indicates if the calls supports the specified capability.
+ @param capability capability to find out if the call supports.
+ @return YES if the call supports the specified capability.
+ */
+- (BOOL)supportsCapability:(Bit6CallCapability)capability;
+
+/*! Starts and stop recording during a call. This can only be used if call media mode is set to Bit6CallMediaModeMix.
+ @see -[Bit6CallController supportsCapability:] */
+@property (nonatomic) BOOL recording;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Actions
@@ -240,9 +283,6 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 /*! Send a hangup message to all <Bit6CallController> objects. */
 + (void)hangupAll;
 
-/*! Declines the call */
-- (void)decline;
-
 @end
 
 @interface Bit6CallController (DataChannel)
@@ -255,50 +295,19 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 ///---------------------------------------------------------------------------------------
 
 /*! List of outgoing <Bit6Transfer> for the current call. */
-@property (nonnull, nonatomic, readonly) NSArray<Bit6OutgoingTransfer*>* outgoingTransfers;
+@property (nonatomic, readonly) NSArray<Bit6OutgoingTransfer*>* outgoingTransfers;
 
 /*! List of incoming <Bit6Transfer> for the current call. */
-@property (nonnull, nonatomic, readonly) NSArray<Bit6Transfer*>* incomingTransfers;
-
-/*! Starts the specified <Bit6OutgoingTransfer> through this call.
- @param transfer <Bit6OutgoingTransfer> to start.
- @note Deprecated: Please use -[Bit6CallController addTransfer:] instead
- */
-- (void)startTransfer:(nonnull Bit6OutgoingTransfer*)transfer __attribute__((deprecated("Please use -[Bit6CallController addTransfer:] instead")));
+@property (nonatomic, readonly) NSArray<Bit6Transfer*>* incomingTransfers;
 
 /*! Starts the specified <Bit6OutgoingTransfer> through this call. If there's another transfer going on, this new transfer will be added to a queue.
  @param transfer <Bit6OutgoingTransfer> to start.
  */
-- (void)addTransfer:(nonnull Bit6OutgoingTransfer*)transfer;
+- (void)addTransfer:(Bit6OutgoingTransfer*)transfer;
 
 @end
 
 @interface Bit6CallController (InputOutput)
-
-/*! The audio from the call is going through the speaker.
- @note Deprecated: Please use +[Bit6CallController isSpeakerEnabled] instead
- */
-+ (BOOL)speakerEnabled __attribute__((deprecated("Please use +[Bit6CallController isSpeakerEnabled] instead")));
-
-/*! The audio from the call is going out through a bluetooth device.
- @note Deprecated: Please use +[Bit6CallController isBluetoothEnabled] instead
- */
-+ (BOOL)bluetoothEnabled __attribute__((deprecated("Please use +[Bit6CallController isBluetoothEnabled] instead")));
-
-/*! The audio is muted for the current call.
- @note Deprecated: Please use +[Bit6CallController isLocalAudioEnabled] instead
- */
-+ (BOOL)audioMuted __attribute__((deprecated("Please use +[Bit6CallController isLocalAudioEnabled] instead")));
-
-/*! The video is muted for the current call.
- @note Deprecated: Please use +[Bit6CallController isLocalVideoEnabled] instead
- */
-+ (BOOL)videoMuted __attribute__((deprecated("Please use +[Bit6CallController isLocalVideoEnabled] instead")));
-
-/*! The call is streaming the video feed from the back camera.
- @note Deprecated: Please use +[Bit6CallController localVideoSource] instead
- */
-+ (BOOL)usingRearCamera __attribute__((deprecated("Please use +[Bit6CallController localVideoSource] instead")));
 
 /*! The audio from the call is going through the speaker. */
 + (BOOL)isSpeakerEnabled;
@@ -314,31 +323,6 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
 
 /*! The current source for the video being sent. */
 + (Bit6VideoSource)localVideoSource;
-
-/*! Switch between the frontal and rear camera, if available. This will be applied to all the running callControllers.
- @note Deprecated: Please use +[Bit6CallController setLocalVideoSource:] instead
- */
-+ (void)switchCamera __attribute__((deprecated("Please use +[Bit6CallController setLocalVideoSource:] instead")));
-
-/*! Mute and unmute the microphone in the current call. This will be applied to all the running callControllers.
- @note Deprecated: Please use +[Bit6CallController setLocalAudioEnabled:] instead
- */
-+ (void)switchMuteAudio __attribute__((deprecated("Please use +[Bit6CallController setLocalAudioEnabled:] instead")));
-
-/*! Mute and unmute the video in the current call. This will be applied to all the running callControllers.
- @note Deprecated: Please use +[Bit6CallController setLocalVideoEnabled:] instead
- */
-+ (void)switchMuteVideo __attribute__((deprecated("Please use +[Bit6CallController setLocalVideoEnabled:] instead")));
-
-/*! Change the audio route from the default one to the speaker, and vice versa. This will be applied to all the running callControllers.
- @note Deprecated: Please use +[Bit6CallController setSpeakerEnabled:] instead
- */
-+ (void)switchSpeaker __attribute__((deprecated("Please use +[Bit6CallController setSpeakerEnabled:] instead")));
-
-/*! Change the audio route from the default one to the available bluetooth device, and vice versa. This will be applied to all the running callControllers.
- @note Deprecated: Please use +[Bit6CallController setBluetoothEnabled:] instead
- */
-+ (void)switchBluetooth __attribute__((deprecated("Please use +[Bit6CallController setBluetoothEnabled:] instead")));
 
 /*! Switch between the frontal and rear camera, and other video sources if available. This will be applied to all the running callControllers.
  @param source the video source to sent during the calls.
@@ -377,18 +361,38 @@ typedef NS_ENUM(NSInteger, Bit6CallState) {
  @param callController The call for which the data channel has changed status.
  @param state new state for the data channel.
  */
-- (void)callController:(nonnull Bit6CallController*)callController dataChannelDidChangeToState:(Bit6DataChannelState)state;
+- (void)callController:(Bit6CallController*)callController dataChannelDidChangeToState:(Bit6DataChannelState)state;
 
 /*! Called when the call state has changed. This method is called in the main thread.
  @param callController The call for which the state has changed.
  @param state new state for the call.
  */
-- (void)callController:(nonnull Bit6CallController*)callController callDidChangeToState:(Bit6CallState)state;
+- (void)callController:(Bit6CallController*)callController callDidChangeToState:(Bit6CallState)state;
 
 /*! Called each second to allow the refresh of a timer UI. This method is called in the main thread.
  @param callController <BitCallController> object which 'seconds' property has changed.
  */
-- (void)secondsDidChangeForCallController:(nonnull Bit6CallController*)callController;
+- (void)secondsDidChangeForCallController:(Bit6CallController*)callController;
+
+/*! Called to notify changes in a transfer during a call. This method is called in the main thread.
+ @param callController <BitCallController> object referring to the call.
+ @param transfer transfer to which the update refers to.
+ @param change change occurring to the transfer. Can be one of the following constants: Bit6TransferStartedKey, Bit6TransferProgressKey, Bit6TransferEndedKey, Bit6TransferEndedWithErrorKey.
+ */
+- (void)callController:(Bit6CallController*)callController transfer:(Bit6Transfer*)transfer change:(NSString*)change;
+
+/*! Called when the local video feed will be interrupted. This method is called in the main thread.
+ @param callController <BitCallController> object referring to the call.
+ @param reason reason for the interruption as a AVCaptureSessionInterruptionReason value. Only AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps is supported at the moment.
+ */
+- (void)callController:(Bit6CallController*)callController localVideoFeedInterruptedBecause:(int)reason;
+
+/*! Called when the local video feed interruption has ended. This method is called in the main thread.
+ @param callController <BitCallController> object referring to the call.
+ */
+- (void)localVideoFeedInterruptionEndedForCallController:(Bit6CallController*)callController;
 
 @end
+
+NS_ASSUME_NONNULL_END
 

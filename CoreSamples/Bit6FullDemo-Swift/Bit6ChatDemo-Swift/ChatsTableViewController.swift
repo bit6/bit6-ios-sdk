@@ -130,14 +130,17 @@ class ChatsTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Calls
     
+    //WARNING: change to Bit6CallMediaModeMix to enable recording during a call
+    static let callMediaMode = Bit6CallMediaModeP2P
+    
     func call() {
         let actionSheet = UIAlertController(title:nil, message: nil, preferredStyle: .ActionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Audio Call", style: .Default, handler:{(action :UIAlertAction) in
-            Bit6.startCallTo(self.conversation.address, streams:[.Audio])
+            Bit6.startCallTo(self.conversation.address, streams:[.Audio], mediaMode:ChatsTableViewController.callMediaMode, offnet: false)
         }))
         actionSheet.addAction(UIAlertAction(title: "Video Call", style: .Default, handler:{(action :UIAlertAction) in
-            Bit6.startCallTo(self.conversation.address, streams:[.Audio,.Video])
+            Bit6.startCallTo(self.conversation.address, streams:[.Audio,.Video], mediaMode:ChatsTableViewController.callMediaMode, offnet: false)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:nil))

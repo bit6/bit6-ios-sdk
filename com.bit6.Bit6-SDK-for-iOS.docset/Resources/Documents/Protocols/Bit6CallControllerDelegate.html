@@ -47,6 +47,12 @@
 	
 	<option value="//api/name/callController:dataChannelDidChangeToState:">&nbsp;&nbsp;&nbsp;&nbsp;- callController:dataChannelDidChangeToState:</option>
 	
+	<option value="//api/name/callController:localVideoFeedInterruptedBecause:">&nbsp;&nbsp;&nbsp;&nbsp;- callController:localVideoFeedInterruptedBecause:</option>
+	
+	<option value="//api/name/callController:transfer:change:">&nbsp;&nbsp;&nbsp;&nbsp;- callController:transfer:change:</option>
+	
+	<option value="//api/name/localVideoFeedInterruptionEndedForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- localVideoFeedInterruptionEndedForCallController:</option>
+	
 	<option value="//api/name/secondsDidChangeForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsDidChangeForCallController:</option>
 	
 	
@@ -80,6 +86,12 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:callDidChangeToState:">callController:callDidChangeToState:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:dataChannelDidChangeToState:">callController:dataChannelDidChangeToState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:localVideoFeedInterruptedBecause:">callController:localVideoFeedInterruptedBecause:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:transfer:change:">callController:transfer:change:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localVideoFeedInterruptionEndedForCallController:">localVideoFeedInterruptionEndedForCallController:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsDidChangeForCallController:">secondsDidChangeForCallController:</a></span></li>
 	
@@ -154,6 +166,24 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callController:transfer:change:">&ndash;&nbsp;callController:transfer:change:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callController:localVideoFeedInterruptedBecause:">&ndash;&nbsp;callController:localVideoFeedInterruptedBecause:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localVideoFeedInterruptionEndedForCallController:">&ndash;&nbsp;localVideoFeedInterruptionEndedForCallController:</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -183,7 +213,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)callController:(nonnull Bit6CallController *)<em>callController</em> callDidChangeToState:(Bit6CallState)<em>state</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)callController:(Bit6CallController *)<em>callController</em> callDidChangeToState:(Bit6CallState)<em>state</em></code></div>
 
     
 	
@@ -234,7 +264,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)callController:(nonnull Bit6CallController *)<em>callController</em> dataChannelDidChangeToState:(Bit6DataChannelState)<em>state</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)callController:(Bit6CallController *)<em>callController</em> dataChannelDidChangeToState:(Bit6DataChannelState)<em>state</em></code></div>
 
     
 	
@@ -274,6 +304,159 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/callController:localVideoFeedInterruptedBecause:" title="callController:localVideoFeedInterruptedBecause:"></a>
+	<h3 class="subsubtitle method-title">callController:localVideoFeedInterruptedBecause:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the local video feed will be interrupted. This method is called in the main thread.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)callController:(Bit6CallController *)<em>callController</em> localVideoFeedInterruptedBecause:(int)<em>reason</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object referring to the call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reason</em></dt>
+			<dd><p>reason for the interruption as a AVCaptureSessionInterruptionReason value. Only AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps is supported at the moment.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/callController:transfer:change:" title="callController:transfer:change:"></a>
+	<h3 class="subsubtitle method-title">callController:transfer:change:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called to notify changes in a transfer during a call. This method is called in the main thread.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)callController:(Bit6CallController *)<em>callController</em> transfer:(Bit6Transfer *)<em>transfer</em> change:(NSString *)<em>change</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object referring to the call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>transfer</em></dt>
+			<dd><p>transfer to which the update refers to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>change</em></dt>
+			<dd><p>change occurring to the transfer. Can be one of the following constants: Bit6TransferStartedKey, Bit6TransferProgressKey, Bit6TransferEndedKey, Bit6TransferEndedWithErrorKey.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localVideoFeedInterruptionEndedForCallController:" title="localVideoFeedInterruptionEndedForCallController:"></a>
+	<h3 class="subsubtitle method-title">localVideoFeedInterruptionEndedForCallController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the local video feed interruption has ended. This method is called in the main thread.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)localVideoFeedInterruptionEndedForCallController:(Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object referring to the call.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/secondsDidChangeForCallController:" title="secondsDidChangeForCallController:"></a>
 	<h3 class="subsubtitle method-title">secondsDidChangeForCallController:</h3>
 	
@@ -285,7 +468,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)secondsDidChangeForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)secondsDidChangeForCallController:(Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -334,7 +517,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

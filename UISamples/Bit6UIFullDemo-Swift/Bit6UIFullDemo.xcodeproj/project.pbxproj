@@ -19,6 +19,9 @@
 		D86262271CC7EE7000E061DD /* Bit6UIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D86262261CC7EE7000E061DD /* Bit6UIResources.bundle */; };
 		D86262291CC7EE7A00E061DD /* Bit6UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86262281CC7EE7A00E061DD /* Bit6UI.framework */; };
 		D862622B1CC80B1600E061DD /* DemoContactSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862622A1CC80B1600E061DD /* DemoContactSource.swift */; };
+		D88183841D6F686400F3ABE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D88183831D6F686400F3ABE0 /* InfoPlist.strings */; };
+		D88183A71D6FAE5200F3ABE0 /* CustomCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88183A61D6FAE5200F3ABE0 /* CustomCallViewController.swift */; };
+		D88183A91D6FAE6700F3ABE0 /* CustomCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88183A81D6FAE6700F3ABE0 /* CustomCallViewController.xib */; };
 		D894B88C1CC935BF00211A29 /* Bit6UI.strings in Resources */ = {isa = PBXBuildFile; fileRef = D894B88B1CC935BF00211A29 /* Bit6UI.strings */; };
 		D8BB52791ACB22E30074947D /* ConversationDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +42,9 @@
 		D86262261CC7EE7000E061DD /* Bit6UIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Bit6UIResources.bundle; path = ../../../Bit6UIResources.bundle; sourceTree = "<group>"; };
 		D86262281CC7EE7A00E061DD /* Bit6UI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6UI.framework; path = ../../../Bit6UI.framework; sourceTree = "<group>"; };
 		D862622A1CC80B1600E061DD /* DemoContactSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoContactSource.swift; sourceTree = "<group>"; };
+		D88183831D6F686400F3ABE0 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		D88183A61D6FAE5200F3ABE0 /* CustomCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCallViewController.swift; sourceTree = "<group>"; };
+		D88183A81D6FAE6700F3ABE0 /* CustomCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCallViewController.xib; sourceTree = "<group>"; };
 		D894B88B1CC935BF00211A29 /* Bit6UI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Bit6UI.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Bit6UI.strings"; sourceTree = SOURCE_ROOT; };
 		D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +88,7 @@
 				D80D4BAC1A216AD400391E04 /* ChatsTableViewController.swift */,
 				D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */,
 				D862622A1CC80B1600E061DD /* DemoContactSource.swift */,
+				D88183AA1D6FAE6E00F3ABE0 /* InCall */,
 				D80D4B6C1A2150DA00391E04 /* Images.xcassets */,
 				D85AA65D1CC56B1F00E4FA74 /* Main.storyboard */,
 				D80D4B631A2150DA00391E04 /* Supporting Files */,
@@ -95,12 +102,22 @@
 				D894B88B1CC935BF00211A29 /* Bit6UI.strings */,
 				D86262261CC7EE7000E061DD /* Bit6UIResources.bundle */,
 				D85AA6591CC56B0400E4FA74 /* Localizable.strings */,
+				D88183831D6F686400F3ABE0 /* InfoPlist.strings */,
 				D85AA65A1CC56B0400E4FA74 /* ringtone.caf */,
 				D86262281CC7EE7A00E061DD /* Bit6UI.framework */,
 				D80D4B8D1A21514A00391E04 /* Bit6.framework */,
 				D80D4B641A2150DA00391E04 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D88183AA1D6FAE6E00F3ABE0 /* InCall */ = {
+			isa = PBXGroup;
+			children = (
+				D88183A61D6FAE5200F3ABE0 /* CustomCallViewController.swift */,
+				D88183A81D6FAE6700F3ABE0 /* CustomCallViewController.xib */,
+			);
+			name = InCall;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86262271CC7EE7000E061DD /* Bit6UIResources.bundle in Resources */,
+				D88183841D6F686400F3ABE0 /* InfoPlist.strings in Resources */,
 				D894B88C1CC935BF00211A29 /* Bit6UI.strings in Resources */,
+				D88183A91D6FAE6700F3ABE0 /* CustomCallViewController.xib in Resources */,
 				D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */,
 				D85AA65B1CC56B0400E4FA74 /* Localizable.strings in Resources */,
 				D85AA65C1CC56B0400E4FA74 /* ringtone.caf in Resources */,
@@ -206,6 +225,7 @@
 				D8BB52791ACB22E30074947D /* ConversationDetailsTableViewController.swift in Sources */,
 				D80D4BA91A215A8B00391E04 /* LoginViewController.swift in Sources */,
 				D80D4B661A2150DA00391E04 /* AppDelegate.swift in Sources */,
+				D88183A71D6FAE5200F3ABE0 /* CustomCallViewController.swift in Sources */,
 				D80D4BAD1A216AD400391E04 /* ChatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

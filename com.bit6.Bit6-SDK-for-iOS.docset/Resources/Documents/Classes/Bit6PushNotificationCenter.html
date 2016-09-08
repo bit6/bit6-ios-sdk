@@ -41,7 +41,13 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/setCategories:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCategories:</option>
+	<option value="//api/name/addressForMessageNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ addressForMessageNotification:</option>
+	
+	<option value="//api/name/isIncomingCallNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ isIncomingCallNotification:</option>
+	
+	<option value="//api/name/isIncomingMessageNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ isIncomingMessageNotification:</option>
+	
+	<option value="//api/name/isMissedCallNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ isMissedCallNotification:</option>
 	
 	
 	
@@ -50,17 +56,23 @@
 	
 	<option value="//api/name/didFailToRegisterForRemoteNotificationsWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- didFailToRegisterForRemoteNotificationsWithError:</option>
 	
-	<option value="//api/name/didReceiveRemoteNotification:">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveRemoteNotification:</option>
+	<option value="//api/name/didReceiveNotificationUserInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveNotificationUserInfo:</option>
 	
-	<option value="//api/name/didReceiveRemoteNotification:fetchCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveRemoteNotification:fetchCompletionHandler:</option>
+	<option value="//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveNotificationUserInfo:fetchCompletionHandler:</option>
 	
 	<option value="//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">&nbsp;&nbsp;&nbsp;&nbsp;- didRegisterForRemoteNotificationsWithDeviceToken:</option>
 	
-	<option value="//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forRemoteNotification:completionHandler:</option>
+	<option value="//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</option>
 	
-	<option value="//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</option>
+	<option value="//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</option>
 	
 	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:">&nbsp;&nbsp;&nbsp;&nbsp;- pushRegistry:didReceiveIncomingPushWithPayload:forType:</option>
+	
+	<option value="//api/name/pushRegistry:didUpdatePushCredentials:forType:">&nbsp;&nbsp;&nbsp;&nbsp;- pushRegistry:didUpdatePushCredentials:forType:</option>
+	
+	<option value="//api/name/setCategories:">&nbsp;&nbsp;&nbsp;&nbsp;- setCategories:</option>
 	
 	
 	
@@ -78,6 +90,10 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Helpers">￼Helpers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼VoIP Push Notifications">￼VoIP Push Notifications</a></span></li>
+	
 </ul></li>
 
 
@@ -88,7 +104,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCategories:">setCategories:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressForMessageNotification:">addressForMessageNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isIncomingCallNotification:">isIncomingCallNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isIncomingMessageNotification:">isIncomingMessageNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMissedCallNotification:">isMissedCallNotification:</a></span></li>
 	
 </ul></li>
 
@@ -98,17 +120,23 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didFailToRegisterForRemoteNotificationsWithError:">didFailToRegisterForRemoteNotificationsWithError:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveRemoteNotification:">didReceiveRemoteNotification:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveNotificationUserInfo:">didReceiveNotificationUserInfo:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveRemoteNotification:fetchCompletionHandler:">didReceiveRemoteNotification:fetchCompletionHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:">didReceiveNotificationUserInfo:fetchCompletionHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">didRegisterForRemoteNotificationsWithDeviceToken:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:">handleActionWithIdentifier:forRemoteNotification:completionHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:">handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:">handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:">pushRegistry:didReceiveIncomingPushWithPayload:forType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushRegistry:didUpdatePushCredentials:forType:">pushRegistry:didUpdatePushCredentials:forType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCategories:">setCategories:</a></span></li>
 	
 </ul></li>
 
@@ -160,7 +188,7 @@
 						
 						
 						
-						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
@@ -171,31 +199,31 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setCategories:">+&nbsp;setCategories:</a></code>
+		<code><a href="#//api/name/setCategories:">&ndash;&nbsp;setCategories:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/didReceiveRemoteNotification:">&ndash;&nbsp;didReceiveRemoteNotification:</a></code>
+		<code><a href="#//api/name/didReceiveNotificationUserInfo:">&ndash;&nbsp;didReceiveNotificationUserInfo:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/didReceiveRemoteNotification:fetchCompletionHandler:">&ndash;&nbsp;didReceiveRemoteNotification:fetchCompletionHandler:</a></code>
+		<code><a href="#//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:">&ndash;&nbsp;didReceiveNotificationUserInfo:fetchCompletionHandler:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:">&ndash;&nbsp;handleActionWithIdentifier:forRemoteNotification:completionHandler:</a></code>
+		<code><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:">&ndash;&nbsp;handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">&ndash;&nbsp;handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</a></code>
+		<code><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:">&ndash;&nbsp;handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</a></code>
 	</span>
 	
 	
@@ -208,6 +236,58 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/didFailToRegisterForRemoteNotificationsWithError:">&ndash;&nbsp;didFailToRegisterForRemoteNotificationsWithError:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Helpers" name="task_￼Helpers"></a>
+						<h3 class="subsubtitle task-title">￼Helpers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isIncomingCallNotification:">+&nbsp;isIncomingCallNotification:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMissedCallNotification:">+&nbsp;isMissedCallNotification:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isIncomingMessageNotification:">+&nbsp;isIncomingMessageNotification:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addressForMessageNotification:">+&nbsp;addressForMessageNotification:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼VoIP Push Notifications" name="task_￼VoIP Push Notifications"></a>
+						<h3 class="subsubtitle task-title">￼VoIP Push Notifications</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushRegistry:didUpdatePushCredentials:forType:">&ndash;&nbsp;pushRegistry:didUpdatePushCredentials:forType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:">&ndash;&nbsp;pushRegistry:didReceiveIncomingPushWithPayload:forType:</a></code>
 	</span>
 	
 	
@@ -227,18 +307,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/setCategories:" title="setCategories:"></a>
-	<h3 class="subsubtitle method-title">setCategories:</h3>
+	<a name="//api/name/addressForMessageNotification:" title="addressForMessageNotification:"></a>
+	<h3 class="subsubtitle method-title">addressForMessageNotification:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</p>
+		<p>Gets the origin identity for the incoming message notification userInfo param.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)setCategories:(nonnull NSArray&lt;UIUserNotificationCategory*&gt; *)<em>categories</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6Address *)addressForMessageNotification:(NSDictionary *)<em>userInfo</em></code></div>
 
     
 	
@@ -246,22 +326,175 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>categories</em></dt>
-			<dd><p>array of categories to register.</p></dd>
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> These identifiers cannot be used in custom categories/actions: com.bit6.actionDecline, com.bit6.actionAnswer, com.bit6.msgReply, com.bit6.incomingCall, reply.</p></div>
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the origin identity for the incoming message.</p>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isIncomingCallNotification:" title="isIncomingCallNotification:"></a>
+	<h3 class="subsubtitle method-title">isIncomingCallNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if a push notification refers to an incoming call</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isIncomingCallNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the push notification refers to an incoming call.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isIncomingMessageNotification:" title="isIncomingMessageNotification:"></a>
+	<h3 class="subsubtitle method-title">isIncomingMessageNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if a push notification refers to an incoming message.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isIncomingMessageNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the push notification refers to an incoming message.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMissedCallNotification:" title="isMissedCallNotification:"></a>
+	<h3 class="subsubtitle method-title">isMissedCallNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if a push notification refers to a missed incoming call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isMissedCallNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the push notification refers to a missed incoming call.</p>
+	</div>
+	
+	
+	
+	
 	
 	
 	
@@ -297,7 +530,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)didFailToRegisterForRemoteNotificationsWithError:(nonnull NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)<em>error</em></code></div>
 
     
 	
@@ -332,18 +565,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/didReceiveRemoteNotification:" title="didReceiveRemoteNotification:"></a>
-	<h3 class="subsubtitle method-title">didReceiveRemoteNotification:</h3>
+	<a name="//api/name/didReceiveNotificationUserInfo:" title="didReceiveNotificationUserInfo:"></a>
+	<h3 class="subsubtitle method-title">didReceiveNotificationUserInfo:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] implementation.</p>
+		<p>Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] and -[UIApplicationDelegate application:didReceiveLocalNotification:] implementation.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)didReceiveRemoteNotification:(nonnull NSDictionary *)<em>userInfo</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didReceiveNotificationUserInfo:(NSDictionary *)<em>userInfo</em></code></div>
 
     
 	
@@ -378,8 +611,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/didReceiveRemoteNotification:fetchCompletionHandler:" title="didReceiveRemoteNotification:fetchCompletionHandler:"></a>
-	<h3 class="subsubtitle method-title">didReceiveRemoteNotification:fetchCompletionHandler:</h3>
+	<a name="//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:" title="didReceiveNotificationUserInfo:fetchCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">didReceiveNotificationUserInfo:fetchCompletionHandler:</h3>
 	
 	
 	
@@ -389,7 +622,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)didReceiveRemoteNotification:(nonnull NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didReceiveNotificationUserInfo:(NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
 
     
 	
@@ -440,7 +673,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)<em>deviceToken</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)<em>deviceToken</em></code></div>
 
     
 	
@@ -477,18 +710,18 @@ Note that the device token is different from the uniqueIdentifier property of UI
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/handleActionWithIdentifier:forRemoteNotification:completionHandler:" title="handleActionWithIdentifier:forRemoteNotification:completionHandler:"></a>
-	<h3 class="subsubtitle method-title">handleActionWithIdentifier:forRemoteNotification:completionHandler:</h3>
+	<a name="//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:" title="handleActionWithIdentifier:forNotificationUserInfo:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:] implementation.</p>
+		<p>Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:] and -[UIApplicationDelegate application:handleActionWithIdentifier:forLocalNotification:completionHandler:] implementations.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forRemoteNotification:(nonnull NSDictionary *)<em>userInfo</em> completionHandler:(nonnull void ( ^ ) ( ))<em>completionHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forNotificationUserInfo:(NSDictionary *)<em>userInfo</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
 
     
 	
@@ -533,18 +766,18 @@ Note that the device token is different from the uniqueIdentifier property of UI
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:" title="handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:"></a>
-	<h3 class="subsubtitle method-title">handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</h3>
+	<a name="//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:" title="handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:] implementation.</p>
+		<p>Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:] and -[UIApplicationDelegate application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:] implementation.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forRemoteNotification:(nonnull NSDictionary *)<em>userInfo</em> withResponseInfo:(nonnull NSDictionary *)<em>responseInfo</em> completionHandler:(nonnull void ( ^ ) ( ))<em>completionHandler</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forNotificationUserInfo:(NSDictionary *)<em>userInfo</em> withResponseInfo:(NSDictionary *)<em>responseInfo</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
 
     
 	
@@ -605,7 +838,7 @@ Note that the device token is different from the uniqueIdentifier property of UI
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
     
 	
@@ -619,6 +852,169 @@ Note that the device token is different from the uniqueIdentifier property of UI
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:" title="pushRegistry:didReceiveIncomingPushWithPayload:forType:"></a>
+	<h3 class="subsubtitle method-title">pushRegistry:didReceiveIncomingPushWithPayload:forType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is invoked when a push notification has been received for the specified PKPushType.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pushRegistry:(PKPushRegistry *)<em>registry</em> didReceiveIncomingPushWithPayload:(PKPushPayload *)<em>payload</em> forType:(NSString *)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>registry</em></dt>
+			<dd><p>The PKPushRegistry instance responsible for the delegate callback.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>payload</em></dt>
+			<dd><p>The push payload sent by a developer via APNS server API.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>This is a PKPushType NSString constant which is present in [registry desiredPushTypes].</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushRegistry:didUpdatePushCredentials:forType:" title="pushRegistry:didUpdatePushCredentials:forType:"></a>
+	<h3 class="subsubtitle method-title">pushRegistry:didUpdatePushCredentials:forType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is invoked when new credentials (including push token) have been received for the specified PKPushType.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pushRegistry:(PKPushRegistry *)<em>registry</em> didUpdatePushCredentials:(PKPushCredentials *)<em>credentials</em> forType:(NSString *)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>registry</em></dt>
+			<dd><p>The PKPushRegistry instance responsible for the delegate callback.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>credentials</em></dt>
+			<dd><p>The push credentials that can be used to send pushes to the device for the specified PKPushType.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>This is a PKPushType NSString constant which is present in [registry desiredPushTypes].</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCategories:" title="setCategories:"></a>
+	<h3 class="subsubtitle method-title">setCategories:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCategories:(NSArray&lt;UIUserNotificationCategory*&gt; *)<em>categories</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>categories</em></dt>
+			<dd><p>array of categories to register.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> These identifiers cannot be used in custom categories/actions: com.bit6.actionDecline, com.bit6.actionAnswer, com.bit6.msgReply, com.bit6.incomingCall, reply.</p></div>
+	</div>
 	
 	
 	
@@ -649,7 +1045,7 @@ Note that the device token is different from the uniqueIdentifier property of UI
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -123,10 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				D8C4CC371C9F15C40026B9C0 /* Localizable.strings */,
+				D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */,
 				D83B37821CC3FA4800C5F18E /* ringtone.caf */,
 				D8EDACB5194ABD2A00AFFB53 /* Bit6FullDemo-Info.plist */,
 				D8EDACB6194ABD2A00AFFB53 /* Bit6FullDemo-Prefix.pch */,
-				D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */,
 				D8EDACB8194ABD2A00AFFB53 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -303,6 +303,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6FullDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6FullDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6FullDemo;
 				WRAPPER_EXTENSION = app;
@@ -320,6 +321,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6FullDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6FullDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6FullDemo;
 				WRAPPER_EXTENSION = app;

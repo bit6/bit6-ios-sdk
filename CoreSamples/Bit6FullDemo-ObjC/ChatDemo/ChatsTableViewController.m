@@ -125,17 +125,20 @@
 
 #pragma mark - Calls
 
+#warning change to Bit6CallMediaModeMix to enable recording during a call
+#define callMediaMode Bit6CallMediaModeP2P
+
 - (void)call {
     UIAlertController* actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Audio Call" style:UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction * action) {
-                                                      [Bit6 startCallTo:self.conversation.address streams:Bit6CallStreams_Audio];
+                                                      [Bit6 startCallTo:self.conversation.address streams:Bit6CallStreams_Audio mediaMode:callMediaMode offnet:NO];
                                                   }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Video Call" style:UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction * action) {
-                                                      [Bit6 startCallTo:self.conversation.address streams:Bit6CallStreams_Audio|Bit6CallStreams_Video];
+                                                      [Bit6 startCallTo:self.conversation.address streams:Bit6CallStreams_Audio|Bit6CallStreams_Video mediaMode:callMediaMode offnet:NO];
                                                   }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUContactSource.html">
+	<File path="Protocols/BXUAttachmentImageViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUContactSource</TokenIdentifier>
-			<Abstract type="html">Data Source to provide the display names and avatars for each identity through the framework.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUAttachmentImageViewDelegate</TokenIdentifier>
+			<Abstract type="html">The BXUAttachmentImageViewDelegate protocol defines the methods a delegate of a BXUAttachmentImageView object should implement. The methods of this protocol notify the delegate when the imageview  has been tapped.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,36 +13,82 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContactSource/contactForURI:</TokenIdentifier>
-			<Abstract type="html">Called to retrieve a BXUContact for an identity.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectImageMessage:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with an image attached.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
 			
-			<Declaration>- (nullable id&lt;BXUContact&gt;)contactForURI:(nonnull NSString *)uri</Declaration>
+			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectImageMessage:(Bit6Message *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>uri</Name>
-					<Abstract type="html">URI identity of the contact.</Abstract>
+					<Name>attachmentImageView</Name>
+					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">the message associated with the imageView.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">contact matching the URI provided.</Abstract></ReturnValue>
-			<Anchor>//api/name/contactForURI:</Anchor>
+			
+			<Anchor>//api/name/attachmentImageView:didSelectImageMessage:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContactSource/matchContactsForString:</TokenIdentifier>
-			<Abstract type="html">Called to retrieve BXUContact objects based on a string.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectVideoMessage:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with a video attached.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSArray&lt;id&lt;BXUContact&gt; &gt; *)matchContactsForString:(nonnull NSString *)string</Declaration>
+			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectVideoMessage:(Bit6Message *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>string</Name>
-					<Abstract type="html">string to obtain BXUContact objects</Abstract>
+					<Name>attachmentImageView</Name>
+					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">the message associated with the imageView.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">contacts matching the string provided.</Abstract></ReturnValue>
-			<Anchor>//api/name/matchContactsForString:</Anchor>
+			
+			<Anchor>//api/name/attachmentImageView:didSelectVideoMessage:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectLocationMessage:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with a location attached.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectLocationMessage:(Bit6Message *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attachmentImageView</Name>
+					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">the message associated with the imageView.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/attachmentImageView:didSelectLocationMessage:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectAudioMessage:</TokenIdentifier>
+			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with an audio attached.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectAudioMessage:(Bit6Message *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attachmentImageView</Name>
+					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">the message associated with the imageView.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/attachmentImageView:didSelectAudioMessage:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

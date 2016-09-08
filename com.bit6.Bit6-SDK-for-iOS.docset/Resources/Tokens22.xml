@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6CurrentLocationControllerDelegate.html">
+	<File path="Protocols/Bit6CallControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6CurrentLocationControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6CurrentLocationControllerDelegate protocol defines the methods a delegate of a Bit6CurrentLocationController object should implement. The methods of this protocol notify your delegate when the user&apos;s location has been obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6CallControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6DataChannelDelegate protocol defines the methods an object should implement to listen to changes during a call.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,45 +13,119 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didFailWithError:message:</TokenIdentifier>
-			<Abstract type="html">Called when the user&apos;s location couldn&apos;t be obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/callController:dataChannelDidChangeToState:</TokenIdentifier>
+			<Abstract type="html">Called when the data channel state has changed. This method is called in the main thread.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didFailWithError:(nonnull NSError *)error message:(nonnull Bit6OutgoingMessage *)message</Declaration>
+			<Declaration>- (void)callController:(Bit6CallController *)callController dataChannelDidChangeToState:(Bit6DataChannelState)state</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>b6clc</Name>
-					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">The call for which the data channel has changed status.</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">the error object describing the problem to obtain the location</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+					<Name>state</Name>
+					<Abstract type="html">new state for the data channel.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/currentLocationController:didFailWithError:message:</Anchor>
+			<Anchor>//api/name/callController:dataChannelDidChangeToState:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CurrentLocationControllerDelegate/currentLocationController:didGetLocationForMessage:</TokenIdentifier>
-			<Abstract type="html">Called when the user&apos;s location has been obtained.</Abstract>
-			<DeclaredIn>Bit6CurrentLocationController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/callController:callDidChangeToState:</TokenIdentifier>
+			<Abstract type="html">Called when the call state has changed. This method is called in the main thread.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
 			
-			<Declaration>- (void)currentLocationController:(nonnull Bit6CurrentLocationController *)b6clc didGetLocationForMessage:(nonnull Bit6OutgoingMessage *)message</Declaration>
+			<Declaration>- (void)callController:(Bit6CallController *)callController callDidChangeToState:(Bit6CallState)state</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>b6clc</Name>
-					<Abstract type="html">The controller object obtaining the user&apos;s location.</Abstract>
+					<Name>callController</Name>
+					<Abstract type="html">The call for which the state has changed.</Abstract>
 				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">same message object set in [Bit6CurrentLocationController startListeningToLocationForMessage:delegate:] with the user&apos;s location set.</Abstract>
+					<Name>state</Name>
+					<Abstract type="html">new state for the call.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/currentLocationController:didGetLocationForMessage:</Anchor>
+			<Anchor>//api/name/callController:callDidChangeToState:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/secondsDidChangeForCallController:</TokenIdentifier>
+			<Abstract type="html">Called each second to allow the refresh of a timer UI. This method is called in the main thread.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)secondsDidChangeForCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object which &apos;seconds&apos; property has changed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/secondsDidChangeForCallController:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/callController:transfer:change:</TokenIdentifier>
+			<Abstract type="html">Called to notify changes in a transfer during a call. This method is called in the main thread.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)callController:(Bit6CallController *)callController transfer:(Bit6Transfer *)transfer change:(NSString *)change</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object referring to the call.</Abstract>
+				</Parameter><Parameter>
+					<Name>transfer</Name>
+					<Abstract type="html">transfer to which the update refers to.</Abstract>
+				</Parameter><Parameter>
+					<Name>change</Name>
+					<Abstract type="html">change occurring to the transfer. Can be one of the following constants: Bit6TransferStartedKey, Bit6TransferProgressKey, Bit6TransferEndedKey, Bit6TransferEndedWithErrorKey.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/callController:transfer:change:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/callController:localVideoFeedInterruptedBecause:</TokenIdentifier>
+			<Abstract type="html">Called when the local video feed will be interrupted. This method is called in the main thread.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)callController:(Bit6CallController *)callController localVideoFeedInterruptedBecause:(int)reason</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object referring to the call.</Abstract>
+				</Parameter><Parameter>
+					<Name>reason</Name>
+					<Abstract type="html">reason for the interruption as a AVCaptureSessionInterruptionReason value. Only AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps is supported at the moment.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/callController:localVideoFeedInterruptedBecause:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/localVideoFeedInterruptionEndedForCallController:</TokenIdentifier>
+			<Abstract type="html">Called when the local video feed interruption has ended. This method is called in the main thread.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			
+			<Declaration>- (void)localVideoFeedInterruptionEndedForCallController:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">&lt;BitCallController&gt; object referring to the call.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/localVideoFeedInterruptionEndedForCallController:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

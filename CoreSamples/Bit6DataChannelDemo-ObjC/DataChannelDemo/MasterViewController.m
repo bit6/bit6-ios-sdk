@@ -25,18 +25,6 @@
 
 @implementation MasterViewController
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(transferUpdateNotification:)
-                                                     name:Bit6TransferUpdateNotification
-                                                   object:nil];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.logsTextView.layer.borderColor = [UIColor blackColor].CGColor;
@@ -146,7 +134,7 @@
 }
 
 - (IBAction)connect:(id)sender {
-    if (! [[Bit6 callControllers] firstObject]) {
+    if (! [[Bit6 activeCalls] firstObject]) {
         NSString *destinationString = self.destinationTextField.text;
         Bit6Address *address = nil;
         if ([destinationString rangeOfString:@":"].location != NSNotFound) {
@@ -221,63 +209,61 @@
 - (void)callController:(nonnull Bit6CallController*)callController callDidChangeToState:(Bit6CallState)state
 {
     switch (state) {
-        case Bit6CallState_MISSED:
-            self.callController = nil;
-            [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",self.callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            break;
         case Bit6CallState_NEW: case Bit6CallState_ACCEPTING_CALL: case Bit6CallState_GATHERING_CANDIDATES: case Bit6CallState_WAITING_SDP: case Bit6CallState_SENDING_SDP: case Bit6CallState_CONNECTING: case Bit6CallState_DISCONNECTED: break;
         case Bit6CallState_CONNECTED:
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(selectPicture:)];
             [self.connectButton setTitle:@"Disconnect" forState:UIControlStateNormal];
             self.destinationTextField.enabled = NO;
             break;
-        case Bit6CallState_END: case Bit6CallState_ERROR:
-            self.navigationItem.rightBarButtonItem = nil;
-            [self.connectButton setTitle:@"Connect" forState:UIControlStateNormal];
-            self.callController = nil;
-            self.destinationTextField.enabled = YES;
+        case Bit6CallState_END:
+            if (callController.missed) {
+                self.callController = nil;
+                [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Missed Call from %@",self.callController.otherDisplayName] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            }
+            else {
+                self.navigationItem.rightBarButtonItem = nil;
+                [self.connectButton setTitle:@"Connect" forState:UIControlStateNormal];
+                self.callController = nil;
+                self.destinationTextField.enabled = YES;
+            }
     }
 }
 
 #pragma mark - Transfers
 
-- (void)transferUpdateNotification:(NSNotification*)notification
+- (void)callController:(nonnull Bit6CallController*)callController transfer:(nonnull Bit6Transfer*)transfer change:(nonnull NSString*)change
 {
-    Bit6Transfer *object = notification.userInfo[Bit6ObjectKey];
-    NSString *change = notification.userInfo[Bit6ChangeKey];
-    Bit6CallController *callController = notification.object;
-    
     if (callController == self.callController) {
         if ([change isEqualToString:Bit6TransferStartedKey]) {
-            [self log:[NSString stringWithFormat:@"%@ - STARTED\n", object.name]];
+            [self log:[NSString stringWithFormat:@"%@ - STARTED\n", transfer.name]];
         }
         else if ([change isEqualToString:Bit6TransferProgressKey]) {
-            CGFloat progressAtTheMoment = [notification.userInfo[Bit6ProgressKey] floatValue]*100.0;
-            if (object.type == Bit6TransferType_INCOMING) {
-                self.receiveLabel.text = [NSString stringWithFormat:@"Recv: %@ %.2f%%", object.name, progressAtTheMoment];
+            CGFloat progressAtTheMoment = transfer.progress*100.0;
+            if (transfer.type == Bit6TransferType_INCOMING) {
+                self.receiveLabel.text = [NSString stringWithFormat:@"Recv: %@ %.2f%%", transfer.name, progressAtTheMoment];
             }
             else {
-                self.sentLabel.text = [NSString stringWithFormat:@"Send: %@ %.2f%%", object.name, progressAtTheMoment];
+                self.sentLabel.text = [NSString stringWithFormat:@"Send: %@ %.2f%%", transfer.name, progressAtTheMoment];
             }
             
         }
         else if ([change isEqualToString:Bit6TransferEndedKey]) {
-            if (object.type == Bit6TransferType_INCOMING) {
-                [self log:[NSString stringWithFormat:@"%@ - RECEIVED", object.name]];
+            if (transfer.type == Bit6TransferType_INCOMING) {
+                [self log:[NSString stringWithFormat:@"%@ - RECEIVED", transfer.name]];
                 
-                NSData *data = object.data;
+                NSData *data = transfer.data;
                 
-                if ([object.mimeType hasPrefix:@"image/"]) {
+                if ([transfer.mimeType hasPrefix:@"image/"]) {
                     DetailViewController *detail = (DetailViewController *)[self.splitViewController.viewControllers[1] topViewController];
                     [detail addImage:[UIImage imageWithData:data]];
                 }
             }
             else {
-                [self log:[NSString stringWithFormat:@"%@ - SENT", object.name]];
+                [self log:[NSString stringWithFormat:@"%@ - SENT", transfer.name]];
             }
         }
         else if ([change isEqualToString:Bit6TransferEndedWithErrorKey]) {
-            NSLog(@"%@",object.error.localizedDescription);
+            NSLog(@"%@",transfer.error.localizedDescription);
         }
     }
 }

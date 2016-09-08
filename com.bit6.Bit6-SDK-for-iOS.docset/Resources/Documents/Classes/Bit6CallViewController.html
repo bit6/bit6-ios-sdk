@@ -37,6 +37,11 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/localVideoView">&nbsp;&nbsp;&nbsp;&nbsp;localVideoView</option>
+	
+	
 	
 	
 	<option value="class_methods">Class Methods</option>
@@ -50,11 +55,11 @@
 	
 	<option value="//api/name/callController:callDidChangeToState:">&nbsp;&nbsp;&nbsp;&nbsp;- callController:callDidChangeToState:</option>
 	
-	<option value="//api/name/callStateChangedNotificationForCall:">&nbsp;&nbsp;&nbsp;&nbsp;- callStateChangedNotificationForCall:</option>
+	<option value="//api/name/callController:localVideoFeedInterruptedBecause:">&nbsp;&nbsp;&nbsp;&nbsp;- callController:localVideoFeedInterruptedBecause:</option>
+	
+	<option value="//api/name/localVideoFeedInterruptionEndedForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- localVideoFeedInterruptionEndedForCallController:</option>
 	
 	<option value="//api/name/refreshControlsView">&nbsp;&nbsp;&nbsp;&nbsp;- refreshControlsView</option>
-	
-	<option value="//api/name/secondsChangedNotificationForCall:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsChangedNotificationForCall:</option>
 	
 	<option value="//api/name/secondsDidChangeForCallController:">&nbsp;&nbsp;&nbsp;&nbsp;- secondsDidChangeForCallController:</option>
 	
@@ -88,6 +93,12 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localVideoView">localVideoView</a></span></li>
+	
+</ul></li>
+
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
@@ -102,11 +113,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:callDidChangeToState:">callController:callDidChangeToState:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callStateChangedNotificationForCall:">callStateChangedNotificationForCall:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callController:localVideoFeedInterruptedBecause:">callController:localVideoFeedInterruptedBecause:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localVideoFeedInterruptionEndedForCallController:">localVideoFeedInterruptionEndedForCallController:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshControlsView">refreshControlsView</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsChangedNotificationForCall:">secondsChangedNotificationForCall:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsDidChangeForCallController:">secondsDidChangeForCallController:</a></span></li>
 	
@@ -174,6 +185,12 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/localVideoView">&nbsp;&nbsp;localVideoView</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/setNeedsUpdateVideoViewLayout">&ndash;&nbsp;setNeedsUpdateVideoViewLayout</a></code>
 	</span>
 	
@@ -206,19 +223,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/callStateChangedNotificationForCall:">&ndash;&nbsp;callStateChangedNotificationForCall:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/callController:callDidChangeToState:">&ndash;&nbsp;callController:callDidChangeToState:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/secondsChangedNotificationForCall:">&ndash;&nbsp;secondsChangedNotificationForCall:</a></code>
 	</span>
 	
 	
@@ -234,6 +239,18 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callController:localVideoFeedInterruptedBecause:">&ndash;&nbsp;callController:localVideoFeedInterruptedBecause:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localVideoFeedInterruptionEndedForCallController:">&ndash;&nbsp;localVideoFeedInterruptionEndedForCallController:</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -242,6 +259,48 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/localVideoView" title="localVideoView"></a>
+	<h3 class="subsubtitle method-title">localVideoView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>View to render the local video feed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) Bit6VideoFeedView *localVideoView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -261,7 +320,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6CallViewController *)createForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6CallViewController *)createForCall:(Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -320,7 +379,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)callController:(nonnull Bit6CallController *)<em>callController</em> callDidChangeToState:(Bit6CallState)<em>state</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)callController:(Bit6CallController *)<em>callController</em> callDidChangeToState:(Bit6CallState)<em>state</em></code></div>
 
     
 	
@@ -360,18 +419,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/callStateChangedNotificationForCall:" title="callStateChangedNotificationForCall:"></a>
-	<h3 class="subsubtitle method-title">callStateChangedNotificationForCall:</h3>
+	<a name="//api/name/callController:localVideoFeedInterruptedBecause:" title="callController:localVideoFeedInterruptedBecause:"></a>
+	<h3 class="subsubtitle method-title">callController:localVideoFeedInterruptedBecause:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called in the Main Thread when the status of the call changes. The default implementation does nothing.</p>
+		<p>Called in the Main Thread when the local video feed will be interrupted. Needs to call super if implemented.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)callStateChangedNotificationForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)callController:(Bit6CallController *)<em>callController</em> localVideoFeedInterruptedBecause:(int)<em>reason</em></code></div>
 
     
 	
@@ -380,7 +439,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>callController</em></dt>
-			<dd><p><BitCallController> object which state has changed.</p></dd>
+			<dd><p><BitCallController> object referring to the call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reason</em></dt>
+			<dd><p>reason for the interruption as a AVCaptureSessionInterruptionReason value. Only AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps is supported at the moment.</p></dd>
 		</dl>
 		
 	</div>
@@ -391,10 +455,51 @@
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6CallViewController callController:callDidChangeToState:] instead</p></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localVideoFeedInterruptionEndedForCallController:" title="localVideoFeedInterruptionEndedForCallController:"></a>
+	<h3 class="subsubtitle method-title">localVideoFeedInterruptionEndedForCallController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called in the Main Thread when the local video feed interruption has ended. Needs to call super if implemented.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)localVideoFeedInterruptionEndedForCallController:(Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p><BitCallController> object referring to the call.</p></dd>
+		</dl>
+		
 	</div>
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -447,57 +552,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/secondsChangedNotificationForCall:" title="secondsChangedNotificationForCall:"></a>
-	<h3 class="subsubtitle method-title">secondsChangedNotificationForCall:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called in the Main Thread each second to allow the refresh of a timer UI. The default implementation does nothing.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)secondsChangedNotificationForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>callController</em></dt>
-			<dd><p><BitCallController> object which &lsquo;seconds&rsquo; property has changed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6CallViewController secondsDidChangeForCallController:] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallViewController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/secondsDidChangeForCallController:" title="secondsDidChangeForCallController:"></a>
 	<h3 class="subsubtitle method-title">secondsDidChangeForCallController:</h3>
 	
@@ -509,7 +563,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)secondsDidChangeForCallController:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)secondsDidChangeForCallController:(Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -627,7 +681,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateLayoutForVideoFeedViews:(nonnull NSArray&lt;Bit6VideoFeedView*&gt; *)<em>videoFeedViews</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateLayoutForVideoFeedViews:(NSArray&lt;Bit6VideoFeedView*&gt; *)<em>videoFeedViews</em></code></div>
 
     
 	
@@ -676,7 +730,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

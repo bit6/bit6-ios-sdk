@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUAttachmentImageViewDelegate.html">
+	<File path="Classes/BXUTypingLabel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUAttachmentImageViewDelegate</TokenIdentifier>
-			<Abstract type="html">The BXUAttachmentImageViewDelegate protocol defines the methods a delegate of a BXUAttachmentImageView object should implement. The methods of this protocol notify the delegate when the imageview  has been tapped.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUTypingLabel</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UILabel to show when another user is typing.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,82 +13,74 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectImageMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with an image attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/setAddress:</TokenIdentifier>
+			<Abstract type="html">Identity of the contact to detect when typing, or nil to work with any contact.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectImageMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectImageMessage:</Anchor>
+			
+			<Anchor>//api/name/address</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectVideoMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with a video attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact to detect when typing, or nil to work with any contact.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectVideoMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectVideoMessage:</Anchor>
+			
+			<Anchor>//api/name/address</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectLocationMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with a location attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUTypingLabel/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact to detect when typing, or nil to work with any contact.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectLocationMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectLocationMessage:</Anchor>
+			
+			<Anchor>//api/name/address</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUAttachmentImageViewDelegate/attachmentImageView:didSelectAudioMessage:</TokenIdentifier>
-			<Abstract type="html">Notifies the delegate that the imageView has been tapped by the user for a message with an audio attached.</Abstract>
-			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the typing label should become visible or hidden. For details about the methods that can be implemented by the delegate, see BXUTypingLabelDelegate Protocol Reference. If implemented the showing and hidding of the label has to be done in the delegate methods.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
 			
-			<Declaration>- (void)attachmentImageView:(nullable BXUAttachmentImageView *)attachmentImageView didSelectAudioMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachmentImageView</Name>
-					<Abstract type="html">The BXUAttachmentImageView object tapped by the user.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">the message associated with the imageView.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUTypingLabelDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/attachmentImageView:didSelectAudioMessage:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUTypingLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the typing label should become visible or hidden. For details about the methods that can be implemented by the delegate, see BXUTypingLabelDelegate Protocol Reference. If implemented the showing and hidding of the label has to be done in the delegate methods.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUTypingLabelDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUTypingLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the typing label should become visible or hidden. For details about the methods that can be implemented by the delegate, see BXUTypingLabelDelegate Protocol Reference. If implemented the showing and hidding of the label has to be done in the delegate methods.</Abstract>
+			<DeclaredIn>BXUTypingLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUTypingLabelDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

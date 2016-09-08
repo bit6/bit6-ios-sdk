@@ -11,11 +11,14 @@
 #import "Bit6Conversation.h"
 #import "Bit6Constants.h"
 
-extern NSString* _Nonnull const Bit6GroupMemberRole_Admin;
-extern NSString* _Nonnull const Bit6GroupMemberRole_User;
-extern NSString* _Nonnull const Bit6GroupMemberRole_Left;
+NS_ASSUME_NONNULL_BEGIN
 
-extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
+typedef NSString* Bit6GroupMemberRole NS_STRING_ENUM;
+extern Bit6GroupMemberRole const Bit6GroupMemberRoleAdmin;
+extern Bit6GroupMemberRole const Bit6GroupMemberRoleUser;
+extern Bit6GroupMemberRole const Bit6GroupMemberRoleLeft;
+
+extern NSString* const Bit6GroupMetadataTitleKey;
 
 @class Bit6GroupPermissions;
 @class Bit6GroupMember;
@@ -26,19 +29,19 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
 /*! Unavailable init
  @return a new instance of the class.
  */
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
-/*! Returns a Bit6Group object based on the <Bit6Address> indicated.
+/*! Returns the Bit6Group object based on the <Bit6Address> indicated.
  @param address <Bit6Address> of the group.
  @return a Bit6Group object for the <Bit6Address> indicated.
  */
-+ (nullable Bit6Group*)groupWithAddress:(nonnull Bit6Address*)address;
++ (nullable Bit6Group*)groupWithAddress:(Bit6Address*)address;
 
-/*! Returns a Bit6Group object based on the <Bit6Conversation> indicated.
+/*! Returns the Bit6Group object based on the <Bit6Conversation> indicated.
  @param conversation <Bit6Conversation> linked to the group.
  @return a Bit6Group object for the <Bit6Conversation> indicated.
  */
-+ (nullable Bit6Group*)groupWithConversation:(nonnull Bit6Conversation*)conversation;
++ (nullable Bit6Group*)groupWithConversation:(Bit6Conversation*)conversation;
 
 /*! Creates an empty group.
  @param metadata metadata for the new group. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])
@@ -51,21 +54,21 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
  @param metadata metadata for the new group. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])
  @param completion block to be called when the operation is completed.
  */
-+ (void)createPublicGroupWithIdentifier:(nonnull NSString*)identifier metadata:(nullable NSDictionary<NSString*,id>*)metadata completion:(nullable void (^)(Bit6Group* _Nullable group, NSError* _Nullable error))completion;
++ (void)createPublicGroupWithIdentifier:(NSString*)identifier metadata:(nullable NSDictionary<NSString*,id>*)metadata completion:(nullable void (^)(Bit6Group* _Nullable group, NSError* _Nullable error))completion;
 
 /*! Join a public group.
  @param address <Bit6Address> of the group to join.
- @param role requested role in the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.
+ @param role requested role in the group. There are constants available to use: Bit6GroupMemberRoleAdmin and Bit6GroupMemberRoleUser.
  @param completion block to be called when the operation is completed.
  @note You can check if a group is public by using <[Bit6Group isPublic]>
  */
-+ (void)joinGroupWithAddress:(nonnull Bit6Address*)address role:(nonnull NSString*)role completion:(nullable void (^)(Bit6Group* _Nullable group, NSError* _Nullable error))completion;
++ (void)joinGroupWithAddress:(Bit6Address*)address role:(Bit6GroupMemberRole)role completion:(nullable void (^)(Bit6Group* _Nullable group, NSError* _Nullable error))completion;
 
 /*! Sets the metadata for the sender. 
  @param metadata new metadata for the sender. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])
  @param completion block to be called when the operation is completed.
  */
-- (void)setMetadata:(nonnull NSDictionary<NSString*,id>*)metadata completion:(nullable void (^)(NSError* _Nullable error))completion;
+- (void)setMetadata:(NSDictionary<NSString*,id>*)metadata completion:(nullable void (^)(NSError* _Nullable error))completion;
 
 /*! Abandon the sender. Updates related to the sender won't be received anymore.
  @param completion block to be called when the operation is completed.
@@ -73,9 +76,11 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
 - (void)leaveGroupWithCompletion:(nullable void (^)(NSError*  _Nullable error))completion;
 
 /*! The <Bit6Address> object associated with the sender. */
-@property (nonnull, nonatomic, readonly) Bit6Address *address;
+@property (nonatomic, readonly) Bit6Address *address;
+/*! The conversation the sender belongs to. */
+@property (nonatomic, copy, readonly) Bit6Conversation *conversation;
 /*! The creation timestamp of the sender. */
-@property (nonnull, nonatomic, copy, readonly) NSNumber *created;
+@property (nonatomic, copy, readonly) NSNumber *created;
 /*! The last updated timestamp of the sender. */
 @property (nullable, nonatomic, copy, readonly) NSNumber *updated;
 /*! The sender subject. */
@@ -97,30 +102,37 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
 
 /*! Invite an user to the group.
  @param address <Bit6Address> indicating the user to invite.
- @param role requested role to assign to the user invited to the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.
+ @param role requested role to assign to the user invited to the group. There are constants available to use: Bit6GroupMemberRoleAdmin and Bit6GroupMemberRoleUser.
  @param completion block to be called when the operation is completed.
  */
-- (void)inviteGroupMemberWithAddress:(nonnull Bit6Address*)address role:(nonnull NSString*)role completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
+- (void)inviteGroupMemberWithAddress:(Bit6Address*)address role:(Bit6GroupMemberRole)role completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
 
 /*! Invite users to the group.
  @param addresses array of <Bit6Address> indicating the users to invite.
- @param roles array of requested roles to assign to the users invited to the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.
+ @param roles array of requested roles to assign to the users invited to the group. There are constants available to use: Bit6GroupMemberRoleAdmin and Bit6GroupMemberRoleUser.
  @param completion block to be called when the operation is completed.
  */
-- (void)inviteGroupMembersWithAddresses:(nonnull NSArray<Bit6Address*>*)addresses roles:(nonnull NSArray<NSString*>*)roles completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
+- (void)inviteGroupMembersWithAddresses:(NSArray<Bit6Address*>*)addresses roles:(NSArray<Bit6GroupMemberRole>*)roles completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
+
+/*! Change the group member role.
+ @param role new role for the group member.
+ @param member member to modify.
+ @param completion block to be called when the operation is completed.
+ */
+- (void)setRole:(Bit6GroupMemberRole)role forMember:(Bit6GroupMember*)member completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
 
 /*! Invite users to the group.
  @param addresses array of <Bit6Address> indicating the users to invite.
- @param role role to assign to the users invited to the group. There are constants available to use: Bit6GroupMemberRole_Admin and Bit6GroupMemberRole_User.
+ @param role role to assign to the users invited to the group. There are constants available to use: Bit6GroupMemberRoleAdmin and Bit6GroupMemberRoleUser.
  @param completion block to be called when the operation is completed.
  */
-- (void)inviteGroupMembersWithAddresses:(nonnull NSArray<Bit6Address*>*)addresses role:(nonnull NSString*)role completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
+- (void)inviteGroupMembersWithAddresses:(NSArray<Bit6Address*>*)addresses role:(Bit6GroupMemberRole)role completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
 
 /*! Remove a member from the group.
  @param member member to be removed from the group.
  @param completion block to be called when the operation is completed.
  */
-- (void)kickGroupMember:(nonnull Bit6GroupMember*)member completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
+- (void)kickGroupMember:(Bit6GroupMember*)member completion:(nullable void (^)(NSArray<Bit6GroupMember*>* _Nullable members, NSError* _Nullable error))completion;
 
 @end
 
@@ -128,16 +140,18 @@ extern NSString* _Nonnull const Bit6GroupMetadataTitleKey;
 @interface Bit6GroupMember : NSObject
 
 /*! The <Bit6Address> object associated with the sender. */
-@property (nonnull, nonatomic, copy, readonly) Bit6Address *address;
-/*! The role of the sender inside the group. The return value can be one of three constants: Bit6GroupMemberRole_Admin, Bit6GroupMemberRole_User or Bit6GroupMemberRole_Left. */
-@property (nonnull, nonatomic, copy, readonly) NSString *role;
+@property (nonatomic, copy, readonly) Bit6Address *address;
+/*! The role of the sender inside the group. The return value can be one of three constants: Bit6GroupMemberRoleAdmin, Bit6GroupMemberRoleUser or Bit6GroupMemberRoleLeft. */
+@property (nonatomic, copy, readonly) Bit6GroupMemberRole role;
 /*! The last seen timestamp of the sender. */
 @property (nullable, nonatomic, copy, readonly) NSNumber *seen;
 /*! The status of the sender. */
 @property (nullable, nonatomic, copy, readonly) NSString *status;
-/*! The conversation the sender belongs to. */
-@property (nonnull, nonatomic, copy, readonly) Bit6Group *group;
+/*! The group the sender belongs to. */
+@property (nonatomic, copy, readonly) Bit6Group *group;
 /*! The public profile of the group member. */
 @property (nullable, nonatomic, copy, readonly) NSDictionary<NSString*,id>* publicProfile;
 
 @end
+
+NS_ASSUME_NONNULL_END

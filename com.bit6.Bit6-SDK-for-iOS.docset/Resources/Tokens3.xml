@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6AudioPlayerController.html">
+	<File path="Classes/Bit6AlertView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6AudioPlayerController</TokenIdentifier>
-			<Abstract type="html">Audio player allows to play an audio file.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6AlertView</TokenIdentifier>
+			<Abstract type="html">Convenient class to show a UIAlertController of Alert style convering the entire screen.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -13,82 +13,192 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/init</TokenIdentifier>
-			<Abstract type="html">Unavailable init. Use Bit6.audioPlayer instead.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6AlertView/showAlertControllerWithTitle:message:cancelButtonTitle:</TokenIdentifier>
+			<Abstract type="html">Show a default Bit6AlertView.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
 			
-			<Declaration>- (nonnull instancetype)init</Declaration>
-			
-			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
-			<Anchor>//api/name/init</Anchor>
+			<Declaration>+ (Bit6AlertView *)showAlertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">The title of the alert. Use this string to get the user’s attention and communicate the reason for the alert.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">Descriptive text that provides additional details about the reason for the alert.</Abstract>
+				</Parameter><Parameter>
+					<Name>cancelButtonTitle</Name>
+					<Abstract type="html">title of the cancel button to dismiss the alert.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a reference to the Bit6AlertView shown.</Abstract></ReturnValue>
+			<Anchor>//api/name/showAlertControllerWithTitle:message:cancelButtonTitle:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/startPlayingAudioFileAtPath:errorHandler:</TokenIdentifier>
-			<Abstract type="html">Starts playing an audio file. You can listen to the Bit6AudioPlayingNotification to update your UI while playing an audio file.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6AlertView/alertControllerWithTitle:message:</TokenIdentifier>
+			<Abstract type="html">Creates Bit6AlertView with a title and a message.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
 			
-			<Declaration>- (void)startPlayingAudioFileAtPath:(nonnull NSString *)filePath errorHandler:(nullable void ( ^ ) ( NSError *_Nonnull error ))errorHandler</Declaration>
+			<Declaration>+ (Bit6AlertView *)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>filePath</Name>
-					<Abstract type="html">Path to the audio file to play.</Abstract>
+					<Name>title</Name>
+					<Abstract type="html">The title of the alert. Use this string to get the user’s attention and communicate the reason for the alert.</Abstract>
 				</Parameter><Parameter>
-					<Name>errorHandler</Name>
-					<Abstract type="html">block to call if an error occurs</Abstract>
+					<Name>message</Name>
+					<Abstract type="html">Descriptive text that provides additional details about the reason for the alert.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the new Bit6AlertView object.</Abstract></ReturnValue>
+			<Anchor>//api/name/alertControllerWithTitle:message:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/addCancelButtonWithTitle:</TokenIdentifier>
+			<Abstract type="html">Convenient method to add an additional button with Cancel style to the UIAlertController object.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>- (void)addCancelButtonWithTitle:(NSString *)cancelButtonTitle</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cancelButtonTitle</Name>
+					<Abstract type="html">title for the cancel button.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startPlayingAudioFileAtPath:errorHandler:</Anchor>
+			<Anchor>//api/name/addCancelButtonWithTitle:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/stopPlayingAudioFile</TokenIdentifier>
-			<Abstract type="html">Stop the audio file playing at the time</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/show</TokenIdentifier>
+			<Abstract type="html">Shows the Bit6AlertView convering the entire screen.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
 			
-			<Declaration>- (void)stopPlayingAudioFile</Declaration>
+			<Declaration>- (void)show</Declaration>
 			
 			
-			<Anchor>//api/name/stopPlayingAudioFile</Anchor>
+			<Anchor>//api/name/show</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/currentTime</TokenIdentifier>
-			<Abstract type="html">Gets the audio file playing current time.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/dismiss</TokenIdentifier>
+			<Abstract type="html">Dismiss the Bit6AlertView. Every UIAlertAction added to the Bit6AlertView must call this method at the end of its handler.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
 			
-			<Declaration>- (double)currentTime</Declaration>
+			<Declaration>- (void)dismiss</Declaration>
 			
 			
-			<Anchor>//api/name/currentTime</Anchor>
+			<Anchor>//api/name/dismiss</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/duration</TokenIdentifier>
-			<Abstract type="html">Gets the length of the audio file playing.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/setAlertController:</TokenIdentifier>
+			<Abstract type="html">Reference to the internal UIAlertController object.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
 			
-			<Declaration>- (double)duration</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIAlertController *alertController</Declaration>
 			
 			
-			<Anchor>//api/name/duration</Anchor>
+			<Anchor>//api/name/alertController</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6AudioPlayerController/filePathPlaying</TokenIdentifier>
-			<Abstract type="html">Gets the path to the current audio file being played.</Abstract>
-			<DeclaredIn>Bit6AudioPlayerController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/alertController</TokenIdentifier>
+			<Abstract type="html">Reference to the internal UIAlertController object.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSString *)filePathPlaying</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) UIAlertController *alertController</Declaration>
 			
-			<ReturnValue><Abstract type="html">path to the current audio file being played.</Abstract></ReturnValue>
-			<Anchor>//api/name/filePathPlaying</Anchor>
+			
+			<Anchor>//api/name/alertController</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AlertView/alertController</TokenIdentifier>
+			<Abstract type="html">Reference to the internal UIAlertController object.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) UIAlertController *alertController</Declaration>
+			
+			
+			<Anchor>//api/name/alertController</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/addAction:</TokenIdentifier>
+			<Abstract type="html">Attaches an action object to the alert or action sheet.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>- (void)addAction:(UIAlertAction *)action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>action</Name>
+					<Abstract type="html">The action object to display as part of the alert. Actions are displayed as buttons in the alert. The action object provides the button text and the action to be performed when that button is tapped.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addAction:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/addTextFieldWithConfigurationHandler:</TokenIdentifier>
+			<Abstract type="html">Adds a text field to an alert.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>- (void)addTextFieldWithConfigurationHandler:(void ( ^ __nullable ) ( UITextField *textField ))configurationHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>configurationHandler</Name>
+					<Abstract type="html">A block for configuring the text field prior to displaying the alert. This block has no return value and takes a single parameter corresponding to the text field object. Use that parameter to change the text field properties..</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addTextFieldWithConfigurationHandler:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/setTextFields:</TokenIdentifier>
+			<Abstract type="html">The array of text fields displayed by the alert.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray&lt;UITextField*&gt; *textFields</Declaration>
+			
+			
+			<Anchor>//api/name/textFields</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6AlertView/textFields</TokenIdentifier>
+			<Abstract type="html">The array of text fields displayed by the alert.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray&lt;UITextField*&gt; *textFields</Declaration>
+			
+			
+			<Anchor>//api/name/textFields</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6AlertView/textFields</TokenIdentifier>
+			<Abstract type="html">The array of text fields displayed by the alert.</Abstract>
+			<DeclaredIn>Bit6AlertView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray&lt;UITextField*&gt; *textFields</Declaration>
+			
+			
+			<Anchor>//api/name/textFields</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

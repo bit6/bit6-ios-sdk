@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageCallStatus.html">
+	<File path="Constants/Bit6LogOptions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageCallStatus</TokenIdentifier>
-			<Abstract type="html">Call status for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6LogOptions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Bit6Constants.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
@@ -14,41 +14,101 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Answer</TokenIdentifier>
-            <Abstract type="html">The call has been answered.</Abstract>
-            <Declaration>Bit6MessageCallStatus_Answer</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_None</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_None</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Missed</TokenIdentifier>
-            <Abstract type="html">The call has been missed.</Abstract>
-            <Declaration>Bit6MessageCallStatus_Missed</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="29"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Failed</TokenIdentifier>
-            <Abstract type="html">The call failed.</Abstract>
-            <Declaration>Bit6MessageCallStatus_Failed</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_Default</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_Default</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="29"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_NoAnswer</TokenIdentifier>
-            <Abstract type="html">The call wasn&apos;t answered.</Abstract>
-            <Declaration>Bit6MessageCallStatus_NoAnswer</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_Models</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_Models</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_ApiCalls</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_ApiCalls</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_VoIP</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_VoIP</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_CallKit</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_CallKit</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_RTNotifications</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_RTNotifications</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_FileManager</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_FileManager</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_SQLite</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_SQLite</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6LogOptions_Debug</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>Bit6LogOptions_Debug</Declaration>
+            
+            <DeclaredIn>Bit6Constants.h</DeclaredIn>
             
             <NodeRef refid="29"/>
         </Token>

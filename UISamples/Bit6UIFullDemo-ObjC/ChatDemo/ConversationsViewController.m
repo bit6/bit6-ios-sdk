@@ -68,7 +68,7 @@
                                                         if (!error) {
                                                             
                                                             //inviting the users to the group
-                                                            [group inviteGroupMembersWithAddresses:addresses role:Bit6GroupMemberRole_User completion:^(NSArray *members, NSError *error) {
+                                                            [group inviteGroupMembersWithAddresses:addresses role:Bit6GroupMemberRoleUser completion:^(NSArray *members, NSError *error) {
                                                                 if (error) {
                                                                     dispatch_async(dispatch_get_main_queue(), ^{
                                                                         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Failed to invite users to the group" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];

@@ -41,6 +41,8 @@
 	
 	<option value="//api/name/answered">&nbsp;&nbsp;&nbsp;&nbsp;answered</option>
 	
+	<option value="//api/name/availableStreamsForIncomingCall">&nbsp;&nbsp;&nbsp;&nbsp;availableStreamsForIncomingCall</option>
+	
 	<option value="//api/name/dataChannelState">&nbsp;&nbsp;&nbsp;&nbsp;dataChannelState</option>
 	
 	<option value="//api/name/endedCause">&nbsp;&nbsp;&nbsp;&nbsp;endedCause</option>
@@ -65,15 +67,25 @@
 	
 	<option value="//api/name/incomingAlert">&nbsp;&nbsp;&nbsp;&nbsp;incomingAlert</option>
 	
+	<option value="//api/name/incomingCallIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;incomingCallIdentifier</option>
+	
 	<option value="//api/name/incomingTransfers">&nbsp;&nbsp;&nbsp;&nbsp;incomingTransfers</option>
 	
 	<option value="//api/name/localStreams">&nbsp;&nbsp;&nbsp;&nbsp;localStreams</option>
+	
+	<option value="//api/name/mediaMode">&nbsp;&nbsp;&nbsp;&nbsp;mediaMode</option>
+	
+	<option value="//api/name/missed">&nbsp;&nbsp;&nbsp;&nbsp;missed</option>
+	
+	<option value="//api/name/offnet">&nbsp;&nbsp;&nbsp;&nbsp;offnet</option>
 	
 	<option value="//api/name/other">&nbsp;&nbsp;&nbsp;&nbsp;other</option>
 	
 	<option value="//api/name/otherDisplayName">&nbsp;&nbsp;&nbsp;&nbsp;otherDisplayName</option>
 	
 	<option value="//api/name/outgoingTransfers">&nbsp;&nbsp;&nbsp;&nbsp;outgoingTransfers</option>
+	
+	<option value="//api/name/recording">&nbsp;&nbsp;&nbsp;&nbsp;recording</option>
 	
 	<option value="//api/name/rejected">&nbsp;&nbsp;&nbsp;&nbsp;rejected</option>
 	
@@ -83,14 +95,12 @@
 	
 	<option value="//api/name/state">&nbsp;&nbsp;&nbsp;&nbsp;state</option>
 	
+	<option value="//api/name/uuid">&nbsp;&nbsp;&nbsp;&nbsp;uuid</option>
+	
 	
 	
 	
 	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/audioMuted">&nbsp;&nbsp;&nbsp;&nbsp;+ audioMuted</option>
-	
-	<option value="//api/name/bluetoothEnabled">&nbsp;&nbsp;&nbsp;&nbsp;+ bluetoothEnabled</option>
 	
 	<option value="//api/name/hangupAll">&nbsp;&nbsp;&nbsp;&nbsp;+ hangupAll</option>
 	
@@ -114,22 +124,6 @@
 	
 	<option value="//api/name/setSpeakerEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;+ setSpeakerEnabled:</option>
 	
-	<option value="//api/name/speakerEnabled">&nbsp;&nbsp;&nbsp;&nbsp;+ speakerEnabled</option>
-	
-	<option value="//api/name/switchBluetooth">&nbsp;&nbsp;&nbsp;&nbsp;+ switchBluetooth</option>
-	
-	<option value="//api/name/switchCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ switchCamera</option>
-	
-	<option value="//api/name/switchMuteAudio">&nbsp;&nbsp;&nbsp;&nbsp;+ switchMuteAudio</option>
-	
-	<option value="//api/name/switchMuteVideo">&nbsp;&nbsp;&nbsp;&nbsp;+ switchMuteVideo</option>
-	
-	<option value="//api/name/switchSpeaker">&nbsp;&nbsp;&nbsp;&nbsp;+ switchSpeaker</option>
-	
-	<option value="//api/name/usingRearCamera">&nbsp;&nbsp;&nbsp;&nbsp;+ usingRearCamera</option>
-	
-	<option value="//api/name/videoMuted">&nbsp;&nbsp;&nbsp;&nbsp;+ videoMuted</option>
-	
 	
 	
 	
@@ -139,8 +133,6 @@
 	
 	<option value="//api/name/addTransfer:">&nbsp;&nbsp;&nbsp;&nbsp;- addTransfer:</option>
 	
-	<option value="//api/name/decline">&nbsp;&nbsp;&nbsp;&nbsp;- decline</option>
-	
 	<option value="//api/name/hangup">&nbsp;&nbsp;&nbsp;&nbsp;- hangup</option>
 	
 	<option value="//api/name/playRingtone">&nbsp;&nbsp;&nbsp;&nbsp;- playRingtone</option>
@@ -149,7 +141,7 @@
 	
 	<option value="//api/name/start">&nbsp;&nbsp;&nbsp;&nbsp;- start</option>
 	
-	<option value="//api/name/startTransfer:">&nbsp;&nbsp;&nbsp;&nbsp;- startTransfer:</option>
+	<option value="//api/name/supportsCapability:">&nbsp;&nbsp;&nbsp;&nbsp;- supportsCapability:</option>
 	
 	
 	
@@ -167,11 +159,15 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Call Properties">￼Call Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Capabilities">￼Capabilities</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Actions">￼Actions</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_InputOutput Methods">InputOutput Methods</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DataChannel Methods">DataChannel Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_InputOutput Methods">InputOutput Methods</a></span></li>
 	
 </ul></li>
 
@@ -182,6 +178,8 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/answered">answered</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/availableStreamsForIncomingCall">availableStreamsForIncomingCall</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataChannelState">dataChannelState</a></span></li>
 	
@@ -207,15 +205,25 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingAlert">incomingAlert</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingCallIdentifier">incomingCallIdentifier</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incomingTransfers">incomingTransfers</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localStreams">localStreams</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mediaMode">mediaMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/missed">missed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offnet">offnet</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/other">other</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/otherDisplayName">otherDisplayName</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/outgoingTransfers">outgoingTransfers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recording">recording</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rejected">rejected</a></span></li>
 	
@@ -225,15 +233,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/state">state</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uuid">uuid</a></span></li>
+	
 </ul></li>
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/audioMuted">audioMuted</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bluetoothEnabled">bluetoothEnabled</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hangupAll">hangupAll</a></span></li>
 	
@@ -257,22 +263,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSpeakerEnabled:">setSpeakerEnabled:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/speakerEnabled">speakerEnabled</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchBluetooth">switchBluetooth</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchCamera">switchCamera</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchMuteAudio">switchMuteAudio</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchMuteVideo">switchMuteVideo</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/switchSpeaker">switchSpeaker</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/usingRearCamera">usingRearCamera</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/videoMuted">videoMuted</a></span></li>
-	
 </ul></li>
 
 
@@ -283,8 +273,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTransfer:">addTransfer:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/decline">decline</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hangup">hangup</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/playRingtone">playRingtone</a></span></li>
@@ -293,7 +281,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start">start</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startTransfer:">startTransfer:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportsCapability:">supportsCapability:</a></span></li>
 	
 </ul></li>
 
@@ -344,11 +332,17 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
+						<a title="￼Call Properties" name="task_￼Call Properties"></a>
+						<h3 class="subsubtitle task-title">￼Call Properties</h3>
 
 						<ul class="task-list">
 							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/uuid">&nbsp;&nbsp;uuid</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addDelegate:">&ndash;&nbsp;addDelegate:</a></code>
 	</span>
@@ -363,6 +357,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/state">&nbsp;&nbsp;state</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/incomingCallIdentifier">&nbsp;&nbsp;incomingCallIdentifier</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -411,6 +411,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/remoteStreams">&nbsp;&nbsp;remoteStreams</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/availableStreamsForIncomingCall">&nbsp;&nbsp;availableStreamsForIncomingCall</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -474,6 +480,44 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/missed">&nbsp;&nbsp;missed</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mediaMode">&nbsp;&nbsp;mediaMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offnet">&nbsp;&nbsp;offnet</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Capabilities" name="task_￼Capabilities"></a>
+						<h3 class="subsubtitle task-title">￼Capabilities</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportsCapability:">&ndash;&nbsp;supportsCapability:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/recording">&nbsp;&nbsp;recording</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -506,9 +550,35 @@
 	</span>
 	
 	
+</li>
+						</ul>
+						
+						
+						<a title="DataChannel Methods" name="task_DataChannel Methods"></a>
+						<h3 class="subsubtitle task-title">DataChannel Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataChannelState">&nbsp;&nbsp;dataChannelState</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/decline">&ndash;&nbsp;decline</a></code>
+		<code><a href="#//api/name/outgoingTransfers">&nbsp;&nbsp;outgoingTransfers</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/incomingTransfers">&nbsp;&nbsp;incomingTransfers</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTransfer:">&ndash;&nbsp;addTransfer:</a></code>
 	</span>
 	
 	
@@ -521,36 +591,6 @@
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/speakerEnabled">+&nbsp;speakerEnabled</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/bluetoothEnabled">+&nbsp;bluetoothEnabled</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/audioMuted">+&nbsp;audioMuted</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/videoMuted">+&nbsp;videoMuted</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/usingRearCamera">+&nbsp;usingRearCamera</a></code>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isSpeakerEnabled">+&nbsp;isSpeakerEnabled</a></code>
 	</span>
@@ -577,36 +617,6 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/localVideoSource">+&nbsp;localVideoSource</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/switchCamera">+&nbsp;switchCamera</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/switchMuteAudio">+&nbsp;switchMuteAudio</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/switchMuteVideo">+&nbsp;switchMuteVideo</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/switchSpeaker">+&nbsp;switchSpeaker</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/switchBluetooth">+&nbsp;switchBluetooth</a></code>
 	</span>
 	
 	
@@ -643,44 +653,6 @@
 </li>
 						</ul>
 						
-						
-						<a title="DataChannel Methods" name="task_DataChannel Methods"></a>
-						<h3 class="subsubtitle task-title">DataChannel Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/dataChannelState">&nbsp;&nbsp;dataChannelState</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/outgoingTransfers">&nbsp;&nbsp;outgoingTransfers</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/incomingTransfers">&nbsp;&nbsp;incomingTransfers</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/startTransfer:">&ndash;&nbsp;startTransfer:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addTransfer:">&ndash;&nbsp;addTransfer:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
 					</div>
 					
 					
@@ -704,6 +676,42 @@
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL answered</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/availableStreamsForIncomingCall" title="availableStreamsForIncomingCall"></a>
+	<h3 class="subsubtitle method-title">availableStreamsForIncomingCall</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An integer bit mask that indicates the possible streams in the incoming call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) Bit6CallStreams availableStreamsForIncomingCall</code></div>
 
     
 	
@@ -1160,6 +1168,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/incomingCallIdentifier" title="incomingCallIdentifier"></a>
+	<h3 class="subsubtitle method-title">incomingCallIdentifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unique identifier for the incoming call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *incomingCallIdentifier</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/incomingTransfers" title="incomingTransfers"></a>
 	<h3 class="subsubtitle method-title">incomingTransfers</h3>
 	
@@ -1171,7 +1215,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6Transfer*&gt; *incomingTransfers</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;Bit6Transfer*&gt; *incomingTransfers</code></div>
 
     
 	
@@ -1232,6 +1276,114 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/mediaMode" title="mediaMode"></a>
+	<h3 class="subsubtitle method-title">mediaMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if the call will go P2P or if the server should process the media. P2P Can&rsquo;t be used for group calls, or if offnet property is set to true.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) Bit6CallMediaMode mediaMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/missed" title="missed"></a>
+	<h3 class="subsubtitle method-title">missed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if the call ended without being answered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL missed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offnet" title="offnet"></a>
+	<h3 class="subsubtitle method-title">offnet</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if the call will go within the Bit6 world (set to false) or it should be a real phone call (set to true).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL offnet</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/other" title="other"></a>
 	<h3 class="subsubtitle method-title">other</h3>
 	
@@ -1243,7 +1395,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong, readonly) Bit6Address *other</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) Bit6Address *other</code></div>
 
     
 	
@@ -1279,7 +1431,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, strong) NSString *otherDisplayName</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *otherDisplayName</code></div>
 
     
 	
@@ -1315,7 +1467,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSArray&lt;Bit6OutgoingTransfer*&gt; *outgoingTransfers</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;Bit6OutgoingTransfer*&gt; *outgoingTransfers</code></div>
 
     
 	
@@ -1340,13 +1492,58 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/recording" title="recording"></a>
+	<h3 class="subsubtitle method-title">recording</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts and stop recording during a call. This can only be used if call media mode is set to Bit6CallMediaModeMix.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL recording</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/supportsCapability:">[Bit6CallController supportsCapability:]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/rejected" title="rejected"></a>
 	<h3 class="subsubtitle method-title">rejected</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Used to know if the call didn&rsquo;t connect because the other user rejected the call.</p>
+		<p>Used to know if the call didn&rsquo;t connect because it was rejected.</p>
 	</div>		
 	
     
@@ -1387,7 +1584,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6CallStreams remoteStreams</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) Bit6CallStreams remoteStreams</code></div>
 
     
 	
@@ -1489,6 +1686,42 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/uuid" title="uuid"></a>
+	<h3 class="subsubtitle method-title">uuid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unique identifier for the call</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSUUID *uuid</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6CallController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -1496,88 +1729,6 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/audioMuted" title="audioMuted"></a>
-	<h3 class="subsubtitle method-title">audioMuted</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The audio is muted for the current call.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)audioMuted</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController isLocalAudioEnabled] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/bluetoothEnabled" title="bluetoothEnabled"></a>
-	<h3 class="subsubtitle method-title">bluetoothEnabled</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The audio from the call is going out through a bluetooth device.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)bluetoothEnabled</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController isBluetoothEnabled] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/hangupAll" title="hangupAll"></a>
@@ -2025,334 +2176,6 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
 </div>
 						
-						<div class="section-method">
-	<a name="//api/name/speakerEnabled" title="speakerEnabled"></a>
-	<h3 class="subsubtitle method-title">speakerEnabled</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The audio from the call is going through the speaker.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)speakerEnabled</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController isSpeakerEnabled] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/switchBluetooth" title="switchBluetooth"></a>
-	<h3 class="subsubtitle method-title">switchBluetooth</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Change the audio route from the default one to the available bluetooth device, and vice versa. This will be applied to all the running callControllers.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)switchBluetooth</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController setBluetoothEnabled:] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/switchCamera" title="switchCamera"></a>
-	<h3 class="subsubtitle method-title">switchCamera</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Switch between the frontal and rear camera, if available. This will be applied to all the running callControllers.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)switchCamera</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController setLocalVideoSource:] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/switchMuteAudio" title="switchMuteAudio"></a>
-	<h3 class="subsubtitle method-title">switchMuteAudio</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Mute and unmute the microphone in the current call. This will be applied to all the running callControllers.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)switchMuteAudio</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController setLocalAudioEnabled:] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/switchMuteVideo" title="switchMuteVideo"></a>
-	<h3 class="subsubtitle method-title">switchMuteVideo</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Mute and unmute the video in the current call. This will be applied to all the running callControllers.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)switchMuteVideo</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController setLocalVideoEnabled:] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/switchSpeaker" title="switchSpeaker"></a>
-	<h3 class="subsubtitle method-title">switchSpeaker</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Change the audio route from the default one to the speaker, and vice versa. This will be applied to all the running callControllers.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)switchSpeaker</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController setSpeakerEnabled:] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/usingRearCamera" title="usingRearCamera"></a>
-	<h3 class="subsubtitle method-title">usingRearCamera</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The call is streaming the video feed from the back camera.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)usingRearCamera</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController localVideoSource] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/videoMuted" title="videoMuted"></a>
-	<h3 class="subsubtitle method-title">videoMuted</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The video is muted for the current call.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)videoMuted</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6CallController isLocalVideoEnabled] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
 					</div>
 					
 					
@@ -2373,7 +2196,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)addDelegate:(nonnull id&lt;Bit6CallControllerDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id&lt;Bit6CallControllerDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -2419,7 +2242,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)addTransfer:(nonnull Bit6OutgoingTransfer *)<em>transfer</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)addTransfer:(Bit6OutgoingTransfer *)<em>transfer</em></code></div>
 
     
 	
@@ -2432,42 +2255,6 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 		</dl>
 		
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6CallController.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/decline" title="decline"></a>
-	<h3 class="subsubtitle method-title">decline</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Declines the call</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)decline</code></div>
-
-    
 	
 	
 	
@@ -2573,7 +2360,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(nonnull id&lt;Bit6CallControllerDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id&lt;Bit6CallControllerDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -2644,18 +2431,18 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startTransfer:" title="startTransfer:"></a>
-	<h3 class="subsubtitle method-title">startTransfer:</h3>
+	<a name="//api/name/supportsCapability:" title="supportsCapability:"></a>
+	<h3 class="subsubtitle method-title">supportsCapability:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Starts the specified <a href="../Classes/Bit6OutgoingTransfer.html">Bit6OutgoingTransfer</a> through this call.</p>
+		<p>Indicates if the calls supports the specified capability.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)startTransfer:(nonnull Bit6OutgoingTransfer *)<em>transfer</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)supportsCapability:(Bit6CallCapability)<em>capability</em></code></div>
 
     
 	
@@ -2663,22 +2450,22 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>transfer</em></dt>
-			<dd><p><a href="../Classes/Bit6OutgoingTransfer.html">Bit6OutgoingTransfer</a> to start.</p></dd>
+			<dt><em>capability</em></dt>
+			<dd><p>capability to find out if the call supports.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use -[Bit6CallController addTransfer:] instead</p></div>
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the call supports the specified capability.</p>
 	</div>
+	
+	
+	
+	
 	
 	
 	
@@ -2709,7 +2496,7 @@ For outgoing calls the states go: <b>NEW</b> -> <b>GATHERING_CANDIDATES</b> -> <
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

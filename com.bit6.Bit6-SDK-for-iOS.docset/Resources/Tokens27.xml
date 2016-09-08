@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageAttachmentStatus.html">
+	<File path="Constants/Bit6DataChannelState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageAttachmentStatus</TokenIdentifier>
-			<Abstract type="html">Message attachment status for a Bit6Message.</Abstract>
-			<DeclaredIn>Bit6Message.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6DataChannelState</TokenIdentifier>
+			<Abstract type="html">States for the Data Channel stream.</Abstract>
+			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -14,51 +14,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_INVALID</TokenIdentifier>
-            <Abstract type="html">The message doesn&apos;t have the specified attachment</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_INVALID</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Connecting</TokenIdentifier>
+            <Abstract type="html">The data channel is connecting.</Abstract>
+            <Declaration>Bit6DataChannelState_Connecting</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_FAILED</TokenIdentifier>
-            <Abstract type="html">The attachment doesn&apos;t exists</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_FAILED</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="27"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_NOT_FOUND</TokenIdentifier>
-            <Abstract type="html">The attachment is not in cache</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_NOT_FOUND</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Open</TokenIdentifier>
+            <Abstract type="html">The data channel is open.</Abstract>
+            <Declaration>Bit6DataChannelState_Open</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
-            
-            <NodeRef refid="27"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_DOWNLOADING</TokenIdentifier>
-            <Abstract type="html">The attachment is being downloaded</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_DOWNLOADING</Declaration>
-            
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="27"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageAttachmentStatus_FOUND</TokenIdentifier>
-            <Abstract type="html">The attachment is in cache</Abstract>
-            <Declaration>Bit6MessageAttachmentStatus_FOUND</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Closing</TokenIdentifier>
+            <Abstract type="html">The data channel is closing.</Abstract>
+            <Declaration>Bit6DataChannelState_Closing</Declaration>
             
-            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Closed</TokenIdentifier>
+            <Abstract type="html">The data channel is closed.</Abstract>
+            <Declaration>Bit6DataChannelState_Closed</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
             <NodeRef refid="27"/>
         </Token>

@@ -14,6 +14,10 @@
 		D87D0A7A1BBD70AC0096118A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A781BBD70AC0096118A /* FBSDKCoreKit.framework */; };
 		D87D0A7B1BBD70AC0096118A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0A791BBD70AC0096118A /* FBSDKLoginKit.framework */; };
 		D87D0AB11BBD74AC0096118A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87D0AB01BBD74AC0096118A /* FBSDKShareKit.framework */; };
+		D88183A01D6F6D1300F3ABE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D881839F1D6F6D1300F3ABE0 /* InfoPlist.strings */; };
+		D88183A41D6F6D1B00F3ABE0 /* CustomCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D88183A21D6F6D1B00F3ABE0 /* CustomCallViewController.m */; };
+		D88183A51D6F6D1B00F3ABE0 /* CustomCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88183A31D6F6D1B00F3ABE0 /* CustomCallViewController.xib */; };
+		D88F07371D3D1BCA00EC665F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D88F07361D3D1BCA00EC665F /* Localizable.strings */; };
 		D894B8901CC93DC700211A29 /* Bit6UI.strings in Resources */ = {isa = PBXBuildFile; fileRef = D894B88F1CC93DC700211A29 /* Bit6UI.strings */; };
 		D8A3AF341A44A7F9002205C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF331A44A7F9002205C2 /* main.m */; };
 		D8A3AF371A44A7F9002205C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF361A44A7F9002205C2 /* AppDelegate.m */; };
@@ -24,7 +28,6 @@
 		D8A3AF691A44A984002205C2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF681A44A984002205C2 /* MainViewController.m */; };
 		D8A3AF6C1A44A992002205C2 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */; };
 		D8A5A4B91C6F990000B868B1 /* ringtone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D8A5A4B81C6F990000B868B1 /* ringtone.caf */; };
-		D8C4CC3E1C9F16240026B9C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8C4CC3D1C9F16240026B9C0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,11 @@
 		D87D0A781BBD70AC0096118A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D87D0A791BBD70AC0096118A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D87D0AB01BBD74AC0096118A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		D881839F1D6F6D1300F3ABE0 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		D88183A11D6F6D1B00F3ABE0 /* CustomCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCallViewController.h; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InCall/CustomCallViewController.h"; sourceTree = SOURCE_ROOT; };
+		D88183A21D6F6D1B00F3ABE0 /* CustomCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCallViewController.m; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InCall/CustomCallViewController.m"; sourceTree = SOURCE_ROOT; };
+		D88183A31D6F6D1B00F3ABE0 /* CustomCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCallViewController.xib; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InCall/CustomCallViewController.xib"; sourceTree = SOURCE_ROOT; };
+		D88F07361D3D1BCA00EC665F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Localizable.strings"; sourceTree = SOURCE_ROOT; };
 		D894B88F1CC93DC700211A29 /* Bit6UI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Bit6UI.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Bit6UI.strings"; sourceTree = SOURCE_ROOT; };
 		D8A3AF2E1A44A7F9002205C2 /* FBVideoCalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBVideoCalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A3AF321A44A7F9002205C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +61,6 @@
 		D8A3AF6A1A44A992002205C2 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		D8A5A4B81C6F990000B868B1 /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ringtone.caf; sourceTree = "<group>"; };
-		D8C4CC3D1C9F16240026B9C0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +109,9 @@
 				D86262341CC848B800E061DD /* DemoContactSource.h */,
 				D86262351CC848B800E061DD /* DemoContactSource.m */,
 				D8A3AF3B1A44A7F9002205C2 /* Main.storyboard */,
+				D88183A11D6F6D1B00F3ABE0 /* CustomCallViewController.h */,
+				D88183A21D6F6D1B00F3ABE0 /* CustomCallViewController.m */,
+				D88183A31D6F6D1B00F3ABE0 /* CustomCallViewController.xib */,
 				D8A3AF3E1A44A7F9002205C2 /* Images.xcassets */,
 				D8A3AF401A44A7F9002205C2 /* LaunchScreen.xib */,
 				D8A3AF311A44A7F9002205C2 /* Supporting Files */,
@@ -114,7 +124,8 @@
 			children = (
 				D894B88F1CC93DC700211A29 /* Bit6UI.strings */,
 				D86262321CC846A000E061DD /* Bit6UIResources.bundle */,
-				D8C4CC3D1C9F16240026B9C0 /* Localizable.strings */,
+				D88F07361D3D1BCA00EC665F /* Localizable.strings */,
+				D881839F1D6F6D1300F3ABE0 /* InfoPlist.strings */,
 				D8A3AF321A44A7F9002205C2 /* Info.plist */,
 				D8A3AF661A44A8F6002205C2 /* FBVideoCalls-Prefix.pch */,
 				D8A5A4B81C6F990000B868B1 /* ringtone.caf */,
@@ -200,11 +211,13 @@
 			files = (
 				D8A3AF3D1A44A7F9002205C2 /* Main.storyboard in Resources */,
 				D894B8901CC93DC700211A29 /* Bit6UI.strings in Resources */,
-				D8C4CC3E1C9F16240026B9C0 /* Localizable.strings in Resources */,
 				D86262331CC846A000E061DD /* Bit6UIResources.bundle in Resources */,
 				D8A5A4B91C6F990000B868B1 /* ringtone.caf in Resources */,
 				D862622F1CC8467F00E061DD /* FacebookSDKStrings.bundle in Resources */,
+				D88183A51D6F6D1B00F3ABE0 /* CustomCallViewController.xib in Resources */,
+				D88F07371D3D1BCA00EC665F /* Localizable.strings in Resources */,
 				D8A3AF421A44A7F9002205C2 /* LaunchScreen.xib in Resources */,
+				D88183A01D6F6D1300F3ABE0 /* InfoPlist.strings in Resources */,
 				D8A3AF3F1A44A7F9002205C2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +234,7 @@
 				D8A3AF371A44A7F9002205C2 /* AppDelegate.m in Sources */,
 				D8A3AF691A44A984002205C2 /* MainViewController.m in Sources */,
 				D8A3AF341A44A7F9002205C2 /* main.m in Sources */,
+				D88183A41D6F6D1B00F3ABE0 /* CustomCallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

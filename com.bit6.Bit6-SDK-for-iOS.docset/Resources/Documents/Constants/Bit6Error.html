@@ -90,6 +90,12 @@
                             
                             &nbsp;&nbsp; <a href="">Bit6Error_RecipientNotFound</a> = 500,<br/>
                             
+                            &nbsp;&nbsp; <a href="">Bit6Error_UnableToDeleteSendingMessage</a> = -631,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6Error_UnableToUpdateGroup</a> = -632,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6Error_GroupNotAccessible</a> = -633,<br/>
+                            
                             &nbsp;&nbsp; <a href="">Bit6Error_NotConnectedToInternet</a> = NSURLErrorNotConnectedToInternet,<br/>
                             
                             &nbsp;&nbsp; <a href="">Bit6Error_MicNotAllowed</a> = -6001,<br/>
@@ -114,27 +120,21 @@
                             
                             &nbsp;&nbsp; <a href="">Bit6Error_FileDoesNotExistsOnServer</a> = -6024,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6Error_UnableToDeleteSendingMessage</a> = -631,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">Bit6Error_UnableToUpdateGroup</a> = -632,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">Bit6Error_GroupNotAccessible</a> = -633,<br/>
-                            
                             &nbsp;&nbsp; <a href="">Bit6Error_HTTPServerError</a> = -6031,<br/>
                             
                             &nbsp;&nbsp; <a href="">Bit6Error_HTTPClientError</a> = -6032,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6Error_FailedToStartTheCallError</a> = -6041,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">Bit6Error_CallInProgressError</a> = -6042,<br/>
-                            
                             &nbsp;&nbsp; <a href="">Bit6Error_InvalidRESTAPICall</a> = -6051,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelNotOpenError</a> = -10001,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6Error_CallFailedToStartError</a> = -10001,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelUnknownError</a> = -10002,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6Error_CallConnectionFailedError</a> = -10002,<br/>
                             
-                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelBufferOverflowError</a> = -10003,<br/>
+                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelNotOpenError</a> = -10011,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelUnknownError</a> = -10012,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">Bit6Error_TransferDataChannelBufferOverflowError</a> = -10013,<br/>
                             
                             };</code>
                     
@@ -149,6 +149,57 @@
 
 
 <p>The recipient was not found.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6Error_UnableToDeleteSendingMessage"></a><code>Bit6Error_UnableToDeleteSendingMessage</code></dt>
+<dd>
+
+
+<p>Can&rsquo;t delete a message with status Sending.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6Error_UnableToUpdateGroup"></a><code>Bit6Error_UnableToUpdateGroup</code></dt>
+<dd>
+
+
+<p>Couldn&rsquo;t make changes to the group.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6Error_GroupNotAccessible"></a><code>Bit6Error_GroupNotAccessible</code></dt>
+<dd>
+
+
+<p>The group wasn&rsquo;t found in the server. Probably because of not enough permissions to see it.</p>
 
     
 
@@ -365,57 +416,6 @@
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6Error_UnableToDeleteSendingMessage"></a><code>Bit6Error_UnableToDeleteSendingMessage</code></dt>
-<dd>
-
-
-<p>Can&rsquo;t delete a message with status Sending.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="Bit6Error_UnableToUpdateGroup"></a><code>Bit6Error_UnableToUpdateGroup</code></dt>
-<dd>
-
-
-<p>Couldn&rsquo;t make changes to the group.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="Bit6Error_GroupNotAccessible"></a><code>Bit6Error_GroupNotAccessible</code></dt>
-<dd>
-
-
-<p>The group wasn&rsquo;t found in the server. Probably because of not enough permissions to see it.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
-	</p>
-	
-</dd>
-                            
                             <dt><a name="" title="Bit6Error_HTTPServerError"></a><code>Bit6Error_HTTPServerError</code></dt>
 <dd>
 
@@ -450,7 +450,24 @@
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6Error_FailedToStartTheCallError"></a><code>Bit6Error_FailedToStartTheCallError</code></dt>
+                            <dt><a name="" title="Bit6Error_InvalidRESTAPICall"></a><code>Bit6Error_InvalidRESTAPICall</code></dt>
+<dd>
+
+
+<p>An HTTP status = 4xx occur when interacting with the server.</p>
+
+    
+
+    
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="Bit6Error_CallFailedToStartError"></a><code>Bit6Error_CallFailedToStartError</code></dt>
 <dd>
 
 
@@ -467,28 +484,11 @@
 	
 </dd>
                             
-                            <dt><a name="" title="Bit6Error_CallInProgressError"></a><code>Bit6Error_CallInProgressError</code></dt>
+                            <dt><a name="" title="Bit6Error_CallConnectionFailedError"></a><code>Bit6Error_CallConnectionFailedError</code></dt>
 <dd>
 
 
-<p>Can&rsquo;t answer the call because another call is in progress.</p>
-
-    
-
-    
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">Bit6Constants.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="Bit6Error_InvalidRESTAPICall"></a><code>Bit6Error_InvalidRESTAPICall</code></dt>
-<dd>
-
-
-<p>An HTTP status = 4xx occur when interacting with the server.</p>
+<p>Call connection failed.</p>
 
     
 
@@ -579,7 +579,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

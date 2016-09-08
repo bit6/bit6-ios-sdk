@@ -17,7 +17,7 @@
 			<Abstract type="html">Sets the message for the sender.</Abstract>
 			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
 			
-			<Declaration>- (void)setMessage:(nonnull Bit6Message *)message thumbnailMode:(BOOL)thumbnailMode</Declaration>
+			<Declaration>- (void)setMessage:(Bit6Message *)message thumbnailMode:(BOOL)thumbnailMode</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>message</Name>

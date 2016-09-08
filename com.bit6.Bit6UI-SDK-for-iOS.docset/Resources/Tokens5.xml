@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXUContactNameLabel.html">
+	<File path="Classes/BXUContactAvatarImageView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXUContactNameLabel</TokenIdentifier>
-			<Abstract type="html">Convenience subclass of UILabel to show the display name for a contact. This class work together with BXUContactSource to know the display name to show.</Abstract>
-			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUContactAvatarImageView</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UIImageView to show a profile picture for a contact. This class work together with BXUContactSource to know the NSURL of the image to download.</Abstract>
+			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
             
 			
 	<RelatedTokens>
@@ -18,23 +18,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUContactNameLabel/setAddress:</TokenIdentifier>
-			<Abstract type="html">Identity of the contact for this label.</Abstract>
-			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUContactAvatarImageView/setAddress:</TokenIdentifier>
+			<Abstract type="html">Identity of the contact for this avatar.</Abstract>
+			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
-			
-			
-			<Anchor>//api/name/address</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUContactNameLabel/address</TokenIdentifier>
-			<Abstract type="html">Identity of the contact for this label.</Abstract>
-			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			<Declaration>@property (strong, nonatomic) Bit6Address *address</Declaration>
 			
 			
 			<Anchor>//api/name/address</Anchor>
@@ -42,14 +30,55 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUContactNameLabel/address</TokenIdentifier>
-			<Abstract type="html">Identity of the contact for this label.</Abstract>
-			<DeclaredIn>BXUContactNameLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUContactAvatarImageView/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact for this avatar.</Abstract>
+			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
 			
-			<Declaration>@property (nullable, strong, nonatomic) Bit6Address *address</Declaration>
+			<Declaration>@property (strong, nonatomic) Bit6Address *address</Declaration>
 			
 			
 			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUContactAvatarImageView/address</TokenIdentifier>
+			<Abstract type="html">Identity of the contact for this avatar.</Abstract>
+			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) Bit6Address *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUContactAvatarImageView/setImagePreparationBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to perform after the avatar has been downloaded and before it is saved to cache. This allows to make some operations to the avatar image.</Abstract>
+			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			
+			<Declaration>+ (void)setImagePreparationBlock:(nullable BXUContactAvatarPreparationBlock)preparationBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>preparationBlock</Name>
+					<Abstract type="html">block to execute before the avatar is saved to cache.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setImagePreparationBlock:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXUContactAvatarImageView/preparationBlock</TokenIdentifier>
+			<Abstract type="html">Gets the block to perform after the avatar has been downloaded and before it is saved to cache.</Abstract>
+			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			
+			<Declaration>+ (nullable BXUContactAvatarPreparationBlock)preparationBlock</Declaration>
+			
+			<ReturnValue><Abstract type="html">preparationBlock block to execute before the avatar is saved to cache.</Abstract></ReturnValue>
+			<Anchor>//api/name/preparationBlock</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

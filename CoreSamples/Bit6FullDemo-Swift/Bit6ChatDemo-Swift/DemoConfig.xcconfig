@@ -14,3 +14,5 @@ ARCHS[sdk=iphoneos*] = $(ARCHS_STANDARD)
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR) ../../
 
 ENABLE_BITCODE = NO
+
+SWIFT_VERSION = 2.3

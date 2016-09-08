@@ -10,6 +10,8 @@
 #import "BXUContactNameLabel.h"
 #import "BXUTypingLabel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! Component to show all the messages in one conversation, or all the messages for all conversations at the same time. It includes support to send/receive messages with attachments and make calls. */
 @interface BXUMessageTableViewController : UIViewController
 
@@ -20,10 +22,25 @@
 @property (nullable, weak, nonatomic, readonly) BXUTypingLabel *typingLabel;
 
 /*! Reference to the call button item in self.navigationItem.rightBarButtonItem */
-@property (nonnull, strong, nonatomic, readonly) UIBarButtonItem *callButtonItem;
+@property (strong, nonatomic, readonly) UIBarButtonItem *callButtonItem;
+
+/*! Used to enable sending video attachments in the conversation. By default is YES. */
+@property (nonatomic) BOOL enableVideoAttachments;
+
+/*! Used to enable sending photo attachments in the conversation. By default is YES. */
+@property (nonatomic) BOOL enablePhotoAttachments;
+
+/*! Used to enable sending the current location in the conversation. By default is YES. */
+@property (nonatomic) BOOL enableLocationAttachments;
+
+/*! Used to enable sending audio recordings in the conversation. By default is YES. */
+@property (nonatomic) BOOL enableAudioAttachments;
 
 /*! Identity to apply to this component. */
-@property (nonnull, strong, nonatomic) Bit6Address *address;
+@property (strong, nonatomic) Bit6Address *address;
+
+/*! Used to show emojis in the conversation without a bubble, in a bigger font. This will only apply if there's one single emoji, without any additional text. By default is NO. */
+@property (nonatomic) BOOL biggerEmojis;
 
 /*! Identity to apply only to the table view. This identity will be use to set which messages to show in the table. 
  @note You usually don't need to set this property because it is set to the same value as <BXUMessageTableViewController.address>
@@ -33,17 +50,17 @@
 /*! Identity to apply only to the compose panel. This identity will be use to set the destination of the outgoing messages. 
  @note You usually don't need to set this property because it is set to the same value as <BXUMessageTableViewController.address>
  */
-@property (nonnull, strong, nonatomic) Bit6Address *composePanelAddress;
+@property (strong, nonatomic) Bit6Address *composePanelAddress;
 
 /*! Identity to apply only to the call button. This identity will be use to determine the contact to call. 
  @note You usually don't need to set this property because it is set to the same value as <BXUMessageTableViewController.address>
  */
-@property (nonnull, strong, nonatomic) Bit6Address *callButtonAddress;
+@property (strong, nonatomic) Bit6Address *callButtonAddress;
 
 /*! Identity to apply only to the title label. This identity will be use to determine the title of the view controller. 
  @note You usually don't need to set this property because it is set to the same value as <BXUMessageTableViewController.address>
  */
-@property (nonnull, strong, nonatomic) Bit6Address *titleLabelAddress;
+@property (strong, nonatomic) Bit6Address *titleLabelAddress;
 
 /*! Identity to apply only to the typing label. This identity will be use to detect when a contact is typing. 
  @note You usually don't need to set this property because it is set to the same value as <BXUMessageTableViewController.address>
@@ -59,16 +76,17 @@
 /*! Called after an image attachment has been tapped. The default implementation does nothing. You usually override this method to perform additional operations. 
  @param message message of the attachment tapped.
  */
-- (void)didSelectImageMessage:(nonnull Bit6Message*)message;
+- (void)didSelectImageMessage:(Bit6Message*)message;
 
 /*! Called after an video attachment has been tapped. The default implementation does nothing. You usually override this method to perform additional operations. 
  @param message message of the attachment tapped.
  */
-- (void)didSelectVideoMessage:(nonnull Bit6Message*)message;
+- (void)didSelectVideoMessage:(Bit6Message*)message;
 
 /*! Called after an location attachment has been tapped. The default implementation does nothing. You usually override this method to perform additional operations. 
  @param message message of the attachment tapped.
  */
-- (void)didSelectLocationMessage:(nonnull Bit6Message*)message;
+- (void)didSelectLocationMessage:(Bit6Message*)message;
 
 @end
+NS_ASSUME_NONNULL_END

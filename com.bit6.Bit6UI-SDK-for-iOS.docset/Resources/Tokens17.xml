@@ -1,160 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXUWebSocketStatusLabel.html">
+	<File path="Classes/BXURoundedButton.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXUWebSocketStatusLabel</TokenIdentifier>
-			<Abstract type="html">Convenience subclass of UILabel to show the status of the signaling websocket.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXURoundedButton</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UIButton with rounded corners to be used in storyboards .</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setViewsWhileConnecting:</TokenIdentifier>
-			<Abstract type="html">Views to show while the websocket status is &quot;connecting&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhileConnecting</Declaration>
-			
-			
-			<Anchor>//api/name/viewsWhileConnecting</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/viewsWhileConnecting</TokenIdentifier>
-			<Abstract type="html">Views to show while the websocket status is &quot;connecting&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhileConnecting</Declaration>
-			
-			
-			<Anchor>//api/name/viewsWhileConnecting</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/viewsWhileConnecting</TokenIdentifier>
-			<Abstract type="html">Views to show while the websocket status is &quot;connecting&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhileConnecting</Declaration>
-			
-			
-			<Anchor>//api/name/viewsWhileConnecting</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setViewsWhenConnected:</TokenIdentifier>
-			<Abstract type="html">Views to show while the websocket status is &quot;connected&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhenConnected</Declaration>
-			
-			
-			<Anchor>//api/name/viewsWhenConnected</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/viewsWhenConnected</TokenIdentifier>
-			<Abstract type="html">Views to show while the websocket status is &quot;connected&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhenConnected</Declaration>
-			
-			
-			<Anchor>//api/name/viewsWhenConnected</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/viewsWhenConnected</TokenIdentifier>
-			<Abstract type="html">Views to show while the websocket status is &quot;connected&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, strong, nonatomic) IBOutletCollection ( UIView ) NSArray&lt;UIView*&gt; *viewsWhenConnected</Declaration>
-			
-			
-			<Anchor>//api/name/viewsWhenConnected</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setHideWhenConnected:</TokenIdentifier>
-			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
-			
-			
-			<Anchor>//api/name/hideWhenConnected</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/hideWhenConnected</TokenIdentifier>
-			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
-			
-			
-			<Anchor>//api/name/hideWhenConnected</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/hideWhenConnected</TokenIdentifier>
-			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
-			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
-			
-			
-			<Anchor>//api/name/hideWhenConnected</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
 		
         
 	</File>

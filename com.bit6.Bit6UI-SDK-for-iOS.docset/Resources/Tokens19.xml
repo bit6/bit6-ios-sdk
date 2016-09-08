@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUContact.html">
+	<File path="Classes/BXUWebSocketStatusLabel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUContact</TokenIdentifier>
-			<Abstract type="html">Contact model that contains all the information for an identity.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUWebSocketStatusLabel</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UILabel to show the status of the signaling websocket.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,50 +13,74 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/uri</TokenIdentifier>
-			<Abstract type="html">Identity URI for the contact.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSString *)uri</Declaration>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/uri</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/name</TokenIdentifier>
-			<Abstract type="html">Display name for the contact.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSString *)name</Declaration>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/avatarURL</TokenIdentifier>
-			<Abstract type="html">URL for the contact&apos;s avatar.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see BXUWebSocketStatusLabelDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSURL *)avatarURL</Declaration>
+			<Declaration>@property (nullable, weak, nonatomic) IBOutlet id&lt;BXUWebSocketStatusLabelDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/avatarURL</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/initials</TokenIdentifier>
-			<Abstract type="html">Initials to show in the BXUContactAvatarImageView and BXUConversationAvatarView when the contact&apos;s avatar is not loaded.</Abstract>
-			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/setHideWhenConnected:</TokenIdentifier>
+			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSString *)initials</Declaration>
+			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
 			
 			
-			<Anchor>//api/name/initials</Anchor>
+			<Anchor>//api/name/hideWhenConnected</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUWebSocketStatusLabel/hideWhenConnected</TokenIdentifier>
+			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/hideWhenConnected</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUWebSocketStatusLabel/hideWhenConnected</TokenIdentifier>
+			<Abstract type="html">The label will be hidden when the websocket is &quot;connected&quot;.</Abstract>
+			<DeclaredIn>BXUWebSocketStatusLabel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideWhenConnected</Declaration>
+			
+			
+			<Anchor>//api/name/hideWhenConnected</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

@@ -11,6 +11,8 @@
 
 @protocol BXULocationViewControllerDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! Convenience subclass of UIViewController to display a location in a MKMapView. 
  @discussion This viewController will present an UITabBar with options to open the location in AppleMaps, others applications can be configured as well using the <BXULocationViewControllerDelegate> protocol. 
  */
@@ -33,7 +35,7 @@
 /*! Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.
  @param locationViewController view controller to dismiss
  */
-- (void)dismissLocationViewController:(nonnull BXULocationViewController*)locationViewController;
+- (void)dismissLocationViewController:(BXULocationViewController*)locationViewController;
 
 @optional
 
@@ -41,6 +43,8 @@
  @param action action selected
  @param coordinate location's coordinate
  */
-- (void)didSelectLocationAction:(nonnull NSString*)action coordinate:(CLLocationCoordinate2D)coordinate;
+- (void)didSelectLocationAction:(NSString*)action coordinate:(CLLocationCoordinate2D)coordinate;
 
 @end
+
+NS_ASSUME_NONNULL_END

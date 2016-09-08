@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6MessageType.html">
+	<File path="Constants/Bit6MessageCallStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageType</TokenIdentifier>
-			<Abstract type="html">Message type for a Bit6Message.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageCallStatus</TokenIdentifier>
+			<Abstract type="html">Call status for a Bit6Message.</Abstract>
 			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Text</TokenIdentifier>
-            <Abstract type="html">The message has only text.</Abstract>
-            <Declaration>Bit6MessageType_Text</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Answer</TokenIdentifier>
+            <Abstract type="html">The call has been answered.</Abstract>
+            <Declaration>Bit6MessageCallStatus_Answer</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Call</TokenIdentifier>
-            <Abstract type="html">The message is for a call.</Abstract>
-            <Declaration>Bit6MessageType_Call</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Missed</TokenIdentifier>
+            <Abstract type="html">The call has been missed.</Abstract>
+            <Declaration>Bit6MessageCallStatus_Missed</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Attachments</TokenIdentifier>
-            <Abstract type="html">The message has an attachment.</Abstract>
-            <Declaration>Bit6MessageType_Attachments</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_Failed</TokenIdentifier>
+            <Abstract type="html">The call failed.</Abstract>
+            <Declaration>Bit6MessageCallStatus_Failed</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageType_Location</TokenIdentifier>
-            <Abstract type="html">The message has a location.</Abstract>
-            <Declaration>Bit6MessageType_Location</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageCallStatus_NoAnswer</TokenIdentifier>
+            <Abstract type="html">The call wasn&apos;t answered.</Abstract>
+            <Declaration>Bit6MessageCallStatus_NoAnswer</Declaration>
             
             <DeclaredIn>Bit6Message.h</DeclaredIn>
             

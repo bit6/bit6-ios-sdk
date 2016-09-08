@@ -17,6 +17,7 @@
 		D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E58B1AD38AF00086B31E /* Images.xcassets */; };
 		D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E58D1AD38AF00086B31E /* LaunchScreen.xib */; };
 		D8D4E5A51AD38B710086B31E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */; };
+		D8F2D5B51D6F4BA800FAC25E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8F2D5B41D6F4BA800FAC25E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D8D4E58E1AD38AF00086B31E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
+		D8F2D5B41D6F4BA800FAC25E /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D8D128C81CC67DB800613ABE /* Localizable.strings */,
+				D8F2D5B41D6F4BA800FAC25E /* InfoPlist.strings */,
 				D8D128C91CC67DB800613ABE /* ringtone.caf */,
 				D8852D9C1AE349D400FB82B0 /* Bit6.framework */,
 				D8D4E57C1AD38AF00086B31E /* Info.plist */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */,
+				D8F2D5B51D6F4BA800FAC25E /* InfoPlist.strings in Resources */,
 				D8D128CB1CC67DB800613ABE /* ringtone.caf in Resources */,
 				D8D128CA1CC67DB800613ABE /* Localizable.strings in Resources */,
 				D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */,

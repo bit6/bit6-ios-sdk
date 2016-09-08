@@ -18,6 +18,7 @@
 		D85AA65E1CC56B1F00E4FA74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85AA65D1CC56B1F00E4FA74 /* Main.storyboard */; };
 		D85AA6601CC5B03A00E4FA74 /* MyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AA65F1CC5B03A00E4FA74 /* MyCallViewController.swift */; };
 		D85AA6621CC5B04C00E4FA74 /* MyCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85AA6611CC5B04C00E4FA74 /* MyCallViewController.xib */; };
+		D8F2D5B31D6F4B6400FAC25E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8F2D5B21D6F4B6400FAC25E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		D85AA65D1CC56B1F00E4FA74 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D85AA65F1CC5B03A00E4FA74 /* MyCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCallViewController.swift; sourceTree = "<group>"; };
 		D85AA6611CC5B04C00E4FA74 /* MyCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCallViewController.xib; sourceTree = "<group>"; };
+		D8F2D5B21D6F4B6400FAC25E /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D85AA6591CC56B0400E4FA74 /* Localizable.strings */,
+				D8F2D5B21D6F4B6400FAC25E /* InfoPlist.strings */,
 				D85AA65A1CC56B0400E4FA74 /* ringtone.caf */,
 				D80D4B8D1A21514A00391E04 /* Bit6.framework */,
 				D80D4B641A2150DA00391E04 /* Info.plist */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */,
+				D8F2D5B31D6F4B6400FAC25E /* InfoPlist.strings in Resources */,
 				D85AA65B1CC56B0400E4FA74 /* Localizable.strings in Resources */,
 				D85AA65C1CC56B0400E4FA74 /* ringtone.caf in Resources */,
 				D85AA65E1CC56B1F00E4FA74 /* Main.storyboard in Resources */,

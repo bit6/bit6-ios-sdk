@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/Bit6CallControllerDelegate.html">
+	<File path="Protocols/Bit6AudioRecorderControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/Bit6CallControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The Bit6DataChannelDelegate protocol defines the methods an object should implement to listen to changes during a call.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/Bit6AudioRecorderControllerDelegate</TokenIdentifier>
+			<Abstract type="html">The Bit6AudioRecorderControllerDelegate protocol defines the methods a delegate of a Bit6AudioRecorderController object should implement. The methods of this protocol notify the delegate when the recording was either completed or canceled by the user.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -13,59 +13,59 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/callController:dataChannelDidChangeToState:</TokenIdentifier>
-			<Abstract type="html">Called when the data channel state has changed. This method is called in the main thread.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/doneRecorderController:filePath:</TokenIdentifier>
+			<Abstract type="html">Called when a user has completed the recording prccess.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)callController:(nonnull Bit6CallController *)callController dataChannelDidChangeToState:(Bit6DataChannelState)state</Declaration>
+			<Declaration>- (void)doneRecorderController:(Bit6AudioRecorderController *)b6rc filePath:(NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">The call for which the data channel has changed status.</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
-					<Name>state</Name>
-					<Abstract type="html">new state for the data channel.</Abstract>
+					<Name>filePath</Name>
+					<Abstract type="html">file where the audio was saved.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/callController:dataChannelDidChangeToState:</Anchor>
+			<Anchor>//api/name/doneRecorderController:filePath:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/callController:callDidChangeToState:</TokenIdentifier>
-			<Abstract type="html">Called when the call state has changed. This method is called in the main thread.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/isRecordingWithController:filePath:</TokenIdentifier>
+			<Abstract type="html">Called each 0.5 seconds while recording.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)callController:(nonnull Bit6CallController *)callController callDidChangeToState:(Bit6CallState)state</Declaration>
+			<Declaration>- (void)isRecordingWithController:(Bit6AudioRecorderController *)b6rc filePath:(NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">The call for which the state has changed.</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter><Parameter>
-					<Name>state</Name>
-					<Abstract type="html">new state for the call.</Abstract>
+					<Name>filePath</Name>
+					<Abstract type="html">file where the audio is being saved.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/callController:callDidChangeToState:</Anchor>
+			<Anchor>//api/name/isRecordingWithController:filePath:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/Bit6CallControllerDelegate/secondsDidChangeForCallController:</TokenIdentifier>
-			<Abstract type="html">Called each second to allow the refresh of a timer UI. This method is called in the main thread.</Abstract>
-			<DeclaredIn>Bit6CallController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/Bit6AudioRecorderControllerDelegate/cancelRecorderController:</TokenIdentifier>
+			<Abstract type="html">Called when a user has cancelled the recording process.</Abstract>
+			<DeclaredIn>Bit6AudioRecorderController.h</DeclaredIn>
 			
-			<Declaration>- (void)secondsDidChangeForCallController:(nonnull Bit6CallController *)callController</Declaration>
+			<Declaration>- (void)cancelRecorderController:(Bit6AudioRecorderController *)b6rc</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>callController</Name>
-					<Abstract type="html">&lt;BitCallController&gt; object which &apos;seconds&apos; property has changed.</Abstract>
+					<Name>b6rc</Name>
+					<Abstract type="html">The controller object recording the audio file.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/secondsDidChangeForCallController:</Anchor>
+			<Anchor>//api/name/cancelRecorderController:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

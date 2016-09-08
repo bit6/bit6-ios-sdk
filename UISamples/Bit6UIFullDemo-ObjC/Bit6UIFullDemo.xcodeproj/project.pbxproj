@@ -26,6 +26,8 @@
 		D8EDACD1194ABD4D00AFFB53 /* ConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC4194ABD4D00AFFB53 /* ConversationsViewController.m */; };
 		D8EDACD3194ABD4D00AFFB53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */; };
 		D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */; };
+		D8EE0D181D6F614B00915BD8 /* CustomCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8EE0D161D6F614B00915BD8 /* CustomCallViewController.xib */; };
+		D8EE0D191D6F617700915BD8 /* CustomCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EE0D151D6F614B00915BD8 /* CustomCallViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,9 @@
 		D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChatDemo/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		D8EDACC8194ABD4D00AFFB53 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ChatDemo/LoginViewController.h; sourceTree = SOURCE_ROOT; };
 		D8EDACC9194ABD4D00AFFB53 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ChatDemo/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		D8EE0D141D6F614B00915BD8 /* CustomCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCallViewController.h; sourceTree = "<group>"; };
+		D8EE0D151D6F614B00915BD8 /* CustomCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCallViewController.m; sourceTree = "<group>"; };
+		D8EE0D161D6F614B00915BD8 /* CustomCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCallViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +127,7 @@
 				D86262031CC7CB7600E061DD /* DemoContactSource.m */,
 				D86262001CC7C34C00E061DD /* Main.storyboard */,
 				D8EDACC0194ABD4D00AFFB53 /* DemoConfig.xcconfig */,
+				D8EE0D131D6F614B00915BD8 /* InCall */,
 				D8EDACC7194ABD4D00AFFB53 /* Images.xcassets */,
 				D880E4A818DBFC540070378D /* Supporting Files */,
 			);
@@ -135,14 +141,25 @@
 				D894B88D1CC93DA800211A29 /* Bit6UI.strings */,
 				D86261FE1CC7C28400E061DD /* Bit6UIResources.bundle */,
 				D8C4CC371C9F15C40026B9C0 /* Localizable.strings */,
+				D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */,
 				D83B37821CC3FA4800C5F18E /* ringtone.caf */,
 				D8EDACB5194ABD2A00AFFB53 /* Bit6UIFullDemo-Info.plist */,
 				D8EDACB6194ABD2A00AFFB53 /* Bit6UIFullDemo-Prefix.pch */,
-				D8EDACB7194ABD2A00AFFB53 /* InfoPlist.strings */,
 				D8EDACB8194ABD2A00AFFB53 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		D8EE0D131D6F614B00915BD8 /* InCall */ = {
+			isa = PBXGroup;
+			children = (
+				D8EE0D141D6F614B00915BD8 /* CustomCallViewController.h */,
+				D8EE0D151D6F614B00915BD8 /* CustomCallViewController.m */,
+				D8EE0D161D6F614B00915BD8 /* CustomCallViewController.xib */,
+			);
+			name = InCall;
+			path = ChatDemo/InCall;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -212,6 +229,7 @@
 				D894B88E1CC93DA800211A29 /* Bit6UI.strings in Resources */,
 				D83B37831CC3FA4800C5F18E /* ringtone.caf in Resources */,
 				D8EDACBA194ABD2A00AFFB53 /* InfoPlist.strings in Resources */,
+				D8EE0D181D6F614B00915BD8 /* CustomCallViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +244,7 @@
 				D8C040FA1ACA7CE600D51A19 /* ConversationDetailsTableViewController.m in Sources */,
 				D86262041CC7CB7600E061DD /* DemoContactSource.m in Sources */,
 				D8EDACCD194ABD4D00AFFB53 /* AppDelegate.m in Sources */,
+				D8EE0D191D6F617700915BD8 /* CustomCallViewController.m in Sources */,
 				D8EDACD4194ABD4D00AFFB53 /* LoginViewController.m in Sources */,
 				D8EDACBB194ABD2A00AFFB53 /* main.m in Sources */,
 				D8EDACD0194ABD4D00AFFB53 /* ChatsTableViewController.m in Sources */,
@@ -317,6 +336,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6UIFullDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6UIFullDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6UIFullDemo;
 				WRAPPER_EXTENSION = app;
@@ -334,6 +354,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6UIFullDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6UIFullDemo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
 				PRODUCT_NAME = Bit6UIFullDemo;
 				WRAPPER_EXTENSION = app;

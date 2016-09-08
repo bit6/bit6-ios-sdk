@@ -250,7 +250,7 @@ class ConversationDetailsTableViewController: UITableViewController {
                 if let destination = usernameTextField.text {
                     
                     if let address = Bit6Address(username:destination) {
-                        self.group.inviteGroupMemberWithAddress(address, role:Bit6GroupMemberRole_User) { (members, error) in
+                        self.group.inviteGroupMemberWithAddress(address, role:Bit6GroupMemberRoleUser) { (members, error) in
                             if error != nil {
                                 let alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)
                                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))

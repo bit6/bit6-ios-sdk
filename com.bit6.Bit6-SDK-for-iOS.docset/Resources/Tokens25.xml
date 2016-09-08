@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6DataChannelState.html">
+	<File path="Constants/Bit6CallState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6DataChannelState</TokenIdentifier>
-			<Abstract type="html">States for the Data Channel stream.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallState</TokenIdentifier>
+			<Abstract type="html">Call status.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Connecting</TokenIdentifier>
-            <Abstract type="html">The data channel is connecting.</Abstract>
-            <Declaration>Bit6DataChannelState_Connecting</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_NEW</TokenIdentifier>
+            <Abstract type="html">The call hasn&apos;t started.</Abstract>
+            <Declaration>Bit6CallState_NEW</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Open</TokenIdentifier>
-            <Abstract type="html">The data channel is open.</Abstract>
-            <Declaration>Bit6DataChannelState_Open</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_ACCEPTING_CALL</TokenIdentifier>
+            <Abstract type="html">Answering the incoming call.</Abstract>
+            <Declaration>Bit6CallState_ACCEPTING_CALL</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Closing</TokenIdentifier>
-            <Abstract type="html">The data channel is closing.</Abstract>
-            <Declaration>Bit6DataChannelState_Closing</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_GATHERING_CANDIDATES</TokenIdentifier>
+            <Abstract type="html">Preparing the local sdp candidates.</Abstract>
+            <Declaration>Bit6CallState_GATHERING_CANDIDATES</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             
@@ -44,9 +44,59 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6DataChannelState_Closed</TokenIdentifier>
-            <Abstract type="html">The data channel is closed.</Abstract>
-            <Declaration>Bit6DataChannelState_Closed</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_WAITING_SDP</TokenIdentifier>
+            <Abstract type="html">Waiting for remote sdp.</Abstract>
+            <Declaration>Bit6CallState_WAITING_SDP</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_SENDING_SDP</TokenIdentifier>
+            <Abstract type="html">Sending local sdp.</Abstract>
+            <Declaration>Bit6CallState_SENDING_SDP</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTING</TokenIdentifier>
+            <Abstract type="html">Connecting to the call.</Abstract>
+            <Declaration>Bit6CallState_CONNECTING</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_CONNECTED</TokenIdentifier>
+            <Abstract type="html">The call has started.</Abstract>
+            <Declaration>Bit6CallState_CONNECTED</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_DISCONNECTED</TokenIdentifier>
+            <Abstract type="html">The call is disconnected for the moment.</Abstract>
+            <Declaration>Bit6CallState_DISCONNECTED</Declaration>
+            
+            <DeclaredIn>Bit6CallController.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallState_END</TokenIdentifier>
+            <Abstract type="html">The call ended.</Abstract>
+            <Declaration>Bit6CallState_END</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             

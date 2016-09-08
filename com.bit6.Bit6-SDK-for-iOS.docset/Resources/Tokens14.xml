@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/Bit6OutgoingTransfer.html">
+	<File path="Classes/Bit6OutgoingMessage.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/Bit6OutgoingTransfer</TokenIdentifier>
-			<Abstract type="html">A Bit6OutgoingTransfer object represents an outgoing peer to peer data transfer.</Abstract>
-			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6OutgoingMessage</TokenIdentifier>
+			<Abstract type="html">A Bit6OutgoingMessage object represents a message that will be sent by the user.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
@@ -13,25 +13,425 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingTransfer/initWithData:name:mimeType:</TokenIdentifier>
-			<Abstract type="html">Initializes a Bit6OutgoingTransfer object.</Abstract>
-			<DeclaredIn>Bit6Transfer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/initWithDestination:</TokenIdentifier>
+			<Abstract type="html">Initializes a Bit6OutgoingMessage object</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
 			
-			<Declaration>- (nonnull instancetype)initWithData:(nonnull NSData *)data name:(nullable NSString *)name mimeType:(nonnull NSString *)mimeType</Declaration>
+			<Declaration>- (instancetype)initWithDestination:(Bit6Address *)destination</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>data</Name>
-					<Abstract type="html">data to send.</Abstract>
-				</Parameter><Parameter>
-					<Name>name</Name>
-					<Abstract type="html">name of the file. If nil a random name is given.</Abstract>
-				</Parameter><Parameter>
-					<Name>mimeType</Name>
-					<Abstract type="html">MIME type of the file to send.</Abstract>
+					<Name>destination</Name>
+					<Abstract type="html">An Bit6Address object to where to send the message.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a Bit6OutgoingTransfer object.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithData:name:mimeType:</Anchor>
+			<ReturnValue><Abstract type="html">a new Bit6OutgoingMessage object.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDestination:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setDestination:</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) Bit6Address *destination</Declaration>
+			
+			
+			<Anchor>//api/name/destination</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/destination</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) Bit6Address *destination</Declaration>
+			
+			
+			<Anchor>//api/name/destination</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/destination</TokenIdentifier>
+			<Abstract type="html">The Bit6Address object to reference the message&apos;s destination.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) Bit6Address *destination</Declaration>
+			
+			
+			<Anchor>//api/name/destination</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setContent:</TokenIdentifier>
+			<Abstract type="html">Text content of the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/content</TokenIdentifier>
+			<Abstract type="html">Text content of the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/content</TokenIdentifier>
+			<Abstract type="html">Text content of the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, copy) NSString *content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setImage:</TokenIdentifier>
+			<Abstract type="html">Image to send as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/image</TokenIdentifier>
+			<Abstract type="html">Image to send as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/image</TokenIdentifier>
+			<Abstract type="html">Image to send as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) UIImage *image</Declaration>
+			
+			
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setVideoURL:</TokenIdentifier>
+			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSURL *videoURL</Declaration>
+			
+			
+			<Anchor>//api/name/videoURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/videoURL</TokenIdentifier>
+			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSURL *videoURL</Declaration>
+			
+			
+			<Anchor>//api/name/videoURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/videoURL</TokenIdentifier>
+			<Abstract type="html">URL path to the video to be sent as an attachment.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSURL *videoURL</Declaration>
+			
+			
+			<Anchor>//api/name/videoURL</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setVideoCropStart:</TokenIdentifier>
+			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropStart</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/videoCropStart</TokenIdentifier>
+			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropStart</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/videoCropStart</TokenIdentifier>
+			<Abstract type="html">Specifies the beginning of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropStart</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropStart</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setVideoCropEnd:</TokenIdentifier>
+			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropEnd</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/videoCropEnd</TokenIdentifier>
+			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropEnd</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/videoCropEnd</TokenIdentifier>
+			<Abstract type="html">Specifies the end of the time range, in seconds, to be sent from the video.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSNumber *videoCropEnd</Declaration>
+			
+			
+			<Anchor>//api/name/videoCropEnd</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setLocation:</TokenIdentifier>
+			<Abstract type="html">Location to send with the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/location</TokenIdentifier>
+			<Abstract type="html">Location to send with the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/location</TokenIdentifier>
+			<Abstract type="html">Location to send with the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CLLocationCoordinate2D location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/uniqueAudioFilePath</TokenIdentifier>
+			<Abstract type="html">Returns an unique path to store an audio file.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)uniqueAudioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/uniqueAudioFilePath</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setAudioFilePath:</TokenIdentifier>
+			<Abstract type="html">Path of the attached audio file, if available.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *audioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/audioFilePath</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/audioFilePath</TokenIdentifier>
+			<Abstract type="html">Path of the attached audio file, if available.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *audioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/audioFilePath</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/audioFilePath</TokenIdentifier>
+			<Abstract type="html">Path of the attached audio file, if available.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *audioFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/audioFilePath</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setAttachmentsSavedInCache:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the message attachment has been successfuly saved to cache.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL attachmentsSavedInCache</Declaration>
+			
+			
+			<Anchor>//api/name/attachmentsSavedInCache</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/attachmentsSavedInCache</TokenIdentifier>
+			<Abstract type="html">Returns YES if the message attachment has been successfuly saved to cache.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL attachmentsSavedInCache</Declaration>
+			
+			
+			<Anchor>//api/name/attachmentsSavedInCache</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/attachmentsSavedInCache</TokenIdentifier>
+			<Abstract type="html">Returns YES if the message attachment has been successfuly saved to cache.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL attachmentsSavedInCache</Declaration>
+			
+			
+			<Anchor>//api/name/attachmentsSavedInCache</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/setSendPush:</TokenIdentifier>
+			<Abstract type="html">Set to NO to disable push notifications for this message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL sendPush</Declaration>
+			
+			
+			<Anchor>//api/name/sendPush</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/sendPush</TokenIdentifier>
+			<Abstract type="html">Set to NO to disable push notifications for this message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL sendPush</Declaration>
+			
+			
+			<Anchor>//api/name/sendPush</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6OutgoingMessage/sendPush</TokenIdentifier>
+			<Abstract type="html">Set to NO to disable push notifications for this message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL sendPush</Declaration>
+			
+			
+			<Anchor>//api/name/sendPush</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6OutgoingMessage/sendWithCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Sends the message.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>- (void)sendWithCompletionHandler:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called when the operation is completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sendWithCompletionHandler:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6OutgoingMessage/outgoingCopyOfMessage:</TokenIdentifier>
+			<Abstract type="html">Creates a copy of a sent message. This copy has a different identifier and it&apos;s ready to be forwarded.</Abstract>
+			<DeclaredIn>Bit6OutgoingMessage.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6OutgoingMessage *)outgoingCopyOfMessage:(Bit6Message *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">message to be copied</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">copy of the message</Abstract></ReturnValue>
+			<Anchor>//api/name/outgoingCopyOfMessage:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

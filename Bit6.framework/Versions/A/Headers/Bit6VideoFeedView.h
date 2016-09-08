@@ -11,7 +11,10 @@
 /*! UIView to render a video feed during a call. */
 @interface Bit6VideoFeedView : UIView
 
-/*! Yes is the view is rendering the local video feed. */
+/*! Yes if the view is rendering the local video feed. */
 @property (nonatomic, readonly) BOOL isLocal;
+
+/*! Yes if the video feed got interrupted. */
+@property (nonatomic, readonly) BOOL interrupted;
 
 @end

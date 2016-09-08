@@ -1,84 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXUContactAvatarImageView.html">
+	<File path="Classes/BXUCircleButton.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXUContactAvatarImageView</TokenIdentifier>
-			<Abstract type="html">Convenience subclass of UIImageView to show a profile picture for a contact. This class work together with BXUContactSource to know the NSURL of the image to download.</Abstract>
-			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUCircleButton</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UIButton with an ON-OFF status displayed as a circle. To be used in storyboards</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
             
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/intf/BXUContactSource</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<NodeRef refid="4"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUContactAvatarImageView/setAddress:</TokenIdentifier>
-			<Abstract type="html">Identity of the contact for this avatar.</Abstract>
-			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/setOn:</TokenIdentifier>
+			<Abstract type="html">The ON/OFF status of the button.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *address</Declaration>
+			<Declaration>@property (nonatomic) BOOL on</Declaration>
 			
 			
-			<Anchor>//api/name/address</Anchor>
+			<Anchor>//api/name/on</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUContactAvatarImageView/address</TokenIdentifier>
-			<Abstract type="html">Identity of the contact for this avatar.</Abstract>
-			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/on</TokenIdentifier>
+			<Abstract type="html">The ON/OFF status of the button.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *address</Declaration>
+			<Declaration>@property (nonatomic) BOOL on</Declaration>
 			
 			
-			<Anchor>//api/name/address</Anchor>
+			<Anchor>//api/name/on</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUContactAvatarImageView/address</TokenIdentifier>
-			<Abstract type="html">Identity of the contact for this avatar.</Abstract>
-			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUCircleButton/on</TokenIdentifier>
+			<Abstract type="html">The ON/OFF status of the button.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
 			
-			<Declaration>@property (nonnull, strong, nonatomic) Bit6Address *address</Declaration>
+			<Declaration>@property (nonatomic) BOOL on</Declaration>
 			
 			
-			<Anchor>//api/name/address</Anchor>
+			<Anchor>//api/name/on</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/BXUContactAvatarImageView/setImagePreparationBlock:</TokenIdentifier>
-			<Abstract type="html">Sets a block to perform after the avatar has been downloaded and before it is saved to cache. This allows to make some operations to the avatar image.</Abstract>
-			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/setDisableColor:</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is not enabled.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
 			
-			<Declaration>+ (void)setImagePreparationBlock:(nullable BXUContactAvatarPreparationBlock)preparationBlock</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>preparationBlock</Name>
-					<Abstract type="html">block to execute before the avatar is saved to cache.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, strong) UIColor *disableColor</Declaration>
 			
-			<Anchor>//api/name/setImagePreparationBlock:</Anchor>
+			
+			<Anchor>//api/name/disableColor</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/BXUContactAvatarImageView/preparationBlock</TokenIdentifier>
-			<Abstract type="html">Gets the block to perform after the avatar has been downloaded and before it is saved to cache.</Abstract>
-			<DeclaredIn>BXUContactAvatarImageView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/disableColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is not enabled.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
 			
-			<Declaration>+ (nullable BXUContactAvatarPreparationBlock)preparationBlock</Declaration>
+			<Declaration>@property (nonatomic, strong) UIColor *disableColor</Declaration>
 			
-			<ReturnValue><Abstract type="html">preparationBlock block to execute before the avatar is saved to cache.</Abstract></ReturnValue>
-			<Anchor>//api/name/preparationBlock</Anchor>
+			
+			<Anchor>//api/name/disableColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUCircleButton/disableColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is not enabled.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *disableColor</Declaration>
+			
+			
+			<Anchor>//api/name/disableColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/setOnColor:</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is set to ON.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *onColor</Declaration>
+			
+			
+			<Anchor>//api/name/onColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/onColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is set to ON.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *onColor</Declaration>
+			
+			
+			<Anchor>//api/name/onColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUCircleButton/onColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is set to ON.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *onColor</Declaration>
+			
+			
+			<Anchor>//api/name/onColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/setHighlightedColor:</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is highlighted.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *highlightedColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightedColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/highlightedColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is highlighted.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *highlightedColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightedColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUCircleButton/highlightedColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is highlighted.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *highlightedColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightedColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/setDefaulBackgroundColor:</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is enabled but set to OFF.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *defaulBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/defaulBackgroundColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUCircleButton/defaulBackgroundColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is enabled but set to OFF.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *defaulBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/defaulBackgroundColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUCircleButton/defaulBackgroundColor</TokenIdentifier>
+			<Abstract type="html">Color to be used when the button is enabled but set to OFF.</Abstract>
+			<DeclaredIn>BXUButtons.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) UIColor *defaulBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/defaulBackgroundColor</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

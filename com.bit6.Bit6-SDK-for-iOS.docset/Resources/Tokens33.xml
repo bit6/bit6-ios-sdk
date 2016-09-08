@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6RTStatus.html">
+	<File path="Constants/Bit6MessageFileType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6RTStatus</TokenIdentifier>
-			<Abstract type="html">Web Socket connection status.</Abstract>
-			<DeclaredIn>Bit6Constants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6MessageFileType</TokenIdentifier>
+			<Abstract type="html">Attachment type for a Bit6Message</Abstract>
+			<DeclaredIn>Bit6Message.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -14,31 +14,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_DISCONNECTED</TokenIdentifier>
-            <Abstract type="html">Web Socket is disconnected.</Abstract>
-            <Declaration>Bit6RTStatus_DISCONNECTED</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_None</TokenIdentifier>
+            <Abstract type="html">The message has no attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_None</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
-            
-            <NodeRef refid="33"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTING</TokenIdentifier>
-            <Abstract type="html">Web Socket is tring to connect.</Abstract>
-            <Declaration>Bit6RTStatus_CONNECTING</Declaration>
-            
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="33"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6RTStatus_CONNECTED</TokenIdentifier>
-            <Abstract type="html">Web Socket is connected.</Abstract>
-            <Declaration>Bit6RTStatus_CONNECTED</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_Audio</TokenIdentifier>
+            <Abstract type="html">The message has an audio attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_Audio</Declaration>
             
-            <DeclaredIn>Bit6Constants.h</DeclaredIn>
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_Image</TokenIdentifier>
+            <Abstract type="html">The message has an image attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_Image</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6MessageFileType_Video</TokenIdentifier>
+            <Abstract type="html">The message has a video attachment.</Abstract>
+            <Declaration>Bit6MessageFileType_Video</Declaration>
+            
+            <DeclaredIn>Bit6Message.h</DeclaredIn>
             
             <NodeRef refid="33"/>
         </Token>

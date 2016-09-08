@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/Bit6CallStreams.html">
+	<File path="Constants/Bit6CallCapability.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallStreams</TokenIdentifier>
-			<Abstract type="html">Call stream for a Bit6CallController.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/Bit6CallCapability</TokenIdentifier>
+			<Abstract type="html">Call Capabilities.</Abstract>
 			<DeclaredIn>Bit6CallController.h</DeclaredIn>
             
 			
@@ -14,39 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_None</TokenIdentifier>
-            <Abstract type="html">No stream.</Abstract>
-            <Declaration>Bit6CallStreams_None</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Audio</TokenIdentifier>
-            <Abstract type="html">Audio stream.</Abstract>
-            <Declaration>Bit6CallStreams_Audio</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Video</TokenIdentifier>
-            <Abstract type="html">Video stream.</Abstract>
-            <Declaration>Bit6CallStreams_Video</Declaration>
-            
-            <DeclaredIn>Bit6CallController.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/Bit6CallStreams_Data</TokenIdentifier>
-            <Abstract type="html">Data stream.</Abstract>
-            <Declaration>Bit6CallStreams_Data</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/Bit6CallCapability_Recording</TokenIdentifier>
+            <Abstract type="html">The call can be recorded.</Abstract>
+            <Declaration>Bit6CallCapability_Recording</Declaration>
             
             <DeclaredIn>Bit6CallController.h</DeclaredIn>
             

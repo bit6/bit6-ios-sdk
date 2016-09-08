@@ -12,17 +12,26 @@
 /*! Bit6 utility class. */
 @interface Bit6Utils : NSObject
 
-/*! Request access to the Camera. On iOS7 and earlier it always succeeds.
- @param successBlock block to be called if camera access has been granted
- @param failedBlock block to be called if camera access is not granted
+/*! Request access to the Camera.
+ @param successBlock block to be called if the request access prompt was shown and access has been granted.
+ @param deniedAccessBlock block to be called if access was denied.
+ @return YES if the access is enabled. Returns NO is access is denied or undetermined.
  */
-+ (void)requestAccessToCameraWithSuccessBlock:(nullable void (^)())successBlock failedBlock:(nullable void (^)())failedBlock;
++ (BOOL)requestAccessToCameraWithSuccessBlock:(nullable void (^)())successBlock deniedAccessBlock:(nullable void (^)())deniedAccessBlock;
 
-/*! Request access to the Microphone. On iOS6 it always succeeds.
- @param successBlock block to be called if microphone access has been granted
- @param failedBlock block to be called if microphone access is not granted
+/*! Request access to the Microphone.
+ @param successBlock block to be called if the request access prompt was shown and access has been granted.
+ @param deniedAccessBlock block to be called if access was denied.
+ @return YES if the access is enabled. Returns NO is access is denied or undetermined.
  */
-+ (void)requestAccessToMicrophoneWithSuccessBlock:(nullable void (^)())successBlock failedBlock:(nullable void (^)())failedBlock;
++ (BOOL)requestAccessToMicrophoneWithSuccessBlock:(nullable void (^)())successBlock deniedAccessBlock:(nullable void (^)())deniedAccessBlock;
+
+/*! Request access to the Photo Library.
+ @param successBlock block to be called if the request access prompt was shown and access has been granted.
+ @param deniedAccessBlock block to be called if access was denied.
+ @return YES if the access is enabled. Returns NO is access is denied or undetermined.
+ */
++ (BOOL)requestAccessToPhotosWithSuccessBlock:(nullable void (^)())successBlock deniedAccessBlock:(nullable void (^)())deniedAccessBlock;
 
 /*! Convenient method to convert seconds into a clock format NSString. For example 75s will be converted to 01:15
  @param seconds number of seconds to convert

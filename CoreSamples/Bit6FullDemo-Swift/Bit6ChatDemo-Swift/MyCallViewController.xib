@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,9 @@
                 <outlet property="cameraButton" destination="p3q-sV-hzQ" id="Gnb-al-E12"/>
                 <outlet property="controlsView" destination="ZMv-EG-zHW" id="BqR-SD-VoJ"/>
                 <outlet property="muteAudioButton" destination="YVu-uu-Wzz" id="cnW-oY-Nfo"/>
+                <outlet property="muteVideoButton" destination="wnb-Z0-Byn" id="Qsm-rf-NaF"/>
                 <outlet property="overlayView" destination="MZk-uY-tVp" id="jl8-Gn-f4P"/>
+                <outlet property="recordingCallButton" destination="iW5-vN-r2Q" id="CY0-z8-heB"/>
                 <outlet property="speakerButton" destination="ue2-Ad-NeV" id="mln-nf-uHV"/>
                 <outlet property="timerLabel" destination="scl-Mg-kq3" id="M5L-Dk-wzo"/>
                 <outlet property="usernameLabel" destination="ngD-E9-gyy" id="Bnd-IV-vaR"/>
@@ -46,7 +48,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SHG-I3-USx" customClass="CircleButton" customModule="Bit6FullDemo" customModuleProvider="target">
-                                    <rect key="frame" x="54" y="265" width="75" height="75"/>
+                                    <rect key="frame" x="103" y="265" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" red="0.36862745099999999" green="0.59607843140000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Bluetooth">
@@ -57,7 +59,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ue2-Ad-NeV" customClass="CircleButton" customModule="Bit6FullDemo" customModuleProvider="target">
-                                    <rect key="frame" x="151" y="265" width="75" height="75"/>
+                                    <rect key="frame" x="200" y="265" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" red="0.36862745099999999" green="0.59607843140000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Speaker">
@@ -68,7 +70,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p3q-sV-hzQ" customClass="CircleButton" customModule="Bit6FullDemo" customModuleProvider="target">
-                                    <rect key="frame" x="151" y="364" width="75" height="75"/>
+                                    <rect key="frame" x="103" y="364" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" red="0.36862745099999999" green="0.59607843140000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Camera">
@@ -79,7 +81,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YVu-uu-Wzz" customClass="CircleButton" customModule="Bit6FullDemo" customModuleProvider="target">
-                                    <rect key="frame" x="54" y="364" width="75" height="75"/>
+                                    <rect key="frame" x="5" y="265" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" red="0.36862745099999999" green="0.59607843140000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -88,6 +90,29 @@
                                     </state>
                                     <connections>
                                         <action selector="muteAudioCall:" destination="-1" eventType="touchUpInside" id="cKv-YJ-YOV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wnb-Z0-Byn" customClass="CircleButton" customModule="Bit6FullDemo" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="364" width="75" height="75"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" red="0.36862745099999999" green="0.59607843140000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                    <state key="normal" title="Video">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="muteVideoCall:" destination="-1" eventType="touchUpInside" id="1H8-RT-xhE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iW5-vN-r2Q" customClass="CircleButton" customModule="Bit6FullDemo" customModuleProvider="target">
+                                    <rect key="frame" x="200" y="364" width="75" height="75"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" red="0.36862745099999999" green="0.59607843140000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Record">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="switchRecording:" destination="-1" eventType="touchUpInside" id="s7H-dq-PBa"/>
                                     </connections>
                                 </button>
                             </subviews>

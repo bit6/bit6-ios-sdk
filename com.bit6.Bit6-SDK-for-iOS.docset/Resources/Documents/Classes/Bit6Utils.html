@@ -45,9 +45,11 @@
 	
 	<option value="//api/name/clockFormatForSeconds:">&nbsp;&nbsp;&nbsp;&nbsp;+ clockFormatForSeconds:</option>
 	
-	<option value="//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToCameraWithSuccessBlock:failedBlock:</option>
+	<option value="//api/name/requestAccessToCameraWithSuccessBlock:deniedAccessBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToCameraWithSuccessBlock:deniedAccessBlock:</option>
 	
-	<option value="//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToMicrophoneWithSuccessBlock:failedBlock:</option>
+	<option value="//api/name/requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:</option>
+	
+	<option value="//api/name/requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:</option>
 	
 	
 	
@@ -81,9 +83,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clockFormatForSeconds:">clockFormatForSeconds:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:">requestAccessToCameraWithSuccessBlock:failedBlock:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToCameraWithSuccessBlock:deniedAccessBlock:">requestAccessToCameraWithSuccessBlock:deniedAccessBlock:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:">requestAccessToMicrophoneWithSuccessBlock:failedBlock:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:">requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:">requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:</a></span></li>
 	
 </ul></li>
 
@@ -142,13 +146,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:">+&nbsp;requestAccessToCameraWithSuccessBlock:failedBlock:</a></code>
+		<code><a href="#//api/name/requestAccessToCameraWithSuccessBlock:deniedAccessBlock:">+&nbsp;requestAccessToCameraWithSuccessBlock:deniedAccessBlock:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:">+&nbsp;requestAccessToMicrophoneWithSuccessBlock:failedBlock:</a></code>
+		<code><a href="#//api/name/requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:">+&nbsp;requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:">+&nbsp;requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:</a></code>
 	</span>
 	
 	
@@ -282,18 +292,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestAccessToCameraWithSuccessBlock:failedBlock:" title="requestAccessToCameraWithSuccessBlock:failedBlock:"></a>
-	<h3 class="subsubtitle method-title">requestAccessToCameraWithSuccessBlock:failedBlock:</h3>
+	<a name="//api/name/requestAccessToCameraWithSuccessBlock:deniedAccessBlock:" title="requestAccessToCameraWithSuccessBlock:deniedAccessBlock:"></a>
+	<h3 class="subsubtitle method-title">requestAccessToCameraWithSuccessBlock:deniedAccessBlock:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Request access to the Camera. On iOS7 and earlier it always succeeds.</p>
+		<p>Request access to the Camera.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)requestAccessToCameraWithSuccessBlock:(nullable void ( ^ ) ( ))<em>successBlock</em> failedBlock:(nullable void ( ^ ) ( ))<em>failedBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)requestAccessToCameraWithSuccessBlock:(nullable void ( ^ ) ( ))<em>successBlock</em> deniedAccessBlock:(nullable void ( ^ ) ( ))<em>deniedAccessBlock</em></code></div>
 
     
 	
@@ -302,17 +312,22 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>successBlock</em></dt>
-			<dd><p>block to be called if camera access has been granted</p></dd>
+			<dd><p>block to be called if the request access prompt was shown and access has been granted.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>failedBlock</em></dt>
-			<dd><p>block to be called if camera access is not granted</p></dd>
+			<dt><em>deniedAccessBlock</em></dt>
+			<dd><p>block to be called if access was denied.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the access is enabled. Returns NO is access is denied or undetermined.</p>
+	</div>
 	
 	
 	
@@ -333,18 +348,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestAccessToMicrophoneWithSuccessBlock:failedBlock:" title="requestAccessToMicrophoneWithSuccessBlock:failedBlock:"></a>
-	<h3 class="subsubtitle method-title">requestAccessToMicrophoneWithSuccessBlock:failedBlock:</h3>
+	<a name="//api/name/requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:" title="requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:"></a>
+	<h3 class="subsubtitle method-title">requestAccessToMicrophoneWithSuccessBlock:deniedAccessBlock:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Request access to the Microphone. On iOS6 it always succeeds.</p>
+		<p>Request access to the Microphone.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)requestAccessToMicrophoneWithSuccessBlock:(nullable void ( ^ ) ( ))<em>successBlock</em> failedBlock:(nullable void ( ^ ) ( ))<em>failedBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)requestAccessToMicrophoneWithSuccessBlock:(nullable void ( ^ ) ( ))<em>successBlock</em> deniedAccessBlock:(nullable void ( ^ ) ( ))<em>deniedAccessBlock</em></code></div>
 
     
 	
@@ -353,17 +368,78 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>successBlock</em></dt>
-			<dd><p>block to be called if microphone access has been granted</p></dd>
+			<dd><p>block to be called if the request access prompt was shown and access has been granted.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>failedBlock</em></dt>
-			<dd><p>block to be called if microphone access is not granted</p></dd>
+			<dt><em>deniedAccessBlock</em></dt>
+			<dd><p>block to be called if access was denied.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the access is enabled. Returns NO is access is denied or undetermined.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:" title="requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:"></a>
+	<h3 class="subsubtitle method-title">requestAccessToPhotosWithSuccessBlock:deniedAccessBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request access to the Photo Library.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)requestAccessToPhotosWithSuccessBlock:(nullable void ( ^ ) ( ))<em>successBlock</em> deniedAccessBlock:(nullable void ( ^ ) ( ))<em>deniedAccessBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>block to be called if the request access prompt was shown and access has been granted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deniedAccessBlock</em></dt>
+			<dd><p>block to be called if access was denied.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the access is enabled. Returns NO is access is denied or undetermined.</p>
+	</div>
 	
 	
 	
@@ -400,7 +476,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -53,14 +53,14 @@
 
 - (void)refreshColor
 {
-    if (self.on) {
-        self.backgroundColor = [UIColor colorWithRed:216/255.0 green:236/255.0 blue:255/255.0 alpha:1.0];
+    if (!self.enabled) {
+        self.backgroundColor = [UIColor grayColor];
     }
     else if (self.highlighted) {
         self.backgroundColor = [UIColor colorWithRed:216/255.0 green:236/255.0 blue:255/255.0 alpha:1.0];
     }
-    else if (!self.enabled) {
-        self.backgroundColor = [UIColor grayColor];
+    else if (self.on) {
+        self.backgroundColor = [UIColor colorWithRed:216/255.0 green:236/255.0 blue:255/255.0 alpha:1.0];
     }
     else {
         self.backgroundColor = [UIColor whiteColor];
@@ -85,6 +85,8 @@
 
 @interface MyCallViewController ()
 
+@property (weak, nonatomic) UILabel *noLocalFeedLabel;
+
 @property (weak, nonatomic) IBOutlet UIView *overlayView;
 @property (weak, nonatomic) IBOutlet UIView *controlsView;
 
@@ -94,7 +96,9 @@
 @property (weak, nonatomic) IBOutlet CircleButton *muteAudioButton;
 @property (weak, nonatomic) IBOutlet CircleButton *bluetoothButton;
 @property (weak, nonatomic) IBOutlet CircleButton *speakerButton;
+@property (weak, nonatomic) IBOutlet CircleButton *muteVideoButton;
 @property (weak, nonatomic) IBOutlet CircleButton *cameraButton;
+@property (weak, nonatomic) IBOutlet CircleButton *recordingCallButton;
 
 @end
 
@@ -107,7 +111,7 @@
 
 - (Bit6CallController*) callController
 {
-    return [[Bit6 callControllers] firstObject];
+    return [[Bit6 activeCalls] firstObject];
 }
 
 - (void)viewDidLoad {
@@ -115,7 +119,12 @@
     
     [self refreshState];
     
-    self.usernameLabel.text = [Bit6 callControllers].count>1 ? @"Many Destinations" : self.callController.otherDisplayName;
+    if ([Bit6 activeCalls].count>1) {
+        self.usernameLabel.text = @"Many Destinations";
+    }
+    else {
+        self.usernameLabel.text = self.callController.otherDisplayName;
+    }
     
     [self.bluetoothButton setTitle:@"" forState:UIControlStateNormal];
     [self.bluetoothButton setBackgroundImage:[UIImage imageNamed:@"bluetooth"] forState:UIControlStateNormal];
@@ -123,8 +132,12 @@
     [self.speakerButton setBackgroundImage:[UIImage imageNamed:@"speaker"] forState:UIControlStateNormal];
     [self.muteAudioButton setTitle:@"" forState:UIControlStateNormal];
     [self.muteAudioButton setBackgroundImage:[UIImage imageNamed:@"mute"] forState:UIControlStateNormal];
+    [self.muteVideoButton setTitle:@"" forState:UIControlStateNormal];
+    [self.muteVideoButton setBackgroundImage:[UIImage imageNamed:@"mute_video"] forState:UIControlStateNormal];
     [self.cameraButton setTitle:@"" forState:UIControlStateNormal];
     [self.cameraButton setBackgroundImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
+    [self.recordingCallButton setTitle:@"" forState:UIControlStateNormal];
+    [self.recordingCallButton setBackgroundImage:[UIImage imageNamed:@"record_call"] forState:UIControlStateNormal];
     
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(overlayTapped:)];
     [self.overlayView addGestureRecognizer:tgr];
@@ -132,7 +145,7 @@
     [self.view addGestureRecognizer:tgr2];
     
     BOOL atLeastOneCallConnected = NO;
-    NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
+    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
     for (Bit6CallController *call in callControllers) {
         if (call.state >= Bit6CallState_CONNECTED) {
             atLeastOneCallConnected = YES; break;
@@ -141,11 +154,11 @@
     self.controlsView.hidden = !atLeastOneCallConnected;
 }
 
-- (void) overlayTapped:(UITapGestureRecognizer*)tgr
+- (void)overlayTapped:(UITapGestureRecognizer*)tgr
 {
     BOOL atLeastOneCallConnected = NO;
     BOOL atLeastOneCallHasVideo = NO;
-    NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
+    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
     for (Bit6CallController *call in callControllers) {
         if (call.state >= Bit6CallState_CONNECTED) {
             atLeastOneCallConnected = YES;
@@ -167,21 +180,14 @@
     }
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
-#pragma mark - Bit6CallViewController methods
+#pragma mark - Bit6CallControllerDelegate
 
 - (void)callController:(Bit6CallController *)callController callDidChangeToState:(Bit6CallState)state
 {
     [super callController:callController callDidChangeToState:state];
     
-    if (callController.state == Bit6CallState_ERROR) {
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"An Error Occurred" message:callController.error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-        [self.navigationController presentViewController:alert animated:YES completion:nil];
+    if (callController.error) {
+        [Bit6AlertView showAlertControllerWithTitle:callController.error.localizedDescription message:nil cancelButtonTitle:@"OK"];
     }
     
     [self refreshState];
@@ -194,7 +200,7 @@
     [super secondsDidChangeForCallController:callController];
     
     NSUInteger longerCall = 0;
-    NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
+    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
     for (Bit6CallController *call in callControllers) {
         if (call.seconds > longerCall) {
             longerCall = call.seconds;
@@ -206,11 +212,43 @@
     }
 }
 
+- (void)callController:(nonnull Bit6CallController*)callController localVideoFeedInterruptedBecause:(int)reason
+{
+    [super callController:callController localVideoFeedInterruptedBecause:reason];
+    
+    if (!self.noLocalFeedLabel) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.backgroundColor = [UIColor grayColor];
+        label.tag = 15;
+        label.numberOfLines = 2;
+        label.text = @"Video Feed\nUnavailable";
+        label.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
+        label.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontSizeToFitWidth = YES;
+        label.minimumScaleFactor = 0.5;
+        label.textColor = [UIColor whiteColor];
+        
+        [self.localVideoView addSubview:label];
+        label.frame = self.localVideoView.bounds;
+        self.noLocalFeedLabel = label;
+    }
+}
+
+- (void)localVideoFeedInterruptionEndedForCallController:(nonnull Bit6CallController*)callController
+{
+    [super localVideoFeedInterruptionEndedForCallController:callController];
+    
+    [self.noLocalFeedLabel removeFromSuperview];
+}
+
+#pragma mark - Bit6CallViewController methods
+
 - (void)refreshState
 {
     Bit6CallController *smallerCall = nil;
-    Bit6CallState smallerState = Bit6CallState_MISSED;
-    NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
+    Bit6CallState smallerState = Bit6CallState_END;
+    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
     for (Bit6CallController *call in callControllers) {
         if (call.state < smallerState) {
             smallerState = call.state;
@@ -237,6 +275,7 @@
             case Bit6CallState_CONNECTED: break;
             case Bit6CallState_DISCONNECTED:
                 self.timerLabel.text = @"Disconnected"; break;
+            case Bit6CallState_END:
             default: break;
         }
     }
@@ -254,19 +293,18 @@
             case Bit6CallState_CONNECTED: break;
             case Bit6CallState_DISCONNECTED:
                 self.timerLabel.text = @"Disconnected"; break;
-            case Bit6CallState_ERROR:
             case Bit6CallState_END:
             default: break;
         }
     }
 }
 
-- (void) refreshControlsView
+- (void)refreshControlsView
 {
     BOOL atLeastOneCallHasVideo = NO;
     BOOL atLeastOneCallHasAudio = NO;
     BOOL atLeastOneCallHasRemoteAudio = NO;
-    NSArray<Bit6CallController*>* callControllers = [[Bit6 callControllers] copy];
+    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
     for (Bit6CallController *call in callControllers) {
         if (call.hasVideo) {
             atLeastOneCallHasVideo = YES;
@@ -280,15 +318,19 @@
     }
     
     if (TARGET_OS_SIMULATOR) {
+        self.muteVideoButton.enabled = NO;
         self.cameraButton.enabled = NO;
         self.bluetoothButton.enabled = NO;
         self.speakerButton.enabled = NO;
     }
     else {
+        self.muteVideoButton.enabled = self.localVideoView.interrupted ? NO : atLeastOneCallHasVideo;
         self.cameraButton.enabled = atLeastOneCallHasVideo;
         self.bluetoothButton.enabled = atLeastOneCallHasRemoteAudio;
         self.speakerButton.enabled = atLeastOneCallHasRemoteAudio;
     }
+    
+    self.recordingCallButton.enabled = callControllers.count==1 && [self.callController supportsCapability:Bit6CallCapability_Recording];
     
     self.muteAudioButton.enabled = atLeastOneCallHasAudio;
     
@@ -306,13 +348,26 @@
     if (self.speakerButton.enabled) {
         self.speakerButton.on = [Bit6CallController isSpeakerEnabled];
     }
+    if (self.muteVideoButton.enabled) {
+        self.muteVideoButton.on = ![Bit6CallController isLocalVideoEnabled];
+    }
+    if (self.recordingCallButton.enabled) {
+        self.recordingCallButton.on = self.callController.recording;
+    }
 }
 
 - (void)updateLayoutForVideoFeedViews:(NSArray<Bit6VideoFeedView*>*)videoFeedViews
 {
-    self.usernameLabel.text = [Bit6 callControllers].count>1 ? @"Many Destinations" : self.callController.otherDisplayName;
-    
     [super updateLayoutForVideoFeedViews:videoFeedViews];
+    
+    if ([Bit6 activeCalls].count>1) {
+        self.usernameLabel.text = @"Many Destinations";
+    }
+    else {
+        self.usernameLabel.text = self.callController.otherDisplayName;
+    }
+    
+    self.noLocalFeedLabel.frame = self.localVideoView.bounds;
 }
 
 #pragma mark Actions
@@ -329,8 +384,16 @@
     [Bit6CallController setSpeakerEnabled:!Bit6CallController.isSpeakerEnabled];
 }
 
+- (IBAction)muteVideoCall:(id)sender {
+    [Bit6CallController setLocalVideoEnabled:!Bit6CallController.isLocalVideoEnabled];
+}
+
 - (IBAction)switchCamera:(id)sender {
     [Bit6CallController setLocalVideoSource:[Bit6CallController localVideoSource]==Bit6VideoSource_CameraBack ? Bit6VideoSource_CameraFront : Bit6VideoSource_CameraBack];
+}
+
+- (IBAction)switchRecording:(id)sender {
+    self.callController.recording = !self.callController.recording;
 }
 
 - (IBAction)hangup:(id)sender {

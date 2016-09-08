@@ -14,6 +14,9 @@
 /*! Font for the text content of the message. */
 @property (nonatomic) UIFont *textFont UI_APPEARANCE_SELECTOR;
 
+/*! Font for emojis when there's no other text in the message. */
+@property (nonatomic) UIFont *emojiFont UI_APPEARANCE_SELECTOR;
+
 /*! Font for the datetime label shown between messages. */
 @property (nonatomic) UIFont *datetimeFont UI_APPEARANCE_SELECTOR;
 

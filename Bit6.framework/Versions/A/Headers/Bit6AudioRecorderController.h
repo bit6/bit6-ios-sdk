@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol Bit6AudioRecorderControllerDelegate;
 
 /*! Bit6AudioRecorderController is used to record an audio file and attach it to a message. */
@@ -16,7 +18,7 @@
 /*! Unavailable init. Use Bit6.audioRecorder instead.
  @return a new instance of the class.
  */
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 /*! Tries to start to record an audio file. It can show an <UIAlertView> object as the UI control to cancel or finish the recording.
  @param maxDuration maximum allowed duration (in seconds) of the audio file to be recorded.
@@ -24,7 +26,7 @@
  @param defaultPrompt if YES then a default UIAlertView will be shown to handle the recording. If NO then you need to provide a custom UI to handle the recording.
  @param errorHandler used to determine if an error occurs
  */
-- (void)startRecordingAudioWithMaxDuration:(NSTimeInterval)maxDuration delegate:(nullable id <Bit6AudioRecorderControllerDelegate>)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(nullable void (^)(NSError* _Nullable error))errorHandler;
+- (BOOL)startRecordingAudioWithMaxDuration:(NSTimeInterval)maxDuration delegate:(nullable id <Bit6AudioRecorderControllerDelegate>)delegate defaultPrompt:(BOOL)defaultPrompt errorHandler:(nullable void (^)(NSError* _Nullable error))errorHandler;
 
 /*! Gets the length of the current recording - only valid while recording */
 @property (nonatomic, readonly) double duration;
@@ -48,17 +50,19 @@
  @param b6rc The controller object recording the audio file.
  @param filePath file where the audio was saved.
  */
-- (void)doneRecorderController:(nonnull Bit6AudioRecorderController*)b6rc filePath:(nonnull NSString*)filePath;
+- (void)doneRecorderController:(Bit6AudioRecorderController*)b6rc filePath:(NSString*)filePath;
 
 /*! Called each 0.5 seconds while recording.
  @param b6rc The controller object recording the audio file.
  @param filePath file where the audio is being saved.
  */
-- (void)isRecordingWithController:(nonnull Bit6AudioRecorderController*)b6rc filePath:(nonnull NSString*)filePath;
+- (void)isRecordingWithController:(Bit6AudioRecorderController*)b6rc filePath:(NSString*)filePath;
 
 /*! Called when a user has cancelled the recording process.
  @param b6rc The controller object recording the audio file.
  */
-- (void)cancelRecorderController:(nonnull Bit6AudioRecorderController*)b6rc;
+- (void)cancelRecorderController:(Bit6AudioRecorderController*)b6rc;
 
 @end
+
+NS_ASSUME_NONNULL_END

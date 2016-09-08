@@ -1,3 +1,34 @@
+## 0.10.0 [2016-09-08]
+
+### Breaking Changes
+- Dropped iOS7 support.
+- `Bit6.callcontrollers` now return all the calls: inactive / actives / ended. To get the list of active calls use `Bit6.activeCalls` instead.
+- `Bit6CallState_MISSED` and `Bit6CallState_ERROR` were replaced by `Bit6CallController.missed` and `Bit6CallController.error` properties.
+- `Bit6RTStatus` enum replaced by `Bit6WebSocketReadyState`.
+- Bit6CallController.decline() has been replaced by Bit6CallController.hangup()
+- Incoming calls from `Bit6IncomingCallNotification` no longer set the remoteStreams automatically. Before answering the call remember to do `call.remoteStreams = call.availableStreamsForIncomingCall;` and `call.localStreams = call.availableStreamsForIncomingCall`.
+- Bit6TransferUpdateNotification has been removed. Use `Bit6CallControllerDelegate` instead.
+
+### Features (Core)
+- New methods to detect when the local video feed is interrupted by the system.
+- new method Bit6Group.setRole:forMember:completion: to change a member role in a group.
+
+### Bugfixes (Core)
+- Issues with resize of video feeds for rotation in Bit6CallViewController
+- Issues to mark individual messages as READ.
+- The automatic download of attachments could happen before setting Bit6.setDownloadAudioRecordings() property and others
+- Issues with video interruptions during a call could cause the local video feed to not be restored.
+- Bit6Group.createGroupWithMetadata:completion: wasn't setting the metadata after creating the group.
+
+### Features (UI)
+- support for Bit6.setDownloadAudioRecordings()
+- BXUMessageTableViewController now has methods to customize the supported attachments.
+- BXUMessageTableViewController now can show a single emoji message 3x its size using the property `biggerEmojis`.
+
+### Bugfixes (UI)
+- BXUContactAvatarImageView initials label weren't shown centered
+- On BXUConversationList, if the cell is showing "typing" and the user selects the cell you can see the last message on top of "typing" label.
+
 ## 0.9.8 [2016-05-24]
 
 ### Changes (Core)

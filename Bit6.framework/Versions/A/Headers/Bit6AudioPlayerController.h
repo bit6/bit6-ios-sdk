@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Bit6Message.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /*! Audio player allows to play an audio file. */
 @interface Bit6AudioPlayerController : NSObject
@@ -15,13 +16,12 @@
 /*! Unavailable init. Use Bit6.audioPlayer instead.
  @return a new instance of the class.
  */
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 /*! Starts playing an audio file. You can listen to the `Bit6AudioPlayingNotification` to update your UI while playing an audio file.
  @param filePath Path to the audio file to play.
- @param errorHandler block to call if an error occurs
  */
-- (void)startPlayingAudioFileAtPath:(nonnull NSString*)filePath errorHandler:(nullable void (^)(NSError* _Nonnull error))errorHandler;
+- (void)startPlayingAudioFileAtPath:(NSString*)filePath;
 
 /*! Stop the audio file playing at the time */
 - (void)stopPlayingAudioFile;
@@ -37,3 +37,5 @@
 - (nullable NSString*)filePathPlaying;
 
 @end
+
+NS_ASSUME_NONNULL_END

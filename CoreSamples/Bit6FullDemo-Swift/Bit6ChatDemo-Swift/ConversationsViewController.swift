@@ -114,7 +114,7 @@ class ConversationsViewController: UIViewController, UITableViewDataSource, UITa
                         
                         //inviting the users to the group
                         if error == nil {
-                            group!.inviteGroupMembersWithAddresses(addresses, role:Bit6GroupMemberRole_User) { (members, error) in
+                            group!.inviteGroupMembersWithAddresses(addresses, role:Bit6GroupMemberRoleUser) { (members, error) in
                                 if error != nil {
                                     dispatch_async(dispatch_get_main_queue()) {
                                         let alert = UIAlertController(title:"Failed to invite users to the group", message: nil, preferredStyle: .Alert)

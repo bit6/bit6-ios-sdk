@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol BXUWebSocketStatusLabelDelegate;
 
 /*! Convenience subclass of UILabel to show the status of the signaling websocket. */
@@ -15,12 +17,6 @@
 
 /*! The delegate to be notified when the websocket label has change state. For details about the methods that can be implemented by the delegate, see <BXUWebSocketStatusLabelDelegate> Protocol Reference. */
 @property (nullable, weak, nonatomic) IBOutlet id<BXUWebSocketStatusLabelDelegate> delegate;
-
-/*! Views to show while the websocket status is "connecting". */
-@property (nullable, strong, nonatomic) IBOutletCollection(UIView) NSArray<UIView*>* viewsWhileConnecting __attribute__((deprecated));
-
-/*! Views to show while the websocket status is "connected". */
-@property (nullable, strong, nonatomic) IBOutletCollection(UIView) NSArray<UIView*>* viewsWhenConnected __attribute__((deprecated));
 
 /*! The label will be hidden when the websocket is "connected". */
 @property (nonatomic) BOOL hideWhenConnected;
@@ -34,6 +30,8 @@
  @param webSocketLabel websocket label
  @param status new state for the websocket label
  */
-- (void)webSocketLabel:(nonnull BXUWebSocketStatusLabel*)webSocketLabel didChangeToStatus:(Bit6RTStatus)status;
+- (void)webSocketLabel:(BXUWebSocketStatusLabel*)webSocketLabel didChangeToStatus:(Bit6WebSocketReadyState)status;
 
 @end
+
+NS_ASSUME_NONNULL_END

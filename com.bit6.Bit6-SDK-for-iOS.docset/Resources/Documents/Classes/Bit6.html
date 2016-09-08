@@ -48,6 +48,8 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/activeCalls">&nbsp;&nbsp;&nbsp;&nbsp;+ activeCalls</option>
+	
 	<option value="//api/name/addConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ addConversation:</option>
 	
 	<option value="//api/name/audioPlayer">&nbsp;&nbsp;&nbsp;&nbsp;+ audioPlayer</option>
@@ -56,15 +58,19 @@
 	
 	<option value="//api/name/cacheSize">&nbsp;&nbsp;&nbsp;&nbsp;+ cacheSize</option>
 	
-	<option value="//api/name/callControllers">&nbsp;&nbsp;&nbsp;&nbsp;+ callControllers</option>
+	<option value="//api/name/callByUUDI:">&nbsp;&nbsp;&nbsp;&nbsp;+ callByUUDI:</option>
 	
 	<option value="//api/name/callViewController">&nbsp;&nbsp;&nbsp;&nbsp;+ callViewController</option>
+	
+	<option value="//api/name/calls">&nbsp;&nbsp;&nbsp;&nbsp;+ calls</option>
 	
 	<option value="//api/name/clearCache">&nbsp;&nbsp;&nbsp;&nbsp;+ clearCache</option>
 	
 	<option value="//api/name/clearCacheWithPrefix:">&nbsp;&nbsp;&nbsp;&nbsp;+ clearCacheWithPrefix:</option>
 	
 	<option value="//api/name/conversations">&nbsp;&nbsp;&nbsp;&nbsp;+ conversations</option>
+	
+	<option value="//api/name/createCallTo:">&nbsp;&nbsp;&nbsp;&nbsp;+ createCallTo:</option>
 	
 	<option value="//api/name/createViewControllerForCall:">&nbsp;&nbsp;&nbsp;&nbsp;+ createViewControllerForCall:</option>
 	
@@ -83,6 +89,10 @@
 	<option value="//api/name/groups">&nbsp;&nbsp;&nbsp;&nbsp;+ groups</option>
 	
 	<option value="//api/name/locationController">&nbsp;&nbsp;&nbsp;&nbsp;+ locationController</option>
+	
+	<option value="//api/name/logType:format:">&nbsp;&nbsp;&nbsp;&nbsp;+ logType:format:</option>
+	
+	<option value="//api/name/logType:prettyFunction:line:format:">&nbsp;&nbsp;&nbsp;&nbsp;+ logType:prettyFunction:line:format:</option>
 	
 	<option value="//api/name/messagesInConversation:offset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesInConversation:offset:length:asc:</option>
 	
@@ -116,15 +126,13 @@
 	
 	<option value="//api/name/setLoadOfMessagesAndGroups:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLoadOfMessagesAndGroups:</option>
 	
-	<option value="//api/name/setLoggingEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLoggingEnabled:</option>
+	<option value="//api/name/setLoggingOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLoggingOptions:</option>
 	
 	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
 	
-	<option value="//api/name/shouldDownloadAudioRecordings">&nbsp;&nbsp;&nbsp;&nbsp;+ shouldDownloadAudioRecordings</option>
-	
-	<option value="//api/name/shouldDownloadVideoBeforePlaying">&nbsp;&nbsp;&nbsp;&nbsp;+ shouldDownloadVideoBeforePlaying</option>
-	
 	<option value="//api/name/startCallTo:streams:">&nbsp;&nbsp;&nbsp;&nbsp;+ startCallTo:streams:</option>
+	
+	<option value="//api/name/startCallTo:streams:mediaMode:offnet:">&nbsp;&nbsp;&nbsp;&nbsp;+ startCallTo:streams:mediaMode:offnet:</option>
 	
 	<option value="//api/name/startPhoneCallTo:">&nbsp;&nbsp;&nbsp;&nbsp;+ startPhoneCallTo:</option>
 	
@@ -169,6 +177,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Cache">￼Cache</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Logging">￼Logging</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Groups">￼Working with Groups</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Conversations">￼Working with Conversations</a></span></li>
@@ -197,6 +207,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeCalls">activeCalls</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addConversation:">addConversation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/audioPlayer">audioPlayer</a></span></li>
@@ -205,15 +217,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheSize">cacheSize</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callControllers">callControllers</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callByUUDI:">callByUUDI:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callViewController">callViewController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calls">calls</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCache">clearCache</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCacheWithPrefix:">clearCacheWithPrefix:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/conversations">conversations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createCallTo:">createCallTo:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createViewControllerForCall:">createViewControllerForCall:</a></span></li>
 	
@@ -232,6 +248,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groups">groups</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationController">locationController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logType:format:">logType:format:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logType:prettyFunction:line:format:">logType:prettyFunction:line:format:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesInConversation:offset:length:asc:">messagesInConversation:offset:length:asc:</a></span></li>
 	
@@ -265,15 +285,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoadOfMessagesAndGroups:">setLoadOfMessagesAndGroups:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoggingEnabled:">setLoggingEnabled:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoggingOptions:">setLoggingOptions:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldDownloadAudioRecordings">shouldDownloadAudioRecordings</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldDownloadVideoBeforePlaying">shouldDownloadVideoBeforePlaying</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCallTo:streams:">startCallTo:streams:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCallTo:streams:mediaMode:offnet:">startCallTo:streams:mediaMode:offnet:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPhoneCallTo:">startPhoneCallTo:</a></span></li>
 	
@@ -434,18 +452,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/shouldDownloadVideoBeforePlaying">+&nbsp;shouldDownloadVideoBeforePlaying</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/shouldDownloadAudioRecordings">+&nbsp;shouldDownloadAudioRecordings</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/downloadVideosBeforePlaying">+&nbsp;downloadVideosBeforePlaying</a></code>
 	</span>
 	
@@ -471,12 +477,6 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setLoadOfMessagesAndGroups:">+&nbsp;setLoadOfMessagesAndGroups:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setLoggingEnabled:">+&nbsp;setLoggingEnabled:</a></code>
 	</span>
 	
 	
@@ -527,6 +527,32 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/clearCacheWithPrefix:">+&nbsp;clearCacheWithPrefix:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Logging" name="task_￼Logging"></a>
+						<h3 class="subsubtitle task-title">￼Logging</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLoggingOptions:">+&nbsp;setLoggingOptions:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logType:format:">+&nbsp;logType:format:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logType:prettyFunction:line:format:">+&nbsp;logType:prettyFunction:line:format:</a></code>
 	</span>
 	
 	
@@ -654,13 +680,37 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/callControllers">+&nbsp;callControllers</a></code>
+		<code><a href="#//api/name/calls">+&nbsp;calls</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callByUUDI:">+&nbsp;callByUUDI:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activeCalls">+&nbsp;activeCalls</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createCallTo:">+&nbsp;createCallTo:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/startCallTo:streams:">+&nbsp;startCallTo:streams:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startCallTo:streams:mediaMode:offnet:">+&nbsp;startCallTo:streams:mediaMode:offnet:</a></code>
 	</span>
 	
 	
@@ -802,6 +852,47 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/activeCalls" title="activeCalls"></a>
+	<h3 class="subsubtitle method-title">activeCalls</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A copy of the active <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects in the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6CallController*&gt; *)activeCalls</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an NSArray of <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/addConversation:" title="addConversation:"></a>
 	<h3 class="subsubtitle method-title">addConversation:</h3>
 	
@@ -813,7 +904,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)addConversation:(nonnull Bit6Conversation *)<em>conversation</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)addConversation:(Bit6Conversation *)<em>conversation</em></code></div>
 
     
 	
@@ -864,7 +955,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6AudioPlayerController *)audioPlayer</code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6AudioPlayerController *)audioPlayer</code></div>
 
     
 	
@@ -905,7 +996,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6AudioRecorderController *)audioRecorder</code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6AudioRecorderController *)audioRecorder</code></div>
 
     
 	
@@ -976,26 +1067,36 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/callControllers" title="callControllers"></a>
-	<h3 class="subsubtitle method-title">callControllers</h3>
+	<a name="//api/name/callByUUDI:" title="callByUUDI:"></a>
+	<h3 class="subsubtitle method-title">callByUUDI:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>List of <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects in the current call.</p>
+		<p>Gets the call matching the specified uuid</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull NSArray&lt;Bit6CallController*&gt; *)callControllers</code></div>
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallController *)callByUUDI:(NSUUID *)<em>uuid</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uuid</em></dt>
+			<dd><p>UUID of the call.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an NSArray of <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects in the current call.</p>
+		<p>the call matching the specified uuid, or nil if no call was a match.</p>
 	</div>
 	
 	
@@ -1058,13 +1159,54 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/calls" title="calls"></a>
+	<h3 class="subsubtitle method-title">calls</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A copy of all the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects in the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6CallController*&gt; *)calls</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an NSArray of <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/clearCache" title="clearCache"></a>
 	<h3 class="subsubtitle method-title">clearCache</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Delete all the files inside the /Cache/bit6 directory.</p>
+		<p>Delete all the files inside the /Cache/bit6 directory. A Bit6CacheDeletedNotification will be sent once the deletion is completed.</p>
 	</div>		
 	
     
@@ -1105,12 +1247,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Delete the files inside the /Cache/bit6 directory that matches the specified prefix.</p>
+		<p>Delete the files inside the /Cache/bit6 directory that matches the specified prefix. A Bit6CacheDeletedNotification will be sent once the deletion is completed.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSUInteger)clearCacheWithPrefix:(nonnull NSString *)<em>prefix</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)clearCacheWithPrefix:(NSString *)<em>prefix</em></code></div>
 
     
 	
@@ -1191,6 +1333,62 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/createCallTo:" title="createCallTo:"></a>
+	<h3 class="subsubtitle method-title">createCallTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a call object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallController *)createCallTo:(Bit6Address *)<em>identity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identity</em></dt>
+			<dd><p>address of the user to call</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>call object.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> If there&rsquo;s an active call to the same identity then that call object will be returned.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/createViewControllerForCall:" title="createViewControllerForCall:"></a>
 	<h3 class="subsubtitle method-title">createViewControllerForCall:</h3>
 	
@@ -1202,7 +1400,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallViewController *)createViewControllerForCall:(nonnull Bit6CallController *)<em>callController</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallViewController *)createViewControllerForCall:(Bit6CallController *)<em>callController</em></code></div>
 
     
 	
@@ -1229,7 +1427,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The class for the returned viewcontroller can be customize by adding the class name with the key &lsquo;in_call_class_name&rsquo; in the Bit6 dictionary in the target info.plist. If set then the &lt;+(nonnull Bit6CallViewController*)createViewController> method for that class will be called to create the viewcontroller.</p>
+		<p>The class for the returned viewcontroller can be customize by adding the class name with the key &lsquo;in_call_class_name&rsquo; in the Bit6 dictionary in the target info.plist. If set then the &lt;+(Bit6CallViewController*)createViewController> method for that class will be called to create the viewcontroller.</p>
 	</div>
 	
 	
@@ -1294,7 +1492,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)deleteConversation:(nonnull Bit6Conversation *)<em>conversation</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)deleteConversation:(Bit6Conversation *)<em>conversation</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
 
     
 	
@@ -1345,7 +1543,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)deleteMessage:(nonnull Bit6Message *)<em>message</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)deleteMessage:(Bit6Message *)<em>message</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
 
     
 	
@@ -1579,7 +1777,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6CurrentLocationController *)locationController</code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6CurrentLocationController *)locationController</code></div>
 
     
 	
@@ -1609,6 +1807,28 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/logType:format:" title="logType:format:"></a>
+	<h3 class="subsubtitle method-title">logType:format:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (void)logType:(Bit6LogOptions)<em>type</em> format:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logType:prettyFunction:line:format:" title="logType:prettyFunction:line:format:"></a>
+	<h3 class="subsubtitle method-title">logType:prettyFunction:line:format:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (void)logType:(Bit6LogOptions)<em>type</em> prettyFunction:(char *)<em>prettyFunction</em> line:(int)<em>line</em> format:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/messagesInConversation:offset:length:asc:" title="messagesInConversation:offset:length:asc:"></a>
 	<h3 class="subsubtitle method-title">messagesInConversation:offset:length:asc:</h3>
 	
@@ -1620,7 +1840,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull NSArray&lt;Bit6Message*&gt; *)messagesInConversation:(nonnull Bit6Conversation *)<em>conversation</em> offset:(NSInteger)<em>offset</em> length:(NSInteger)<em>length</em> asc:(BOOL)<em>asc</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesInConversation:(Bit6Conversation *)<em>conversation</em> offset:(NSInteger)<em>offset</em> length:(NSInteger)<em>length</em> asc:(BOOL)<em>asc</em></code></div>
 
     
 	
@@ -1701,7 +1921,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInConversation:(nonnull Bit6Conversation *)<em>conversation</em> asc:(BOOL)<em>asc</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInConversation:(Bit6Conversation *)<em>conversation</em> asc:(BOOL)<em>asc</em></code></div>
 
     
 	
@@ -1757,7 +1977,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInMessages:(nonnull NSArray&lt;Bit6Message*&gt; *)<em>messages</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInMessages:(NSArray&lt;Bit6Message*&gt; *)<em>messages</em></code></div>
 
     
 	
@@ -1808,7 +2028,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull NSArray&lt;Bit6Message*&gt; *)messagesWithOffset:(NSInteger)<em>offset</em> length:(NSInteger)<em>length</em> asc:(BOOL)<em>asc</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithOffset:(NSInteger)<em>offset</em> length:(NSInteger)<em>length</em> asc:(BOOL)<em>asc</em></code></div>
 
     
 	
@@ -1919,7 +2139,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)openLocationOnMapsFromMessage:(nonnull Bit6Message *)<em>msg</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)openLocationOnMapsFromMessage:(Bit6Message *)<em>msg</em></code></div>
 
     
 	
@@ -1960,12 +2180,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Plays the attached video included in a <a href="../Classes/Bit6Message.html">Bit6Message</a> object using the MPMoviePlayerViewController class.</p>
+		<p>Plays the attached video included in a <a href="../Classes/Bit6Message.html">Bit6Message</a> object using the AVPlayerViewController class.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)playVideoFromMessage:(nonnull Bit6Message *)<em>msg</em> viewController:(nonnull UIViewController *)<em>vc</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)playVideoFromMessage:(Bit6Message *)<em>msg</em> viewController:(UIViewController *)<em>vc</em></code></div>
 
     
 	
@@ -1979,7 +2199,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>vc</em></dt>
-			<dd><p>viewcontroller from which to present the MPMoviePlayerViewController control to play the video</p></dd>
+			<dd><p>viewcontroller from which to present a AVPlayerViewController to play the video</p></dd>
 		</dl>
 		
 	</div>
@@ -2025,7 +2245,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6PushNotificationCenter *)pushNotification</code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6PushNotificationCenter *)pushNotification</code></div>
 
     
 	
@@ -2066,7 +2286,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)sendNotificationToAddress:(nonnull Bit6Address *)<em>address</em> type:(nonnull NSString *)<em>type</em> data:(nonnull NSDictionary&lt;NSString*,id&gt; *)<em>data</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)sendNotificationToAddress:(Bit6Address *)<em>address</em> type:(NSString *)<em>type</em> data:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>data</em></code></div>
 
     
 	
@@ -2122,7 +2342,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6Session *)session</code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6Session *)session</code></div>
 
     
 	
@@ -2163,7 +2383,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)setConversationSortingComparator:(nonnull NSComparator)<em>cmptr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)setConversationSortingComparator:(NSComparator)<em>cmptr</em></code></div>
 
     
 	
@@ -2250,7 +2470,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Set the current configuration to download audio attachments automatically.</p>
+		<p>Set the current configuration to download audio attachments automatically. By default it&rsquo;s set to YES.</p>
 	</div>		
 	
     
@@ -2296,7 +2516,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Set the current configuration to play video attachments.</p>
+		<p>Set the current configuration to play video attachments. By default it&rsquo;s set to NO.</p>
 	</div>		
 	
     
@@ -2347,7 +2567,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)setInCallClass:(nonnull Class)<em>value</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)setInCallClass:(Class)<em>value</em></code></div>
 
     
 	
@@ -2428,49 +2648,14 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setLoggingEnabled:" title="setLoggingEnabled:"></a>
-	<h3 class="subsubtitle method-title">setLoggingEnabled:</h3>
+	<a name="//api/name/setLoggingOptions:" title="setLoggingOptions:"></a>
+	<h3 class="subsubtitle method-title">setLoggingOptions:</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>Enable the logs for Bit6. By default it&rsquo;s set to NO.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>+ (void)setLoggingEnabled:(BOOL)<em>flag</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)setLoggingOptions:(Bit6LogOptions)<em>loggingOptions</em></code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>flag</em></dt>
-			<dd><p>true if the logs for Bit6 should be enabled.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6.h</code><br />
-	</div>				
-	
-	
 </div>
 						
 						<div class="section-method">
@@ -2485,7 +2670,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull Bit6 *)sharedInstance</code></div>
+	<div class="method-subsection method-declaration"><code>+ (Bit6 *)sharedInstance</code></div>
 
     
 	
@@ -2515,107 +2700,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/shouldDownloadAudioRecordings" title="shouldDownloadAudioRecordings"></a>
-	<h3 class="subsubtitle method-title">shouldDownloadAudioRecordings</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get the current configuration to download audio attachments automatically.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)shouldDownloadAudioRecordings</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>true if the audio attachments will be downloaded automatically.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6 downloadAudioRecordings] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/shouldDownloadVideoBeforePlaying" title="shouldDownloadVideoBeforePlaying"></a>
-	<h3 class="subsubtitle method-title">shouldDownloadVideoBeforePlaying</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get the current configuration to play video attachments.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (BOOL)shouldDownloadVideoBeforePlaying</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> Deprecated: Please use +[Bit6 downloadVideosBeforePlaying] instead</p></div>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/playVideoFromMessage:viewController:">[Bit6 playVideoFromMessage:viewController:]</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">Bit6.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/startCallTo:streams:" title="startCallTo:streams:"></a>
 	<h3 class="subsubtitle method-title">startCallTo:streams:</h3>
 	
@@ -2627,7 +2711,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)startCallTo:(nonnull Bit6Address *)<em>identity</em> streams:(Bit6CallStreams)<em>streams</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startCallTo:(Bit6Address *)<em>identity</em> streams:(Bit6CallStreams)<em>streams</em></code></div>
 
     
 	
@@ -2672,6 +2756,72 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/startCallTo:streams:mediaMode:offnet:" title="startCallTo:streams:mediaMode:offnet:"></a>
+	<h3 class="subsubtitle method-title">startCallTo:streams:mediaMode:offnet:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a VoIP call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startCallTo:(Bit6Address *)<em>identity</em> streams:(Bit6CallStreams)<em>streams</em> mediaMode:(Bit6CallMediaMode)<em>mediaMode</em> offnet:(BOOL)<em>offnet</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identity</em></dt>
+			<dd><p>address of the user to call</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streams</em></dt>
+			<dd><p>An integer bit mask that determines the local media that will be sent.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mediaMode</em></dt>
+			<dd><p>Indicates if the call will go P2P or if the server should process the media</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offnet</em></dt>
+			<dd><p>Indicates if the call will go within the Bit6 world (set to false) or it should be a real phone call (set to true).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NO if the call can&rsquo;t be started</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/startPhoneCallTo:" title="startPhoneCallTo:"></a>
 	<h3 class="subsubtitle method-title">startPhoneCallTo:</h3>
 	
@@ -2683,7 +2833,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)startPhoneCallTo:(nonnull NSString *)<em>phoneNumber</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startPhoneCallTo:(NSString *)<em>phoneNumber</em></code></div>
 
     
 	
@@ -2734,7 +2884,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(nonnull NSString *)<em>apiKey</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(NSString *)<em>apiKey</em></code></div>
 
     
 	
@@ -2780,7 +2930,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(nonnull NSString *)<em>apiKey</em> endPoint:(nonnull NSString *)<em>endPoint</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(NSString *)<em>apiKey</em> endPoint:(NSString *)<em>endPoint</em></code></div>
 
     
 	
@@ -2867,7 +3017,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (nonnull NSNumber *)totalBadge</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)totalBadge</code></div>
 
     
 	
@@ -2913,7 +3063,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)typingBeginToAddress:(nonnull Bit6Address *)<em>address</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)typingBeginToAddress:(Bit6Address *)<em>address</em></code></div>
 
     
 	
@@ -2967,7 +3117,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
     
 	
@@ -3011,7 +3161,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-05-24)</span><br />
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-09-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

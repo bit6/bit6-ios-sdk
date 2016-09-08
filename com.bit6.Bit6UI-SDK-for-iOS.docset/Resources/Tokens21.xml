@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/BXUImageViewControllerDelegate.html">
+	<File path="Protocols/BXUContact.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/BXUImageViewControllerDelegate</TokenIdentifier>
-			<Abstract type="html">The BXUImageViewControllerDelegate protocol defines the methods a delegate of a BXUImageViewController object should implement. The methods of this protocol notify the delegate when the viewcontroller has to be dismissed.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/BXUContact</TokenIdentifier>
+			<Abstract type="html">Contact model that contains all the information for an identity.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -13,19 +13,50 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/BXUImageViewControllerDelegate/dismissImageViewController:</TokenIdentifier>
-			<Abstract type="html">Called when the user decide to dismiss the viewcontroller. It is necessary to implement this method to dismiss this viewcontroller.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/uri</TokenIdentifier>
+			<Abstract type="html">Identity URI for the contact.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
 			
-			<Declaration>- (void)dismissImageViewController:(nonnull BXUImageViewController *)imageViewController</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>imageViewController</Name>
-					<Abstract type="html">view controller to dismiss</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)uri</Declaration>
 			
-			<Anchor>//api/name/dismissImageViewController:</Anchor>
+			
+			<Anchor>//api/name/uri</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/name</TokenIdentifier>
+			<Abstract type="html">Display name for the contact.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/avatarURL</TokenIdentifier>
+			<Abstract type="html">URL for the contact&apos;s avatar.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSURL *)avatarURL</Declaration>
+			
+			
+			<Anchor>//api/name/avatarURL</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/BXUContact/initials</TokenIdentifier>
+			<Abstract type="html">Initials to show in the BXUContactAvatarImageView and BXUConversationAvatarView when the contact&apos;s avatar is not loaded.</Abstract>
+			<DeclaredIn>BXUContactSource.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)initials</Declaration>
+			
+			
+			<Anchor>//api/name/initials</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

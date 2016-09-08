@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.8</string>
+	<string>0.10.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -105,5 +105,14 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Bit6 wants to take photos and videos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>If you want to share your location with your friend, we need to know where you are</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Bit6 wants to record audio message and to make and receive calls</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>If you want to send photo attachments we need access to the Photo Library.</string>
+
 </dict>
 </plist>

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Bit6OutgoingMessage.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol Bit6CurrentLocationControllerDelegate;
 
 /*! This controller is used to obtain user's current location. */
@@ -17,13 +19,13 @@
 /*! Unavailable init. Use Bit6.locationController instead.
  @return a new instance of the class.
  */
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 /*! Starts listening to the user's location.
  @param msg a <Bit6OutgoingMessage> object where the user's location will be included.
  @param delegate delegate to be notified when the location has been obtained. For information about the methods you can implement for your delegate object, see <Bit6CurrentLocationControllerDelegate> Protocol Reference.
  */
-- (void)startListeningToLocationForMessage:(nonnull Bit6OutgoingMessage*)msg delegate:(nullable id<Bit6CurrentLocationControllerDelegate>)delegate;
+- (void)startListeningToLocationForMessage:(Bit6OutgoingMessage*)msg delegate:(nullable id<Bit6CurrentLocationControllerDelegate>)delegate;
 
 /*! Stops listening to the user's location */
 - (void)stopListeningToLocation;
@@ -39,12 +41,14 @@
  @param error the error object describing the problem to obtain the location
  @param message same message object set in <[Bit6CurrentLocationController startListeningToLocationForMessage:delegate:]> with the user's location set.
  */
-- (void)currentLocationController:(nonnull Bit6CurrentLocationController*)b6clc didFailWithError:(nonnull NSError*)error message:(nonnull Bit6OutgoingMessage*)message;
+- (void)currentLocationController:(Bit6CurrentLocationController*)b6clc didFailWithError:(NSError*)error message:(Bit6OutgoingMessage*)message;
 
 /*! Called when the user's location has been obtained.
  @param b6clc The controller object obtaining the user's location.
  @param message same message object set in <[Bit6CurrentLocationController startListeningToLocationForMessage:delegate:]> with the user's location set.
  */
-- (void)currentLocationController:(nonnull Bit6CurrentLocationController*)b6clc didGetLocationForMessage:(nonnull Bit6OutgoingMessage*)message;
+- (void)currentLocationController:(Bit6CurrentLocationController*)b6clc didGetLocationForMessage:(Bit6OutgoingMessage*)message;
 
 @end
+
+NS_ASSUME_NONNULL_END

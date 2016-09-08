@@ -12,6 +12,8 @@
 #import "Bit6Address.h"
 #import "Bit6Constants.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*! A Bit6OutgoingMessage object represents a message that will be sent by the user. */
 @interface Bit6OutgoingMessage : Bit6Message
 
@@ -19,10 +21,10 @@
  @param destination An <Bit6Address> object to where to send the message.
  @return a new Bit6OutgoingMessage object.
  */
-- (nonnull instancetype)initWithDestination:(nonnull Bit6Address*)destination;
+- (instancetype)initWithDestination:(Bit6Address*)destination;
 
 /*! The <Bit6Address> object to reference the message's destination. */
-@property (nonnull, nonatomic, strong) Bit6Address *destination;
+@property (nonatomic, strong) Bit6Address *destination;
 
 /*! Text content of the message. */
 @property (nullable, nonatomic, copy) NSString *content;
@@ -45,7 +47,7 @@
 @property (nonatomic) CLLocationCoordinate2D location;
 
 /*! Returns an unique path to store an audio file. */
-- (nonnull NSString*)uniqueAudioFilePath;
+- (NSString*)uniqueAudioFilePath;
 
 /*! Path of the attached audio file, if available. */
 @property (nullable, nonatomic, strong) NSString *audioFilePath;
@@ -65,6 +67,8 @@
  @param msg message to be copied
  @return copy of the message
  */
-+ (nonnull Bit6OutgoingMessage*)outgoingCopyOfMessage:(nonnull Bit6Message*)msg;
++ (Bit6OutgoingMessage*)outgoingCopyOfMessage:(Bit6Message*)msg;
 
 @end
+
+NS_ASSUME_NONNULL_END

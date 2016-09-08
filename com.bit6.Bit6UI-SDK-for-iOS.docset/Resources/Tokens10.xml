@@ -1,69 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/BXUImageViewController.html">
+	<File path="Classes/BXUConversationsTabBarItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/BXUImageViewController</TokenIdentifier>
-			<Abstract type="html">Convenience subclass of UIViewController to display an image attached to a message.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUConversationsTabBarItem</TokenIdentifier>
+			<Abstract type="html">This components will show at all times the number of unread messages in its badge.</Abstract>
+			<DeclaredIn>BXUConversationsTabBarItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/setMessage:</TokenIdentifier>
-			<Abstract type="html">Sets the message for the sender.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
-			
-			<Declaration>- (void)setMessage:(nonnull Bit6Message *)message</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>message</Name>
-					<Abstract type="html">a message with an image attachment to show in the sender.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setMessage:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see BXUImageViewControllerDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUImageViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see BXUImageViewControllerDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUImageViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/BXUImageViewController/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see BXUImageViewControllerDelegate Protocol Reference.</Abstract>
-			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
-			
-			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUImageViewControllerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
 		
         
 	</File>

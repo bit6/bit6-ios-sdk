@@ -17,7 +17,7 @@
 			<Abstract type="html">Unavailable init</Abstract>
 			<DeclaredIn>BXU.h</DeclaredIn>
 			
-			<Declaration>- (nonnull instancetype)init</Declaration>
+			<Declaration>- (instancetype)init</Declaration>
 			
 			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
 			<Anchor>//api/name/init</Anchor>
@@ -63,7 +63,7 @@
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (nonnull NSString *)displayNameForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Declaration>+ (NSString *)displayNameForAddress:(Bit6Address *)address</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
@@ -86,7 +86,7 @@
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (nonnull NSString *)initialsForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Declaration>+ (NSString *)initialsForAddress:(Bit6Address *)address</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
@@ -108,7 +108,7 @@
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (nullable NSURL *)displayImageURLForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Declaration>+ (nullable NSURL *)displayImageURLForAddress:(Bit6Address *)address</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
@@ -117,23 +117,6 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">image URL for the identity.</Abstract></ReturnValue>
 			<Anchor>//api/name/displayImageURLForAddress:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/BXU/setOutgoingDataCallEnabled:</TokenIdentifier>
-			<Abstract type="html">If set to YES then the default call UIButton provided by the framework will make calls that support data transfers.</Abstract>
-			<DeclaredIn>BXU.h</DeclaredIn>
-			
-			<Declaration>+ (void)setOutgoingDataCallEnabled:(BOOL)outgoingDataCallEnabled</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>outgoingDataCallEnabled</Name>
-					<Abstract type="html">set to YES to support data transfers in calls.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setOutgoingDataCallEnabled:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -154,7 +137,7 @@
 			<Abstract type="html">Deletes an identity profile picture from cache.</Abstract>
 			<DeclaredIn>BXU.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)clearProfilePictureForAddress:(nonnull Bit6Address *)address</Declaration>
+			<Declaration>+ (BOOL)clearProfilePictureForAddress:(Bit6Address *)address</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>address</Name>
@@ -171,7 +154,7 @@
 			<Abstract type="html">Shows a incoming message notification banner.</Abstract>
 			<DeclaredIn>BXU.h</DeclaredIn>
 			
-			<Declaration>+ (void)showNotificationFrom:(nonnull Bit6Address *)from message:(nonnull NSString *)message tappedHandler:(nullable void ( ^ ) ( Bit6Address *_Nullable from ))tappedHandler</Declaration>
+			<Declaration>+ (void)showNotificationFrom:(Bit6Address *)from message:(NSString *)message tappedHandler:(nullable void ( ^ ) ( Bit6Address *_Nullable from ))tappedHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>from</Name>
@@ -186,6 +169,139 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">YES if the file was deleted from cache.</Abstract></ReturnValue>
 			<Anchor>//api/name/showNotificationFrom:message:tappedHandler:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/callMediaMode</TokenIdentifier>
+			<Abstract type="html">The current call media mode.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CallMediaMode)callMediaMode</Declaration>
+			
+			
+			<Anchor>//api/name/callMediaMode</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/setCallMediaMode:</TokenIdentifier>
+			<Abstract type="html">Indicates if the calls will go P2P or if the server should process the media.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)setCallMediaMode:(Bit6CallMediaMode)callMediaMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callMediaMode</Name>
+					<Abstract type="html">P2P or MIX to process the calls media in the server.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCallMediaMode:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/enableAudioCalls</TokenIdentifier>
+			<Abstract type="html">The current configuration for audio calls support.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)enableAudioCalls</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if audio calls are enabled.</Abstract></ReturnValue>
+			<Anchor>//api/name/enableAudioCalls</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/setEnableAudioCalls:</TokenIdentifier>
+			<Abstract type="html">Used to configure the support for audio streams in the calls.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)setEnableAudioCalls:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">YES if audio streams should be available during the calls.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setEnableAudioCalls:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/enableVideoCalls</TokenIdentifier>
+			<Abstract type="html">The current configuration for video calls support.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)enableVideoCalls</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if video calls are enabled.</Abstract></ReturnValue>
+			<Anchor>//api/name/enableVideoCalls</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/setEnableVideoCalls:</TokenIdentifier>
+			<Abstract type="html">Used to configure the support for video streams in the calls.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)setEnableVideoCalls:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">YES if video streams should be available during the calls.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setEnableVideoCalls:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/enableCallsWithData</TokenIdentifier>
+			<Abstract type="html">The current configuration for data transfers during a call.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)enableCallsWithData</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if data transfer should be enabled in the calls.</Abstract></ReturnValue>
+			<Anchor>//api/name/enableCallsWithData</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/setEnableCallsWithData:</TokenIdentifier>
+			<Abstract type="html">Used to configure the support for data transfers in the calls.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (void)setEnableCallsWithData:(BOOL)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">YES if data transfers should be available during the calls.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setEnableCallsWithData:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BXU/availableStreamsIn:</TokenIdentifier>
+			<Abstract type="html">Convenient method to get the enabled streams in Bit6UI framework from a given streams param.</Abstract>
+			<DeclaredIn>BXU.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CallStreams)availableStreamsIn:(Bit6CallStreams)streams</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>streams</Name>
+					<Abstract type="html">the list of streams we want to compare.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the enabled streams in the given streams param.</Abstract></ReturnValue>
+			<Anchor>//api/name/availableStreamsIn:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

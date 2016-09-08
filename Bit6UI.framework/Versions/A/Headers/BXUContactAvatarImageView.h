@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString* const _Nonnull BXURefreshAvatarsNotification;
-typedef NSData* _Nonnull (^BXUContactAvatarPreparationBlock) (NSString* _Nonnull uri, NSURL* _Nonnull originURL, NSData* _Nonnull imageData);
+NS_ASSUME_NONNULL_BEGIN
+
+extern NSString* const BXURefreshAvatarsNotification;
+typedef NSData* _Nonnull (^BXUContactAvatarPreparationBlock) (NSString* uri, NSURL* originURL, NSData* imageData);
 
 /*! Convenience subclass of UIImageView to show a profile picture for a contact. This class work together with <BXUContactSource> to know the NSURL of the image to download.
  @see <BXUContactSource>
@@ -17,7 +19,7 @@ typedef NSData* _Nonnull (^BXUContactAvatarPreparationBlock) (NSString* _Nonnull
 @interface BXUContactAvatarImageView : UIImageView
 
 /*! Identity of the contact for this avatar. */
-@property (nonnull, strong, nonatomic) Bit6Address *address;
+@property (strong, nonatomic) Bit6Address *address;
 
 /*! Sets a block to perform after the avatar has been downloaded and before it is saved to cache. This allows to make some operations to the avatar image.
  @param preparationBlock block to execute before the avatar is saved to cache.
@@ -30,3 +32,5 @@ typedef NSData* _Nonnull (^BXUContactAvatarPreparationBlock) (NSString* _Nonnull
 + (nullable BXUContactAvatarPreparationBlock)preparationBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

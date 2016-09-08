@@ -41,14 +41,14 @@ class CircleButton : UIButton {
     }
     
     func refreshColor() {
-        if on {
-            backgroundColor = UIColor(red:216/255.0, green:236/255.0, blue:255/255.0, alpha:1.0)
+        if !enabled {
+            backgroundColor = UIColor.grayColor()
         }
         else if highlighted {
             backgroundColor = UIColor(red:216/255.0, green:236/255.0, blue:255/255.0, alpha:1.0)
         }
-        else if !enabled {
-            backgroundColor = UIColor.grayColor()
+        else if on {
+            backgroundColor = UIColor(red:216/255.0, green:236/255.0, blue:255/255.0, alpha:1.0)
         }
         else {
             backgroundColor = UIColor.whiteColor()
@@ -67,6 +67,8 @@ class RoundedButton : UIButton {
 
 class MyCallViewController: Bit6CallViewController {
     
+    var noLocalFeedLabel : UILabel?
+
     @IBOutlet var overlayView:UIView!
     @IBOutlet var controlsView:UIView!
     
@@ -76,7 +78,9 @@ class MyCallViewController: Bit6CallViewController {
     @IBOutlet var muteAudioButton:CircleButton!
     @IBOutlet var bluetoothButton:CircleButton!
     @IBOutlet var speakerButton:CircleButton!
+    @IBOutlet var muteVideoButton:CircleButton!
     @IBOutlet var cameraButton:CircleButton!
+    @IBOutlet var recordingCallButton:CircleButton!
     
     override class func createForCall(callController:Bit6CallController) -> Bit6CallViewController {
         return MyCallViewController(nibName:"MyCallViewController", bundle:nil)
@@ -84,7 +88,7 @@ class MyCallViewController: Bit6CallViewController {
     
     var callController : Bit6CallController? {
         get {
-            return Bit6.callControllers().first
+            return Bit6.activeCalls().first
         }
     }
     
@@ -93,7 +97,12 @@ class MyCallViewController: Bit6CallViewController {
         
         refreshState()
         
-        self.usernameLabel.text = Bit6.callControllers().count>1 ? "Many Destinations" : self.callController?.otherDisplayName
+        if Bit6.activeCalls().count>1 {
+            self.usernameLabel.text = "Many Destinations"
+        }
+        else {
+            self.usernameLabel.text = self.callController?.otherDisplayName
+        }
         
         bluetoothButton.setTitle("", forState:.Normal)
         bluetoothButton.setBackgroundImage(UIImage(named:"bluetooth"), forState:.Normal)
@@ -101,8 +110,12 @@ class MyCallViewController: Bit6CallViewController {
         speakerButton.setBackgroundImage(UIImage(named:"speaker"), forState:.Normal)
         muteAudioButton.setTitle("", forState:.Normal)
         muteAudioButton.setBackgroundImage(UIImage(named:"mute"), forState:.Normal)
+        muteVideoButton.setTitle("", forState:.Normal)
+        muteVideoButton.setBackgroundImage(UIImage(named:"mute_video"), forState:.Normal)
         cameraButton.setTitle("", forState:.Normal)
         cameraButton.setBackgroundImage(UIImage(named:"camera"), forState:.Normal)
+        recordingCallButton.setTitle("", forState:.Normal)
+        recordingCallButton.setBackgroundImage(UIImage(named:"record_call"), forState:.Normal)
         
         let tgr = UITapGestureRecognizer(target:self, action:#selector(MyCallViewController.overlayTapped(_:)))
         overlayView.addGestureRecognizer(tgr)
@@ -111,7 +124,7 @@ class MyCallViewController: Bit6CallViewController {
         view.addGestureRecognizer(tgr2)
         
         var atLeastOneCallConnected = false
-        let callControllers = Bit6.callControllers()
+        let callControllers = Bit6.activeCalls()
         for call in callControllers {
             if call.state.rawValue >= Bit6CallState.CONNECTED.rawValue {
                 atLeastOneCallConnected = true
@@ -126,7 +139,7 @@ class MyCallViewController: Bit6CallViewController {
         var atLeastOneCallConnected = false
         var atLeastOneCallHasVideo = false
         
-        let callControllers = Bit6.callControllers()
+        let callControllers = Bit6.activeCalls()
         for call in callControllers {
             if call.state.rawValue >= Bit6CallState.CONNECTED.rawValue {
                 atLeastOneCallConnected = true
@@ -148,22 +161,13 @@ class MyCallViewController: Bit6CallViewController {
         }
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    // MARK: Bit6CallViewController methods
+    // MARK: Bit6CallControllerDelegate
     
     override func callController(callController: Bit6CallController, callDidChangeToState state: Bit6CallState) {
         super.callController(callController, callDidChangeToState:state)
         
-        if callController.state == .ERROR {
-            let alert = UIAlertController(title:"An Error Occurred", message:nil, preferredStyle:.Alert)
-            if let error = callController.error {
-                alert.message = error.localizedDescription
-            }
-            alert.addAction(UIAlertAction(title:"OK", style:.Cancel, handler:nil))
-            self.navigationController?.presentViewController(alert, animated:true, completion:nil)
+        if let error = callController.error {
+            Bit6AlertView.showAlertControllerWithTitle(error.localizedDescription, message:nil, cancelButtonTitle:"OK")
         }
         
         if isViewLoaded() {
@@ -178,7 +182,7 @@ class MyCallViewController: Bit6CallViewController {
         
         if isViewLoaded() {
             var longerCall : UInt = 0
-            let callControllers = Bit6.callControllers()
+            let callControllers = Bit6.activeCalls()
             for call in callControllers {
                 if call.seconds > longerCall {
                     longerCall = call.seconds
@@ -191,11 +195,43 @@ class MyCallViewController: Bit6CallViewController {
         }
     }
     
+    override func callController(callController: Bit6CallController, localVideoFeedInterruptedBecause reason: Int32) {
+        super.callController(callController, localVideoFeedInterruptedBecause: reason)
+        
+        if self.noLocalFeedLabel == nil {
+            if let localVideoView = self.localVideoView {
+                let label = UILabel(frame:CGRectZero)
+                label.backgroundColor = UIColor.grayColor()
+                label.tag = 15
+                label.numberOfLines = 2
+                label.text = "Video Feed\nUnavailable"
+                label.font = UIFont(name:"HelveticaNeue-Medium", size:16)
+                label.autoresizingMask = [.FlexibleWidth,.FlexibleHeight,.FlexibleTopMargin,.FlexibleBottomMargin,.FlexibleLeftMargin,.FlexibleRightMargin]
+                label.textAlignment = .Center
+                label.adjustsFontSizeToFitWidth = true
+                label.minimumScaleFactor = 0.5
+                label.textColor = UIColor.whiteColor()
+                
+                localVideoView.addSubview(label)
+                label.frame = localVideoView.bounds
+                self.noLocalFeedLabel = label
+            }
+        }
+    }
+    
+    override func localVideoFeedInterruptionEndedForCallController(callController: Bit6CallController) {
+        super.localVideoFeedInterruptionEndedForCallController(callController)
+
+        self.noLocalFeedLabel?.removeFromSuperview()
+    }
+    
+    // MARK: Bit6CallViewController methods
+    
     func refreshState(){
         var smallerCall : Bit6CallController? = nil
-        var smallerState = Bit6CallState.MISSED
+        var smallerState = Bit6CallState.END
         
-        let callControllers = Bit6.callControllers()
+        let callControllers = Bit6.activeCalls()
         for call in callControllers {
             if call.state.rawValue < smallerState.rawValue {
                 smallerState = call.state
@@ -253,7 +289,7 @@ class MyCallViewController: Bit6CallViewController {
         var atLeastOneCallHasAudio = false
         var atLeastOneCallHasRemoteAudio = false
         
-        let callControllers = Bit6.callControllers()
+        let callControllers = Bit6.activeCalls()
         for call in callControllers {
             if call.hasVideo {
                 atLeastOneCallHasVideo = true
@@ -267,18 +303,21 @@ class MyCallViewController: Bit6CallViewController {
         }
         
         if (TARGET_OS_SIMULATOR != 0) {
-            cameraButton.enabled = false
-            bluetoothButton.enabled = false
-            speakerButton.enabled = false
+            self.muteVideoButton.enabled = false
+            self.cameraButton.enabled = false
+            self.bluetoothButton.enabled = false
+            self.speakerButton.enabled = false
         }
         else {
-            cameraButton.enabled = atLeastOneCallHasVideo
-            bluetoothButton.enabled = atLeastOneCallHasRemoteAudio
-            speakerButton.enabled = atLeastOneCallHasRemoteAudio
+            self.muteVideoButton.enabled = (self.localVideoView?.interrupted ?? false) ? false : atLeastOneCallHasVideo
+            self.cameraButton.enabled = atLeastOneCallHasVideo
+            self.bluetoothButton.enabled = atLeastOneCallHasRemoteAudio
+            self.speakerButton.enabled = atLeastOneCallHasRemoteAudio
         }
         
-        muteAudioButton.enabled = atLeastOneCallHasAudio
+        self.recordingCallButton?.enabled = callControllers.count==1 && self.callController!.supportsCapability(.Recording)
         
+        muteAudioButton.enabled = atLeastOneCallHasAudio
         
         let deviceType = UIDevice.currentDevice().model
         if deviceType != "iPhone" {
@@ -294,11 +333,27 @@ class MyCallViewController: Bit6CallViewController {
         if speakerButton.enabled {
             speakerButton.on = Bit6CallController.isSpeakerEnabled()
         }
+        if muteVideoButton.enabled {
+            muteVideoButton.on = Bit6CallController.isLocalVideoEnabled()
+        }
+        if recordingCallButton.enabled {
+            recordingCallButton.on = self.callController!.recording
+        }
     }
     
     override func updateLayoutForVideoFeedViews(videoFeedViews: [Bit6VideoFeedView]) {
-        self.usernameLabel.text = Bit6.callControllers().count>1 ? "Many Destinations" : self.callController?.otherDisplayName
         super.updateLayoutForVideoFeedViews(videoFeedViews)
+        
+        if Bit6.activeCalls().count>1 {
+            self.usernameLabel.text = "Many Destinations"
+        }
+        else {
+            self.usernameLabel.text = self.callController?.otherDisplayName
+        }
+        
+        if let localViewView = self.localVideoView {
+            self.noLocalFeedLabel?.frame = localViewView.bounds;
+        }
     }
     
     // MARK: Actions
@@ -315,8 +370,16 @@ class MyCallViewController: Bit6CallViewController {
         Bit6CallController.setSpeakerEnabled(!Bit6CallController.isSpeakerEnabled())
     }
     
+    @IBAction func muteVideoCall(sender : UIButton) {
+        Bit6CallController.setLocalVideoEnabled(!Bit6CallController.isLocalVideoEnabled())
+    }
+    
     @IBAction func switchCamera(sender : UIButton) {
         Bit6CallController.setLocalVideoSource(Bit6CallController.localVideoSource() == .CameraBack ? .CameraFront : .CameraBack)
+    }
+    
+    @IBAction func switchRecording(sender : UIButton) {
+        self.callController!.recording = !self.callController!.recording
     }
     
     @IBAction func hangup(sender : UIButton) {

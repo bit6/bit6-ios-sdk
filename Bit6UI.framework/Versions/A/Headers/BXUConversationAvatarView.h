@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString* const _Nonnull BXURefreshGroupAvatarsNotification;
+NS_ASSUME_NONNULL_BEGIN
+
+extern NSString* const BXURefreshGroupAvatarsNotification;
 
 /*! Convenience subclass of UIView to show a profile picture for an identity. In case of a group identity this view will show two profiles pictures if an image is not provided for the group using <BXUContactSource>. 
  @see <BXUContactAvatarImageView>
@@ -16,6 +18,8 @@ extern NSString* const _Nonnull BXURefreshGroupAvatarsNotification;
 @interface BXUConversationAvatarView : UIView
 
 /*! Identity of the contact for this avatar. */
-@property (nonnull, strong, nonatomic) Bit6Address *address;
+@property (strong, nonatomic) Bit6Address *address;
 
 @end
+
+NS_ASSUME_NONNULL_END

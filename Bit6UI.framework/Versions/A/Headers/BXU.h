@@ -39,7 +39,11 @@
 #import "BXUIncomingCallPrompt.h"
 #import "BXUProgressWindow.h"
 
-#define BIT6UI_IOS_SDK_VERSION_STRING @"0.9.8"
+#import "BXUButtons.h"
+
+#define BIT6UI_IOS_SDK_VERSION_STRING @"0.10.0"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /*! BXU offers some generic functionality like setting the ContactDataSource to use through the framework, to show incoming message banners and deletion of cache pictures. */
 @interface BXU : NSObject
@@ -47,7 +51,7 @@
 /*! Unavailable init
  @return a new instance of the class.
  */
-- (nonnull instancetype)init NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 /*! Gets the current <BXUContactSource> object.
  @return contact source object.
@@ -65,7 +69,7 @@
  @return display name for the identity.
  @see +[BXU contactSource]
  */
-+ (nonnull NSString*)displayNameForAddress:(nonnull Bit6Address*)address;
++ (NSString*)displayNameForAddress:(Bit6Address*)address;
 
 /*! Returns the name initials for an specified identity.
  @param address identity to search for the name initials.
@@ -73,19 +77,14 @@
  @see +[BXU displayNameForAddress:]
  @see +[BXU contactSource]
  */
-+ (nonnull NSString*)initialsForAddress:(nonnull Bit6Address*)address;
++ (NSString*)initialsForAddress:(Bit6Address*)address;
 
 /*! Returns the image URL for an specified identity.
  @param address identity to search for the image URL.
  @return image URL for the identity.
  @see +[BXU contactSource]
  */
-+ (nullable NSURL*)displayImageURLForAddress:(nonnull Bit6Address*)address;
-
-/*! If set to YES then the default call UIButton provided by the framework will make calls that support data transfers.
- @param outgoingDataCallEnabled set to YES to support data transfers in calls.
- */
-+ (void)setOutgoingDataCallEnabled:(BOOL)outgoingDataCallEnabled;
++ (nullable NSURL*)displayImageURLForAddress:(Bit6Address*)address;
 
 /*! Deletes the profile pictures from cache.
  @return number of files deleted.
@@ -96,7 +95,7 @@
  @param address identity of the profile picture to delete.
  @return YES if the file was deleted from cache.
  */
-+ (BOOL)clearProfilePictureForAddress:(nonnull Bit6Address*)address;
++ (BOOL)clearProfilePictureForAddress:(Bit6Address*)address;
 
 /*! Shows a incoming message notification banner.
  @param from identity to use as the sender of the message.
@@ -104,6 +103,56 @@
  @param tappedHandler handler to execute if the banner is tapped
  @return YES if the file was deleted from cache.
  */
-+ (void)showNotificationFrom:(nonnull Bit6Address*)from message:(nonnull NSString*)message tappedHandler:(nullable void(^)(Bit6Address * _Nullable from))tappedHandler;
++ (void)showNotificationFrom:(Bit6Address*)from message:(NSString*)message tappedHandler:(nullable void(^)(Bit6Address * _Nullable from))tappedHandler;
+
+///---------------------------------------------------------------------------------------
+/// @name ￼Calls
+///---------------------------------------------------------------------------------------
+
+/*! The current call media mode. */
++ (Bit6CallMediaMode)callMediaMode;
+
+/*! Indicates if the calls will go P2P or if the server should process the media.
+ @param callMediaMode P2P or MIX to process the calls media in the server.
+ */
++ (void)setCallMediaMode:(Bit6CallMediaMode)callMediaMode;
+
+/*! The current configuration for audio calls support. 
+ @return YES if audio calls are enabled.
+ */
++ (BOOL)enableAudioCalls;
+
+/*! Used to configure the support for audio streams in the calls.
+ @param enable YES if audio streams should be available during the calls.
+ */
++ (void)setEnableAudioCalls:(BOOL)enable;
+
+/*! The current configuration for video calls support.
+ @return YES if video calls are enabled.
+ */
++ (BOOL)enableVideoCalls;
+
+/*! Used to configure the support for video streams in the calls.
+ @param enable YES if video streams should be available during the calls.
+ */
++ (void)setEnableVideoCalls:(BOOL)enable;
+
+/*! The current configuration for data transfers during a call.
+ @return YES if data transfer should be enabled in the calls.
+ */
++ (BOOL)enableCallsWithData;
+
+/*! Used to configure the support for data transfers in the calls.
+ @param enable YES if data transfers should be available during the calls.
+ */
++ (void)setEnableCallsWithData:(BOOL)enable;
+
+/*! Convenient method to get the enabled streams in Bit6UI framework from a given streams param.
+ @param streams the list of streams we want to compare.
+ @return the enabled streams in the given streams param.
+ */
++ (Bit6CallStreams)availableStreamsIn:(Bit6CallStreams)streams;
 
 @end
+
+NS_ASSUME_NONNULL_END

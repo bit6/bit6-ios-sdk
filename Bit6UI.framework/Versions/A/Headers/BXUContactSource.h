@@ -9,16 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define BXUContactSourceChangedNotification @"BXUContactSourceChanged"
+NS_ASSUME_NONNULL_BEGIN
+
+extern NSString* const BXUContactSourceChangedNotification;
 
 /*! Contact model that contains all the information for an identity. */
 @protocol BXUContact <NSObject>
 
 /*! Identity URI for the contact. */
-- (nonnull NSString*)uri;
+- (NSString*)uri;
 
 /*! Display name for the contact. */
-- (nonnull NSString*)name;
+- (NSString*)name;
 
 /*! URL for the contact's avatar. */
 - (nullable NSURL*)avatarURL;
@@ -36,13 +38,15 @@
  @param uri URI identity of the contact.
  @return contact matching the URI provided.
  */
-- (nullable id<BXUContact>)contactForURI:(nonnull NSString*)uri;
+- (nullable id<BXUContact>)contactForURI:(NSString*)uri;
 
 @optional
 /*! Called to retrieve BXUContact objects based on a string.
  @param string string to obtain BXUContact objects
  @return contacts matching the string provided.
  */
-- (nonnull NSArray<id<BXUContact>>*)matchContactsForString:(nonnull NSString*)string;
+- (NSArray<id<BXUContact>>*)matchContactsForString:(NSString*)string;
 
 @end
+
+NS_ASSUME_NONNULL_END
