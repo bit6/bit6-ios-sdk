@@ -1,7 +1,7 @@
 ## 0.10.0 [2016-09-08]
 
 ### Breaking Changes
-- VoIP Push Notifications support for incoming calls. Please follow this [guide](http://docs.bit6.com/guides/push-apns/#environments) to configure it.
+- VoIP Push Notifications support for incoming calls. Please follow this [guide](http://docs.bit6.com/guides/push-apns/#environments) to configure it. Also now, in your ApplicationDelegat you need to handle local notifications, please see [Push Notifications](http://docs.bit6.com/guides/ios-intro/#application-delegate).
 - Dropped iOS7 support.
 - `Bit6.callcontrollers` now return all the calls: inactive / actives / ended. To get the list of active calls use `Bit6.activeCalls` instead.
 - `Bit6CallState_MISSED` and `Bit6CallState_ERROR` were replaced by `Bit6CallController.missed` and `Bit6CallController.error` properties.
