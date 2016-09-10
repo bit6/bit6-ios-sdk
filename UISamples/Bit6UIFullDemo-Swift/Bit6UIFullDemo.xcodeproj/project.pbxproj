@@ -46,6 +46,7 @@
 		D88183A61D6FAE5200F3ABE0 /* CustomCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCallViewController.swift; sourceTree = "<group>"; };
 		D88183A81D6FAE6700F3ABE0 /* CustomCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCallViewController.xib; sourceTree = "<group>"; };
 		D894B88B1CC935BF00211A29 /* Bit6UI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Bit6UI.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Bit6UI.strings"; sourceTree = SOURCE_ROOT; };
+		D8B64A001D83BDA30000965E /* Bit6UIFullDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bit6UIFullDemo.entitlements; sourceTree = "<group>"; };
 		D8BB52781ACB22E30074947D /* ConversationDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +66,7 @@
 		D80D4B571A2150DA00391E04 = {
 			isa = PBXGroup;
 			children = (
+				D8B64A001D83BDA30000965E /* Bit6UIFullDemo.entitlements */,
 				D80D4B621A2150DA00391E04 /* Bit6ChatDemo-Swift */,
 				D80D4B611A2150DA00391E04 /* Products */,
 			);
@@ -154,8 +156,12 @@
 				TargetAttributes = {
 					D80D4B5F1A2150DA00391E04 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = R2GJHK9MEJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -317,6 +323,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Bit6UIFullDemo.entitlements;
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				INFOPLIST_FILE = "Bit6ChatDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;
@@ -330,6 +338,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Bit6UIFullDemo.entitlements;
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				INFOPLIST_FILE = "Bit6ChatDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bit6.ChatDemo;

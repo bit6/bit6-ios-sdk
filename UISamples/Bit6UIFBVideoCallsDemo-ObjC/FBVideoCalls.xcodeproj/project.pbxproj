@@ -61,6 +61,7 @@
 		D8A3AF6A1A44A992002205C2 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		D8A3AF6B1A44A992002205C2 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		D8A5A4B81C6F990000B868B1 /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ringtone.caf; sourceTree = "<group>"; };
+		D8B649FE1D83BD8D0000965E /* FBVideoCalls.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FBVideoCalls.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		D8A3AF301A44A7F9002205C2 /* FBVideoCalls */ = {
 			isa = PBXGroup;
 			children = (
+				D8B649FE1D83BD8D0000965E /* FBVideoCalls.entitlements */,
 				D8A3AF571A44A82F002205C2 /* DemoConfig.xcconfig */,
 				D8A3AF351A44A7F9002205C2 /* AppDelegate.h */,
 				D8A3AF361A44A7F9002205C2 /* AppDelegate.m */,
@@ -178,8 +180,12 @@
 				TargetAttributes = {
 					D8A3AF2D1A44A7F9002205C2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = R2GJHK9MEJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -344,7 +350,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = FBVideoCalls/FBVideoCalls.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -361,6 +369,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = FBVideoCalls/FBVideoCalls.entitlements;
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

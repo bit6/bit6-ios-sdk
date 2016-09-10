@@ -56,6 +56,7 @@
 		D88183981D6F6BAC00F3ABE0 /* CustomCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCallViewController.xib; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InCall/CustomCallViewController.xib"; sourceTree = SOURCE_ROOT; };
 		D881839C1D6F6BBA00F3ABE0 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		D894B8951CC93E4500211A29 /* Bit6UI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Bit6UI.strings; path = "../Bit6UIFullDemo-ObjC/ChatDemo/Bit6UI.strings"; sourceTree = SOURCE_ROOT; };
+		D8B64A031D83BDBF0000965E /* Bit6UITelerikFullDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bit6UITelerikFullDemo.entitlements; sourceTree = "<group>"; };
 		D8EDACB5194ABD2A00AFFB53 /* Bit6UITelerikFullDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bit6UITelerikFullDemo-Info.plist"; path = "ChatDemo/Bit6UITelerikFullDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D8EDACB6194ABD2A00AFFB53 /* Bit6UITelerikFullDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bit6UITelerikFullDemo-Prefix.pch"; path = "ChatDemo/Bit6UITelerikFullDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		D8EDACB8194ABD2A00AFFB53 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChatDemo/main.m; sourceTree = SOURCE_ROOT; };
@@ -96,6 +97,7 @@
 		D880E49518DBFC540070378D = {
 			isa = PBXGroup;
 			children = (
+				D8B64A031D83BDBF0000965E /* Bit6UITelerikFullDemo.entitlements */,
 				D880E4A718DBFC540070378D /* ChatDemo */,
 				D880E4A018DBFC540070378D /* Frameworks */,
 				D880E49F18DBFC540070378D /* Products */,
@@ -203,8 +205,12 @@
 				ORGANIZATIONNAME = Voxofon;
 				TargetAttributes = {
 					D880E49D18DBFC540070378D = {
+						DevelopmentTeam = R2GJHK9MEJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -343,8 +349,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Bit6UITelerikFullDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChatDemo/Telerik",
@@ -365,8 +373,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Bit6UITelerikFullDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChatDemo/Telerik",

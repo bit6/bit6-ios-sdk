@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		D8852D9C1AE349D400FB82B0 /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../../Bit6.framework; sourceTree = "<group>"; };
+		D8B649FB1D83BD380000965E /* DataChannelDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataChannelDemo.entitlements; sourceTree = "<group>"; };
 		D8D128C81CC67DB800613ABE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "../Bit6FullDemo-ObjC/ChatDemo/Localizable.strings"; sourceTree = SOURCE_ROOT; };
 		D8D128C91CC67DB800613ABE /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ringtone.caf; path = "../Bit6FullDemo-ObjC/ChatDemo/ringtone.caf"; sourceTree = SOURCE_ROOT; };
 		D8D4E5781AD38AF00086B31E /* DataChannelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataChannelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +72,7 @@
 		D8D4E57A1AD38AF00086B31E /* DataChannelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D8B649FB1D83BD380000965E /* DataChannelDemo.entitlements */,
 				D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */,
 				D8D4E57F1AD38AF00086B31E /* AppDelegate.h */,
 				D8D4E5801AD38AF00086B31E /* AppDelegate.m */,
@@ -133,6 +135,9 @@
 						DevelopmentTeam = R2GJHK9MEJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -281,6 +286,7 @@
 			baseConfigurationReference = D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DataChannelDemo/DataChannelDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -301,6 +307,7 @@
 			baseConfigurationReference = D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DataChannelDemo/DataChannelDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

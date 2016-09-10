@@ -43,6 +43,7 @@
 		D880E4A318DBFC540070378D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D880E4A518DBFC540070378D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D894B88D1CC93DA800211A29 /* Bit6UI.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Bit6UI.strings; path = ChatDemo/Bit6UI.strings; sourceTree = SOURCE_ROOT; };
+		D8B649FF1D83BD970000965E /* Bit6UIFullDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bit6UIFullDemo.entitlements; sourceTree = "<group>"; };
 		D8C040F81ACA7CE600D51A19 /* ConversationDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConversationDetailsTableViewController.h; path = ChatDemo/ConversationDetailsTableViewController.h; sourceTree = SOURCE_ROOT; };
 		D8C040F91ACA7CE600D51A19 /* ConversationDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationDetailsTableViewController.m; path = ChatDemo/ConversationDetailsTableViewController.m; sourceTree = SOURCE_ROOT; };
 		D8C4CC371C9F15C40026B9C0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ChatDemo/Localizable.strings; sourceTree = SOURCE_ROOT; };
@@ -84,6 +85,7 @@
 		D880E49518DBFC540070378D = {
 			isa = PBXGroup;
 			children = (
+				D8B649FF1D83BD970000965E /* Bit6UIFullDemo.entitlements */,
 				D880E4A718DBFC540070378D /* ChatDemo */,
 				D880E4A018DBFC540070378D /* Frameworks */,
 				D880E49F18DBFC540070378D /* Products */,
@@ -191,8 +193,12 @@
 				ORGANIZATIONNAME = Voxofon;
 				TargetAttributes = {
 					D880E49D18DBFC540070378D = {
+						DevelopmentTeam = R2GJHK9MEJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -331,8 +337,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Bit6UIFullDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6UIFullDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6UIFullDemo-Info.plist";
@@ -349,8 +357,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Bit6UIFullDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = R2GJHK9MEJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChatDemo/Bit6UIFullDemo-Prefix.pch";
 				INFOPLIST_FILE = "ChatDemo/Bit6UIFullDemo-Info.plist";
