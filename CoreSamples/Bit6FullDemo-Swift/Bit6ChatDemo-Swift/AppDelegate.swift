@@ -59,6 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Bit6.pushNotification().didFailToRegisterForRemoteNotificationsWithError(error)
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        Bit6.pushNotification().didReceiveNotificationUserInfo(userInfo)
+    }
+    
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         Bit6.pushNotification().didReceiveNotificationUserInfo(userInfo, fetchCompletionHandler: completionHandler)
     }

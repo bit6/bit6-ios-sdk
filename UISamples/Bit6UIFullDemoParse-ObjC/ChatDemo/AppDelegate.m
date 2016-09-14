@@ -86,6 +86,11 @@
     [Bit6.pushNotification didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [Bit6.pushNotification didReceiveNotificationUserInfo:userInfo];
+}
+
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
     [Bit6.pushNotification didReceiveNotificationUserInfo:userInfo fetchCompletionHandler:completionHandler];
