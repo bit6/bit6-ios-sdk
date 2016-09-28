@@ -1,6 +1,7 @@
 ## 0.10.0 [2016-09-08]
 
 ### Breaking Changes
+- The `Bit6.pushNotification` methods to handle push notifications have been renamed, for example from `didReceiveRemoteNotification:fetchCompletionHandler:` to `didReceiveNotificationUserInfo:fetchCompletionHandler:`. See the sample apps for the complete implementation.
 - On iOS10 it's necessary to implement `[UIApplicationDelegate application:didReceiveRemoteNotification:]` and in it to call `[Bit6.pushNotification didReceiveNotificationUserInfo:];`
 - Dropped iOS7 support.
 - `Bit6.callcontrollers` now return all the calls: inactive / actives / ended. To get the list of active calls use `Bit6.activeCalls` instead.
