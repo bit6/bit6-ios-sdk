@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6</TokenIdentifier>
+			<Abstract type="html">Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object and offers some generic functionality.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use [Bit6 sharedInstance] instead.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Gets the default Bit6 object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6 *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Default Bit6 object.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:</TokenIdentifier>
+			<Abstract type="html">Bit6 startup method.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)startWithApiKey:(NSString *)apiKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>apiKey</Name>
+					<Abstract type="html">unique key for the current developer.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startWithApiKey:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startWithApiKey:endPoint:</TokenIdentifier>
+			<Abstract type="html">Bit6 startup method.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)startWithApiKey:(NSString *)apiKey endPoint:(NSString *)endPoint</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>apiKey</Name>
+					<Abstract type="html">unique key for the current developer.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">custom server URL</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startWithApiKey:endPoint:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/started</TokenIdentifier>
+			<Abstract type="html">Returns YES if the Bit6 framework has been initialized</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/session</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6Session object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6Session *)session</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6Session object.</Abstract></ReturnValue>
+			<Anchor>//api/name/session</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/audioPlayer</TokenIdentifier>
+			<Abstract type="html">Gets the default Bit6AudioPlayerController object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6AudioPlayerController *)audioPlayer</Declaration>
+			
+			<ReturnValue><Abstract type="html">Default Bit6AudioPlayerController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/audioPlayer</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/audioRecorder</TokenIdentifier>
+			<Abstract type="html">Gets default Bit6AudioRecorderController object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6AudioRecorderController *)audioRecorder</Declaration>
+			
+			<ReturnValue><Abstract type="html">Default Bit6AudioRecorderController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/audioRecorder</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/locationController</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6CurrentLocationController object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6CurrentLocationController *)locationController</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6CurrentLocationController object.</Abstract></ReturnValue>
+			<Anchor>//api/name/locationController</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/pushNotification</TokenIdentifier>
+			<Abstract type="html">Returns the default Bit6PushNotificationCenter object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (Bit6PushNotificationCenter *)pushNotification</Declaration>
+			
+			<ReturnValue><Abstract type="html">the default Bit6PushNotificationCenter object.</Abstract></ReturnValue>
+			<Anchor>//api/name/pushNotification</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/downloadVideosBeforePlaying</TokenIdentifier>
+			<Abstract type="html">Get the current configuration to play video attachments. By default it&apos;s set to NO.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/playVideoFromMessage:viewController:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (BOOL)downloadVideosBeforePlaying</Declaration>
+			
+			<ReturnValue><Abstract type="html">true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</Abstract></ReturnValue>
+			<Anchor>//api/name/downloadVideosBeforePlaying</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setDownloadVideosBeforePlaying:</TokenIdentifier>
+			<Abstract type="html">Set the current configuration to play video attachments. By default it&apos;s set to NO.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDownloadVideosBeforePlaying:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the video attachments should be downloaded to be played locally. false if the video should be streamed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDownloadVideosBeforePlaying:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/downloadAudioRecordings</TokenIdentifier>
+			<Abstract type="html">Get the current configuration to download audio attachments automatically. By default it&apos;s set to YES.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)downloadAudioRecordings</Declaration>
+			
+			<ReturnValue><Abstract type="html">true if the audio attachments will be downloaded automatically.</Abstract></ReturnValue>
+			<Anchor>//api/name/downloadAudioRecordings</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setDownloadAudioRecordings:</TokenIdentifier>
+			<Abstract type="html">Set the current configuration to download audio attachments automatically. By default it&apos;s set to YES.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDownloadAudioRecordings:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the audio attachments should be downloaded automatically.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDownloadAudioRecordings:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setLoadOfMessagesAndGroups:</TokenIdentifier>
+			<Abstract type="html">Set the current configuration to load the messages and groups. If set to NO, the messages and groups won&apos;t be loaded from the server. By default it&apos;s set to YES.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLoadOfMessagesAndGroups:(BOOL)flag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flag</Name>
+					<Abstract type="html">true if the messages and groups should be retrieved from the server.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLoadOfMessagesAndGroups:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setInCallClass:</TokenIdentifier>
+			<Abstract type="html">Set the Bit6CallViewController subclass to be used during a call. This method should be called before [Bit6 startWithApiKey:].</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setInCallClass:(Class)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">UI class to be used during a call.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setInCallClass:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6/setDeliveredUntil:</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message with status Bit6MessageStatus_Delivered.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			
+			
+			<Anchor>//api/name/deliveredUntil</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6/deliveredUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message with status Bit6MessageStatus_Delivered.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			
+			
+			<Anchor>//api/name/deliveredUntil</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6/deliveredUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message with status Bit6MessageStatus_Delivered.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double deliveredUntil</Declaration>
+			
+			
+			<Anchor>//api/name/deliveredUntil</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6/setReadUntil:</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message with status Bit6MessageStatus_Read.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			
+			
+			<Anchor>//api/name/readUntil</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6/readUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message with status Bit6MessageStatus_Read.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			
+			
+			<Anchor>//api/name/readUntil</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6/readUntil</TokenIdentifier>
+			<Abstract type="html">Returns the timestamp matching the last message with status Bit6MessageStatus_Read.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double readUntil</Declaration>
+			
+			
+			<Anchor>//api/name/readUntil</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setAppGroupIdentifier:</TokenIdentifier>
+			<Abstract type="html">Set the AppGroup identifier (set in the Xcode project capabilities) to use with the framework.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setAppGroupIdentifier:(NSString *)appGroupIdentifier</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>appGroupIdentifier</Name>
+					<Abstract type="html">AppGroup identifier to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAppGroupIdentifier:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/cacheSize</TokenIdentifier>
+			<Abstract type="html">Get the size of the /Cache/bit6 directory.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)cacheSize</Declaration>
+			
+			<ReturnValue><Abstract type="html">cache size in bytes.</Abstract></ReturnValue>
+			<Anchor>//api/name/cacheSize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/numberOfItemsInCache</TokenIdentifier>
+			<Abstract type="html">Get the number of files inside the /Cache/bit6 directory.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)numberOfItemsInCache</Declaration>
+			
+			<ReturnValue><Abstract type="html">number of files in cache.</Abstract></ReturnValue>
+			<Anchor>//api/name/numberOfItemsInCache</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/clearCache</TokenIdentifier>
+			<Abstract type="html">Delete all the files inside the /Cache/bit6 directory. A Bit6CacheDeletedNotification will be sent once the deletion is completed.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)clearCache</Declaration>
+			
+			<ReturnValue><Abstract type="html">number of files deleted.</Abstract></ReturnValue>
+			<Anchor>//api/name/clearCache</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/clearCacheWithPrefix:</TokenIdentifier>
+			<Abstract type="html">Delete the files inside the /Cache/bit6 directory that matches the specified prefix. A Bit6CacheDeletedNotification will be sent once the deletion is completed.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)clearCacheWithPrefix:(NSString *)prefix</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>prefix</Name>
+					<Abstract type="html">prefix of the files to delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">number of files deleted.</Abstract></ReturnValue>
+			<Anchor>//api/name/clearCacheWithPrefix:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setLoggingOptions:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLoggingOptions:(Bit6LogOptions)loggingOptions</Declaration>
+			
+			
+			<Anchor>//api/name/setLoggingOptions:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/logType:format:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)logType:(Bit6LogOptions)type format:(NSString *)format, ...</Declaration>
+			
+			
+			<Anchor>//api/name/logType:format:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/logType:prettyFunction:line:format:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)logType:(Bit6LogOptions)type prettyFunction:(char *)prettyFunction line:(int)line format:(NSString *)format, ...</Declaration>
+			
+			
+			<Anchor>//api/name/logType:prettyFunction:line:format:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/groups</TokenIdentifier>
+			<Abstract type="html">Get all the existing groups.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray&lt;Bit6Group*&gt; *)groups</Declaration>
+			
+			<ReturnValue><Abstract type="html">the existing Bit6Group objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/groups</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setConversationSortingComparator:</TokenIdentifier>
+			<Abstract type="html">Set the comparator block that will be used to sort the conversations.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setConversationSortingComparator:(NSComparator)cmptr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cmptr</Name>
+					<Abstract type="html">new sorting comparator..</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setConversationSortingComparator:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/conversations</TokenIdentifier>
+			<Abstract type="html">Get all the existing conversations.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray&lt;Bit6Conversation*&gt; *)conversations</Declaration>
+			
+			<ReturnValue><Abstract type="html">the existing Bit6Conversation objects as a NSArray, or null if no session has been initiated.</Abstract></ReturnValue>
+			<Anchor>//api/name/conversations</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/addConversation:</TokenIdentifier>
+			<Abstract type="html">Adds a conversation to the system.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)addConversation:(Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">a Bit6Conversation object to be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the conversation was added</Abstract></ReturnValue>
+			<Anchor>//api/name/addConversation:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteConversation:completion:</TokenIdentifier>
+			<Abstract type="html">Delete a conversation from the system. All the messages inside the conversation are deleted too.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)deleteConversation:(Bit6Conversation *)conversation completion:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">Bit6Conversation object to be deleted</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called when the operation is completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteConversation:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteMessage:completion:</TokenIdentifier>
+			<Abstract type="html">Deletes a message from the system.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)deleteMessage:(Bit6Message *)message completion:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">Bit6Message object to be deleted</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called when the operation is completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteMessage:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/deleteMessagesWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Deletes all messages from the system.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)deleteMessagesWithCompletion:(nullable Bit6CompletionHandler)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called when the operation is completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteMessagesWithCompletion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/totalBadge</TokenIdentifier>
+			<Abstract type="html">Gets the number of unread messages for all existing conversations.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSNumber *)totalBadge</Declaration>
+			
+			<ReturnValue><Abstract type="html">The number of unread messages for all existing conversations.</Abstract></ReturnValue>
+			<Anchor>//api/name/totalBadge</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/setCurrentConversation:</TokenIdentifier>
+			<Abstract type="html">Set the current conversation for the application. The current conversation will have its [Bit6Conversation badge] set to 0 and it won&apos;t consider new messages to increment this value. Set this property to nil to remove the current conversation.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)setCurrentConversation:(nullable Bit6Conversation *)conversation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">conversation to become the current conversation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCurrentConversation:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/currentConversation</TokenIdentifier>
+			<Abstract type="html">Gets the current conversation for the application.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6Conversation *)currentConversation</Declaration>
+			
+			
+			<Anchor>//api/name/currentConversation</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesWithOffset:length:asc:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects in the system as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesInConversation:offset:length:asc:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithOffset:(NSInteger)offset length:(NSInteger)length asc:(BOOL)asc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">initial index to look for messages</Abstract>
+				</Parameter><Parameter>
+					<Name>length</Name>
+					<Abstract type="html">number of messages to get</Abstract>
+				</Parameter><Parameter>
+					<Name>asc</Name>
+					<Abstract type="html">order in which the messages will be returned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesWithOffset:length:asc:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesInConversation:offset:length:asc:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects in the conversation as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray&lt;Bit6Message*&gt; *)messagesInConversation:(Bit6Conversation *)conversation offset:(NSInteger)offset length:(NSInteger)length asc:(BOOL)asc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">the Bit6Conversation object to get the messages from</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">initial index to look for messages</Abstract>
+				</Parameter><Parameter>
+					<Name>length</Name>
+					<Abstract type="html">number of messages to get</Abstract>
+				</Parameter><Parameter>
+					<Name>asc</Name>
+					<Abstract type="html">order in which the messages will be returned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesInConversation:offset:length:asc:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesWithAttachmentInMessages:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects with attachment as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInMessages:(NSArray&lt;Bit6Message*&gt; *)messages</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>messages</Name>
+					<Abstract type="html">array of Bit6Message objects where to do the search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects with attachment as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesWithAttachmentInMessages:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messagesWithAttachmentInConversation:asc:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message objects with attachment as a NSArray.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInConversation:(Bit6Conversation *)conversation asc:(BOOL)asc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>conversation</Name>
+					<Abstract type="html">conversation where to do the search</Abstract>
+				</Parameter><Parameter>
+					<Name>asc</Name>
+					<Abstract type="html">order in which the messages will be returned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Bit6Message objects with attachment as a NSArray.</Abstract></ReturnValue>
+			<Anchor>//api/name/messagesWithAttachmentInConversation:asc:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/messageWithIdentifier:completion:</TokenIdentifier>
+			<Abstract type="html">Get the Bit6Message object with the specified identifier.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)messageWithIdentifier:(NSString *)identifier completion:(void ( ^ ) ( Bit6Message *__nullable msg ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">identifier for the message to find.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">block to be called with the result of the search.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/messageWithIdentifier:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/callViewController</TokenIdentifier>
+			<Abstract type="html">The in-call view controller being used during the current call.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6CallViewController *)callViewController</Declaration>
+			
+			<ReturnValue><Abstract type="html">Bit6CallViewController object referencing the current in-call view controller.</Abstract></ReturnValue>
+			<Anchor>//api/name/callViewController</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/calls</TokenIdentifier>
+			<Abstract type="html">A copy of all the Bit6CallController objects in the system.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray&lt;Bit6CallController*&gt; *)calls</Declaration>
+			
+			<ReturnValue><Abstract type="html">an NSArray of Bit6CallController objects.</Abstract></ReturnValue>
+			<Anchor>//api/name/calls</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/callByUUDI:</TokenIdentifier>
+			<Abstract type="html">Gets the call matching the specified uuid</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6CallController *)callByUUDI:(NSUUID *)uuid</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>uuid</Name>
+					<Abstract type="html">UUID of the call.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the call matching the specified uuid, or nil if no call was a match.</Abstract></ReturnValue>
+			<Anchor>//api/name/callByUUDI:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/activeCalls</TokenIdentifier>
+			<Abstract type="html">A copy of the active Bit6CallController objects in the system.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray&lt;Bit6CallController*&gt; *)activeCalls</Declaration>
+			
+			<ReturnValue><Abstract type="html">an NSArray of Bit6CallController objects.</Abstract></ReturnValue>
+			<Anchor>//api/name/activeCalls</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/createCallTo:</TokenIdentifier>
+			<Abstract type="html">Creates a call object.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6CallController *)createCallTo:(Bit6Address *)identity</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identity</Name>
+					<Abstract type="html">address of the user to call</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">call object.</Abstract></ReturnValue>
+			<Anchor>//api/name/createCallTo:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallTo:streams:</TokenIdentifier>
+			<Abstract type="html">Starts a VoIP call.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)startCallTo:(Bit6Address *)identity streams:(Bit6CallStreams)streams</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identity</Name>
+					<Abstract type="html">address of the user to call</Abstract>
+				</Parameter><Parameter>
+					<Name>streams</Name>
+					<Abstract type="html">An integer bit mask that determines the local media that will be sent.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NO if the call can&apos;t be started</Abstract></ReturnValue>
+			<Anchor>//api/name/startCallTo:streams:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startCallTo:streams:mediaMode:offnet:</TokenIdentifier>
+			<Abstract type="html">Starts a VoIP call.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)startCallTo:(Bit6Address *)identity streams:(Bit6CallStreams)streams mediaMode:(Bit6CallMediaMode)mediaMode offnet:(BOOL)offnet</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identity</Name>
+					<Abstract type="html">address of the user to call</Abstract>
+				</Parameter><Parameter>
+					<Name>streams</Name>
+					<Abstract type="html">An integer bit mask that determines the local media that will be sent.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaMode</Name>
+					<Abstract type="html">Indicates if the call will go P2P or if the server should process the media</Abstract>
+				</Parameter><Parameter>
+					<Name>offnet</Name>
+					<Abstract type="html">Indicates if the call will go within the Bit6 world (set to false) or it should be a real phone call (set to true).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NO if the call can&apos;t be started</Abstract></ReturnValue>
+			<Anchor>//api/name/startCallTo:streams:mediaMode:offnet:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/startPhoneCallTo:</TokenIdentifier>
+			<Abstract type="html">Starts a PSTN call</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)startPhoneCallTo:(NSString *)phoneNumber</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>phoneNumber</Name>
+					<Abstract type="html">phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NO if the call can&apos;t be started</Abstract></ReturnValue>
+			<Anchor>//api/name/startPhoneCallTo:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/createViewControllerForCall:</TokenIdentifier>
+			<Abstract type="html">Creates a view controller to use during a call, or reuse an existing one.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6CallViewController *)createViewControllerForCall:(Bit6CallController *)callController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>callController</Name>
+					<Abstract type="html">call for which the viewcontroller will be generated.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">viewcontroller to use during a call.</Abstract></ReturnValue>
+			<Anchor>//api/name/createViewControllerForCall:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/playVideoFromMessage:viewController:</TokenIdentifier>
+			<Abstract type="html">Plays the attached video included in a Bit6Message object using the AVPlayerViewController class.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/downloadVideosBeforePlaying</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (void)playVideoFromMessage:(Bit6Message *)msg viewController:(UIViewController *)vc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">A Bit6Message object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageTypeAttachments and Bit6Message.attachFileType == Bit6MessageFileTypeVideoMP4.</Abstract>
+				</Parameter><Parameter>
+					<Name>vc</Name>
+					<Abstract type="html">viewcontroller from which to present a AVPlayerViewController to play the video</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playVideoFromMessage:viewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/openLocationOnMapsFromMessage:</TokenIdentifier>
+			<Abstract type="html">Convenience method to open the location included in a Bit6Message object in the Apple Maps app.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)openLocationOnMapsFromMessage:(Bit6Message *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">A Bit6Message object with a location attached. A message has a location attached if Bit6Message.type == Bit6MessageType_Location.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/openLocationOnMapsFromMessage:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/typingBeginToAddress:</TokenIdentifier>
+			<Abstract type="html">Used to notify when the user starts typing.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)typingBeginToAddress:(Bit6Address *)address</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">address where the notification will be sent</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/typingBeginToAddress:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6/sendNotificationToAddress:type:data:</TokenIdentifier>
+			<Abstract type="html">Used to send a notification to another user. To receive the notification in the other end you can hear to the Bit6CustomRtNotification notifications.</Abstract>
+			<DeclaredIn>Bit6.h</DeclaredIn>
+			
+			<Declaration>+ (void)sendNotificationToAddress:(Bit6Address *)address type:(NSString *)type data:(nullable NSDictionary&lt;NSString*,id&gt; *)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>address</Name>
+					<Abstract type="html">The Bit6Address object to send the message</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">type of the notification to send</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">data to send in the notification. It has to be able to be converted to JSON data (check by using +[NSJSONSerialization</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sendNotificationToAddress:type:data:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

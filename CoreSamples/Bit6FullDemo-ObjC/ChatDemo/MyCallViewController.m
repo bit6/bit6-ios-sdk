@@ -111,7 +111,7 @@
 
 - (Bit6CallController*) callController
 {
-    return [[Bit6 activeCalls] firstObject];
+    return [self.callControllers firstObject];
 }
 
 - (void)viewDidLoad {
@@ -119,7 +119,7 @@
     
     [self refreshState];
     
-    if ([Bit6 activeCalls].count>1) {
+    if (self.callControllers.count>1) {
         self.usernameLabel.text = @"Many Destinations";
     }
     else {
@@ -145,7 +145,7 @@
     [self.view addGestureRecognizer:tgr2];
     
     BOOL atLeastOneCallConnected = NO;
-    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
+    NSArray<Bit6CallController*>* callControllers = self.callControllers;
     for (Bit6CallController *call in callControllers) {
         if (call.state >= Bit6CallState_CONNECTED) {
             atLeastOneCallConnected = YES; break;
@@ -158,7 +158,7 @@
 {
     BOOL atLeastOneCallConnected = NO;
     BOOL atLeastOneCallHasVideo = NO;
-    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
+    NSArray<Bit6CallController*>* callControllers = self.callControllers;
     for (Bit6CallController *call in callControllers) {
         if (call.state >= Bit6CallState_CONNECTED) {
             atLeastOneCallConnected = YES;
@@ -200,7 +200,7 @@
     [super secondsDidChangeForCallController:callController];
     
     NSUInteger longerCall = 0;
-    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
+    NSArray<Bit6CallController*>* callControllers = self.callControllers;
     for (Bit6CallController *call in callControllers) {
         if (call.seconds > longerCall) {
             longerCall = call.seconds;
@@ -248,7 +248,7 @@
 {
     Bit6CallController *smallerCall = nil;
     Bit6CallState smallerState = Bit6CallState_END;
-    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
+    NSArray<Bit6CallController*>* callControllers = self.callControllers;
     for (Bit6CallController *call in callControllers) {
         if (call.state < smallerState) {
             smallerState = call.state;
@@ -304,7 +304,7 @@
     BOOL atLeastOneCallHasVideo = NO;
     BOOL atLeastOneCallHasAudio = NO;
     BOOL atLeastOneCallHasRemoteAudio = NO;
-    NSArray<Bit6CallController*>* callControllers = [Bit6 activeCalls];
+    NSArray<Bit6CallController*>* callControllers = self.callControllers;
     for (Bit6CallController *call in callControllers) {
         if (call.hasVideo) {
             atLeastOneCallHasVideo = YES;
@@ -360,7 +360,7 @@
 {
     [super updateLayoutForVideoFeedViews:videoFeedViews];
     
-    if ([Bit6 activeCalls].count>1) {
+    if (self.callControllers.count>1) {
         self.usernameLabel.text = @"Many Destinations";
     }
     else {

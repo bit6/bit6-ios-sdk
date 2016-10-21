@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^Bit6CompletionHandler) (NSDictionary<id,id>* _Nullable response, NSError* _Nullable error);
 typedef void (^Bit6ActionNotificationCompletionHandler) (void);
 
+extern NSString* const Bit6APNSReadyNotification;
+
 extern NSString* const Bit6LoginCompletedNotification;
 extern NSString* const Bit6LogoutCompletedNotification;
 
@@ -104,6 +106,8 @@ typedef NS_ENUM(NSInteger, Bit6Error) {
     Bit6Error_CallFailedToStartError=-10001,
     /*! Call connection failed. */
     Bit6Error_CallConnectionFailedError=-10002,
+    
+    Bit6Error_CXErrorCodeIncomingCallError=-10003,
     
     /*! The <Bit6Transfer> failed because the data channel wasn't open. */
     Bit6Error_TransferDataChannelNotOpenError=-10011,

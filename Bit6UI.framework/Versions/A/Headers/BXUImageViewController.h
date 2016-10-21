@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setMessage:(Bit6Message*)message;
 
+/*! Indicates if the default toolbar should be hidden. */
+@property (nonatomic) BOOL hideToolBar;
+
 /*! The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see <BXUImageViewControllerDelegate> Protocol Reference. */
 @property (nullable, weak, nonatomic) id<BXUImageViewControllerDelegate> delegate;
 

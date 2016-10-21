@@ -1,3 +1,19 @@
+## 0.10.1 [2016-10-11]
+
+### Features (Core)
+- New APIS to support thumbnail previews in Push Notifications: `[Bit6PushNotificationCenter isIncomingMessageNotification:]`, `[Bit6 messageWithIdentifier:completion:]` and `[Bit6Message downloadThumbnailWithCompletionHandler:]`. It's necessary to define an App Group Identifier for the application and set it with `[Bit6 setAppGroupIdentifier:]`.
+- Support for new UNUserNotificationCenter in iOS10
+- `Bit6.activeCalls()` doesn't return all the calls attached to a Bit6CallViewController subclass. Please use `Bit6CallViewController.callControllers` instead.
+
+### Bugfixes (Core)
+- switching between cameras before the call starts doesn't work
+- crashes when interacting with the push notification actions in the incoming call push notifications.
+- Bit6.session.activeDisplayName wasn't used as caller name.
+- For group calls Bit6CallController.otherDisplayName wasn't set correctly to the subject of the group.
+
+### Features (UI)
+- Easy to implement PeekAndPop for thumbnails in `BXUMessageTableViewController` by implementing the `UIViewControllerPreviewingDelegate` protocol. Added `BXUAttachmentImageView.message` property to get the message linked to the thumbnail.
+
 ## 0.10.0 [2016-09-08]
 
 ### Breaking Changes

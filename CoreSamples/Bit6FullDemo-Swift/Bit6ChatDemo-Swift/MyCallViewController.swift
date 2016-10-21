@@ -88,7 +88,7 @@ class MyCallViewController: Bit6CallViewController {
     
     var callController : Bit6CallController? {
         get {
-            return Bit6.activeCalls().first
+            return self.callControllers.first
         }
     }
     
@@ -97,7 +97,7 @@ class MyCallViewController: Bit6CallViewController {
         
         refreshState()
         
-        if Bit6.activeCalls().count>1 {
+        if self.callControllers.count>1 {
             self.usernameLabel.text = "Many Destinations"
         }
         else {
@@ -124,7 +124,7 @@ class MyCallViewController: Bit6CallViewController {
         view.addGestureRecognizer(tgr2)
         
         var atLeastOneCallConnected = false
-        let callControllers = Bit6.activeCalls()
+        let callControllers = self.callControllers
         for call in callControllers {
             if call.state.rawValue >= Bit6CallState.CONNECTED.rawValue {
                 atLeastOneCallConnected = true
@@ -139,7 +139,7 @@ class MyCallViewController: Bit6CallViewController {
         var atLeastOneCallConnected = false
         var atLeastOneCallHasVideo = false
         
-        let callControllers = Bit6.activeCalls()
+        let callControllers = self.callControllers
         for call in callControllers {
             if call.state.rawValue >= Bit6CallState.CONNECTED.rawValue {
                 atLeastOneCallConnected = true
@@ -182,7 +182,7 @@ class MyCallViewController: Bit6CallViewController {
         
         if isViewLoaded() {
             var longerCall : UInt = 0
-            let callControllers = Bit6.activeCalls()
+            let callControllers = self.callControllers
             for call in callControllers {
                 if call.seconds > longerCall {
                     longerCall = call.seconds
@@ -231,7 +231,7 @@ class MyCallViewController: Bit6CallViewController {
         var smallerCall : Bit6CallController? = nil
         var smallerState = Bit6CallState.END
         
-        let callControllers = Bit6.activeCalls()
+        let callControllers = self.callControllers
         for call in callControllers {
             if call.state.rawValue < smallerState.rawValue {
                 smallerState = call.state
@@ -289,7 +289,7 @@ class MyCallViewController: Bit6CallViewController {
         var atLeastOneCallHasAudio = false
         var atLeastOneCallHasRemoteAudio = false
         
-        let callControllers = Bit6.activeCalls()
+        let callControllers = self.callControllers
         for call in callControllers {
             if call.hasVideo {
                 atLeastOneCallHasVideo = true
@@ -344,7 +344,7 @@ class MyCallViewController: Bit6CallViewController {
     override func updateLayoutForVideoFeedViews(videoFeedViews: [Bit6VideoFeedView]) {
         super.updateLayoutForVideoFeedViews(videoFeedViews)
         
-        if Bit6.activeCalls().count>1 {
+        if self.callControllers.count>1 {
             self.usernameLabel.text = "Many Destinations"
         }
         else {

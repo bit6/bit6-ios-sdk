@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUImageViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUImageViewController</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UIViewController to display an image attached to a message.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/setMessage:</TokenIdentifier>
+			<Abstract type="html">Sets the message for the sender.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)setMessage:(Bit6Message *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">a message with an image attachment to show in the sender.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMessage:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/setHideToolBar:</TokenIdentifier>
+			<Abstract type="html">Indicates if the default toolbar should be hidden.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideToolBar</Declaration>
+			
+			
+			<Anchor>//api/name/hideToolBar</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/hideToolBar</TokenIdentifier>
+			<Abstract type="html">Indicates if the default toolbar should be hidden.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideToolBar</Declaration>
+			
+			
+			<Anchor>//api/name/hideToolBar</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUImageViewController/hideToolBar</TokenIdentifier>
+			<Abstract type="html">Indicates if the default toolbar should be hidden.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL hideToolBar</Declaration>
+			
+			
+			<Anchor>//api/name/hideToolBar</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see BXUImageViewControllerDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUImageViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUImageViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see BXUImageViewControllerDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUImageViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUImageViewController/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the viewcontroller has to be dismissed. For details about the methods that can be implemented by the delegate, see BXUImageViewControllerDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUImageViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUImageViewControllerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -30,7 +30,7 @@
 #import "Bit6FileDownloader.h"
 #import "Bit6AlertView.h"
 
-#define BIT6_IOS_SDK_VERSION_STRING @"0.10.0"
+#define BIT6_IOS_SDK_VERSION_STRING @"0.10.1"
 #define WEBRTC_VERSION_STRING @"M53"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -135,6 +135,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! Returns the timestamp matching the last message with status Bit6MessageStatus_Read. */
 @property (nonatomic, readonly) double readUntil;
+
+//it should be set before calling startWithApiKey
+/*! Set the AppGroup identifier (set in the Xcode project capabilities) to use with the framework. 
+ @param appGroupIdentifier AppGroup identifier to use. */
++ (void)setAppGroupIdentifier:(NSString*)appGroupIdentifier;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Cache
@@ -275,6 +280,12 @@ NS_ASSUME_NONNULL_BEGIN
  @return <Bit6Message> objects with attachment as a NSArray.
  */
 + (NSArray<Bit6Message*>*)messagesWithAttachmentInConversation:(Bit6Conversation*)conversation asc:(BOOL)asc;
+
+/*! Get the <Bit6Message> object with the specified identifier.
+ @param identifier identifier for the message to find.
+ @param completion block to be called with the result of the search.
+ */
++ (void)messageWithIdentifier:(NSString*)identifier completion:(void (^)(Bit6Message* __nullable msg))completion;
 
 ///---------------------------------------------------------------------------------------
 /// @name ￼Calls

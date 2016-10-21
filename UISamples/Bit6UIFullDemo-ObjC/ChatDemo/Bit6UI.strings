@@ -19,6 +19,9 @@
 /* Apple Maps */
 "action_sheet_open_in_applemaps" = "Apple Maps";
 
+/* Phone Call */
+"action_sheet_phone_call" = "Phone Call";
+
 /* Video Call */
 "action_sheet_video_call" = "Video Call";
 
@@ -73,6 +76,9 @@
 /* Call */
 "call_type_other" = "Call";
 
+/* Phone Call */
+"call_type_phone" = "Phone Call";
+
 /* Video Call */
 "call_type_video" = "Video Call";
 
@@ -114,15 +120,6 @@
 
 /* Go to Settings */
 "go_to_settings" = "Go to Settings";
-
-/* [name] is calling... */
-"incoming_call_prompt_audio" = "%@ is calling...";
-
-/* [name] is data calling... */
-"incoming_call_prompt_data" = "%@ is data calling...";
-
-/* [name] is video calling... */
-"incoming_call_prompt_video" = "%@ is video calling...";
 
 /* Leave */
 "leave_group_button" = "Leave";

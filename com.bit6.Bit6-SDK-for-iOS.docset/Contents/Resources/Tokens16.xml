@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6PushNotificationCenter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6PushNotificationCenter</TokenIdentifier>
+			<Abstract type="html">Bit6PushNotificationCenter is used to handle the remote notifications.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/init</TokenIdentifier>
+			<Abstract type="html">Unavailable init. Use Bit6.pushNotification instead.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">a new instance of the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/isAppStoreEnvironment</TokenIdentifier>
+			<Abstract type="html">Returns NO if the device is running in Sandbox.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isAppStoreEnvironment</Declaration>
+			
+			<ReturnValue><Abstract type="html">NO if the device is running in Sandbox.</Abstract></ReturnValue>
+			<Anchor>//api/name/isAppStoreEnvironment</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/setDeviceToken:</TokenIdentifier>
+			<Abstract type="html">The regular APNS push token for this device.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/deviceToken</TokenIdentifier>
+			<Abstract type="html">The regular APNS push token for this device.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6PushNotificationCenter/deviceToken</TokenIdentifier>
+			<Abstract type="html">The regular APNS push token for this device.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/setVoipToken:</TokenIdentifier>
+			<Abstract type="html">The VoIP APNS push token for this device.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *voipToken</Declaration>
+			
+			
+			<Anchor>//api/name/voipToken</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/voipToken</TokenIdentifier>
+			<Abstract type="html">The VoIP APNS push token for this device.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *voipToken</Declaration>
+			
+			
+			<Anchor>//api/name/voipToken</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Bit6PushNotificationCenter/voipToken</TokenIdentifier>
+			<Abstract type="html">The VoIP APNS push token for this device.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *voipToken</Declaration>
+			
+			
+			<Anchor>//api/name/voipToken</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveNotificationUserInfo:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] and -[UIApplicationDelegate application:didReceiveLocalNotification:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveNotificationUserInfo:(NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didReceiveNotificationUserInfo:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didReceiveNotificationUserInfo:fetchCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)didReceiveNotificationUserInfo:(NSDictionary *)userInfo fetchCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when the download operation is complete. When calling this block, pass in the fetch result value that best describes the results of your download operation. You must call this handler and should do so as soon as possible.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UNUserNotificationCenterDelegate userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void ( ^ ) ( ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The notification center that received the notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>response</Name>
+					<Abstract type="html">The user’s response to the notification. This object contains the original notification and the identifier string for the selected action. If the action allowed the user to provide a textual response, this object is an instance of the UNTextInputNotificationResponse class.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when you have finished processing the user’s response. You must execute this block from your method and should call it as quickly as possible. The block has no return value or parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/userNotificationCenter:willPresentNotification:withCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UNUserNotificationCenterDelegate userNotificationCenter:willPresentNotification:withCompletionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void ( ^ ) ( UNNotificationPresentationOptions options ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The notification center that received the notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>notification</Name>
+					<Abstract type="html">The notification that is about to be delivered. Use the information in this object to determine an appropriate course of action. For example, you might use the arrival of the notification to fetch new content or update your app’s interface.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute with the presentation option for the notification. Always execute this block at some point during your implementation of this method. Specify an option indicating how you want the system to alert the user, if at all.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/setNotificationCategories:</TokenIdentifier>
+			<Abstract type="html">Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)setNotificationCategories:(NSArray&lt;UNNotificationCategory*&gt; *)notificationCategories</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notificationCategories</Name>
+					<Abstract type="html">array of categories to register.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setNotificationCategories:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/setCategories:</TokenIdentifier>
+			<Abstract type="html">Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)setCategories:(NSArray&lt;UIUserNotificationCategory*&gt; *)categories</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>categories</Name>
+					<Abstract type="html">array of categories to register.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCategories:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:] and -[UIApplicationDelegate application:handleActionWithIdentifier:forLocalNotification:completionHandler:] implementations.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)handleActionWithIdentifier:(nullable NSString *)identifier forNotificationUserInfo:(NSDictionary *)userInfo completionHandler:(void ( ^ ) ( ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier associated with the custom action.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:] and -[UIApplicationDelegate application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)handleActionWithIdentifier:(nullable NSString *)identifier forNotificationUserInfo:(NSDictionary *)userInfo withResponseInfo:(NSDictionary *)responseInfo completionHandler:(void ( ^ ) ( ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The identifier associated with the custom action.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</Abstract>
+				</Parameter><Parameter>
+					<Name>responseInfo</Name>
+					<Abstract type="html">The data dictionary sent by the action.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didRegisterForRemoteNotificationsWithDeviceToken:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deviceToken</Name>
+					<Abstract type="html">A token that identifies the device to APS. The token is an opaque data type because that is the form that the provider needs to submit to the APS servers when it sends a notification to a device. The APS servers require a binary format for performance reasons.
+The size of a device token is 32 bytes.
+Note that the device token is different from the uniqueIdentifier property of UIDevice because, for security and privacy reasons, it must change when the device is wiped.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didRegisterForRemoteNotificationsWithDeviceToken:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/didFailToRegisterForRemoteNotificationsWithError:</TokenIdentifier>
+			<Abstract type="html">Should be called inside the -[UIApplicationDelegate application:didFailToRegisterForRemoteNotificationsWithError:] implementation.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">An NSError object that encapsulates information why registration did not succeed. The app can choose to display this information to the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didFailToRegisterForRemoteNotificationsWithError:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/isIncomingCallNotification:</TokenIdentifier>
+			<Abstract type="html">Used to know if a push notification refers to an incoming call</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isIncomingCallNotification:(NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">true if the push notification refers to an incoming call.</Abstract></ReturnValue>
+			<Anchor>//api/name/isIncomingCallNotification:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/isMissedCallNotification:</TokenIdentifier>
+			<Abstract type="html">Used to know if a push notification refers to a missed incoming call.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isMissedCallNotification:(NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">true if the push notification refers to a missed incoming call.</Abstract></ReturnValue>
+			<Anchor>//api/name/isMissedCallNotification:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/isIncomingMessageNotification:</TokenIdentifier>
+			<Abstract type="html">Used to know if a push notification refers to an incoming message.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isIncomingMessageNotification:(NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">true if the push notification refers to an incoming message.</Abstract></ReturnValue>
+			<Anchor>//api/name/isIncomingMessageNotification:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6PushNotificationCenter/addressForMessageNotification:</TokenIdentifier>
+			<Abstract type="html">Gets the origin identity for the incoming message notification userInfo param.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Bit6Address *)addressForMessageNotification:(NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the origin identity for the incoming message.</Abstract></ReturnValue>
+			<Anchor>//api/name/addressForMessageNotification:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/pushRegistry:didUpdatePushCredentials:forType:</TokenIdentifier>
+			<Abstract type="html">This method is invoked when new credentials (including push token) have been received for the specified PKPushType.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)pushRegistry:(PKPushRegistry *)registry didUpdatePushCredentials:(PKPushCredentials *)credentials forType:(PKPushType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>registry</Name>
+					<Abstract type="html">The PKPushRegistry instance responsible for the delegate callback.</Abstract>
+				</Parameter><Parameter>
+					<Name>credentials</Name>
+					<Abstract type="html">The push credentials that can be used to send pushes to the device for the specified PKPushType.</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">This is a PKPushType NSString constant which is present in [registry desiredPushTypes].</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/pushRegistry:didUpdatePushCredentials:forType:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Bit6PushNotificationCenter/pushRegistry:didReceiveIncomingPushWithPayload:forType:</TokenIdentifier>
+			<Abstract type="html">This method is invoked when a push notification has been received for the specified PKPushType.</Abstract>
+			<DeclaredIn>Bit6PushNotificationCenter.h</DeclaredIn>
+			
+			<Declaration>- (void)pushRegistry:(PKPushRegistry *)registry didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(PKPushType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>registry</Name>
+					<Abstract type="html">The PKPushRegistry instance responsible for the delegate callback.</Abstract>
+				</Parameter><Parameter>
+					<Name>payload</Name>
+					<Abstract type="html">The push payload sent by a developer via APNS server API.</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">This is a PKPushType NSString constant which is present in [registry desiredPushTypes].</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

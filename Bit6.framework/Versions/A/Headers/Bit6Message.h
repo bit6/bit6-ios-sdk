@@ -101,6 +101,9 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
  */
 - (instancetype)init NS_UNAVAILABLE;
 
+/*! Unique identifier for the message. */
+@property (nonatomic, readonly, copy) NSString *identifier;
+
 /*! The conversation address the sender belongs to. */
 @property (nullable, nonatomic, readonly) Bit6Address *conversationAddress;
 
@@ -171,8 +174,25 @@ typedef NS_ENUM(NSInteger, Bit6MessageAttachmentStatus) {
 /*! Gets the length of the call. This property should be used only if self.type == Bit6MessageType_Call. */
 @property (nullable, nonatomic, readonly) NSNumber *callDuration;
 
-/*! The message is a text message that only contains one emoji character. */
-@property (nonatomic, readonly) BOOL isSingleEmoji;
+/*! The message is a text message that only contains emoji characters (up to 3 emojis are allowed). */
+@property (nonatomic, readonly) BOOL isEmojiMessage;
+
+/*! Message type as a value of the <Bit6MessageType> enumeration for an specific set of flags. 
+ @param flags message flags.
+ @return the type of message. */
++ (Bit6MessageType)typeForFlags:(NSNumber*)flags;
+
+/*! Downloads the attachment thumbnail for the message.
+ @param completionHandler Block to call after the operation has been completed. The "error" value can be use to know if the file was downloaded and saved in cache.
+ @see -[Bit6FileDownloader downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:]
+ */
+- (void)downloadThumbnailWithCompletionHandler:(nullable void(^)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
+
+/*! Downloads the full attachment for the message.
+ @param completionHandler Block to call after the operation has been completed. The "error" value can be use to know if the file was downloaded and saved in cache.
+ @see -[Bit6FileDownloader downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:]
+ */
+- (void)downloadAttachmentWithCompletionHandler:(nullable void(^)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
 
 @end
 

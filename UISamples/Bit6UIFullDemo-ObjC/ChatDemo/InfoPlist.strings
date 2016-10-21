@@ -1,4 +1,10 @@
-/* Localized versions of Info.plist keys */
+/* 
+  InfoPlist.strings
+  Bit6
+
+  Created by Carlos Thurber on 07/31/15.
+  Copyright (c) 2015 Bit6. All rights reserved.
+*/
 
 NSLocationWhenInUseUsageDescription = "If you want to share your location with your friend, we need to know where you are";
 

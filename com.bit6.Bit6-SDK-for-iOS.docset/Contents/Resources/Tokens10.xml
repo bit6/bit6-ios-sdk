@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Bit6FileDownloader.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Bit6FileDownloader</TokenIdentifier>
+			<Abstract type="html">Bit6FileDownloader handles the downloads of the framework using NSOperationQueue and NSURLSessionDownloadTask.</Abstract>
+			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/cancelOperations</TokenIdentifier>
+			<Abstract type="html">Cancels all pending download operations.</Abstract>
+			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			
+			<Declaration>+ (void)cancelOperations</Declaration>
+			
+			
+			<Anchor>//api/name/cancelOperations</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Download a file. It can be set to replace any file in the indicated path if necessary. When running from an extension, a copy of the file will be saved in the SDK group container.</Abstract>
+			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/Bit6/setAppGroupIdentifier:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (void)downloadFileAtURL:(NSURL *)url toFilePath:(NSString *)filePath canReplace:(BOOL)replace preparationBlock:(nullable NSData *( ^ ) ( NSData *data ))preparationBlock priority:(NSOperationQueuePriority)priority completionHandler:(nullable void ( ^ ) ( NSURL *_Nullable location , NSURLResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">remote URL address of the file to download.</Abstract>
+				</Parameter><Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">local path where to save the file.</Abstract>
+				</Parameter><Parameter>
+					<Name>replace</Name>
+					<Abstract type="html">the file will be downloaded and will replace the file in cache.</Abstract>
+				</Parameter><Parameter>
+					<Name>preparationBlock</Name>
+					<Abstract type="html">block to process the downloaded data before saving it to the filePath.</Abstract>
+				</Parameter><Parameter>
+					<Name>priority</Name>
+					<Abstract type="html">the execution priority of the operation in the operation queue.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">Block to call after the operation has been completed. The &quot;error&quot; value can be use to know if the file was downloaded and saved in cache.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/downloadFileAtURL:toFilePath:canReplace:preparationBlock:priority:completionHandler:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/isDownloadingFileAtURL:</TokenIdentifier>
+			<Abstract type="html">Query is a URL is being downloaded.</Abstract>
+			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isDownloadingFileAtURL:(NSURL *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">remote URL address of the file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">true if the specified URL is being downloaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/isDownloadingFileAtURL:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/Bit6FileDownloader/pathForFileName:</TokenIdentifier>
+			<Abstract type="html">Get the full path for a file in the ~/Cache/bit6 directory.</Abstract>
+			<DeclaredIn>Bit6FileDownloader.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)pathForFileName:(NSString *)fileName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileName</Name>
+					<Abstract type="html">name of the file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">full path for a file in the Bit6 cache directory.</Abstract></ReturnValue>
+			<Anchor>//api/name/pathForFileName:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

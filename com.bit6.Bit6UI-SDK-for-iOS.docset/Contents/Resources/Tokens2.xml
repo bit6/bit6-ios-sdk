@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BXUAttachmentImageView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BXUAttachmentImageView</TokenIdentifier>
+			<Abstract type="html">Convenience subclass of UIImageView to work with the message&apos;s attachments. It can be set to show the message&apos;s thumbnail or to show an image attached to the message.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUAttachmentImageView/setMessage:thumbnailMode:</TokenIdentifier>
+			<Abstract type="html">Sets the message for the sender.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>- (void)setMessage:(Bit6Message *)message thumbnailMode:(BOOL)thumbnailMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">message with an attachment to display.</Abstract>
+				</Parameter><Parameter>
+					<Name>thumbnailMode</Name>
+					<Abstract type="html">if YES the sender will display the thumbnail for the message. If NO the sender will show the image attached to the message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMessage:thumbnailMode:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUAttachmentImageView/setMessage:</TokenIdentifier>
+			<Abstract type="html">Reference to the message linked to the sender.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic, readonly) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUAttachmentImageView/message</TokenIdentifier>
+			<Abstract type="html">Reference to the message linked to the sender.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic, readonly) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUAttachmentImageView/message</TokenIdentifier>
+			<Abstract type="html">Reference to the message linked to the sender.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, strong, nonatomic, readonly) Bit6Message *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUAttachmentImageView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the imageview  has been tapped. For details about the methods that can be implemented by the delegate, see BXUAttachmentImageViewDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUAttachmentImageViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BXUAttachmentImageView/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the imageview  has been tapped. For details about the methods that can be implemented by the delegate, see BXUAttachmentImageViewDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUAttachmentImageViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BXUAttachmentImageView/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate to be notified when the imageview  has been tapped. For details about the methods that can be implemented by the delegate, see BXUAttachmentImageViewDelegate Protocol Reference.</Abstract>
+			<DeclaredIn>BXUAttachmentImageView.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, weak, nonatomic) id&lt;BXUAttachmentImageViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

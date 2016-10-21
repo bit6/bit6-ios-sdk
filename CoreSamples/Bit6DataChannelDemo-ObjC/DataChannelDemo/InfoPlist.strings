@@ -1,9 +1,0 @@
-/* Localized versions of Info.plist keys */
-
-NSLocationWhenInUseUsageDescription = "If you want to share your location with your friend, we need to know where you are";
-
-NSMicrophoneUsageDescription = "Bit6 wants to record audio message and to make and receive calls";
-
-NSCameraUsageDescription = "Bit6 wants to take photos and videos";
-
-NSPhotoLibraryUsageDescription = "If you want to send photo attachments we need access to the Photo Library.";

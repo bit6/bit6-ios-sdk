@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 /*! View to render the local video feed. */
 @property (nullable, nonatomic, strong, readonly) Bit6VideoFeedView* localVideoView;
 
+/*! List of calls linked to this viewController. */
+@property (nonatomic, copy, readonly) NSArray<Bit6CallController*>* callControllers;
+
 /*! Used if you need to force a call to <updateLayoutForRemoteVideoView:localVideoView:remoteVideoAspectRatio:localVideoAspectRatio:>. */
 - (void)setNeedsUpdateVideoViewLayout;
 

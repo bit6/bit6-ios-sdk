@@ -1,0 +1,3381 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Bit6 Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Bit6-SDK-for-iOS </a></h1>
+				<a id="developerHome" href="../index.html">Bit6</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">Bit6 Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/deliveredUntil">&nbsp;&nbsp;&nbsp;&nbsp;deliveredUntil</option>
+	
+	<option value="//api/name/readUntil">&nbsp;&nbsp;&nbsp;&nbsp;readUntil</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/activeCalls">&nbsp;&nbsp;&nbsp;&nbsp;+ activeCalls</option>
+	
+	<option value="//api/name/addConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ addConversation:</option>
+	
+	<option value="//api/name/audioPlayer">&nbsp;&nbsp;&nbsp;&nbsp;+ audioPlayer</option>
+	
+	<option value="//api/name/audioRecorder">&nbsp;&nbsp;&nbsp;&nbsp;+ audioRecorder</option>
+	
+	<option value="//api/name/cacheSize">&nbsp;&nbsp;&nbsp;&nbsp;+ cacheSize</option>
+	
+	<option value="//api/name/callByUUDI:">&nbsp;&nbsp;&nbsp;&nbsp;+ callByUUDI:</option>
+	
+	<option value="//api/name/callViewController">&nbsp;&nbsp;&nbsp;&nbsp;+ callViewController</option>
+	
+	<option value="//api/name/calls">&nbsp;&nbsp;&nbsp;&nbsp;+ calls</option>
+	
+	<option value="//api/name/clearCache">&nbsp;&nbsp;&nbsp;&nbsp;+ clearCache</option>
+	
+	<option value="//api/name/clearCacheWithPrefix:">&nbsp;&nbsp;&nbsp;&nbsp;+ clearCacheWithPrefix:</option>
+	
+	<option value="//api/name/conversations">&nbsp;&nbsp;&nbsp;&nbsp;+ conversations</option>
+	
+	<option value="//api/name/createCallTo:">&nbsp;&nbsp;&nbsp;&nbsp;+ createCallTo:</option>
+	
+	<option value="//api/name/createViewControllerForCall:">&nbsp;&nbsp;&nbsp;&nbsp;+ createViewControllerForCall:</option>
+	
+	<option value="//api/name/currentConversation">&nbsp;&nbsp;&nbsp;&nbsp;+ currentConversation</option>
+	
+	<option value="//api/name/deleteConversation:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteConversation:completion:</option>
+	
+	<option value="//api/name/deleteMessage:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteMessage:completion:</option>
+	
+	<option value="//api/name/deleteMessagesWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteMessagesWithCompletion:</option>
+	
+	<option value="//api/name/downloadAudioRecordings">&nbsp;&nbsp;&nbsp;&nbsp;+ downloadAudioRecordings</option>
+	
+	<option value="//api/name/downloadVideosBeforePlaying">&nbsp;&nbsp;&nbsp;&nbsp;+ downloadVideosBeforePlaying</option>
+	
+	<option value="//api/name/groups">&nbsp;&nbsp;&nbsp;&nbsp;+ groups</option>
+	
+	<option value="//api/name/locationController">&nbsp;&nbsp;&nbsp;&nbsp;+ locationController</option>
+	
+	<option value="//api/name/logType:format:">&nbsp;&nbsp;&nbsp;&nbsp;+ logType:format:</option>
+	
+	<option value="//api/name/logType:prettyFunction:line:format:">&nbsp;&nbsp;&nbsp;&nbsp;+ logType:prettyFunction:line:format:</option>
+	
+	<option value="//api/name/messageWithIdentifier:completion:">&nbsp;&nbsp;&nbsp;&nbsp;+ messageWithIdentifier:completion:</option>
+	
+	<option value="//api/name/messagesInConversation:offset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesInConversation:offset:length:asc:</option>
+	
+	<option value="//api/name/messagesWithAttachmentInConversation:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesWithAttachmentInConversation:asc:</option>
+	
+	<option value="//api/name/messagesWithAttachmentInMessages:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesWithAttachmentInMessages:</option>
+	
+	<option value="//api/name/messagesWithOffset:length:asc:">&nbsp;&nbsp;&nbsp;&nbsp;+ messagesWithOffset:length:asc:</option>
+	
+	<option value="//api/name/numberOfItemsInCache">&nbsp;&nbsp;&nbsp;&nbsp;+ numberOfItemsInCache</option>
+	
+	<option value="//api/name/openLocationOnMapsFromMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ openLocationOnMapsFromMessage:</option>
+	
+	<option value="//api/name/playVideoFromMessage:viewController:">&nbsp;&nbsp;&nbsp;&nbsp;+ playVideoFromMessage:viewController:</option>
+	
+	<option value="//api/name/pushNotification">&nbsp;&nbsp;&nbsp;&nbsp;+ pushNotification</option>
+	
+	<option value="//api/name/sendNotificationToAddress:type:data:">&nbsp;&nbsp;&nbsp;&nbsp;+ sendNotificationToAddress:type:data:</option>
+	
+	<option value="//api/name/session">&nbsp;&nbsp;&nbsp;&nbsp;+ session</option>
+	
+	<option value="//api/name/setAppGroupIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;+ setAppGroupIdentifier:</option>
+	
+	<option value="//api/name/setConversationSortingComparator:">&nbsp;&nbsp;&nbsp;&nbsp;+ setConversationSortingComparator:</option>
+	
+	<option value="//api/name/setCurrentConversation:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCurrentConversation:</option>
+	
+	<option value="//api/name/setDownloadAudioRecordings:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDownloadAudioRecordings:</option>
+	
+	<option value="//api/name/setDownloadVideosBeforePlaying:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDownloadVideosBeforePlaying:</option>
+	
+	<option value="//api/name/setInCallClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ setInCallClass:</option>
+	
+	<option value="//api/name/setLoadOfMessagesAndGroups:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLoadOfMessagesAndGroups:</option>
+	
+	<option value="//api/name/setLoggingOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLoggingOptions:</option>
+	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
+	<option value="//api/name/startCallTo:streams:">&nbsp;&nbsp;&nbsp;&nbsp;+ startCallTo:streams:</option>
+	
+	<option value="//api/name/startCallTo:streams:mediaMode:offnet:">&nbsp;&nbsp;&nbsp;&nbsp;+ startCallTo:streams:mediaMode:offnet:</option>
+	
+	<option value="//api/name/startPhoneCallTo:">&nbsp;&nbsp;&nbsp;&nbsp;+ startPhoneCallTo:</option>
+	
+	<option value="//api/name/startWithApiKey:">&nbsp;&nbsp;&nbsp;&nbsp;+ startWithApiKey:</option>
+	
+	<option value="//api/name/startWithApiKey:endPoint:">&nbsp;&nbsp;&nbsp;&nbsp;+ startWithApiKey:endPoint:</option>
+	
+	<option value="//api/name/started">&nbsp;&nbsp;&nbsp;&nbsp;+ started</option>
+	
+	<option value="//api/name/totalBadge">&nbsp;&nbsp;&nbsp;&nbsp;+ totalBadge</option>
+	
+	<option value="//api/name/typingBeginToAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ typingBeginToAddress:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Initialization">￼Initialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Controllers">￼Controllers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Properties">￼Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Cache">￼Cache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Logging">￼Logging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Groups">￼Working with Groups</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Working with Conversations">￼Working with Conversations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Getting Messages">￼Getting Messages</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Calls">￼Calls</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Actions">￼Actions</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deliveredUntil">deliveredUntil</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readUntil">readUntil</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeCalls">activeCalls</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addConversation:">addConversation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/audioPlayer">audioPlayer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/audioRecorder">audioRecorder</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheSize">cacheSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callByUUDI:">callByUUDI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callViewController">callViewController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calls">calls</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCache">clearCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCacheWithPrefix:">clearCacheWithPrefix:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/conversations">conversations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createCallTo:">createCallTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createViewControllerForCall:">createViewControllerForCall:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentConversation">currentConversation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteConversation:completion:">deleteConversation:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessage:completion:">deleteMessage:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessagesWithCompletion:">deleteMessagesWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadAudioRecordings">downloadAudioRecordings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadVideosBeforePlaying">downloadVideosBeforePlaying</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groups">groups</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationController">locationController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logType:format:">logType:format:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logType:prettyFunction:line:format:">logType:prettyFunction:line:format:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messageWithIdentifier:completion:">messageWithIdentifier:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesInConversation:offset:length:asc:">messagesInConversation:offset:length:asc:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesWithAttachmentInConversation:asc:">messagesWithAttachmentInConversation:asc:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesWithAttachmentInMessages:">messagesWithAttachmentInMessages:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesWithOffset:length:asc:">messagesWithOffset:length:asc:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfItemsInCache">numberOfItemsInCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openLocationOnMapsFromMessage:">openLocationOnMapsFromMessage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/playVideoFromMessage:viewController:">playVideoFromMessage:viewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushNotification">pushNotification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendNotificationToAddress:type:data:">sendNotificationToAddress:type:data:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/session">session</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAppGroupIdentifier:">setAppGroupIdentifier:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setConversationSortingComparator:">setConversationSortingComparator:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCurrentConversation:">setCurrentConversation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDownloadAudioRecordings:">setDownloadAudioRecordings:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDownloadVideosBeforePlaying:">setDownloadVideosBeforePlaying:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setInCallClass:">setInCallClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoadOfMessagesAndGroups:">setLoadOfMessagesAndGroups:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoggingOptions:">setLoggingOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCallTo:streams:">startCallTo:streams:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCallTo:streams:mediaMode:offnet:">startCallTo:streams:mediaMode:offnet:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPhoneCallTo:">startPhoneCallTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithApiKey:">startWithApiKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithApiKey:endPoint:">startWithApiKey:endPoint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/started">started</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalBadge">totalBadge</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/typingBeginToAddress:">typingBeginToAddress:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="Bit6 Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">Bit6 Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">Bit6.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Bit6 handles the basic interaction between the Bit6 framework and the ApplicationDelegate object and offers some generic functionality.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Initialization" name="task_￼Initialization"></a>
+						<h3 class="subsubtitle task-title">￼Initialization</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startWithApiKey:">+&nbsp;startWithApiKey:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startWithApiKey:endPoint:">+&nbsp;startWithApiKey:endPoint:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/started">+&nbsp;started</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Controllers" name="task_￼Controllers"></a>
+						<h3 class="subsubtitle task-title">￼Controllers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/session">+&nbsp;session</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/audioPlayer">+&nbsp;audioPlayer</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/audioRecorder">+&nbsp;audioRecorder</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationController">+&nbsp;locationController</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushNotification">+&nbsp;pushNotification</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Properties" name="task_￼Properties"></a>
+						<h3 class="subsubtitle task-title">￼Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/downloadVideosBeforePlaying">+&nbsp;downloadVideosBeforePlaying</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDownloadVideosBeforePlaying:">+&nbsp;setDownloadVideosBeforePlaying:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/downloadAudioRecordings">+&nbsp;downloadAudioRecordings</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDownloadAudioRecordings:">+&nbsp;setDownloadAudioRecordings:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLoadOfMessagesAndGroups:">+&nbsp;setLoadOfMessagesAndGroups:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setInCallClass:">+&nbsp;setInCallClass:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deliveredUntil">&nbsp;&nbsp;deliveredUntil</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/readUntil">&nbsp;&nbsp;readUntil</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAppGroupIdentifier:">+&nbsp;setAppGroupIdentifier:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Cache" name="task_￼Cache"></a>
+						<h3 class="subsubtitle task-title">￼Cache</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cacheSize">+&nbsp;cacheSize</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfItemsInCache">+&nbsp;numberOfItemsInCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearCache">+&nbsp;clearCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearCacheWithPrefix:">+&nbsp;clearCacheWithPrefix:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Logging" name="task_￼Logging"></a>
+						<h3 class="subsubtitle task-title">￼Logging</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLoggingOptions:">+&nbsp;setLoggingOptions:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logType:format:">+&nbsp;logType:format:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logType:prettyFunction:line:format:">+&nbsp;logType:prettyFunction:line:format:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Working with Groups" name="task_￼Working with Groups"></a>
+						<h3 class="subsubtitle task-title">￼Working with Groups</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/groups">+&nbsp;groups</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Working with Conversations" name="task_￼Working with Conversations"></a>
+						<h3 class="subsubtitle task-title">￼Working with Conversations</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setConversationSortingComparator:">+&nbsp;setConversationSortingComparator:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/conversations">+&nbsp;conversations</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addConversation:">+&nbsp;addConversation:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteConversation:completion:">+&nbsp;deleteConversation:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteMessage:completion:">+&nbsp;deleteMessage:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteMessagesWithCompletion:">+&nbsp;deleteMessagesWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/totalBadge">+&nbsp;totalBadge</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCurrentConversation:">+&nbsp;setCurrentConversation:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentConversation">+&nbsp;currentConversation</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Getting Messages" name="task_￼Getting Messages"></a>
+						<h3 class="subsubtitle task-title">￼Getting Messages</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messagesWithOffset:length:asc:">+&nbsp;messagesWithOffset:length:asc:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messagesInConversation:offset:length:asc:">+&nbsp;messagesInConversation:offset:length:asc:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messagesWithAttachmentInMessages:">+&nbsp;messagesWithAttachmentInMessages:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messagesWithAttachmentInConversation:asc:">+&nbsp;messagesWithAttachmentInConversation:asc:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messageWithIdentifier:completion:">+&nbsp;messageWithIdentifier:completion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Calls" name="task_￼Calls"></a>
+						<h3 class="subsubtitle task-title">￼Calls</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callViewController">+&nbsp;callViewController</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/calls">+&nbsp;calls</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callByUUDI:">+&nbsp;callByUUDI:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activeCalls">+&nbsp;activeCalls</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createCallTo:">+&nbsp;createCallTo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startCallTo:streams:">+&nbsp;startCallTo:streams:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startCallTo:streams:mediaMode:offnet:">+&nbsp;startCallTo:streams:mediaMode:offnet:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startPhoneCallTo:">+&nbsp;startPhoneCallTo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createViewControllerForCall:">+&nbsp;createViewControllerForCall:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Actions" name="task_￼Actions"></a>
+						<h3 class="subsubtitle task-title">￼Actions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/playVideoFromMessage:viewController:">+&nbsp;playVideoFromMessage:viewController:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openLocationOnMapsFromMessage:">+&nbsp;openLocationOnMapsFromMessage:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/typingBeginToAddress:">+&nbsp;typingBeginToAddress:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendNotificationToAddress:type:data:">+&nbsp;sendNotificationToAddress:type:data:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deliveredUntil" title="deliveredUntil"></a>
+	<h3 class="subsubtitle method-title">deliveredUntil</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the timestamp matching the last message with status Bit6MessageStatus_Delivered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double deliveredUntil</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/readUntil" title="readUntil"></a>
+	<h3 class="subsubtitle method-title">readUntil</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the timestamp matching the last message with status Bit6MessageStatus_Read.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double readUntil</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activeCalls" title="activeCalls"></a>
+	<h3 class="subsubtitle method-title">activeCalls</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A copy of the active <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects in the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6CallController*&gt; *)activeCalls</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an NSArray of <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addConversation:" title="addConversation:"></a>
+	<h3 class="subsubtitle method-title">addConversation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a conversation to the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)addConversation:(Bit6Conversation *)<em>conversation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>conversation</em></dt>
+			<dd><p>a <a href="../Classes/Bit6Conversation.html">Bit6Conversation</a> object to be added.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the conversation was added</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/audioPlayer" title="audioPlayer"></a>
+	<h3 class="subsubtitle method-title">audioPlayer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the default Bit6AudioPlayerController object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6AudioPlayerController *)audioPlayer</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Default Bit6AudioPlayerController object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/audioRecorder" title="audioRecorder"></a>
+	<h3 class="subsubtitle method-title">audioRecorder</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets default Bit6AudioRecorderController object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6AudioRecorderController *)audioRecorder</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Default Bit6AudioRecorderController object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cacheSize" title="cacheSize"></a>
+	<h3 class="subsubtitle method-title">cacheSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the size of the /Cache/bit6 directory.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)cacheSize</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>cache size in bytes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/callByUUDI:" title="callByUUDI:"></a>
+	<h3 class="subsubtitle method-title">callByUUDI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the call matching the specified uuid</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallController *)callByUUDI:(NSUUID *)<em>uuid</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uuid</em></dt>
+			<dd><p>UUID of the call.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the call matching the specified uuid, or nil if no call was a match.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/callViewController" title="callViewController"></a>
+	<h3 class="subsubtitle method-title">callViewController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The in-call view controller being used during the current call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallViewController *)callViewController</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/Bit6CallViewController.html">Bit6CallViewController</a> object referencing the current in-call view controller.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/calls" title="calls"></a>
+	<h3 class="subsubtitle method-title">calls</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A copy of all the <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects in the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6CallController*&gt; *)calls</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an NSArray of <a href="../Classes/Bit6CallController.html">Bit6CallController</a> objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearCache" title="clearCache"></a>
+	<h3 class="subsubtitle method-title">clearCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete all the files inside the /Cache/bit6 directory. A Bit6CacheDeletedNotification will be sent once the deletion is completed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)clearCache</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>number of files deleted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearCacheWithPrefix:" title="clearCacheWithPrefix:"></a>
+	<h3 class="subsubtitle method-title">clearCacheWithPrefix:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete the files inside the /Cache/bit6 directory that matches the specified prefix. A Bit6CacheDeletedNotification will be sent once the deletion is completed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)clearCacheWithPrefix:(NSString *)<em>prefix</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>prefix</em></dt>
+			<dd><p>prefix of the files to delete</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>number of files deleted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/conversations" title="conversations"></a>
+	<h3 class="subsubtitle method-title">conversations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get all the existing conversations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable NSArray&lt;Bit6Conversation*&gt; *)conversations</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the existing <a href="../Classes/Bit6Conversation.html">Bit6Conversation</a> objects as a NSArray, or null if no session has been initiated.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createCallTo:" title="createCallTo:"></a>
+	<h3 class="subsubtitle method-title">createCallTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a call object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallController *)createCallTo:(Bit6Address *)<em>identity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identity</em></dt>
+			<dd><p>address of the user to call</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>call object.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> If there&rsquo;s an active call to the same identity then that call object will be returned.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createViewControllerForCall:" title="createViewControllerForCall:"></a>
+	<h3 class="subsubtitle method-title">createViewControllerForCall:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a view controller to use during a call, or reuse an existing one.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6CallViewController *)createViewControllerForCall:(Bit6CallController *)<em>callController</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callController</em></dt>
+			<dd><p>call for which the viewcontroller will be generated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>viewcontroller to use during a call.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The class for the returned viewcontroller can be customize by adding the class name with the key &lsquo;in_call_class_name&rsquo; in the Bit6 dictionary in the target info.plist. If set then the &lt;+(Bit6CallViewController*)createViewController> method for that class will be called to create the viewcontroller.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentConversation" title="currentConversation"></a>
+	<h3 class="subsubtitle method-title">currentConversation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the current conversation for the application.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6Conversation *)currentConversation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteConversation:completion:" title="deleteConversation:completion:"></a>
+	<h3 class="subsubtitle method-title">deleteConversation:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete a conversation from the system. All the messages inside the conversation are deleted too.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)deleteConversation:(Bit6Conversation *)<em>conversation</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>conversation</em></dt>
+			<dd><p><a href="../Classes/Bit6Conversation.html">Bit6Conversation</a> object to be deleted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteMessage:completion:" title="deleteMessage:completion:"></a>
+	<h3 class="subsubtitle method-title">deleteMessage:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deletes a message from the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)deleteMessage:(Bit6Message *)<em>message</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p><a href="../Classes/Bit6Message.html">Bit6Message</a> object to be deleted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteMessagesWithCompletion:" title="deleteMessagesWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">deleteMessagesWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deletes all messages from the system.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)deleteMessagesWithCompletion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called when the operation is completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Use at your own risk.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/downloadAudioRecordings" title="downloadAudioRecordings"></a>
+	<h3 class="subsubtitle method-title">downloadAudioRecordings</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the current configuration to download audio attachments automatically. By default it&rsquo;s set to YES.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)downloadAudioRecordings</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the audio attachments will be downloaded automatically.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/downloadVideosBeforePlaying" title="downloadVideosBeforePlaying"></a>
+	<h3 class="subsubtitle method-title">downloadVideosBeforePlaying</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the current configuration to play video attachments. By default it&rsquo;s set to NO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)downloadVideosBeforePlaying</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the video attachments will be downloaded to be played locally. false if the video will be streamed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/playVideoFromMessage:viewController:">[Bit6 playVideoFromMessage:viewController:]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/groups" title="groups"></a>
+	<h3 class="subsubtitle method-title">groups</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get all the existing groups.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable NSArray&lt;Bit6Group*&gt; *)groups</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the existing <a href="../Classes/Bit6Group.html">Bit6Group</a> objects as a NSArray.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationController" title="locationController"></a>
+	<h3 class="subsubtitle method-title">locationController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the default Bit6CurrentLocationController object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6CurrentLocationController *)locationController</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the default Bit6CurrentLocationController object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logType:format:" title="logType:format:"></a>
+	<h3 class="subsubtitle method-title">logType:format:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (void)logType:(Bit6LogOptions)<em>type</em> format:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logType:prettyFunction:line:format:" title="logType:prettyFunction:line:format:"></a>
+	<h3 class="subsubtitle method-title">logType:prettyFunction:line:format:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (void)logType:(Bit6LogOptions)<em>type</em> prettyFunction:(char *)<em>prettyFunction</em> line:(int)<em>line</em> format:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/messageWithIdentifier:completion:" title="messageWithIdentifier:completion:"></a>
+	<h3 class="subsubtitle method-title">messageWithIdentifier:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the <a href="../Classes/Bit6Message.html">Bit6Message</a> object with the specified identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)messageWithIdentifier:(NSString *)<em>identifier</em> completion:(void ( ^ ) ( Bit6Message *__nullable msg ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identifier</em></dt>
+			<dd><p>identifier for the message to find.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block to be called with the result of the search.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/messagesInConversation:offset:length:asc:" title="messagesInConversation:offset:length:asc:"></a>
+	<h3 class="subsubtitle method-title">messagesInConversation:offset:length:asc:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the <a href="../Classes/Bit6Message.html">Bit6Message</a> objects in the conversation as a NSArray.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesInConversation:(Bit6Conversation *)<em>conversation</em> offset:(NSInteger)<em>offset</em> length:(NSInteger)<em>length</em> asc:(BOOL)<em>asc</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>conversation</em></dt>
+			<dd><p>the <a href="../Classes/Bit6Conversation.html">Bit6Conversation</a> object to get the messages from</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>initial index to look for messages</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>length</em></dt>
+			<dd><p>number of messages to get</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>asc</em></dt>
+			<dd><p>order in which the messages will be returned</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/Bit6Message.html">Bit6Message</a> objects as a NSArray.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Let&rsquo;s assume we have these messages: [1, 2, 3, 4, 5] (smaller numbers - older messages)</p>
+
+<pre><code>[Bit6 messagesInConversation:myConversation offset:1 length:2 asc:YES]; // returns [2,3]
+[Bit6 messagesInConversation:myConversation offset:1 length:2 asc:NO]; // returns [3,2]
+[Bit6 messagesInConversation:myConversation offset:-2 length:2 asc:NO]; // returns [5,4]
+[Bit6 messagesInConversation:myConversation offset:-2 length:2 asc:YES]; // returns [4,5]
+[Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:YES]; // returns all the messages [1,2,3,4,5]
+[Bit6 messagesInConversation:myConversation offset:0 length:NSIntegerMax asc:NO]; // returns all the messages [5,4,3,2,1]
+[Bit6 messagesInConversation:myConversation offset:-3 length:3 asc:NO]; // returns [5,4,3]
+[Bit6 messagesInConversation:myConversation offset:-6 length:3 asc:NO]; // returns [2,1]
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/messagesWithAttachmentInConversation:asc:" title="messagesWithAttachmentInConversation:asc:"></a>
+	<h3 class="subsubtitle method-title">messagesWithAttachmentInConversation:asc:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the <a href="../Classes/Bit6Message.html">Bit6Message</a> objects with attachment as a NSArray.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInConversation:(Bit6Conversation *)<em>conversation</em> asc:(BOOL)<em>asc</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>conversation</em></dt>
+			<dd><p>conversation where to do the search</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>asc</em></dt>
+			<dd><p>order in which the messages will be returned</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/Bit6Message.html">Bit6Message</a> objects with attachment as a NSArray.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/messagesWithAttachmentInMessages:" title="messagesWithAttachmentInMessages:"></a>
+	<h3 class="subsubtitle method-title">messagesWithAttachmentInMessages:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the <a href="../Classes/Bit6Message.html">Bit6Message</a> objects with attachment as a NSArray.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithAttachmentInMessages:(NSArray&lt;Bit6Message*&gt; *)<em>messages</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>messages</em></dt>
+			<dd><p>array of <a href="../Classes/Bit6Message.html">Bit6Message</a> objects where to do the search</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/Bit6Message.html">Bit6Message</a> objects with attachment as a NSArray.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/messagesWithOffset:length:asc:" title="messagesWithOffset:length:asc:"></a>
+	<h3 class="subsubtitle method-title">messagesWithOffset:length:asc:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the <a href="../Classes/Bit6Message.html">Bit6Message</a> objects in the system as a NSArray.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray&lt;Bit6Message*&gt; *)messagesWithOffset:(NSInteger)<em>offset</em> length:(NSInteger)<em>length</em> asc:(BOOL)<em>asc</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>initial index to look for messages</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>length</em></dt>
+			<dd><p>number of messages to get</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>asc</em></dt>
+			<dd><p>order in which the messages will be returned</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Classes/Bit6Message.html">Bit6Message</a> objects as a NSArray.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/messagesInConversation:offset:length:asc:">[Bit6 messagesInConversation:offset:length:asc:]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberOfItemsInCache" title="numberOfItemsInCache"></a>
+	<h3 class="subsubtitle method-title">numberOfItemsInCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the number of files inside the /Cache/bit6 directory.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)numberOfItemsInCache</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>number of files in cache.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/openLocationOnMapsFromMessage:" title="openLocationOnMapsFromMessage:"></a>
+	<h3 class="subsubtitle method-title">openLocationOnMapsFromMessage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method to open the location included in a <a href="../Classes/Bit6Message.html">Bit6Message</a> object in the Apple Maps app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)openLocationOnMapsFromMessage:(Bit6Message *)<em>msg</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>A <a href="../Classes/Bit6Message.html">Bit6Message</a> object with a location attached. A message has a location attached if Bit6Message.type == Bit6MessageType_Location.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/playVideoFromMessage:viewController:" title="playVideoFromMessage:viewController:"></a>
+	<h3 class="subsubtitle method-title">playVideoFromMessage:viewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Plays the attached video included in a <a href="../Classes/Bit6Message.html">Bit6Message</a> object using the AVPlayerViewController class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)playVideoFromMessage:(Bit6Message *)<em>msg</em> viewController:(UIViewController *)<em>vc</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>A <a href="../Classes/Bit6Message.html">Bit6Message</a> object with a video attached. A message has a video attached if Bit6Message.type == Bit6MessageType_Attachments and Bit6Message.attachFileType == Bit6MessageFileType_VideoMP4.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>vc</em></dt>
+			<dd><p>viewcontroller from which to present a AVPlayerViewController to play the video</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/downloadVideosBeforePlaying">[Bit6 downloadVideosBeforePlaying]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushNotification" title="pushNotification"></a>
+	<h3 class="subsubtitle method-title">pushNotification</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the default Bit6PushNotificationCenter object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6PushNotificationCenter *)pushNotification</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the default Bit6PushNotificationCenter object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendNotificationToAddress:type:data:" title="sendNotificationToAddress:type:data:"></a>
+	<h3 class="subsubtitle method-title">sendNotificationToAddress:type:data:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to send a notification to another user. To receive the notification in the other end you can hear to the Bit6CustomRtNotification notifications.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)sendNotificationToAddress:(Bit6Address *)<em>address</em> type:(NSString *)<em>type</em> data:(nullable NSDictionary&lt;NSString*,id&gt; *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>The <a href="../Classes/Bit6Address.html">Bit6Address</a> object to send the message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>type of the notification to send</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>data to send in the notification. It has to be able to be converted to JSON data (check by using +[NSJSONSerialization</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/session" title="session"></a>
+	<h3 class="subsubtitle method-title">session</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the default Bit6Session object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6Session *)session</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the default Bit6Session object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAppGroupIdentifier:" title="setAppGroupIdentifier:"></a>
+	<h3 class="subsubtitle method-title">setAppGroupIdentifier:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the AppGroup identifier (set in the Xcode project capabilities) to use with the framework.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setAppGroupIdentifier:(NSString *)<em>appGroupIdentifier</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appGroupIdentifier</em></dt>
+			<dd><p>AppGroup identifier to use.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setConversationSortingComparator:" title="setConversationSortingComparator:"></a>
+	<h3 class="subsubtitle method-title">setConversationSortingComparator:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the comparator block that will be used to sort the conversations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setConversationSortingComparator:(NSComparator)<em>cmptr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cmptr</em></dt>
+			<dd><p>new sorting comparator..</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCurrentConversation:" title="setCurrentConversation:"></a>
+	<h3 class="subsubtitle method-title">setCurrentConversation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the current conversation for the application. The current conversation will have its <a href="../Classes/Bit6Conversation.html#//api/name/badge">[Bit6Conversation badge]</a> set to 0 and it won&rsquo;t consider new messages to increment this value. Set this property to nil to remove the current conversation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setCurrentConversation:(nullable Bit6Conversation *)<em>conversation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>conversation</em></dt>
+			<dd><p>conversation to become the current conversation.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDownloadAudioRecordings:" title="setDownloadAudioRecordings:"></a>
+	<h3 class="subsubtitle method-title">setDownloadAudioRecordings:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the current configuration to download audio attachments automatically. By default it&rsquo;s set to YES.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setDownloadAudioRecordings:(BOOL)<em>flag</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>flag</em></dt>
+			<dd><p>true if the audio attachments should be downloaded automatically.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDownloadVideosBeforePlaying:" title="setDownloadVideosBeforePlaying:"></a>
+	<h3 class="subsubtitle method-title">setDownloadVideosBeforePlaying:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the current configuration to play video attachments. By default it&rsquo;s set to NO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setDownloadVideosBeforePlaying:(BOOL)<em>flag</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>flag</em></dt>
+			<dd><p>true if the video attachments should be downloaded to be played locally. false if the video should be streamed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setInCallClass:" title="setInCallClass:"></a>
+	<h3 class="subsubtitle method-title">setInCallClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the <a href="../Classes/Bit6CallViewController.html">Bit6CallViewController</a> subclass to be used during a call. This method should be called before [Bit6 startWithApiKey:].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setInCallClass:(Class)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>UI class to be used during a call.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setLoadOfMessagesAndGroups:" title="setLoadOfMessagesAndGroups:"></a>
+	<h3 class="subsubtitle method-title">setLoadOfMessagesAndGroups:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the current configuration to load the messages and groups. If set to NO, the messages and groups won&rsquo;t be loaded from the server. By default it&rsquo;s set to YES.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setLoadOfMessagesAndGroups:(BOOL)<em>flag</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>flag</em></dt>
+			<dd><p>true if the messages and groups should be retrieved from the server.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setLoggingOptions:" title="setLoggingOptions:"></a>
+	<h3 class="subsubtitle method-title">setLoggingOptions:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (void)setLoggingOptions:(Bit6LogOptions)<em>loggingOptions</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the default Bit6 object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Bit6 *)sharedInstance</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Default Bit6 object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startCallTo:streams:" title="startCallTo:streams:"></a>
+	<h3 class="subsubtitle method-title">startCallTo:streams:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a VoIP call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startCallTo:(Bit6Address *)<em>identity</em> streams:(Bit6CallStreams)<em>streams</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identity</em></dt>
+			<dd><p>address of the user to call</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streams</em></dt>
+			<dd><p>An integer bit mask that determines the local media that will be sent.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NO if the call can&rsquo;t be started</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startCallTo:streams:mediaMode:offnet:" title="startCallTo:streams:mediaMode:offnet:"></a>
+	<h3 class="subsubtitle method-title">startCallTo:streams:mediaMode:offnet:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a VoIP call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startCallTo:(Bit6Address *)<em>identity</em> streams:(Bit6CallStreams)<em>streams</em> mediaMode:(Bit6CallMediaMode)<em>mediaMode</em> offnet:(BOOL)<em>offnet</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identity</em></dt>
+			<dd><p>address of the user to call</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>streams</em></dt>
+			<dd><p>An integer bit mask that determines the local media that will be sent.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mediaMode</em></dt>
+			<dd><p>Indicates if the call will go P2P or if the server should process the media</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offnet</em></dt>
+			<dd><p>Indicates if the call will go within the Bit6 world (set to false) or it should be a real phone call (set to true).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NO if the call can&rsquo;t be started</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startPhoneCallTo:" title="startPhoneCallTo:"></a>
+	<h3 class="subsubtitle method-title">startPhoneCallTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a PSTN call</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startPhoneCallTo:(NSString *)<em>phoneNumber</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>phoneNumber</em></dt>
+			<dd><p>phoneNumber to call. Phone numbers must be in E164 format, prefixed with +. So a US (country code 1) number (555) 123-1234 must be presented as +15551231234.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NO if the call can&rsquo;t be started</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startWithApiKey:" title="startWithApiKey:"></a>
+	<h3 class="subsubtitle method-title">startWithApiKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Bit6 startup method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(NSString *)<em>apiKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiKey</em></dt>
+			<dd><p>unique key for the current developer.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startWithApiKey:endPoint:" title="startWithApiKey:endPoint:"></a>
+	<h3 class="subsubtitle method-title">startWithApiKey:endPoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Bit6 startup method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)startWithApiKey:(NSString *)<em>apiKey</em> endPoint:(NSString *)<em>endPoint</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiKey</em></dt>
+			<dd><p>unique key for the current developer.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>endPoint</em></dt>
+			<dd><p>custom server URL</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/started" title="started"></a>
+	<h3 class="subsubtitle method-title">started</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the Bit6 framework has been initialized</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)started</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/totalBadge" title="totalBadge"></a>
+	<h3 class="subsubtitle method-title">totalBadge</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the number of unread messages for all existing conversations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)totalBadge</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of unread messages for all existing conversations.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is done by adding the values of <a href="../Classes/Bit6Conversation.html#//api/name/badge">[Bit6Conversation badge]</a> for all existing conversations</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/typingBeginToAddress:" title="typingBeginToAddress:"></a>
+	<h3 class="subsubtitle method-title">typingBeginToAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to notify when the user starts typing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)typingBeginToAddress:(Bit6Address *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>address where the notification will be sent</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unavailable init. Use [Bit6 sharedInstance] instead.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance of the class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-10-10)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1517 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Bit6PushNotificationCenter Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Bit6-SDK-for-iOS </a></h1>
+				<a id="developerHome" href="../index.html">Bit6</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">Bit6PushNotificationCenter Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/deviceToken">&nbsp;&nbsp;&nbsp;&nbsp;deviceToken</option>
+	
+	<option value="//api/name/voipToken">&nbsp;&nbsp;&nbsp;&nbsp;voipToken</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/addressForMessageNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ addressForMessageNotification:</option>
+	
+	<option value="//api/name/isAppStoreEnvironment">&nbsp;&nbsp;&nbsp;&nbsp;+ isAppStoreEnvironment</option>
+	
+	<option value="//api/name/isIncomingCallNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ isIncomingCallNotification:</option>
+	
+	<option value="//api/name/isIncomingMessageNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ isIncomingMessageNotification:</option>
+	
+	<option value="//api/name/isMissedCallNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ isMissedCallNotification:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/didFailToRegisterForRemoteNotificationsWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- didFailToRegisterForRemoteNotificationsWithError:</option>
+	
+	<option value="//api/name/didReceiveNotificationUserInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveNotificationUserInfo:</option>
+	
+	<option value="//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- didReceiveNotificationUserInfo:fetchCompletionHandler:</option>
+	
+	<option value="//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">&nbsp;&nbsp;&nbsp;&nbsp;- didRegisterForRemoteNotificationsWithDeviceToken:</option>
+	
+	<option value="//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</option>
+	
+	<option value="//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:">&nbsp;&nbsp;&nbsp;&nbsp;- pushRegistry:didReceiveIncomingPushWithPayload:forType:</option>
+	
+	<option value="//api/name/pushRegistry:didUpdatePushCredentials:forType:">&nbsp;&nbsp;&nbsp;&nbsp;- pushRegistry:didUpdatePushCredentials:forType:</option>
+	
+	<option value="//api/name/setCategories:">&nbsp;&nbsp;&nbsp;&nbsp;- setCategories:</option>
+	
+	<option value="//api/name/setNotificationCategories:">&nbsp;&nbsp;&nbsp;&nbsp;- setNotificationCategories:</option>
+	
+	<option value="//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</option>
+	
+	<option value="//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- userNotificationCenter:willPresentNotification:withCompletionHandler:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Actions">￼Actions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Registration">￼Registration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Helpers">￼Helpers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼VoIP Push Notifications">￼VoIP Push Notifications</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceToken">deviceToken</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/voipToken">voipToken</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addressForMessageNotification:">addressForMessageNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAppStoreEnvironment">isAppStoreEnvironment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isIncomingCallNotification:">isIncomingCallNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isIncomingMessageNotification:">isIncomingMessageNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMissedCallNotification:">isMissedCallNotification:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didFailToRegisterForRemoteNotificationsWithError:">didFailToRegisterForRemoteNotificationsWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveNotificationUserInfo:">didReceiveNotificationUserInfo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:">didReceiveNotificationUserInfo:fetchCompletionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">didRegisterForRemoteNotificationsWithDeviceToken:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:">handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:">handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:">pushRegistry:didReceiveIncomingPushWithPayload:forType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushRegistry:didUpdatePushCredentials:forType:">pushRegistry:didUpdatePushCredentials:forType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCategories:">setCategories:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNotificationCategories:">setNotificationCategories:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:">userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:">userNotificationCenter:willPresentNotification:withCompletionHandler:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="Bit6PushNotificationCenter Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">Bit6PushNotificationCenter Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">Bit6PushNotificationCenter.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Bit6PushNotificationCenter is used to handle the remote notifications.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAppStoreEnvironment">+&nbsp;isAppStoreEnvironment</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceToken">&nbsp;&nbsp;deviceToken</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/voipToken">&nbsp;&nbsp;voipToken</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didReceiveNotificationUserInfo:">&ndash;&nbsp;didReceiveNotificationUserInfo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:">&ndash;&nbsp;didReceiveNotificationUserInfo:fetchCompletionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:">&ndash;&nbsp;userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:">&ndash;&nbsp;userNotificationCenter:willPresentNotification:withCompletionHandler:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Actions" name="task_￼Actions"></a>
+						<h3 class="subsubtitle task-title">￼Actions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setNotificationCategories:">&ndash;&nbsp;setNotificationCategories:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCategories:">&ndash;&nbsp;setCategories:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:">&ndash;&nbsp;handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:">&ndash;&nbsp;handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Registration" name="task_￼Registration"></a>
+						<h3 class="subsubtitle task-title">￼Registration</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">&ndash;&nbsp;didRegisterForRemoteNotificationsWithDeviceToken:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didFailToRegisterForRemoteNotificationsWithError:">&ndash;&nbsp;didFailToRegisterForRemoteNotificationsWithError:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Helpers" name="task_￼Helpers"></a>
+						<h3 class="subsubtitle task-title">￼Helpers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isIncomingCallNotification:">+&nbsp;isIncomingCallNotification:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMissedCallNotification:">+&nbsp;isMissedCallNotification:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isIncomingMessageNotification:">+&nbsp;isIncomingMessageNotification:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addressForMessageNotification:">+&nbsp;addressForMessageNotification:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼VoIP Push Notifications" name="task_￼VoIP Push Notifications"></a>
+						<h3 class="subsubtitle task-title">￼VoIP Push Notifications</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushRegistry:didUpdatePushCredentials:forType:">&ndash;&nbsp;pushRegistry:didUpdatePushCredentials:forType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:">&ndash;&nbsp;pushRegistry:didReceiveIncomingPushWithPayload:forType:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceToken" title="deviceToken"></a>
+	<h3 class="subsubtitle method-title">deviceToken</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The regular APNS push token for this device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *deviceToken</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/voipToken" title="voipToken"></a>
+	<h3 class="subsubtitle method-title">voipToken</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The VoIP APNS push token for this device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *voipToken</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addressForMessageNotification:" title="addressForMessageNotification:"></a>
+	<h3 class="subsubtitle method-title">addressForMessageNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the origin identity for the incoming message notification userInfo param.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (nullable Bit6Address *)addressForMessageNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the origin identity for the incoming message.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAppStoreEnvironment" title="isAppStoreEnvironment"></a>
+	<h3 class="subsubtitle method-title">isAppStoreEnvironment</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns NO if the device is running in Sandbox.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isAppStoreEnvironment</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NO if the device is running in Sandbox.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isIncomingCallNotification:" title="isIncomingCallNotification:"></a>
+	<h3 class="subsubtitle method-title">isIncomingCallNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if a push notification refers to an incoming call</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isIncomingCallNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the push notification refers to an incoming call.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isIncomingMessageNotification:" title="isIncomingMessageNotification:"></a>
+	<h3 class="subsubtitle method-title">isIncomingMessageNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if a push notification refers to an incoming message.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isIncomingMessageNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the push notification refers to an incoming message.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMissedCallNotification:" title="isMissedCallNotification:"></a>
+	<h3 class="subsubtitle method-title">isMissedCallNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to know if a push notification refers to a missed incoming call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isMissedCallNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the push notification refers to a missed incoming call.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/didFailToRegisterForRemoteNotificationsWithError:" title="didFailToRegisterForRemoteNotificationsWithError:"></a>
+	<h3 class="subsubtitle method-title">didFailToRegisterForRemoteNotificationsWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UIApplicationDelegate application:didFailToRegisterForRemoteNotificationsWithError:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>An NSError object that encapsulates information why registration did not succeed. The app can choose to display this information to the user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didReceiveNotificationUserInfo:" title="didReceiveNotificationUserInfo:"></a>
+	<h3 class="subsubtitle method-title">didReceiveNotificationUserInfo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:] and -[UIApplicationDelegate application:didReceiveLocalNotification:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didReceiveNotificationUserInfo:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didReceiveNotificationUserInfo:fetchCompletionHandler:" title="didReceiveNotificationUserInfo:fetchCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">didReceiveNotificationUserInfo:fetchCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UIApplicationDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didReceiveNotificationUserInfo:(NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification, potentially including a badge number for the app icon, an alert sound, an alert message to display to the user, a notification identifier, and custom data. The provider originates it as a JSON-defined dictionary that iOS converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>The block to execute when the download operation is complete. When calling this block, pass in the fetch result value that best describes the results of your download operation. You must call this handler and should do so as soon as possible.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didRegisterForRemoteNotificationsWithDeviceToken:" title="didRegisterForRemoteNotificationsWithDeviceToken:"></a>
+	<h3 class="subsubtitle method-title">didRegisterForRemoteNotificationsWithDeviceToken:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UIApplicationDelegate application:didRegisterForRemoteNotificationsWithDeviceToken:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)<em>deviceToken</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceToken</em></dt>
+			<dd><p>A token that identifies the device to APS. The token is an opaque data type because that is the form that the provider needs to submit to the APS servers when it sends a notification to a device. The APS servers require a binary format for performance reasons.
+The size of a device token is 32 bytes.
+Note that the device token is different from the uniqueIdentifier property of UIDevice because, for security and privacy reasons, it must change when the device is wiped.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/handleActionWithIdentifier:forNotificationUserInfo:completionHandler:" title="handleActionWithIdentifier:forNotificationUserInfo:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">handleActionWithIdentifier:forNotificationUserInfo:completionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:completionHandler:] and -[UIApplicationDelegate application:handleActionWithIdentifier:forLocalNotification:completionHandler:] implementations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forNotificationUserInfo:(NSDictionary *)<em>userInfo</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identifier</em></dt>
+			<dd><p>The identifier associated with the custom action.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:" title="handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">handleActionWithIdentifier:forNotificationUserInfo:withResponseInfo:completionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UIApplicationDelegate application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:] and -[UIApplicationDelegate application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forNotificationUserInfo:(NSDictionary *)<em>userInfo</em> withResponseInfo:(NSDictionary *)<em>responseInfo</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>identifier</em></dt>
+			<dd><p>The identifier associated with the custom action.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userInfo</em></dt>
+			<dd><p>A dictionary that contains information related to the remote notification. This dictionary originates from the provider as a JSON-defined dictionary, which iOS converts to an NSDictionary object before calling this method. The contents of the dictionary are the push notification payload, which consists only of property-list objects plus NSNull.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>responseInfo</em></dt>
+			<dd><p>The data dictionary sent by the action.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>The block to execute when you are finished performing the specified action. You must call this block at the end of your method.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unavailable init. Use Bit6.pushNotification instead.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance of the class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushRegistry:didReceiveIncomingPushWithPayload:forType:" title="pushRegistry:didReceiveIncomingPushWithPayload:forType:"></a>
+	<h3 class="subsubtitle method-title">pushRegistry:didReceiveIncomingPushWithPayload:forType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is invoked when a push notification has been received for the specified PKPushType.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pushRegistry:(PKPushRegistry *)<em>registry</em> didReceiveIncomingPushWithPayload:(PKPushPayload *)<em>payload</em> forType:(PKPushType)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>registry</em></dt>
+			<dd><p>The PKPushRegistry instance responsible for the delegate callback.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>payload</em></dt>
+			<dd><p>The push payload sent by a developer via APNS server API.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>This is a PKPushType NSString constant which is present in [registry desiredPushTypes].</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushRegistry:didUpdatePushCredentials:forType:" title="pushRegistry:didUpdatePushCredentials:forType:"></a>
+	<h3 class="subsubtitle method-title">pushRegistry:didUpdatePushCredentials:forType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is invoked when new credentials (including push token) have been received for the specified PKPushType.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pushRegistry:(PKPushRegistry *)<em>registry</em> didUpdatePushCredentials:(PKPushCredentials *)<em>credentials</em> forType:(PKPushType)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>registry</em></dt>
+			<dd><p>The PKPushRegistry instance responsible for the delegate callback.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>credentials</em></dt>
+			<dd><p>The push credentials that can be used to send pushes to the device for the specified PKPushType.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>This is a PKPushType NSString constant which is present in [registry desiredPushTypes].</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCategories:" title="setCategories:"></a>
+	<h3 class="subsubtitle method-title">setCategories:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCategories:(NSArray&lt;UIUserNotificationCategory*&gt; *)<em>categories</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>categories</em></dt>
+			<dd><p>array of categories to register.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> These identifiers cannot be used in custom categories/actions: com.bit6.actionDecline, com.bit6.actionAnswer, com.bit6.msgReply, com.bit6.incomingCall, reply.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setNotificationCategories:" title="setNotificationCategories:"></a>
+	<h3 class="subsubtitle method-title">setNotificationCategories:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register custom categories in the Push Notifications system. This method should be called before [Bit6 startWithApiKey:].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setNotificationCategories:(NSArray&lt;UNNotificationCategory*&gt; *)<em>notificationCategories</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notificationCategories</em></dt>
+			<dd><p>array of categories to register.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> These identifiers cannot be used in custom categories/actions: com.bit6.actionDecline, com.bit6.actionAnswer, com.bit6.msgReply, com.bit6.incomingCall, reply.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:" title="userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UNUserNotificationCenterDelegate userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)userNotificationCenter:(UNUserNotificationCenter *)<em>center</em> didReceiveNotificationResponse:(UNNotificationResponse *)<em>response</em> withCompletionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The notification center that received the notification.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>response</em></dt>
+			<dd><p>The user’s response to the notification. This object contains the original notification and the identifier string for the selected action. If the action allowed the user to provide a textual response, this object is an instance of the UNTextInputNotificationResponse class.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>The block to execute when you have finished processing the user’s response. You must execute this block from your method and should call it as quickly as possible. The block has no return value or parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:" title="userNotificationCenter:willPresentNotification:withCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">userNotificationCenter:willPresentNotification:withCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should be called inside the -[UNUserNotificationCenterDelegate userNotificationCenter:willPresentNotification:withCompletionHandler:] implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)userNotificationCenter:(UNUserNotificationCenter *)<em>center</em> willPresentNotification:(UNNotification *)<em>notification</em> withCompletionHandler:(void ( ^ ) ( UNNotificationPresentationOptions options ))<em>completionHandler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The notification center that received the notification.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notification</em></dt>
+			<dd><p>The notification that is about to be delivered. Use the information in this object to determine an appropriate course of action. For example, you might use the arrival of the notification to fetch new content or update your app’s interface.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionHandler</em></dt>
+			<dd><p>The block to execute with the presentation option for the notification. Always execute this block at some point during your implementation of this method. Specify an option indicating how you want the system to alert the user, if at all.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6PushNotificationCenter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-10-10)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

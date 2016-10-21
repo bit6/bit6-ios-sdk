@@ -18,7 +18,7 @@
 		D85AA65E1CC56B1F00E4FA74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85AA65D1CC56B1F00E4FA74 /* Main.storyboard */; };
 		D85AA6601CC5B03A00E4FA74 /* MyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AA65F1CC5B03A00E4FA74 /* MyCallViewController.swift */; };
 		D85AA6621CC5B04C00E4FA74 /* MyCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85AA6611CC5B04C00E4FA74 /* MyCallViewController.xib */; };
-		D8F2D5B31D6F4B6400FAC25E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8F2D5B21D6F4B6400FAC25E /* InfoPlist.strings */; };
+		D8C72CBF1DA8030A004A7781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8C72CBE1DA8030A004A7781 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		D85AA65F1CC5B03A00E4FA74 /* MyCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCallViewController.swift; sourceTree = "<group>"; };
 		D85AA6611CC5B04C00E4FA74 /* MyCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCallViewController.xib; sourceTree = "<group>"; };
 		D8B649FD1D83BD4E0000965E /* Bit6FullDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bit6FullDemo.entitlements; sourceTree = "<group>"; };
-		D8F2D5B21D6F4B6400FAC25E /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		D8C72CBE1DA8030A004A7781 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "../Bit6FullDemo-ObjC/ChatDemo/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D85AA6591CC56B0400E4FA74 /* Localizable.strings */,
-				D8F2D5B21D6F4B6400FAC25E /* InfoPlist.strings */,
+				D8C72CBE1DA8030A004A7781 /* InfoPlist.strings */,
 				D85AA65A1CC56B0400E4FA74 /* ringtone.caf */,
 				D80D4B8D1A21514A00391E04 /* Bit6.framework */,
 				D80D4B641A2150DA00391E04 /* Info.plist */,
@@ -127,7 +127,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Bit6;
 				TargetAttributes = {
 					D80D4B5F1A2150DA00391E04 = {
@@ -168,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80D4B6D1A2150DA00391E04 /* Images.xcassets in Resources */,
-				D8F2D5B31D6F4B6400FAC25E /* InfoPlist.strings in Resources */,
+				D8C72CBF1DA8030A004A7781 /* InfoPlist.strings in Resources */,
 				D85AA65B1CC56B0400E4FA74 /* Localizable.strings in Resources */,
 				D85AA65C1CC56B0400E4FA74 /* ringtone.caf in Resources */,
 				D85AA65E1CC56B1F00E4FA74 /* Main.storyboard in Resources */,
@@ -224,8 +224,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -234,6 +236,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -267,8 +270,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -276,6 +281,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -285,6 +291,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

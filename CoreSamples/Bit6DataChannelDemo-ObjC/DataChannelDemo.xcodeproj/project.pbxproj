@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D8852D9D1AE349D400FB82B0 /* Bit6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8852D9C1AE349D400FB82B0 /* Bit6.framework */; };
+		D8C72CC11DA80342004A7781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8C72CC01DA80342004A7781 /* InfoPlist.strings */; };
 		D8D128CA1CC67DB800613ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8D128C81CC67DB800613ABE /* Localizable.strings */; };
 		D8D128CB1CC67DB800613ABE /* ringtone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D8D128C91CC67DB800613ABE /* ringtone.caf */; };
 		D8D4E57E1AD38AF00086B31E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D4E57D1AD38AF00086B31E /* main.m */; };
@@ -17,12 +18,12 @@
 		D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E58B1AD38AF00086B31E /* Images.xcassets */; };
 		D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E58D1AD38AF00086B31E /* LaunchScreen.xib */; };
 		D8D4E5A51AD38B710086B31E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */; };
-		D8F2D5B51D6F4BA800FAC25E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8F2D5B41D6F4BA800FAC25E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8852D9C1AE349D400FB82B0 /* Bit6.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bit6.framework; path = ../../../Bit6.framework; sourceTree = "<group>"; };
 		D8B649FB1D83BD380000965E /* DataChannelDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataChannelDemo.entitlements; sourceTree = "<group>"; };
+		D8C72CC01DA80342004A7781 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "../Bit6FullDemo-ObjC/ChatDemo/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		D8D128C81CC67DB800613ABE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "../Bit6FullDemo-ObjC/ChatDemo/Localizable.strings"; sourceTree = SOURCE_ROOT; };
 		D8D128C91CC67DB800613ABE /* ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ringtone.caf; path = "../Bit6FullDemo-ObjC/ChatDemo/ringtone.caf"; sourceTree = SOURCE_ROOT; };
 		D8D4E5781AD38AF00086B31E /* DataChannelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataChannelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +39,6 @@
 		D8D4E58E1AD38AF00086B31E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D8D4E5A41AD38B710086B31E /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		D8D4E5A81AD390A40086B31E /* DemoConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DemoConfig.xcconfig; sourceTree = "<group>"; };
-		D8F2D5B41D6F4BA800FAC25E /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 		D8D4E57B1AD38AF00086B31E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D8C72CC01DA80342004A7781 /* InfoPlist.strings */,
 				D8D128C81CC67DB800613ABE /* Localizable.strings */,
-				D8F2D5B41D6F4BA800FAC25E /* InfoPlist.strings */,
 				D8D128C91CC67DB800613ABE /* ringtone.caf */,
 				D8852D9C1AE349D400FB82B0 /* Bit6.framework */,
 				D8D4E57C1AD38AF00086B31E /* Info.plist */,
@@ -127,7 +127,7 @@
 		D8D4E5701AD38AF00086B31E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Bit6;
 				TargetAttributes = {
 					D8D4E5771AD38AF00086B31E = {
@@ -168,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D4E58F1AD38AF00086B31E /* LaunchScreen.xib in Resources */,
-				D8F2D5B51D6F4BA800FAC25E /* InfoPlist.strings in Resources */,
+				D8C72CC11DA80342004A7781 /* InfoPlist.strings in Resources */,
 				D8D128CB1CC67DB800613ABE /* ringtone.caf in Resources */,
 				D8D128CA1CC67DB800613ABE /* Localizable.strings in Resources */,
 				D8D4E58C1AD38AF00086B31E /* Images.xcassets in Resources */,
@@ -217,8 +217,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -227,6 +229,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -259,8 +262,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -268,6 +273,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

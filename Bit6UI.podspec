@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Bit6UI"
-  s.version      = "0.10.0"
+  s.version      = "0.10.1"
   s.summary      = "Bit6UI Framework"
 
   s.description  = <<-DESC
@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   
-  s.dependency 'Bit6', '~> 0.10.0'
+  s.dependency 'Bit6', '~> 0.10.1'
 
 end

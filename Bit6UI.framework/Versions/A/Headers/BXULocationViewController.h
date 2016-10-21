@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface BXULocationViewController : UIViewController
 
+/*! Indicates if the default toolbar should be hidden. */
+@property (nonatomic) BOOL hideToolBar;
+
 /*! Location to display in the sender. */
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 

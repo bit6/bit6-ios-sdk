@@ -19,12 +19,18 @@
 @implementation FriendsViewController
 
 - (void)viewDidLoad {
-    [self loadFacebookFriends];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(touchedLogoutBarButton:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Invite" style:UIBarButtonItemStylePlain target:self action:@selector(inviteFriendsButtonTouched:)];
     
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self loadMe];
+    [self loadFacebookFriends];
+    
+    [super viewDidAppear:animated];
 }
 
 - (void)touchedLogoutBarButton:(id)sender {
@@ -67,6 +73,15 @@
 }
 
 #pragma mark - Facebook
+
+- (void)loadMe
+{
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"/me" parameters:@{@"fields":@"name"} HTTPMethod:@"GET"] startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            Bit6.session.activeDisplayName = result[@"name"];
+        }
+    }];
+}
 
 - (void) loadFacebookFriends
 {

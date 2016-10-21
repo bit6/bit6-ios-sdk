@@ -13,7 +13,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*! Component to show all the messages in one conversation, or all the messages for all conversations at the same time. It includes support to send/receive messages with attachments and make calls. */
-@interface BXUMessageTableViewController : UIViewController
+@interface BXUMessageTableViewController : UIViewController <UIViewControllerPreviewingDelegate>
+
+/*! Reference to the tableView */
+@property (strong, nonatomic, readonly) UITableView *tableView;
+
+/*! List of messages showing in the tableView */
+@property (nullable, strong, nonatomic, readonly) NSArray<Bit6Message*>* messages;
+
+/*! Set this property to YES when creating this viewController to disable PeekAndPop in the attachment thumbnails. */
+@property (nonatomic) BOOL peekAndPopDisabled;
 
 /*! Reference to the title label in self.navigationItem.titleView */
 @property (nullable, weak, nonatomic, readonly) BXUContactNameLabel *titleLabel;

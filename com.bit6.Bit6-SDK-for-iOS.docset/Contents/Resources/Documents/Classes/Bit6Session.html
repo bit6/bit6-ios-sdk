@@ -1,0 +1,1472 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Bit6Session Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Bit6-SDK-for-iOS </a></h1>
+				<a id="developerHome" href="../index.html">Bit6</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">Bit6Session Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/activeDisplayName">&nbsp;&nbsp;&nbsp;&nbsp;activeDisplayName</option>
+	
+	<option value="//api/name/activeIdentity">&nbsp;&nbsp;&nbsp;&nbsp;activeIdentity</option>
+	
+	<option value="//api/name/authenticated">&nbsp;&nbsp;&nbsp;&nbsp;authenticated</option>
+	
+	<option value="//api/name/currentDevice">&nbsp;&nbsp;&nbsp;&nbsp;currentDevice</option>
+	
+	<option value="//api/name/devices">&nbsp;&nbsp;&nbsp;&nbsp;devices</option>
+	
+	<option value="//api/name/identities">&nbsp;&nbsp;&nbsp;&nbsp;identities</option>
+	
+	<option value="//api/name/rtConnectionStatus">&nbsp;&nbsp;&nbsp;&nbsp;rtConnectionStatus</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/anonymousWithCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- anonymousWithCompletionHandler:</option>
+	
+	<option value="//api/name/authWithExternalToken:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- authWithExternalToken:completionHandler:</option>
+	
+	<option value="//api/name/changePassword:newPassword:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- changePassword:newPassword:completionHandler:</option>
+	
+	<option value="//api/name/getAuthInfoCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- getAuthInfoCompletionHandler:</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/isMyIdentity:">&nbsp;&nbsp;&nbsp;&nbsp;- isMyIdentity:</option>
+	
+	<option value="//api/name/loginWithUserIdentity:password:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithUserIdentity:password:completionHandler:</option>
+	
+	<option value="//api/name/logoutWithCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- logoutWithCompletionHandler:</option>
+	
+	<option value="//api/name/oauthForProvider:params:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- oauthForProvider:params:completion:</option>
+	
+	<option value="//api/name/privateData">&nbsp;&nbsp;&nbsp;&nbsp;- privateData</option>
+	
+	<option value="//api/name/publicProfile">&nbsp;&nbsp;&nbsp;&nbsp;- publicProfile</option>
+	
+	<option value="//api/name/setPrivateData:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- setPrivateData:completion:</option>
+	
+	<option value="//api/name/setPublicProfile:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- setPublicProfile:completion:</option>
+	
+	<option value="//api/name/signUpWithUserIdentity:password:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- signUpWithUserIdentity:password:completionHandler:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_￼Start/Destroy a session">￼Start/Destroy a session</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Identities">Identities</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Public/Private Profiles">Public/Private Profiles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Password">Password</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeDisplayName">activeDisplayName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeIdentity">activeIdentity</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticated">authenticated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentDevice">currentDevice</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devices">devices</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identities">identities</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rtConnectionStatus">rtConnectionStatus</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/anonymousWithCompletionHandler:">anonymousWithCompletionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authWithExternalToken:completionHandler:">authWithExternalToken:completionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changePassword:newPassword:completionHandler:">changePassword:newPassword:completionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAuthInfoCompletionHandler:">getAuthInfoCompletionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMyIdentity:">isMyIdentity:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithUserIdentity:password:completionHandler:">loginWithUserIdentity:password:completionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logoutWithCompletionHandler:">logoutWithCompletionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/oauthForProvider:params:completion:">oauthForProvider:params:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/privateData">privateData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicProfile">publicProfile</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPrivateData:completion:">setPrivateData:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPublicProfile:completion:">setPublicProfile:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/signUpWithUserIdentity:password:completionHandler:">signUpWithUserIdentity:password:completionHandler:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="Bit6Session Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">Bit6Session Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">Bit6Session.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A Bit6Session object contains the session information about the current connection to the Bit6 platform. It allows the user to sign up for a new account with the app, login into an existing account or logout.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="￼Start/Destroy a session" name="task_￼Start/Destroy a session"></a>
+						<h3 class="subsubtitle task-title">￼Start/Destroy a session</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/signUpWithUserIdentity:password:completionHandler:">&ndash;&nbsp;signUpWithUserIdentity:password:completionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithUserIdentity:password:completionHandler:">&ndash;&nbsp;loginWithUserIdentity:password:completionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/anonymousWithCompletionHandler:">&ndash;&nbsp;anonymousWithCompletionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAuthInfoCompletionHandler:">&ndash;&nbsp;getAuthInfoCompletionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/oauthForProvider:params:completion:">&ndash;&nbsp;oauthForProvider:params:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authWithExternalToken:completionHandler:">&ndash;&nbsp;authWithExternalToken:completionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logoutWithCompletionHandler:">&ndash;&nbsp;logoutWithCompletionHandler:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Identities" name="task_Identities"></a>
+						<h3 class="subsubtitle task-title">Identities</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activeIdentity">&nbsp;&nbsp;activeIdentity</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activeDisplayName">&nbsp;&nbsp;activeDisplayName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/identities">&nbsp;&nbsp;identities</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMyIdentity:">&ndash;&nbsp;isMyIdentity:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Public/Private Profiles" name="task_Public/Private Profiles"></a>
+						<h3 class="subsubtitle task-title">Public/Private Profiles</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicProfile">&ndash;&nbsp;publicProfile</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPublicProfile:completion:">&ndash;&nbsp;setPublicProfile:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/privateData">&ndash;&nbsp;privateData</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPrivateData:completion:">&ndash;&nbsp;setPrivateData:completion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticated">&nbsp;&nbsp;authenticated</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rtConnectionStatus">&nbsp;&nbsp;rtConnectionStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devices">&nbsp;&nbsp;devices</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentDevice">&nbsp;&nbsp;currentDevice</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Password" name="task_Password"></a>
+						<h3 class="subsubtitle task-title">Password</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changePassword:newPassword:completionHandler:">&ndash;&nbsp;changePassword:newPassword:completionHandler:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activeDisplayName" title="activeDisplayName"></a>
+	<h3 class="subsubtitle method-title">activeDisplayName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Display name to use for the active user. It can be nil if a session has not been created.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *activeDisplayName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/activeIdentity" title="activeIdentity"></a>
+	<h3 class="subsubtitle method-title">activeIdentity</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Active user identity as a <a href="../Classes/Bit6Address.html">Bit6Address</a> object. It can be nil if a session has not been created.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) Bit6Address *activeIdentity</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/authenticated" title="authenticated"></a>
+	<h3 class="subsubtitle method-title">authenticated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks if the user is authenticated with the Bit6 platform and the session has been established.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL authenticated</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentDevice" title="currentDevice"></a>
+	<h3 class="subsubtitle method-title">currentDevice</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unique identifier for this device for the active user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly, strong) NSString *currentDevice</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devices" title="devices"></a>
+	<h3 class="subsubtitle method-title">devices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>List of device identifiers for the active user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly, strong) NSArray&lt;NSString*&gt; *devices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/identities" title="identities"></a>
+	<h3 class="subsubtitle method-title">identities</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>List of user identities for the current session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;Bit6Address*&gt; *identities</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rtConnectionStatus" title="rtConnectionStatus"></a>
+	<h3 class="subsubtitle method-title">rtConnectionStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Web Socket connection status.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Bit6WebSocketReadyState rtConnectionStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/anonymousWithCompletionHandler:" title="anonymousWithCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">anonymousWithCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Signs in using an anonymous account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)anonymousWithCompletionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed. The &ldquo;error&rdquo; value can be use to know if the session was initiated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/authWithExternalToken:completionHandler:" title="authWithExternalToken:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">authWithExternalToken:completionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Signs in using a token from an external Service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)authWithExternalToken:(NSString *)<em>token</em> completionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>token to be used to authenticate the user</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed. The &ldquo;error&rdquo; value can be use to know if the session was initiated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/changePassword:newPassword:completionHandler:" title="changePassword:newPassword:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">changePassword:newPassword:completionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Change the password for the current user</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changePassword:(NSString *)<em>oldPassword</em> newPassword:(NSString *)<em>newPassword</em> completionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldPassword</em></dt>
+			<dd><p>the user&rsquo;s old password</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newPassword</em></dt>
+			<dd><p>the new password for the user</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAuthInfoCompletionHandler:" title="getAuthInfoCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">getAuthInfoCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the OAuth configurations available.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getAuthInfoCompletionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to be executed after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unavailable init. Use Bit6.session instead.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a new instance of the class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMyIdentity:" title="isMyIdentity:"></a>
+	<h3 class="subsubtitle method-title">isMyIdentity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method to find if an <a href="../Classes/Bit6Address.html">Bit6Address</a> identity belongs to the current user. This is done by performing a loop through <a href="#//api/name/identities">[Bit6Session identities]</a> to try to find the identity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isMyIdentity:(Bit6Address *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>identity to search</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the address belongs to the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/identities">[Bit6Session identities]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithUserIdentity:password:completionHandler:" title="loginWithUserIdentity:password:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">loginWithUserIdentity:password:completionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Signs into an existing account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithUserIdentity:(Bit6Address *)<em>userIdentity</em> password:(NSString *)<em>pass</em> completionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userIdentity</em></dt>
+			<dd><p><a href="../Classes/Bit6Address.html">Bit6Address</a> object that represents the local user</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pass</em></dt>
+			<dd><p>User&rsquo;s password</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed. The &ldquo;error&rdquo; value can be use to know if the session was initiated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logoutWithCompletionHandler:" title="logoutWithCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">logoutWithCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Ends the current session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)logoutWithCompletionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to be executed after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/oauthForProvider:params:completion:" title="oauthForProvider:params:completion:"></a>
+	<h3 class="subsubtitle method-title">oauthForProvider:params:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Signs in using an OAuth provider</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)oauthForProvider:(NSString *)<em>provider</em> params:(NSDictionary&lt;NSString*,id&gt; *)<em>params</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>provider</em></dt>
+			<dd><p>the provider to use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>additional params required to perform the sign in. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to be executed after the operation has been completed. The &ldquo;error&rdquo; value can be use to know if the session was initiated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/privateData" title="privateData"></a>
+	<h3 class="subsubtitle method-title">privateData</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Private profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nullable NSDictionary&lt;NSString*,id&gt; *)privateData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicProfile" title="publicProfile"></a>
+	<h3 class="subsubtitle method-title">publicProfile</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Public profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nullable NSDictionary&lt;NSString*,id&gt; *)publicProfile</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPrivateData:completion:" title="setPrivateData:completion:"></a>
+	<h3 class="subsubtitle method-title">setPrivateData:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to set the private profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPrivateData:(NSDictionary&lt;NSString*,id&gt; *)<em>privateData</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>privateData</em></dt>
+			<dd><p>New private profile for the current user. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPublicProfile:completion:" title="setPublicProfile:completion:"></a>
+	<h3 class="subsubtitle method-title">setPublicProfile:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used to set the public profile of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPublicProfile:(NSDictionary&lt;NSString*,id&gt; *)<em>publicProfile</em> completion:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>publicProfile</em></dt>
+			<dd><p>New public profile for the current user. If provided it has to be able to be converted to JSON data (check by using +[NSJSONSerialization isValidJSONObject:])</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/signUpWithUserIdentity:password:completionHandler:" title="signUpWithUserIdentity:password:completionHandler:"></a>
+	<h3 class="subsubtitle method-title">signUpWithUserIdentity:password:completionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an account and initiates the session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)signUpWithUserIdentity:(Bit6Address *)<em>userIdentity</em> password:(NSString *)<em>pass</em> completionHandler:(nullable Bit6CompletionHandler)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userIdentity</em></dt>
+			<dd><p>A <a href="../Classes/Bit6Address.html">Bit6Address</a> object that represents the local user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pass</em></dt>
+			<dd><p>User&rsquo;s password</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Block to call after the operation has been completed. The &ldquo;error&rdquo; value can be use to know if the account was created.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Bit6Session.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 Bit6. All rights reserved. (Last updated: 2016-10-10)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

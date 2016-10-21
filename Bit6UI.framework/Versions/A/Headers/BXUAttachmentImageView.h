@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setMessage:(Bit6Message*)message thumbnailMode:(BOOL)thumbnailMode;
 
+/*! Reference to the message linked to the sender. */
+@property (nullable, strong, nonatomic, readonly) Bit6Message* message;
+
 /*! The delegate to be notified when the imageview  has been tapped. For details about the methods that can be implemented by the delegate, see <BXUAttachmentImageViewDelegate> Protocol Reference. */
 @property (nullable, weak, nonatomic) id<BXUAttachmentImageViewDelegate> delegate;
 
